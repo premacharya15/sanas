@@ -19,7 +19,7 @@ $term_details = $queried_object->description;
 
 
 ?>
-<section class="hero-section">
+<section class="hero-section" style="background-image: url(../img/Wedding_Banner.jpg);">
   <div class="container">
     <div class="hero-detaile">
        <div class="row align-items-center h-100"> 
@@ -31,9 +31,6 @@ $term_details = $queried_object->description;
     </div>
   </div>
  </section>
- <?php
- echo "123";
- ?>
 <section class="wedding-section">
  <div class="container">
     <div class="row">
