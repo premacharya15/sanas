@@ -124,7 +124,7 @@ if( class_exists( 'CSF' ) ) {
      array(
         'id'    => 'card_category_back_gallery',
         'type'  => 'gallery',
-        'title' => 'Back Template Images in Gallery',
+        'title' => 'Back Template Images in Gallery132',
       )
      ,
      array(
