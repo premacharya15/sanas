@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Example</title>
+    <style>
+        table {
+            width: 100%;
+            table-layout: fixed;
+        }
+        th, td {
+            text-align: left;
+            border: 1px solid;
+            padding: 10px;
+            min-width: 100px;
+        }
+        td:first-child, td:last-child, th:first-child, th:last-child {
+            max-width: 50px;
+            width: 50px;
+        }
+        .text-single-line {
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+        }
+
+        @media (max-width: 748px) {
+            th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Test 1</th>
+                <th>Test 2</th>
+                <th>Test 3</th>
+                <th>Test 4</th>
+                <th>Test 5</th>
+                <th>Test 6</th>
+                <th>Test 7</th>
+                <th>Test 8</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-single-line">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+                <td class="text-single-line">Test2 Test2Test2Test2 Test2 Test2Test2</td>
+                <td class="text-single-line">Test2</td>
+                <td class="text-single-line">Test2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+                <td class="text-single-line">Test2</td>
+                <td class="text-single-line">Test2</td>
+                <td class="text-single-line">Test2</td>
+                <td class="text-single-line">Test2</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

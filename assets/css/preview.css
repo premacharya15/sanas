@@ -1,0 +1,135 @@
+
+body {
+    background-color: #F9F9F9;
+}
+
+section.wl-main-canvas {
+    margin: 90px 142px;
+ }
+ section.wl-main-canvas.guest-preview {
+    margin-top: 130px;
+}
+
+section.wl-main-canvas .inner-container {
+    position: relative;
+    border-radius: 34px;
+    padding: 45px;
+    padding-bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+section.wl-main-canvas .inner-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    z-index: -1;
+}
+section.wl-main-canvas.wl-main-preview {
+    margin-bottom: 20px;
+}
+section.wl-main-canvas .inner-container .inner-colum {
+    background-size: cover;
+    padding: 50px;
+}
+
+section.wl-main-canvas .wl-lower-btn {
+    padding-top: 60px;
+    opacity: 0;
+}
+
+section.wl-main-canvas .card-canvas {
+    margin: 0;
+    width: auto;
+    justify-content: space-between;
+    box-shadow: none;
+    border-radius: 0;
+    height: auto;
+}
+
+section.wl-main-canvas .card-canvas img {
+    border-radius: 16px;
+}
+
+@media only screen and (max-width:1400px) {
+    section.wl-main-canvas .inner-container .inner-colum {
+        padding: 80px 50px 30px;
+    }
+
+    section.wl-main-canvas .wl-lower-btn {
+        padding-top: 30px;
+    }
+
+    section.wl-main-canvas {
+        margin: 129px 80px;
+    }
+
+    section.wl-main-canvas .content.content-3 .wl-card-detaile .wl-inner-card-detaile {
+        padding: 0 15px;
+    }
+}
+
+@media only screen and (max-width:1199px) {
+    section.wl-main-canvas .inner-container {
+        padding: 40px;
+    }
+
+    .wl-right-slide-bar {
+        top: 54px;
+        bottom: auto;
+        width: 100%;
+        z-index: 99999;
+        background-color: #ffffff;
+    }
+
+    .btn-side-bar {
+        border-radius: 0;
+    }
+
+    section.wl-main-canvas {
+        margin: 160px 0px 50px;
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    section.wl-main-canvas .inner-container {
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    section.wl-main-canvas {
+        margin: 0;
+        margin-top: 150px;
+    }
+
+    section.wl-main-canvas .content.content-3 {
+        padding-top: 24px;
+        padding-bottom: 30px;
+    }
+    section.wl-main-canvas.guest-preview {
+        margin-top: 90px;
+    }
+}
+
+@media only screen and (max-width:479px) {
+    section.wl-main-canvas .inner-container .inner-colum {
+        padding: 30px 30px 20px;
+    }
+
+    section.wl-main-canvas .wl-lower-btn {
+        padding-top: 20px;
+    }
+
+    .wl-right-slide-bar {
+        top: 48px;
+    }
+    section.wl-main-canvas .inner-container, section.wl-main-canvas .card-canvas img{
+        border-radius: 8px;
+    }
+
+}
