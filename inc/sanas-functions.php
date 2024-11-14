@@ -716,65 +716,46 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 
 
 
-function sanas_card_category_gallery_list($mobile,$frontorback) {
+function sanas_card_category_gallery_list($mobile, $type) {
     $terms = get_terms(array(
         'taxonomy'   => 'sanas-card-category',
-        'hide_empty' => false,  // Set to true if you want to hide terms without posts
+        'hide_empty' => false,
     ));
 
-    $all_gallery_ids = [];  // Array to store all image IDs across terms
+    $all_gallery_ids = [];
 
-    // Gather all gallery image IDs across terms
     if (!empty($terms) && !is_wp_error($terms)) {
         foreach ($terms as $term) {
-            if($frontorback=='front'){
-              $card_category_front_gallery = get_term_meta($term->term_id, 'card_category_front_gallery', true);
+            if ($type == 'front') {
+                $gallery = get_term_meta($term->term_id, 'card_category_front_gallery', true);
+            } elseif ($type == 'back') {
+                $gallery = get_term_meta($term->term_id, 'card_category_back_gallery', true);
+            } else {
+                $gallery = get_term_meta($term->term_id, 'card_category_cover_gallery', true);
             }
-            else{
-              $card_category_front_gallery = get_term_meta($term->term_id, 'card_category_back_gallery', true);
-            }
-            $gallery_ids = explode(',', $card_category_front_gallery);
+            $gallery_ids = explode(',', $gallery);
             $all_gallery_ids = array_merge($all_gallery_ids, array_filter($gallery_ids));
         }
     }
 
-    // Begin gallery output
-    $html = '<div class="tamplate" id="gallery-container">';
+    $html = '<div class="template" id="gallery-container">';
 
     if (!empty($all_gallery_ids)) {
-
         if ($mobile === 'mobile') {
-
-            if (!empty($all_gallery_ids)) {
-                    foreach ($all_gallery_ids as $gallery_item_id) {
-                        $html .= '<div class="tamplate-iteam">
-                                    <img src="' . wp_get_attachment_image_url($gallery_item_id, 'full') . '" alt="">
-                                  </div>';
-                    }
-                }
-
+            foreach ($all_gallery_ids as $gallery_item_id) {
+                $html .= '<div class="template-item">
+                            <img src="' . wp_get_attachment_image_url($gallery_item_id, 'full') . '" alt="">
+                          </div>';
+            }
+        } else {
+            $html .= '<div class="template-inner">';
+            foreach ($all_gallery_ids as $gallery_item_id) {
+                $html .= '<div class="template-item">
+                            <img src="' . wp_get_attachment_image_url($gallery_item_id, 'full') . '" alt="">
+                          </div>';
+            }
+            $html .= '</div>';
         }
-        else{
-
-          $html .= '<div class="tamplate-inner">';
-
-          $i = 0;
-          foreach ($all_gallery_ids as $gallery_item_id) {
-              // Open a new row if it's the start of a new row
-              if ($i % 2 == 0 && $i !== 0) {
-                  $html .= '</div><div class="tamplate-inner">';
-              }
-
-              // Add image
-              $html .= '<div class="tamplate-iteam">
-                          <img src="' . wp_get_attachment_url($gallery_item_id) . '" alt="">
-                        </div>';
-              $i++;
-          }
-          $html .= '</div>';
-          }
-
-
     }
 
     $html .= '</div>';
@@ -881,42 +862,5 @@ function sanas_decrypt_data($invite) {
     }
 
     return $decrypted_data;
-}
-
-// Add this function to handle card category cover gallery display
-function sanas_card_category_cover_gallery($term_id, $device = 'desk') {
-    $gallery_ids = get_term_meta($term_id, 'card_category_cover_gallery', true);
-    $html = '<div class="tamplate">';
-
-    if (!empty($gallery_ids)) {
-        $gallery_ids = explode(',', $gallery_ids);
-
-        if ($device === 'mobile') {
-            // Mobile layout
-            foreach ($gallery_ids as $gallery_item_id) {
-                $html .= '<div class="tamplate-iteam">
-                            <img src="' . wp_get_attachment_image_url($gallery_item_id, 'full') . '" alt="">
-                         </div>';
-            }
-        } else {
-            // Desktop layout
-            $html .= '<div class="tamplate-inner">';
-            $i = 0;
-            foreach ($gallery_ids as $gallery_item_id) {
-                $html .= '<div class="tamplate-iteam">
-                            <img src="' . wp_get_attachment_image_url($gallery_item_id, 'full') . '" alt="">
-                         </div>';
-                
-                $i++;
-                if (($i % 3) == 0) {
-                    $html .= '</div><div class="tamplate-inner">';
-                }
-            }
-            $html .= '</div>';
-        }
-    }
-
-    $html .= '</div>';
-    return $html;
 }
 ?>

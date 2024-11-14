@@ -130,7 +130,7 @@ if( class_exists( 'CSF' ) ) {
 	  array(
 		 'id'    => 'card_category_cover_gallery',
 		 'type'  => 'gallery',
-		 'title' => 'Card Category Cover Image',
+		 'title' => 'Card Category Cover Images',
 	   )
      ,
      array(
