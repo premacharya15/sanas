@@ -126,6 +126,14 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'gallery',
         'title' => 'Back Template Images in Gallery',
       )
+	  ,
+	  array(
+		 'id'    => 'card_category_cover_image',
+		 'type'  => 'media',
+		 'title' => 'Card Category Cover Image',
+		 'preview' => true,
+		 'preview_size' => 'full',
+	   )
      ,
      array(
         'id'    => 'card_category_home',
@@ -138,8 +146,6 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'switcher',
         'title' => 'Checked To Display on Personalize Card',
       )
-
-
     )
  ) );
 
