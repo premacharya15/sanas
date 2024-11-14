@@ -882,4 +882,41 @@ function sanas_decrypt_data($invite) {
 
     return $decrypted_data;
 }
+
+// Add this function to handle card category cover gallery display
+function sanas_card_category_cover_gallery($term_id, $device = 'desk') {
+    $gallery_ids = get_term_meta($term_id, 'card_category_cover_gallery', true);
+    $html = '<div class="tamplate">';
+
+    if (!empty($gallery_ids)) {
+        $gallery_ids = explode(',', $gallery_ids);
+
+        if ($device === 'mobile') {
+            // Mobile layout
+            foreach ($gallery_ids as $gallery_item_id) {
+                $html .= '<div class="tamplate-iteam">
+                            <img src="' . wp_get_attachment_image_url($gallery_item_id, 'full') . '" alt="">
+                         </div>';
+            }
+        } else {
+            // Desktop layout
+            $html .= '<div class="tamplate-inner">';
+            $i = 0;
+            foreach ($gallery_ids as $gallery_item_id) {
+                $html .= '<div class="tamplate-iteam">
+                            <img src="' . wp_get_attachment_image_url($gallery_item_id, 'full') . '" alt="">
+                         </div>';
+                
+                $i++;
+                if (($i % 3) == 0) {
+                    $html .= '</div><div class="tamplate-inner">';
+                }
+            }
+            $html .= '</div>';
+        }
+    }
+
+    $html .= '</div>';
+    return $html;
+}
 ?>
