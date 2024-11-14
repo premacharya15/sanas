@@ -128,11 +128,9 @@ if( class_exists( 'CSF' ) ) {
       )
 	  ,
 	  array(
-		 'id'    => 'card_category_cover_image',
-		 'type'  => 'media',
+		 'id'    => 'card_category_cover_gallery',
+		 'type'  => 'gallery',
 		 'title' => 'Card Category Cover Image',
-		 'preview' => true,
-		 'preview_size' => 'full',
 	   )
      ,
      array(
