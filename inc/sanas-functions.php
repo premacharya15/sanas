@@ -716,46 +716,65 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 
 
 
-function sanas_card_category_gallery_list($mobile, $type) {
+function sanas_card_category_gallery_list($mobile,$frontorback) {
     $terms = get_terms(array(
         'taxonomy'   => 'sanas-card-category',
-        'hide_empty' => false,
+        'hide_empty' => false,  // Set to true if you want to hide terms without posts
     ));
 
-    $all_gallery_ids = [];
+    $all_gallery_ids = [];  // Array to store all image IDs across terms
 
+    // Gather all gallery image IDs across terms
     if (!empty($terms) && !is_wp_error($terms)) {
         foreach ($terms as $term) {
-            if ($type == 'front') {
-                $gallery = get_term_meta($term->term_id, 'card_category_front_gallery', true);
-            } elseif ($type == 'back') {
-                $gallery = get_term_meta($term->term_id, 'card_category_back_gallery', true);
-            } else {
-                $gallery = get_term_meta($term->term_id, 'card_category_cover_gallery', true);
+            if($frontorback=='front'){
+              $card_category_front_gallery = get_term_meta($term->term_id, 'card_category_front_gallery', true);
             }
-            $gallery_ids = explode(',', $gallery);
+            else{
+              $card_category_front_gallery = get_term_meta($term->term_id, 'card_category_back_gallery', true);
+            }
+            $gallery_ids = explode(',', $card_category_front_gallery);
             $all_gallery_ids = array_merge($all_gallery_ids, array_filter($gallery_ids));
         }
     }
 
-    $html = '<div class="template" id="gallery-container">';
+    // Begin gallery output
+    $html = '<div class="tamplate" id="gallery-container">';
 
     if (!empty($all_gallery_ids)) {
+
         if ($mobile === 'mobile') {
-            foreach ($all_gallery_ids as $gallery_item_id) {
-                $html .= '<div class="template-item">
-                            <img src="' . wp_get_attachment_image_url($gallery_item_id, 'full') . '" alt="">
-                          </div>';
-            }
-        } else {
-            $html .= '<div class="template-inner">';
-            foreach ($all_gallery_ids as $gallery_item_id) {
-                $html .= '<div class="template-item">
-                            <img src="' . wp_get_attachment_image_url($gallery_item_id, 'full') . '" alt="">
-                          </div>';
-            }
-            $html .= '</div>';
+
+            if (!empty($all_gallery_ids)) {
+                    foreach ($all_gallery_ids as $gallery_item_id) {
+                        $html .= '<div class="tamplate-iteam">
+                                    <img src="' . wp_get_attachment_image_url($gallery_item_id, 'full') . '" alt="">
+                                  </div>';
+                    }
+                }
+
         }
+        else{
+
+          $html .= '<div class="tamplate-inner">';
+
+          $i = 0;
+          foreach ($all_gallery_ids as $gallery_item_id) {
+              // Open a new row if it's the start of a new row
+              if ($i % 2 == 0 && $i !== 0) {
+                  $html .= '</div><div class="tamplate-inner">';
+              }
+
+              // Add image
+              $html .= '<div class="tamplate-iteam">
+                          <img src="' . wp_get_attachment_url($gallery_item_id) . '" alt="">
+                        </div>';
+              $i++;
+          }
+          $html .= '</div>';
+          }
+
+
     }
 
     $html .= '</div>';
