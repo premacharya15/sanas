@@ -127,6 +127,12 @@ if( class_exists( 'CSF' ) ) {
         'title' => 'Back Template Images in Gallery',
       )
 	  ,
+	  array(
+		 'id'    => 'card_category_cover_image',
+		 'type'  => 'media',
+		 'title' => 'Card Category Cover Image',
+	   )
+     ,
      array(
         'id'    => 'card_category_home',
         'type'  => 'switcher',
