@@ -31,6 +31,9 @@ $term_details = $queried_object->description;
     </div>
   </div>
  </section>
+ <?php
+ echo "123";
+ ?>
 <section class="wedding-section">
  <div class="container">
     <div class="row">
