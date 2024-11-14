@@ -23,7 +23,7 @@ $cover_image_url = wp_get_attachment_url($cover_image_id);
 
 
 ?>
-<section class="hero-section" style="background-image: url('<?php echo esc_url($cover_image_url ? $cover_image_url : get_template_directory_uri() . "/img/Wedding_Banner.jpg"); ?>');">
+<section class="hero-section" style="background-image: url('<?php echo esc_url($cover_image_url ? $cover_image_url : get_template_directory_uri() . "/assets/img/Wedding_Banner.jpg"); ?>');">
   <div class="container">
     <div class="hero-detaile">
        <div class="row align-items-center h-100"> 
