@@ -15,11 +15,15 @@ $t_id = $queried_object->term_id;
 $term_name = $queried_object->name;
 $term_details = $queried_object->description;
 
+// Fetch the cover image URL
+$cover_image_id = get_term_meta($t_id, 'card_category_cover_image', true);
+$cover_image_url = wp_get_attachment_url($cover_image_id);
+
 //$card_category_home = get_term_meta($queried_object->term_id, 'card_category_home', true);
 
 
 ?>
-<section class="hero-section" style="background-image: url(../img/Wedding_Banner.jpg);">
+<section class="hero-section" style="background-image: url('<?php echo esc_url($cover_image_url ? $cover_image_url : get_template_directory_uri() . "/img/Wedding_Banner.jpg"); ?>');">
   <div class="container">
     <div class="hero-detaile">
        <div class="row align-items-center h-100"> 
