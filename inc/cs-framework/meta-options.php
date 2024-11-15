@@ -133,6 +133,11 @@ if( class_exists( 'CSF' ) ) {
 		 'title' => 'Card Category Cover Image',
 	   )
      ,
+	 array(
+        'id'    => 'cover_card_image',
+        'type'  => 'media',
+        'title' => 'Cover Card Image',
+      ),
      array(
         'id'    => 'card_category_home',
         'type'  => 'switcher',

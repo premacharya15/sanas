@@ -19,6 +19,9 @@ $term_details = $queried_object->description;
 $cover_image_id = get_term_meta($t_id, 'card_category_cover_image', true);
 $cover_image_url = wp_get_attachment_url($cover_image_id);
 
+$cover_card_image_id = get_term_meta($t_id, 'cover_card_image', true);
+$cover_card_image_url = wp_get_attachment_url($cover_card_image_id);
+
 //$card_category_home = get_term_meta($queried_object->term_id, 'card_category_home', true);
 
 
@@ -30,6 +33,9 @@ $cover_image_url = wp_get_attachment_url($cover_image_id);
         <div class="col-md-6 xol-sm-12">
           <h2><?php echo $term_name; ?></h2>
           <p><?php echo $term_details; ?></p>
+        </div>
+        <div class="col-md-6 xol-sm-12 wl-bwnnar-img">
+          <img src="<?php echo esc_url($cover_card_image_url); ?>" alt="banner-image">
         </div>
       </div>
     </div>
