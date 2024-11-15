@@ -277,6 +277,7 @@ function handleObjectSelection() {
     if (activeObject && activeObject.type === 'i-text') {
         if (jQuery('#myTextarea').length) {
         document.getElementById('myTextarea').value = activeObject.text;
+        console.log("testy");
         document.getElementById('myTextarea').removeAttribute("disabled");
         }
         if (jQuery('#fontSize').length) {
@@ -310,6 +311,7 @@ function handleObjectSelection() {
         }
     } else {
         document.getElementById('myTextarea').value = '1';
+        console.log("testy2");
         document.getElementById('myTextarea').setAttribute("disabled", true);
         document.getElementById('fontSize').value = '';
         document.getElementById('fontWeight').value = '';
