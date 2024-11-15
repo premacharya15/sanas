@@ -5125,7 +5125,7 @@ tr.todo-check-title>th:nth-child(6) {
 }
 
 .hero-section {
-    padding: 220px 0 90px;
+    padding: 110px 90px 0 90px;
 }
 .hero-section{
     background-size: cover;
@@ -5133,7 +5133,7 @@ tr.todo-check-title>th:nth-child(6) {
     background-repeat: no-repeat;   
 }
 .hero-detaile {
-    padding: 60px 0;
+    padding: 25px 0;
 }
 
 .hero-detaile h2 {
