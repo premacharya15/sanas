@@ -310,7 +310,6 @@ function handleObjectSelection() {
             updatestyleButtons('');
         }
     } else {
-        console.log("testy2");
         document.getElementById('myTextarea').value = '';
         document.getElementById('myTextarea').setAttribute("disabled", true);
         document.getElementById('myTextarea').style.cursor = "not-allowed";
@@ -446,6 +445,12 @@ window.loadCanvasFromJSON = loadCanvasFromJSON;
 
 jQuery(document).ready(function ($) {
     //loadCanvasData();
+    const currentUrl = window.location.href;
+  
+    if (currentUrl.includes("user-dashboard")) {
+        document.getElementById('myTextarea').setAttribute("disabled", true);
+        document.getElementById('myTextarea').style.cursor = "not-allowed";
+    }
 });
 
     function loadFonts(fonts, callback) {
