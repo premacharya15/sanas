@@ -739,7 +739,6 @@ jQuery('#save-back-canvas-db-admin').on('click', function () {
         // Extract URL from background-image CSS property
         var imageUrl = backgroundImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
         var redirectToNext = true;
-        var isInitialLoad = false;
         if (isInitialLoad === 'true') {
             if (JSON.stringify(canvas.toJSON()) === phpbackCanvasData) {
                 show_alert_message('Cover', 'Please modify the info card.');
@@ -920,7 +919,6 @@ jQuery(document).ready(function ($) {
         // Extract URL from background-image CSS property
         var imageUrl = backgroundImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
         var redirectToNext = true;
-        var isInitialLoad = false;
         if (isInitialLoad === 'true') {
             if (JSON.stringify(canvas.toJSON()) === phpbackCanvasData) {
                 show_alert_message('Info', 'Please modify the front card information with event.');
