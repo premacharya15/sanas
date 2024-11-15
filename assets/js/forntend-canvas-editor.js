@@ -277,8 +277,8 @@ function handleObjectSelection() {
     if (activeObject && activeObject.type === 'i-text') {
         if (jQuery('#myTextarea').length) {
         document.getElementById('myTextarea').value = activeObject.text;
-        console.log("testy");
         document.getElementById('myTextarea').removeAttribute("disabled");
+        document.getElementById('myTextarea').style.cursor = "";
         }
         if (jQuery('#fontSize').length) {
         document.getElementById('fontSize').value = activeObject.fontSize;
@@ -313,6 +313,7 @@ function handleObjectSelection() {
         console.log("testy2");
         document.getElementById('myTextarea').value = '';
         document.getElementById('myTextarea').setAttribute("disabled", true);
+        document.getElementById('myTextarea').style.cursor = "not-allowed";
         document.getElementById('fontSize').value = '';
         document.getElementById('fontWeight').value = '';
         document.getElementById('fontFamily').value = '';
@@ -330,6 +331,7 @@ function handleObjectModified() {
         if (jQuery('#myTextarea').length) {
         document.getElementById('myTextarea').value = activeObject.text;
         document.getElementById('myTextarea').removeAttribute("disabled");
+        document.getElementById('myTextarea').style.cursor = "";
         }
         if (jQuery('#fontSize').length) {
         document.getElementById('fontSize').value = activeObject.fontSize;
@@ -370,6 +372,7 @@ canvas.on('selection:updated', handleObjectSelection);
 canvas.on('selection:cleared', function () {
     document.getElementById('myTextarea').value = '';
     document.getElementById('myTextarea').setAttribute("disabled", true);
+    document.getElementById('myTextarea').style.cursor = "not-allowed";
     document.getElementById('fontSize').value = '';
     document.getElementById('fontWeight').value = '';
     document.getElementById('fontFamily').value = '';
