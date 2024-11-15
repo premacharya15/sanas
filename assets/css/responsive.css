@@ -1285,7 +1285,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         margin: 0 ;
     }
     .hero-detaile {
-        height: 200px;
+        /* height: 200px; */
         padding: 20px 0;
     }
     .wl-invitation-header .inner-colum{
