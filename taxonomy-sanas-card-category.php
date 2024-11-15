@@ -36,9 +36,8 @@ $cover_card_image_url = wp_get_attachment_url($cover_card_image_id);
         </div>
         <div class="col-md-6 xol-sm-12 wl-bwnnar-img">
           <?php if ($cover_card_image_url) : ?>
-            <img src="<?php echo esc_url($cover_card_image_url); ?>" alt="banner-image">
+            <img src="<?php echo esc_url($cover_card_image_url); ?>" alt="banner-image" class="img-fluid" style="object-fit: cover; aspect-ratio: 1 / 1;">
           <?php endif; ?>
-          <?php var_dump($cover_card_image_url); ?>
         </div>
       </div>
     </div>
