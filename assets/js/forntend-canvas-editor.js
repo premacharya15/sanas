@@ -39,7 +39,9 @@ canvas.on('selection:created', function (event) {
             cornerStrokeColor: '#511F1B', // Stroke color for corner controls
         });
         canvas.renderAll();
+        console.log('if-selection:created');
     }
+    console.log('else-selection:created');
 });
 // Load All Google Font
 // Function to add text to the canvas  
