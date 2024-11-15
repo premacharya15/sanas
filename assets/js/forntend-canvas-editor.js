@@ -446,8 +446,8 @@ window.loadCanvasFromJSON = loadCanvasFromJSON;
 jQuery(document).ready(function ($) {
     //loadCanvasData();
     const currentUrl = window.location.href;
-  
-    if (currentUrl.includes("user-dashboard")) {
+    const button = document.querySelector('.add-text-button-event');
+    if (currentUrl.includes("user-dashboard") && button) {
         document.getElementById('myTextarea').setAttribute("disabled", true);
         document.getElementById('myTextarea').style.cursor = "not-allowed";
     }
