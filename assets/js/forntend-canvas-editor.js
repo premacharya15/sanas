@@ -367,6 +367,15 @@ function handleObjectModified() {
             updatestyleButtons('');
         }
     }
+    if (activeObject && (activeObject.type === 'text' || activeObject.type === 'i-text')) {
+        activeObject.set({
+            borderColor: '#9CA89C', // Border color when selected
+            cornerColor: '#9CA89C', // Corner control color
+            cornerStrokeColor: '#511F1B', // Stroke color for corner controls
+        });
+        canvas.renderAll();
+        console.log(' function handleObjectModified');
+    }
 }
 canvas.on('selection:created', handleObjectSelection);
 canvas.on('selection:updated', handleObjectSelection);
