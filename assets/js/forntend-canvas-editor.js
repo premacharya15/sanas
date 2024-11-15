@@ -30,7 +30,10 @@ function renderIcon(ctx, left, top, styleOverride, fabricObject) {
     ctx.restore();
 }
 // Event listener to set border color when an object is selected
-canvas.on('selection:created', function (event) {
+canvas.on('selection:created', handleSelection);
+canvas.on('selection:updated', handleSelection);
+
+function handleSelection(event) {
     const activeObject = event.target;
     if (activeObject && (activeObject.type === 'text' || activeObject.type === 'i-text')) {
         activeObject.set({
@@ -39,10 +42,11 @@ canvas.on('selection:created', function (event) {
             cornerStrokeColor: '#511F1B', // Stroke color for corner controls
         });
         canvas.renderAll();
-        console.log('if-selection:created');
+        console.log('Selection applied to:', activeObject);
+    } else {
+        console.log('No applicable object selected.');
     }
-    console.log('else-selection:created');
-});
+}
 // Load All Google Font
 // Function to add text to the canvas  
 function addText(event) {
@@ -366,15 +370,6 @@ function handleObjectModified() {
         } else {
             updatestyleButtons('');
         }
-    }
-    if (activeObject && (activeObject.type === 'text' || activeObject.type === 'i-text')) {
-        activeObject.set({
-            borderColor: '#9CA89C', // Border color when selected
-            cornerColor: '#9CA89C', // Corner control color
-            cornerStrokeColor: '#511F1B', // Stroke color for corner controls
-        });
-        canvas.renderAll();
-        console.log(' function handleObjectModified');
     }
 }
 canvas.on('selection:created', handleObjectSelection);
