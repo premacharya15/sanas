@@ -38,7 +38,9 @@ $cover_card_image_url = wp_get_attachment_url($cover_card_image_id);
           <?php if ($cover_card_image_url) : ?>
             <img src="<?php echo esc_url($cover_card_image_url); ?>" alt="banner-image">
           <?php endif; ?>
-          <?php var_dump($cover_card_image_url); ?>
+          <?php var_dump($cover_card_image_url);
+          echo $cover_card_image_url;
+          ?>
         </div>
       </div>
     </div>
