@@ -55,7 +55,7 @@ function addText(event) {
         hoverCursor: 'pointer',
                   borderColor: '#9CA89C', // Border color when selected
             cornerColor: '#9CA89C', // Corner control color
-            cornerStrokeColor: '#9CA89C', // Stroke color for corner controls
+            cornerStrokeColor: '#511F1B', // Stroke color for corner controls
     });
     // Add custom controls to the text object
     text.controls = Object.assign({}, text.controls, customControls);
