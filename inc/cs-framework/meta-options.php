@@ -136,9 +136,7 @@ if( class_exists( 'CSF' ) ) {
 	 array(
         'id'    => 'cover_card_image',
         'type'  => 'media',
-        'title' => esc_html__('Cover Card Image','sanas'),
-		'preview'=> true,
-		'preview_size'=> 'full',
+        'title' => 'Cover Card Image',
       ),
      array(
         'id'    => 'card_category_home',
