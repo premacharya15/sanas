@@ -109,7 +109,6 @@ function handleObjectSelection() {
     if (activeObject && activeObject.type === 'i-text') {
         document.getElementById('myTextarea').value = activeObject.text;
         document.getElementById('myTextarea').removeAttribute("disabled");
-        document.getElementById('myTextarea').setAttribute("disabled", true);
     } else {
         document.getElementById('myTextarea').value = '';
         document.getElementById('myTextarea').setAttribute("disabled", true);
