@@ -42,9 +42,9 @@ function handleSelection(event) {
             cornerStrokeColor: '#511F1B', // Stroke color for corner controls
         });
         canvas.renderAll();
-        console.log('Selection applied to:', activeObject);
+        // console.log('Selection applied to:', activeObject);
     } else {
-        console.log('No applicable object selected.');
+        // console.log('No applicable object selected.');
     }
 }
 // Load All Google Font
