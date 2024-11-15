@@ -310,8 +310,8 @@ function handleObjectSelection() {
             updatestyleButtons('');
         }
     } else {
-        document.getElementById('myTextarea').value = '1';
         console.log("testy2");
+        document.getElementById('myTextarea').value = '';
         document.getElementById('myTextarea').setAttribute("disabled", true);
         document.getElementById('fontSize').value = '';
         document.getElementById('fontWeight').value = '';
@@ -329,6 +329,7 @@ function handleObjectModified() {
     if (activeObject && activeObject.type === 'i-text') {
         if (jQuery('#myTextarea').length) {
         document.getElementById('myTextarea').value = activeObject.text;
+        document.getElementById('myTextarea').removeAttribute("disabled");
         }
         if (jQuery('#fontSize').length) {
         document.getElementById('fontSize').value = activeObject.fontSize;
@@ -368,6 +369,7 @@ canvas.on('selection:created', handleObjectSelection);
 canvas.on('selection:updated', handleObjectSelection);
 canvas.on('selection:cleared', function () {
     document.getElementById('myTextarea').value = '';
+    document.getElementById('myTextarea').setAttribute("disabled", true);
     document.getElementById('fontSize').value = '';
     document.getElementById('fontWeight').value = '';
     document.getElementById('fontFamily').value = '';
