@@ -37,10 +37,11 @@ function handleSelection(event) {
     const activeObject = event.target;
     if (activeObject && (activeObject.type === 'text' || activeObject.type === 'i-text')) {
         activeObject.set({
-            borderColor: '#9CA89C', // Border color when selected
-            cornerColor: '#9CA89C', // Corner control color
+            borderColor: '#511F1B', // Border color when selected
+            cornerColor: '#511F1B', // Corner control color
             cornerStrokeColor: '#511F1B', // Stroke color for corner controls
         });
+        //511F1B #9CA89C
         canvas.renderAll();
         // console.log('Selection applied to:', activeObject);
     } else {
