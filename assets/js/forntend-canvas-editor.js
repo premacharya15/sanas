@@ -40,8 +40,8 @@ function handleSelection(event) {
             borderColor: '#511F1B', // Border color when selected
             cornerColor: '#511F1B', // Corner control color
             cornerStrokeColor: '#511F1B', // Stroke color for corner controls
-            cornerBackgroundColor: '9CA89C',
-            borderSize: '6px',
+            cornerBackgroundColor: '#9CA89C', // Corrected to use hex color format
+            cornerSize: 12, // Set corner size to adjust border size
         });
         //511F1B #9CA89C
         canvas.renderAll();
