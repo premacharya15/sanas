@@ -60,8 +60,8 @@ function addText(event) {
         fill: '#000000',
         textAlign: 'left',
         hoverCursor: 'pointer',
-                  borderColor: '#9CA89C', // Border color when selected
-            cornerColor: '#9CA89C', // Corner control color
+            borderColor: '#511F1B', // Border color when selected
+            cornerColor: '#511F1B', // Corner control color
             cornerStrokeColor: '#511F1B', // Stroke color for corner controls
     });
     // Add custom controls to the text object
