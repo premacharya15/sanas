@@ -1622,7 +1622,7 @@ if (!empty($data)) {
 </style>
 <?php
 // Add this to your PHP code where you set up $data
-$isInitialLoad = empty($backpagedata) ? 'true' : 'false';
+$isInitialLoad = empty($frontpagedata) ? 'true' : 'false';
 ?>
 <script type="text/javascript">
 var phpbackCanvasData = <?php echo $data; ?>;
