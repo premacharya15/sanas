@@ -1622,15 +1622,9 @@ if (!empty($data)) {
 </style>
 <?php
 // Add this to your PHP code where you set up $data
-$isInitialLoad = empty($backpagedata) ? 'true' : 'false';
-$data = !empty($backpagedata) ? stripslashes(htmlspecialchars_decode($backpagedata)) : stripslashes(stripslashes(htmlspecialchars_decode($backmetadata)));
-
-echo "<script type='text/javascript'>";
-echo "var phpbackCanvasData = '".json_encode($data)."';";
-echo "var isInitialLoad = '".$isInitialLoad."';";
-echo "</script>";
+$isInitialLoad = empty($frontpagedata) ? 'true' : 'false';
 ?>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 var phpbackCanvasData = <?php echo $data; ?>;
 var isInitialLoad = <?php echo $isInitialLoad; ?>;
-</script> -->
+</script>
