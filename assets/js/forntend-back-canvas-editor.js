@@ -745,9 +745,9 @@ jQuery('#save-back-canvas-db-admin').on('click', function () {
                 redirectToNext = false;
             }
         }
-        console.log(phpbackCanvasData);
-        console.log(canvasData);
-        console.log(isInitialLoad);
+        // console.log(phpbackCanvasData);
+        // console.log(canvasData);
+        // console.log(isInitialLoad);
         if (redirectToNext) {
             showPreloader("Saving Card");
             $.ajax({
