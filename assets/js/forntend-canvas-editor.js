@@ -41,6 +41,7 @@ function handleSelection(event) {
             cornerColor: '#511F1B', // Corner control color
             cornerStrokeColor: '#511F1B', // Stroke color for corner controls
             cornerBackgroundColor: '9CA89C',
+            borderSize: '6px',
         });
         //511F1B #9CA89C
         canvas.renderAll();
@@ -65,6 +66,7 @@ function addText(event) {
             cornerColor: '#511F1B', // Corner control color
             cornerStrokeColor: '#511F1B', // Stroke color for corner controls
             cornerBackgroundColor: '9CA89C',
+            borderSize: '6px',
     });
     // Add custom controls to the text object
     text.controls = Object.assign({}, text.controls, customControls);
