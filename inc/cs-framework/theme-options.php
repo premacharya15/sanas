@@ -619,12 +619,12 @@ if (class_exists('CSF')) {
             array(
               'id'    => 'sanas_guest_one_week_before_accepted_subject',
               'type'  => 'text',
-              'title' => '1 Week Before (Accepted) Subject - unused',
+              'title' => '1 Week Before (Accepted) Subject',
             ),                 
             array(
               'id'    => 'sanas_guest_one_week_before_accepted_body',
               'type'  => 'wp_editor',
-              'title' => '1 Week Before (Accepted) Body - unused',
+              'title' => '1 Week Before (Accepted) Body',
               'settings' => array(   'textarea_rows' => 15, 'tinymce' => array('wpautop' => false) ),                       
            ),                       
            array(
@@ -660,7 +660,69 @@ if (class_exists('CSF')) {
               'type'  => 'wp_editor',
               'title' => 'After 1 week  party Body - unused',
               'settings' => array(   'textarea_rows' => 15, 'tinymce' => array('wpautop' => false) ),                       
-           )                         
+            ),
+            array(
+                "type" => "notice",
+                "style" => "info",
+                "content" => "-----------------------------------",
+            ),
+            array(
+                'id' => 'sanas_guest_3days_before_subject',
+                'type' => 'text',
+                'title' => '3 days before the event',
+            ),
+            array(
+                'id' => 'sanas_guest_3days_before_body',
+                'type' => 'wp_editor',
+                'wpautop' => false,
+                'title' => '3 days before the event',
+            ),
+            array(
+                'id' => 'sanas_guest_1days_before_subject',
+                'type' => 'text',
+                'title' => '1 day before the event',
+            ),
+            array(
+                'id' => 'sanas_guest_1days_before_body',
+                'type' => 'wp_editor',
+                'wpautop' => false,
+                'title' => '1 day before the event',
+            ),
+            array(
+                'id' => 'sanas_guest_everyweek_subject',
+                'type' => 'text',
+                'title' => 'every week until the event starts',
+            ),
+            array(
+                'id' => 'sanas_guest_everyweek_body',
+                'type' => 'wp_editor',
+                'wpautop' => false,
+                'title' => 'every week until the event starts',
+            ),
+            array(
+                'id' => 'sanas_guest_yes_subject',
+                'type' => 'text',
+                'title' => 'guest response yes',
+            ),
+            array(
+                'id' => 'sanas_guest_yes_body',
+                'type' => 'wp_editor',
+                'wpautop' => false,
+                'title' => 'guest response yes',
+            ),
+            array(
+                'id' => 'sanas_guest_update_subject',
+                'type' => 'text',
+                'title' => 'update guest info/count',
+            ),
+            array(
+                'id' => 'sanas_guest_update_body',
+                'type' => 'wp_editor',
+                'wpautop' => false,
+                'title' => 'update guest info/count',
+            ),
+            
+
     )));
 
     // Layout and Options Settings
