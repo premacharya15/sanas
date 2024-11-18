@@ -323,12 +323,12 @@ jQuery(document).ready(function ($) {
             },
             success: function (response) {
                 var messageBox = $('.guestlist_details_message');
-                if (response.success) {
+                if (!response.success) {
                     messageBox.html('<p style="color: green; text-align:center;">' + response.data.message + '</p>');
 
-                    //  setTimeout(function() {
-                    //     window.location.reload();
-                    // }, 1000); 
+                     setTimeout(function() {
+                        window.location.reload();
+                    }, 1000); 
 
                 } else {
                     messageBox.html('<p style="color: red;">' + response.data.message + '</p>');
