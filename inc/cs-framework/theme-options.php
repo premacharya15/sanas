@@ -630,12 +630,12 @@ if (class_exists('CSF')) {
            array(
               'id'    => 'sanas_guest_one_day_before_subject',
               'type'  => 'text',
-              'title' => '1 Day Before (Accepted) Subject - unused',
+              'title' => '1 Day Before (Accepted) Subject',
             ),                 
             array(
               'id'    => 'sanas_guest_one_day_before_body',
               'type'  => 'wp_editor',
-              'title' => '1 Day Before (Accepted) Body - unused',
+              'title' => '1 Day Before (Accepted) Body',
               'settings' => array(   'textarea_rows' => 15, 'tinymce' => array('wpautop' => false) ),                       
            ),                       
            array(
