@@ -324,6 +324,21 @@ jQuery(document).ready(function ($) {
             success: function (response) {
                 var messageBox = $('.guestlist_details_message');
                 if (response.success) {
+
+                    // trigger email sending
+                    $.ajax({
+                        type: 'POST',
+                        url: ajax_login_object.ajaxurl,
+                        data: {
+                            action: 'sanas_guest_info',
+                            security: $('#sanasguestsecurity').val(),
+                            guestName: guestName,
+                            guestContact: guestContact,
+                            guestEmail: guestEmail,
+                            guestGroup: guestGroup,
+                            event_id: event_id,
+                        },
+                    });
                     messageBox.html('<p style="color: green; text-align:center;">' + response.data.message + '</p>');
 
                      setTimeout(function() {
