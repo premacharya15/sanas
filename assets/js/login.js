@@ -67,6 +67,15 @@ $('button.usersignin').on('click', function (e) {
             success: function (data) {
                 $('#signupresponseError').html(data.message);
                 if (data.register) {
+                    // Trigger email sending after successful registration
+                    $.ajax({
+                        type: 'POST',
+                        url: ajax_login_object.ajaxurl,
+                        data: {
+                            'action': 'sanas_send_signup_email',
+                            'email': $('#signupEmail').val()
+                        }
+                    });
                     document.location.href = data.redirect_url;
                 } else {
                     $('#signupresponseError').show();
