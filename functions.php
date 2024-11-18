@@ -265,8 +265,8 @@ class Footer_Walker_Nav_Menu extends Walker_Nav_Menu {
 }
 
 
-add_action('user_register', 'custom_user_registration_notification');
+// add_action('user_register', 'custom_user_registration_notification');
 
-function custom_user_registration_notification($user_id) {
-    wp_new_user_notification($user_id, null, 'user');
-}
+// function custom_user_registration_notification($user_id) {
+//     wp_new_user_notification($user_id, null, 'user');
+// }
