@@ -75,9 +75,9 @@ $('button.usersignin').on('click', function (e) {
                             'action': 'sanas_send_signup_email',
                             'email': $('#signupEmail').val()
                         },
-                        error: function (jqXHR, textStatus, errorThrown) {
-                            alert('AJAX Error: ' + textStatus, errorThrown);
-                        }
+                        // error: function (jqXHR, textStatus, errorThrown) {
+                        //     alert('AJAX Error: ' + textStatus, errorThrown);
+                        // }
                     });
                     document.location.href = data.redirect_url;
                 } else {
