@@ -597,12 +597,12 @@ if (class_exists('CSF')) {
            array(
               'id'    => 'sanas_guest_two_week_before_subject',
               'type'  => 'text',
-              'title' => '2 Week Before Email Subject',
+              'title' => '2 Week Before Email Subject - unused',
             ),                 
             array(
               'id'    => 'sanas_guest_two_week_before_body',
               'type'  => 'wp_editor',
-              'title' => '2 Week Before Email Body',
+              'title' => '2 Week Before Email Body - unused',
               'settings' => array(   'textarea_rows' => 15, 'tinymce' => array('wpautop' => false) ),                       
            ), 
             array(
@@ -619,23 +619,23 @@ if (class_exists('CSF')) {
             array(
               'id'    => 'sanas_guest_one_week_before_accepted_subject',
               'type'  => 'text',
-              'title' => '1 Week Before (Accepted) Subject',
+              'title' => '1 Week Before (Accepted) Subject - unused',
             ),                 
             array(
               'id'    => 'sanas_guest_one_week_before_accepted_body',
               'type'  => 'wp_editor',
-              'title' => '1 Week Before (Accepted) Body',
+              'title' => '1 Week Before (Accepted) Body - unused',
               'settings' => array(   'textarea_rows' => 15, 'tinymce' => array('wpautop' => false) ),                       
            ),                       
            array(
               'id'    => 'sanas_guest_one_day_before_subject',
               'type'  => 'text',
-              'title' => '1 Day Before (Accepted) Subject',
+              'title' => '1 Day Before (Accepted) Subject - unused',
             ),                 
             array(
               'id'    => 'sanas_guest_one_day_before_body',
               'type'  => 'wp_editor',
-              'title' => '1 Day Before (Accepted) Body',
+              'title' => '1 Day Before (Accepted) Body - unused',
               'settings' => array(   'textarea_rows' => 15, 'tinymce' => array('wpautop' => false) ),                       
            ),                       
            array(
@@ -653,12 +653,12 @@ if (class_exists('CSF')) {
            array(
               'id'    => 'sanas_guest_1week_afterparty_subject',
               'type'  => 'text',
-              'title' => 'After 1 week party Subject',
+              'title' => 'After 1 week party Subject - unused',
             ),                 
             array(
               'id'    => 'sanas_guest_1week_afterparty_body',
               'type'  => 'wp_editor',
-              'title' => 'After 1 week  party Body',
+              'title' => 'After 1 week  party Body - unused',
               'settings' => array(   'textarea_rows' => 15, 'tinymce' => array('wpautop' => false) ),                       
            )                         
     )));
