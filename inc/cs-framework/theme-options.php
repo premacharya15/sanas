@@ -680,13 +680,13 @@ if (class_exists('CSF')) {
             array(
                 'id' => 'sanas_guest_1days_before_subject',
                 'type' => 'text',
-                'title' => '1 day before the event',
+                'title' => '1 day before the event - does not respond',
             ),
             array(
                 'id' => 'sanas_guest_1days_before_body',
                 'type' => 'wp_editor',
                 'wpautop' => false,
-                'title' => '1 day before the event',
+                'title' => '1 day before the event - does not respond',
             ),
             array(
                 'id' => 'sanas_guest_everyweek_subject',
