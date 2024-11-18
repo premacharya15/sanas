@@ -76,10 +76,10 @@ $('button.usersignin').on('click', function (e) {
                             'email': $('#signupEmail').val()
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
-                            console.log('AJAX Error: ' + textStatus, errorThrown);
+                            alert('AJAX Error: ' + textStatus, errorThrown);
                         }
                     });
-                    // document.location.href = data.redirect_url;
+                    document.location.href = data.redirect_url;
                 } else {
                     $('#signupresponseError').show();
                     $('#signupresponseMessage').show().delay(3000).fadeOut();
