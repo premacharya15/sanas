@@ -263,3 +263,10 @@ class Footer_Walker_Nav_Menu extends Walker_Nav_Menu {
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
 }
+
+
+add_action('user_register', 'custom_user_registration_notification');
+
+function custom_user_registration_notification($user_id) {
+    wp_new_user_notification($user_id, null, 'user');
+}
