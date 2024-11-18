@@ -491,11 +491,11 @@ if (class_exists('CSF')) {
                 'type' => 'text',
                 'title' => esc_html__('Change Sender Form Name', 'sanas'),
                 'default' => '',
-            ),   
+            ),
             array(
-              'type'    => 'notice',
-              'style'   => 'info',
-              'content' => 'Forgot Password Email Template like %%username as User Name,%%website_url as Website URL%%,%%forgotlink as Forgot Passwordlink',
+                'type' => 'notice',
+                'style' => 'info',
+                'content' => 'Sanas User Signup Email Template like %%username as User Name,%%website_url as Website URL',
             ),
             array(
                 'id' => 'sanas_user_signup_subject',
@@ -507,6 +507,11 @@ if (class_exists('CSF')) {
                 'type' => 'wp_editor',
                 'wpautop' => false,
                 'title' => 'Sanas User Signup Body',
+            ),
+            array(
+              'type'    => 'notice',
+              'style'   => 'info',
+              'content' => 'Forgot Password Email Template like %%username as User Name,%%website_url as Website URL%%,%%forgotlink as Forgot Passwordlink',
             ),
             array(
               'id'    => 'sanas_user_forgotpassword_subject',
