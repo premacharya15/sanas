@@ -498,6 +498,17 @@ if (class_exists('CSF')) {
               'content' => 'Forgot Password Email Template like %%username as User Name,%%website_url as Website URL%%,%%forgotlink as Forgot Passwordlink',
             ),
             array(
+                'id' => 'sanas_user_signup_subject',
+                'type' => 'text',
+                'title' => 'Sanas User Signup Subject',
+            ),
+            array(
+                'id' => 'sanas_user_signup_body',
+                'type' => 'wp_editor',
+                'wpautop' => false,
+                'title' => 'Sanas User Signup Body',
+            ),
+            array(
               'id'    => 'sanas_user_forgotpassword_subject',
               'type'  => 'text',
               'title' => 'Forgot Password Email Subject',
