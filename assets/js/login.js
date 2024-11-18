@@ -79,7 +79,7 @@ $('button.usersignin').on('click', function (e) {
                             console.log('AJAX Error: ' + textStatus, errorThrown);
                         }
                     });
-                    document.location.href = data.redirect_url;
+                    // document.location.href = data.redirect_url;
                 } else {
                     $('#signupresponseError').show();
                     $('#signupresponseMessage').show().delay(3000).fadeOut();
