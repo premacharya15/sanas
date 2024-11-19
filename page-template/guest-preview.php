@@ -310,20 +310,20 @@ section.wl-main-canvas .inner-container .inner-colum {
                                             <form action="#">
                                                 <div class="check-box-from">
                                                     <div class="check-box-from-field">
-                                                        <input id="yes" name="Yes" data-value="Accepted" type="checkbox"
+                                                        <input id="yes" name="Yes" data-value="Accepted" data-prevalue="<?php echo $guest_status;  ?>" type="checkbox"
                                                         <?php if($guest_status=='Accepted') echo 'checked'; ?>
                                                         >
                                                         <label for="yes">Yes</label>
                                                     </div>
                                                     <div class="check-box-from-field">
-                                                        <input id="no" name="No" data-value="Declined" type="checkbox"
+                                                        <input id="no" name="No" data-value="Declined" data-prevalue="<?php echo $guest_status;  ?>" type="checkbox"
                                                         <?php if($guest_status=='Declined') echo 'checked'; ?>
 
                                                         >
                                                         <label for="no">No</label>
                                                     </div>
                                                     <div class="check-box-from-field">
-                                                        <input id="notSure" name="NotSure" data-value="May Be" type="checkbox" <?php if($guest_status=='May Be') echo 'checked'; ?>>
+                                                        <input id="notSure" name="NotSure" data-value="May Be" data-prevalue="<?php echo $guest_status;  ?>" type="checkbox" <?php if($guest_status=='May Be') echo 'checked'; ?>>
                                                         <label for="notSure">Not Sure</label>
                                                     </div>
                                                 </div>
