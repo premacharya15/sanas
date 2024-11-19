@@ -958,7 +958,15 @@ jQuery(document).ready(function($) {
             success: function (data) {
 
                 //send mail to guest
-                sanas_guest_invitation_response_mail();
+                jQuery.ajax({
+                    type: 'POST',
+                    url: ajax_login_object.ajaxurl,
+                    data: {
+                        'action': 'sanas_guest_invitation_response_mail',
+                        'guestid':guestid,
+                        'security': $('#sanasguestpreviewsecurity').val(),
+                    },
+                });
 
                 show_alert_message('Invitations', 'Thanks for provide your response!');
 
