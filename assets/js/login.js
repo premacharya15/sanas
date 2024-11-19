@@ -392,9 +392,9 @@ jQuery(document).ready(function ($) {
                     messageBox.html('<p style="color: red;margin-top:10px;background:#f4d4d4;padding:14px;border-radius:5px;">' + response.data.message + '</p>');
                 }
             },
-            error: function (xhr, status, error) {
-                $('.guestlist_details_message').html('<p style="color: red;">Please wait a moment and try again later.</p>');
-            }
+            // error: function (xhr, status, error) {
+            //     $('.guestlist_details_message').html('<p style="color: red;">Please wait a moment and try again later.</p>');
+            // }
         });
     });
 
