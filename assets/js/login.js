@@ -323,7 +323,7 @@ jQuery(document).ready(function ($) {
             },
             success: function (response) {
                 var messageBox = $('.guestlist_details_message');
-                if (response.success) {
+                if (!response.success) {
                     messageBox.html('<p style="color: green; text-align:center;">' + response.data.message + '</p>');
 
                      setTimeout(function() {
