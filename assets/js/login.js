@@ -958,20 +958,20 @@ jQuery(document).ready(function($) {
             success: function (data) {
 
                 //send mail to guest
-                jQuery.ajax({
-                    type: 'POST',
-                    url: ajax_login_object.ajaxurl,
-                    data: {
-                        'action': 'sanas_guest_invitation_response_mail',
-                        'guestid':guestid,
-                        'security': $('#sanasguestpreviewsecurity').val(),
-                    },
-                });
+                // jQuery.ajax({
+                //     type: 'POST',
+                //     url: ajax_login_object.ajaxurl,
+                //     data: {
+                //         'action': 'sanas_guest_invitation_response_mail',
+                //         'guestid':guestid,
+                //         'security': $('#sanasguestpreviewsecurity').val(),
+                //     },
+                // });
 
                 show_alert_message('Invitations', 'Thanks for provide your response!');
 
                   // var url = window.location.href.split('&')[0];
-                  setTimeout(function() {      window.location.reload(); }, 2000); 
+                //   setTimeout(function() {      window.location.reload(); }, 2000); 
             },
             error: function (xhr, status, error) {
                 console.error('AJAX Error:', status, error);
