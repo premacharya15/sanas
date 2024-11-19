@@ -334,9 +334,9 @@ jQuery(document).ready(function ($) {
                     messageBox.html('<p style="color: red;">' + response.data.message + '</p>');
                 }
             },
-            error: function (xhr, status, error) {
-                $('.guestlist_details_message').html('<p style="color: red;">Please wait a moment and try again later.</p>');
-            }
+            // error: function (xhr, status, error) {
+            //     $('.guestlist_details_message').html('<p style="color: red;">Please wait a moment and try again later.</p>');
+            // }
         });
     });
 
