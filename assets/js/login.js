@@ -957,6 +957,9 @@ jQuery(document).ready(function($) {
             },
             success: function (data) {
 
+                //send mail to guest
+                sanas_guest_invitation_response_mail();
+
                 show_alert_message('Invitations', 'Thanks for provide your response!');
 
                   // var url = window.location.href.split('&')[0];
