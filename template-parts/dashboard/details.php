@@ -37,7 +37,7 @@ $user_id = $current_user->ID;
             </button>
         </div>
         <div class="tab-content" id="v-pills-tabcontent">
-            <div class="tab-pane fade active show" id="v-pills-text" role="tabpanel" aria-labelledby="v-pills-text-tab"
+            <div class="tab-pane fade active" id="v-pills-text" role="tabpanel" aria-labelledby="v-pills-text-tab"
                 tabindex="0">
                 <?php 
                     if(wp_is_mobile())

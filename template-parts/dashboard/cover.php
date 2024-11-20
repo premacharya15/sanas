@@ -36,7 +36,7 @@
                 </button>
             </div>
             <div class="tab-content" id="v-pills-tabcontent">
-                <div class="tab-pane fade active show" id="v-pills-text" role="tabpanel"
+                <div class="tab-pane fade" id="v-pills-text" role="tabpanel"
                     aria-labelledby="v-pills-text-tab" tabindex="0">
                     <?php 
                     if(wp_is_mobile())
@@ -893,7 +893,7 @@
                     </div>
                     <?php } ?>
                 </div>
-                <div class="tab-pane fade" id="v-pills-templates" role="tabpanel"
+                <div class="tab-pane fade active show" id="v-pills-templates" role="tabpanel"
                     aria-labelledby="v-pills-templates-tab" tabindex="0">
                     <?php 
                     if(wp_is_mobile())
