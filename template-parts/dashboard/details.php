@@ -554,7 +554,7 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                 </div>
                 <?php } ?>
             </div>
-            <div class="tab-pane fade" id="v-pills-background" role="tabpanel" aria-labelledby="v-pills-background-tab"
+            <div class="tab-pane fade active show" id="v-pills-background" role="tabpanel" aria-labelledby="v-pills-background-tab"
                 tabindex="0">
                 <?php 
                     if(wp_is_mobile())
