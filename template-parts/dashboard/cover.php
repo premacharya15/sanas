@@ -1,6 +1,12 @@
     <div class="wl-left-slide-bar">
         <div class="d-flex inner-colum">
             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link" id="v-pills-templates-tab" data-bs-toggle="pill"
+                    data-bs-target="#v-pills-templates" type="button" role="tab" aria-controls="v-pills-templates"
+                    aria-selected="false">
+                    <i class="icon-Template"></i>
+                    <span>Templates</span>
+                </button>
                 <button class="nav-link active" id="v-pills-text-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-text" type="button" role="tab" aria-controls="v-pills-text"
                     aria-selected="true">
@@ -12,12 +18,6 @@
                     aria-selected="false">
                     <i class="icon-Background"></i>
                     <span>Background</span>
-                </button>
-                <button class="nav-link" id="v-pills-templates-tab" data-bs-toggle="pill"
-                    data-bs-target="#v-pills-templates" type="button" role="tab" aria-controls="v-pills-templates"
-                    aria-selected="false">
-                    <i class="icon-Template"></i>
-                    <span>Templates</span>
                 </button>
                 <button class="nav-link" id="v-pills-elements-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-elements" type="button" role="tab" aria-controls="v-pills-elements"
