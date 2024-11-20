@@ -913,11 +913,13 @@ jQuery(document).ready(function($) {
          var checkedValues = [];
 
          var status = '';
+         var prestatus = '';
         // Loop through each checkbox and check if it is checked
         $('.check-box-from input[type="checkbox"]').each(function() {
             if ($(this).is(':checked')) {
                 checkedValues.push($(this).attr('data-value'));
-                status = $(this).attr('data-value') ;
+                status = $(this).attr('data-value');
+                prestatus = $(this).attr('data-prevalue');
             }
         });
 
@@ -927,14 +929,11 @@ jQuery(document).ready(function($) {
             return; // Exit the function if no checkbox is checked
         }
 
-
-
         var mesg=$('#mesg').val();
         var kidsguest=$('#kids-guest').text();
         var adultguest=$('#adult-guest').text();
         var guestid=$(this).attr('data-guestid');
         var eventid=$(this).attr('data-eventid');
-
 
         if(adultguest=='0')
         {
@@ -953,7 +952,7 @@ jQuery(document).ready(function($) {
                 'kidsguest':kidsguest,
                 'adultguest':adultguest,
                 'mesg':mesg,
-                'prestatus':$(this).attr('data-prevalue'),
+                'prestatus': prestatus,
                 'security': $('#sanasguestpreviewsecurity').val(),
             },
             success: function (data) {
