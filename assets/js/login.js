@@ -933,6 +933,8 @@ jQuery(document).ready(function($) {
         var mesg=$('#mesg').val();
         var kidsguest=$('#kids-guest').text();
         var adultguest=$('#adult-guest').text();
+        var prekidsguest=$('#kids-guest').attr('data-prevalue');
+        var preadultguest=$('#adult-guest').attr('data-prevalue');
         var guestid=$(this).attr('data-guestid');
         var eventid=$(this).attr('data-eventid');
 
@@ -954,6 +956,8 @@ jQuery(document).ready(function($) {
                 'adultguest':adultguest,
                 'mesg':mesg,
                 'prestatus': prestatus,
+                'prekidsguest': prekidsguest,
+                'preadultguest': preadultguest,
                 'security': $('#sanasguestpreviewsecurity').val(),
             },
             success: function (data) {

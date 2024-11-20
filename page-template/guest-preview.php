@@ -339,7 +339,7 @@ section.wl-main-canvas .inner-container .inner-colum {
                                                 <h4>Adults</h4>
                                                 <div class="count">
                                                     <span class="mines"><i class="fa-solid fa-minus"></i></span>
-                                                    <span class="total-guest" id="adult-guest"><?php echo $guest_adult; ?></span>
+                                                    <span class="total-guest" id="adult-guest" data-prevalue="<?php echo $guest_adult; ?>"><?php echo $guest_adult; ?></span>
                                                     <span class="plues"><i class="fa-solid fa-plus"></i></span>
                                                 </div>
                                             </div>
@@ -347,7 +347,7 @@ section.wl-main-canvas .inner-container .inner-colum {
                                                 <h4>Kids</h4>
                                                 <div class="count">
                                                     <span  class="mines"><i class="fa-solid fa-minus"></i></span>
-                                                    <span class="total-guest" id="kids-guest"><?php echo $guest_kids; ?></span>
+                                                    <span class="total-guest" id="kids-guest" data-prevalue="<?php echo $guest_kids; ?>"><?php echo $guest_kids; ?></span>
                                                     <span  class="plues"><i class="fa-solid fa-plus"></i></span>
                                                 </div>
                                             </div>
