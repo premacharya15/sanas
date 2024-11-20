@@ -6563,3 +6563,11 @@ span.select2-search.select2-search--dropdown {
     color: #ffffff;
     border-color: var(--snas-bg-primary);
 }
+.edit-text.rsvp-msg.host-contact-no input[type="number"]::-webkit-inner-spin-button,
+.edit-text.rsvp-msg.host-contact-no input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.edit-text.rsvp-msg.host-contact-no input[type="number"] {
+    -moz-appearance: textfield;
+}
