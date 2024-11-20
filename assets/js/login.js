@@ -953,6 +953,7 @@ jQuery(document).ready(function($) {
                 'kidsguest':kidsguest,
                 'adultguest':adultguest,
                 'mesg':mesg,
+                'prestatus':$(this).attr('data-prevalue'),
                 'security': $('#sanasguestpreviewsecurity').val(),
             },
             success: function (data) {
