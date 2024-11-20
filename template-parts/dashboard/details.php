@@ -331,7 +331,7 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                             ?>
                             <div class="form-group-fluid">
                                 <label for="Text">Text</label>
-                                <textarea name="" rows="3" placeholder="Enter Your Text" id="myTextarea" disabled></textarea>
+                                <textarea name="" rows="3" placeholder="Enter Your Text" style="cursor: not-allowed;" id="myTextarea" disabled></textarea>
                             </div>
                             <div class="form-group-outer">
                                 <div class="form-group">

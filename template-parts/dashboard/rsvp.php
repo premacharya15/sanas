@@ -286,7 +286,7 @@ $user_id = $current_user->ID;
                             <form action="#">
                                 <div class="form-group-fluid" style="display: none;">
                                     <label for="selectedtext">Text</label>
-                                    <textarea rows="3" placeholder="Enter Your Text" id="myTextarea" style="cursor: not-allowed;"></textarea>
+                                    <textarea rows="3" placeholder="Enter Your Text" id="myTextarea"></textarea>
                                 </div>
                                 <div class="form-group-outer">
                                     <div class="form-group">
