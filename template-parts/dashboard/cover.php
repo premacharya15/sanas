@@ -327,7 +327,7 @@
                                 <div class="form-group-fluid">
                                     <label for="selectedtext">Text</label>
                                     <textarea name="text" rows="3" placeholder="Enter Your Text"
-                                        id="myTextarea"></textarea>
+                                        id="myTextarea" disabled></textarea>
                                 </div>
                                 <div class="form-group-outer">
                                     <div class="form-group">
