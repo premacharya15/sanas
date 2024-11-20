@@ -7,7 +7,7 @@
                     <i class="icon-Template"></i>
                     <span>Templates</span>
                 </button>
-                <button class="nav-link active" id="v-pills-text-tab" data-bs-toggle="pill"
+                <button class="nav-link" id="v-pills-text-tab" data-bs-toggle="pill"
                     data-bs-target="#v-pills-text" type="button" role="tab" aria-controls="v-pills-text"
                     aria-selected="true">
                     <i class="icon-Text"></i>
