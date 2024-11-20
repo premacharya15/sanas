@@ -923,8 +923,6 @@ jQuery(document).ready(function($) {
             }
         });
 
-        console.log('Status:', status);
-        console.log('Previous Status:', prestatus);
 
         // Check if at least one checkbox is checked
         if (checkedValues.length === 0) {
