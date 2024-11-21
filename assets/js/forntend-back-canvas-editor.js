@@ -10,8 +10,8 @@ var customControls = {
         cornerSize: 24
     }),
     duplicateControl: new fabric.Control({
-        x: 0,
-        y: 0,
+        x: -0.5,
+        y: 0.5,
         offsetY: 16,
         cursorStyle: 'pointer',
         mouseUpHandler: duplicateObject,
@@ -580,8 +580,8 @@ var customControls = {
         cornerSize: 24
     }),
     duplicateControl: new fabric.Control({
-        x: 0,
-        y: 0,
+        x: -0.5,
+        y: 0.5,
         offsetY: 16,
         cursorStyle: 'pointer',
         mouseUpHandler: duplicateObject,
