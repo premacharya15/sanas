@@ -814,7 +814,7 @@ if (empty($rsvpimage)) {
                                 <div class="rsvp-from-group">
                                     <input type="text" id="state" name="state"  class="edit-text rsvp-msg address-line2 host-name"  placeholder="State" required="">
                                 </div>
-                                <div class="rsvp-from-group">
+                                <div class="rsvp-from-groups">
                                     <input type="text" id="country" name="country"  class="edit-text rsvp-msg address-line2 host-name"  placeholder="country" required="">
                                 </div>
                                 <div class="rsvp-from-group">
