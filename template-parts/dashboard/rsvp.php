@@ -803,19 +803,19 @@ if (empty($rsvpimage)) {
                                 </div>
                                 <div class="rsvp-from-group mt-3 mb-2">
                                     <h4>Address</h4>
-                                    <input type="text" id="line1" name="line1"  class="edit-text rsvp-msg address-line1"  placeholder="Address LIne 1" required="">
+                                    <input type="text" id="line1" name="line1"  class="edit-text rsvp-msg address-line1 host-name"  placeholder="Address LIne 1" required="">
                                 </div>
                                 <div class="rsvp-from-group mb-2">
-                                    <input type="text" id="line2" name="line2"  class="edit-text rsvp-msg address-line2"  placeholder="Address LIne 2" required="">
+                                    <input type="text" id="line2" name="line2"  class="edit-text rsvp-msg address-line2 host-name"  placeholder="Address LIne 2" required="">
                                 </div>
                                 <div class="rsvp-from-group mb-2">
-                                    <input type="text" id="city" name="city"  class="edit-text rsvp-msg address-line2"  placeholder="City" required="">
+                                    <input type="text" id="city" name="city"  class="edit-text rsvp-msg address-line2 host-name"  placeholder="City" required="">
                                 </div>
                                 <div class="rsvp-from-group mb-2">
-                                    <input type="text" id="state" name="state"  class="edit-text rsvp-msg address-line2"  placeholder="State" required="">
+                                    <input type="text" id="state" name="state"  class="edit-text rsvp-msg address-line2 host-name"  placeholder="State" required="">
                                 </div>
                                 <div class="rsvp-from-group mb-2">
-                                    <input type="text" id="country" name="country"  class="edit-text rsvp-msg address-line2"  placeholder="country" required="">
+                                    <input type="text" id="country" name="country"  class="edit-text rsvp-msg address-line2 host-name"  placeholder="country" required="">
                                 </div>
                                 <div class="rsvp-from-group">
                                     <textarea class="edit-text rsvp-msg host-message" style="<?php echo $guest_message_css; ?>" id="guestMessage" name="guestMessage"
