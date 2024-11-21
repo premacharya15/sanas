@@ -789,30 +789,42 @@ if (empty($rsvpimage)) {
                     <?php } ?>
                             <div class="row">
                             <div class="rsvp-from-group">
-                                    <input type="text edit-text rsvp-msg event-title" id="eventtitle" class="edit-text rsvp-msg event-title" name="eventtitle"
-                                        placeholder="Enter Your Title*" style="<?php echo $event_title_css; ?>" value="<?php echo esc_html($eventtitle) ?>" required="">
+                                <input type="text edit-text rsvp-msg event-title" id="eventtitle" class="edit-text rsvp-msg event-title" name="eventtitle" placeholder="Event Title*" style="<?php echo $event_title_css; ?>" value="<?php echo esc_html($eventtitle) ?>" required="">
                                 </div>
                                 <div class="rsvp-from-group">
                                     <input type="date" id="eventdate" class="edit-text rsvp-msg event-date" name="eventdate"  style="<?php echo $event_date_css; ?>" value="<?php echo esc_html($eventdate); ?>" required="">
                                 </div>
                                 <div class="rsvp-from-group">
                                     <h4 class="mb-0">Hosted By</h4>
-                                    <input type="text" id="guestName" name="guestName" value="<?php echo esc_html($guestName) ?>" style="<?php echo $guest_name_css; ?>"  class="edit-text rsvp-msg host-name"  placeholder="Enter Host Name*" required="">
+                                    <input type="text" id="guestName" name="guestName" value="<?php echo esc_html($guestName) ?>" style="<?php echo $guest_name_css; ?>"  class="edit-text rsvp-msg host-name"  placeholder="Event Host Name*" required="">
                                 </div>
-                                
-                                
                                 <div class="rsvp-from-group">
                                     <input type="number" id="guestContact" style="<?php echo $guest_contact_css; ?>" value="<?php echo esc_html($guestContact); ?>" class="edit-text rsvp-msg host-contact-no" name="guestContact"  placeholder="Enter Host Contact No.*" required="">
                                 </div>
                                 <div class="rsvp-from-group">
+                                    <h4 class="mb-0">Address</h4>
+                                    <input type="text" id="line1" name="line1"  class="edit-text rsvp-msg address-line1"  placeholder="Address LIne 1" required="">
+                                </div>
+                                <div class="rsvp-from-group">
+                                    <input type="text" id="line2" name="line2"  class="edit-text rsvp-msg address-line2"  placeholder="Address LIne 2" required="">
+                                </div>
+                                <div class="rsvp-from-group">
+                                    <input type="text" id="city" name="city"  class="edit-text rsvp-msg address-line2"  placeholder="City" required="">
+                                </div>
+                                <div class="rsvp-from-group">
+                                    <input type="text" id="state" name="state"  class="edit-text rsvp-msg address-line2"  placeholder="State" required="">
+                                </div>
+                                <div class="rsvp-from-group">
+                                    <input type="text" id="country" name="country"  class="edit-text rsvp-msg address-line2"  placeholder="country" required="">
+                                </div>
+                                <div class="rsvp-from-group">
                                     <textarea class="edit-text rsvp-msg host-message" style="<?php echo $guest_message_css; ?>" id="guestMessage" name="guestMessage"
                                         placeholder="Special Instructions, Dress Code, etc..."><?php echo esc_html($guestMessage); ?></textarea>
-                                </div>
-                                   <div class="rsvp-from-group">
-                                    <!-- <input type="text" id="itinerary" style="<?php echo $itinerary_css; ?>" value="<?php echo $itinerary; ?>" class="edit-text rsvp-msg itinerary" name="itinerary"  placeholder="Enter itinerary"> -->
-                                    <h4 class=" mb-0">Itinerary</h4>
                                     </div>
-                            </div>
+                                    <div class="rsvp-from-group">
+                                        <h4 class=" mb-0">Itinerary</h4>
+                                    </div>
+                                </div>
                             <?php wp_nonce_field('ajax-sanas-rsvp-nonce', 'sanasrsvpsecurity');?>
                         </form>
                         <div class="row">
