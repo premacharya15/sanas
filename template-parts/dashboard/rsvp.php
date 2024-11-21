@@ -801,20 +801,20 @@ if (empty($rsvpimage)) {
                                 <div class="rsvp-from-group">
                                     <input type="number" id="guestContact" style="<?php echo $guest_contact_css; ?>" value="<?php echo esc_html($guestContact); ?>" class="edit-text rsvp-msg host-contact-no" name="guestContact"  placeholder="Enter Host Contact No.*" required="">
                                 </div>
-                                <div class="rsvp-from-group">
-                                    <h4 class="mb-0">Address</h4>
+                                <div class="rsvp-from-group mt-3 mb-2">
+                                    <h4>Address</h4>
                                     <input type="text" id="line1" name="line1"  class="edit-text rsvp-msg address-line1"  placeholder="Address LIne 1" required="">
                                 </div>
-                                <div class="rsvp-from-group">
+                                <div class="rsvp-from-group mb-2">
                                     <input type="text" id="line2" name="line2"  class="edit-text rsvp-msg address-line2"  placeholder="Address LIne 2" required="">
                                 </div>
-                                <div class="rsvp-from-group">
+                                <div class="rsvp-from-group mb-2">
                                     <input type="text" id="city" name="city"  class="edit-text rsvp-msg address-line2"  placeholder="City" required="">
                                 </div>
-                                <div class="rsvp-from-group">
+                                <div class="rsvp-from-group mb-2">
                                     <input type="text" id="state" name="state"  class="edit-text rsvp-msg address-line2"  placeholder="State" required="">
                                 </div>
-                                <div class="rsvp-from-group">
+                                <div class="rsvp-from-group mb-2">
                                     <input type="text" id="country" name="country"  class="edit-text rsvp-msg address-line2"  placeholder="country" required="">
                                 </div>
                                 <div class="rsvp-from-group">
