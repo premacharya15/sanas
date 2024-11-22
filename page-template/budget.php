@@ -123,6 +123,7 @@ get_sidebar('dashboard');
                             OBJECT_K
                         );
                         $i = 0;
+                        $j = 0;
                         // Sort categories by created_at date in descending order
                         usort($categories, function($a, $b) {
                             return strtotime($b['created_at']) - strtotime($a['created_at']);
@@ -137,8 +138,11 @@ get_sidebar('dashboard');
                             }
                             $total_expense = isset($expense_totals[$category_id]) ? $expense_totals[$category_id]->total_expense : 0;
                             if($total_expense != 0 && $total_expense != 0.00){
-                              $js_categories[] = esc_js($category['category_name']);
-                              $js_expenses[] = (float) $total_expense;
+                              if($j < 10){
+                                $js_categories[] = esc_js($category['category_name']);
+                                $js_expenses[] = (float) $total_expense;
+                              }
+                              $j++;
                             }
                             ?>
                             
@@ -154,7 +158,6 @@ get_sidebar('dashboard');
                                     </div>
                                 </a>
                             </li>
-                            
                             <?php
                         } ?>
                       <?php endif; ?>
@@ -227,8 +230,6 @@ get_sidebar('dashboard');
                   <?php
                   if(isset($_GET['category'])){
                     $first_category = intval($_GET['category']);
-                  }else{
-                    $first_category = $first_category;  
                   }
                   $first_category_expenses = get_expense_list($first_category);
                   $total_estimated = 0;
@@ -421,7 +422,7 @@ get_sidebar('dashboard');
                       <input type="number" step="0.01" name="paid" class="form-control">
                     </div>
                   </div>
-                  <input type="hidden" name="category_id" id="category-id-input" value="<?php echo isset($first_category) ? esc_attr($first_category) : ''; ?>">
+                  <input type="hidden" name="category_id_add" id="category-id-input" value="<?php echo isset($first_category) ? esc_attr($first_category) : ''; ?>">
                   <div class="form-group col-lg-12 col-sm-12">
                     <div class="links-box">
                       <button type="submit" class="dashbord-btn">Save</button>
