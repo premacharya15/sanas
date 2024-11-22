@@ -882,4 +882,46 @@ function sanas_decrypt_data($invite) {
 
     return $decrypted_data;
 }
+
+//wishlist category
+function sanas_card_category_wishlist($class_name = '') {
+  global $wpdb;
+  $current_user_id = get_current_user_id();
+
+  $wishlist_items = $wpdb->get_results(
+      $wpdb->prepare(
+          "SELECT card_id FROM {$wpdb->prefix}sanas_wishlist WHERE user_id = %d",
+          $current_user_id
+      )
+  );
+
+  if (!empty($wishlist_items)) {
+      $card_ids = wp_list_pluck($wishlist_items, 'card_id');
+      $categories = [];
+
+      foreach ($card_ids as $card_id) {
+          $terms = get_the_terms($card_id, 'sanas-card-category');
+          if ($terms && !is_wp_error($terms)) {
+              foreach ($terms as $term) {
+                  if (!isset($categories[$term->term_id])) {
+                      $categories[$term->term_id] = [
+                          'name' => $term->name,
+                          'count' => 0
+                      ];
+                  }
+                  $categories[$term->term_id]['count']++;
+              }
+          }
+      }
+
+      if (!empty($categories)) {
+          echo '<div class="d-flex mt-3 mb-2 justify-content-end"><a href="#" class="small text-black category-link text-decoration-underline">Show All</a></div>';
+          echo '<ul class="m-0 ' . esc_attr($class_name) . '">';
+          foreach ($categories as $category_id => $category) {
+              echo '<li><a href="#" class="category-link d-flex justify-content-between" data-category="'.$category_id.'"><span class="name">' . esc_html($category['name']) . '</span> <span class="counter">' . esc_html($category['count']) . '</span></a></li>';
+          }
+          echo '</ul>';
+      }
+  }
+}
 ?>
