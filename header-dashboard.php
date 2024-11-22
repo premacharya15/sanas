@@ -15,9 +15,15 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playwrite+US+Trad:wght@100..400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playwrite+US+Modern:wght@100..400&family=Playwrite+US+Trad:wght@100..400&display=swap');
+    </style>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php if ( is_page_template( 'page-template/myevent.php' ) ) { body_class('inner-page');}else{body_class();} ?>>>
 <div class="wl-invitation-header user">
     <div class="container-fluid">
         <div class="inner-container">
@@ -56,7 +62,7 @@
             $dashQuery = 'user-dashboard';
             $dashpage = '/?dashboard=';
             $dashboardURL = esc_url($currentURL . $perma . $dashQuery . $dashpage.'main' );
-            $myevent = esc_url($currentURL . $perma . $dashQuery . $dashpage.'myevent' );
+            $myevent = esc_url($currentURL . $perma . $dashQuery . $dashpage.'my-events' );
 
 
             $first_char = substr($current_user->user_firstname, 0, 1);
@@ -69,9 +75,9 @@
 
                         <ul class="dropdown-menu p-0" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 42.4px, 0px);">
                             <li><?php echo $current_user->user_login; ?></li>
-                            <li><a href="#"> Dashboard</a></li>
-                            <li><a href="<?php echo site_url().'/myevent'; ?>"> My Events</a></li>
-                            <li><a href="<?php echo wp_logout_url( home_url() );?>">Logout</a></li>
+                            <li><a href="<?php echo site_url().'/my-dashboard/'; ?>"> Dashboard</a></li>
+                            <li><a href="<?php echo site_url().'/my-events/'; ?>"> My Events</a></li>
+                            <li class="logout-btn"><a href="javascript:void(0);" data-logout-url="<?php echo wp_logout_url(home_url()); ?>">Logout</a></li>
                         </ul>
                         <?php } ?>
                     </div>
