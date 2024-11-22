@@ -5,11 +5,11 @@
 if ( !function_exists( 'sanas_google_fonts_url' ) ) {
     function sanas_google_fonts_url() {
         $sanas_fonts_url = '';
-        $sanas_fonts     = array('Mulish','sans-serif','Radio Canada');
+        $sanas_fonts     = array('Mulish','sans-serif','Faculty Glyphic');
         $sanas_subsets   = 'latin,latin-ext';
         /* translators: If there are characters in your language that are not supported by Inter, translate this to 'off'. Do not translate into your own language. */
         if ('off' !== _x('on', 'Manrope font: on or off', 'sanas')) {
-            $sanas_fonts[] = 'Manrope:100,200,300,400,500,600,700,800,900|Radio Canada:400,500,600,700';
+            $sanas_fonts[] = 'Manrope:100,200,300,400,500,600,700,800,900|Faculty Glyphic:400,500,600,700';
         }
         if ($sanas_fonts) {
             $sanas_fonts_url = add_query_arg(array(
@@ -33,28 +33,30 @@ function sanas_css()
   wp_enqueue_style('slick', get_template_directory_uri() . '/assets/slick/slick.css', array(), SANAS_VERSION);
 
 
-  wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/style.css', array(), SANAS_VERSION);
-  wp_enqueue_style('theme-responsive-style', get_template_directory_uri() . '/assets/css/responsive.css', array(), SANAS_VERSION);
-
-
   if(is_page_template('page-template/user-dashboard.php'))
   {
      if ( $_GET['dashboard'] == 'preview') {
-
            wp_enqueue_style('preview-style', get_template_directory_uri() . '/assets/css/preview.css', array(), SANAS_VERSION);     
-  
      }
-
     if ( $_GET['dashboard'] == 'guestlist') {
-        wp_enqueue_style('datatables', get_template_directory_uri() . '/assets/css/datatables.min.css', array(), SANAS_VERSION);   
-      
+        wp_enqueue_style('datatables', get_template_directory_uri() . '/assets/css/datatables.min.css', array(), SANAS_VERSION);
     }        
-  }    
-
+  }
+  if(is_page_template('page-template/todolist.php') ||
+  is_page_template('page-template/my-vendors.php') ||
+  is_page_template('page-template/vendor-list.php') ||
+  is_page_template('page-template/mycontact.php') ||
+  is_page_template('page-template/my-dashboard.php') ||
+  is_page_template('page-template/budget.php')){
+    wp_enqueue_style('datatables', get_template_directory_uri() . '/assets/css/datatables.min.css', array(), SANAS_VERSION);
+  }
   if(is_page_template('page-template/guest-preview.php'))
   {
     wp_enqueue_style('preview-style', get_template_directory_uri() . '/assets/css/preview.css', array(), SANAS_VERSION);     
   }
+  wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/style.css', array(), SANAS_VERSION);
+  wp_enqueue_style('theme-secondary-style', get_template_directory_uri() . '/assets/css/style2.css', array(), SANAS_VERSION);
+  wp_enqueue_style('theme-responsive-style', get_template_directory_uri() . '/assets/css/responsive.css', array(), SANAS_VERSION);
 
 }
 add_action('wp_enqueue_scripts', 'sanas_css');	
@@ -88,11 +90,18 @@ function sanas_js()
             'nonce' => wp_create_nonce('video-upload-nonce') // Adjust nonce name as per your implementation
         ));
       }
-    
     else if($_GET['dashboard']== 'guestlist') {
-          wp_enqueue_script('datatables', get_template_directory_uri() . '/assets/js/datatables.min.js', array('jquery'), SANAS_VERSION,true);      
-    }   
+          wp_enqueue_script('datatables', get_template_directory_uri() . '/assets/js/datatables.min.js', array('jquery'), SANAS_VERSION,true);
+    }
   }  
+  if(is_page_template('page-template/todolist.php') ||
+  is_page_template('page-template/my-vendors.php') ||
+  is_page_template('page-template/vendor-list.php') ||
+  is_page_template('page-template/mycontact.php') ||
+  is_page_template('page-template/my-dashboard.php') ||
+  is_page_template('page-template/budget.php')){
+    wp_enqueue_script('datatables', get_template_directory_uri() . '/assets/js/datatables.min.js', array('jquery'), SANAS_VERSION,true);
+  }
   wp_enqueue_script('sanas-custom', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), SANAS_VERSION,true);
   wp_enqueue_script('sanas-customs-2', get_template_directory_uri() . '/assets/js/custom-2.js', array('jquery'), SANAS_VERSION,true);
 
