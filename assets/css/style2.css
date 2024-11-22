@@ -4118,7 +4118,7 @@ table.dataTable thead>tr>td.dt-orderable-asc span.dt-column-order,
 table.dataTable thead>tr>td.dt-orderable-desc span.dt-column-order,
 table.dataTable thead>tr>td.dt-ordering-asc span.dt-column-order,
 table.dataTable thead>tr>td.dt-ordering-desc span.dt-column-order {
-    left: 1px;
+    left: 4px;
     top: 6px;
 }
 
@@ -5134,7 +5134,7 @@ tr.todo-check-title>th:nth-child(6) {
 }
 
 .hero-section {
-    padding: 220px 0 90px;
+    padding: 130px 0 50px;
 }
 .hero-section{
     background-size: cover;
