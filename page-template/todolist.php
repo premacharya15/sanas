@@ -76,7 +76,7 @@ foreach ($todo_items as $item) {
 $total_count = $completed_count + $pending_count;
 $percent_count = ($completed_count > 0) ? ($completed_count * 100) / $total_count : 0;
 ?>
-<p>You have completed <span class="tast-count-com"><?php echo $completed_count; ?></span> out of <span class="tast-count-total"><?php echo $total_count; ?></span> tasks</p>
+<p class="max-45">You have completed <span class="tast-count-com"><?php echo $completed_count; ?></span> out of <span class="tast-count-total"><?php echo $total_count; ?></span> tasks</p>
 <div class="progress">
     <div id="todo_progressbar" class="progress-bar" role="progressbar" data-percent="<?php echo $percent_count; ?>" data-count="<?php echo $total_count; ?>" style="width: <?php echo $percent_count; ?>%"></div>
 </div>
@@ -87,7 +87,7 @@ $percent_count = ($completed_count > 0) ? ($completed_count * 100) / $total_coun
         <div class="tasks-col to-do-list-table d-table-block col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div class="inner-box3">
                 <div class="table-box upcoming-tasks">
-                    <div class="vendor-table table-responsive m-0">
+                    <div class="vendor-table table-responsive todo-table-list m-0">
                         <?php
                         $vendor_items = get_vendor_list_items();
                         ?>
@@ -153,15 +153,15 @@ $percent_count = ($completed_count > 0) ? ($completed_count * 100) / $total_coun
                                                 <?php echo DateTime::createFromFormat('Y-m-d', $item['date'])->format('jS M Y'); ?>
                                             </td>
                                             <td>
-                                                <select class="status-dropdown mediumfont mobile-dropdown" data-id="<?php echo $item['id']; ?>">
-                                                    <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?>>⏳</option>
-                                                    <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?>>🔄</option>
-                                                    <option value="Completed" <?php echo selected($item['status'], 'Completed', false); ?>>✅</option>
+                                                <select class="status-dropdown mediumfont mobile-dropdown" data-id="<?php echo $item['id']; ?>" data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">
+                                                <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?> data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">⏳</option>
+                                        <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?> data-bs-toggle="tooltip" data-bs-original-title="In Progress">🔄</option>
+                                        <option value="Completed" <?php echo selected($item['status'], 'Completed', false); ?> data-bs-toggle="tooltip" data-bs-original-title="Completed">✅</option>
                                                 </select>
-                                                <select class="status-dropdown smallfont desktop-dropdown" data-id="<?php echo $item['id']; ?>">
-                                                    <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?>>Yet To Start</option>
-                                                    <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?>>In Progress</option>
-                                                    <option value="Completed" <?php echo selected($item['status'], 'Completed', false); ?>>Completed</option>
+                                                <select class="status-dropdown smallfont desktop-dropdown" data-id="<?php echo $item['id']; ?>" data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">
+                                                <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?> data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">Yet To Start</option>
+                                        <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?> data-bs-toggle="tooltip" data-bs-original-title="In Progress">In Progress</option>
+                                        <option value="Completed" <?php echo selected($item['status'], 'Completed', false); ?> data-bs-toggle="tooltip" data-bs-original-title="In Progress">Completed</option>
                                                 </select>
                                             </td>
                                             <td class="actions">
@@ -184,10 +184,6 @@ $percent_count = ($completed_count > 0) ? ($completed_count * 100) / $total_coun
                             <div class="todo-search-add-link justify-content-center">
                                 <a href="?show_all=true" class="dashbord-btn">Show All</a>
                             </div>
-                        <?php //else: ?>
-                            <!-- <div class="todo-search-add-link justify-content-end">
-                                <a href="?show_all=false" class="add-link">Hide Extra</a>
-                            </div> -->
                         <?php endif; ?>
 
                         <?php endif; ?>
