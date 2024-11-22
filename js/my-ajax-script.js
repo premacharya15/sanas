@@ -41,8 +41,8 @@ function getQueryParam(param) {
 if (window.location.pathname === '/budget/') {
     jQuery(document).ready(function($) {
         jQuery('.add-expense-trigger').on('click', function() {
-            var category = getQueryParam('category');
-            jQuery('#category-id-input').val(category); 
+            // var category = getQueryParam('category');
+            // jQuery('#category-id-input').val(category);
         })
         var table = jQuery('.budget-table-sort').DataTable({
             "ordering": false,
@@ -722,46 +722,42 @@ if (window.location.pathname === '/vendors-list/') {
             });
         });
 
-        jQuery(document).ready(function($) {
             // Move to My Vendors List button click
-            jQuery('.add-link-btn').on('click', function(e) {
-                e.preventDefault();
+            jQuery('.move-vendor-btn').on('click', function(e) {
+                // e.preventDefault();
                 var selectedVendors = jQuery('.checkSingle:checked').map(function() {
                     return jQuery(this).closest('tr').find('.edit').data('id');
                 }).get();
-
                 if (selectedVendors.length === 0) {
-                    // alert('Please select at least one vendor to move to the "My Vendors" page.');
-                    // Set the modal title and message
                     jQuery('#exampleModalLabel').text('Error');
                     jQuery('#modal-body-text').text('Please select at least one vendor to move to the "My Vendors" page.');
-                    // Show the modal
                     jQuery('#modal_html_alert').modal('show');
-
-                    // Handle the click event on the "Yes" button in the modal
                     jQuery('#render-modal-yes-button').on('click', function() {
                         jQuery('#modal_html_alert').modal('hide');
                     });
                 } else {
+                    function show_alert_message4(title, message) {
+                        jQuery('#exampleConfirmModalLabel').text(title);
+                        jQuery('#confirm_modal-body-text').text(message);
+                        jQuery('#confirm_modal_html_alert').modal('show');
+                        jQuery('#confirm_modal_html_alert').modal('show');
+                    }
+                    show_alert_message4('Move Vendors', 'Are you sure you want to move these vendors to the "My Vendors" page?');
+                    // When "Yes" button is clicked
+                    jQuery('#modal-yes-button').on('click', function () {
+                        proceedWithVendorChange(selectedVendors);
+                        jQuery('#confirm_modal_html_alert').modal('hide');
+                    });
+
+                    function proceedWithVendorChange(selectedVendors) {
+                console.log(selectedVendors);
                     $.ajax({
                         type: 'POST',
                         url: ajax_object.ajax_url,
-                        data: {
-                            action: 'move_vendors_to_my_list',
-                            vendor_ids: selectedVendors
-                        },
+                        data: { action: 'move_vendors_to_my_list', vendor_ids: selectedVendors },
                         success: function(response) {
                             if (response.success) {
-                                // Set the modal title and message
-                                jQuery('#exampleModalLabel').text('Success');
-                                jQuery('#modal-body-text').text(response.data);
-                                // Show the modal
-                                jQuery('#modal_html_alert').modal('show');
-
-                                // Handle the click event on the "Yes" button in the modal
-                                jQuery('#render-modal-yes-button').on('click', function() {
                                     location.reload();
-                                });
                             } else {
                                 // Set the modal title and message
                                 jQuery('#exampleModalLabel').text('Error');
@@ -777,7 +773,15 @@ if (window.location.pathname === '/vendors-list/') {
                         }
                     });
                 }
-            });
+                    // var currentMoveVendorId;
+                    // // Click handler for the delete icon
+                    // jQuery(".move-vendor-btn").on("click", function (e) {
+                    //     // e.preventDefault();
+                    //     currentMoveVendorId = jQuery(this).data("id");
+                    //     console.log(currentMoveVendorId);
+                    //     // show_alert_message4('Move Vendors', 'Are you sure you want to move these vendors to the "My Vendors" page?');
+                    // });
+                }
         });
 
         // Function to show the modal
@@ -806,7 +810,7 @@ if (window.location.pathname === '/vendors-list/') {
                     if (response.success) {
                         location.reload();
                     } else {
-                        alert(response.data);  
+                        // alert(response.data);  
                     }
                 }
             });
