@@ -20,7 +20,7 @@ get_sidebar('dashboard');
     <div class="container-fluid wl-dashboard-content">
       <div class="row">
         <div class="link text-right">
-          <a href="#" class="add-link-btn">Move to My Vendors</a>
+          <a href="#" class="add-link-btn move-vendor-btn" data-id="<?php echo esc_attr($vendor['id']); ?>">Move to My Vendors</a>
         </div>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-between">
           <div class="page-header d-flex flex-column align-items-baseline gap-2 title">
@@ -42,73 +42,11 @@ get_sidebar('dashboard');
                 <div class="inner-box3">
                   <div class="table-box upcoming-tasks">
                     <div class="vendor-table table-responsive m-0">
-                      <!-- <table class="table vendor-list-table">
-                        <thead>
-                        <tr class="todo-check-title">
-                          <th><input type="checkbox" name="allCheck" id="all-select-chechbox"></th>
-                          <th>Category</th>
-                          <th>Name</th>
-                          <th>Email</th>
-                          <th>Ph#</th>
-                          <th>Notes</th>
-                          <th class="text-single-line">Social Madia Profile</th>
-                          <th>Pricing</th>
-                          <th class="actions">Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
                         <?php
                         $vendor_items = get_vendor_list_items();
-                        
-                        if (empty($vendor_items)) {
-                            global $wpdb;
-                            $current_user_id = get_current_user_id();
-                            
-                            // Insert sample data
-                            $wpdb->insert(
-                                $wpdb->prefix . 'vendor_list',
-                                array(
-                                    'user_id' => $current_user_id,
-                                    'category' => 'DJ/VJ',
-                                    'name' => 'John Smith',
-                                    'email' => 'john@example.com', 
-                                    'phone' => '123-456-7890',
-                                    'notes' => 'Professional DJ with 10 years experience',
-                                    'social_media_profile' => '@johnsmith',
-                                    'pricing' => 500.00
-                                )
-                            );
-                            
-                            // Refresh vendor items after insert
-                            $vendor_items = get_vendor_list_items();
-                        }
-                        
-                        if ($vendor_items): ?>
-                            <?php foreach ($vendor_items as $vendor): ?>
-                                <tr>
-                                    <td><input type="checkbox" class="checkSingle"></td>
-                                    <td class="text-single-line" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($vendor['category']); ?>"><?php echo esc_html($vendor['category']); ?></td>
-                                    <td class="text-single-line" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($vendor['name']); ?>"><?php echo esc_html($vendor['name']); ?></td>
-                                    <td class="text-single-line" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($vendor['email']); ?>"><?php echo esc_html($vendor['email']); ?></td>
-                                    <td class="text-single-line" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($vendor['phone']); ?>"><?php echo esc_html($vendor['phone']); ?></td>
-                                    <td class="text-single-line" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($vendor['notes']); ?>"><?php echo esc_html($vendor['notes']); ?></td>
-                                    <td class="text-single-line" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($vendor['social_media_profile']); ?>"><?php echo esc_html($vendor['social_media_profile']); ?></td>
-                                    <td>$<?php echo esc_html($vendor['pricing']); ?></td>
-                                    <td class="actions">
-                                      <div>
-                                        <a href="#" class="edit theme-btn" data-id="<?php echo esc_attr($vendor['id']); ?>" data-bs-toggle="modal" data-bs-target="#edit-todolist-popup">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </a>
-                                        <a href="#" class="delete theme-btn" data-id="<?php echo esc_attr($vendor['id']); ?>">
-                                            <i class="fa-regular fa-trash-can"></i>
-                                        </a>
-                                      </div>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                      </tbody>
-                      </table> -->
+                          global $wpdb;
+                          $current_user_id = get_current_user_id();
+                        ?>
                       <table class="vendor-list-table vendor-table-list" id="vendor-table">
                         <thead>
                             <tr>
@@ -126,31 +64,6 @@ get_sidebar('dashboard');
                         <tbody>
                             <?php
                         $vendor_items = get_vendor_list_items();
-
-                        if (empty($vendor_items)) {
-                            global $wpdb;
-                            $current_user_id = get_current_user_id();
-                            
-                            // Insert sample data
-                            $wpdb->insert(
-                                $wpdb->prefix . 'vendor_list',
-                                array(
-                                    'user_id' => $current_user_id,
-                                    'category' => 'DJ/VJ',
-                                    'name' => 'John Smith',
-                                    'email' => 'john@example.com', 
-                                    'phone' => '123-456-7890',
-                                    'notes' => 'Professional DJ with 10 years experience',
-                                    'social_media_profile' => '@johnsmith',
-                                    'pricing' => 500.00
-                                )
-                            );
-                            
-                            // Refresh vendor items after insert
-                            $vendor_items = get_vendor_list_items();
-                        }
-
-                        // Sort vendor items by created_at in descending order
                         usort($vendor_items, function($a, $b) {
                             return strtotime($b['created_at']) - strtotime($a['created_at']);
                         });
