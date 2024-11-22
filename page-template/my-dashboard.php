@@ -363,7 +363,7 @@ $totals = $wpdb->get_row(
             </div>
             </div>
             <div class="to-do-table-box table-box upcoming-tasks">
-              <div class="vendor-table table-responsive m-0">
+              <div class="vendor-table table-responsive todo-table-list m-0">
                   <?php
                   $vendor_items = get_vendor_list_items();
                   ?>
@@ -432,14 +432,14 @@ $totals = $wpdb->get_row(
                                       </td>
                                       <td>
                                       <select class="status-dropdown mediumfont mobile-dropdown" data-id="<?php echo $item['id']; ?>">
-                                        <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?>>⏳</option>
-                                        <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?>>🔄</option>
-                                        <option value="Completed" <?php echo selected($item['status'], 'Completed', false); ?>>✅</option>
+                                        <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?> data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">⏳</option>
+                                        <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?> data-bs-toggle="tooltip" data-bs-original-title="In Progress">🔄</option>
+                                        <option value="Completed" <?php echo selected($item['status'], 'Completed', false); ?> data-bs-toggle="tooltip" data-bs-original-title="Completed">✅</option>
                                     </select>
                                     <select class="status-dropdown smallfont desktop-dropdown" data-id="<?php echo $item['id']; ?>">
-                                        <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?>>Yet To Start</option>
-                                        <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?>>In Progress</option>
-                                        <option value="Completed" <?php echo selected($item['status'], 'Completed', false); ?>>Completed</option>
+                                        <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?> data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">Yet To Start</option>
+                                        <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?> data-bs-toggle="tooltip" data-bs-original-title="In Progress">In Progress</option>
+                                        <option value="Completed" <?php echo selected($item['status'], 'Completed', false); ?> data-bs-toggle="tooltip" data-bs-original-title="In Progress">Completed</option>
                                     </select>
                                       </td>
                                       <td class="actions">
