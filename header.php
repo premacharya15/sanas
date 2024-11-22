@@ -18,7 +18,7 @@
 
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class('inner-page'); ?>>
 <?php wp_body_open(); 
     do_action('sanas_header');
 ?>
