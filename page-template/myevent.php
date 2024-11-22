@@ -13,77 +13,14 @@
     * @package sanas
 */
 get_header();
+get_sidebar('dashboard');
 ?>
-  <div class="wl-left-sidebar sidebar-dark active">
-    <div class="menu-list">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" role="button">
-          <p class="nav-title d-xl-none d-lg-none m-0">Dashboard</p>
-          <i class=" fas fa-bars" aria-hidden="true"></i>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link" href="dashbord.html">
-                <i class="fa-solid fa-house"></i>
-                Dashboard
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="event.html">
-                <i class="fa-regular fa-clock"></i>
-                My Events</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="my-contact.html">
-                <i class="fa-regular fa-address-card"></i>
-                My Contacts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="wishlist.html">
-                <i class="fa-regular fa-heart"></i>
-                Wish List</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="budget.html">
-                <i class="fa-regular fa-calendar-days"></i>
-                Budgets</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="vendor.html">
-                <i class="fa-solid fa-handshake"></i>
-                Vendor
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="todo-list.html">
-                <i class="fa-solid fa-list"></i>
-                To Do List
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="my-profile.html">
-                <i class="fa-regular fa-user"></i>
-                My Profile
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="fa-solid fa-power-off"></i>
-                Logout</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </div>
   <div class="wl-dashboard-wrapper dashboard">
     <div class="container-fluid wl-dashboard-content">
       <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
           <div class="page-header">
-            <h4 class="pageheader-title">My Events</h4>
+            <h4 class="pageheader-title"><?php the_title(); ?></h4>
           </div>
         </div>
       </div>
@@ -108,7 +45,7 @@ get_header();
         } else {
             $perma = "/";
         }
-        $current_url = " http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        $current_url = " https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         // Parse the query string from the URL
         $query_string = parse_url($current_url, PHP_URL_QUERY);
         // Parse the query string into an associative array
@@ -233,7 +170,7 @@ get_header();
                   </div>
                   <div class="event-detaile-lower">
                     <p class="m-0"><?php echo $totalGuests;?> Guests</p>
-                    <a href="#" class="btn btn-outline">
+                    <a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $card_id; ?>&event_id=<?php echo $event_id; ?>" class="btn btn-outline">
                       Guest List</a>
                     <a href="<?php echo $stepURL; ?>" class="btn btn-secondary">
                       <i class="fa-solid fa-pen"></i>
@@ -250,6 +187,9 @@ get_header();
       </div>
       <?php
         }
+        if(is_array($get_event) && empty($get_event)){
+        echo '<p>You havent created any event yet</p>';
+      }
         ?>
     </div>
   </div>
