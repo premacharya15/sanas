@@ -40,6 +40,22 @@
     .event-card-item{
         column-gap: 80px;
     }
+    .todo-nots-text {
+        max-width: 100px;
+    }
+    .todo-reminder{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100px;
+    }
+    .todo-title{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 50px;
+    }
+    
 }
 
 @media only screen and (max-width:1400px){
@@ -78,17 +94,23 @@
     ul.main-menu-list>li {
         padding: 5px 15px 15px;
     }
+    .card-block .card .icon {
+        right: 10px;
+        top: 10px;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+    }
     .lower-content {
         padding: 10px;
     }
     section.blog-section .blog-box .blog-detaile>p {
         font-size: 14px;
     }
-   
 }
 @media only screen and (max-width:1370px){
     
-    ul.main-menu-list li a {
+    ul.main-menu-list li a,.main-menu-list>li>ul>li>a {
         font-size: 15px;
     }
  .hero-sec-divaider hr {
@@ -101,10 +123,6 @@
 }
 
 @media only screen and (max-width:1300px){
-    .card-block .card .icon{
-        right: 10px;
-    top: 10px;
-    }
     .event-box .event-detaile>h4 {
         margin-bottom: 12px;
     }
@@ -132,11 +150,10 @@
 
 @media only screen and (max-width:1199px){
     #vendor-table_wrapper table.dataTable thead>tr>th:nth-child(6), #vendor-table_wrapper table.dataTable tbody>tr>td:nth-child(6),
-    #vendor-table_wrapper table.dataTable thead>tr>th:nth-child(3), #vendor-table_wrapper table.dataTable tbody>tr>td:nth-child(3){
+    /* #vendor-table_wrapper table.dataTable thead>tr>th:nth-child(3), #vendor-table_wrapper table.dataTable tbody>tr>td:nth-child(3),  */
+    /* #vendor-table_wrapper table.dataTable colgroup>col:nth-child(3), */
+    #vendor-table_wrapper table.dataTable colgroup>col:nth-child(6){
         display: none;
-    }
-    #vendor-table_wrapper .table th {
-        width: 20%;
     }
     .card-img img {
         max-width: 140px;
@@ -271,7 +288,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
 }
 @media only screen and (max-width:1030px){
     .budget-man .inner, .budget-man-box .inner{
-        padding: 30px 20px 35px;
+        padding: 25px;
     }
     .wl-left-sidebar{
         top: 78px;
@@ -308,19 +325,13 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         max-width: 300px;
     }
     table.dataTable>tbody>tr>td input {
-        height: 14px;
-        width: 14px;
         vertical-align: middle;
-    }
-    span.dt-column-title input {
-        height: 14px;
-        width: 14px;
     }
     .table-box .table td{
         padding: 10px 0;
     }
     .guests-list .inner, .todo-list .inner, .vendor .inner{
-        padding: 32px 10px 40px;
+        padding: 32px 20px 40px;
     }
     .card-block .card .icon {
         right: 15px;
@@ -534,7 +545,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         margin-left: 10px;
     }
     .wl-left-slide-bar.active {
-        max-height: 200px;
+        max-height: 240px;
     }
     section.wl-main-canvas {
         margin: 150px 0px 100px 0;
@@ -649,8 +660,8 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     .wl-contact-form-section .form-box{
         padding-left: 0;
     }
-     .background-images-piker .canvas-upload-image {
-        min-width: 100px;
+    .todo-list .table tr td {
+        padding: 10px 10px;
     }
 }
 @media only screen and (max-width:800px){
@@ -660,6 +671,14 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
 }
 }
 @media only screen and (max-width:768px){
+    .budget-man-box .budget-col .graph-box,
+        .budget-man-box .budget-col .info {
+            width: 100%;
+            padding: 10px 20px;
+        }
+        .budget-cat-row{
+            flex-direction: column-reverse;
+        }
     .featured-box {
         border-radius: 8px;
     }
@@ -681,7 +700,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
     .contact table.dataTable>tbody>tr>td, #vendor-table_wrapper .table td{
         font-size: 10px;
         width: 20%;
-        padding: 10px 5px;
+        padding: 10px 10px;
     }
     .contact table.dataTable>thead>tr>th, #vendor-table_wrapper .table th{
         font-size: 12px;
@@ -798,8 +817,8 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
         align-items: center;
     }
     section.wl-main-canvas .card-canvas {
-        /* width: 320px;
-        height: 470px; */
+        width: 320px;
+        height: 470px;
         margin-bottom: 35px;
     }
     
@@ -877,9 +896,17 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
     section.tab-section ul#pills-tab {
         display: none;
     }
-    .video-inner-box {
-        padding: 20px 15px;
+
+    .expense-list-table td, .expense-list-table th{
+        max-width: 70px !important;
+        width: 70px !important;
     }
+
+    .expense-list-table td:first-child, .expense-list-table th:first-child{
+        max-width: 70px !important;
+        width: 70px !important;
+    }
+    
     .all-tamplate>.all-tamplate-btn {
         color: #344054;
         padding: 10px;
@@ -890,17 +917,9 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
         font-size: 16px;
         line-height: 21px;
     }
-    span.dt-column-title input {
-        height: 12px;
-        width: 12px;
-    }
     table.dataTable thead>tr>th:nth-child(1) {
         padding: 20px 5px !important;
         text-align: left;
-    }
-    table.dataTable>tbody>tr>td input {
-        height: 12px;
-        width: 12px;
     }
     .table-box table.dataTable>tbody>tr>td:nth-child(1) {
         padding: 20px 5px !important;
@@ -930,14 +949,27 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
     .delete-btn>.deletebtn{
         font-size: 14px;
     }
-    tr.todo-check-title th:nth-child(3), tr.todo-check-title th:nth-child(5) , .todo-list tr td:nth-child(3), .todo-list tr td:nth-child(5){
+    tr.todo-check-title th:nth-child(1), tr.todo-check-title th:nth-child(3), tr.todo-check-title th:nth-child(4),
+    .todo-list tr td:nth-child(1), .todo-list tr td:nth-child(3), .todo-list tr td:nth-child(4),
+    .todo-list-table colgroup col:nth-child(1), .todo-list-table colgroup col:nth-child(3), .todo-list-table colgroup col:nth-child(4){
         display: none;
+    }
+    .todo-list-table td:last-child, .todo-list-table th:last-child,
+    .todo-list-table td:nth-last-child(2), .todo-list-table th:nth-last-child(2){
+        max-width: 50px !important;
+        width: 50px !important;
     }
     .lower-box .table-box .table th:nth-child(4),.lower-box .table-box .table td:nth-child(4), .lower-box .table-box .table th:nth-child(5),.lower-box .table-box .table td:nth-child(5){
         display: none;
     }
     .lower-box .table-box .table tr th, .lower-box .table-box .table tr td{
         width: 20%;
+    }
+    .Privacy-Policy, .Terms-Use {
+        padding: 50px 0;
+    }
+    .todo-list .table tr td.actions a:last-child{
+        display: none;
     }
 }
 @media only screen and (max-width:700px){
@@ -982,9 +1014,6 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     .guests-list .inner{
         padding: 32px 10px 40px;
     }
-    .event-title, .host-name {
-        width: 100% !important;
-    }
   
 }
 @media only screen and (max-width:576px){
@@ -1006,7 +1035,8 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     
     .category-box .inner-box .lower-content h4 {
         margin-bottom: 0;
-        font-size: 12px;
+        font-size: 20px;
+        text-align: center;
     }
     .sec-title.style-two h2{
         font-size: 24px;
@@ -1042,14 +1072,98 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
 }
 
 @media only screen and (max-width:550px){
+    .budget-man .title-box .title {
+        max-width: 60%;
+    }
     .budget-man-box .inner{
         padding: 20px 5px 5px;
     }
-    #vendor-table_wrapper table.dataTable thead>tr>th:nth-child(4), #vendor-table_wrapper table.dataTable tbody>tr>td:nth-child(4), #vendor-table_wrapper table.dataTable thead>tr>th:nth-child(5), #vendor-table_wrapper table.dataTable tbody>tr>td:nth-child(5) {
+    .table-box .vendor-table td, .table-box .vendor-table th{
+        padding: 10px 10px;
+    }
+    .vendor-table a.edit, .vendor-table a.delete{
+        font-size: 16px;
+        width: 20px;
+    }
+    div.dt-container .dt-search input{
+        width: 120px;
+    }
+    .budget-man-box .add-link{
+        padding: 10px;
+    }
+    /* #vendor-table_wrapper table.dataTable thead>tr>th:nth-child(4), #vendor-table_wrapper table.dataTable tbody>tr>td:nth-child(4),
+    #vendor-table_wrapper table.dataTable thead>tr>th:nth-child(5), #vendor-table_wrapper table.dataTable tbody>tr>td:nth-child(5),
+    #vendor-table_wrapper table.dataTable thead>tr>th:nth-child(7), #vendor-table_wrapper table.dataTable tbody>tr>td:nth-child(7),
+    #vendor-table_wrapper table.dataTable colgroup>col:nth-child(4), #vendor-table_wrapper table.dataTable colgroup>col:nth-child(5),
+    #vendor-table_wrapper table.dataTable colgroup>col:nth-child(7), */
+    #budget-expense_wrapper table.dataTable thead>tr>th:nth-child(2), #budget-expense_wrapper table.dataTable tbody>tr>td:nth-child(2),
+    #budget-expense_wrapper table.dataTable thead>tr>th:nth-child(3), #budget-expense_wrapper table.dataTable tbody>tr>td:nth-child(3),
+    #budget-expense_wrapper table.dataTable colgroup>col:nth-child(2), #budget-expense_wrapper table.dataTable colgroup>col:nth-child(3){
         display: none;
+    }
+
+    .vendor-table-list thead>tr>th:nth-child(4), .vendor-table-list tbody>tr>td:nth-child(4),
+    .vendor-table-list thead>tr>th:nth-child(2), .vendor-table-list tbody>tr>td:nth-child(2),
+    .vendor-table-list thead>tr>th:nth-child(8), .vendor-table-list tbody>tr>td:nth-child(8),
+    .vendor-table-list thead>tr>th:nth-child(6), .vendor-table-list tbody>tr>td:nth-child(6),
+    .vendor-table-list thead>tr>th:nth-child(7), .vendor-table-list tbody>tr>td:nth-child(7),
+    .vendor-table-list colgroup>col:nth-child(4), .vendor-table-list colgroup>col:nth-child(2),
+    .vendor-table-list colgroup>col:nth-child(8), .vendor-table-list colgroup>col:nth-child(6),
+    .vendor-table-list colgroup>col:nth-child(7){
+        display: none;
+    }
+
+    .vendor-table-list td:first-child, .vendor-table-list th:first-child{
+        max-width: 30px !important;
+        width: 30px !important;
+        text-align: center !important;
+    }
+
+    .my-vendor-table thead>tr>th:nth-child(1), .my-vendor-table tbody>tr>td:nth-child(1),
+    .my-vendor-table thead>tr>th:nth-child(3), .my-vendor-table tbody>tr>td:nth-child(3),
+    .my-vendor-table thead>tr>th:nth-child(5), .my-vendor-table tbody>tr>td:nth-child(5),
+    .my-vendor-table thead>tr>th:nth-child(7), .my-vendor-table tbody>tr>td:nth-child(7),
+    .my-vendor-table colgroup>col:nth-child(1), .my-vendor-table colgroup>col:nth-child(3),
+    .my-vendor-table colgroup>col:nth-child(5), .my-vendor-table colgroup>col:nth-child(7){
+        display: none;
+    }
+
+    .todo-list-table td:last-child, .todo-list-table th:last-child {
+        max-width: 35px !important;
+        width: 35px !important;
+    }
+    .todo-list-table td:nth-last-child(2), .todo-list-table th:nth-last-child(2){
+        max-width: 35px !important;
+        width: 35px !important;
+    }
+    .vendor-table-list td:last-child, .vendor-table-list th:last-child{
+        max-width: 60px !important;
+        width: 60px !important;
+
+    }
+
+    .my-vendor-table td:last-child, .my-vendor-table th:last-child {
+        max-width: 48px !important;
+        width: 48px !important;
+    }
+
+    .todo-table-list table.dataTable thead>tr>th:nth-child(2) .dt-column-title {
+        margin: 0 0 0 10px;
+    }
+    .todo-table-list table.dataTable tbody>tr>td:nth-child(2) {
+        padding-left: 20px;
     }
     #vendor-table_wrapper .table th ,  #vendor-table_wrapper .table td{
         width: 33.33%;
+    }
+
+    .expense-list-table td, .expense-list-table th{
+        max-width: 50px !important;
+        width: 50px !important;
+    }
+    .expense-list-table td:first-child, .expense-list-table th:first-child{
+        max-width: 50px !important;
+        width: 50px !important;
     }
     .nav-pills {
         flex-direction: column;
@@ -1072,7 +1186,6 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     .specs-widget .card-body {
         padding: 20px 10px;
     }
-   
   
 }
 @media only screen and (max-width:500px){
@@ -1101,9 +1214,9 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         margin-top: 40px;
         padding: 30px 0 90px;
     }
-    .wed-cat-info .list ul li .count {
+    /* .wed-cat-info .list ul li .count {
         display: none;
-    }
+    } */
     .tag-cloud-link{
         padding: 9px 10px;
     }
@@ -1113,20 +1226,15 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     .pe-5{
         padding-right: 0 !important;
     }
-    .alert-box{
-    	font-size: 22px !important;
-    	line-height: 1.2 !important;	
-    }
-    input.rsvp-msg.host-name{
+    input.rsvp-msg.host-name, .event-title, .event-date {
         font-size: 24px;
         line-height: 30.48px;
         margin: 0px 0;
     }
-    .wl-previewbox .host-contact-no{
-    	margin-bottom: 5px;
-    }
-    .host-name{
-    	margin-bottom: 10px;
+    .host-contact-no {
+        padding: 0;
+        font-size: 16px;
+        padding-top: 16px;
     }
     .content.content-3 .wl-card-detaile textarea.host-message {
         font-size: 16px;
@@ -1137,21 +1245,21 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         padding: 12px;
         margin-top: 15px !important;
     }
-    .rsvp-from-group h4 {
-        padding-top: 20px;
+    .event-title, .event-date {
+        font-size: 16px;
+        line-height: 20px;
     }
+ 
     .vendors-item {
         padding: 0px;
     }
     .budget-man-box .cat-col ul li a{
         font-size: 14px;
     }
-    .todo-list .table tr th, .todo-list .table tr td {
-        font-size: 12px;
-    }
-    tr.todo-check-title th:nth-child(4), .todo-list tr td:nth-child(4) {
+  
+    /* tr.todo-check-title th:nth-child(6), .todo-list tr td:nth-child(6) {
         display: none;
-    }
+    } */
     .contact table.dataTable>tbody>tr>td,.contact table.dataTable>tbody>tr>td:first-child{
         width: 25%;
     }
@@ -1167,11 +1275,14 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     .event-box .event-detaile .event-send-btn {
         font-size: 12px;
     }
+    section.wl-main-canvas .content.content-3 .divider {
+        margin-bottom: 10px;
+    }
     .wed-cat-info .list ul{
         padding: 0;
     }
     section.wl-main-canvas {
-        margin: 120px 0px 220px 0;
+        margin: 120px 0px 75px 0;
     }
     .wl-bwnnar-img img{
         max-width: 200px;
@@ -1191,12 +1302,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         left: 50%;
         transform: translateX(-50%);
     }
-    .elementor .hero-sec-divaider hr {
-        margin: 20px 0px 0;
-    }
-    .panel-body {
-        margin-top: 10px;
-    }
+   
     .event-box>.image {
         max-width: 200px;
         min-width: 120px;
@@ -1221,15 +1327,10 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     .form-boxed .lower-social-box p:last-child {
         font-size: 12px;
     }
-    section.blog-section {
-        margin: 30px 0px 30px;
-    }
-    #modal_html_alert  .modal-dialog {
-        max-width: 340px;
-    }
+    
     .form-boxed {
         padding: 15px;
-        max-width: 320px;
+        max-width: 250px;
     }
     .tab-content>.tab-pane>.mobail-tab>.nav-tabs{
         column-gap: 0;
@@ -1239,20 +1340,8 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     }
     .section-title h1 {
         font-size: 30px;
-        line-height: 35px;
+        line-height: 50px;
         margin-bottom: 20px;
-    }
-    .blog-main-block {
-        padding: 20px 0;
-    }
-    .blog-detaile-section {
-        padding: 130px 0px 80px;
-    }
-    .blog-next-pre {
-        margin-bottom: 20px;
-    }
-    .blog-comments {
-        margin-bottom: 10px;
     }
     form.search-form input[type="search"]{
         font-size: 16px;
@@ -1260,10 +1349,10 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     footer {
         padding: 40px 15px;
     }
-    /* section.wl-main-canvas .card-canvas {
+    section.wl-main-canvas .card-canvas {
         width: 240px;
         height: 370px;
-    } */
+    }
     .canvas-content .card-hedding {
         margin-bottom: 5px;
     }
@@ -1283,10 +1372,6 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     }
     .wl-invitation-header .inner-container {
         margin: 0 ;
-    }
-    .hero-detaile {
-        /* height: 200px; */
-        padding: 20px 0;
     }
     .wl-invitation-header .inner-colum{
         column-gap: 5px;
@@ -1362,7 +1447,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         font-size: 14px;
     }
     
-    .form-boxed .form-content .hart-icon {
+    .form-boxed .form-content .heart-icon {
         max-width: 35px;
         margin: auto;
     }
@@ -1397,7 +1482,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         height: 30px;
         width: 30px;
     }
-    .btn-secondary , .event-detaile-lower .btn-outline{
+    .btn-secondary, .event-detaile-lower .btn-outline {
         font-size: 12px;
         line-height: 12px;
     }
@@ -1415,18 +1500,18 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     section.wl-main-canvas .content.content-3 .divider {
         margin-bottom: 5px;
     }
-    
     section.wl-main-canvas .content.content-3 {
         padding-top: 0;
-    }
-    .gift-registry-input input+input {
-        margin-top: 10px;
     }
     section.wl-main-canvas .content.content-3 .wl-card-detaile span {
         font-size: 16px;
     }
     p.edit-text.rsvp-msg {
         padding: 10px;
+    }
+    .wl-fuc-timing table tbody tr td {
+        font-size: 14px;
+        line-height: 18.2px;
     }
     section.wl-main-canvas .inner-colum, section.wl-main-canvas #add-space, section.wl-main-canvas .registry, section.wl-main-canvas .inner-container, section.wl-main-canvas .inner-colum{
         border-radius: 8px;
@@ -1441,7 +1526,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         padding: 35px 10px 25px;
     }
    .attend-info .title-box, .d-table-block .title-box{
-        font-size: 14px;
+        font-size: 20px;
     }
     .wl-dashboard-wrapper.dashboard {
         overflow-x: hidden;
@@ -1503,27 +1588,63 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         margin-top: 67px !important;
         margin-bottom: 20px !important;
     }
-    canvas#canvas {
-        width: 300px !important;
-        height: 440px !important;
+    /* 23-9-24 */
+    .rsvp-from-group h4 {
+        padding-top: 20px;
     }
-    canvas.upper-canvas {
-        width: 300px !important;
-        height: 440px !important;
+    .event-send-btn {
+        font-size: 16px;
+        padding: 5px 10px;
     }
-    section.wl-main-canvas .card-canvas {
-        width: 300px !important;
-        /*height: 440px !important;*/
+    .contact table.dataTable>thead>tr>th:nth-child(5), .contact table.dataTable>tbody>tr>td:nth-child(5){
+        display: none;
     }
-    section.wl-main-canvas .content.content-3 .wl-card-detaile video{
-    	height: 260px;
+    .contact table.dataTable>thead>tr>th:nth-child(2), .contact table.dataTable>tbody>tr>td:nth-child(2){
+        width: 60%;
+        font-size: 16px;
     }
-    section.wl-main-canvas.wl-main-preview .card-canvas {
-        width: 100% !important;
-        height: 100%  !important;
+    .contact table.dataTable>thead>tr>th:nth-child(1), .contact table.dataTable>tbody>tr>td:nth-child(1){
+        width: 15%;
     }
-    section.wl-main-canvas .inner-colum {
-        padding: 5px;
+    #vendor-table_wrapper .table td, #vendor-table_wrapper .table th, .contact table.dataTable>thead>tr>th:nth-child(6){
+        font-size: 16px;
+    }
+    section.blog-section .blog-box>.image {
+        height: 150px;
+    }
+    .pagination .btn-outline-primary {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+    section.wl-main-canvas.rsvp .inner-colum {
+        padding-top: 8px;
+    }
+    .rsvp-from-group small {
+        display: block;
+        margin-bottom: -10px;
+        margin-top: 15px;
+    }
+    section.wl-main-canvas .content.content-3 .wl-card-detaile video {
+        margin-bottom: 15px;
+    }
+    #vendor-table_wrapper .table td:nth-child(2) {
+        min-width: 105px;
+    }
+    #vendor-table_wrapper .table td:nth-child(8) {
+        min-width: 70px;
+    }
+    .table a.edit, .table a.delete {
+        display: contents;
+    }
+    .lower-box .table-box .table tr td, .lower-box .table-box .table tr th {
+        font-size: 15px;
+    }
+    .wl-dashboard-content .page-header {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+    input.edit-text.rsvp-msg.event-date {
+        min-width: 165px;
     }
 } 
 
@@ -1550,6 +1671,16 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     div.dt-container div.dt-layout-row {
         justify-content: center;
     }
+    div.dt-container div.dt-layout-row:first-child {
+        justify-content: space-between;
+    }
+    .hero-detaile-inner{
+        height: 200px;
+    }
+    .Terms-Use p, .Privacy-Policy p{
+    word-wrap: break-word;
+    }
+  
    
 }
 
@@ -1563,7 +1694,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     }
   
     div.dt-container .dt-search input {
-        width: 180px;
+        width: 120px;
     }
     .table-box table.dataTable>tbody>tr>td:nth-child(2){
         max-width: 90px;
