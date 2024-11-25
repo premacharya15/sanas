@@ -543,16 +543,16 @@ $user_id = $current_user->ID;
                                 </div>
                                 <div class="background-images-piker">
                                     <div class="inner-container">
-                                            <div class="bg-img-inner">
-                                                <div class="bg-img-iteam active">
-                                                <?php echo '<img id="img1" src="' . get_template_directory_uri() . '/assets/img/preview-bg.jpg" alt="">' ?>
-                                                </div>
-                                            </div>    
-                                            <div class="bg-img-inner">
-                                                <div class="bg-img-iteam">
-                                                <?php echo '<img id="img2" src="' . get_template_directory_uri() . '/assets/img/preview-bg2.jpg" alt="">' ?>
-                                                </div>
+                                        <div class="bg-img-inner">
+                                            <div class="bg-img-iteam active">
+                                            <?php echo '<img id="img1" src="' . get_template_directory_uri() . '/assets/img/preview-bg.jpg" alt="">' ?>
                                             </div>
+                                        </div>    
+                                        <div class="bg-img-inner">
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img2" src="' . get_template_directory_uri() . '/assets/img/preview-bg2.jpg" alt="">' ?>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </form>

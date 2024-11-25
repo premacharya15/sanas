@@ -1104,7 +1104,9 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
                         </div>
-                        <div class="elements">
+                        <?php  
+                            sanas_sticker_gallery_call('desk'); ?>
+                        <!-- <div class="elements">
                             <div class="elements-iteam ">
                                 <img src="<?php echo get_template_directory_uri();?>/assets/img/e-1.png" alt="stiker">
                             </div>
@@ -1177,7 +1179,7 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                             <div class="elements-iteam">
                                 <img src="<?php echo get_template_directory_uri();?>/assets/img/e-12.png" alt="stiker">
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <?php 
