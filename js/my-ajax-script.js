@@ -1195,17 +1195,17 @@ if (window.location.pathname === '/my-profile/') {
 
 jQuery(document).ready(function($) {
     // Toggle password visibility
-    jQuery('.eye-icon').on('click', function() {
+    jQuery('.eye-icon-slash').on('click', function() {
         var formGroup = jQuery(this).closest('.form-group');
         var passwordInput = formGroup.find('.password-control');
         var eyeIcon = jQuery(this).find('.fa-regular');
 
         if (passwordInput.attr('type') === 'password') {
             passwordInput.attr('type', 'text');
-            eyeIcon.removeClass('fa-eye').addClass('fa-eye-slash');
-        } else {
-            passwordInput.attr('type', 'password');
             eyeIcon.removeClass('fa-eye-slash').addClass('fa-eye');
+        } else {
+            passwordInput.attr('type', 'password'); 
+            eyeIcon.removeClass('fa-eye').addClass('fa-eye-slash');
             }
         });
     });
