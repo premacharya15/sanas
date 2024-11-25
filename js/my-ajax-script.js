@@ -1069,14 +1069,22 @@ jQuery(document).ready(function ($) {
     });
 
  // Change Password
-jQuery('form.change-password').on('submit', function (e) {
+ jQuery('form.change-password').on('submit', function (e) {
     e.preventDefault();
+
+    var newPassword = jQuery('form.change-password input[name="new_password"]').val();
+    var confirmPassword = jQuery('form.change-password input[name="confirm_password"]').val();
+
+    if (newPassword !== confirmPassword) {
+        alert('New password and confirmation do not match.');
+        return;
+    }
 
     var data = {
         action: 'change_password',
         current_password: jQuery('form.change-password input[name="current_password"]').val(),
-        new_password: jQuery('form.change-password input[name="new_password"]').val(),
-        security: ajax_object.change_password_nonce // Nonce for security
+        new_password: newPassword,
+        nonce: ajax_object.nonce // Ensure the nonce is included
     };
 
     $.post(ajax_object.ajax_url, data, function (response) {
@@ -1087,7 +1095,6 @@ jQuery('form.change-password').on('submit', function (e) {
         }
     });
 });
-
 
     // Delete Account
     jQuery('.delete-account-btn').on('click', function () {

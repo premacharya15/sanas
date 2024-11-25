@@ -1104,11 +1104,15 @@ add_action('wp_ajax_change_password', 'change_password_callback');
 function change_password_callback() {
     check_ajax_referer('profile_nonce', 'nonce');
     $user_id = get_current_user_id();
-    if ($user_id && isset($_POST['current_password'], $_POST['new_password'])) {
+    if ($user_id && isset($_POST['current_password'], $_POST['new_password'], $_POST['confirm_password'])) {
         $user = get_user_by('id', $user_id);
         if (wp_check_password($_POST['current_password'], $user->data->user_pass, $user_id)) {
-            wp_set_password($_POST['new_password'], $user_id);
-            wp_send_json_success('Password updated successfully!');
+            if ($_POST['new_password'] === $_POST['confirm_password']) {
+                wp_set_password($_POST['new_password'], $user_id);
+                wp_send_json_success('Password updated successfully!');
+            } else {
+                wp_send_json_error('New password and confirmation do not match.');
+            }
         } else {
             wp_send_json_error('Current password is incorrect');
         }
