@@ -1242,6 +1242,7 @@ if (window.location.pathname === '/my-profile/') {
     jQuery(document).ready(function($) {
         // Initially disable the delete account button
         jQuery('.delete-account-btn').prop('disabled', true);
+        jQuery('.delete-account-btn').addClass('delete-account-btn-color');
     
         // Toggle the delete account button based on checkbox state
         jQuery('#CheckDel').on('change', function() {
