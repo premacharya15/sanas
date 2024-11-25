@@ -1248,10 +1248,10 @@ if (window.location.pathname === '/my-profile/') {
         jQuery('#CheckDel').on('change', function() {
             if (jQuery(this).is(':checked')) {
                 jQuery('.delete-account-btn').prop('disabled', false);
-                jQuery('.delete-account-btn').addClass('delete-account-btn-color');
+                jQuery('.delete-account-btn').removeClass('delete-account-btn-color');
             } else {
                 jQuery('.delete-account-btn').prop('disabled', true);
-                jQuery('.delete-account-btn').removeClass('delete-account-btn-color');
+                jQuery('.delete-account-btn').addClass('delete-account-btn-color');
             }
         });
     });
