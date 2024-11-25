@@ -1076,7 +1076,7 @@ jQuery(document).ready(function ($) {
     var confirmPassword = jQuery('form.change-password input[name="confirm_password"]').val();
 
     if (newPassword !== confirmPassword) {
-        alert('New password and confirmation do not match.');
+        jQuery("#tab-11 .form-box").append('New password and confirmation do not match.');
         return;
     }
 
