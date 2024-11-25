@@ -3735,7 +3735,7 @@ section.blog-section .blog-box:hover .image img {
 ul.dropdown-menu>li:first-child {
     background-color: #744F30;
     color: var(--snas-text-white);
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 ul.dropdown-menu>li {
