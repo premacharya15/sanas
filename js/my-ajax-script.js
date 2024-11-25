@@ -1077,7 +1077,7 @@ jQuery(document).ready(function ($) {
     var confirmPassword = jQuery('form.change-password input[name="confirm_password"]').val();
 
     if (newPassword !== confirmPassword) {
-        jQuery("#tab-15 .form-box").append('New password and confirmation do not match.');
+        jQuery("#tab-15 .form-box").html('New password and confirmation do not match.');
         return;
     }
 
@@ -1091,9 +1091,9 @@ jQuery(document).ready(function ($) {
 
     $.post(ajax_object.ajax_url, data, function (response) {
         if (response.success) {
-            jQuery("#tab-15 .form-box").append('Password updated successfully!');
+            jQuery("#tab-15 .form-box").html('Password updated successfully!');
         } else {
-            jQuery("#tab-15 .form-box").append(response.data || 'An error occurred.');
+            jQuery("#tab-15 .form-box").html(response.data || 'An error occurred.');
         }
     });
 });
@@ -1188,6 +1188,23 @@ jQuery(document).ready(function($) {
                 alert('Failed to process the request.');
             }
         });
+    });
+});
+
+jQuery(document).ready(function($) {
+    // Toggle password visibility
+    jQuery('.eye-icon').on('click', function() {
+        var formGroup = jQuery(this).closest('.form-group');
+        var passwordInput = formGroup.find('.password-control');
+        var eyeIcon = jQuery(this).find('.fa-regular');
+
+        if (passwordInput.attr('type') === 'password') {
+            passwordInput.attr('type', 'text');
+            eyeIcon.removeClass('fa-eye').addClass('fa-eye-slash');
+        } else {
+            passwordInput.attr('type', 'password');
+            eyeIcon.removeClass('fa-eye-slash').addClass('fa-eye');
+        }
     });
 });
 
