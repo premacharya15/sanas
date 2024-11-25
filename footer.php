@@ -84,7 +84,7 @@ sanas_render_modal_html_alert();
           </div>
         </div>
         <div class="copy-right text-center">
-          <p> © 2024 <a href="#">Sana's Hub</a> All Rights Reserved <a href="#">Terms of Use</a> <a href="#">Privacy
+          <p> © 2024 <a href="https://www.sanashub.com/">Sana's Hub</a> All Rights Reserved <a href="<?php echo home_url(); ?>/terms-of-use">Terms of Use</a> <a href="<?php echo home_url(); ?>/privacy-policy">Privacy
               Policy</a> </p>
         </div>
       </div>
