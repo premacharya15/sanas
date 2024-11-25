@@ -3756,7 +3756,7 @@ section.blog-section .blog-box:hover .image img {
     padding: 10px;
 } */
 
-ul.dropdown-menu:hover {
+ul.dropdown-menu>li:hover {
     background-color: #744F30;
     color: var(--snas-text-white) !important;
     /* padding: 10px; */
