@@ -173,7 +173,7 @@ $youtube = get_user_meta($user_id, 'youtube', true);
                             <input type="password"  class=" password-control form-control"
                               name="current_password" placeholder="" autocomplete="off" required="">
                               <div class="eye-icon">
-                                <i class="fa-regular fa-eye"></i>
+                                <i class="fa-regular fa-eye-slash"></i>
                               </div>
                           </div>
                         </div>
@@ -183,7 +183,7 @@ $youtube = get_user_meta($user_id, 'youtube', true);
                             <input type="password"  class=" password-control form-control"
                               name="new_password" placeholder="" autocomplete="off" required="">
                               <div class="eye-icon">
-                                <i class="fa-regular fa-eye"></i>
+                                <i class="fa-regular fa-eye-slash"></i>
                               </div>
                           </div>
                         </div>
@@ -193,7 +193,7 @@ $youtube = get_user_meta($user_id, 'youtube', true);
                             <input type="password"  class="password-control form-control"
                               name="confirm_password" placeholder="" autocomplete="off" required="">
                               <div class="eye-icon">
-                                <i class="fa-regular fa-eye"></i>
+                                <i class="fa-regular fa-eye-slash"></i>
                               </div>
                           </div>
                         </div>

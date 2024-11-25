@@ -1191,6 +1191,8 @@ jQuery(document).ready(function($) {
     });
 });
 
+if (window.location.pathname === '/my-profile/') {
+
 jQuery(document).ready(function($) {
     // Toggle password visibility
     jQuery('.eye-icon').on('click', function() {
@@ -1204,7 +1206,8 @@ jQuery(document).ready(function($) {
         } else {
             passwordInput.attr('type', 'password');
             eyeIcon.removeClass('fa-eye-slash').addClass('fa-eye');
-        }
+            }
+        });
     });
-});
+}
 
