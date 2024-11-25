@@ -1241,17 +1241,7 @@ if (window.location.pathname === '/my-profile/') {
 
     jQuery(document).ready(function($) {
         // Initially disable the delete account button
-        jQuery('.delete-account-btn').on('click', function() {
-            if (!jQuery('#CheckDel').is(':checked')) {
-                // add temporary message
-                jQuery("#tab-16 .form-box").append('<p id="temporary-message">Please check the checkbox to delete your account.</p>');
-                setTimeout(function() {
-                    jQuery('#temporary-message').fadeOut(500, function() {
-                        jQuery(this).remove();
-                    });
-                }, 3000);
-            }
-        });
+        jQuery('.delete-account-btn').prop('disabled', true);
     
         // Toggle the delete account button based on checkbox state
         jQuery('#CheckDel').on('change', function() {
@@ -1260,7 +1250,19 @@ if (window.location.pathname === '/my-profile/') {
 
             } else {
                 jQuery('.delete-account-btn').prop('disabled', true);
+                jQuery("#tab-16 .form-box").append('<p id="temporary-message"></p>');
             }
         });
+    });
+
+    jQuery('.delete-account-btn').on('click', function() {
+        if (!jQuery('#CheckDel').is(':checked')) {
+            jQuery("#tab-16 .form-box").append('<p id="temporary-message">Please check the checkbox to delete your account.</p>');
+            setTimeout(function() {
+                jQuery('#temporary-message').fadeOut(500, function() {
+                    jQuery(this).remove();
+                });
+            }, 3000);
+        }
     });
 }
