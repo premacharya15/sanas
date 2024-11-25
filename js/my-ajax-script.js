@@ -1077,7 +1077,13 @@ jQuery(document).ready(function ($) {
     var confirmPassword = jQuery('form.change-password input[name="confirm_password"]').val();
 
     if (newPassword !== confirmPassword) {
-        jQuery("#tab-15 .form-box").html('New password and confirmation do not match.');
+        // add temporary message
+        jQuery("#tab-15 .form-box").append('<p id="temporary-message">New password and confirmation do not match.</p>');
+        setTimeout(function() {
+            jQuery('#temporary-message').fadeOut(500, function() {
+                jQuery(this).remove();
+            });
+        }, 3000);
         return;
     }
 
@@ -1091,9 +1097,20 @@ jQuery(document).ready(function ($) {
 
     $.post(ajax_object.ajax_url, data, function (response) {
         if (response.success) {
-            jQuery("#tab-15 .form-box").html('Password updated successfully!');
+            // add temporary message
+            jQuery("#tab-15 .form-box").append('<p id="temporary-message">Password updated successfully!</p>');
+            setTimeout(function() {
+                jQuery('#temporary-message').fadeOut(500, function() {
+                    jQuery(this).remove();
+                });
+            }, 3000);
         } else {
-            jQuery("#tab-15 .form-box").html(response.data || 'An error occurred.');
+            jQuery("#tab-15 .form-box").append('<p id="temporary-message">' + response.data + '</p>');
+            setTimeout(function() {
+                jQuery('#temporary-message').fadeOut(500, function() {
+                    jQuery(this).remove();
+                });
+            }, 3000);
         }
     });
 });
