@@ -1076,9 +1076,9 @@ jQuery(document).ready(function ($) {
     var confirmPassword = jQuery('form.change-password input[name="confirm_password"]').val();
 
     if (newPassword !== confirmPassword) {
-        // set timeout to remove the message after 3 seconds
+        jQuery("#tab-15 .form-box").append('New password and confirmation do not match.');
         setTimeout(function() {
-            jQuery("#tab-15 .form-box").append('New password and confirmation do not match.');
+            jQuery("#tab-15 .form-box").empty();
         }, 5000);
         return;
     }
@@ -1092,9 +1092,9 @@ jQuery(document).ready(function ($) {
 
     $.post(ajax_object.ajax_url, data, function (response) {
         if (response.success) {
-            // set timeout to remove the message after 3 seconds
+            jQuery("#tab-15 .form-box").append(response.success ? 'Password updated successfully!' : response.data);
             setTimeout(function() {
-                jQuery("#tab-15 .form-box").append(response.success ? 'Password updated successfully!' : response.data);
+                jQuery("#tab-15 .form-box").empty();
             }, 5000);
         } else {
             jQuery("#tab-15 .form-box").append(response.data || 'An error occurred.');
