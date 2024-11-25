@@ -216,7 +216,7 @@ $youtube = get_user_meta($user_id, 'youtube', true);
                         data listing also.</label>
                     </div>
                     <p>By clicking "Delete My Account", all your invitation cards, dashboard, contacts, and sign-in details will be permanently deleted, and you will no longer be able to log in to Sana's Invite.</p>
-                    <button type="submit" class="dashbord-btn delete-account-btn">Delete My Account</button>
+                    <button type="submit" class="dashbord-btn delete-account-btn" disabled>Delete My Account</button>
                   </div>
                 </div>
               </div>

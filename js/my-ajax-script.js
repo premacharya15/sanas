@@ -1119,10 +1119,22 @@ jQuery(document).ready(function ($) {
         if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
             $.post(ajax_object.ajax_url, { action: 'delete_account' }, function (response) {
                 if (response.success) {
-                    alert('Account deleted successfully!');
+                    // add temporary message
+                    jQuery("#tab-16 .form-box").append('<p id="temporary-message">Account deleted successfully!</p>');
+                    setTimeout(function() {
+                        jQuery('#temporary-message').fadeOut(500, function() {
+                            jQuery(this).remove();
+                        });
+                    }, 3000);
                     window.location.href = ajax_object.home_url; // Redirect to homepage or login
                 } else {
-                    alert('Error deleting account');
+                    // add temporary message
+                    jQuery("#tab-16 .form-box").append('<p id="temporary-message">Error deleting account</p>');
+                    setTimeout(function() {
+                        jQuery('#temporary-message').fadeOut(500, function() {
+                            jQuery(this).remove();
+                        });
+                    }, 3000);
                 }
             });
         }
@@ -1226,5 +1238,18 @@ jQuery(document).ready(function($) {
         }
         });
     });
-}
 
+    jQuery(document).ready(function($) {
+        // Initially disable the delete account button
+        jQuery('.delete-account-btn').prop('disabled', true);
+    
+        // Toggle the delete account button based on checkbox state
+        jQuery('#CheckDel').on('change', function() {
+            if (jQuery(this).is(':checked')) {
+                jQuery('.delete-account-btn').prop('disabled', false);
+            } else {
+                jQuery('.delete-account-btn').prop('disabled', true);
+            }
+        });
+    });
+}
