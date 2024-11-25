@@ -1254,15 +1254,4 @@ if (window.location.pathname === '/my-profile/') {
             }
         });
     });
-
-    jQuery('.delete-account-btn').on('click', function() {
-        if (!jQuery('#CheckDel').is(':checked')) {
-            jQuery("#tab-16 .form-box").append('<p id="temporary-message">Please check the checkbox to delete your account.</p>');
-            setTimeout(function() {
-                jQuery('#temporary-message').fadeOut(500, function() {
-                    jQuery(this).remove();
-                });
-            }, 3000);
-        }
-    });
 }
