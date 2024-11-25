@@ -155,7 +155,8 @@ ul.main-menu-list>li {
 }
 
 ul.main-menu-list>li>a {
-    font-size: 20px;
+    font-size: 14px;
+    font-family: var(--snas-body-font);
     color: #ffffff;
     transition: all 0.5s;
     text-transform: capitalize;

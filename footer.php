@@ -40,11 +40,11 @@ sanas_render_modal_html_alert();
           <div class="footer-column col-md-3 col-sm-4 col-lg-2 col-xl-2 footer-item">
             <h4>Planning</h4>
             <ul class="footer-link">
-              <li><a href="#"><i class="fa-solid fa-chevron-right"></i>Guest List</a></li>
-              <li><a href="#"><i class="fa-solid fa-chevron-right"></i>Budget</a></li>
-              <li><a href="#"><i class="fa-solid fa-chevron-right"></i>Vendor</a></li>
-              <li><a href="#"><i class="fa-solid fa-chevron-right"></i>To Do List</a></li>
-              <li><a href="#"><i class="fa-solid fa-chevron-right"></i>Wishlist</a></li>
+              <li><a href="<?php echo home_url(); ?>/my-contact"><i class="fa-solid fa-chevron-right"></i>Guest List</a></li>
+              <li><a href="<?php echo home_url(); ?>/budget"><i class="fa-solid fa-chevron-right"></i>Budget</a></li>
+              <li><a href="<?php echo home_url(); ?>/vendors-list"><i class="fa-solid fa-chevron-right"></i>Vendor</a></li>
+              <li><a href="<?php echo home_url(); ?>/to-do-list"><i class="fa-solid fa-chevron-right"></i>To Do List</a></li>
+              <li><a href="<?php echo home_url(); ?>/my-favorites"><i class="fa-solid fa-chevron-right"></i>Wishlist</a></li>
             </ul>
           </div>
           <div class="footer-column col-md-3 col-sm-3 col-lg-2 col-xl-2 footer-item">
