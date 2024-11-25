@@ -51,7 +51,7 @@ sanas_render_modal_html_alert();
             <h4>Support</h4>
             <ul class="footer-link">
               <li><a class="login-in" href="javascript:">Member Login</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="<?php echo home_url(); ?>/contact-us">Contact Us</a></li>
             </ul>
           </div>
           <div class="footer-column col-md-6 col-sm-9 col-lg-4 col-xl-4 footer-item">
