@@ -189,8 +189,8 @@ ul.main-menu-list>li>a:hover {
 
 .main-menu-list>li>ul>li,
 .main-menu-list>li>ul>li>ul>li {
-    font-family: var(--snas-body-font);
-    font-size: 14px;
+    font-family: var(--snas-body-font) !important;
+    font-size: 14px !important;
     -webkit-box-flex: 1;
     -ms-flex: 1 1 100%;
     flex: 1 1 100%;
