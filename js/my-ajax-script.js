@@ -1247,8 +1247,10 @@ jQuery(document).ready(function($) {
         jQuery('#CheckDel').on('change', function() {
             if (jQuery(this).is(':checked')) {
                 jQuery('.delete-account-btn').prop('disabled', false);
+
             } else {
                 jQuery('.delete-account-btn').prop('disabled', true);
+                jQuery("#tab-16 .form-box").append('<p id="temporary-message"></p>');
             }
         });
     });
