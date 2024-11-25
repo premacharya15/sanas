@@ -1085,6 +1085,7 @@ jQuery(document).ready(function ($) {
         action: 'change_password',
         current_password: currentPassword,
         new_password: newPassword,
+        confirm_password: confirmPassword,
         nonce: ajax_object.nonce
     };
 
@@ -1096,7 +1097,6 @@ jQuery(document).ready(function ($) {
         }
     });
 });
-
     // Delete Account
     jQuery('.delete-account-btn').on('click', function () {
         if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
@@ -1190,3 +1190,4 @@ jQuery(document).ready(function($) {
         });
     });
 });
+
