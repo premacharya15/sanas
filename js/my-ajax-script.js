@@ -1116,7 +1116,7 @@ jQuery(document).ready(function ($) {
 });
     // Delete Account
     jQuery('.delete-account-btn').on('click', function () {
-        if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+        if (confirm('Are you sure you want to delete your account?')) {
             $.post(ajax_object.ajax_url, { action: 'delete_account' }, function (response) {
                 if (response.success) {
                     // add temporary message
