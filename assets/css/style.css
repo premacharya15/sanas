@@ -140,7 +140,7 @@ img {
 
 ul.main-menu-list {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     margin-bottom: 0;
     padding: 0;
