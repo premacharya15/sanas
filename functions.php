@@ -1100,26 +1100,24 @@ function update_profile_callback() {
     }
     wp_die();
 }
-add_action('wp_ajax_change_password', 'change_password_callback');
-function change_password_callback() {
-    check_ajax_referer('profile_nonce', 'nonce');
-    $user_id = get_current_user_id();
-    if ($user_id && isset($_POST['current_password'], $_POST['new_password'], $_POST['confirm_password'])) {
-        $user = get_user_by('id', $user_id);
-        if (wp_check_password($_POST['current_password'], $user->data->user_pass, $user_id)) {
-            if ($_POST['new_password'] === $_POST['confirm_password']) {
-                wp_set_password($_POST['new_password'], $user_id);
-                wp_send_json_success('Password updated successfully!');
-            } else {
-                wp_send_json_error('New password and confirmation do not match.');
-            }
-        } else {
-            wp_send_json_error('Current password is incorrect');
-        }
-    } else {
-        wp_send_json_error('Error: Missing fields or user not logged in.');
+add_action('wp_ajax_change_password', 'change_password');
+function change_password() {
+    check_ajax_referer('ajax-nonce', 'nonce');
+
+    $current_user = wp_get_current_user();
+    $current_password = $_POST['current_password'];
+    $new_password = $_POST['new_password'];
+
+    if (!wp_check_password($current_password, $current_user->user_pass, $current_user->ID)) {
+        wp_send_json_error('Current password is incorrect.');
     }
-    wp_die();
+
+    if (empty($new_password)) {
+        wp_send_json_error('New password cannot be empty.');
+    }
+
+    wp_set_password($new_password, $current_user->ID);
+    wp_send_json_success('Password updated successfully.');
 }
 
 add_action('wp_ajax_delete_account', 'delete_account_callback');

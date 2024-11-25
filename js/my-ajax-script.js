@@ -1072,6 +1072,7 @@ jQuery(document).ready(function ($) {
  jQuery('form.change-password').on('submit', function (e) {
     e.preventDefault();
 
+    var currentPassword = jQuery('form.change-password input[name="current_password"]').val();
     var newPassword = jQuery('form.change-password input[name="new_password"]').val();
     var confirmPassword = jQuery('form.change-password input[name="confirm_password"]').val();
 
@@ -1082,14 +1083,14 @@ jQuery(document).ready(function ($) {
 
     var data = {
         action: 'change_password',
-        current_password: jQuery('form.change-password input[name="current_password"]').val(),
+        current_password: currentPassword,
         new_password: newPassword,
-        nonce: ajax_object.nonce // Ensure the nonce is included
+        nonce: ajax_object.nonce
     };
 
     $.post(ajax_object.ajax_url, data, function (response) {
         if (response.success) {
-            jQuery("#tab-15 .form-box").append(response.success ? 'Password updated successfully!' : response.data);
+            jQuery("#tab-15 .form-box").append('Password updated successfully!');
         } else {
             jQuery("#tab-15 .form-box").append(response.data || 'An error occurred.');
         }
