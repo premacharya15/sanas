@@ -3732,11 +3732,11 @@ section.blog-section .blog-box:hover .image img {
     width: 20%;
 }
 
-ul.dropdown-menu>li:first-child {
+/* ul.dropdown-menu>li:first-child {
     background-color: #744F30;
     color: var(--snas-text-white);
-    /* padding: 10px; */
-}
+    padding: 10px;
+} */
 
 ul.dropdown-menu>li {
     border-bottom: 1px solid #00000033;
