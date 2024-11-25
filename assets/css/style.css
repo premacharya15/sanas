@@ -3750,10 +3750,20 @@ section.blog-section .blog-box:hover .image img {
     width: 20%;
 }
 
-ul.dropdown-menu>li:first-child {
+/* ul.dropdown-menu>li:first-child {
+    background-color: #744F30;
+    color: var(--snas-text-white) !important;
+    padding: 10px;
+} */
+
+ul.dropdown-menu:hover {
     background-color: #744F30;
     color: var(--snas-text-white) !important;
     /* padding: 10px; */
+}
+
+ul.dropdown-menu>li>a:hover {
+    color: var(--snas-text-white) !important;
 }
 
 ul.dropdown-menu>li {
