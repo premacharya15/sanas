@@ -111,7 +111,8 @@
 @media only screen and (max-width:1370px){
     
     ul.main-menu-list li a,.main-menu-list>li>ul>li>a {
-        font-size: 15px;
+        font-size: 14px;
+        font-family: var(----snas-body-font) ;
     }
  .hero-sec-divaider hr {
         margin: 70px 0 0;
