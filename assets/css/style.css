@@ -6388,7 +6388,7 @@ button#add_new_group_button {
     border: 1px solid #744f307a !important;
 }
 .delete-account-btn-color:hover {
-    background-color: #744f307a !important;
+    background-color: none !important;
 }
 
 .wl-dashboard-wrapper .vendor .add-link a,
