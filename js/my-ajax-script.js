@@ -1126,7 +1126,7 @@ jQuery(document).ready(function ($) {
                             jQuery(this).remove();
                         });
                     }, 3000);
-                    window.location.href = ajax_object.home_url; // Redirect to homepage or login
+                    // window.location.href = 'https://sit132.sanasinvite.com/';
                 } else {
                     // add temporary message
                     jQuery("#tab-16 .form-box").append('<p id="temporary-message">Error deleting account</p>');
