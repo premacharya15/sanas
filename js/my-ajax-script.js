@@ -1089,9 +1089,9 @@ jQuery(document).ready(function ($) {
 
     $.post(ajax_object.ajax_url, data, function (response) {
         if (response.success) {
-            alert('Password updated successfully!');
+            jQuery("#tab-11 .form-box").append(response.success ? 'Password updated successfully!' : response.data);
         } else {
-            alert(response.data || 'An error occurred.');
+            jQuery("#tab-11 .form-box").append(response.data || 'An error occurred.');
         }
     });
 });
