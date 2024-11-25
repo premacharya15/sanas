@@ -1126,6 +1126,13 @@ add_action('wp_ajax_delete_account', 'delete_account_callback');
 function delete_account_callback() {
     $user_id = get_current_user_id();
     if ($user_id) {
+        global $wpdb;
+        $wpdb->delete($wpdb->prefix . 'budget_expense', array('user_id' => $user_id));
+        $wpdb->delete($wpdb->prefix . 'budget_category', array('user_id' => $user_id));
+        $wpdb->delete($wpdb->prefix . 'todo_list', array('user_id' => $user_id));
+        $wpdb->delete($wpdb->prefix . 'vendor_list', array('user_id' => $user_id));
+        $wpdb->delete($wpdb->prefix . 'my_vendor_list', array('user_id' => $user_id));
+
         wp_delete_user($user_id);
         wp_send_json_success('Account deleted successfully!');
         // rediect to home page
