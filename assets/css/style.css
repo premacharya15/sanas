@@ -6383,6 +6383,14 @@ button#add_new_group_button {
     background-color:#744F30 ;
     color: var(--snas-text-white);
 }
+.delete-account-btn-color {
+    color: #744f307a !important;
+    border: 1px solid #744f307a !important;
+}
+.delete-account-btn-color:hover {
+    background-color: #744f307a !important;
+}
+
 .wl-dashboard-wrapper .vendor .add-link a,
 .wl-dashboard-wrapper .todo-list .add-link a{
     text-transform: none;
