@@ -1128,6 +1128,7 @@ function delete_account_callback() {
     if ($user_id) {
         wp_delete_user($user_id);
         wp_send_json_success('Account deleted successfully!');
+        home_url();
     }
     wp_die();
 }
