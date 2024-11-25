@@ -1222,9 +1222,9 @@ jQuery(document).ready(function($) {
 
 if (window.location.pathname === '/my-profile/') {
 
-jQuery(document).ready(function($) {
-    // Toggle password visibility
-    jQuery('.eye-icon').on('click', function() {
+    jQuery(document).ready(function($) {
+        // Toggle password visibility
+        jQuery('.eye-icon').on('click', function() {
         var formGroup = jQuery(this).closest('.form-group');
         var passwordInput = formGroup.find('.password-control');
         var eyeIcon = jQuery(this).find('.fa-regular');
@@ -1241,7 +1241,17 @@ jQuery(document).ready(function($) {
 
     jQuery(document).ready(function($) {
         // Initially disable the delete account button
-        jQuery('.delete-account-btn').prop('disabled', true);
+        jQuery('.delete-account-btn').on('click', function() {
+            if (!jQuery('#CheckDel').is(':checked')) {
+                // add temporary message
+                jQuery("#tab-16 .form-box").append('<p id="temporary-message">Please check the checkbox to delete your account.</p>');
+                setTimeout(function() {
+                    jQuery('#temporary-message').fadeOut(500, function() {
+                        jQuery(this).remove();
+                    });
+                }, 3000);
+            }
+        });
     
         // Toggle the delete account button based on checkbox state
         jQuery('#CheckDel').on('change', function() {
@@ -1250,7 +1260,6 @@ jQuery(document).ready(function($) {
 
             } else {
                 jQuery('.delete-account-btn').prop('disabled', true);
-                jQuery("#tab-16 .form-box").append('<p id="temporary-message"></p>');
             }
         });
     });
