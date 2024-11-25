@@ -51,7 +51,7 @@ $first_char = substr($current_user->user_firstname, 0, 1);
                 <img class="btn btn-secondary dropdown-toggle" style="display:none;" data-bs-toggle="dropdown" aria-expanded="false"
                   src="<?php echo get_template_directory_uri(); ?>/assets/img/login-img.jpg" alt="login-person">
                 <ul class="dropdown-menu p-0">
-                  <li>Nancy</li>
+                  <li><a href="<?php echo home_url(); ?>/my-profile"><?php echo $current_user->user_firstname; ?></a></li>
                   <li><a href="<?php echo home_url(); ?>/my-dashboard">Dashboard</a></li>
                   <li><a href="<?php echo home_url(); ?>/my-events"> My Events</a></li>
                   <li class="logout-btn"><a href="javascript:void(0);" data-logout-url="<?php echo $logout_url; ?>">Logout</a></li>
