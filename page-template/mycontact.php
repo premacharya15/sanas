@@ -147,7 +147,7 @@ $get_guest_group = $wpdb->get_results(
             endforeach; ?>
         <?php else : ?>
             <div class="no-events-message">
-                <p>No event tables found.</p>
+                <p>No contacts tables found.</p>
             </div>
         <?php endif; ?>
     </div>
