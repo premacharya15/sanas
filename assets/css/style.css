@@ -6556,7 +6556,7 @@ font-size: 18px;
     text-align: left !important;
 }
 
-.guest-contact-list-table td:first-child, .guest-contact-list-table th:first-child{
+.guest-contact-list-table td:first-child, .guest-contact-list-table th:first-child, .guest-contact-list-table td:last-child, .guest-contact-list-table th:last-child{
     max-width: 30px !important;
     width: 30px !important;
 }
