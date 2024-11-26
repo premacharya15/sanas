@@ -86,8 +86,7 @@ $get_guest_group = $wpdb->get_results(
                     <div class="inner tabs-box guests-tabs">
                         <div class="guests-box table-box tabs-content">
                             <div class="vendor-table table-responsive">
-                                <?php if (!empty($get_guest_details)) : ?>
-                                    <table class="vendor-list-table guest-contact-list-table" id="guest-contact-list-<?php echo $table_counter; ?>">
+                                <table class="vendor-list-table guest-contact-list-table" id="guest-contact-list-<?php echo $table_counter; ?>">
                                     <thead>
                                         <tr>
                                             <th class="todo-subhead text-align-start hide-sorting-arrow" colspan="6">
@@ -124,13 +123,8 @@ $get_guest_group = $wpdb->get_results(
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                <?php else : ?>
-                                    <div class="no-events-message">
-                                        <p>No guests available.</p>
-                                    </div>
-                                <?php endif; ?>
+                                    </tbody>
+                                </table>
                                 <script>
                                 jQuery(document).ready(function() {
                                     jQuery('#guest-contact-list-<?php echo $table_counter; ?>').DataTable({
