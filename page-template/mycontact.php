@@ -115,7 +115,7 @@ $get_guest_group = $wpdb->get_results(
                                                         <a href="javascript:void(0)" data-bs-toggle="modal" onclick="edit_guestlist_details(<?php echo esc_attr($guest->guest_id);?>)" data-bs-target="#edit-popup" class="edit theme-btn">
                                                             <i class="fa-solid fa-pen"></i>
                                                         </a>
-                                                        <a href="javascript:void(0)" class="delete theme-btn">
+                                                        <a href="javascript:void(0)" data-guest-id="<?php echo esc_attr($guest->guest_id);?>" class="delete theme-btn">
                                                             <i class="fa-regular fa-trash-can"></i>
                                                         </a>
                                                     </div>
