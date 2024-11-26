@@ -711,18 +711,38 @@ if (class_exists('CSF')) {
                 'title' => 'guest response yes',
             ),
             array(
-                'id' => 'sanas_guest_update_subject',
+                'id' => 'sanas_guest_update_maybe_subject',
                 'type' => 'text',
-                'title' => 'update guest info/count',
+                'title' => 'update guest info/count - maybe',
             ),
             array(
-                'id' => 'sanas_guest_update_body',
+                'id' => 'sanas_guest_update_maybe_body',
                 'type' => 'wp_editor',
                 'wpautop' => false,
-                'title' => 'update guest info/count',
+                'title' => 'update guest info/count - maybe',
             ),
-            
-
+            array(
+                'id' => 'sanas_guest_update_yes_subject',
+                'type' => 'text',
+                'title' => 'update guest info/count - yes',
+            ),
+            array(
+                'id' => 'sanas_guest_update_yes_body',
+                'type' => 'wp_editor',
+                'wpautop' => false,
+                'title' => 'update guest info/count - yes',
+            ),
+            array(
+                'id' => 'sanas_guest_update_no_subject',
+                'type' => 'text',
+                'title' => 'update guest info/count - no',
+            ),
+            array(
+                'id' => 'sanas_guest_update_no_body',
+                'type' => 'wp_editor',
+                'wpautop' => false,
+                'title' => 'update guest info/count - no',
+            ),
     )));
 
     // Layout and Options Settings
