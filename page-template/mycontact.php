@@ -14,6 +14,21 @@
 */
 get_header();
 get_sidebar('dashboard');
+
+// Fetch events for the current user
+global $current_user, $wpdb;
+wp_get_current_user();
+$userID = $current_user->ID;
+$sanas_card_event = $wpdb->prefix . "sanas_card_event";
+$guest_details_info_table = $wpdb->prefix . "guest_details_info";
+
+$get_event = $wpdb->get_results(
+    $wpdb->prepare(
+        "SELECT * FROM $sanas_card_event WHERE event_user = %d ORDER BY event_no DESC",
+        $userID
+    )
+);
+
 ?>
 
 <div class="wl-dashboard-wrapper dashboard">
@@ -28,6 +43,23 @@ get_sidebar('dashboard');
           </div>
         </div>
       </div>
+
+      <?php if (!empty($get_event)) : ?>
+            <?php foreach ($get_event as $event) : ?>
+                <?php
+                $event_id = $event->event_no;
+                $event_card_id = $event->event_card_id;
+
+                // Fetch guest details for the event
+                $get_guest_details = $wpdb->get_results(
+                    $wpdb->prepare(
+                        "SELECT * FROM $guest_details_info_table WHERE guest_user_id = %d AND guest_event_id = %d ORDER BY guest_name ASC",
+                        $userID,
+                        $event_id
+                    )
+                );
+                ?>
+
       <div class="guests-list contact">
         <div class="inner tabs-box guests-tabs">
           <div class="guests-box tabs-content">
@@ -36,7 +68,7 @@ get_sidebar('dashboard');
                 <thead>
                   <tr>
                     <th class="todo-subhead text-align-start" colspan="6">
-                      <h4>Wedding Invite</h4>
+                      <h4><?php echo $event->event_name; ?></h4>
                     </th>
                   </tr>
                   <tr>
@@ -49,21 +81,14 @@ get_sidebar('dashboard');
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td><input type="checkbox"></td>
-                    <td>Olivia Rhye</td>
-                    <td>+1-212-456-7890</td>
-                    <td>olivia@untitledui.com</td>
-                    <td>Groom Friend</td>
-                    <td>
-                      <a href="#" data-bs-toggle="modal" data-bs-target="#edit-popup" class="edit theme-btn">
-                        <i class="fa-solid fa-pen"></i>
-                      </a>
-                      <a href="#" class="delete theme-btn">
-                        <i class="fa-regular fa-trash-can"></i>
-                      </a>
-                    </td>
-                  </tr>
+                <?php foreach ($get_guest_details as $guest) : ?>
+                                    <tr>
+                                        <td><?php echo esc_html($guest->guest_name); ?></td>
+                                        <td><?php echo esc_html($guest->guest_email); ?></td>
+                                        <td><?php echo esc_html($guest->guest_phone_num); ?></td>
+                                        <td><?php echo esc_html($guest->guest_status); ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
 
                 </tbody>
               </table>
@@ -75,6 +100,8 @@ get_sidebar('dashboard');
           </div>
         </div>
       </div>
+      <?php endforeach; ?>
+      <?php endif; ?>
     </div>
   </div>
 
