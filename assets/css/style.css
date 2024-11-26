@@ -6591,6 +6591,10 @@ font-size: 18px;
     }
 } */
 
+/* Hide sorting arrow inside class dt-column-order */
+.hide-sorting-arrow .dt-column-order{
+    display: none !important;
+}
 
 .text-single-line{
     white-space: nowrap !important;
