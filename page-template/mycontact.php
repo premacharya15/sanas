@@ -14,7 +14,6 @@
 */
 get_header();
 get_sidebar('dashboard');
-
 // Fetch events for the current user
 global $current_user, $wpdb;
 wp_get_current_user();
@@ -49,7 +48,19 @@ $get_event = $wpdb->get_results(
                 <?php
                 $event_id = $event->event_no;
                 $event_card_id = $event->event_card_id;
-                $event_name = $event->event_name;
+                
+                // Get event details including name
+                $event_data = $wpdb->get_row($wpdb->prepare(
+                    "SELECT e.*, p.post_title as event_name, p.post_date as event_date, 
+                     u.display_name as host_name, p.guid as event_url
+                     FROM {$wpdb->prefix}sanas_card_event e
+                     LEFT JOIN {$wpdb->posts} p ON e.event_rsvp_id = p.ID
+                     LEFT JOIN {$wpdb->users} u ON e.event_user = u.ID
+                     WHERE e.event_no = %d",
+                    $event_id
+                ));
+                
+                $event_name = $event_data->event_name;
 
                 // Fetch guest details for the event
                 $get_guest_details = $wpdb->get_results(
