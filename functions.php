@@ -1552,3 +1552,26 @@ function update_guest_details() {
         wp_send_json_error('Failed to update guest details.');
     }
 }
+
+// Add AJAX action for fetching guest details
+add_action('wp_ajax_get_guest_details', 'get_guest_details');
+add_action('wp_ajax_nopriv_get_guest_details', 'get_guest_details');
+
+function get_guest_details() {
+    global $wpdb;
+    if (isset($_POST['guest_id'])) {
+        $guest_id = intval($_POST['guest_id']); // Sanitize input
+        $guest_info_table = $wpdb->prefix . "guest_details_info";
+
+        $guest = $wpdb->get_row($wpdb->prepare("SELECT * FROM $guest_info_table WHERE guest_id = %d", $guest_id), ARRAY_A);
+
+        if ($guest) {
+            wp_send_json_success($guest);
+        } else {
+            wp_send_json_error('Guest not found.');
+        }
+    } else {
+        wp_send_json_error('Guest ID is not set.');
+    }
+    wp_die();
+}

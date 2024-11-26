@@ -1283,4 +1283,37 @@ if (window.location.pathname === '/my-contact/') {
             });
         });
     });
+
+    // Fetch Guest Details
+    jQuery(document).ready(function($) {
+        // Click handler for edit button
+        $('.edit.theme-btn').on('click', function() {
+            var guestId = $(this).data('guest-id');
+    
+            $.ajax({
+                type: 'POST',
+                url: ajax_object.ajax_url,
+                data: {
+                    action: 'get_guest_details',
+                    guest_id: guestId
+                },
+                success: function(response) {
+                    if (response.success) {
+                        var guest = response.data;
+                        $('#editguestname').val(guest.guest_name);
+                        $('#editguestphone').val(guest.guest_phone_num);
+                        $('#editguestemail').val(guest.guest_email);
+                        $('#editguestgroup').val(guest.guest_group).change();
+                        $('#guestid').val(guest.guest_id);
+                    } else {
+                        alert('Failed to fetch guest details: ' + response.data);
+                    }
+                },
+                error: function() {
+                    alert('Error fetching guest details.');
+                }
+            });
+        });
+    });
+    
 }
