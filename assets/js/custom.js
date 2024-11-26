@@ -418,12 +418,12 @@
     }
     // guest-list data table
     if (jQuery('.table-responsive').length) {
-        // jQuery('#guest-list-Table').DataTable({
-        //     "ordering": false,
-        //     columnDefs: [
-        //         { orderable: false, targets: [1, 2, 3, 4, 5] },
-        //     ]
-        // });
+        jQuery('#guest-list-Table').DataTable({
+            "ordering": false,
+            columnDefs: [
+                { orderable: false, targets: [1, 2, 3, 4, 5] },
+            ]
+        });
         // jQuery('.budget-table-sort').DataTable({
         //     columnDefs: [
         //         { orderable: false, targets: [0, 2, 3, 4, 5, 6] },
@@ -453,18 +453,7 @@
                 { orderable: false, targets: [0,2,3,4,5] },
             ]
         });
-        // jQuery('#guest-contact-list').DataTable({
-        //     searching: false,
-        //     paging: false,
-        //     "order": [],
-        //     "ordering": true,
-        //     columnDefs: [
-        //         { orderable: true, targets: [1] },
-        //     ],
-        //     language: {
-        //         info: ""
-        //     }
-        // });
+        // jQuery('#guest-contact-list').DataTable();
         jQuery('.todo-table').DataTable({
             searching: false,
             paging: false,
