@@ -1257,8 +1257,8 @@ if (window.location.pathname === '/my-profile/') {
     });
 }
 
-if (window.location.pathname === '/my-contact/') {
-  
+if (window.location.pathname === '/mycontact/') {
+    jQuery(document).ready(function ($) {
         // Function to edit guest details
         function edit_guestlist_details(guest_id) {
             jQuery.ajax({
@@ -1316,4 +1316,5 @@ if (window.location.pathname === '/my-contact/') {
             var guest_id = jQuery(this).data('guest-id');
             delete_guest_details(guest_id);
         });
+    });
 }
