@@ -1335,7 +1335,7 @@ if (window.location.pathname === '/my-contact/') {
                         },
                         success: function(response) {
                             if (response.success) {
-                                alert(response.data);
+                                // alert(response.data);
                                 window.location.reload();
                             } else {
                                 alert('Failed to delete guest details: ' + response.data);
