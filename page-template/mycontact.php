@@ -44,7 +44,9 @@ $get_event = $wpdb->get_results(
       </div>
 
       <?php if (!empty($get_event)) : ?>
-            <?php foreach ($get_event as $event) : ?>
+            <?php 
+            $table_counter = 1;
+            foreach ($get_event as $event) : ?>
                 <?php
                 $event_id = $event->event_no;
                 $event_card_id = $event->event_card_id;
@@ -76,7 +78,7 @@ $get_event = $wpdb->get_results(
         <div class="inner tabs-box guests-tabs">
           <div class="guests-box tabs-content">
             <div class="table-responsive">
-              <table class="table data-table display" id="guest-contact-list">
+              <table class="table data-table display" id="guest-contact-list-<?php echo $table_counter; ?>">
                 <thead>
                   <tr>
                     <th class="todo-subhead text-align-start" colspan="6">
@@ -84,7 +86,7 @@ $get_event = $wpdb->get_results(
                     </th>
                   </tr>
                   <tr>
-                    <th><input type="checkbox" id="all-select-chechbox-one"> </th>
+                    <th><input type="checkbox" id="all-select-checkbox-<?php echo $table_counter; ?>"> </th>
                     <th>Name</th>
                     <th>Phone Number</th>
                     <th>Email address</th>
@@ -122,7 +124,9 @@ $get_event = $wpdb->get_results(
           </div>
         </div>
       </div>
-      <?php endforeach; ?>
+      <?php 
+      $table_counter++;
+      endforeach; ?>
       <?php endif; ?>
     </div>
   </div>
