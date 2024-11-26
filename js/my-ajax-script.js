@@ -1286,9 +1286,8 @@ if (window.location.pathname === '/mycontact/') {
 
         // Function to delete guest details
         function delete_guest_details(guest_id) {
-            if (confirm('Are you sure you want to delete this guest?')) {
-                jQuery.ajax({
-                    url: ajaxurl,
+            jQuery.ajax({
+                url: ajaxurl,
                     type: 'POST',
                     data: {
                         action: 'delete_guest_details',
@@ -1302,8 +1301,7 @@ if (window.location.pathname === '/mycontact/') {
                             alert('Failed to delete guest.');
                         }
                     }
-                });
-            }
+            });
         }
 
         // Bind click events to the edit and delete buttons
