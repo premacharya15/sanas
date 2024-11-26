@@ -118,7 +118,13 @@ $get_event = $wpdb->get_results(
                                 </table>
                                 <script>
                                 jQuery(document).ready(function() {
-                                    jQuery('#guest-contact-list-<?php echo $table_counter; ?>').DataTable();
+                                    jQuery('#guest-contact-list-<?php echo $table_counter; ?>').DataTable({
+                                      "order": [],
+                                      "ordering": true,
+                                      columnDefs: [
+                                          { orderable: true, targets: [1] },
+                                      ],
+                                    });
                                 });
                                 </script>
                             </div>
