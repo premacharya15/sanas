@@ -152,43 +152,40 @@ $get_event = $wpdb->get_results(
           </button>
         </div>
         <div class="content-box">
-          <form method="post" id="form-edit-guestlist-details" >
+          <form method="post" id="form-edit-guestlist-details">
             <?php wp_nonce_field('ajax-update-edit-guest-event-nonce', 'security'); ?>
             <div class="form-content last">
               <div class="row">
                 <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
-                    <input type="text" id="editguestname" name="editguestname" class="form-control" placeholder="Name" required="">
+                    <input type="text" id="editguestname" name="editguestname" class="form-control" placeholder="Name" required>
                   </div>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
-                    <select class="form-control select-group">
+                    <select class="form-control select-group" id="editguestgroup" name="editguestgroup" required>
                       <option value="">Choose Group</option>
-                      <?php foreach ($get_guest_group as $group) { 
-                                $id = $group->guest_group_id;
-                                ?>
-                                <option value="<?php echo $group->guest_group_name ?>"><?php echo $group->guest_group_name ?></option>
-                             <?php   }?>   
+                      <?php foreach ($get_guest_group as $group) { ?>
+                        <option value="<?php echo esc_attr($group->guest_group_id); ?>"><?php echo esc_html($group->guest_group_name); ?></option>
+                      <?php } ?>
                     </select>
                   </div>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
-                    <input type="text" id="editguestphone" name="editguestphone" class="form-control" placeholder="Phone No*" required="">
+                    <input type="text" id="editguestphone" name="editguestphone" class="form-control" placeholder="Phone No*" required>
                   </div>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
-                    <input type="text" id="editguestemail" name="editguestemail" class="form-control" placeholder="Email*" required="">
+                    <input type="email" id="editguestemail" name="editguestemail" class="form-control" placeholder="Email*" required>
                   </div>
                 </div>
                 <div class="col-lg-12 col-sm-12">
                   <div class="links-box">
                     <input type="hidden" id="guestid" name="guestid" value="">
                     <button type="submit" class="btn btn-secondary btn-block">Save</button>
-                    <!-- <button type="submit" class="btn btn-secondary btn-block">Save and Add Guest</button> -->
-                    <!-- <button class="btn btn-secondary gt-delete-btn"><i class="fa-regular fa-trash-can"></i></button> -->
+                    <button type="button" class="btn btn-secondary gt-delete-btn" onclick="delete_guest_details(document.getElementById('guestid').value)"><i class="fa-regular fa-trash-can"></i></button>
                   </div>
                 </div>
               </div>
