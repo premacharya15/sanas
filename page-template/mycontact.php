@@ -76,7 +76,7 @@ $get_event = $wpdb->get_results(
 
                 <div class="guests-list contact">
                     <div class="inner tabs-box guests-tabs">
-                        <div class="guests-box tabs-content">
+                        <div class="guests-box table-box tabs-content">
                             <div class="vendor-table table-responsive">
                                 <table class="vendor-list-table" id="guest-contact-list-<?php echo $table_counter; ?>">
                                     <thead>
