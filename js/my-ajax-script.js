@@ -1316,4 +1316,36 @@ if (window.location.pathname === '/my-contact/') {
         });
     });
     
+    // Delete Guest Details
+    jQuery(document).ready(function($) {
+        // Click handler for delete button
+        $('.delete.theme-btn').on('click', function() {
+            var guestId = $(this).data('guest-id');
+            var security = $('#security').val(); // Ensure you have a nonce field in your form
+    
+            if (confirm('Are you sure you want to delete this guest?')) {
+                $.ajax({
+                    type: 'POST',
+                    url: ajax_object.ajax_url,
+                    data: {
+                        action: 'delete_guest_details',
+                        guest_id: guestId,
+                        security: security
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            alert(response.data);
+                            window.location.reload();
+                        } else {
+                            alert('Failed to delete guest details: ' + response.data);
+                        }
+                    },
+                    error: function() {
+                        alert('Error deleting guest details.');
+                    }
+                });
+            }
+        });
+    });
 }
+

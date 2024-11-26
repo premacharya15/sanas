@@ -1575,3 +1575,22 @@ function get_guest_details() {
     }
     wp_die();
 }
+
+// Add AJAX action for deleting guest details
+add_action('wp_ajax_delete_guest_details', 'delete_guest_details');
+add_action('wp_ajax_nopriv_delete_guest_details', 'delete_guest_details');
+
+function delete_guest_details() {
+    check_ajax_referer('ajax-delete-guest-nonce', 'security');
+    global $wpdb;
+    $guest_id = intval($_POST['guest_id']); // Sanitize input
+    $guest_info_table = $wpdb->prefix . "guest_details_info";
+
+    $result = $wpdb->delete($guest_info_table, ['guest_id' => $guest_id], ['%d']);
+
+    if ($result !== false) {
+        wp_send_json_success('Guest details deleted successfully.');
+    } else {
+        wp_send_json_error('Failed to delete guest details.');
+    }
+}
