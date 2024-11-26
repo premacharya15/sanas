@@ -102,7 +102,7 @@ $get_event = $wpdb->get_results(
                         <td><?php echo esc_html($guest->guest_group); ?></td>
                         <td class="actions">
                             <div>
-                                <a href="#" class="edit theme-btn">
+                                <a href="#" class="edit theme-btn" data-bs-toggle="modal" data-bs-target="#edit-popup">
                                     <i class="fa-solid fa-pen"></i>
                                 </a>
                                 <a href="#" class="delete theme-btn">
