@@ -34,7 +34,7 @@ $get_event = $wpdb->get_results(
     <div class="container-fluid wl-dashboard-content">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="page-header">
+                <div class="page-header d-flex justify-content-between align-items-center">
                     <h3 class="pageheader-title">My Contacts</h3>
                     <div class="links-box-2">
                         <button type="submit" class="dashbord-btn">Move to Guest List</button>
