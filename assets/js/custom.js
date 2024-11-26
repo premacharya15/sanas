@@ -17,27 +17,32 @@
         }
     });
 
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
         callSearchSVG();
     });
-      function callSearchSVG() {
-        const svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0 0 50 50">
-        <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
+    
+    function callSearchSVG() {
+        const svgIcon = `
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0 0 50 50">
+            <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
         </svg>`;
+    
         setInterval(function () {
-            const label = jQuery(".dt-search label");
-            if (label.text().trim() === "Search:") {
-                label.html(svgIcon);
-                jQuery(".dt-search label").html(svgIcon);
-                jQuery(".dt-search label").on("click", function() {
-                    jQuery(".dt-search input[type=search]").toggle();
-                });
-                jQuery(".dt-search input[type=search]").on("focusout", function() {
-                    jQuery(this).toggle();
-                });
-            }
+            jQuery(".dt-search label").each(function () {
+                const label = jQuery(this);
+                if (label.text().trim() === "Search:") {
+                    label.html(svgIcon);
+                    label.off("click").on("click", function () {
+                        label.siblings("input[type=search]").toggle();
+                    });
+                    label.siblings("input[type=search]").off("focusout").on("focusout", function () {
+                        jQuery(this).toggle();
+                    });
+                }
+            });
         }, 500);
-      }
+    }
+    
 // jQuery(document).on('click', function (e) {
 //         if (!jQuery(e.target).closest('.form-boxed').length) {
 //             jQuery('.form-boxed .login').removeClass('d-none');
