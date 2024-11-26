@@ -1319,7 +1319,7 @@ if (window.location.pathname === '/my-contact/') {
     // Delete Guest Details
     jQuery(document).ready(function($) {
         // Click handler for delete button
-        $('.delete.theme-btn').on('click', function() {
+        $('.delete-guest-details').on('click', function() {
             var guestId = $(this).data('guest-id');
             var security = $('#security').val(); // Ensure you have a nonce field in your form
     
