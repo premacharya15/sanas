@@ -80,11 +80,11 @@ $get_event = $wpdb->get_results(
                             <div class="table-responsive">
                                 <table class="table data-table display" id="guest-contact-list-<?php echo $table_counter; ?>">
                                     <thead>
-                                        <div>
+                                        <tr>
                                             <th class="todo-subhead text-align-start" colspan="6">
                                                 <h4><?php echo esc_html($event_name); ?></h4>
                                             </th>
-                                        </div>
+                                        </tr>
                                         <tr>
                                             <th><input type="checkbox" id="all-select-checkbox-one"></th>
                                             <th>Name</th>
