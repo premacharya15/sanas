@@ -1321,7 +1321,8 @@ if (window.location.pathname === '/my-contact/') {
         // Click handler for delete button
         $('.delete-guest-details').on('click', function() {
             var guestId = $(this).data('guest-id');
-            var security = $('#security').val(); // Ensure you have a nonce field in your form
+            var security = $('#security').val();
+            console.log('guestID: ' + guestId);
     
             if (confirm('Are you sure you want to delete this guest?')) {
                 $.ajax({
