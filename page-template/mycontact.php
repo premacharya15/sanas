@@ -163,7 +163,7 @@ $get_event = $wpdb->get_results(
                 </div>
                 <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
-                    < class="form-control select-group">
+                    <select class="form-control select-group">
                       <option value="">Choose Group</option>
                       <?php foreach ($get_guest_group as $group) { 
                                 $id = $group->guest_group_id;
