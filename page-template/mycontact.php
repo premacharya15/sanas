@@ -88,9 +88,15 @@ $get_event = $wpdb->get_results(
                         <td><?php echo esc_html($guest->guest_phone_num); ?></td>
                         <td><?php echo esc_html($guest->guest_email); ?></td>
                         <td><?php echo esc_html($guest->guest_group); ?></td>
-                        <td>
-                            <a href="#" class="edit">Edit</a>
-                            <a href="#" class="delete">Delete</a>
+                        <td class="actions">
+                            <div>
+                                <a href="#" class="edit theme-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                                <a href="#" class="delete theme-btn">
+                                    <i class="fa-regular fa-trash-can"></i>
+                                </a>
+                            </div>
                         </td>
                     </tr>
                   <?php endforeach; ?>
