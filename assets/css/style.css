@@ -6556,6 +6556,11 @@ font-size: 18px;
     text-align: left !important;
 }
 
+.guest-contact-list-table td:first-child, .guest-contact-list-table th:first-child{
+    max-width: 30px !important;
+    width: 30px !important;
+}
+
 .todo-list-table td:first-child, .todo-list-table th:first-child{
     max-width: 100px !important;
     width: 100px !important;
