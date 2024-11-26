@@ -1257,7 +1257,7 @@ if (window.location.pathname === '/my-profile/') {
     });
 }
 
-if (window.location.pathname === '/mycontact/') {
+if (window.location.pathname === '/my-contact/') {
     // Update Guest Details
     jQuery(document).ready(function($) {
         $('#form-edit-guestlist-details').on('submit', function(e) {
