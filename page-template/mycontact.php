@@ -124,6 +124,11 @@ $get_event = $wpdb->get_results(
           </div>
         </div>
       </div>
+      <script>
+        jQuery(document).ready(function($) {
+            $('#guest-contact-list-<?php echo $table_counter; ?>').DataTable();
+        });
+      </script>
       <?php 
       $table_counter++;
       endforeach; ?>
