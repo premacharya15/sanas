@@ -81,9 +81,9 @@ $get_event = $wpdb->get_results(
                                 <table class="table data-table display" id="guest-contact-list-<?php echo $table_counter; ?>">
                                     <thead>
                                         <div>
-                                            <div class="todo-subhead text-align-start" colspan="6">
+                                            <th class="todo-subhead text-align-start" colspan="6">
                                                 <h4><?php echo esc_html($event_name); ?></h4>
-                                            </div>
+                                            </th>
                                         </div>
                                         <tr>
                                             <th><input type="checkbox" id="all-select-checkbox-one"></th>
