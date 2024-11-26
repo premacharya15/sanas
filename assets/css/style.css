@@ -5881,6 +5881,16 @@ table.dataTable>thead>tr>th.actions{
     margin-right: 15px;
     line-height: 1;
 }
+
+.guest-contact-list-subhead{
+    margin-bottom: 0;
+    color: #744F30;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.05);
+    font-family: var(--snas-main-font);
+    font-size: calc(1.275rem + 0.3vw);
+}
+
 td.todo-subhead h4 {
     margin-bottom: 0;
     color: #744F30;
