@@ -1260,7 +1260,8 @@ if (window.location.pathname === '/my-profile/') {
 if (window.location.pathname === '/my-contact/') {
     jQuery(document).ready(function ($) {
         // Function to edit guest details
-        function edit_guestlist_details(guest_id) {
+        jQuery('.edit-guest-detail').on('click', function () {
+            var guest_id = jQuery(this).data('guest-id');
             jQuery.ajax({
                 url: ajaxurl,
                 type: 'POST',
@@ -1282,10 +1283,11 @@ if (window.location.pathname === '/my-contact/') {
                     }
                 }
             });
-        }
+        });
 
         // Function to delete guest details
-        function delete_guest_details(guest_id) {
+        jQuery('.delete-guest-detail').on('click', function () {
+            var guest_id = jQuery(this).data('guest-id');
             if (confirm('Are you sure you want to delete this guest?')) {
                 jQuery.ajax({
                     url: ajaxurl,
@@ -1304,17 +1306,6 @@ if (window.location.pathname === '/my-contact/') {
                     }
                 });
             }
-        }
-
-        // Bind click events to the edit and delete buttons
-        jQuery('.edit.theme-btn').on('click', function () {
-            var guest_id = jQuery(this).data('guest-id');
-            edit_guestlist_details(guest_id);
-        });
-
-        jQuery('.delete.theme-btn').on('click', function () {
-            var guest_id = jQuery(this).data('guest-id');
-            delete_guest_details(guest_id);
         });
     });
 }
