@@ -81,7 +81,7 @@ $get_event = $wpdb->get_results(
                                 <table class="vendor-list-table guest-contact-list-table" id="guest-contact-list-<?php echo $table_counter; ?>">
                                     <thead>
                                         <tr>
-                                            <th class="todo-subhead text-align-start" colspan="6">
+                                            <th class="todo-subhead text-align-start" colspan="6" style="pointer-events: none;">
                                                 <h4><?php echo esc_html($event_name); ?></h4>
                                             </th>
                                         </tr>
