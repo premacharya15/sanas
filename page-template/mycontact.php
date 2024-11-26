@@ -145,10 +145,6 @@ $get_guest_group = $wpdb->get_results(
             <?php 
             $table_counter++;
             endforeach; ?>
-        <?php else : ?>
-            <div class="no-events-message">
-                <p>No events available.</p>
-            </div>
         <?php endif; ?>
     </div>
 </div>
