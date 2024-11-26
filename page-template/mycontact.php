@@ -207,52 +207,6 @@ $get_guest_group = $wpdb->get_results(
   </div>
 </div>
 
-<script>
-function edit_guestlist_details(guest_id) {
-    jQuery.ajax({
-        url: ajaxurl,
-        type: 'POST',
-        data: {
-            action: 'get_guest_details',
-            guest_id: guest_id,
-            security: '<?php echo wp_create_nonce("ajax-get-guest-details-nonce"); ?>'
-        },
-        success: function(response) {
-            if (response.success) {
-                var guest = response.data;
-                jQuery('#editguestname').val(guest.guest_name);
-                jQuery('#editguestgroup').val(guest.guest_group);
-                jQuery('#editguestphone').val(guest.guest_phone_num);
-                jQuery('#editguestemail').val(guest.guest_email);
-                jQuery('#guestid').val(guest.guest_id);
-            } else {
-                alert('Failed to fetch guest details.');
-            }
-        }
-    });
-}
-
-function delete_guest_details(guest_id) {
-    if (confirm('Are you sure you want to delete this guest?')) {
-        jQuery.ajax({
-            url: ajaxurl,
-            type: 'POST',
-            data: {
-                action: 'delete_guest_details',
-                guest_id: guest_id,
-                security: '<?php echo wp_create_nonce("ajax-delete-guest-details-nonce"); ?>'
-            },
-            success: function(response) {
-                if (response.success) {
-                    location.reload();
-                } else {
-                    alert('Failed to delete guest.');
-                }
-            }
-        });
-    }
-}
-</script>
 
 <?php
 get_footer('dashboard');

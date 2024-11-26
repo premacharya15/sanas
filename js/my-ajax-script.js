@@ -1256,3 +1256,65 @@ if (window.location.pathname === '/my-profile/') {
         });
     });
 }
+
+if (window.location.pathname === '/mycontact/') {
+    jQuery(document).ready(function ($) {
+        // Function to edit guest details
+        function edit_guestlist_details(guest_id) {
+            jQuery.ajax({
+                url: ajaxurl,
+                type: 'POST',
+                data: {
+                    action: 'get_guest_details',
+                    guest_id: guest_id,
+                    security: '<?php echo wp_create_nonce("ajax-get-guest-details-nonce"); ?>'
+                },
+                success: function (response) {
+                    if (response.success) {
+                        var guest = response.data;
+                        jQuery('#editguestname').val(guest.guest_name);
+                        jQuery('#editguestgroup').val(guest.guest_group);
+                        jQuery('#editguestphone').val(guest.guest_phone_num);
+                        jQuery('#editguestemail').val(guest.guest_email);
+                        jQuery('#guestid').val(guest.guest_id);
+                    } else {
+                        alert('Failed to fetch guest details.');
+                    }
+                }
+            });
+        }
+
+        // Function to delete guest details
+        function delete_guest_details(guest_id) {
+            if (confirm('Are you sure you want to delete this guest?')) {
+                jQuery.ajax({
+                    url: ajaxurl,
+                    type: 'POST',
+                    data: {
+                        action: 'delete_guest_details',
+                        guest_id: guest_id,
+                        security: '<?php echo wp_create_nonce("ajax-delete-guest-details-nonce"); ?>'
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            location.reload();
+                        } else {
+                            alert('Failed to delete guest.');
+                        }
+                    }
+                });
+            }
+        }
+
+        // Bind click events to the edit and delete buttons
+        jQuery('.edit.theme-btn').on('click', function () {
+            var guest_id = jQuery(this).data('guest-id');
+            edit_guestlist_details(guest_id);
+        });
+
+        jQuery('.delete.theme-btn').on('click', function () {
+            var guest_id = jQuery(this).data('guest-id');
+            delete_guest_details(guest_id);
+        });
+    });
+}
