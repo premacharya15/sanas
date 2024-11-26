@@ -1518,3 +1518,37 @@ function clear_budget() {
         wp_send_json_error('Failed to clear budget.');
     }
 }
+
+// Add AJAX action for updating guest details
+add_action('wp_ajax_update_guest_details', 'update_guest_details');
+add_action('wp_ajax_nopriv_update_guest_details', 'update_guest_details');
+
+function update_guest_details() {
+    check_ajax_referer('ajax-update-edit-guest-event-nonce', 'security');
+    global $wpdb;
+    $guest_id = intval($_POST['guestid']);
+    $guest_name = sanitize_text_field($_POST['editguestname']);
+    $guest_phone = sanitize_text_field($_POST['editguestphone']);
+    $guest_email = sanitize_email($_POST['editguestemail']);
+    $guest_group = sanitize_text_field($_POST['editguestgroup']);
+    $guest_info_table = $wpdb->prefix . "guest_details_info";
+
+    $result = $wpdb->update(
+        $guest_info_table,
+        [
+            'guest_name' => $guest_name,
+            'guest_phone_num' => $guest_phone,
+            'guest_email' => $guest_email,
+            'guest_group' => $guest_group
+        ],
+        ['guest_id' => $guest_id],
+        ['%s', '%s', '%s', '%s'],
+        ['%d']
+    );
+
+    if ($result !== false) {
+        wp_send_json_success('Guest details updated successfully.');
+    } else {
+        wp_send_json_error('Failed to update guest details.');
+    }
+}

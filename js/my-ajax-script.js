@@ -1258,5 +1258,29 @@ if (window.location.pathname === '/my-profile/') {
 }
 
 if (window.location.pathname === '/mycontact/') {
-    
+    // Update Guest Details
+    jQuery(document).ready(function($) {
+        $('#form-edit-guestlist-details').on('submit', function(e) {
+            e.preventDefault();
+            var formData = $(this).serialize();
+            $.ajax({
+                type: 'POST',
+                url: ajax_object.ajax_url,
+                data: formData + '&action=update_guest_details',
+                success: function(response) {
+                    if (response.success) {
+                        $('.edit_details_message').html('<p style="color: green;">' + response.data + '</p>');
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 1000);
+                    } else {
+                        $('.edit_details_message').html('<p style="color: red;">' + response.data + '</p>');
+                    }
+                },
+                error: function() {
+                    $('.edit_details_message').html('<p style="color: red;">Error updating guest details.</p>');
+                }
+            });
+        });
+    });
 }

@@ -112,10 +112,10 @@ $get_guest_group = $wpdb->get_results(
                                                 <td><?php echo esc_html($guest->guest_group); ?></td>
                                                 <td class="actions">
                                                     <div>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal" onclick="edit_guestlist_details(<?php echo esc_attr($guest->guest_id);?>)" data-bs-target="#edit-popup" class="edit theme-btn">
+                                                        <a href="javascript:void(0)" data-bs-toggle="modal" data-guest-id="<?php echo esc_attr($guest->guest_id);?>" data-bs-target="#edit-popup" class="edit theme-btn">
                                                             <i class="fa-solid fa-pen"></i>
                                                         </a>
-                                                        <a href="javascript:void(0)" onclick="delete_guest_details(<?php echo esc_attr($guest->guest_id);?>)" class="delete theme-btn">
+                                                        <a href="javascript:void(0)" data-guest-id="<?php echo esc_attr($guest->guest_id);?>" class="delete theme-btn">
                                                             <i class="fa-regular fa-trash-can"></i>
                                                         </a>
                                                     </div>
@@ -160,7 +160,7 @@ $get_guest_group = $wpdb->get_results(
           </button>
         </div>
         <div class="content-box">
-          <form method="post" id="form-edit-guestlist-details" >
+          <form method="post" id="form-edit-guestlist-details">
             <?php wp_nonce_field('ajax-update-edit-guest-event-nonce', 'security'); ?>
             <div class="form-content last">
               <div class="row">
