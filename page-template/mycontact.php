@@ -77,8 +77,8 @@ $get_event = $wpdb->get_results(
                 <div class="guests-list contact">
                     <div class="inner tabs-box guests-tabs">
                         <div class="guests-box tabs-content">
-                            <div class="table-responsive">
-                                <table class="table data-table display" id="guest-contact-list-<?php echo $table_counter; ?>">
+                            <div class="vendor-table table-responsive">
+                                <table class="vendor-list-table" id="guest-contact-list-<?php echo $table_counter; ?>">
                                     <thead>
                                         <tr>
                                             <th class="todo-subhead text-align-start" colspan="6">
@@ -89,9 +89,9 @@ $get_event = $wpdb->get_results(
                                             <th><input type="checkbox" id="all-select-checkbox-one"></th>
                                             <th>Name</th>
                                             <th>Phone Number</th>
-                                            <th>Email address</th>
+                                            <th class="text-single-line" data-toggle="tooltip" data-bs-original-title="Email address">Email address</th>
                                             <th>Group</th>
-                                            <th>Actions</th>
+                                            <th class="actions">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -100,7 +100,7 @@ $get_event = $wpdb->get_results(
                                                 <td><input type="checkbox"></td>
                                                 <td><?php echo esc_html($guest->guest_name); ?></td>
                                                 <td><?php echo esc_html($guest->guest_phone_num); ?></td>
-                                                <td><?php echo esc_html($guest->guest_email); ?></td>
+                                                <td class="text-single-line" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($guest->guest_email); ?>"><?php echo esc_html($guest->guest_email); ?></td>
                                                 <td><?php echo esc_html($guest->guest_group); ?></td>
                                                 <td class="actions">
                                                     <div>
