@@ -82,14 +82,18 @@ $get_event = $wpdb->get_results(
                 </thead>
                 <tbody>
                 <?php foreach ($get_guest_details as $guest) : ?>
-                                    <tr>
-                                        <td><?php echo esc_html($guest->guest_name); ?></td>
-                                        <td><?php echo esc_html($guest->guest_email); ?></td>
-                                        <td><?php echo esc_html($guest->guest_phone_num); ?></td>
-                                        <td><?php echo esc_html($guest->guest_status); ?></td>
-                                    </tr>
-                                <?php endforeach; ?>
-
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><?php echo esc_html($guest->guest_name); ?></td>
+                        <td><?php echo esc_html($guest->guest_phone_num); ?></td>
+                        <td><?php echo esc_html($guest->guest_email); ?></td>
+                        <td><?php echo esc_html($guest->guest_group); ?></td>
+                        <td>
+                            <a href="#" class="edit">Edit</a>
+                            <a href="#" class="delete">Delete</a>
+                        </td>
+                    </tr>
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
