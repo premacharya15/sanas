@@ -1316,37 +1316,37 @@ if (window.location.pathname === '/my-contact/') {
         });
     });
     
-    // Delete Guest Details
-    jQuery(document).ready(function($) {
-        // Click handler for delete button
-        $('.delete-guest-details').on('click', function() {
-            var guestId = $(this).data('guest-id');
-            var security = $('#security').val();
-            console.log('guestID: ' + guestId);
-    
-            if (confirm('Are you sure you want to delete this guest?')) {
-                $.ajax({
-                    type: 'POST',
-                    url: ajax_object.ajax_url,
-                    data: {
-                        action: 'delete_guest_details',
-                        guest_id: guestId,
-                        security: security
-                    },
-                    success: function(response) {
-                        if (response.success) {
-                            alert(response.data);
-                            window.location.reload();
-                        } else {
-                            alert('Failed to delete guest details: ' + response.data);
+        // Delete Guest Details
+        jQuery(document).ready(function($) {
+            // Click handler for delete button
+            $('.delete-guest-details').on('click', function() {
+                var guestId = $(this).data('guest-id');
+                var security = $('#security').val();
+                console.log('guestID: ' + guestId);
+        
+                if (confirm('Are you sure you want to delete this guest?')) {
+                    $.ajax({
+                        type: 'POST',
+                        url: ajax_object.ajax_url,
+                        data: {
+                            action: 'delete_guest_details',
+                            guest_id: guestId,
+                            security: security
+                        },
+                        success: function(response) {
+                            if (response.success) {
+                                alert(response.data);
+                                window.location.reload();
+                            } else {
+                                alert('Failed to delete guest details: ' + response.data);
+                            }
+                        },
+                        error: function() {
+                            alert('Error deleting guest details.');
                         }
-                    },
-                    error: function() {
-                        alert('Error deleting guest details.');
-                    }
-                });
-            }
+                    });
+                }
+            });
         });
-    });
 }
 
