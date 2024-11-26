@@ -1265,7 +1265,7 @@ if (window.location.pathname === '/mycontact/') {
                 url: ajaxurl,
                 type: 'POST',
                 data: {
-                    action: 'get_guest_details',
+                    action: 'sanas_edit_guest_info',
                     guest_id: guest_id,
                     security: '<?php echo wp_create_nonce("ajax-get-guest-details-nonce"); ?>'
                 },
