@@ -86,7 +86,7 @@ $get_event = $wpdb->get_results(
                                             </th>
                                         </tr>
                                         <tr>
-                                            <th><input type="checkbox" id="all-select-checkbox-<?php echo $table_counter; ?>"></th>
+                                            <th><input type="checkbox" id="all-select-checkbox-one"></th>
                                             <th>Name</th>
                                             <th>Phone Number</th>
                                             <th>Email address</th>
