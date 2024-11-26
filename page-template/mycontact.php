@@ -49,6 +49,7 @@ $get_event = $wpdb->get_results(
                 <?php
                 $event_id = $event->event_no;
                 $event_card_id = $event->event_card_id;
+                $event_name = $event->event_name;
 
                 // Fetch guest details for the event
                 $get_guest_details = $wpdb->get_results(
@@ -68,7 +69,7 @@ $get_event = $wpdb->get_results(
                 <thead>
                   <tr>
                     <th class="todo-subhead text-align-start" colspan="6">
-                      <h4><?php echo $event->event_name; ?></h4>
+                      <h4><?php echo esc_html($event_name); ?></h4>
                     </th>
                   </tr>
                   <tr>
