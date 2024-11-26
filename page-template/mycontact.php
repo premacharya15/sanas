@@ -20,10 +20,18 @@ wp_get_current_user();
 $userID = $current_user->ID;
 $sanas_card_event = $wpdb->prefix . "sanas_card_event";
 $guest_details_info_table = $wpdb->prefix . "guest_details_info";
+$guest_group_info_table = $wpdb->prefix . "guest_list_group";
 
 $get_event = $wpdb->get_results(
     $wpdb->prepare(
         "SELECT * FROM $sanas_card_event WHERE event_user = %d ORDER BY event_no DESC",
+        $userID
+    )
+);
+
+$get_guest_group = $wpdb->get_results(
+    $wpdb->prepare(
+        "SELECT * FROM $guest_group_info_table WHERE guest_group_user = %d ORDER BY guest_group_name ASC",
         $userID
     )
 );
@@ -104,7 +112,7 @@ $get_event = $wpdb->get_results(
                                                 <td><?php echo esc_html($guest->guest_group); ?></td>
                                                 <td class="actions">
                                                     <div>
-                                                        <a href="javascript:void(0)" data-bs-toggle="modal" ondblclick="edit_guestlist_details(<?php echo esc_attr($guest->guest_id);?>)" data-bs-target="#edit-popup" class="edit theme-btn">
+                                                        <a href="javascript:void(0)" data-bs-toggle="modal" onclick="edit_guestlist_details(<?php echo esc_attr($guest->guest_id);?>)" data-bs-target="#edit-popup" class="edit theme-btn">
                                                             <i class="fa-solid fa-pen"></i>
                                                         </a>
                                                         <a href="javascript:void(0)" onclick="delete_guest_details(<?php echo esc_attr($guest->guest_id);?>)" class="delete theme-btn">
@@ -152,40 +160,41 @@ $get_event = $wpdb->get_results(
           </button>
         </div>
         <div class="content-box">
-          <form method="post" id="form-edit-guestlist-details">
+          <form method="post" id="form-edit-guestlist-details" >
             <?php wp_nonce_field('ajax-update-edit-guest-event-nonce', 'security'); ?>
             <div class="form-content last">
               <div class="row">
                 <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
-                    <input type="text" id="editguestname" name="editguestname" class="form-control" placeholder="Name" required>
+                    <input type="text" id="editguestname" name="editguestname" class="form-control" placeholder="Name" required="">
                   </div>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
-                    <select class="form-control select-group" id="editguestgroup" name="editguestgroup" required>
+                    <select class="form-control select-group" id="editguestgroup" name="editguestgroup">
                       <option value="">Choose Group</option>
-                      <?php foreach ($get_guest_group as $group) { ?>
-                        <option value="<?php echo esc_attr($group->guest_group_id); ?>"><?php echo esc_html($group->guest_group_name); ?></option>
-                      <?php } ?>
+                      <?php foreach ($get_guest_group as $group) { 
+                                $id = $group->guest_group_id;
+                                ?>
+                                <option value="<?php echo $group->guest_group_name ?>"><?php echo $group->guest_group_name ?></option>
+                             <?php   }?>   
                     </select>
                   </div>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
-                    <input type="text" id="editguestphone" name="editguestphone" class="form-control" placeholder="Phone No*" required>
+                    <input type="text" id="editguestphone" name="editguestphone" class="form-control" placeholder="Phone No*" required="">
                   </div>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                   <div class="form-group">
-                    <input type="email" id="editguestemail" name="editguestemail" class="form-control" placeholder="Email*" required>
+                    <input type="text" id="editguestemail" name="editguestemail" class="form-control" placeholder="Email*" required="">
                   </div>
                 </div>
                 <div class="col-lg-12 col-sm-12">
                   <div class="links-box">
                     <input type="hidden" id="guestid" name="guestid" value="">
                     <button type="submit" class="btn btn-secondary btn-block">Save</button>
-                    <button type="button" class="btn btn-secondary gt-delete-btn" onclick="delete_guest_details(document.getElementById('guestid').value)"><i class="fa-regular fa-trash-can"></i></button>
                   </div>
                 </div>
               </div>
@@ -197,6 +206,53 @@ $get_event = $wpdb->get_results(
     </div>
   </div>
 </div>
+
+<script>
+function edit_guestlist_details(guest_id) {
+    jQuery.ajax({
+        url: ajaxurl,
+        type: 'POST',
+        data: {
+            action: 'get_guest_details',
+            guest_id: guest_id,
+            security: '<?php echo wp_create_nonce("ajax-get-guest-details-nonce"); ?>'
+        },
+        success: function(response) {
+            if (response.success) {
+                var guest = response.data;
+                jQuery('#editguestname').val(guest.guest_name);
+                jQuery('#editguestgroup').val(guest.guest_group);
+                jQuery('#editguestphone').val(guest.guest_phone_num);
+                jQuery('#editguestemail').val(guest.guest_email);
+                jQuery('#guestid').val(guest.guest_id);
+            } else {
+                alert('Failed to fetch guest details.');
+            }
+        }
+    });
+}
+
+function delete_guest_details(guest_id) {
+    if (confirm('Are you sure you want to delete this guest?')) {
+        jQuery.ajax({
+            url: ajaxurl,
+            type: 'POST',
+            data: {
+                action: 'delete_guest_details',
+                guest_id: guest_id,
+                security: '<?php echo wp_create_nonce("ajax-delete-guest-details-nonce"); ?>'
+            },
+            success: function(response) {
+                if (response.success) {
+                    location.reload();
+                } else {
+                    alert('Failed to delete guest.');
+                }
+            }
+        });
+    }
+}
+</script>
 
 <?php
 get_footer('dashboard');
