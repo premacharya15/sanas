@@ -161,6 +161,7 @@ $get_guest_group = $wpdb->get_results(
         </div>
         <div class="content-box">
           <form method="post" id="form-edit-guestlist-details">
+            <?php wp_nonce_field('ajax-update-edit-guest-event-nonce', 'security'); ?>
             <div class="form-content last">
               <div class="row">
                 <div class="col-lg-6 col-sm-12">
