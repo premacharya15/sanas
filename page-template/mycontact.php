@@ -117,6 +117,7 @@ $get_guest_group = $wpdb->get_results(
                                                         </a>
                                                         <a href="javascript:void(0)" data-guest-id="<?php echo esc_attr($guest->guest_id);?>" class="delete theme-btn delete-guest-details">
                                                             <i class="fa-regular fa-trash-can"></i>
+                                                            <input type="hidden" id="security" name="security" value="<?php echo wp_create_nonce('ajax-delete-guest-nonce'); ?>">
                                                         </a>
                                                     </div>
                                                 </td>
