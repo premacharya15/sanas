@@ -120,7 +120,7 @@ $get_event = $wpdb->get_results(
                                 jQuery(document).ready(function() {
                                     jQuery('#guest-contact-list-<?php echo $table_counter; ?>').DataTable({
                                         searching: false,
-                                        paging: false,
+                                        paging: true,
                                         "order": [],
                                         "ordering": true,
                                         columnDefs: [
