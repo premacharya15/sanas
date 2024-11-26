@@ -78,11 +78,11 @@ $get_event = $wpdb->get_results(
                     <div class="inner tabs-box guests-tabs">
                         <div class="guests-box tabs-content">
                             <div class="table-responsive">
+                              <h4><?php echo esc_html($event_name); ?></h4>
                                 <table class="table data-table display" id="guest-contact-list-<?php echo $table_counter; ?>">
                                     <thead>
                                         <tr>
                                             <th class="todo-subhead text-align-start" colspan="6">
-                                                <h4><?php echo esc_html($event_name); ?></h4>
                                             </th>
                                         </tr>
                                         <tr>
@@ -118,13 +118,7 @@ $get_event = $wpdb->get_results(
                                 </table>
                                 <script>
                                 jQuery(document).ready(function() {
-                                    jQuery('#guest-contact-list-<?php echo $table_counter; ?>').DataTable({
-                                      "order": [],
-                                      "ordering": true,
-                                      columnDefs: [
-                                          { orderable: true, targets: [1] },
-                                      ],
-                                    });
+                                    jQuery('#guest-contact-list-<?php echo $table_counter; ?>').DataTable();
                                 });
                                 </script>
                             </div>
