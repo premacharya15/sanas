@@ -77,7 +77,9 @@
                             <li style="text-transform: capitalize;"><a href="<?php echo site_url().'/my-profile/'; ?>"><?php echo $current_user->user_login; ?></a></li>
                             <li><a href="<?php echo site_url().'/my-dashboard/'; ?>"> Dashboard</a></li>
                             <li><a href="<?php echo site_url().'/my-events/'; ?>"> My Events</a></li>
-                            <li class="logout-btn"><a href="javascript:void(0);" data-logout-url="<?php echo wp_logout_url(home_url()); ?>">Logout</a></li>
+                            <li class="logout-btn">
+                                <a href="javascript:void(0);" class="logout-link" data-logout-url="<?php echo wp_logout_url(home_url()); ?>">Logout</a>
+                            </li>
                         </ul>
                         <?php } ?>
                     </div>

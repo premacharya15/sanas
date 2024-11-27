@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let logoutBtnClicked = false;
 
     // Logout button event listener 
-    jQuery('.logout-btn').on('click', function(e) {
+    jQuery('.logout-link').on('click', function(e) {
         e.preventDefault();
         logoutBtnClicked = true;
         show_confirm_modal_html_alert();
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle "Yes" button click in the confirmation modal
     jQuery('#modal-yes-button').on('click', function () {
         if (logoutBtnClicked) {
-            const logoutUrl = jQuery('.logout-btn a').data('logout-url');
+            const logoutUrl = jQuery('.logout-link').data('logout-url');
             window.location.href = logoutUrl;
         }
         logoutBtnClicked = false;
