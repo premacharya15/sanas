@@ -1155,8 +1155,6 @@ jQuery(document).ready(function ($) {
         form_data.append('image', file_data);
         form_data.append('action', 'upload_user_profile_image');
 
-        showPreloader( "Loading..." );
-
         $.ajax({
             url: ajax_object.ajax_url,
             type: 'POST',
@@ -1164,21 +1162,17 @@ jQuery(document).ready(function ($) {
             processData: false,
             data: form_data,
             success: function(response) {
-                hidePreloader();
                 if (response.success) {
                     jQuery("#tab-18 .my-profile-box").append('Profile image updated successfully!');
                     // Update all elements with the class 'user-profile-image' with the new image URL
                     jQuery('.user-profile-image').attr('src', response.data.url);
-                    hidePreloader();
-                    console.log(response.data.url);
+                    location.reload();
                 } else {
                     alert('Failed to upload image: ' + response.data);
-                    hidePreloader();
                 }
             },
             error: function() {
                 alert('Error uploading image.');
-                hidePreloader();
             }
         });
     });
