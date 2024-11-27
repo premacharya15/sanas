@@ -145,11 +145,12 @@ if (!function_exists('sanas_get_login_popup')) {
                   <?php if($pageEnable) { ?>
                   <p>
                    <?php 
-                    $i=0;
-                    foreach ($pagelinkInfo as $link): ?>
-                    <a href="<?php echo esc_url($link['sanas_signin_popup_page_url']['url']); ?>"><?php echo $link['sanas_signin_popup_page_title'] ?></a> 
-                    <?php if ($i == 0) {?>| <?php }?>
-                    <?php  $i++; endforeach;?>
+                    // $i=0;
+                    // foreach ($pagelinkInfo as $link): ?>
+                    <a href="/terms-of-use">Terms of Use</a>| <a href="/privacy-policy">Privacy Policy</a>
+                    <?php //if ($i == 0) {?><?php //}?>
+                    <?php 
+                    // $i++; endforeach;?>
                   </p>
                 <?php } ?>
               </div>
