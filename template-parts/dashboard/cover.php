@@ -1482,10 +1482,9 @@
                 $event_id
             );
             $colorbg = $wpdb->get_var($color_bg_link);
-            $frontimage_bg_url = $colorbg; // Set the background color code as the background URL if the front image is empty
         }
 
-        echo 'background color is '.$frontimage_bg_url;
+        echo 'background color is '.$colorbg;
         
 $event_step = $wpdb->prepare(
           "SELECT event_step_id FROM $sanas_card_event_table WHERE event_no = %d",
