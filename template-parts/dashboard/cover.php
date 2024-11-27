@@ -1503,11 +1503,15 @@ else{
 <?php if(!empty($frontimage_bg_url)) { ?>    
 body .inner-container #canvasElement {
     background-image: url('<?php echo $frontimage_bg_url; ?>');
-    background-color: <?php echo $colorbg; ?>;
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
 }
+<?php } ?>
+<?php if (!empty($colorbg)) { ?>
+    body .inner-container #canvasElement {
+        background-color: <?php echo $colorbg; ?> !important;
+    }
 <?php } ?>
 </style>
 <section class="wl-main-canvas">
