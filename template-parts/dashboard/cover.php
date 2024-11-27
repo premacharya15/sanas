@@ -1472,19 +1472,19 @@
             $frontimage = $wpdb->get_var($frontimagequery);        
         }
         $frontimage_bg_url = get_template_directory_uri();
-        // Use the default image if the database image is empty
-        // Parth - Default should be come from backend.
-        // image from database -> color -> $frontimage_bg_url
+        $colorbg = '';
+
         if (!empty($frontimage)) {
             $frontimage_bg_url = $frontimage;
-        } else {
-            // If frontimage_bg_url is empty, use the background color
+
             $color_bg_link = $wpdb->prepare(
-                  "SELECT event_front_bg_color FROM $sanas_card_event_table WHERE event_no = %d",
-                   $event_id
-             );
+                "SELECT event_front_bg_color FROM $sanas_card_event_table WHERE event_no = %d",
+                $event_id
+            );
             $colorbg = $wpdb->get_var($color_bg_link);
-            if ($colorbg) {
+
+            // Apply the background color if it exists
+            if (!empty($colorbg)) {
                 echo "<style>body .inner-container #canvasElement { background-color: {$colorbg}; }</style>";
             }
         }
