@@ -1484,6 +1484,8 @@
             $colorbg = $wpdb->get_var($color_bg_link);
         }
 
+        echo 'background color is '.$colorbg;
+        
 $event_step = $wpdb->prepare(
           "SELECT event_step_id FROM $sanas_card_event_table WHERE event_no = %d",
            $event_id
@@ -1507,11 +1509,6 @@ body .inner-container #canvasElement {
     background-position: center; 
     background-repeat: no-repeat; 
 }
-<?php } ?>
-<?php if (!empty($colorbg)) { ?>
-    body .inner-container #canvasElement {
-        background-color: <?php echo $colorbg; ?> !important;
-    }
 <?php } ?>
 </style>
 <section class="wl-main-canvas">
