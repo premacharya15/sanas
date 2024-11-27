@@ -1471,14 +1471,17 @@
              );
             $frontimage = $wpdb->get_var($frontimagequery);        
         }
-        $frontimage_bg_url = get_template_directory_uri();
+        $colorbackground = "#eeeeee";
+        if(empty($frontimage)){
+            // $frontimage_bg_url = get_template_directory_uri();
+            $colorbackground = $sanas_portfolio_meta['sanas_bg_color'];
+        }
         // Use the default image if the database image is empty
         // Parth - Default should be come from backend.
         // image from database -> color -> $frontimage_bg_url
-        echo $sanas_portfolio_meta['sanas_bg_color'];
 
         if (!empty($frontimage)) {
-            $frontimage_bg_url=$frontimage ;
+            $frontimage_bg_url = $frontimage;
         }
 
         $color_bg_link = $wpdb->prepare(
@@ -1517,6 +1520,11 @@ body .inner-container #canvasElement {
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
+}
+<?php } ?>
+<?php if(!empty($colorbackground)) { ?>    
+body .inner-container #canvasElement {
+    background-color: <?php echo $colorbackground; ?>;
 }
 <?php } ?>
 </style>
