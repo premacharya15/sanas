@@ -1471,7 +1471,7 @@
              );
             $frontimage = $wpdb->get_var($frontimagequery);        
         }
-        $frontimage_bg_url = get_template_directory_uri() . '/assets/img/BackGround_1.jpg';
+        // $frontimage_bg_url = get_template_directory_uri() . '/assets/img/BackGround_1.jpg';
         // Use the default image if the database image is empty
         // Parth - Default should be come from backend.
         // image from database -> color -> $frontimage_bg_url
