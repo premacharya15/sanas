@@ -160,6 +160,10 @@ ul.main-menu-list>li>a {
     color: #ffffff;
     transition: all 0.5s;
     text-transform: capitalize;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    max-width: 220px;
 }
 ul.main-menu-list>li:last-child{
     padding-right: 5px !important;
