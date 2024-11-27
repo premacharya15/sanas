@@ -1477,18 +1477,14 @@
         if (!empty($frontimage)) {
             $frontimage_bg_url = $frontimage;
         } else {
-            $color_bg_query = $wpdb->prepare(
+            $color_bg_link = $wpdb->prepare(
                 "SELECT event_front_bg_color FROM $sanas_card_event_table WHERE event_no = %d",
                 $event_id
             );
-            $colorbg = $wpdb->get_var($color_bg_query);
+            $colorbg = $wpdb->get_var($color_bg_link);
         }
 
-        if (!empty($colorbg)) {
-            echo 'Background color code is: ' . $colorbg;
-        } else {
-            echo 'No background color code found.';
-        }
+        echo 'background color is '.$colorbg;
         
 $event_step = $wpdb->prepare(
           "SELECT event_step_id FROM $sanas_card_event_table WHERE event_no = %d",
