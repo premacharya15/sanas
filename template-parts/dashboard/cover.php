@@ -1475,12 +1475,10 @@
         // Use the default image if the database image is empty
         // Parth - Default should be come from backend.
         // image from database -> color -> $frontimage_bg_url
-        echo 'frontimage is '.$frontimage ."\n";
-        echo 'frontimage_bg_url is '.$frontimage_bg_url."\n";
+        echo $sanas_portfolio_meta['sanas_bg_color'];
 
         if (!empty($frontimage)) {
             $frontimage_bg_url=$frontimage ;
-            echo 'frontimage_bg_url is '.$frontimage_bg_url."\n";
         }
 
         $color_bg_link = $wpdb->prepare(
@@ -1489,7 +1487,6 @@
          );
 
         $colorbg = $wpdb->get_var($color_bg_link);
-        echo 'colorbg is '.$colorbg."\n";
         $colorbgvalue='';
         if($colorbg)
         {
