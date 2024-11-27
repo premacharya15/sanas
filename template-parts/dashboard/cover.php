@@ -1475,17 +1475,12 @@
         // Use the default image if the database image is empty
         // Parth - Default should be come from backend.
         // image from database -> color -> $frontimage_bg_url
+
+        echo 'frontimage is '.$frontimage;
+
         if (!empty($frontimage)) {
             $frontimage_bg_url=$frontimage ;
         }
-
-        $color_bg_link = $wpdb->prepare(
-              "SELECT event_front_bg_color FROM $sanas_card_event_table WHERE event_no = %d",
-               $event_id
-         );
-        $colorbg = $wpdb->get_var($color_bg_link);
-        
-        echo 'background color is '.$colorbg;
 
 
 $event_step = $wpdb->prepare(
