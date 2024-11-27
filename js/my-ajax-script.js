@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Logout button event listener 
     jQuery('.logout-btn').on('click', function(e) {
+        console.log('logout-btn clicked');
         e.preventDefault();
         logoutBtnClicked = true;
         show_confirm_modal_html_alert();
