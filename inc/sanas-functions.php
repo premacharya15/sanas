@@ -221,12 +221,7 @@ if (!function_exists('sanas_get_login_popup')) {
                 <p><?php echo esc_html__('Already have an account?','sanas'); ?>&nbsp;&nbsp;<a class="sign-in" href="#"><?php echo esc_html('Sign in here.'); ?></a> </p>
                 <?php if($signuppageEnable) { ?>
                 <p>
-                    <?php 
-                    $i=0;
-                    foreach ($signuppagelinkInfo as $link): ?>
-                    <a href="<?php echo esc_url($link['sanas_signup_popup_page_url']['url']); ?>"><?php echo $link['sanas_signup_popup_page_title'] ?></a> 
-                    <?php if ($i == 0) {?>| <?php }?>
-                    <?php  $i++; endforeach;?>
+                <a href="/terms-of-use">Terms of Use</a>| <a href="/privacy-policy">Privacy Policy</a>
                 </p>
               <?php } ?>
               </div>
