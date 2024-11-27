@@ -5134,7 +5134,7 @@ tr.todo-check-title>th:nth-child(6) {
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
-    background-image: url(../img/Wedding_Banner.jpg);    
+    /* background-image: url(../img/Wedding_Banner.jpg);     */
 }
 .hero-detaile {
     padding: 60px 0;
