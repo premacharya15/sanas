@@ -886,6 +886,27 @@
                                             <?php echo '<img id="img6" src="' . get_template_directory_uri() . '/assets/img/BackGround_6.jpg" alt=""> ' ?>
                                             </div>
                                         </div>
+                                        <div class="bg-img-inner">
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img7" src="' . get_template_directory_uri() . '/assets/img/Patterns-10.jpg" alt=""> ' ?>
+                                            </div>
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img8" src="' . get_template_directory_uri() . '/assets/img/Patterns-11.jpg" alt=""> ' ?>
+                                            </div>
+                                        </div>
+                                        <div class="bg-img-inner">
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img9" src="' . get_template_directory_uri() . '/assets/img/Patterns-13.jpg" alt=""> ' ?>
+                                            </div>
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img10" src="' . get_template_directory_uri() . '/assets/img/Patterns-14.jpg" alt=""> ' ?>
+                                            </div>
+                                        </div>
+                                        <div class="bg-img-inner">
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img11" src="' . get_template_directory_uri() . '/assets/img/Patterns-15.jpg" alt=""> ' ?>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
