@@ -1145,7 +1145,7 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                             </button>
                         </div>
                         <?php  
-                            sanas_sticker_gallery_call('desk'); ?>
+                            sanas_sticker_gallery_call('mobile'); ?>
                         <!-- <div class="elements">
                             <div class="elements-iteam ">
                                 <img src="<?php echo get_template_directory_uri();?>/assets/img/e-1.png" alt="stiker">
@@ -1234,7 +1234,9 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                                 </div>
                             </div>
                         </form>
-                        <div class="elements">
+                        <?php  
+                            sanas_sticker_gallery_call('desk'); ?>
+                        <!-- <div class="elements">
                             <div class="elements-inner">
                                 <div class="elements-iteam  sanas-item">
                                     <?php echo '<img src="'.get_template_directory_uri().'/assets/img/e-1.png" alt="">'?>
@@ -1323,7 +1325,7 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                                     <?php echo '<img src="'.get_template_directory_uri().'/assets/img/e-12.png" alt="">'?>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <a href="#" class="cooming-soon">More Coming soon</a>
                     </div>
                 </div>
