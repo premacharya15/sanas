@@ -1476,8 +1476,8 @@
         // Parth - Default should be come from backend.
         // image from database -> color -> $frontimage_bg_url
 
-        echo 'frontimage is '.$frontimage;
-        echo 'frontimage_bg_url is '.$frontimage_bg_url;
+        echo 'frontimage is '.$frontimage."\n";
+        echo 'frontimage_bg_url is '.$frontimage_bg_url."\n";
 
         if (!empty($frontimage)) {
             $color_bg_link = $wpdb->prepare(
