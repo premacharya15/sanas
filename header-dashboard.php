@@ -74,7 +74,7 @@
                         <img class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" style="display: none;" aria-expanded="true" src="<?php echo  get_template_directory_uri(); ?>/assets/img/login-img.jpg" alt="">
 
                         <ul class="dropdown-menu p-0" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 42.4px, 0px);">
-                        <li style="text-transform: capitalize;"><a href="<?php echo home_url(); ?>/my-profile"><?php echo $current_user->user_firstname; ?></a></li>
+                            <li style="text-transform: capitalize;"><?php echo $current_user->user_login; ?></li>
                             <li><a href="<?php echo site_url().'/my-dashboard/'; ?>"> Dashboard</a></li>
                             <li><a href="<?php echo site_url().'/my-events/'; ?>"> My Events</a></li>
                             <li class="logout-btn"><a href="javascript:void(0);" data-logout-url="<?php echo wp_logout_url(home_url()); ?>">Logout</a></li>
