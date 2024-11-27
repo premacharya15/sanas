@@ -1477,18 +1477,15 @@
         if (!empty($frontimage)) {
             $frontimage_bg_url = $frontimage;
         } else {
-            require_once(SANAS_CODE_PLUGIN_DIR . '/sanas-code.php'); // Include the sanas-code.php to access its functions and variables
             $color_bg_link = $wpdb->prepare(
                 "SELECT event_front_bg_color FROM $sanas_card_event_table WHERE event_no = %d",
                 $event_id
             );
             $colorbg = $wpdb->get_var($color_bg_link);
-            if (empty($colorbg)) { // Check if colorbg is empty and fetch default from sanas-code.php
-                $colorbg = SANAS_DEFAULT_BG_COLOR; // Assuming SANAS_DEFAULT_BG_COLOR is defined in sanas-code.php
-            }
+            $frontimage_bg_url = $colorbg; // Set the background color code as the background URL if the front image is empty
         }
 
-        echo 'background color is '.$colorbg;
+        echo 'background color is '.$frontimage_bg_url;
         
 $event_step = $wpdb->prepare(
           "SELECT event_step_id FROM $sanas_card_event_table WHERE event_no = %d",
