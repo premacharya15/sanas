@@ -1471,23 +1471,28 @@
              );
             $frontimage = $wpdb->get_var($frontimagequery);        
         }
-        $frontimage_bg_url = get_template_directory_uri() . $frontimage;
-        $colorbg = '';
-
+        $frontimage_bg_url = get_template_directory_uri() . '/assets/img/BackGround_1.jpg';
+        // Use the default image if the database image is empty
+        // Parth - Default should be come from backend.
+        // image from database -> color -> $frontimage_bg_url
         if (!empty($frontimage)) {
-            $frontimage_bg_url = $frontimage;
+            $frontimage_bg_url=$frontimage ;
         }
 
-        if (!empty($event_id)) {
-        $bg_color_query = $wpdb->prepare(
-            "SELECT event_front_bg_color FROM $sanas_card_event_table WHERE event_no = %d",
-            $event_id
-        );
-        $colorbg = $wpdb->get_var($bg_color_query);
-    }
-    echo 'background color is '.$colorbg;
-        
-        
+        $color_bg_link = $wpdb->prepare(
+              "SELECT event_front_bg_color FROM $sanas_card_event_table WHERE event_no = %d",
+               $event_id
+         );
+        $colorbg = $wpdb->get_var($color_bg_link);
+        $colorbgvalue='';
+        if($colorbg)
+        {
+            $colorbgvalue=$colorbg;
+        }
+
+        echo 'background color is '.$colorbgvalue;
+
+
 $event_step = $wpdb->prepare(
           "SELECT event_step_id FROM $sanas_card_event_table WHERE event_no = %d",
            $event_id
