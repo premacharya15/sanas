@@ -16,8 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     jQuery('.logout-btn').on('click', function(e) {
         e.preventDefault();
         logoutBtnClicked = true;
-        const logoutUrl = jQuery(this).find('a').data('logout-url');
-        console.log('Logout URL:', logoutUrl); // Debugging: Log the logout URL
         show_confirm_modal_html_alert();
     });
 
@@ -25,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     jQuery('#modal-yes-button').on('click', function () {
         if (logoutBtnClicked) {
             const logoutUrl = jQuery('.logout-btn a').data('logout-url');
-            console.log('Redirecting to:', logoutUrl); // Debugging: Log the redirection URL
             window.location.href = logoutUrl;
         }
         logoutBtnClicked = false;
