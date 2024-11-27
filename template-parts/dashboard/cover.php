@@ -1477,6 +1477,7 @@
         // image from database -> color -> $frontimage_bg_url
         echo 'frontimage is '.$frontimage ."\n";
         echo 'frontimage_bg_url is '.$frontimage_bg_url."\n";
+
         if (!empty($frontimage)) {
             $frontimage_bg_url=$frontimage ;
             echo 'frontimage_bg_url is '.$frontimage_bg_url."\n";
@@ -1486,6 +1487,7 @@
               "SELECT event_front_bg_color FROM $sanas_card_event_table WHERE event_no = %d",
                $event_id
          );
+         
         $colorbg = $wpdb->get_var($color_bg_link);
         echo 'colorbg is '.$colorbg."\n";
         $colorbgvalue='';
