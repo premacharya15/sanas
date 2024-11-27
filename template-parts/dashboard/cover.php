@@ -1477,6 +1477,14 @@
         if (!empty($frontimage)) {
             $frontimage_bg_url = $frontimage;
         }
+
+        $bg_color_query = $wpdb->prepare(
+            "SELECT event_front_bg_color FROM $sanas_card_event_table WHERE event_no = %d",
+            $event_id
+        );
+        $colorbg = $wpdb->get_var($bg_color_query);
+        echo 'background color is '.$colorbg;
+        
         
 $event_step = $wpdb->prepare(
           "SELECT event_step_id FROM $sanas_card_event_table WHERE event_no = %d",
