@@ -1476,19 +1476,13 @@
 
         if (!empty($frontimage)) {
             $frontimage_bg_url = $frontimage;
-
+        } else {
             $color_bg_link = $wpdb->prepare(
                 "SELECT event_front_bg_color FROM $sanas_card_event_table WHERE event_no = %d",
                 $event_id
             );
             $colorbg = $wpdb->get_var($color_bg_link);
-
-            // Apply the background color if it exists
-            if (!empty($colorbg)) {
-                echo "<style>body .inner-container #canvasElement { background-color: {$colorbg}; }</style>";
-            }
         }
-
 
 $event_step = $wpdb->prepare(
           "SELECT event_step_id FROM $sanas_card_event_table WHERE event_no = %d",
@@ -1509,6 +1503,7 @@ else{
 <?php if(!empty($frontimage_bg_url)) { ?>    
 body .inner-container #canvasElement {
     background-image: url('<?php echo $frontimage_bg_url; ?>');
+    background-color: <?php echo $colorbg; ?>;
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
