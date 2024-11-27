@@ -161,6 +161,9 @@ ul.main-menu-list>li>a {
     transition: all 0.5s;
     text-transform: capitalize;
 }
+ul.main-menu-list>li:last-child{
+    padding-right: 5px !important;
+}
 
 ul.main-menu-list>li>a:hover {
     color: rgb(255 255 255 / 60%);
