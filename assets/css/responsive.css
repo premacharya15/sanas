@@ -210,7 +210,7 @@
         height: auto;
         width: calc( 100% - 390px );
         margin-left: 50px;
-        z-index: 999;
+        z-index: 1;
     }
     
     .wl-right-slide-bar .inner-colum {
