@@ -1471,7 +1471,7 @@
              );
             $frontimage = $wpdb->get_var($frontimagequery);        
         }
-        $frontimage_bg_url = get_template_directory_uri() . '/assets/img/preview-bg.jpg';
+        $frontimage_bg_url = get_template_directory_uri() . $frontimage;
         $colorbg = '';
 
         if (!empty($frontimage)) {
