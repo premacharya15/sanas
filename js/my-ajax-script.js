@@ -1049,7 +1049,7 @@ jQuery(document).ready(function ($) {
         $.post(ajax_object.ajax_url, data, function (response) {
             jQuery(".btn-profile").text(jQuery('form.profile-update input[name="first_name"]').val().charAt(0).toUpperCase());
             jQuery(".profile-firstc").text(jQuery('form.profile-update input[name="first_name"]').val().charAt(0).toUpperCase());
-            jQuery(".profile-name-user").text(jQuery('form.profile-update input[name="first_name"]').val());
+            jQuery(".profile-name-user a").text(jQuery('form.profile-update input[name="first_name"]').val());
             jQuery(".profile-info-title h4").text(jQuery('form.profile-update input[name="first_name"]').val() + ' ' + jQuery('form.profile-update input[name="last_name"]').val());
             jQuery(".profile-info-text").text(jQuery('form.profile-update textarea[name="about"]').val() || 'Dream big. Think different. Do great!');
             jQuery("#tab-11 .form-box").append(response.success ? 'Profile updated successfully!' : response.data);
