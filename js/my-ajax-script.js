@@ -13,16 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let logoutBtnClicked = false;
 
     // Logout button event listener 
-    jQuery('.logout-link').on('click', function(e) {
+    jQuery('.logout-btn').on('click', function(e) {
         e.preventDefault();
         logoutBtnClicked = true;
+        const logoutUrl = jQuery(this).find('a').data('logout-url');
+        console.log('Logout URL:', logoutUrl); // Debugging: Log the logout URL
         show_confirm_modal_html_alert();
     });
 
     // Handle "Yes" button click in the confirmation modal
     jQuery('#modal-yes-button').on('click', function () {
         if (logoutBtnClicked) {
-            const logoutUrl = jQuery('.logout-link').data('logout-url');
+            const logoutUrl = jQuery('.logout-btn a').data('logout-url');
+            console.log('Redirecting to:', logoutUrl); // Debugging: Log the redirection URL
             window.location.href = logoutUrl;
         }
         logoutBtnClicked = false;
