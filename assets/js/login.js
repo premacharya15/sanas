@@ -1273,3 +1273,40 @@ $('#copyUrlButton').click(function() {
 
 });
 
+
+// Logout
+
+// Function to show the modal
+function show_confirm_modal_html_alert() {
+    jQuery('#exampleConfirmModalLabel').text('Logout');
+    jQuery('#confirm_modal-body-text').text('Are you sure you want to logout?');
+    jQuery('#confirm_modal_html_alert').modal('show');
+}
+
+// Track if logout button was clicked
+let logoutBtnClicked = false;
+
+// Logout button event listener 
+jQuery('.logout-btn').on('click', function(e) {
+    e.preventDefault();
+    logoutBtnClicked = true;
+    const logoutUrl = jQuery(this).find('a').data('logout-url');
+    console.log('Logout URL:', logoutUrl); // Debugging: Log the logout URL
+    show_confirm_modal_html_alert();
+});
+
+// Handle "Yes" button click in the confirmation modal
+jQuery('#modal-yes-button').on('click', function () {
+    if (logoutBtnClicked) {
+        const logoutUrl = jQuery('.logout-btn a').data('logout-url');
+        console.log('Redirecting to:', logoutUrl); // Debugging: Log the redirection URL
+        window.location.href = logoutUrl;
+    }
+    logoutBtnClicked = false;
+});
+
+// Handle "No" button click in the confirmation modal
+jQuery('#modal-no-button').on('click', function () {
+    logoutBtnClicked = false;
+    jQuery('#confirm_modal_html_alert').modal('hide');
+});
