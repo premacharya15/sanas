@@ -906,6 +906,8 @@
                                             <div class="bg-img-iteam">
                                             <?php echo '<img id="img11" src="' . get_template_directory_uri() . '/assets/img/Patterns-15.jpg" alt=""> ' ?>
                                             </div>
+                                            <div class="bg-img-iteam">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

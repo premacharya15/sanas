@@ -769,6 +769,23 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                                         <div class="bg-img-iteam">
                                             <img src="<?php echo get_template_directory_uri();?>/assets/img/bg-12.jpg" alt="BackGround-image">
                                         </div>
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img7" src="' . get_template_directory_uri() . '/assets/img/Patterns-10.jpg" alt=""> ' ?>
+                                            </div>
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img8" src="' . get_template_directory_uri() . '/assets/img/Patterns-11.jpg" alt=""> ' ?>
+                                            </div>
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img9" src="' . get_template_directory_uri() . '/assets/img/Patterns-13.jpg" alt=""> ' ?>
+                                            </div>
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img10" src="' . get_template_directory_uri() . '/assets/img/Patterns-14.jpg" alt=""> ' ?>
+                                            </div>
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img11" src="' . get_template_directory_uri() . '/assets/img/Patterns-15.jpg" alt=""> ' ?>
+                                            </div>
+                                            <div class="bg-img-iteam">
+                                            </div>
                                     </div>
                                 </div>
                             </div>
