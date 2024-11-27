@@ -1484,13 +1484,8 @@
                $event_id
          );
         $colorbg = $wpdb->get_var($color_bg_link);
-        $colorbgvalue='';
-        if($colorbg)
-        {
-            $colorbgvalue=$colorbg;
-        }
-
-        echo 'background color is '.$colorbgvalue;
+        
+        echo 'background color is '.$colorbg;
 
 
 $event_step = $wpdb->prepare(
