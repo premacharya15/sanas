@@ -757,19 +757,19 @@
                                                  <?php echo '<img id="img12" src=" ' . get_template_directory_uri() . '/assets/img/bg-12.jfif" alt=""> ' ?>
                                             </div>
                                             <div class="bg-img-iteam">
-                                            <?php echo '<img id="img13" src="' . get_template_directory_uri() . '/assets/img/Patterns-10.jpg" alt=""> ' ?>
+                                                <?php echo '<img id="img13" src="' . get_template_directory_uri() . '/assets/img/Patterns-10.jpg" alt=""> ' ?>
                                             </div>
                                             <div class="bg-img-iteam">
-                                            <?php echo '<img id="img14" src="' . get_template_directory_uri() . '/assets/img/Patterns-11.jpg" alt=""> ' ?>
+                                                <?php echo '<img id="img14" src="' . get_template_directory_uri() . '/assets/img/Patterns-11.jpg" alt=""> ' ?>
                                             </div>
                                             <div class="bg-img-iteam">
-                                            <?php echo '<img id="img15" src="' . get_template_directory_uri() . '/assets/img/Patterns-13.jpg" alt=""> ' ?>
+                                                <?php echo '<img id="img15" src="' . get_template_directory_uri() . '/assets/img/Patterns-13.jpg" alt=""> ' ?>
                                             </div>
                                             <div class="bg-img-iteam">
-                                            <?php echo '<img id="img16" src="' . get_template_directory_uri() . '/assets/img/Patterns-14.jpg" alt=""> ' ?>
+                                                <?php echo '<img id="img16" src="' . get_template_directory_uri() . '/assets/img/Patterns-14.jpg" alt=""> ' ?>
                                             </div>
                                             <div class="bg-img-iteam">
-                                            <?php echo '<img id="img17" src="' . get_template_directory_uri() . '/assets/img/Patterns-15.jpg" alt=""> ' ?>
+                                                <?php echo '<img id="img17" src="' . get_template_directory_uri() . '/assets/img/Patterns-15.jpg" alt=""> ' ?>
                                             </div>
                                             <div class="bg-img-iteam">
                                             </div>
@@ -1487,7 +1487,7 @@
               "SELECT event_front_bg_color FROM $sanas_card_event_table WHERE event_no = %d",
                $event_id
          );
-         
+
         $colorbg = $wpdb->get_var($color_bg_link);
         echo 'colorbg is '.$colorbg."\n";
         $colorbgvalue='';
