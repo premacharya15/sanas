@@ -27,6 +27,7 @@ $userID = $current_user->ID;
 
 $first_char = substr($current_user->user_firstname, 0, 1);
 ?>
+<?php render_confirm_modal_html_alert(); ?>
   <header class="main-header <?php echo esc_attr($class_fixed);?>">
     <div class="container">
       <div class="header-top">
