@@ -32,7 +32,7 @@ function sanas_css()
   wp_enqueue_style('sanas-font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/all.min.css', array(), SANAS_VERSION);
   wp_enqueue_style('slick', get_template_directory_uri() . '/assets/slick/slick.css', array(), SANAS_VERSION);
 
-  wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/style.css', array(), SANAS_VERSION);
+
   if(is_page_template('page-template/user-dashboard.php'))
   {
      if ( $_GET['dashboard'] == 'preview') {
@@ -54,6 +54,7 @@ function sanas_css()
   {
     wp_enqueue_style('preview-style', get_template_directory_uri() . '/assets/css/preview.css', array(), SANAS_VERSION);     
   }
+  wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/style.css', array(), SANAS_VERSION);
   wp_enqueue_style('theme-responsive-style', get_template_directory_uri() . '/assets/css/responsive.css', array(), SANAS_VERSION);
 
 }
