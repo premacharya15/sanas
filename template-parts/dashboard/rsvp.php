@@ -850,6 +850,10 @@ if (empty($rsvpimage)) {
                                                     map.setZoom(15);
                                                     marker.setPosition(location);
                                                     marker.setVisible(true);
+                                                    
+                                                    // Generate Google Maps link with location name and address
+                                                    const googleMapLink = `https://www.google.com/maps?q=${encodeURIComponent(place.name)}%20${encodeURIComponent(place.formatted_address)}`;
+                                                    console.log("Google Maps Link:", googleMapLink);
 
                                                     // Log details to the console
                                                     console.log("Selected Location:", place.name);
