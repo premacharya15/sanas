@@ -24,7 +24,8 @@ if ( !function_exists( 'sanas_google_fonts_url' ) ) {
 
 function sanas_css()
 {
-
+  
+  wp_enqueue_style('theme-secondary-style', get_template_directory_uri() . '/assets/css/style2.css', array(), SANAS_VERSION);
   wp_enqueue_style('sanas-fonts', sanas_google_fonts_url(), array());
   wp_enqueue_style('select2', get_template_directory_uri() . '/assets/css/select2.min.css', array(), SANAS_VERSION);
   wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', array(), '5.3.3');
@@ -33,15 +34,24 @@ function sanas_css()
   wp_enqueue_style('slick', get_template_directory_uri() . '/assets/slick/slick.css', array(), SANAS_VERSION);
 
 
+  wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/style.css', array(), SANAS_VERSION);
+  wp_enqueue_style('theme-responsive-style', get_template_directory_uri() . '/assets/css/responsive.css', array(), SANAS_VERSION);
+
+
   if(is_page_template('page-template/user-dashboard.php'))
   {
      if ( $_GET['dashboard'] == 'preview') {
-           wp_enqueue_style('preview-style', get_template_directory_uri() . '/assets/css/preview.css', array(), SANAS_VERSION);     
+
+      wp_enqueue_style('preview-style', get_template_directory_uri() . '/assets/css/preview.css', array(), SANAS_VERSION);
+
      }
+
     if ( $_GET['dashboard'] == 'guestlist') {
         wp_enqueue_style('datatables', get_template_directory_uri() . '/assets/css/datatables.min.css', array(), SANAS_VERSION);
+
     }        
   }
+
   if(is_page_template('page-template/todolist.php') ||
   is_page_template('page-template/my-vendors.php') ||
   is_page_template('page-template/vendor-list.php') ||
@@ -54,9 +64,6 @@ function sanas_css()
   {
     wp_enqueue_style('preview-style', get_template_directory_uri() . '/assets/css/preview.css', array(), SANAS_VERSION);     
   }
-  wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/style.css', array(), SANAS_VERSION);
-  wp_enqueue_style('theme-secondary-style', get_template_directory_uri() . '/assets/css/style2.css', array(), SANAS_VERSION);
-  wp_enqueue_style('theme-responsive-style', get_template_directory_uri() . '/assets/css/responsive.css', array(), SANAS_VERSION);
 
 }
 add_action('wp_enqueue_scripts', 'sanas_css');	
