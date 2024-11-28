@@ -5494,7 +5494,7 @@ input.rsvp-msg::placeholder {
     text-align: center;
 }
 
-.wl-right-slide-bar::after {
+/* .wl-right-slide-bar::after {
     content: "";
     height: 100%;
     width: 100%;
@@ -5502,7 +5502,7 @@ input.rsvp-msg::placeholder {
     top: 0;
     left: 0;
     background-color: #ffffff36;
-}
+} */
 
 .upload-file-content>a {
     color: var(--snas-bg-secondary-2);
