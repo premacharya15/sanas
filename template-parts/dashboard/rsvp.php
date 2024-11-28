@@ -803,7 +803,7 @@ if (empty($rsvpimage)) {
                                 </div>
                                 <div class="rsvp-from-group mt-3 mb-2 map-container-rsvp">
                                     <h4>Address</h4>
-                                        <input class="map-input-rsvp" id="search" type="text" placeholder="Type any location">
+                                        <input class="map-input-rsvp" id="search" type="text" placeholder="Search location">
                                         <div class="map-location-rsvp" id="map"></div>
                                 </div>
                                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2TZGxSFxPToAsFcoE7I1fdENSJuK_Eic&libraries=places" async defer></script>
