@@ -801,13 +801,11 @@ if (empty($rsvpimage)) {
                                 <div class="rsvp-from-group">
                                     <input type="number" id="guestContact" style="<?php echo $guest_contact_css; ?>" value="<?php echo esc_html($guestContact); ?>" class="edit-text rsvp-msg host-contact-no" name="guestContact"  placeholder="Enter Host Contact No.*" required="">
                                 </div>
-                                <div class="rsvp-from-group mt-3 mb-2">
+                                <div class="rsvp-from-group mt-3 mb-2 map-container-rsvp">
                                     <h4>Address</h4>
-                                    <div class="container">
-                                        <h1>Search for a Location</h1>
-                                        <input id="search" type="text" placeholder="Type any location">
-                                        <div class="map-container-rsvp" id="map"></div>
-                                    </div>
+                                        <input class="map-input-rsvp" id="search" type="text" placeholder="Type any location">
+                                        <div class="map-location-rsvp" id="map"></div>
+                                </div>
                                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2TZGxSFxPToAsFcoE7I1fdENSJuK_Eic&libraries=places" async defer></script>
                                     <script>
                                         let map;
