@@ -803,20 +803,69 @@ if (empty($rsvpimage)) {
                                 </div>
                                 <div class="rsvp-from-group mt-3 mb-2">
                                     <h4>Address</h4>
-                                    <input type="text" id="line1" name="line1"  class="edit-text rsvp-msg address-line1 host-name"  placeholder="Address LIne 1" required="">
-                                </div>
-                                <div class="rsvp-from-group">
-                                    <input type="text" id="line2" name="line2"  class="edit-text rsvp-msg address-line2 host-name"  placeholder="Address LIne 2" required="">
-                                </div>
-                                <div class="rsvp-from-group">
-                                    <input type="text" id="city" name="city"  class="edit-text rsvp-msg address-line2 host-name"  placeholder="City" required="">
-                                </div>
-                                <div class="rsvp-from-group">
-                                    <input type="text" id="state" name="state"  class="edit-text rsvp-msg address-line2 host-name"  placeholder="State" required="">
-                                </div>
-                                <div class="rsvp-from-groups">
-                                    <input type="text" id="country" name="country"  class="edit-text rsvp-msg address-line2 host-name"  placeholder="country" required="">
-                                </div>
+                                    <div class="container">
+                                        <h1>Search for a Location</h1>
+                                        <input id="search" type="text" placeholder="Type any location">
+                                        <div class="map-container-rsvp" id="map"></div>
+                                    </div>
+                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2TZGxSFxPToAsFcoE7I1fdENSJuK_Eic&libraries=places" async defer></script>
+                                    <script>
+                                        let map;
+                                        let marker;
+
+                                        function initializeAutocomplete() {
+                                            const input = document.getElementById("search");
+
+                                            // Initialize map centered at a default location
+                                            map = new google.maps.Map(document.getElementById("map"), {
+                                                center: { lat: 20.5937, lng: 78.9629 }, // Default: India
+                                                zoom: 5,
+                                            });
+
+                                            // Initialize marker, hidden by default
+                                            marker = new google.maps.Marker({
+                                                map: map,
+                                                visible: false,
+                                            });
+
+                                            // Ensure the Google Places API is loaded before initializing autocomplete
+                                            if (typeof google === "undefined" || !google.maps.places) {
+                                                console.error("Google Maps API failed to load.");
+                                                return;
+                                            }
+
+                                            // Create the autocomplete object
+                                            const autocomplete = new google.maps.places.Autocomplete(input);
+
+                                            // Add a listener for when a place is selected
+                                            autocomplete.addListener('place_changed', function () {
+                                                const place = autocomplete.getPlace();
+
+                                                if (place.geometry) {
+                                                    // Get coordinates
+                                                    const location = place.geometry.location;
+                                                    const lat = location.lat();
+                                                    const lng = location.lng();
+
+                                                    // Update map and marker
+                                                    map.setCenter(location);
+                                                    map.setZoom(15);
+                                                    marker.setPosition(location);
+                                                    marker.setVisible(true);
+
+                                                    // Log details to the console
+                                                    console.log("Selected Location:", place.name);
+                                                    console.log("Formatted Address:", place.formatted_address);
+                                                    console.log("Coordinates:", { lat, lng });
+                                                } else {
+                                                    console.log("No details available for the input: '" + place.name + "'");
+                                                }
+                                            });
+                                        }
+
+                                        // Initialize Autocomplete after the API script is loaded
+                                        window.addEventListener('load', initializeAutocomplete);
+                                    </script>
                                 <div class="rsvp-from-group">
                                     <textarea class="edit-text rsvp-msg host-message" style="<?php echo $guest_message_css; ?>" id="guestMessage" name="guestMessage"
                                         placeholder="Special Instructions, Dress Code, etc..."><?php echo esc_html($guestMessage); ?></textarea>
