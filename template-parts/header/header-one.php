@@ -102,5 +102,4 @@ $first_char = substr($current_user->user_firstname, 0, 1);
   </header>
 <?php } }
 add_action('sanas_header','sanas_header_function');
-render_confirm_modal_html_alert(); 
-?>
+
