@@ -89,3 +89,5 @@
         </div>
     </div>
 </div>    
+<?php render_confirm_modal_html_alert(); ?>
+<?php render_modal_html_alert(); ?>
