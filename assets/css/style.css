@@ -6595,12 +6595,19 @@ font-size: 18px;
     text-align: center;
 }
 
-/* .map-input-rsvp{
+.map-input-rsvp{
     width: 100%;
     padding: 10px;
     font-size: 16px;
     margin-bottom: 10px;
-} */
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50.48px;
+    margin: 20px 0;
+    color: #7c7878;
+    background-color: transparent;
+    text-align: center;
+}
 
 .map-location-rsvp{
     width: 100%;
