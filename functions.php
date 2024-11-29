@@ -1619,9 +1619,9 @@ function move_to_guest_list() {
                     'guest_name' => $guest['guest_name'],
                     'guest_email' => $guest['guest_email'],
                     'guest_phone_num' => $guest['guest_phone_num'],
-                    'guest_status' => 'pending', // Set default status
-                    'guest_adult' => $guest['guest_adult'],
-                    'guest_kids' => $guest['guest_kids']
+                    'guest_status' => 'Draft', // Set default status
+                    'guest_adult' => $guest['guest_adult'] ?? 0,
+                    'guest_kids' => $guest['guest_kids'] ?? 0
                 ],
                 ['%d', '%d', '%s', '%s', '%s', '%s', '%d', '%d']
             );
