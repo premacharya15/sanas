@@ -31,8 +31,7 @@ $completed_count = $wpdb->get_var(
         'Completed'
     )
 );
-global $wpdb;
-$current_user_id = get_current_user_id();
+
 $table_name = $wpdb->prefix . 'budget_expense';
 $totals = $wpdb->get_row(
     $wpdb->prepare("
@@ -43,7 +42,31 @@ $totals = $wpdb->get_row(
     ", $current_user_id)
 );
 
-$event_id = 110;
+      $get_event = $wpdb->get_results(
+          $wpdb->prepare(
+              "SELECT * FROM {$wpdb->prefix}sanas_card_event WHERE event_user = %d ORDER BY event_no DESC LIMIT 1",
+              $current_user_id
+          )
+      );
+      if ($get_event) {
+          $event_front_card_preview = $get_event[0]->event_front_card_preview;
+          $event_back_card_preview = $get_event[0]->event_back_card_preview;
+          $event_card_id = $get_event[0]->event_card_id;
+          $event_rsvp_id = $get_event[0]->event_rsvp_id;
+          $eventDate= esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
+          $eventtitle= esc_html(get_post_meta($event_rsvp_id, 'event_name', true));
+          $formattedDate = '';
+          if(!empty($eventDate))
+          {
+            $date = new DateTime($eventDate);
+            $formattedDate = $date->format('F jS, Y');          
+          }
+      }
+
+       if ($get_event) {
+        $event_id = $get_event[0]->event_no;
+       }
+
 
 $guest_details_info_table = $wpdb->prefix . "guest_details_info";
 
@@ -142,28 +165,7 @@ echo "Declined: $guest_declined<br>";
           </div>
         </div>
       </div>
-      <?php 
-      $get_event = $wpdb->get_results(
-          $wpdb->prepare(
-              "SELECT * FROM {$wpdb->prefix}sanas_card_event WHERE event_user = %d ORDER BY event_no DESC LIMIT 1",
-              $current_user_id
-          )
-      );
-      if ($get_event) {
-          $event_front_card_preview = $get_event[0]->event_front_card_preview;
-          $event_back_card_preview = $get_event[0]->event_back_card_preview;
-          $event_card_id = $get_event[0]->event_card_id;
-          $event_rsvp_id = $get_event[0]->event_rsvp_id;
-          $eventDate= esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
-          $eventtitle= esc_html(get_post_meta($event_rsvp_id, 'event_name', true));
-          $formattedDate = '';
-          if(!empty($eventDate))
-          {
-            $date = new DateTime($eventDate);
-            $formattedDate = $date->format('F jS, Y');          
-          }
-      }
-      ?>
+
       <div class="row">
         <?php if ($get_event) {?>
         <div class="attend-info col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
