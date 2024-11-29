@@ -44,30 +44,16 @@ $totals = $wpdb->get_row(
 );
 
 
-$accepted_count = $wpdb->get_var(
-    $wpdb->prepare(
-        "SELECT COUNT(*) FROM {$wpdb->prefix}guest_details_info WHERE guest_event_id = %d AND guest_status = 'Accepted'",
-        $current_user_id
-    )
-);
-$maybe_count = $wpdb->get_var(
-    $wpdb->prepare(
-        "SELECT COUNT(*) FROM {$wpdb->prefix}guest_details_info WHERE guest_event_id = %d AND guest_status = 'Maybe'",
-        $current_user_id
-    )
-);
-$yet_to_respond_count = $wpdb->get_var(
-    $wpdb->prepare(
-        "SELECT COUNT(*) FROM {$wpdb->prefix}guest_details_info WHERE guest_event_id = %d AND guest_status = 'Yet To Respond'",
-        $current_user_id
-    )
-);
-$declined_count = $wpdb->get_var(
-    $wpdb->prepare(
-        "SELECT COUNT(*) FROM {$wpdb->prefix}guest_details_info WHERE guest_event_id = %d AND guest_status = 'Declined'",
-        $current_user_id
-    )
-);
+
+
+// Fetch guest status counts
+$guest_accepted = 0;
+$guest_maybe = 0;
+$guest_reply = 0;
+$guest_declined = 0;
+
+// Fetch these values from your database or logic
+// Example: $guest_accepted = $wpdb->get_var(...);
 ?>
 
   <div class="wl-dashboard-wrapper dashboard">
@@ -745,45 +731,50 @@ $declined_count = $wpdb->get_var(
 <?php render_modal_html_alert(); ?>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
 <script>
-      jQuery(document).ready(function() {
-        var ctx = jQuery("#chart-line");
-        var myLineChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ["Accepted", "May Be", "Yet To Respond", "Declined"],
-                datasets: [{
-                    data: [
-                      <?php echo $accepted_count; ?>, 
-                      <?php echo $maybe_count; ?>,
-                      <?php echo $yet_to_respond_count; ?>,
-                      <?php echo $declined_count; ?>
-                    ],
-                    backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)", "rgba(255, 255, 0, 0.5)", "rgba(0, 0, 255, 0.5)"]
-                }]
+jQuery(document).ready(function() {
+    var ctx = jQuery("#chart-line");
+    var myLineChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ["Accepted", "May Be", "Yet To Respond", "Declined"],
+            datasets: [{
+                data: [
+                    <?php echo $guest_accepted; ?>,
+                    <?php echo $guest_maybe; ?>,
+                    <?php echo $guest_reply; ?>,
+                    <?php echo $guest_declined; ?>
+                ],
+                backgroundColor: [
+                    "rgba(0, 255, 0, 0.5)", // Green for Accepted
+                    "rgba(255, 255, 0, 0.5)", // Yellow for May Be
+                    "rgba(255, 165, 0, 0.5)", // Orange for Yet To Respond
+                    "rgba(255, 0, 0, 0.5)" // Red for Declined
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: {
+                padding: 0
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                layout: {
-                    padding: 0
-                },
-                title: {
-                    display: false
-                },
-                legend: {
-                    position: 'bottom',
-                    display: true,
-                    labels: {
-                        fontColor: "#333",
-                        fontSize: 12,
-                        boxWidth: 10,
-                        padding: 10
-                    }
+            title: {
+                display: false
+            },
+            legend: {
+                position: 'bottom',
+                display: true,
+                labels: {
+                    fontColor: "#333",
+                    fontSize: 12,
+                    boxWidth: 10,
+                    padding: 10
                 }
             }
-        });
+        }
     });
-    </script>
+});
+</script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
 <?php
 get_footer('dashboard');
