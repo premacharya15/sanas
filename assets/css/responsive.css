@@ -110,9 +110,8 @@
 }
 @media only screen and (max-width:1370px){
     
-    ul.main-menu-list li a,.main-menu-list>li>ul>li>a {
-        font-size: 17px;
-        font-family: var(----snas-body-font) ;
+    ul.main-menu-list li a {
+        font-size: 15px;
     }
  .hero-sec-divaider hr {
         margin: 70px 0 0;
@@ -124,6 +123,10 @@
 }
 
 @media only screen and (max-width:1300px){
+    .card-block .card .icon{
+        right: 10px;
+    top: 10px;
+    }
     .event-box .event-detaile>h4 {
         margin-bottom: 12px;
     }
@@ -661,6 +664,9 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     .wl-contact-form-section .form-box{
         padding-left: 0;
     }
+    .background-images-piker .canvas-upload-image {
+        min-width: 100px;
+    }
     .todo-list .table tr td {
         padding: 10px 10px;
     }
@@ -818,8 +824,8 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
         align-items: center;
     }
     section.wl-main-canvas .card-canvas {
-        width: 320px;
-        height: 470px;
+        /* width: 320px;
+        height: 470px; */
         margin-bottom: 35px;
     }
     
@@ -896,6 +902,9 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
     
     section.tab-section ul#pills-tab {
         display: none;
+    }
+    .video-inner-box {
+        padding: 20px 15px;
     }
 
     .expense-list-table td, .expense-list-table th{
@@ -1014,6 +1023,9 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     
     .guests-list .inner{
         padding: 32px 10px 40px;
+    }
+    .event-title, .host-name {
+        width: 100% !important;
     }
   
 }
@@ -1250,7 +1262,9 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         font-size: 16px;
         line-height: 20px;
     }
- 
+    .rsvp-from-group h4 {
+        padding-top: 20px;
+    } 
     .vendors-item {
         padding: 0px;
     }
@@ -1303,7 +1317,12 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         left: 50%;
         transform: translateX(-50%);
     }
-   
+    .elementor .hero-sec-divaider hr {
+        margin: 20px 0px 0;
+    }
+    .panel-body {
+        margin-top: 10px;
+    }   
     .event-box>.image {
         max-width: 200px;
         min-width: 120px;
@@ -1343,6 +1362,18 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         font-size: 30px;
         line-height: 50px;
         margin-bottom: 20px;
+    }
+    .blog-main-block {
+        padding: 20px 0;
+    }
+    .blog-detaile-section {
+        padding: 130px 0px 80px;
+    }
+    .blog-next-pre {
+        margin-bottom: 20px;
+    }
+    .blog-comments {
+        margin-bottom: 10px;
     }
     form.search-form input[type="search"]{
         font-size: 16px;
@@ -1588,6 +1619,22 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     section.blog-wrapper {
         margin-top: 67px !important;
         margin-bottom: 20px !important;
+    }
+    canvas#canvas {
+        width: 300px !important;
+        height: 440px !important;
+    }
+    canvas.upper-canvas {
+        width: 300px !important;
+        height: 440px !important;
+    }
+    section.wl-main-canvas .card-canvas {
+        width: 300px !important;
+        height: 440px !important;
+    }
+    section.wl-main-canvas.wl-main-preview .card-canvas {
+        width: 100% !important;
+        height: 100%  !important;
     }
     /* 23-9-24 */
     .rsvp-from-group h4 {
