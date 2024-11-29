@@ -1594,3 +1594,32 @@ function delete_guest_details() {
         wp_send_json_error('Failed to delete guest details.');
     }
 }
+
+// Add AJAX action for moving contacts to guest list
+add_action('wp_ajax_move_to_guest_list', 'move_to_guest_list');
+function move_to_guest_list() {
+    global $wpdb;
+    $guest_ids = $_POST['guest_ids']; // Array of guest IDs
+    $card_id = intval($_POST['card_id']);
+    $event_id = intval($_POST['event_id']);
+    $guest_info_table = $wpdb->prefix . "guest_details_info";
+
+    foreach ($guest_ids as $guest_id) {
+        $guest_id = intval($guest_id); // Sanitize input
+        // Update the guest_event_id to move the guest to the specified event
+        $result = $wpdb->update(
+            $guest_info_table,
+            ['guest_event_id' => $event_id],
+            ['guest_id' => $guest_id],
+            ['%d'],
+            ['%d']
+        );
+
+        if ($result === false) {
+            wp_send_json_error('Failed to move guest with ID: ' . $guest_id);
+            return;
+        }
+    }
+
+    wp_send_json_success('Guests moved to guest list successfully.');
+}

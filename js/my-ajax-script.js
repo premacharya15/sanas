@@ -1353,8 +1353,6 @@ if (window.location.pathname === '/my-contact/') {
             $('.dashbord-btn').on('click', function() {
                 var card_id = $(this).data('card-id');
                 var event_id = $(this).data('event-id');
-                console.log('card_id: ' + card_id);
-                console.log('event_id: ' + event_id);
 
                 var selectedGuests = [];
                 $('input[type="checkbox"]:checked').each(function() {
@@ -1364,6 +1362,25 @@ if (window.location.pathname === '/my-contact/') {
                     alert('please select at least one guest.');
                     return;
                 }
+
+                // Send the selected guests to the server
+                $.ajax({
+                    type: 'POST',
+                    url: ajax_object.ajax_url,
+                    data: { action: 'move_to_guest_list', guest_ids: selectedGuests, card_id: card_id, event_id: event_id },
+                    success: function(response) {
+                        if (response.success) {
+                            alert('Contacts moved to guest list successfully.');
+                            window.location.href = '/user-dashboard/?dashboard=guestlist&card_id=' + card_id + '&event_id=' + event_id;
+                        }
+                        else {
+                            alert('Failed to move contacts to guest list: ' + response.data);
+                        }
+                    },
+                    error: function() {
+                        alert('Error moving contacts to guest list.');
+                    }
+                }); 
             });
         });
 }
