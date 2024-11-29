@@ -1627,7 +1627,6 @@ function move_to_guest_list() {
                 ['%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d', '%d']
             );
         }
-        wp_send_json_success($guest_id);
     }
-    // wp_send_json_success('Guests moved to guest list successfully.');
+    wp_send_json_success('Guests moved to guest list successfully.');
 }
