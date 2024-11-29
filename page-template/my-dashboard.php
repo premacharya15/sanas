@@ -42,6 +42,32 @@ $totals = $wpdb->get_row(
         WHERE user_id = %d
     ", $current_user_id)
 );
+
+
+$accepted_count = $wpdb->get_var(
+    $wpdb->prepare(
+        "SELECT COUNT(*) FROM {$wpdb->prefix}guest_details_info WHERE guest_event_id = %d AND guest_status = 'Accepted'",
+        $current_user_id
+    )
+);
+$maybe_count = $wpdb->get_var(
+    $wpdb->prepare(
+        "SELECT COUNT(*) FROM {$wpdb->prefix}guest_details_info WHERE guest_event_id = %d AND guest_status = 'Maybe'",
+        $current_user_id
+    )
+);
+$yet_to_respond_count = $wpdb->get_var(
+    $wpdb->prepare(
+        "SELECT COUNT(*) FROM {$wpdb->prefix}guest_details_info WHERE guest_event_id = %d AND guest_status = 'Yet To Respond'",
+        $current_user_id
+    )
+);
+$declined_count = $wpdb->get_var(
+    $wpdb->prepare(
+        "SELECT COUNT(*) FROM {$wpdb->prefix}guest_details_info WHERE guest_event_id = %d AND guest_status = 'Declined'",
+        $current_user_id
+    )
+);
 ?>
 
   <div class="wl-dashboard-wrapper dashboard">
@@ -724,10 +750,15 @@ $totals = $wpdb->get_row(
         var myLineChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ["Pending", "Sent"],
+                labels: ["Accepted", "May Be", "Yet To Respond", "Declined"],
                 datasets: [{
-                    data: [20, 50],
-                    backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)"]
+                    data: [
+                      <?php echo $accepted_count; ?>, 
+                      <?php echo $maybe_count; ?>,
+                      <?php echo $yet_to_respond_count; ?>,
+                      <?php echo $declined_count; ?>
+                    ],
+                    backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)", "rgba(255, 255, 0, 0.5)", "rgba(0, 0, 255, 0.5)"]
                 }]
             },
             options: {
