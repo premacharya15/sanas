@@ -99,6 +99,9 @@ foreach ($get_guest_details as $guest) {
             break;
     }
 }
+if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_declined == 0){
+  $guest_accepted = 1;
+}
 ?>
 
   <div class="wl-dashboard-wrapper dashboard">
