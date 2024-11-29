@@ -726,8 +726,18 @@ $totals = $wpdb->get_row(
             data: {
                 labels: ["Accepted", "May Be", "Yet To Respond", "Declined"],
                 datasets: [{
-                    data: [20, 50, 10, 20],
-                    backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)", "rgba(255, 255, 0, 0.5)", "rgba(0, 0, 255, 0.5)"]
+                    data: [
+                        <?php echo $guest_accepted; ?>,
+                        <?php echo $guest_maybe; ?>,
+                        <?php echo $guest_reply; ?>,
+                        <?php echo $guest_declined; ?>
+                    ],
+                    backgroundColor: [
+                        "rgba(0, 255, 0, 0.5)",  // Accepted
+                        "rgba(255, 255, 0, 0.5)", // May Be
+                        "rgba(255, 165, 0, 0.5)", // Yet To Respond
+                        "rgba(255, 0, 0, 0.5)"    // Declined
+                    ]
                 }]
             },
             options: {
