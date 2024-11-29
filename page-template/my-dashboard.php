@@ -751,10 +751,10 @@ $guest_declined = $wpdb->get_var($wpdb->prepare(
                 labels: ["Accepted", "May Be", "Yet To Respond", "Declined"],
                 datasets: [{
                     data: [
-                        <?php echo $guest_accepted; ?>,
-                        <?php echo $guest_maybe; ?>,
-                        <?php echo $guest_reply; ?>,
-                        <?php echo $guest_declined; ?>
+                        <?php echo json_encode($guest_accepted); ?>,
+                        <?php echo json_encode($guest_maybe); ?>,
+                        <?php echo json_encode($guest_reply); ?>,
+                        <?php echo json_encode($guest_declined); ?>
                     ],
                     backgroundColor: [
                         "rgba(0, 255, 0, 0.5)",  // Accepted
