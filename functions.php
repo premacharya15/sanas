@@ -1607,12 +1607,10 @@ function move_to_guest_list() {
     error_log("Moving guests to event ID: " . $event_id);
     error_log("Guest IDs: " . implode(", ", $guest_ids));
 
-    foreach ($guest_ids as $guest_id) {
-        $guest_id = intval($guest_id); // Sanitize input
+    foreach ($guest_ids as $guest_id) {// Sanitize input
         $result = $wpdb->update(
             $guest_info_table,
             ['guest_event_id' => $event_id],
-            ['guest_id' => $guest_id],
             ['%d'],
             ['%d']
         );
