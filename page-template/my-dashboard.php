@@ -99,12 +99,6 @@ foreach ($get_guest_details as $guest) {
             break;
     }
 }
-
-// Output the counts
-echo "Accepted: $guest_accepted<br>";
-echo "May Be: $guest_maybe<br>";
-echo "Yet To Respond: $guest_reply<br>";
-echo "Declined: $guest_declined<br>";
 ?>
 
   <div class="wl-dashboard-wrapper dashboard">
