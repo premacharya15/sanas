@@ -43,28 +43,30 @@ $totals = $wpdb->get_row(
     ", $current_user_id)
 );
 
-$event_id = $get_event;
+$get_event = $wpdb->get_results(
+  $wpdb->prepare(
+      "SELECT * FROM {$wpdb->prefix}sanas_card_event WHERE event_user = %d ORDER BY event_no DESC LIMIT 1",
+      $current_user_id
+  )
+);
 
+//get guest list
 $guest_details_info_table = $wpdb->prefix . "guest_details_info";
-
 $guest_accepted = $wpdb->get_var($wpdb->prepare(
     "SELECT COUNT(*) FROM $guest_details_info_table WHERE guest_event_id = %d AND guest_status = 'Accepted'",
-    $event_id
+    $get_event[0]->event_no
 ));
-
 $guest_maybe = $wpdb->get_var($wpdb->prepare(
     "SELECT COUNT(*) FROM $guest_details_info_table WHERE guest_event_id = %d AND guest_status = 'May Be'",
-    $event_id
+    $get_event[0]->event_no
 ));
-
 $guest_reply = $wpdb->get_var($wpdb->prepare(
     "SELECT COUNT(*) FROM $guest_details_info_table WHERE guest_event_id = %d AND guest_status = 'pending'",
-    $event_id
+    $get_event[0]->event_no
 ));
-
 $guest_declined = $wpdb->get_var($wpdb->prepare(
     "SELECT COUNT(*) FROM $guest_details_info_table WHERE guest_event_id = %d AND guest_status = 'Declined'",
-    $event_id
+    $get_event[0]->event_no
 ));
 ?>
 
