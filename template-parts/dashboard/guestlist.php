@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
                           <i class="fa-solid fa-upload me-1"></i>
                           Upload (.csv,.xls)
                         </a>
-                        <a class="btn btn-outline" href="<?php echo esc_url('/my-contact/?from=guestlist');?>">
+                        <a class="btn btn-outline" href="<?php echo esc_url('/my-contact/?from=guestlist&card_id='.$card_id.'&event_id='.$event_id);?>">
                           <i class="fa-regular fa-address-card me-1"></i>
                           My Contacts</a>
                         <a class="btn btn-outline" data-bs-toggle="modal" data-bs-target="#shareModal">
