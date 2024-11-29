@@ -760,10 +760,10 @@ echo "Declined: $guest_declined<br>";
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
 <script>
     jQuery(document).ready(function() {
-      var guestAccepted = <?php echo json_encode($guest_accepted || 1); ?>;
-      var guestMaybe = <?php echo json_encode($guest_maybe || 1); ?>;
-      var guestReply = <?php echo json_encode($guest_reply || 1); ?>;
-      var guestDeclined = <?php echo json_encode($guest_declined || 1); ?>;
+      var guestAccepted = <?php echo json_encode($guest_accepted); ?>;
+      var guestMaybe = <?php echo json_encode($guest_maybe); ?>;
+      var guestReply = <?php echo json_encode($guest_reply); ?>;
+      var guestDeclined = <?php echo json_encode($guest_declined); ?>;
         var ctx = jQuery("#chart-line");
         var myLineChart = new Chart(ctx, {
             type: 'pie',
