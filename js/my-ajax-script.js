@@ -1353,7 +1353,7 @@ if (window.location.pathname === '/my-contact/') {
             $('.move-to-guestlist').on('click', function() {
                 var card_id = $(this).data('card-id');
                 var event_id = $(this).data('event-id');
-
+                console.log("test");
                 var selectedGuests = [];
                 $('input[type="checkbox"]:checked').each(function() {
                     selectedGuests.push($(this).data('guest-id'));
