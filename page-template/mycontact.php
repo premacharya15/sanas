@@ -53,7 +53,7 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                     <h3 class="pageheader-title">My Contacts</h3>
                     <?php if ($showMoveToGuestListButton): ?>
                         <div class="links-box-2">
-                            <button type="submit" data-card-id="<?php echo $card_id; ?>" data-event-id="<?php echo $event_id; ?>" class="dashbord-btn">Move to Guest List</button>
+                            <button type="submit" data-card-id="<?php echo $card_id; ?>" data-event-id="<?php echo $event_id; ?>" class="dashbord-btn move-to-guestlist">Move to Guest List</button>
                         </div>
                     <?php endif; ?>
                 </div>
