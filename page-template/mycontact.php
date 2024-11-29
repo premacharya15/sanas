@@ -40,6 +40,9 @@ $current_date = new DateTime();
 
 // Check if the user came from the guest list page
 $showMoveToGuestListButton = isset($_GET['from']) && $_GET['from'] === 'guestlist';
+// get card id and event id
+$card_id = isset($_GET['card_id']) ? intval($_GET['card_id']) : 0;
+$event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
 ?>
 
 <div class="wl-dashboard-wrapper dashboard">

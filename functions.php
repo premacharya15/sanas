@@ -1594,3 +1594,36 @@ function delete_guest_details() {
         wp_send_json_error('Failed to delete guest details.');
     }
 }
+
+add_action('wp_ajax_move_to_guest_list', 'move_to_guest_list');
+add_action('wp_ajax_nopriv_move_to_guest_list', 'move_to_guest_list');
+
+function move_to_guest_list() {
+    check_ajax_referer('ajax-update-edit-guest-event-nonce', 'security');
+    global $wpdb;
+
+    $guest_ids = isset($_POST['guest_ids']) ? array_map('intval', $_POST['guest_ids']) : [];
+    $card_id = intval($_POST['card_id']);
+    $event_id = intval($_POST['event_id']);
+    $guest_info_table = $wpdb->prefix . "guest_details_info";
+
+    if (empty($guest_ids)) {
+        wp_send_json_error('No guests selected.');
+    }
+
+    foreach ($guest_ids as $guest_id) {
+        $result = $wpdb->update(
+            $guest_info_table,
+            ['guest_event_id' => $event_id, 'guest_card_id' => $card_id],
+            ['guest_id' => $guest_id],
+            ['%d', '%d'],
+            ['%d']
+        );
+
+        if ($result === false) {
+            wp_send_json_error('Failed to move some guests.');
+        }
+    }
+
+    wp_send_json_success('Guests moved successfully.');
+}

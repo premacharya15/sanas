@@ -1346,5 +1346,48 @@ if (window.location.pathname === '/my-contact/') {
                 }
             });
         });
+
+
+        // Handle "Move to Guest List" button click
+        $('.dashbord-btn').on('click', function(e) {
+            e.preventDefault();
+
+            // Collect selected guest IDs
+            var selectedGuests = [];
+            $('input[type="checkbox"]:checked').each(function() {
+                var guestId = $(this).closest('tr').find('.delete-guest-details').data('guest-id');
+                if (guestId) {
+                    selectedGuests.push(guestId);
+                }
+            });
+
+            if (selectedGuests.length === 0) {
+                alert('Please select at least one contact to move.');
+                return;
+            }
+
+            // Send AJAX request to move selected guests
+            $.ajax({
+                type: 'POST',
+                url: ajax_object.ajax_url,
+                data: {
+                    action: 'move_to_guest_list',
+                    guest_ids: selectedGuests,
+                    card_id: getQueryParam('card_id'),
+                    event_id: getQueryParam('event_id')
+                },
+                success: function(response) {
+                    if (response.success) {
+                        alert('Contacts moved to guest list successfully.');
+                        window.location.href = '/user-dashboard/?dashboard=guestlist&card_id=' + getQueryParam('card_id') + '&event_id=' + getQueryParam('event_id');
+                    } else {
+                        alert('Failed to move contacts: ' + response.data);
+                    }
+                },
+                error: function() {
+                    alert('Error moving contacts.');
+                }
+        });
+    });
 }
 
