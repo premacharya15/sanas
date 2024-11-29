@@ -1346,5 +1346,25 @@ if (window.location.pathname === '/my-contact/') {
                 }
             });
         });
+
+
+        // Move to Guest List
+        jQuery(document).ready(function($) {
+            $('.dashbord-btn').on('click', function() {
+                var card_id = $(this).data('card-id');
+                var event_id = $(this).data('event-id');
+                console.log('card_id: ' + card_id);
+                console.log('event_id: ' + event_id);
+
+                var selectedGuests = [];
+                $('input[type="checkbox"]:checked').each(function() {
+                    selectedGuests.push($(this).data('guest-id'));
+                });
+                if (selectedGuests.length === 0) {
+                    alert('please select at least one guest.');
+                    return;
+                }
+            });
+        });
 }
 
