@@ -1599,8 +1599,7 @@ function delete_guest_details() {
 add_action('wp_ajax_move_to_guest_list', 'move_to_guest_list');
 function move_to_guest_list() {
     global $wpdb;
-    $guest_ids = $_POST['guest_ids']; // Array of guest IDs
-    $card_id = intval($_POST['card_id']);
+    $guest_ids = $_POST['guest_ids'];
     $event_id = intval($_POST['event_id']);
     $guest_info_table = $wpdb->prefix . "guest_details_info";
 
