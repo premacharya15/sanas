@@ -1349,7 +1349,7 @@ if (window.location.pathname === '/my-contact/') {
 
 
         // Handle "Move to Guest List" button click
-        $('.dashbord-btn').on('click', function(e) {
+        $('.links-box-2').on('click', function(e) {
             e.preventDefault();
 
             // Collect selected guest IDs
