@@ -71,6 +71,10 @@ $get_guest_group = $wpdb->get_results(
                 ));
                 
                 $event_name = $event_data->event_name;
+                $event_date = strtotime($event_data->event_date);
+
+                // Only show past events
+                if ($event_date < time()) {
 
                 // Fetch guest details for the event
                 $get_guest_details = $wpdb->get_results(
@@ -144,10 +148,11 @@ $get_guest_group = $wpdb->get_results(
                 </div>
             <?php 
             $table_counter++;
+                }
             endforeach; ?>
         <?php else : ?>
             <div class="no-events-message">
-                <p>No contacts tables found.</p>
+                <p>No past events found.</p>
             </div>
         <?php endif; ?>
     </div>
