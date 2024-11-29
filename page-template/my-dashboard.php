@@ -743,7 +743,7 @@ $guest_declined = $wpdb->get_var($wpdb->prepare(
 <?php render_modal_html_alert(); ?>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
 <script>
-      jQuery(document).ready(function() {
+    jQuery(document).ready(function() {
         var ctx = jQuery("#chart-line");
         var myLineChart = new Chart(ctx, {
             type: 'pie',
@@ -751,10 +751,10 @@ $guest_declined = $wpdb->get_var($wpdb->prepare(
                 labels: ["Accepted", "May Be", "Yet To Respond", "Declined"],
                 datasets: [{
                     data: [
-                        <?php echo json_encode($guest_accepted); ?>,
-                        <?php echo json_encode($guest_maybe); ?>,
-                        <?php echo json_encode($guest_reply); ?>,
-                        <?php echo json_encode($guest_declined); ?>
+                        <?php echo json_encode($guest_accepted || 0); ?>,
+                        <?php echo json_encode($guest_maybe || 0); ?>,
+                        <?php echo json_encode($guest_reply || 0); ?>,
+                        <?php echo json_encode($guest_declined || 0); ?>
                     ],
                     backgroundColor: [
                         "rgba(0, 255, 0, 0.5)",  // Accepted
@@ -770,9 +770,6 @@ $guest_declined = $wpdb->get_var($wpdb->prepare(
                 layout: {
                     padding: 0
                 },
-                title: {
-                    display: false
-                },
                 legend: {
                     position: 'bottom',
                     display: true,
@@ -786,7 +783,7 @@ $guest_declined = $wpdb->get_var($wpdb->prepare(
             }
         });
     });
-    </script>
+</script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
 <?php
 get_footer('dashboard');
