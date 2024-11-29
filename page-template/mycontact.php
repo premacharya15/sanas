@@ -29,12 +29,7 @@ $get_event = $wpdb->get_results(
     )
 );
 
-$get_guest_group = $wpdb->get_results(
-    $wpdb->prepare(
-        "SELECT * FROM $guest_group_info_table WHERE guest_group_user = %d ORDER BY guest_group_name ASC",
-        $userID
-    )
-);
+$current_date = new DateTime(); // Get the current date
 
 ?>
 
@@ -54,38 +49,25 @@ $get_guest_group = $wpdb->get_results(
         <?php if (!empty($get_event)) : ?>
             <?php 
             $table_counter = 1;
-            $current_date = new DateTime(); // Get the current date
-            foreach ($get_event as $event) : ?>
-                <?php
+            foreach ($get_event as $event) : 
                 $event_id = $event->event_no;
-                $event_card_id = $event->event_card_id;
-                
-                // Get event details including name
-                $event_data = $wpdb->get_row($wpdb->prepare(
-                    "SELECT e.*, p.post_title as event_name, p.post_date as event_date, 
-                     u.display_name as host_name, p.guid as event_url
-                     FROM {$wpdb->prefix}sanas_card_event e
-                     LEFT JOIN {$wpdb->posts} p ON e.event_rsvp_id = p.ID
-                     LEFT JOIN {$wpdb->users} u ON e.event_user = u.ID
-                     WHERE e.event_no = %d",
-                    $event_id
-                ));
-                
-                $event_name = $event_data->event_name;
-                $event_date = new DateTime($event_data->event_date);
+                $event_rsvp_id = $event->event_rsvp_id;
+
+                // Get the event date
+                $eventDate = esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
+                $event_date = new DateTime($eventDate);
 
                 // Compare event date with current date
                 if ($event_date < $current_date) {
-                // Fetch guest details for the event
-                $get_guest_details = $wpdb->get_results(
-                    $wpdb->prepare(
-                        "SELECT * FROM $guest_details_info_table WHERE guest_user_id = %d AND guest_event_id = %d ORDER BY guest_name ASC",
-                        $userID,
-                        $event_id
-                    )
-                );
-                ?>
-
+                    // Fetch guest details for the event
+                    $get_guest_details = $wpdb->get_results(
+                        $wpdb->prepare(
+                            "SELECT * FROM $guest_details_info_table WHERE guest_user_id = %d AND guest_event_id = %d ORDER BY guest_name ASC",
+                            $userID,
+                            $event_id
+                        )
+                    );
+            ?>
                 <div class="guests-list contact">
                     <div class="inner tabs-box guests-tabs">
                         <div class="guests-box table-box tabs-content">
@@ -94,7 +76,7 @@ $get_guest_group = $wpdb->get_results(
                                     <thead>
                                         <tr>
                                             <th class="todo-subhead text-align-start hide-sorting-arrow" colspan="6">
-                                                <h4><?php echo esc_html($event_name); ?></h4>
+                                                <h4><?php echo esc_html($event->event_name); ?></h4>
                                             </th>
                                         </tr>
                                         <tr>
@@ -147,7 +129,7 @@ $get_guest_group = $wpdb->get_results(
                     </div>
                 </div>
             <?php 
-            $table_counter++;
+                $table_counter++;
                 }
             endforeach; ?>
         <?php else : ?>
