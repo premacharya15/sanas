@@ -43,31 +43,45 @@ $totals = $wpdb->get_row(
     ", $current_user_id)
 );
 
-$get_event = $wpdb->get_results(
-  $wpdb->prepare(
-      "SELECT * FROM {$wpdb->prefix}sanas_card_event WHERE event_user = %d ORDER BY event_no DESC LIMIT 1",
-      $current_user_id
-  )
+$event_id = $get_event[0]->event_no;
+
+$guest_details_info_table = $wpdb->prefix . "guest_details_info";
+
+$get_guest_details = $wpdb->get_results(
+    $wpdb->prepare(
+        "SELECT guest_status FROM $guest_details_info_table WHERE guest_user_id = %d AND guest_event_id = %d",
+        $current_user_id,
+        $event_id
+    )
 );
 
-//get guest list
-$guest_details_info_table = $wpdb->prefix . "guest_details_info";
-$guest_accepted = $wpdb->get_var($wpdb->prepare(
-    "SELECT COUNT(*) FROM $guest_details_info_table WHERE guest_event_id = %d AND guest_status = 'Accepted'",
-    $get_event[0]->event_no
-));
-$guest_maybe = $wpdb->get_var($wpdb->prepare(
-    "SELECT COUNT(*) FROM $guest_details_info_table WHERE guest_event_id = %d AND guest_status = 'May Be'",
-    $get_event[0]->event_no
-));
-$guest_reply = $wpdb->get_var($wpdb->prepare(
-    "SELECT COUNT(*) FROM $guest_details_info_table WHERE guest_event_id = %d AND guest_status = 'pending'",
-    $get_event[0]->event_no
-));
-$guest_declined = $wpdb->get_var($wpdb->prepare(
-    "SELECT COUNT(*) FROM $guest_details_info_table WHERE guest_event_id = %d AND guest_status = 'Declined'",
-    $get_event[0]->event_no
-));
+$guest_accepted = 0;
+$guest_maybe = 0;
+$guest_reply = 0;
+$guest_declined = 0;
+
+foreach ($get_guest_details as $guest) {
+    switch ($guest->guest_status) {
+        case 'Accepted':
+            $guest_accepted++;
+            break;
+        case 'May Be':
+            $guest_maybe++;
+            break;
+        case 'pending':
+            $guest_reply++;
+            break;
+        case 'Declined':
+            $guest_declined++;
+            break;
+    }
+}
+
+// Output the counts
+echo "Accepted: $guest_accepted<br>";
+echo "May Be: $guest_maybe<br>";
+echo "Yet To Respond: $guest_reply<br>";
+echo "Declined: $guest_declined<br>";
 ?>
 
   <div class="wl-dashboard-wrapper dashboard">
