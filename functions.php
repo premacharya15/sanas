@@ -1624,10 +1624,10 @@ function move_to_guest_list() {
                     'guest_adult' => $guest['guest_adult'] ?? 0,
                     'guest_kids' => $guest['guest_kids'] ?? 0
                 ],
-                ['%d', '%d', '%s', '%s', '%s', '%s', '%d', '%d']
+                ['%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d', '%d']
             );
         }
     }
-
+    wp_send_json_success($guest_ids);
     wp_send_json_success('Guests moved to guest list successfully.');
 }
