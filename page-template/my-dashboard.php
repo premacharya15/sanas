@@ -43,7 +43,7 @@ $totals = $wpdb->get_row(
     ", $current_user_id)
 );
 
-$event_id = $get_event[0]->event_no;
+$event_id = $get_event;
 
 $guest_details_info_table = $wpdb->prefix . "guest_details_info";
 
@@ -745,9 +745,9 @@ $guest_declined = $wpdb->get_var($wpdb->prepare(
 <script>
     jQuery(document).ready(function() {
       var guestAccepted = <?php echo json_encode($guest_accepted || 1); ?>;
-      var guestMaybe = <?php echo json_encode($guest_maybe || 0); ?>;
-      var guestReply = <?php echo json_encode($guest_reply || 0); ?>;
-      var guestDeclined = <?php echo json_encode($guest_declined || 0); ?>;
+      var guestMaybe = <?php echo json_encode($guest_maybe || 1); ?>;
+      var guestReply = <?php echo json_encode($guest_reply || 1); ?>;
+      var guestDeclined = <?php echo json_encode($guest_declined || 1); ?>;
         var ctx = jQuery("#chart-line");
         var myLineChart = new Chart(ctx, {
             type: 'pie',
