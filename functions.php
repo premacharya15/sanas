@@ -1603,9 +1603,11 @@ function move_to_guest_list() {
     $event_id = intval($_POST['event_id']);
     $guest_info_table = $wpdb->prefix . "guest_details_info";
 
+    error_log("Moving guests to event ID: " . $event_id);
+    error_log("Guest IDs: " . implode(", ", $guest_ids));
+
     foreach ($guest_ids as $guest_id) {
         $guest_id = intval($guest_id); // Sanitize input
-        // Update the guest_event_id to move the guest to the specified event
         $result = $wpdb->update(
             $guest_info_table,
             ['guest_event_id' => $event_id],
@@ -1615,6 +1617,7 @@ function move_to_guest_list() {
         );
 
         if ($result === false) {
+            error_log("Failed to move guest with ID: " . $guest_id);
             wp_send_json_error('Failed to move guest with ID: ' . $guest_id);
             return;
         }
