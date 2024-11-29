@@ -727,7 +727,7 @@ $totals = $wpdb->get_row(
                 labels: ["Accepted", "May Be", "Yet To Respond", "Declined"],
                 datasets: [{
                     data: [20, 50, 10, 20],
-                    backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)"]
+                    backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)", "rgba(255, 255, 0, 0.5)", "rgba(0, 0, 255, 0.5)"]
                 }]
             },
             options: {
