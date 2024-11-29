@@ -100,7 +100,7 @@ foreach ($get_guest_details as $guest) {
     }
 }
 if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_declined == 0){
-  $guest_accepted = 10;
+  $guest_accepted = 7;
   $guest_maybe = 2;
   $guest_reply = 5;
   $guest_declined = 3;
