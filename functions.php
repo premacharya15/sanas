@@ -1628,6 +1628,6 @@ function move_to_guest_list() {
             );
         }
     }
-    wp_send_json_success($guest_ids);
+    wp_send_json_success("testd");
     // wp_send_json_success('Guests moved to guest list successfully.');
 }
