@@ -770,6 +770,7 @@ jQuery(document).ready(function() {
             }
         }
     });
+    console.log(guest_accepted_count,guest_maybe_count,guest_reply_count,guest_declined_count);
 });
 </script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
