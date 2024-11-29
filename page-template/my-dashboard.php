@@ -44,7 +44,7 @@ $totals = $wpdb->get_row(
 
       $get_event = $wpdb->get_results(
           $wpdb->prepare(
-              "SELECT * FROM {$wpdb->prefix}sanas_card_event WHERE event_user = %d ORDER BY event_no DESC LIMIT 1",
+              "SELECT * FROM {$wpdb->prefix}sanas_card_event WHERE event_user = %d ORDER BY event_date DESC LIMIT 1",
               $current_user_id
           )
       );
