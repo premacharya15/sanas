@@ -744,6 +744,10 @@ $guest_declined = $wpdb->get_var($wpdb->prepare(
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
 <script>
     jQuery(document).ready(function() {
+      var guestAccepted = <?php echo json_encode($guest_accepted || 1); ?>;
+      var guestMaybe = <?php echo json_encode($guest_maybe || 0); ?>;
+      var guestReply = <?php echo json_encode($guest_reply || 0); ?>;
+      var guestDeclined = <?php echo json_encode($guest_declined || 0); ?>;
         var ctx = jQuery("#chart-line");
         var myLineChart = new Chart(ctx, {
             type: 'pie',
@@ -751,10 +755,10 @@ $guest_declined = $wpdb->get_var($wpdb->prepare(
                 labels: ["Accepted", "May Be", "Yet To Respond", "Declined"],
                 datasets: [{
                     data: [
-                        <?php echo json_encode($guest_accepted || 1); ?>,
-                        <?php echo json_encode($guest_maybe || 1); ?>,
-                        <?php echo json_encode($guest_reply || 1); ?>,
-                        <?php echo json_encode($guest_declined || 1); ?>
+                        guestAccepted,
+                        guestMaybe,
+                        guestReply,
+                        guestDeclined
                     ],
                     backgroundColor: [
                         "rgba(0, 255, 0, 0.5)",  // Accepted
