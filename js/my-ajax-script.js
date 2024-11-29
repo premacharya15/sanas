@@ -1354,14 +1354,13 @@ if (window.location.pathname === '/my-contact/') {
                 var card_id = $(this).data('card-id');
                 var event_id = $(this).data('event-id');
                 var selectedGuests = [];
-                $('input[type="checkbox"]:checked').each(function() {
+                $('input[type="checkbox"].gl-checkbox:checked').each(function() {
                     selectedGuests.push($(this).data('guest-id'));
                 });
                 if (selectedGuests.length === 0) {
                     alert('please select at least one guest.');
                     return;
                 }
-                console.log()
                 // Send the selected guests to the server
                 $.ajax({
                     type: 'POST',
