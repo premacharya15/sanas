@@ -47,13 +47,10 @@ $totals = $wpdb->get_row(
 
 
 // Fetch guest status counts
-$guest_accepted = 0;
-$guest_maybe = 0;
-$guest_reply = 0;
-$guest_declined = 0;
-
-// Fetch these values from your database or logic
-// Example: $guest_accepted = $wpdb->get_var(...);
+$guest_accepted_count = 0;
+$guest_maybe_count = 0;
+$guest_reply_count = 0;
+$guest_declined_count = 0;
 ?>
 
   <div class="wl-dashboard-wrapper dashboard">
@@ -739,10 +736,10 @@ jQuery(document).ready(function() {
             labels: ["Accepted", "May Be", "Yet To Respond", "Declined"],
             datasets: [{
                 data: [
-                    <?php echo $guest_accepted; ?>,
-                    <?php echo $guest_maybe; ?>,
-                    <?php echo $guest_reply; ?>,
-                    <?php echo $guest_declined; ?>
+                    <?php echo $guest_accepted_count; ?>,
+                    <?php echo $guest_maybe_count; ?>,
+                    <?php echo $guest_reply_count; ?>,
+                    <?php echo $guest_declined_count; ?>
                 ],
                 backgroundColor: [
                     "rgba(0, 255, 0, 0.5)", // Green for Accepted
