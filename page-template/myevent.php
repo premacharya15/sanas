@@ -70,8 +70,7 @@ get_sidebar('dashboard');
       <div class="row">
         <div class="col-xl-10 col-lg-8 col-md-12">
           <div class="row event-card-item">
-<?php 
-
+        <?php 
        foreach ($get_event as $event) { 
         $id = $event->event_no;
         $event_card_id = $event->event_card_id;
