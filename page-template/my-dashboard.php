@@ -42,15 +42,6 @@ $totals = $wpdb->get_row(
         WHERE user_id = %d
     ", $current_user_id)
 );
-
-
-
-
-// Fetch guest status counts
-$guest_accepted_count = 0;
-$guest_maybe_count = 0;
-$guest_reply_count = 0;
-$guest_declined_count = 0;
 ?>
 
   <div class="wl-dashboard-wrapper dashboard">
@@ -728,51 +719,40 @@ $guest_declined_count = 0;
 <?php render_modal_html_alert(); ?>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
 <script>
-jQuery(document).ready(function() {
-    var ctx = jQuery("#chart-line");
-    var myLineChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ["Accepted", "May Be", "Yet To Respond", "Declined"],
-            datasets: [{
-                data: [
-                    <?php echo $guest_accepted_count; ?>,
-                    <?php echo $guest_maybe_count; ?>,
-                    <?php echo $guest_reply_count; ?>,
-                    <?php echo $guest_declined_count; ?>
-                ],
-                backgroundColor: [
-                    "rgba(0, 255, 0, 0.5)", // Green for Accepted
-                    "rgba(255, 255, 0, 0.5)", // Yellow for May Be
-                    "rgba(255, 165, 0, 0.5)", // Orange for Yet To Respond
-                    "rgba(255, 0, 0, 0.5)" // Red for Declined
-                ]
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            layout: {
-                padding: 0
+      jQuery(document).ready(function() {
+        var ctx = jQuery("#chart-line");
+        var myLineChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ["Accepted", "May Be", "Yet To Respond", "Declined"],
+                datasets: [{
+                    data: [20, 50, 10, 20],
+                    backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)"]
+                }]
             },
-            title: {
-                display: false
-            },
-            legend: {
-                position: 'bottom',
-                display: true,
-                labels: {
-                    fontColor: "#333",
-                    fontSize: 12,
-                    boxWidth: 10,
-                    padding: 10
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: {
+                    padding: 0
+                },
+                title: {
+                    display: false
+                },
+                legend: {
+                    position: 'bottom',
+                    display: true,
+                    labels: {
+                        fontColor: "#333",
+                        fontSize: 12,
+                        boxWidth: 10,
+                        padding: 10
+                    }
                 }
             }
-        }
+        });
     });
-    console.log(guest_accepted_count,guest_maybe_count,guest_reply_count,guest_declined_count);
-});
-</script>
+    </script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
 <?php
 get_footer('dashboard');
