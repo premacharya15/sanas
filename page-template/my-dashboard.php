@@ -43,7 +43,8 @@ $totals = $wpdb->get_row(
     ", $current_user_id)
 );
 
-$event_id = $get_event;
+$event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
+$card_id = isset($_GET['card_id']) ? intval($_GET['card_id']) : 0;
 
 $guest_details_info_table = $wpdb->prefix . "guest_details_info";
 
@@ -181,8 +182,16 @@ $guest_declined = $wpdb->get_var($wpdb->prepare(
           <a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="full-div-link"></a>
           <div class="inner">
             <div class="title-box">
+              <?php
+              echo "Event ID: " . $event_id . "<br>";
+              echo "Card ID: " . $card_id . "<br>";
+              echo "Accepted: " . $guest_accepted . "<br>";
+              echo "May Be: " . $guest_maybe . "<br>";
+              echo "Yet To Respond: " . $guest_reply . "<br>";
+              echo "Declined: " . $guest_declined . "<br>";
+              ?>
               <div class="title graph">
-                <h4><a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="text-black">Guests List</a></h4>
+                <h4><a href="<?php echo $guest_list_url; ?>" class="text-black">Guests List</a></h4>
               </div>
             </div>
             <div class="graph-box">
@@ -743,23 +752,24 @@ $guest_declined = $wpdb->get_var($wpdb->prepare(
 <?php render_modal_html_alert(); ?>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
 <script>
-    jQuery(document).ready(function() {
-      var guestAccepted = <?php echo json_encode($guest_accepted || 1); ?>;
-      var guestMaybe = <?php echo json_encode($guest_maybe || 1); ?>;
-      var guestReply = <?php echo json_encode($guest_reply || 1); ?>;
-      var guestDeclined = <?php echo json_encode($guest_declined || 1); ?>;
-        var ctx = jQuery("#chart-line");
-        var myLineChart = new Chart(ctx, {
+    document.addEventListener('DOMContentLoaded', function() {
+        var guestAccepted = <?php echo json_encode($guest_accepted); ?>;
+        var guestMaybe = <?php echo json_encode($guest_maybe); ?>;
+        var guestReply = <?php echo json_encode($guest_reply); ?>;
+        var guestDeclined = <?php echo json_encode($guest_declined); ?>;
+
+        console.log("Accepted: ", guestAccepted);
+        console.log("May Be: ", guestMaybe);
+        console.log("Yet To Respond: ", guestReply);
+        console.log("Declined: ", guestDeclined);
+
+        var ctx = document.getElementById('chart-line').getContext('2d');
+        var myChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ["Accepted", "May Be", "Yet To Respond", "Declined"],
+                labels: ['Accepted', 'May Be', 'Yet To Respond', 'Declined'],
                 datasets: [{
-                    data: [
-                        guestAccepted,
-                        guestMaybe,
-                        guestReply,
-                        guestDeclined
-                    ],
+                    data: [guestAccepted, guestMaybe, guestReply, guestDeclined],
                     backgroundColor: [
                         "rgba(0, 255, 0, 0.5)",  // Accepted
                         "rgba(255, 255, 0, 0.5)", // May Be
