@@ -74,6 +74,7 @@ $current_date = new DateTime();
                 $event_rsvp_id = $event->event_rsvp_id;
 
                 // Get the event date
+                $eventtitle= esc_html(get_post_meta($event_rsvp_id, 'event_name', true));
                 $eventDate = esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
                 $event_date = new DateTime($eventDate);
 
@@ -96,7 +97,7 @@ $current_date = new DateTime();
                                     <thead>
                                         <tr>
                                             <th class="todo-subhead text-align-start hide-sorting-arrow" colspan="6">
-                                                <h4><?php echo esc_html($event_name); ?></h4>
+                                                <h4><?php echo esc_html($eventtitle); ?></h4>
                                             </th>
                                         </tr>
                                         <tr>
