@@ -42,6 +42,30 @@ $totals = $wpdb->get_row(
         WHERE user_id = %d
     ", $current_user_id)
 );
+
+$event_id = $get_event[0]->event_no;
+
+$guest_details_info_table = $wpdb->prefix . "guest_details_info";
+
+$guest_accepted = $wpdb->get_var($wpdb->prepare(
+    "SELECT COUNT(*) FROM $guest_details_info_table WHERE guest_event_id = %d AND guest_status = 'Accepted'",
+    $event_id
+));
+
+$guest_maybe = $wpdb->get_var($wpdb->prepare(
+    "SELECT COUNT(*) FROM $guest_details_info_table WHERE guest_event_id = %d AND guest_status = 'May Be'",
+    $event_id
+));
+
+$guest_reply = $wpdb->get_var($wpdb->prepare(
+    "SELECT COUNT(*) FROM $guest_details_info_table WHERE guest_event_id = %d AND guest_status = 'pending'",
+    $event_id
+));
+
+$guest_declined = $wpdb->get_var($wpdb->prepare(
+    "SELECT COUNT(*) FROM $guest_details_info_table WHERE guest_event_id = %d AND guest_status = 'Declined'",
+    $event_id
+));
 ?>
 
   <div class="wl-dashboard-wrapper dashboard">
