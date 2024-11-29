@@ -37,6 +37,9 @@ $get_guest_group = $wpdb->get_results(
 );
 
 $current_date = new DateTime();
+
+// Check if the user came from the guest list page
+$showMoveToGuestListButton = isset($_GET['from']) && $_GET['from'] === 'guestlist';
 ?>
 
 <div class="wl-dashboard-wrapper dashboard">
@@ -45,9 +48,11 @@ $current_date = new DateTime();
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header d-flex justify-content-between align-items-center">
                     <h3 class="pageheader-title">My Contacts</h3>
-                    <div class="links-box-2">
-                        <button type="submit" class="dashbord-btn">Move to Guest List</button>
-                    </div>
+                    <?php if ($showMoveToGuestListButton): ?>
+                        <div class="links-box-2">
+                            <button type="submit" class="dashbord-btn">Move to Guest List</button>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
