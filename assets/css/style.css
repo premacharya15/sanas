@@ -1230,7 +1230,7 @@ ul.mobile-menu-list .dropdown ul li a {
 }
 
 .btn-side-bar.active {
-    background-color: #744F30;
+    background-color: #744F30 !important;
     color: var(--snas-text-white);
 }
 
