@@ -1605,18 +1605,26 @@ function move_to_guest_list() {
 
     foreach ($guest_ids as $guest_id) {
         $guest_id = intval($guest_id); // Sanitize input
-        // Update the guest_event_id to move the guest to the specified event
-        $result = $wpdb->update(
-            $guest_info_table,
-            ['guest_event_id' => $event_id],
-            ['guest_id' => $guest_id],
-            ['%d'],
-            ['%d']
-        );
 
-        if ($result === false) {
-            wp_send_json_error('Failed to move guest with ID: ' . $guest_id);
-            return;
+        // Fetch guest details
+        $guest = $wpdb->get_row($wpdb->prepare("SELECT * FROM $guest_info_table WHERE guest_id = %d", $guest_id), ARRAY_A);
+
+        if ($guest) {
+            // Insert guest into the new event
+            $wpdb->insert(
+                $guest_info_table,
+                [
+                    'guest_user_id' => $guest['guest_user_id'],
+                    'guest_event_id' => $event_id,
+                    'guest_name' => $guest['guest_name'],
+                    'guest_email' => $guest['guest_email'],
+                    'guest_phone_num' => $guest['guest_phone_num'],
+                    'guest_status' => 'pending', // Set default status
+                    'guest_adult' => $guest['guest_adult'],
+                    'guest_kids' => $guest['guest_kids']
+                ],
+                ['%d', '%d', '%s', '%s', '%s', '%s', '%d', '%d']
+            );
         }
     }
 
