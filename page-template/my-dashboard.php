@@ -43,7 +43,7 @@ $totals = $wpdb->get_row(
     ", $current_user_id)
 );
 
-$event_id = $get_event[0]->event_no;
+$event_id = 110;
 
 $guest_details_info_table = $wpdb->prefix . "guest_details_info";
 
