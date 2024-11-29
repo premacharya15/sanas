@@ -1369,7 +1369,7 @@ if (window.location.pathname === '/my-contact/') {
                     url: ajax_object.ajax_url,
                     data: { action: 'move_to_guest_list', guest_ids: selectedGuests, card_id: card_id, event_id: event_id },
                     success: function(response) {
-                        console.log(response);
+                        console.log("test");
                         if (response.success) {
                             alert('Contacts moved to guest list successfully.');
                             window.location.href = '/user-dashboard/?dashboard=guestlist&card_id=' + card_id + '&event_id=' + event_id;
