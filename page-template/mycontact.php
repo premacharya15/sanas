@@ -54,6 +54,7 @@ $get_guest_group = $wpdb->get_results(
         <?php if (!empty($get_event)) : ?>
             <?php 
             $table_counter = 1;
+            $current_date = current_time('Y-m-d');
             foreach ($get_event as $event) : ?>
                 <?php
                 $event_id = $event->event_no;
@@ -71,6 +72,11 @@ $get_guest_group = $wpdb->get_results(
                 ));
                 
                 $event_name = $event_data->event_name;
+                $event_date = date('Y-m-d', strtotime($event_data->event_date));
+
+                if ($event_date >= $current_date) {
+                    continue;
+                }
 
                 // Fetch guest details for the event
                 $get_guest_details = $wpdb->get_results(
