@@ -54,6 +54,7 @@ $get_guest_group = $wpdb->get_results(
         <?php if (!empty($get_event)) : ?>
             <?php 
             $table_counter = 1;
+            $current_date = new DateTime(); // Get the current date
             foreach ($get_event as $event) : ?>
                 <?php
                 $event_id = $event->event_no;
@@ -71,7 +72,10 @@ $get_guest_group = $wpdb->get_results(
                 ));
                 
                 $event_name = $event_data->event_name;
+                $event_date = new DateTime($event_data->event_date);
 
+                // Compare event date with current date
+                if ($event_date < $current_date) {
                 // Fetch guest details for the event
                 $get_guest_details = $wpdb->get_results(
                     $wpdb->prepare(
@@ -144,10 +148,11 @@ $get_guest_group = $wpdb->get_results(
                 </div>
             <?php 
             $table_counter++;
+                }
             endforeach; ?>
         <?php else : ?>
             <div class="no-events-message">
-                <p>No contacts tables found.</p>
+                <p>No past events found.</p>
             </div>
         <?php endif; ?>
     </div>
