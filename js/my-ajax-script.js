@@ -1350,7 +1350,7 @@ if (window.location.pathname === '/my-contact/') {
 
         // Move to Guest List
         jQuery(document).ready(function($) {
-            $('.move-to-guestlis').on('click', function() {
+            $('.move-to-guestlist').on('click', function() {
                 var card_id = $(this).data('card-id');
                 var event_id = $(this).data('event-id');
 
