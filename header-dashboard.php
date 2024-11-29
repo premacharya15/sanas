@@ -68,9 +68,16 @@
             $first_char = substr($current_user->user_firstname, 0, 1);
 
                             ?>                
-                            <div class="btn-profile dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">
-                            	<?php echo ucfirst($first_char); ?>
-                            </div>           
+                  <div class="btn-profile dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">
+                      <?php
+                      $profile_picture = get_user_meta($userID, 'profile_picture', true);
+                      if (!empty($profile_picture)) {
+                          echo '<img class="user-profile-image" src="' . esc_url($profile_picture) . '" alt="Profile Picture">';
+                      } else {
+                          echo ucfirst($first_char);
+                      }
+                      ?>
+                  </div>           
                         <img class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" style="display: none;" aria-expanded="true" src="<?php echo  get_template_directory_uri(); ?>/assets/img/login-img.jpg" alt="">
 
                         <ul class="dropdown-menu p-0" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 42.4px, 0px);">
