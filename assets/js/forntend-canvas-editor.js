@@ -759,7 +759,7 @@ jQuery(document).ready(function ($) {
 
         if (redirectToNext) {
 
-            // showPreloader("Saving Card");
+            showPreloader("Saving Card");
             jQuery.ajax({
                 url: ajax_login_object.ajaxurl,
                 type: 'POST',
