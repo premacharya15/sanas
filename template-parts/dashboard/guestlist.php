@@ -427,12 +427,12 @@ $card_image_url = $upload_dir['url'] . '/' . $file_name;
                       <span class=""></span>
                     </div>
                   </div>
-                  <div class="guest-list-footer-iteam">
+                  <!-- <div class="guest-list-footer-iteam">
                     <p>Enable other guests to see the list of attendees</p>
                     <div class="check-toggle">
                       <span class=""></span>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
               <div class="col-sm-3">
