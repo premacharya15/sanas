@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="guests-list">
         <div class="inner tabs-box guests-tabs">
-          <div class="guests-box tabs-content">
+          <div class="guests-box table-box tabs-content">
             <div class="tab active-tab" id="tab-1">
               <div class="d-table-block">
                 <div class="inner-box-2">
@@ -322,8 +322,8 @@ $get_guest_details = $wpdb->get_results(
 ?>
 
 
-                    <div class="table-responsive">
-                      <table class="table data-table display" id="guest-list-Table">
+                    <div class="vendor-table table-responsive">
+                      <table class="vendor-list-table table data-table display" id="guest-list-Table">
                         <thead>
                           <tr>
                             <th><input type="checkbox" name="allCheck" id="all-select-chechbox"></th>
@@ -332,7 +332,7 @@ $get_guest_details = $wpdb->get_results(
                             <th>contact</th>
                             <th class="contact">status</th>
                             <th>Guest</th>
-                            <th class="actions"></th>
+                            <th class="actions">Actions</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -342,7 +342,7 @@ $get_guest_details = $wpdb->get_results(
                           <tr>
                             <td><input type="checkbox" class="select-checkbox guest-checkbox" data-email="<?php echo $guest->guest_email; ?>" data-guestid="<?php echo $id;?>"></td>
                             <td><?php echo $guest->guest_name; ?></td>
-                            <td><?php echo $guest->guest_email; ?></td>
+                            <td class="text-single-line" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($guest->guest_email); ?>"><?php echo esc_html($guest->guest_email); ?></td>
                             <td><?php echo $guest->guest_phone_num; ?></td>
                             <td class="contact">
                             <?php 
@@ -389,6 +389,19 @@ $get_guest_details = $wpdb->get_results(
                           <?php } ?>
                         </tbody>
                       </table>
+                      <script>
+                        jQuery(document).ready(function() {
+                            jQuery('#guest-list-Table').DataTable({
+                                searching: true,
+                                paging: true,
+                                "order": [],
+                                "ordering": true,
+                                columnDefs: [
+                                    { orderable: false, targets: [0, 2, 3, 5, 6] },
+                                ]
+                            });
+                        });
+                      </script>
                     </div>
                   </div>
                 </div>
