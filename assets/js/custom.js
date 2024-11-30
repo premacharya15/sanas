@@ -419,9 +419,12 @@
     // guest-list data table
     if (jQuery('.table-responsive').length) {
         jQuery('#guest-list-Table').DataTable({
-            "ordering": false,
+            searching: true,
+            paging: true,
+            "ordering": true,
+            "order": [],
             columnDefs: [
-                { orderable: false, targets: [1, 2, 3, 4, 5] },
+                { orderable: true, targets: [1, 4] },
             ]
         });
         // jQuery('.budget-table-sort').DataTable({
