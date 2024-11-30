@@ -722,5 +722,5 @@ $card_image_url = $upload_dir['url'] . '/' . $file_name;
       </div>
     </div>
   </div>
-  <input type="hidden" id="guestdetailsdeletemsg" name="guestdetailsdeletemsg" value="<?php esc_html_e('Are you sure you want to delete this list?','weddlist'); ?>">
+  <input type="hidden" id="guestdetailsdeletemsg" name="guestdetailsdeletemsg" value="<?php esc_html_e('Are you sure you want to delete this guest?','Guestlist'); ?>">
   <input type="hidden" name="header-options-msg" id="header-options-msg" value="Add your guest and send invitation to your be loved one."/>
