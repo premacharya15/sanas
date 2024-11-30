@@ -123,7 +123,7 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                                                 <td><input class="gl-checkbox" data-guest-id="<?php echo $guest->guest_id; ?>" type="checkbox"></td>
                                                 <td><?php echo esc_html($guest->guest_name); ?></td>
                                                 <td><?php echo esc_html($guest->guest_phone_num); ?></td>
-                                                <td class="text-single-line" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($guest->guest_email); ?>"><?php echo esc_html($guest->guest_email); ?></td>
+                                                <td class="text-single-line" data-event-email="<?php echo esc_attr($guest->guest_email); ?>" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($guest->guest_email); ?>"><?php echo esc_html($guest->guest_email); ?></td>
                                                 <td><?php echo esc_html($guest->guest_group); ?></td>
                                                 <td class="actions">
                                                     <div>
