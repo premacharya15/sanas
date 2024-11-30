@@ -454,6 +454,7 @@ function proceedWithGuestRemoval(itemid) {
                 console.log(response);
                 location.reload();
             } else {
+                location.reload();
                 // Handle failure case
             }
         }
