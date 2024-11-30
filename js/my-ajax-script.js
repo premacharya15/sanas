@@ -1377,7 +1377,11 @@ if (window.location.pathname === '/my-contact/') {
                     success: function(response) {
                         console.log(response);
                         if (response.success) {
-                            alert('Contacts moved to guest list successfully.');
+                            // Set the modal title and message
+                            jQuery('#exampleModalLabel').text('Success');
+                            jQuery('#modal-body-text').text('Contacts moved to guest list successfully.');
+                            // Show the modal
+                            jQuery('#modal_html_alert').modal('show');
                             window.location.href = '/user-dashboard/?dashboard=guestlist&card_id=' + card_id + '&event_id=' + event_id;
                         }
                         else {
