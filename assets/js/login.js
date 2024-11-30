@@ -451,6 +451,7 @@ function proceedWithGuestRemoval(itemid) {
         },
         success: function (response) {
             if (response.success) {
+                console.log(response);
                 location.reload();
             } else {
                 // Handle failure case
