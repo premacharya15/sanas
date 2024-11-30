@@ -1316,33 +1316,52 @@ if (window.location.pathname === '/my-contact/') {
     
         // Delete Guest Details
         jQuery(document).ready(function($) {
-            // Click handler for delete button
-            $('.delete-guest-details').on('click', function() {
-                var guestId = $(this).data('guest-id');
-                var security = $('#security').val();
-                
-                if (confirm('Are you sure you want to delete this guest?')) {
-                    $.ajax({
-                        type: 'POST',
-                        url: ajax_object.ajax_url,
-                        data: {
-                            action: 'delete_guest_details',
-                            guest_id: guestId,
-                            security: security
-                        },
-                        success: function(response) {
-                            if (response.success) {
-                                // alert(response.data);
-                                window.location.reload();
-                            } else {
-                                alert('Failed to delete guest details: ' + response.data);
-                            }
-                        },
-                        error: function() {
-                            alert('Error deleting guest details.');
+            var currentGuestId; // Keep track of the guest ID for the current action
+
+            // Function to show the modal
+            function show_alert_message2(title, message) {
+                jQuery('#exampleConfirmModalLabel').text(title);
+                jQuery('#confirm_modal-body-text').text(message);
+                jQuery('#confirm_modal_html_alert').modal('show');
+            }
+
+            // When "Yes" button is clicked
+            jQuery('#modal-yes-button').on('click', function () {
+                proceedWithGuestRemoval();
+                jQuery('#confirm_modal_html_alert').modal('hide');
+            });
+
+            // Function to handle the AJAX call for removal
+            function proceedWithGuestRemoval() {
+                $.ajax({
+                    type: 'POST',
+                    url: ajax_object.ajax_url,
+                    data: {
+                        action: 'delete_guest_details',
+                        guest_id: currentGuestId,
+                        security: jQuery('#security').val()
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            window.location.reload();
+                        } else {
+                            jQuery('#exampleModalLabel').text('Error');
+                            jQuery('#modal-body-text').text(response.data);
+                            jQuery('#modal_html_alert').modal('show');
                         }
-                    });
-                }
+                    },
+                    error: function() {
+                        jQuery('#exampleModalLabel').text('Error');
+                        jQuery('#modal-body-text').text('Error deleting guest details.');
+                        jQuery('#modal_html_alert').modal('show');
+                    }
+                });
+            }
+
+            // Click handler for the delete button
+            $('.delete-guest-details').on('click', function() {
+                currentGuestId = $(this).data('guest-id');
+                show_alert_message2('Delete Guest', 'Are you sure you want to delete this guest?');
             });
         });
 
