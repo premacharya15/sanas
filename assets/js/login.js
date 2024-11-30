@@ -426,28 +426,37 @@ jQuery(document).ready(function ($) {
     }
     });
 });
-function delete_guest_details(itemid)
-{
-    var guestdetailsdeletemsg = jQuery('#guestdetailsdeletemsg').val();
-    var strconfirm = confirm(guestdetailsdeletemsg);
-    if (strconfirm == true)
-    {       
-        action = 'sanas_delete_guest_info';
-        jQuery.ajax({
-            type: 'POST',
-            url: ajax_login_object.ajaxurl,
-            data: {
-                'action': action,
-                'itemid':itemid,
-            },
-            success: function (data) {
-                document.location.href = window.location.href;
-                setTimeout(function () {
-                    window.location.reload();
-                }, 200);
+function delete_guest_details(itemid) {
+    show_alert_message2('Delete Guest', 'Are you sure you want to delete this guest?');
+
+    jQuery('#modal-yes-button').on('click', function () {
+        proceedWithGuestRemoval(itemid);
+        jQuery('#confirm_modal_html_alert').modal('hide');
+    });
+}
+
+function show_alert_message2(title, message) {
+    jQuery('#exampleConfirmModalLabel').text(title);
+    jQuery('#confirm_modal-body-text').text(message);
+    jQuery('#confirm_modal_html_alert').modal('show');
+}
+
+function proceedWithGuestRemoval(itemid) {
+    jQuery.ajax({
+        type: 'POST',
+        url: ajax_login_object.ajaxurl,
+        data: {
+            'action': 'sanas_delete_guest_info',
+            'itemid': itemid,
+        },
+        success: function (response) {
+            if (response.success) {
+                location.reload();
+            } else {
+                // Handle failure case
             }
-        });                 
-    }
+        }
+    });
 }
 function edit_guestlist_details(itemid) {
    var action = 'sanas_ajax_edit_guestlist_details_popup';   
