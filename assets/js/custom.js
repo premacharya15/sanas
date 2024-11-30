@@ -424,7 +424,7 @@
             "ordering": true,
             "order": [],
             columnDefs: [
-                { orderable: true, targets: [1, 4] },
+                { orderable: false, targets: [0, 2, 3, 5] },
             ]
         });
         // jQuery('.budget-table-sort').DataTable({
