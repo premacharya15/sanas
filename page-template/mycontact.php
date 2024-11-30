@@ -229,5 +229,6 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
 </div>
 
 <?php render_modal_html_alert(); ?>
+<?php render_confirm_modal_html_alert(); ?>
 <?php
 get_footer('dashboard');
