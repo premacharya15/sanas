@@ -1610,6 +1610,17 @@ function move_to_guest_list() {
         $guest = $wpdb->get_row($wpdb->prepare("SELECT * FROM $guest_info_table WHERE guest_id = %d", $guest_id), ARRAY_A);
 
         if ($guest) {
+            // Check if email already exists for the event
+            $email_exists = $wpdb->get_var($wpdb->prepare(
+                "SELECT COUNT(*) FROM $guest_info_table WHERE guest_event_id = %d AND guest_email = %s",
+                $event_id, $guest['guest_email']
+            ));
+
+            if ($email_exists > 0) {
+                wp_send_json_error('Email already exists.');
+                return;
+            }
+
             // Insert guest into the new event
             $wpdb->insert(
                 $guest_info_table,
