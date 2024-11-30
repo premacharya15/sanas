@@ -1366,9 +1366,9 @@ if (window.location.pathname === '/my-contact/') {
             var currentGuestId;
 
             // Click handler for the delete icon
-            jQuery(".delete").on("click", function (e) {
+            jQuery(".delete-guest-details").on("click", function (e) {
                 e.preventDefault();
-            currentGuestId = jQuery(this).data("id");
+                currentGuestId = jQuery(this).data("guest-id");
 
                 show_alert_message2('Delete Guest', 'Are you sure you want to delete this guest?');
             });
