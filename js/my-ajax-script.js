@@ -1359,10 +1359,7 @@ if (window.location.pathname === '/my-contact/') {
                 if (selectedGuests.length === 0) {
                     jQuery('#exampleModalLabel').text('Error');
                     jQuery('#modal-body-text').text('Please select at least one guest.');
-                    // Show the modal
                     jQuery('#modal_html_alert').modal('show');
-
-                    // Handle the click event on the "Yes" button in the modal
                     jQuery('#render-modal-yes-button').on('click', function() {
                         jQuery('#modal_html_alert').modal('hide');
                     });
@@ -1374,26 +1371,22 @@ if (window.location.pathname === '/my-contact/') {
                     url: ajax_object.ajax_url,
                     data: { action: 'move_to_guest_list', guest_ids: selectedGuests, card_id: card_id, event_id: event_id },
                     success: function(response) {
-                        console.log(response);
                         if (response.success) {
-                            // Set the modal title and message
                             jQuery('#exampleModalLabel').text('Success');
                             jQuery('#modal-body-text').text('Contacts moved to guest list successfully.');
-                            // Show the modal
                             jQuery('#modal_html_alert').modal('show');
                             jQuery('#render-modal-yes-button').on('click', function() {
                                 jQuery('#modal_html_alert').modal('hide');
                                 window.location.href = '/user-dashboard/?dashboard=guestlist&card_id=' + card_id + '&event_id=' + event_id;
                             });
-                        }
-                        else {
+                        } else {
                             alert('Failed to move contacts to guest list: ' + response.data);
                         }
                     },
                     error: function() {
                         alert('Error moving contacts to guest list.');
                     }
-                }); 
+                });
             });
         });
 }
