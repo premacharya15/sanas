@@ -323,7 +323,7 @@ $get_guest_details = $wpdb->get_results(
 
 
                     <div class="vendor-table table-responsive">
-                      <table class="vendor-list-table table data-table display" id="guest-list-Table">
+                      <table class="vendor-list-table table data-table display" id="guest-list-Table guestlist-Table">
                         <thead>
                           <tr>
                             <th><input type="checkbox" name="allCheck" id="all-select-chechbox"></th>
@@ -391,7 +391,7 @@ $get_guest_details = $wpdb->get_results(
                       </table>
                       <script>
                         jQuery(document).ready(function() {
-                            jQuery('#guest-list-Table').DataTable({
+                            jQuery('#guestlist-Table').DataTable({
                                 searching: true,
                                 paging: true,
                                 "order": [],
