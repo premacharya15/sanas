@@ -1358,7 +1358,15 @@ if (window.location.pathname === '/my-contact/') {
                     selectedGuests.push($(this).data('guest-id'));
                 });
                 if (selectedGuests.length === 0) {
-                    alert('please select at least one guest.');
+                    jQuery('#exampleModalLabel').text('Error');
+                    jQuery('#modal-body-text').text('Please select at least one guest.');
+                    // Show the modal
+                    jQuery('#modal_html_alert').modal('show');
+
+                    // Handle the click event on the "Yes" button in the modal
+                    jQuery('#render-modal-yes-button').on('click', function() {
+                        jQuery('#modal_html_alert').modal('hide');
+                    });
                     return;
                 }
                 // Send the selected guests to the server
