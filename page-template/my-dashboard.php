@@ -167,14 +167,11 @@ if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_decl
       </div>
 
       <div class="row">
-        <?php if ($get_event) {
-          $stepURL = '/user-dashboard/?dashboard=cover&card_id=' . $get_event[0]->event_card_id . '&event_id=' . $get_event[0]->event_no;
-          ?>
         <div class="attend-info col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
           <a href="<?php echo $stepUrl; ?>" class="full-div-link"></a>
           <div class="inner">
             <div class="event-title-2 mb-5">
-              <h4><a href="<?php echo $stepUrl; ?>" class="text-black">My Events</a></h4>
+              <h4><a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="text-black">My Events</a></h4>
             </div>
             <div class="inner-box">
               <a href="/user-dashboard/?dashboard=cover&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style="background-color:#dc587f;">
