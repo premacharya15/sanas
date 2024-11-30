@@ -501,7 +501,7 @@ $card_image_url = $upload_dir['url'] . '/' . $file_name;
                   <div class="col-lg-12 col-sm-12">
                     <div class="links-box">
                       <button type="submit" id="add_guest_details" event-id="<?php echo $event_id ?>" class="btn btn-secondary">Save</button>
-                      <button type="button" id="add_guest_details_save" event-id="<?php echo $event_id ?>" class="btn btn-secondary">Add More Guest</button>
+                      <button type="button" id="add_guest_details_save" event-id="<?php echo $event_id ?>" class="btn btn-secondary">Save and Guest Add</button>
                     </div>
                   </div>
                   <div class="col-lg-6 col-sm-6">
