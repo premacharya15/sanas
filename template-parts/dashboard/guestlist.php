@@ -397,7 +397,7 @@ $get_guest_details = $wpdb->get_results(
                                 "order": [],
                                 "ordering": true,
                                 columnDefs: [
-                                    { orderable: false, targets: [0, 2, 3, 5] },
+                                    { orderable: true, targets: [1, 4] },
                                 ]
                             });
                         });
