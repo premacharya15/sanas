@@ -1619,9 +1619,9 @@ function move_to_guest_list() {
             if ($email_exists > 0) {
                 wp_send_json_error('Email already exists in the event.');
                 return;
-            }
+            }else{
 
-            // Insert guest into the new event
+                // Insert guest into the new event
             $wpdb->insert(
                 $guest_info_table,
                 [
@@ -1636,7 +1636,8 @@ function move_to_guest_list() {
                     'guest_kids' => $guest['guest_kids'] ?? 0
                 ],
                 ['%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d', '%d']
-            );
+                );
+            }
         }
     }
     wp_send_json_success('Guests moved to guest list successfully.');
