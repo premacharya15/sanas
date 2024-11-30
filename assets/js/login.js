@@ -430,7 +430,6 @@ function delete_guest_details(itemid) {
     show_alert_message2('Delete Guest', 'Are you sure you want to delete this guest?');
 
     jQuery('#modal-yes-button').on('click', function () {
-        console.log('clicked');
         proceedWithGuestRemoval(itemid);
         jQuery('#confirm_modal_html_alert').modal('hide');
     });
@@ -451,9 +450,7 @@ function proceedWithGuestRemoval(itemid) {
             'itemid': itemid,
         },
         success: function (response) {
-            console.log(response);
             if (response.success) {
-                console.log(response);
                 location.reload();
             } else {
                 location.reload();
