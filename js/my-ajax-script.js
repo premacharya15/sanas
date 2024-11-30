@@ -1380,7 +1380,12 @@ if (window.location.pathname === '/my-contact/') {
                                 window.location.href = '/user-dashboard/?dashboard=guestlist&card_id=' + card_id + '&event_id=' + event_id;
                             });
                         } else {
-                            alert('Failed to move contacts to guest list: ' + response.data);
+                            jQuery('#exampleModalLabel').text('Error');
+                            jQuery('#modal-body-text').text(response.data);
+                            jQuery('#modal_html_alert').modal('show');
+                            jQuery('#render-modal-yes-button').on('click', function() {
+                                jQuery('#modal_html_alert').modal('hide');
+                            });
                         }
                     },
                     error: function() {
