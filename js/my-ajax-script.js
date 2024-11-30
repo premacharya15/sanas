@@ -1382,7 +1382,10 @@ if (window.location.pathname === '/my-contact/') {
                             jQuery('#modal-body-text').text('Contacts moved to guest list successfully.');
                             // Show the modal
                             jQuery('#modal_html_alert').modal('show');
-                            window.location.href = '/user-dashboard/?dashboard=guestlist&card_id=' + card_id + '&event_id=' + event_id;
+                            jQuery('#render-modal-yes-button').on('click', function() {
+                                jQuery('#modal_html_alert').modal('hide');
+                                window.location.href = '/user-dashboard/?dashboard=guestlist&card_id=' + card_id + '&event_id=' + event_id;
+                            });
                         }
                         else {
                             alert('Failed to move contacts to guest list: ' + response.data);
