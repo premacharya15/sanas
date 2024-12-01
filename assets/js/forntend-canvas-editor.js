@@ -717,6 +717,7 @@ jQuery(document).ready(function ($) {
 
 
     jQuery('#save-front-canvas-data').click(function () {
+        console.log("test1");
         canvas.loadFromJSON(phpCanvasData, canvas.renderAll.bind(canvas));
         var canvasData = canvas.toJSON();
         var cardId = jQuery(this).attr('card-id');
@@ -736,6 +737,7 @@ jQuery(document).ready(function ($) {
 
 
         if (isInitialLoad === 'true') {
+            console.log("Test2");
             if (JSON.stringify(canvas.toJSON()) === phpCanvasData) {
                 // Call the PHP function to generate the modal HTML                
 
