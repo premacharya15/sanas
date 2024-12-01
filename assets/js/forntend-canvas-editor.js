@@ -668,6 +668,7 @@ jQuery(document).ready(function ($) {
 
 
     jQuery('#save-front-canvas-data-admin').click(function () {
+        canvas.renderAll();
         var canvasData = canvas.toJSON();
         var cardId = jQuery(this).attr('card-id');
         var imageDataURL = canvas.toDataURL({
@@ -711,10 +712,10 @@ jQuery(document).ready(function ($) {
     });
     });
 
-    
+
     jQuery('#save-front-canvas-data').click(function () {
         console.log("test1");
-        canvas.loadFromJSON(phpCanvasData, canvas.renderAll.bind(canvas));
+        canvas.renderAll();
         var canvasData = canvas.toJSON();
         var cardId = jQuery(this).attr('card-id');
         var eventId = jQuery(this).attr('event-id'); // Ensure this attribute is correctly set
