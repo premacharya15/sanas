@@ -716,7 +716,7 @@ jQuery('#save-back-canvas-db-admin').on('click', function () {
 });
 
 
-    $('#save-back-canvas-db').click(function () {
+    jQuery('#save-back-canvas-db').click(function () {
         canvas.renderAll();
         var canvasData = canvas.toJSON();
         var cardId = $(this).attr('card-id'); // Get the card ID from the button attribute
