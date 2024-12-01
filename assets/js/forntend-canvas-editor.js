@@ -717,6 +717,7 @@ jQuery(document).ready(function ($) {
 
 
     jQuery('#save-front-canvas-data').click(function () {
+        canvas.loadFromJSON(phpCanvasData, canvas.renderAll.bind(canvas));
         var canvasData = canvas.toJSON();
         var cardId = jQuery(this).attr('card-id');
         var eventId = jQuery(this).attr('event-id'); // Ensure this attribute is correctly set

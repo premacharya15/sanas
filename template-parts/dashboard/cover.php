@@ -1605,7 +1605,7 @@ $data = !empty($frontpagedata) ? stripslashes(stripslashes(htmlspecialchars_deco
         <?php
         echo "<script>";
         echo '';
-        echo "var canvasss = '".json_encode($data) ."';";
+        echo "var canvasss = '".$data ."';";
         echo "</script>";
     }
 

@@ -725,7 +725,7 @@ jQuery('#save-back-canvas-db-admin').on('click', function () {
         var stepId = $(this).attr('step-id');  // Use PHP to insert event_no    
 
         var colorbg = $('#colorPicker').val();
-        console.log("test");
+        
         var imageDataURL = canvas.toDataURL({
             format: 'png',
             quality: 1.0
