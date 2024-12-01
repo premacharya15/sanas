@@ -682,7 +682,6 @@ jQuery('#save-back-canvas-db-admin').on('click', function () {
         quality: 1.0
     });
 
-
     // Show preloader during the save process
     // showPreloader("Saving Card");
 
