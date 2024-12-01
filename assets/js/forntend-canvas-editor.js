@@ -781,11 +781,11 @@ jQuery(document).ready(function ($) {
                         var cardId = response.data.card_id;
 
                         var triggercall = jQuery("#triggercall").val();
-                        if (triggercall) {
-                            window.location.href = triggercall;
-                        } else {
-                            window.location.href = backacardURL + '&card_id=' + cardId + '&event_id=' + eventId;
-                        }
+                        // if (triggercall) {
+                        //     window.location.href = triggercall;
+                        // } else {
+                        //     window.location.href = backacardURL + '&card_id=' + cardId + '&event_id=' + eventId;
+                        // }
                     } else {
                         alert(response.data.message);
                     }
