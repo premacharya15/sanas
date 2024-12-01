@@ -681,6 +681,7 @@ jQuery('#save-back-canvas-db-admin').on('click', function () {
         format: 'png',
         quality: 1.0
     });
+    console.log("test");
 
     // Show preloader during the save process
     // showPreloader("Saving Card");
