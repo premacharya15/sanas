@@ -731,22 +731,16 @@ jQuery(document).ready(function ($) {
         var colorbg = canvasElement.css('background-color');
         var imageUrl = backgroundImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
 
-        var redirectToNext = true; // Flag to determine if redirection should occur
-
+        var redirectToNext = true;
 
         if (isInitialLoad === 'true') {
             console.log("Test2");
             if (JSON.stringify(canvas.toJSON()) === phpCanvasData) {
-                // Call the PHP function to generate the modal HTML                
-
-                // Call the JavaScript function to show the modal
                 show_alert_message('Cover', 'Please modify the card.');
-
-                redirectToNext = false; // Prevent redirection
+                redirectToNext = false;
             }
         }
         else {
-            // Check if the PHP canvas data is valid JSON before loading it
             try {
                 if (phpCanvasData && phpCanvasData !== "null") {
                     canvas.loadFromJSON(phpCanvasData, canvas.renderAll.bind(canvas));
@@ -761,44 +755,44 @@ jQuery(document).ready(function ($) {
         if (redirectToNext) {
             console.log("Test3");
             showPreloader("Saving Card");
-            jQuery.ajax({
-                url: ajax_login_object.ajaxurl,
-                type: 'POST',
-                data: {
-                    action: 'sanas_save_canvas_data_callback',
-                    security:jQuery('#sanasfrontpagesecurity').val(),
-                    canvas_data: JSON.stringify(canvasData),
-                    card_id: cardId,
-                    step_id: stepId,
-                    image_data: imageDataURL,
-                    imageUrl: imageUrl,
-                    colorbg: colorbg,
-                    event_id: eventId
-                },
-                success: function (response) {
-                    if (response.success) {
-                        var eventId = response.data.event_id;
-                        var cardId = response.data.card_id;
+            // jQuery.ajax({
+            //     url: ajax_login_object.ajaxurl,
+            //     type: 'POST',
+            //     data: {
+            //         action: 'sanas_save_canvas_data_callback',
+            //         security:jQuery('#sanasfrontpagesecurity').val(),
+            //         canvas_data: JSON.stringify(canvasData),
+            //         card_id: cardId,
+            //         step_id: stepId,
+            //         image_data: imageDataURL,
+            //         imageUrl: imageUrl,
+            //         colorbg: colorbg,
+            //         event_id: eventId
+            //     },
+            //     success: function (response) {
+            //         if (response.success) {
+            //             var eventId = response.data.event_id;
+            //             var cardId = response.data.card_id;
 
-                        var triggercall = jQuery("#triggercall").val();
-                        // if (triggercall) {
-                        //     window.location.href = triggercall;
-                        // } else {
-                        //     window.location.href = backacardURL + '&card_id=' + cardId + '&event_id=' + eventId;
-                        // }
-                    } else {
-                        alert(response.data.message);
-                    }
-                },
-                error: function (xhr, status, error) {
-                    hidePreloader();
-                    show_alert_message('Cover', 'Please wait a moment and try again later');
+            //             var triggercall = jQuery("#triggercall").val();
+            //             // if (triggercall) {
+            //             //     window.location.href = triggercall;
+            //             // } else {
+            //             //     window.location.href = backacardURL + '&card_id=' + cardId + '&event_id=' + eventId;
+            //             // }
+            //         } else {
+            //             alert(response.data.message);
+            //         }
+            //     },
+            //     error: function (xhr, status, error) {
+            //         hidePreloader();
+            //         show_alert_message('Cover', 'Please wait a moment and try again later');
 
-                },
-                complete: function () {
-                    hidePreloader(); // Hide loading indicator after the call completes
-                }
-            });
+            //     },
+            //     complete: function () {
+            //         hidePreloader(); // Hide loading indicator after the call completes
+            //     }
+            // });
         }
     });
 
