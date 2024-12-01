@@ -733,28 +733,28 @@ jQuery(document).ready(function ($) {
 
         var redirectToNext = true;
 
-        if (isInitialLoad === 'true') {
-            console.log("Test2");
-            if (JSON.stringify(canvas.toJSON()) === phpCanvasData) {
-                show_alert_message('Cover', 'Please modify the card.');
-                redirectToNext = false;
-            }
-        }
-        else {
-            try {
-                if (phpCanvasData && phpCanvasData !== "null") {
-                    canvas.loadFromJSON(phpCanvasData, canvas.renderAll.bind(canvas));
-                } else {
-                    console.error('No valid JSON data for canvas.');
-                }
-            } catch (error) {
-                console.error('Error loading canvas data:', error);
-            }
-        }
+        // if (isInitialLoad === 'true') {
+        //     console.log("Test2");
+        //     if (JSON.stringify(canvas.toJSON()) === phpCanvasData) {
+        //         show_alert_message('Cover', 'Please modify the card.');
+        //         redirectToNext = false;
+        //     }
+        // }
+        // else {
+        //     try {
+        //         if (phpCanvasData && phpCanvasData !== "null") {
+        //             canvas.loadFromJSON(phpCanvasData, canvas.renderAll.bind(canvas));
+        //         } else {
+        //             console.error('No valid JSON data for canvas.');
+        //         }
+        //     } catch (error) {
+        //         console.error('Error loading canvas data:', error);
+        //     }
+        // }
 
         if (redirectToNext) {
             console.log("Test3");
-            showPreloader("Saving Card");
+            // showPreloader("Saving Card");
             // jQuery.ajax({
             //     url: ajax_login_object.ajaxurl,
             //     type: 'POST',
