@@ -709,13 +709,9 @@ jQuery(document).ready(function ($) {
                 show_alert_message('Info', 'Please wait a moment and try again.');
             }
     });
-
-
     });
 
-
-
-
+    
     jQuery('#save-front-canvas-data').click(function () {
         console.log("test1");
         canvas.loadFromJSON(phpCanvasData, canvas.renderAll.bind(canvas));

@@ -717,6 +717,7 @@ jQuery('#save-back-canvas-db-admin').on('click', function () {
 
 
     $('#save-back-canvas-db').click(function () {
+        console.log("testdb");
         canvas.renderAll();
         var canvasData = canvas.toJSON();
         var cardId = $(this).attr('card-id'); // Get the card ID from the button attribute
@@ -725,7 +726,7 @@ jQuery('#save-back-canvas-db-admin').on('click', function () {
         var stepId = $(this).attr('step-id');  // Use PHP to insert event_no    
 
         var colorbg = $('#colorPicker').val();
-        
+
         var imageDataURL = canvas.toDataURL({
             format: 'png',
             quality: 1.0
