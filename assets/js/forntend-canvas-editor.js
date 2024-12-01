@@ -716,6 +716,7 @@ jQuery(document).ready(function ($) {
     jQuery('#save-front-canvas-data').click(function () {
         console.log("test1");
         canvas.renderAll();
+        console.log("test2");
         var canvasData = canvas.toJSON();
         var cardId = jQuery(this).attr('card-id');
         var eventId = jQuery(this).attr('event-id'); // Ensure this attribute is correctly set
@@ -758,7 +759,7 @@ jQuery(document).ready(function ($) {
         }
 
         if (redirectToNext) {
-
+            console.log("Test3");
             showPreloader("Saving Card");
             jQuery.ajax({
                 url: ajax_login_object.ajaxurl,
