@@ -747,7 +747,7 @@ jQuery('#save-back-canvas-db-admin').on('click', function () {
             }
         }
         if (redirectToNext) {
-            // showPreloader("Saving Card");
+            showPreloader("Saving Card");
             $.ajax({
                 url: ajax_login_object.ajaxurl,
                 type: 'POST',
