@@ -672,7 +672,6 @@ jQuery(document).ready(function ($) {
 jQuery(document).ready(function ($) {
 
 jQuery('#save-back-canvas-db-admin').on('click', function () {
-    canvas.renderAll();
     var canvasData = canvas.toJSON();  // Convert canvas data to JSON
     var cardId = $(this).attr('card-id');  // Get the card ID from the button's attribute
     var rsvpURL = $(this).attr('btn-url');  // Redirect URL after saving
@@ -682,10 +681,9 @@ jQuery('#save-back-canvas-db-admin').on('click', function () {
         format: 'png',
         quality: 1.0
     });
-    console.log("test");
 
     // Show preloader during the save process
-    // showPreloader("Saving Card");
+    showPreloader("Saving Card");
 
     // Send AJAX request to save canvas data and image
     jQuery.ajax({
@@ -727,7 +725,7 @@ jQuery('#save-back-canvas-db-admin').on('click', function () {
         var stepId = $(this).attr('step-id');  // Use PHP to insert event_no    
 
         var colorbg = $('#colorPicker').val();
-
+        console.log("test");
         var imageDataURL = canvas.toDataURL({
             format: 'png',
             quality: 1.0
@@ -747,11 +745,8 @@ jQuery('#save-back-canvas-db-admin').on('click', function () {
                 redirectToNext = false;
             }
         }
-        // console.log(phpbackCanvasData);
-        // console.log(canvasData);
-        // console.log(isInitialLoad);
         if (redirectToNext) {
-            showPreloader("Saving Card");
+            // showPreloader("Saving Card");
             $.ajax({
                 url: ajax_login_object.ajaxurl,
                 type: 'POST',
