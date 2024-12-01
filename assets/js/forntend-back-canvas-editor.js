@@ -684,7 +684,7 @@ jQuery('#save-back-canvas-db-admin').on('click', function () {
 
 
     // Show preloader during the save process
-    showPreloader("Saving Card");
+    // showPreloader("Saving Card");
 
     // Send AJAX request to save canvas data and image
     jQuery.ajax({
