@@ -672,6 +672,7 @@ jQuery(document).ready(function ($) {
 jQuery(document).ready(function ($) {
 
 jQuery('#save-back-canvas-db-admin').on('click', function () {
+    canvas.renderAll();
     var canvasData = canvas.toJSON();  // Convert canvas data to JSON
     var cardId = $(this).attr('card-id');  // Get the card ID from the button's attribute
     var rsvpURL = $(this).attr('btn-url');  // Redirect URL after saving
