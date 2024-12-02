@@ -66,11 +66,11 @@ $('button.usersignin').on('click', function (e) {
             },
             success: function (data) {
                 $('#signupresponseError').html(data.message);
-                $('#signinresponseMessage').html(data.message).show();
-                $('#signinresponseMessagepopup').html(data.message).show();
+                $('#signupresponseMessage').html(data.message).show();
+                $('#signupresponseMessagepopup').html(data.message).show();
                 if (data.loggedin) {
                     // Remove the d-none class to show the success popup
-                    $('.content-succes').removeClass('d-none');
+                    $('.account-content-succes').removeClass('d-none');
                     $('.form-boxed .login').addClass('d-none');
                 } 
                 if (data.register) {
