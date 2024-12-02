@@ -36,6 +36,7 @@ jQuery(document).ready(function ($) {
 var current_url =  window.location.href;    
         $('body').addClass('search-active');
         $('.search-popup').addClass('ajax-value');
+        console.log('opened no login');
         $('#ajaxvalue').val('0');        
         $('#signInButton').addClass('d-block');
         $('#signInButton').attr('btn-url', current_url);
