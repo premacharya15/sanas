@@ -66,6 +66,7 @@ function changeFontSize() {
         activeObject.set({ fontSize: parseInt(fontSize, 10) });
         canvas.renderAll();
     }
+    document.getElementById('fontSize').focus();
 }
 // Change color of selected text
 function changeColor() {
