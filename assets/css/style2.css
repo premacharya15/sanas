@@ -6338,8 +6338,8 @@ p.text-success {
 
 .delete-btn {
     position: absolute;
-    top: 10px;
-    right: -27px;
+    top: -40px;
+    right: 0px;
     width: 30px;
     height: 30px;
 }
