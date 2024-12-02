@@ -418,15 +418,15 @@
     }
     // guest-list data table
     if (jQuery('.table-responsive').length) {
-        jQuery('#guest-list-Table').DataTable({
-            searching: true,
-            paging: true,
-            "ordering": true,
-            "order": [],
-            columnDefs: [
-                { orderable: false, targets: [0, 3, 5, 6] },
-            ]
-        });
+        // jQuery('#guest-list-Table').DataTable({
+        //     searching: true,
+        //     paging: true,
+        //     "ordering": true,
+        //     "order": [],
+        //     columnDefs: [
+        //         { orderable: false, targets: [0, 3, 5, 6] },
+        //     ]
+        // });
         // jQuery('.budget-table-sort').DataTable({
         //     columnDefs: [
         //         { orderable: false, targets: [0, 2, 3, 4, 5, 6] },
