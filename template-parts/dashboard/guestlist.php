@@ -389,7 +389,7 @@ $get_guest_details = $wpdb->get_results(
                           <?php } ?>
                         </tbody>
                       </table>
-                      <script>
+                      <!-- <script>
                         jQuery(document).ready(function() {
                             jQuery('#guest-list-Table').DataTable({
                               searching: true,
@@ -401,7 +401,7 @@ $get_guest_details = $wpdb->get_results(
                               ]
                             });
                         });
-                      </script>
+                      </script> -->
                     </div>
                   </div>
                 </div>
