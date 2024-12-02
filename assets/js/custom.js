@@ -459,9 +459,11 @@
         jQuery('#guest-list-Table').DataTable({
             searching: true,
             paging: true,
-            columnDefs: [
-                { orderable: false, targets: [0, 3, 5, 6] },
-            ]
+            "order": [],
+            "ordering": true,
+            // columnDefs: [
+            //     { orderable: false, targets: [0, 3, 5, 6] },
+            // ]
           });
         // jQuery('#guest-contact-list').DataTable();
         jQuery('.todo-table').DataTable({
