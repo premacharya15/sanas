@@ -689,7 +689,7 @@ $card_image_url = $upload_dir['url'] . '/' . $file_name;
          <div class="url" style="display:none;">
             <p id="copyurl"><?php echo esc_url($share_guest_preview); ?></p>
           </div>
-           <p id="statusMessage"></p>
+           <p id="statusMessage" style="margin-top:1rem;"></p>
         </div>
 
         <div class="modal-footer">
