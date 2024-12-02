@@ -137,7 +137,7 @@ function changeFontSize() {
     if (activeObject && activeObject.type === 'i-text') {
         const fontSize = document.getElementById('fontSize').value;
         activeObject.set({ fontSize: parseInt(fontSize, 10) });
-        // canvas.renderAll();
+        canvas.renderAll();
     }
     // document.getElementById('fontSize').focus();
 }
