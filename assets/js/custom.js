@@ -459,7 +459,7 @@
         jQuery('#guest-list-Table').DataTable({
             searching: true,
             paging: true,
-            ordering: true,
+            ordering: false,
           });
         // jQuery('#guest-contact-list').DataTable();
         jQuery('.todo-table').DataTable({
