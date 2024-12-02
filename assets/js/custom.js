@@ -456,10 +456,17 @@
                 { orderable: false, targets: [0,2,3,4,5] },
             ]
         });
-        jQuery('#guest-list-Table').DataTable({
+        jQuery('.guestlist-table').DataTable({
             searching: true,
             paging: true,
-            ordering: false,
+            "order": [],
+            "ordering": true,
+            columnDefs: [
+                { orderable: false, targets: [0, 3, 5, 6] },
+            ],
+            language: {
+                info: ""
+            }
           });
         // jQuery('#guest-contact-list').DataTable();
         jQuery('.todo-table').DataTable({
