@@ -176,10 +176,9 @@ if (!function_exists('sanas_get_login_popup')) {
                   <div class="form-group">
                     <input type="text"  id="signupYourname" name="signupYourname" placeholder="Your Name" autocomplete="off">
                   </div>
-                  <!-- <div class="form-group">
-                    <input type="text"  id="signupUsername" name="signupUsername" placeholder="Username*" autocomplete="off" >
-                    <div id="signupUsernameError" class="error-message">Enter Valid Username</div>   
-                  </div> -->
+                  <div class="form-group">
+                    <input type="text" id="signupUsername" name="signupUsername"  placeholder="Username*" disabled value="<script>document.write('user' + Math.floor(Math.random() * 100000));</script>">
+                  </div>
                   <div class="form-group">
                       <input type="email" id="signupEmail"  name="signupEmail" placeholder="Email*" autocomplete="off">
                       <div id="signupEmailError" class="error-message">Enter Valid Email</div>   
