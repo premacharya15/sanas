@@ -686,7 +686,7 @@ $card_image_url = $upload_dir['url'] . '/' . $file_name;
           <div class="img">
             <img src="<?php echo $event_front_card_preview; ?>" alt="">
           </div>
-         <div class="url">
+         <div class="url" style="display:none;">
             <p id="copyurl"><?php echo esc_url($share_guest_preview); ?></p>
           </div>
            <p id="statusMessage"></p>
