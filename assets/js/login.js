@@ -80,6 +80,15 @@ $('button.usersignin').on('click', function (e) {
                     setTimeout(function() {
                         document.location.href = data.redirect_url;
                     }, 3000);
+                    if(data.loggedin){
+                        // Remove the d-none class to show the success popup
+                    $('.content-succes').removeClass('d-none');
+                    $('.form-boxed .login').addClass('d-none');
+
+                       setTimeout(function() {
+                            window.location.reload();
+                        }, 3000); 
+                    }
                 } else {
                     $('#signupresponseError').show();
                     $('#signupresponseMessage').show().delay(3000).fadeOut();
