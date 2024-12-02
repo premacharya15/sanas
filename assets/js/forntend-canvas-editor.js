@@ -54,7 +54,7 @@ function handleSelection(event) {
 // Function to add text to the canvas  
 function addText(event) {
     // Create a new text object
-    const text = new fabric.IText('Edit me', {
+    const text = new fabric.IText('Add text', {
         left: 50,
         top: 50,
         fontFamily: 'Arial',
