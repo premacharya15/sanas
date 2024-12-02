@@ -687,6 +687,7 @@ if (empty($rsvpimage)) {
                 <div class="content content-3">
                     <?php if ($imageEnable && !empty($rsvpImage)) {?>
                     <div class="divider">
+                        <h5 class="m-0 mb-2">Upload Your Pre-Event Shoot or Video Invitation Here...</h5>
                         <img src="<?php echo esc_url($rsvpImage['url']) ?>" alt="rsvp-image">
                     </div>
                     <?php } ?>
@@ -694,7 +695,6 @@ if (empty($rsvpimage)) {
                     <div class="wl-card-detaile">
                         <div class="row">
                             <div class="col-xxl-9 col-xl-10 col-lg-10 col-md-12 m-auto">
-                                <h5 class="m-0 mb-2">Upload Your Pre-Event Shoot or Video Invitation Here...</h5>
                                 <?php if(empty($rsvpvideo)){ ?>
                                  <div class="video-box" id="drop-zone">
                                  <video id="uploaded-video" controls style="display:none;"></video> 
