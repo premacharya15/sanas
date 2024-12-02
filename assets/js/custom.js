@@ -192,9 +192,9 @@
         jQuery('#selectedtext').keyup(function () {
             syncTextareaToEditText();
         });
-        jQuery('#selectedtext').blur(function () {
-            syncTextareaToEditText();
-        });
+        // jQuery('#selectedtext').blur(function () {
+        //     syncTextareaToEditText();
+        // });
     }
     if (jQuery('.wl-left-slide-bar').length) {
         // text align
