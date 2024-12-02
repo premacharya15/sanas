@@ -256,13 +256,8 @@ if (!function_exists('sanas_get_login_popup')) {
               </div>
               <div class="lower-social-box">
                 <?php if ($emailpageEnable) {?>
-                <p>
-                   <?php 
-                    $i=0;
-                    foreach ($emailpagelinkInfo as $link): ?>
-                    <a href="<?php echo esc_url($link['sanas_email_popup_page_url']['url']); ?>"><?php echo $link['sanas_email_popup_page_title'] ?></a> 
-                    <?php if ($i == 0) {?>| <?php }?>
-                    <?php  $i++; endforeach;?>
+                  <p>
+                <a href="/terms-of-use">Terms of Use</a> | <a href="/privacy-policy">Privacy Policy</a>
                 </p>
                 <?php } ?>
               </div>
@@ -333,13 +328,16 @@ if (isset($_GET['reset_password']) && $_GET['reset_password'] == '1' && isset($_
               </div>
               <div class="lower-social-box">
                 <?php if ($passwordpageEnable) {?>
-                <p>
+                <!-- <p>
                    <?php 
-                    $i=0;
-                    foreach ($passwordpagelinkInfo as $link): ?>
-                    <a href="<?php echo esc_url($link['sanas_password_popup_page_url']['url']); ?>"><?php echo $link['sanas_password_popup_page_title'] ?></a> 
-                    <?php if ($i == 0) {?>| <?php }?>
-                    <?php  $i++; endforeach;?>
+                    //$i=0;
+                    //foreach ($passwordpagelinkInfo as $link): ?>
+                    <a href="<?php //echo esc_url($link['sanas_password_popup_page_url']['url']); ?>"><?php echo $link['sanas_password_popup_page_title'] ?></a> 
+                    <?php //if ($i == 0) {?>| <?php //}?>
+                    <?php  //$i++; endforeach;?>
+                </p> -->
+                <p>
+                <a href="/terms-of-use">Terms of Use</a> | <a href="/privacy-policy">Privacy Policy</a>
                 </p>
               <?php } ?>
               </div>
