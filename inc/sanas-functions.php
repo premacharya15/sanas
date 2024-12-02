@@ -176,18 +176,18 @@ if (!function_exists('sanas_get_login_popup')) {
                   <div class="form-group">
                     <input type="text"  id="signupYourname" name="signupYourname" placeholder="Your Name" autocomplete="off">
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <input type="text"  id="signupUsername" name="signupUsername" placeholder="Username*" autocomplete="off" >
                     <div id="signupUsernameError" class="error-message">Enter Valid Username</div>   
-                  </div>
+                  </div> -->
                   <div class="form-group">
                       <input type="email" id="signupEmail"  name="signupEmail" placeholder="Email*" autocomplete="off">
                       <div id="signupEmailError" class="error-message">Enter Valid Email</div>   
                   </div>
-                 <div class="form-group">
+                 <!-- <div class="form-group">
                       <input type="email" id="confirmsignupEmail"  name="confirmsignupEmail" placeholder="Confirm Email*" autocomplete="off">
                       <div id="confirmsignupEmailError" class="error-message">Confirm Email Not Match</div>   
-                  </div>
+                  </div> -->
                   <div class="form-group">
                     <input type="password"  class="password-input password-control" id="signupPassword" name="signupPassword" placeholder="Password" autocomplete="off">
                     <div class="eye-icon">

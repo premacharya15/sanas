@@ -91,20 +91,20 @@ $('button.usersignin').on('click', function (e) {
     function isValidForm() {
         var isValid = true;
         // Validate username
-        var username = $('#signupUsername').val();
-        if (username.trim() === '') {
-            $('#signupUsernameError').text('Username is required.').show();
-            isValid = false;
-        } else if (username.trim().length < 3) {
-            $('#signupUsernameError').text('Username must be at least 3 characters long.').show();
-            isValid = false;
-        } else {
-            $('#signupUsernameError').hide();
-        }
+        // var username = $('#signupUsername').val();
+        // if (username.trim() === '') {
+        //     $('#signupUsernameError').text('Username is required.').show();
+        //     isValid = false;
+        // } else if (username.trim().length < 3) {
+        //     $('#signupUsernameError').text('Username must be at least 3 characters long.').show();
+        //     isValid = false;
+        // } else {
+        //     $('#signupUsernameError').hide();
+        // }
 
         // Validate email
         var email = $('#signupEmail').val();
-        var confirmsignupEmail = $('#confirmsignupEmail').val();
+        // var confirmsignupEmail = $('#confirmsignupEmail').val();
 
         // Email format validation
         if (!isValidEmail(email)) {
@@ -116,21 +116,21 @@ $('button.usersignin').on('click', function (e) {
 
 
         // Email format validation
-        if (!isValidEmail(confirmsignupEmail)) {
-            $('#confirmsignupEmailError').text('Please enter a valid email address.').show();
-            isValid = false;
-        } else {
-            $('#confirmSignupEmailError').hide();
-        }
+        // if (!isValidEmail(confirmsignupEmail)) {
+        //     $('#confirmsignupEmailError').text('Please enter a valid email address.').show();
+        //     isValid = false;
+        // } else {
+        //     $('#confirmSignupEmailError').hide();
+        // }
 
         // Confirm email validation
-        if (email !== confirmsignupEmail) {
-            $('#confirmsignupEmailError').show();
-            $('#confirmsignupEmailError').text('Confirm Email addresses do not match.');
-            isValid = false;
-        } else {
-            $('#confirmsignupEmailError').hide();
-        }
+        // if (email !== confirmsignupEmail) {
+        //     $('#confirmsignupEmailError').show();
+        //     $('#confirmsignupEmailError').text('Confirm Email addresses do not match.');
+        //     isValid = false;
+        // } else {
+        //     $('#confirmsignupEmailError').hide();
+        // }
 
 
         var password = $('#signupPassword').val();
