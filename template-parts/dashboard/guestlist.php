@@ -389,19 +389,6 @@ $get_guest_details = $wpdb->get_results(
                           <?php } ?>
                         </tbody>
                       </table>
-                      <!-- <script>
-                        jQuery(document).ready(function() {
-                            jQuery('#guest-list-Table').DataTable({
-                              searching: true,
-                              paging: true,
-                              "order": [],
-                              "ordering": true,
-                              columnDefs: [
-                                  { orderable: false, targets: [0, 3, 5, 6] },
-                              ]
-                            });
-                        });
-                      </script> -->
                     </div>
                   </div>
                 </div>
