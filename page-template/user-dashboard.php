@@ -40,6 +40,11 @@ var current_url =  window.location.href;
         $('#ajaxvalue').val('0');        
         $('#signInButton').addClass('d-block');
         $('#signInButton').attr('btn-url', current_url);
+
+        //close search popup
+        $('.close-search').on('click', function() {
+            window.location.href = '<?php echo home_url(); ?>';
+        });
 });     
 </script>
 <?php    
