@@ -111,7 +111,7 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                                         <tr>
                                             <th><input type="checkbox" id="all-select-checkbox-one"></th>
                                             <th>Name</th>
-                                            <th>Phone Number</th>
+                                            <th>Phone</th>
                                             <th class="text-single-line" data-toggle="tooltip" data-bs-original-title="Email address">Email address</th>
                                             <th>Group</th>
                                             <th class="actions">Actions</th>

@@ -101,13 +101,13 @@ $youtube = get_user_meta($user_id, 'youtube', true);
                         </div>
                         <div class="col-lg-6 col-sm-12">
                           <div class="form-group">
-                            <label> Email</label>
+                            <label>Email</label>
                             <input type="email" class="form-control" value="<?php echo esc_attr($email); ?>" name="email" placeholder="" required="">
                           </div>
                         </div>
                         <div class="col-lg-6 col-sm-12">
                           <div class="form-group">
-                            <label> Phone Number</label>
+                            <label>Phone</label>
                             <input type="text" class="form-control" name="phone" value="<?php echo esc_attr($phone); ?>" placeholder="">
                           </div>
                         </div>
