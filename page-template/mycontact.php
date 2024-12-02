@@ -148,7 +148,7 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                                         "order": [],
                                         "ordering": true,
                                         columnDefs: [
-                                            { orderable: false, targets: [0, 2, 3, 4, 5] },
+                                            { orderable: false, targets: [0, 2, 4, 5] },
                                         ]
                                     });
                                 });
