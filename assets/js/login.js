@@ -66,6 +66,13 @@ $('button.usersignin').on('click', function (e) {
             },
             success: function (data) {
                 $('#signupresponseError').html(data.message);
+                $('#signinresponseMessage').html(data.message).show();
+                $('#signinresponseMessagepopup').html(data.message).show();
+                if (data.loggedin) {
+                    // Remove the d-none class to show the success popup
+                    $('.content-succes').removeClass('d-none');
+                    $('.form-boxed .login').addClass('d-none');
+                } 
                 if (data.register) {
                     // Trigger email sending after successful registration
                     $.ajax({
@@ -76,7 +83,9 @@ $('button.usersignin').on('click', function (e) {
                             'email': $('#signupEmail').val()
                         },
                     });
-                    document.location.href = data.redirect_url;
+                    setTimeout(function() {
+                        document.location.href = data.redirect_url;
+                    }, 3000);
                 } else {
                     $('#signupresponseError').show();
                     $('#signupresponseMessage').show().delay(3000).fadeOut();
