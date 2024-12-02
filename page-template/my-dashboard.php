@@ -204,7 +204,7 @@ if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_decl
           <div class="inner">
             <div class="title-box">
               <div class="title graph">
-                <h4><a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="text-black">Guests List</a></h4>
+                <h4><a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="text-black">Guest List</a></h4>
               </div>
             </div>
             <div class="graph-box">
