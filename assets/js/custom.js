@@ -462,7 +462,7 @@
             "order": [],
             "ordering": true,
             columnDefs: [
-                { orderable: false, targets: [0, 3, 5, 6] },
+                { orderable: true, targets: [1,2,3,4,5,6] },
             ],
             language: {
                 info: ""
