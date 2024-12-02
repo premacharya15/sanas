@@ -77,9 +77,9 @@ $('button.usersignin').on('click', function (e) {
                             'email': $('#signupEmail').val()
                         },
                     });
-                    setTimeout(function() {
-                        document.location.href = data.redirect_url;
-                    }, 3000);
+                    // setTimeout(function() {
+                    //     document.location.href = data.redirect_url;
+                    // }, 3000);
                     if(data.loggedin){
                         // Remove the d-none class to show the success popup
                     $('.content-succes').removeClass('d-none');
