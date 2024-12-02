@@ -6505,7 +6505,7 @@ section.blog-section .blog-box{
     font-weight: 600;
 }
 .delete-btn>button.deleteRowBtn>i, .wl-fuc-timing .rsvp-event .deletebtn i {
-    color: #ffffff !important;
+    color: var(--snas-bg-secondary-2) !important;
     font-size: 40px !important;
     font-weight: 400;
     line-height: 30px !important;
