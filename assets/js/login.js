@@ -77,7 +77,8 @@ $('button.usersignin').on('click', function (e) {
                     });
                     
                     $('.form-boxed .signup').addClass('d-none');
-                    $('#signupresponseMessage').text(data.message).show();
+                    $('.account-content-succes').removeClass('d-none');
+                    $('#signupresponseMessage').html(data.message).show();;
                     setTimeout(function() {
                         document.location.href = data.redirect_url;
                     }, 3000);
