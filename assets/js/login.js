@@ -65,6 +65,14 @@ $('button.usersignin').on('click', function (e) {
                 'security': $('#usersignupsecurity').val()
             },
             success: function (data) {
+                // show success popup
+                console.log('success popup message', data.message);
+                $('.form-boxed .signup').addClass('d-none');
+                $('.account-content-succes').removeClass('d-none');
+                $('#signupresponseMessage').html(data.message).show();;
+                setTimeout(function() {
+                    document.location.href = data.redirect_url;
+                }, 3000);
                 if (data.register) {
                     // Trigger email sending after successful registration
                     $.ajax({
@@ -76,12 +84,6 @@ $('button.usersignin').on('click', function (e) {
                         },
                     });
                     
-                    $('.form-boxed .signup').addClass('d-none');
-                    $('.account-content-succes').removeClass('d-none');
-                    $('#signupresponseMessage').html(data.message).show();;
-                    setTimeout(function() {
-                        document.location.href = data.redirect_url;
-                    }, 3000);
                 } else {
                     $('#signupresponseError').show();
                     $('#signupresponseMessage').show().delay(3000).fadeOut();
