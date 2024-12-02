@@ -459,8 +459,6 @@
         jQuery('.guestlist-table').DataTable({
             searching: true,
             paging: true,
-            "order": [],
-            "ordering": true,
             columnDefs: [
                 { orderable: true, targets: [1,2,3,4,5,6] },
             ],
