@@ -698,12 +698,11 @@ if (empty($rsvpimage)) {
                                 <?php if(empty($rsvpvideo)){ ?>
                                  <div class="video-box" id="drop-zone">
                                  <video id="uploaded-video" controls style="display:none;"></video> 
-                                    <div class="delete-btn" style="display:none;">
-                                        <button class="deleteRowBtn"><i class="fa-regular fa-trash-can"></i></button>
-                                    </div>
-                                    </div>
-                                    <div class="video-inner-box">
-                                        <div class="col-xxl-4 col-xl-5 col-lg-7 col-md-8 col-sm-12 m-auto">
+                                 <div class="delete-btn" style="display:none;">
+                                    <button class="deleteRowBtn"><i class="fa-regular fa-trash-can"></i></button>
+                                </div>
+                                <div class="video-inner-box">
+                                    <div class="col-xxl-4 col-xl-5 col-lg-7 col-md-8 col-sm-12 m-auto">
                                         <div class="form-field video-upload">
                                             <label>Video link</label>
                                             <div class="video-file-upload">
