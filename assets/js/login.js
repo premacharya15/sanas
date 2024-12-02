@@ -217,7 +217,7 @@ $('button.usersignin').on('click', function (e) {
             },
             success: function (response) {
                 if (response.exists) {
-                    $('#changepassword-status').show().html('<div class="alert alert-success" role="alert">Your email had sent reset password link.</div>');            
+                    $('#changepassword-status').show().html('<div class="alert alert-success" role="alert">We have sent a password reset link to your email.</div>');            
                                 document.location.href = window.location.href;
                                 setTimeout(function () {
                                 window.location.reload();
