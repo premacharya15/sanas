@@ -81,8 +81,8 @@ $('button.usersignin').on('click', function (e) {
                     setTimeout(function() {
                         $('#signupresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
                         $('#signupresponseMessagepopup').fadeOut(); // Or use .hide() to just hide it without fading
-                        document.location.href = data.redirect_url;
                     }, 3000);
+                    // document.location.href = data.redirect_url;
                 } else {
                     $('#signupresponseError').show();
                     $('#signupresponseMessage').show().delay(3000).fadeOut();
