@@ -986,7 +986,6 @@ jQuery(document).ready(function ($) {
         jQuery('.login-in,.sanas-login-popup').on('click', function (e) {
             e.stopPropagation();
             jQuery('body').addClass('search-active');
-            jQuery('#usersignin').show(); // Ensure the login form is visible
             jQuery('#ajaxvalue').val('0');
         });
         jQuery('.login-complate').on('click', function () {
@@ -1003,6 +1002,11 @@ jQuery(document).ready(function ($) {
         });
         jQuery('.close-search').on('click', function () {
             jQuery('body').removeClass('search-active');
+            // Reset the form to show the login form
+    jQuery('.form-boxed .login').removeClass('d-none');
+    jQuery('.form-boxed .forgot').addClass('d-none');
+            jQuery('.form-boxed .cheng-password').addClass('d-none');
+            jQuery('.form-boxed .sign-up').addClass('d-none');
         });      
 
         jQuery(document).on('click', function (e) {
