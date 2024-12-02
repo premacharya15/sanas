@@ -65,13 +65,6 @@ $('button.usersignin').on('click', function (e) {
                 'security': $('#usersignupsecurity').val()
             },
             success: function (data) {
-                $('#signinresponseMessage').html(data.message).show();
-                $('#signinresponseMessagepopup').html(data.message).show();
-                setTimeout(function() {
-                    $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
-                    $('#signinresponseMessagepopup').fadeOut(); // Or use .hide() to just hide it without fading
-                }, 3000);
-
                 if (data.register) {
                     // Trigger email sending after successful registration
                     $.ajax({
@@ -82,6 +75,8 @@ $('button.usersignin').on('click', function (e) {
                             'email': $('#signupEmail').val()
                         },
                     });
+                    $('.account-content-succes').removeClass('d-none');
+                    $('#signupresponseMessage').text(data.message);
                     setTimeout(function() {
                         document.location.href = data.redirect_url;
                     }, 3000);
