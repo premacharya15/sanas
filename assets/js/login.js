@@ -65,14 +65,13 @@ $('button.usersignin').on('click', function (e) {
                 'security': $('#usersignupsecurity').val()
             },
             success: function (data) {
-                $('#signupresponseError').html(data.message);
-                $('#signupresponseMessage').html(data.message).show();
-                $('#signupresponseMessagepopup').html(data.message).show();
-                if (data.loggedin) {
-                    // Remove the d-none class to show the success popup
-                    $('.account-content-succes').removeClass('d-none');
-                    $('.form-boxed .login').addClass('d-none');
-                } 
+                $('#signinresponseMessage').html(data.message).show();
+                $('#signinresponseMessagepopup').html(data.message).show();
+                setTimeout(function() {
+                    $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
+                    $('#signinresponseMessagepopup').fadeOut(); // Or use .hide() to just hide it without fading
+                }, 3000);
+
                 if (data.register) {
                     // Trigger email sending after successful registration
                     $.ajax({
