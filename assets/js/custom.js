@@ -986,6 +986,7 @@ jQuery(document).ready(function ($) {
         jQuery('.login-in,.sanas-login-popup').on('click', function (e) {
             e.stopPropagation();
             jQuery('body').addClass('search-active');
+            jQuery('#usersignin').show(); // Ensure the login form is visible
             jQuery('#ajaxvalue').val('0');
         });
         jQuery('.login-complate').on('click', function () {
