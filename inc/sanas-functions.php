@@ -137,8 +137,8 @@ if (!function_exists('sanas_get_login_popup')) {
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/img/google.svg" alt="" />
                     </a>
                   </li>
-                  <!-- <li><a href="#" class="" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/fb.svg" alt=""></a></li>
-                  <li><a href="#" class="" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/iphone.svg" alt=""></a></li> -->
+                  <!-- <li><a href="#" class="" target="_blank"><img src="<?php //echo get_template_directory_uri(); ?>/assets/img/fb.svg" alt=""></a></li>
+                  <li><a href="#" class="" target="_blank"><img src="<?php //echo get_template_directory_uri(); ?>/assets/img/iphone.svg" alt=""></a></li> -->
               </ul>
               <div class="lower-social-box">
                   <p><?php echo esc_html('Not a Member Yet?') ?>&nbsp;&nbsp;<a class="sign-up-2" href="#"><?php echo esc_html('Sign Up.') ?></a></p>
@@ -216,8 +216,8 @@ if (!function_exists('sanas_get_login_popup')) {
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/img/google.svg" alt="" />
                     </a>
                   </li>
-                <li><a href="#" class="" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/fb.svg" alt=""></a></li>
-                <li><a href="#" class="" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/iphone.svg" alt=""></a></li>
+                <!-- <li><a href="#" class="" target="_blank"><img src="<?php //echo get_template_directory_uri(); ?>/assets/img/fb.svg" alt=""></a></li>
+                <li><a href="#" class="" target="_blank"><img src="<?php //echo get_template_directory_uri(); ?>/assets/img/iphone.svg" alt=""></a></li> -->
               </ul>
               <div class="lower-social-box">
                 <p><?php echo esc_html__('Already have an account?','sanas'); ?>&nbsp;&nbsp;<a class="sign-in" href="#"><?php echo esc_html('Sign in here.'); ?></a> </p>
