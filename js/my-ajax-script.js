@@ -1110,7 +1110,7 @@ jQuery(document).ready(function ($) {
 });
     // Delete Account
     jQuery('.delete-account-btn').on('click', function () {
-        delete_account_alert('Confirm Deletion', 'Are you sure you want to delete your account?');
+        delete_account_alert('Delete Confirmation', 'Do you really want to delete your account?');
     });
 
     // Function to show the custom confirm alert
