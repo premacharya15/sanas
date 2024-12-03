@@ -112,8 +112,8 @@ if($guest_accepted){
   $guest_accepted_kids = $guest_accepted;
 }
 
-echo $guest_accepted_adult;
-echo $guest_accepted_kids;
+echo 'Adult: ' . $guest_accepted_adult;
+echo 'Kids: ' . $guest_accepted_kids;
 ?>
 
   <div class="wl-dashboard-wrapper dashboard">
