@@ -198,7 +198,7 @@ $youtube = get_user_meta($user_id, 'youtube', true);
                           </div>
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                          <button type="submit" class="dashbord-btn">Save
+                          <button type="submit" class="dashbord-btn change-password-btn">Save
                             Changes</button>
                         </div>
                       </div>
