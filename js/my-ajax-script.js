@@ -1109,9 +1109,9 @@ jQuery(document).ready(function ($) {
                 });
             }, 3000);
         } else {
-            jQuery('.delete-account-btn').prop('disabled', false);
-            jQuery('.delete-account-btn').removeClass('delete-account-btn-color');
-            
+            jQuery('.delete-account-btn').prop('disabled', true);
+            jQuery('.delete-account-btn').addClass('delete-account-btn-color');
+
             var counter = 30;
             jQuery("#tab-15 .form-box").append('<p id="temporary-message" style="color: red; !important">' + response.data + ' wait ' + counter + ' seconds for next try</p>');
             for (var i = 0; i < 30; i++) {
