@@ -1,4 +1,7 @@
 var canvas = new fabric.Canvas('canvas');
+fabric.Object.prototype.transparentCorners = false;
+fabric.Object.prototype.cornerColor = 'blue';
+fabric.Object.prototype.cornerStyle = 'circle';
 var customControls = {
     deleteControl: new fabric.Control({
         x: 0.5,
