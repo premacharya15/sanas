@@ -67,12 +67,11 @@ $totals = $wpdb->get_row(
         $event_id = $get_event[0]->event_no;
        }
 
-
 $guest_details_info_table = $wpdb->prefix . "guest_details_info";
 
 $get_guest_details = $wpdb->get_results(
     $wpdb->prepare(
-        "SELECT guest_status FROM $guest_details_info_table WHERE guest_user_id = %d AND guest_event_id = %d",
+        "SELECT guest_status, guest_adult, guest_kids FROM $guest_details_info_table WHERE guest_user_id = %d AND guest_event_id = %d",
         $current_user_id,
         $event_id
     )
@@ -82,11 +81,15 @@ $guest_accepted = 0;
 $guest_maybe = 0;
 $guest_reply = 0;
 $guest_declined = 0;
+$accepted_adult_count = 0;
+$accepted_kids_count = 0;
 
 foreach ($get_guest_details as $guest) {
     switch ($guest->guest_status) {
         case 'Accepted':
             $guest_accepted++;
+            $accepted_adult_count += intval($guest->guest_adult);
+            $accepted_kids_count += intval($guest->guest_kids);
             break;
         case 'May Be':
             $guest_maybe++;
@@ -104,6 +107,11 @@ if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_decl
   $guest_maybe = 2;
   $guest_reply = 5;
   $guest_declined = 3;
+}
+
+// Echo counts of adults and kids for accepted guests
+if ($guest_accepted > 0) {
+    echo "Accepted Guests: $guest_accepted, Adults: $accepted_adult_count, Kids: $accepted_kids_count";
 }
 ?>
 
