@@ -107,7 +107,7 @@ if (!function_exists('sanas_get_login_popup')) {
                        <i class="fa-regular fa-eye-slash"></i>
                     </div>
                 </div>
-                <input type="text" value="" id="datahref">
+                <input type="text" id="datahref">
                 <div class="form-group remember">
                     <input type="checkbox" id="signInRememberMe">
                     <label for="signInRememberMe"><?php esc_html_e('Remember Me','sanas') ?></label>
@@ -198,7 +198,7 @@ if (!function_exists('sanas_get_login_popup')) {
                     </div>
                      <div id="signupPasswordError" class="error-message">Enter Password</div>   
                   </div>
-                  <input type="text" value="" id="datahref">
+                  <input type="text" id="datahref">
                   <div class="form-group">
                     <button class="btn btn-secondary btn-block usersignup" type="submit" name="submit-form">
                          <?php echo esc_html('Create an account'); ?>
