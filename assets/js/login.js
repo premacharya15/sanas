@@ -73,7 +73,7 @@ $('button.usersignin').on('click', function (e) {
             success: function (data) {
                 // show success popup
                 console.log('success popup message', data.message);
-                $('.form-boxed .signup').addClass('d-none');
+                $('.form-boxed .sign-up').addClass('d-none');
                 $('.account-content-succes').removeClass('d-none');
                 $('#signupresponseMessage').html(data.message).show();
                 if (data.register) {
@@ -97,7 +97,6 @@ $('button.usersignin').on('click', function (e) {
                     
                 } else {
                     $('#signupresponseError').show();
-                    $('#signupresponseMessage').show();
                     // .delay(3000).fadeOut();
                 }
             },
