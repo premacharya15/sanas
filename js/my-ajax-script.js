@@ -1109,12 +1109,18 @@ jQuery(document).ready(function ($) {
                 });
             }, 3000);
         } else {
-            jQuery("#tab-15 .form-box").append('<p id="temporary-message">' + response.data + '</p>');
+            var counter = 30;
+            for (var i = 0; i < 30; i++) {
+                setTimeout(function() {
+                    counter--;
+                    jQuery("#tab-15 .form-box").append('<p id="temporary-message">' + response.data + ' in ' + counter + ' seconds</p>');
+                }, 30000);
+            }
             setTimeout(function() {
                 jQuery('#temporary-message').fadeOut(500, function() {
                     jQuery(this).remove();
                 });
-            }, 3000);
+            }, 30000);
         }
     });
 });
