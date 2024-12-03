@@ -81,15 +81,15 @@ $guest_accepted = 0;
 $guest_maybe = 0;
 $guest_reply = 0;
 $guest_declined = 0;
-$accepted_adult_count = 0;
-$accepted_kids_count = 0;
+$total_adults = 0;
+$total_kids = 0;
 
 foreach ($get_guest_details as $guest) {
     switch ($guest->guest_status) {
         case 'Accepted':
             $guest_accepted++;
-            $accepted_adult_count += intval($guest->guest_adult);
-            $accepted_kids_count += intval($guest->guest_kids);
+            $total_adults += intval($guest->guest_adult);
+            $total_kids += intval($guest->guest_kids);
             break;
         case 'May Be':
             $guest_maybe++;
@@ -111,7 +111,9 @@ if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_decl
 
 // Echo counts of adults and kids for accepted guests
 if ($guest_accepted > 0) {
-    echo "Accepted Guests: $guest_accepted, Adults: $accepted_adult_count, Kids: $accepted_kids_count";
+    echo "<p>Accepted Guests: $guest_accepted</p>";
+    echo "<p>Total Adults: $total_adults</p>";
+    echo "<p>Total Kids: $total_kids</p>";
 }
 ?>
 
