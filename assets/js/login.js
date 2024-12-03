@@ -53,6 +53,7 @@ $('button.usersignin').on('click', function (e) {
     $('form#usersignup').on('submit', function (e) {
         e.preventDefault();
         $('#signupresponseError').hide();
+        var datahref = $('#datahref1').val();
 
         if (!isValidForm()) {
             return false;
@@ -76,7 +77,11 @@ $('button.usersignin').on('click', function (e) {
                 $('.account-content-succes').removeClass('d-none');
                 $('#signupresponseMessage').html(data.message).show();;
                 setTimeout(function() {
-                    document.location.href = data.redirect_url;
+                    if (datahref) {
+                        document.location.href = datahref;
+                    } else {
+                        document.location.href = data.redirect_url;
+                    }
                 }, 3000);
                 if (data.register) {
                     // Trigger email sending after successful registration
