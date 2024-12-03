@@ -1110,7 +1110,17 @@ jQuery(document).ready(function ($) {
 });
     // Delete Account
     jQuery('.delete-account-btn').on('click', function () {
-        if (confirm('Are you sure you want to delete your account?')) {
+        delete_account_alert('Confirm Deletion', 'Are you sure you want to delete your account?');
+    });
+
+    // Function to show the custom confirm alert
+    function delete_account_alert(title, message) {
+        jQuery('#exampleConfirmModalLabel').text(title);
+        jQuery('#confirm_modal-body-text').text(message);
+        jQuery('#confirm_modal_html_alert').modal('show');
+
+        // When "Yes" button is clicked
+        jQuery('#modal-yes-button').off('click').on('click', function () {
             $.post(ajax_object.ajax_url, { action: 'delete_account' }, function (response) {
                 if (response.success) {
                     // add temporary message
@@ -1131,8 +1141,9 @@ jQuery(document).ready(function ($) {
                     }, 3000);
                 }
             });
-        }
-    });
+            jQuery('#confirm_modal_html_alert').modal('hide');
+        });
+    }
 
     // Update Profile Picture
     jQuery('#edit-image-btn').on('click', function() {
