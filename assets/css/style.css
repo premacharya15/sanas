@@ -5631,8 +5631,8 @@ section.fillter-section {
     display: none;
 }
 
-#guestlist-table thead>tr>th:nth-child(3)>span.dt-column-order,
-#guestlist-table thead>tr>th:nth-child(5)>span.dt-column-order {
+.guestlist-table thead>tr>th:nth-child(3)>span.dt-column-order,
+.guestlist-table thead>tr>th:nth-child(5)>span.dt-column-order {
     display: block !important;
 }
 
