@@ -1032,6 +1032,7 @@ jQuery(document).ready(function ($) {
     jQuery('.form-boxed .lower-social-box p .sign-up-2').on('click', function () {
         jQuery('.form-boxed .sign-up').removeClass('d-none');
         jQuery('.form-boxed .login').addClass('d-none');
+        jQuery('#datahref').val(datahref);
     });
      jQuery('.form-boxed .sign-in').on('click', function () {
         jQuery('.form-boxed .login').removeClass('d-none');
