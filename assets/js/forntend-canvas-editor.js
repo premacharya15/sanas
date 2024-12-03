@@ -44,7 +44,8 @@ function handleSelection(event) {
             // cornerColor: '#511F1B', // Corner control color
             // cornerStrokeColor: '#511F1B', // Stroke color for corner controls
             // cornerBackgroundColor: '9CA89C',
-            strokeWidth: 10,
+            stroke: 'lightgreen',
+            strokeWidth: 4,
         });
         //511F1B #9CA89C
         canvas.renderAll();
