@@ -170,7 +170,7 @@ if (!function_exists('sanas_get_login_popup')) {
               <h4><?php echo esc_html($signuppopupTitle) ?></h4>
               <?php }
               if ($signuptitleEnable && !empty($signuppopupTitle)) {?>
-              <p><?php echo esc_html($signuppopupSubtitle) ?></p>
+              <!-- <p><?php //echo esc_html($signuppopupSubtitle) ?></p> -->
               <?php }?>
               <div class="login-form">
                 <form method="post" id="usersignup">
