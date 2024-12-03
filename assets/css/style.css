@@ -6425,7 +6425,7 @@ button#add_new_group_button {
     border: 1px solid #744f307a !important;
 }
 .form-content.last{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .wl-dashboard-wrapper .vendor .add-link a,
 .wl-dashboard-wrapper .todo-list .add-link a{
