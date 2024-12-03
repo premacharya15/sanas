@@ -985,7 +985,7 @@ jQuery(document).ready(function ($) {
         // login popup
         jQuery('.login-in,.sanas-login-popup').on('click', function (e) {
             e.stopPropagation();
-            var datahref = jQuery(this).data('href');
+            var datahref = jQuery(this).attr('data-href');
             console.log(datahref);
             jQuery('body').addClass('search-active');
             jQuery('#ajaxvalue').val('0');
