@@ -1,5 +1,7 @@
 var backcanvas = new fabric.Canvas('backcanvas');
-
+fabric.Object.prototype.transparentCorners = false;
+fabric.Object.prototype.cornerColor = 'blue';
+fabric.Object.prototype.cornerStyle = 'circle';
 async function loadGoogleFonts() {
     const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key
     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
