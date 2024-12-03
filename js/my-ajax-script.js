@@ -1109,11 +1109,14 @@ jQuery(document).ready(function ($) {
                 });
             }, 3000);
         } else {
-            for (var i = 30; i > 0; i--) {
-                setTimeout(function(counter) {
-                    counter = i;
+            // add 30 to 1 seconds timer
+            var counter = 30;
+            jQuery("#tab-15 .form-box").append('<p id="temporary-message">' + response.data + ' wait ' + counter + ' seconds for next try</p>');
+            for (var i = 0; i < 30; i++) {
+                setTimeout(function() {
+                    counter--;
+                    jQuery("#temporary-message").text(response.data + ' wait ' + counter + ' seconds');
                 }, 1000 * i);
-                jQuery("#tab-15 .form-box").append('<p id="temporary-message" style="color: red; !important">' + response.data + ' waiting for ' + counter + ' seconds to try again</p>');
             }
             setTimeout(function() {
                 jQuery('#temporary-message').fadeOut(500, function() {
