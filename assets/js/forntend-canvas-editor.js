@@ -3,6 +3,7 @@ fabric.Object.prototype.transparentCorners = false;
 fabric.Object.prototype.cornerColor = 'white';
 fabric.Object.prototype.cornerStyle = 'circle';
 fabric.Object.prototype.cornerSize = 14;
+fabric.Object.prototype.borderScaleFactor = 3;
 
 var customControls = {
     deleteControl: new fabric.Control({
