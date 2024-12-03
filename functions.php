@@ -1114,7 +1114,7 @@ function change_password_callback() {
                 wp_send_json_error('New password and confirmation do not match.');
             }
         } else {
-            wp_send_json_error('Current password is incorrect');
+            wp_send_json_error('Old password is incorrect');
         }
     } else {
         wp_send_json_error('Error: Missing fields or user not logged in.');
