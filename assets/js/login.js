@@ -75,14 +75,7 @@ $('button.usersignin').on('click', function (e) {
                 console.log('success popup message', data.message);
                 $('.form-boxed .signup').addClass('d-none');
                 $('.account-content-succes').removeClass('d-none');
-                $('#signupresponseMessage').html(data.message).show();;
-                setTimeout(function() {
-                    if (datahref) {
-                        document.location.href = datahref;
-                    } else {
-                        document.location.href = data.redirect_url;
-                    }
-                }, 3000);
+                $('#signupresponseMessage').html(data.message).show();
                 if (data.register) {
                     // Trigger email sending after successful registration
                     $.ajax({
@@ -93,6 +86,14 @@ $('button.usersignin').on('click', function (e) {
                             'email': $('#signupEmail').val()
                         },
                     });
+                     // setTimeout(function() {
+                
+                     if (datahref) {
+                        document.location.href = datahref;
+                    } else {
+                        document.location.href = data.redirect_url;
+                    }
+                // }, 3000);
                     
                 } else {
                     $('#signupresponseError').show();
