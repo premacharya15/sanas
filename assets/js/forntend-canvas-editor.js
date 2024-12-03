@@ -595,7 +595,7 @@ function deleteObject(eventData, transform) {
     // Check if there is only one object left on the canvas
     if (objects.length <= 1) {
         // If there's only one object, show an alert and do not delete
-        alert('Cannot delete the last text box.');
+        show_alert_message('Error', 'Cannot delete the last text box.');
         return;
     }
     canvas.remove(target);

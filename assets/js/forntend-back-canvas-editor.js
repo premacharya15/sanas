@@ -34,7 +34,7 @@ function renderIcon(ctx, left, top, styleOverride, fabricObject) {
 function addText(event) {
 
     // Create a new text object
-    const text = new fabric.IText('Add text', {
+    const text = new fabric.IText('Edit me', {
         left: 50,
         top: 50,
         fontFamily: 'Arial',
@@ -114,7 +114,7 @@ function changeFontSize() {
         activeObject.set({ fontSize: parseInt(fontSize, 10) });
         canvas.renderAll();
     }
-    // document.getElementById('fontSize').focus();
+    document.getElementById('fontSize').focus();
 }
 window.changeFontSize = changeFontSize;
 // Change color of selected text
@@ -598,7 +598,7 @@ function deleteObject(eventData, transform) {
     // Check if there is only one object left on the canvas
     if (objects.length <= 1) {
         // If there's only one object, show an alert and do not delete
-        alert('Cannot delete the last text box.');
+        show_alert_message('Error', 'Cannot delete the last text box.');
         return;
     }
 
