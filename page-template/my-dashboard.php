@@ -813,7 +813,18 @@ if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_decl
                         fontColor: "#333",
                         fontSize: 12,
                         boxWidth: 10,
-                        padding: 10
+                        padding: 10,
+                      generateLabels: function(chart) {
+                          var data = chart.data;
+                          return data.labels.map(function(label, i) {
+                              var value = data.datasets[0].data[i]; // Get the corresponding value
+                              return {
+                                  text: `${label} (${value})`, // Add value next to label
+                                  fillStyle: data.datasets[0].backgroundColor[i],
+                                  hidden: false
+                              };
+                          });
+                      }
                     }
                 }
             }
