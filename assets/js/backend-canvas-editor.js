@@ -1,6 +1,6 @@
 var canvas = new fabric.Canvas('canvas');
 fabric.Object.prototype.transparentCorners = false;
-fabric.Object.prototype.cornerColor = 'blue';
+fabric.Object.prototype.cornerColor = 'green';
 fabric.Object.prototype.cornerStyle = 'circle';
 // Load All Google Fonts
 async function loadGoogleFonts() {
