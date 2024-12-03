@@ -4165,7 +4165,7 @@ table.dataTable thead>tr>td.dt-ordering-desc span.dt-column-order {
 
 #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(1),
 #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(7) {
-    min-width: 30px;
+    max-width: 30px;
     padding: 20px 0 20px 10px !important;
 }
 
