@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Logout button event listener 
     jQuery('.logout-btn').on('click', function(e) {
-        console.log('logout-btn clicked');
+        // console.log('logout-btn clicked');
         e.preventDefault();
         logoutBtnClicked = true;
         show_confirm_modal_html_alert();
@@ -159,7 +159,7 @@ jQuery('.budget-category-item .ttl').on('click', function() {
         },
         
         error: function() {
-            alert('Error loading expenses.');
+            console.log('Error loading expenses.');
         }
     });
 });
@@ -201,7 +201,7 @@ function escapeHtml(text) {
                     jQuery('#category-id-input-edit').val(response.data.category_id);
                     jQuery('#edit-expense-popup').modal('show');
                 } else {
-                    alert('Failed to fetch expense details.');
+                    console.log('Failed to fetch expense details.');
                 }
             }
         });
@@ -354,7 +354,7 @@ function escapeHtml(text) {
                 if (response.success) {
                     location.reload();
                 } else {
-                    // alert(response.data);  
+                    // console.log(response.data);  
                 }
             }
         });
@@ -381,10 +381,10 @@ function escapeHtml(text) {
     //                 data: { id: categoryId, action: 'delete_budget_category_item' },
     //             success: function(response) {
     //                 if (response.success) {
-    //                     alert(response.data);
+    //                     console.log(response.data);
     //                     location.reload();
     //                 } else {
-    //                     alert(response.data);
+    //                     console.log(response.data);
     //                 }
     //             }
     //         });
@@ -424,7 +424,7 @@ function escapeHtml(text) {
                     if (response.success) {
                         location.reload();
                     } else {
-                        alert(response.data);
+                        console.log(response.data);
                     }
                 }
             });
@@ -662,7 +662,7 @@ if (window.location.pathname === '/vendors-list/') {
                             // });
                         }
                     } else {
-                        alert(response.data);
+                        console.log(response.data);
                     }
                 }
             });
@@ -717,7 +717,7 @@ if (window.location.pathname === '/vendors-list/') {
                             location.reload();
                         // });
                     } else {
-                        alert(response.data);
+                        console.log(response.data);
                     }
                 }
             });
@@ -811,7 +811,7 @@ if (window.location.pathname === '/vendors-list/') {
                     if (response.success) {
                         location.reload();
                     } else {
-                        // alert(response.data);  
+                        // console.log(response.data);  
                     }
                 }
             });
@@ -961,7 +961,7 @@ if (window.location.pathname === '/my-vendors/' || window.location.pathname === 
                     if (response.success) {
                         location.reload();
                     } else {
-                        alert(response.data);  
+                        console.log(response.data);  
                     }
                 }
             });
@@ -1068,7 +1068,7 @@ jQuery(document).ready(function ($) {
         };
 
         $.post(ajax_object.ajax_url, data, function (response) {
-            alert(response.success ? 'Social links updated successfully!' : response.data);
+            console.log(response.success ? 'Social links updated successfully!' : response.data);
         });
     });
 
@@ -1164,11 +1164,11 @@ jQuery(document).ready(function ($) {
                     jQuery('.user-profile-image').attr('src', response.data.url);
                     location.reload();
                 } else {
-                    alert('Failed to upload image: ' + response.data);
+                    console.log('Failed to upload image: ' + response.data);
                 }
             },
             error: function() {
-                alert('Error uploading image.');
+                console.log('Error uploading image.');
             }
         });
     });
@@ -1208,7 +1208,7 @@ jQuery(document).ready(function($) {
                 }
             },
             error: function() {
-                alert('Failed to process the request.');
+                console.log('Failed to process the request.');
             }
         });
     });
@@ -1300,11 +1300,11 @@ if (window.location.pathname === '/my-contact/') {
                         $('#editguestgroup').val(guest.guest_group).change();
                         $('#guestid').val(guest.guest_id);
                     } else {
-                        alert('Failed to fetch guest details: ' + response.data);
+                        console.log('Failed to fetch guest details: ' + response.data);
                     }
                 },
                 error: function() {
-                    alert('Error fetching guest details.');
+                    console.log('Error fetching guest details.');
                 }
             });
         });
@@ -1404,7 +1404,7 @@ if (window.location.pathname === '/my-contact/') {
                         }
                     },
                     error: function() {
-                        alert('Error moving contacts to guest list.');
+                        console.log('Error moving contacts to guest list.');
                     }
                 });
             });
