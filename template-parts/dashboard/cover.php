@@ -317,10 +317,9 @@
                                     <label>Upload Background Image</label>
                                     <input type="file" id="backgroundImageUpload" accept="image/*" onchange="uploadBackgroundImage()">
                                 </div> -->
-                                <div class="form-group-fluid">
-                                    <button class="btn btn-secondary btn-block" onclick="addText('event')">Add Text</button>
-                                </div>    
-
+                                    <div class="form-group-fluid">
+                                        <button class="btn btn-secondary btn-block" onclick="addText('event')">Add Text</button>
+                                    </div>
                                 <?php	
                                 }
 
