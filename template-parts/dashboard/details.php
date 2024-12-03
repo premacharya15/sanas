@@ -947,77 +947,53 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                             </div>
                             <div class="background-images-piker">
                                 <div class="inner-container">
-                                    <div class="bg-img-inner">
-                                        <div class="bg-img-iteam">
-                                            <?php echo '<img id="img3" src="'.get_template_directory_uri().'/assets/img/bg-3.jfif" alt="">'?>
+                                <div class="bg-img-inner">
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img1" src="' . get_template_directory_uri() . '/assets/img/BackGround_1.jpg" alt=""> ' ?>
+                                            </div>
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img1" src="' . get_template_directory_uri() . '/assets/img/BackGround_2.jpg" alt=""> ' ?>
+                                            </div>
                                         </div>
-                                        <div class="bg-img-iteam">
-                                            <?php echo '<img id="img4" src="'.get_template_directory_uri().'/assets/img/bg-4.jfif" alt="">'?>
+                                        <div class="bg-img-inner">
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img2" src="' . get_template_directory_uri() . '/assets/img/BackGround_3.jpg" alt=""> ' ?>
+                                            </div>
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img3" src="' . get_template_directory_uri() . '/assets/img/BackGround_4.jpg" alt=""> ' ?>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="bg-img-inner">
-                                        <div class="bg-img-iteam">
-                                            <?php echo '<img id="img1" src="'.get_template_directory_uri().'/assets/img/bg-1.jfif" alt="">'?>
+                                        <div class="bg-img-inner">
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img5" src="' . get_template_directory_uri() . '/assets/img/BackGround_5.jpg" alt=""> ' ?>
+                                            </div>
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img6" src="' . get_template_directory_uri() . '/assets/img/BackGround_6.jpg" alt=""> ' ?>
+                                            </div>
                                         </div>
-                                        <div class="bg-img-iteam">
-                                            <?php echo '<img id="img2" src="'.get_template_directory_uri().'/assets/img/bg-2.jfif" alt="">'?>
+                                        <div class="bg-img-inner">
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img7" src="' . get_template_directory_uri() . '/assets/img/Patterns-10.jpg" alt=""> ' ?>
+                                            </div>
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img8" src="' . get_template_directory_uri() . '/assets/img/Patterns-11.jpg" alt=""> ' ?>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="bg-img-inner">
-                                        <div class="bg-img-iteam">
-                                            <?php echo '<img id="img5" src="'.get_template_directory_uri().'/assets/img/bg-5.jfif" alt="">'?>
+                                        <div class="bg-img-inner">
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img9" src="' . get_template_directory_uri() . '/assets/img/Patterns-13.jpg" alt=""> ' ?>
+                                            </div>
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img10" src="' . get_template_directory_uri() . '/assets/img/Patterns-14.jpg" alt=""> ' ?>
+                                            </div>
                                         </div>
-                                        <div class="bg-img-iteam">
-                                            <?php echo '<img id="img6" src="'.get_template_directory_uri().'/assets/img/bg-6.jfif" alt="">'?>
+                                        <div class="bg-img-inner">
+                                            <div class="bg-img-iteam">
+                                            <?php echo '<img id="img11" src="' . get_template_directory_uri() . '/assets/img/Patterns-15.jpg" alt=""> ' ?>
+                                            </div>
+                                            <div class="bg-img-iteam">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="bg-img-inner">
-                                        <div class="bg-img-iteam">
-                                            <?php echo '<img id="img7" src="'.get_template_directory_uri().'/assets/img/bg-7.jfif" alt="">'?>
-                                        </div>
-                                        <div class="bg-img-iteam">
-                                            <?php echo '<img id="img8" src="'.get_template_directory_uri().'/assets/img/bg-8.jfif" alt="">'?>
-                                        </div>
-                                    </div>
-                                    <div class="bg-img-inner">
-                                        <div class="bg-img-iteam">
-                                            <?php echo '<img id="img9" src="'.get_template_directory_uri().'/assets/img/bg-9.jfif" alt="">'?>
-                                        </div>
-                                        <div class="bg-img-iteam">
-                                            <?php echo '<img id="img10" src="'.get_template_directory_uri().'/assets/img/bg-10.jfif" alt="">'?>
-                                        </div>
-                                    </div>
-                                    <div class="bg-img-inner">
-                                        <div class="bg-img-iteam">
-                                            <?php echo '<img id="img11" src="'.get_template_directory_uri().'/assets/img/bg-11.jfif" alt="">'?>
-                                        </div>
-                                        <div class="bg-img-iteam">
-                                            <?php echo '<img id="img12" src="'.get_template_directory_uri().'/assets/img/bg-12.jfif" alt="">'?>
-                                        </div>
-                                    </div>
-                                    <div class="bg-img-inner">
-                                        <div class="bg-img-iteam">
-                                        <?php echo '<img id="img7" src="' . get_template_directory_uri() . '/assets/img/Patterns-10.jpg" alt=""> ' ?>
-                                        </div>
-                                        <div class="bg-img-iteam">
-                                        <?php echo '<img id="img8" src="' . get_template_directory_uri() . '/assets/img/Patterns-11.jpg" alt=""> ' ?>
-                                        </div>
-                                    </div>
-                                    <div class="bg-img-inner">
-                                        <div class="bg-img-iteam">
-                                        <?php echo '<img id="img9" src="' . get_template_directory_uri() . '/assets/img/Patterns-13.jpg" alt=""> ' ?>
-                                        </div>
-                                        <div class="bg-img-iteam">
-                                        <?php echo '<img id="img10" src="' . get_template_directory_uri() . '/assets/img/Patterns-14.jpg" alt=""> ' ?>
-                                        </div>
-                                    </div>
-                                    <div class="bg-img-inner">
-                                        <div class="bg-img-iteam">
-                                        <?php echo '<img id="img11" src="' . get_template_directory_uri() . '/assets/img/Patterns-15.jpg" alt=""> ' ?>
-                                        </div>
-                                        <div class="bg-img-iteam">
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </form>
