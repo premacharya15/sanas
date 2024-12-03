@@ -40,10 +40,10 @@ function handleSelection(event) {
     const activeObject = event.target;
     if (activeObject && (activeObject.type === 'text' || activeObject.type === 'i-text')) {
         activeObject.set({
-            borderColor: '#511F1B', // Border color when selected
-            cornerColor: '#511F1B', // Corner control color
-            cornerStrokeColor: '#511F1B', // Stroke color for corner controls
-            cornerBackgroundColor: '9CA89C',
+            // borderColor: '#511F1B', // Border color when selected
+            // cornerColor: '#511F1B', // Corner control color
+            // cornerStrokeColor: '#511F1B', // Stroke color for corner controls
+            // cornerBackgroundColor: '9CA89C',
             borderSize: '6px',
         });
         //511F1B #9CA89C
