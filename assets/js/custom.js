@@ -987,12 +987,8 @@ jQuery(document).ready(function ($) {
             e.stopPropagation();
             var datahref = jQuery(this).attr('data-href');
             console.log(datahref);
-            setTimeout(function(){
-            jQuery('#datahref').each(function(){
-                jQuery(this).val(datahref);
-                console.log("datahref", datahref);
-            });
-            }, 500);
+            jQuery('#datahref').val(datahref);
+            jQuery('#datahref1').val(datahref);
 
             jQuery('body').addClass('search-active');
             jQuery('#ajaxvalue').val('0');

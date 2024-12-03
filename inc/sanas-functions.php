@@ -198,7 +198,7 @@ if (!function_exists('sanas_get_login_popup')) {
                     </div>
                      <div id="signupPasswordError" class="error-message">Enter Password</div>   
                   </div>
-                  <input type="text" id="datahref">
+                  <input type="text" id="datahref1">
                   <div class="form-group">
                     <button class="btn btn-secondary btn-block usersignup" type="submit" name="submit-form">
                          <?php echo esc_html('Create an account'); ?>
