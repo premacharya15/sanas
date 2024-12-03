@@ -218,6 +218,11 @@ if ($guest_accepted > 0) {
               </div>
             </div>
             <div class="graph-box">
+              <div class="guest-count">
+                <span>Accepted: <?php echo $guest_accepted; ?></span>
+                <span>Adults: <?php echo $total_adults; ?></span>
+                <span>Kids: <?php echo $total_kids; ?></span>
+              </div>
               <!-- <div id="guest_attending"></div> -->
 <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
 <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
