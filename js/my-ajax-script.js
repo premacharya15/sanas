@@ -1082,7 +1082,7 @@ jQuery(document).ready(function ($) {
 
     if (newPassword !== confirmPassword) {
         // add temporary message
-        jQuery("#tab-15 .form-box").append('<p id="temporary-message">New password and confirmation do not match.</p>');
+        jQuery("#tab-15 .form-box").append('<p id="temporary-message" style="color: red; !important">Passwords don’t match. Please ensure both fields are the same</p>');
         setTimeout(function() {
             jQuery('#temporary-message').fadeOut(500, function() {
                 jQuery(this).remove();
@@ -1102,7 +1102,7 @@ jQuery(document).ready(function ($) {
     $.post(ajax_object.ajax_url, data, function (response) {
         if (response.success) {
             // add temporary message
-            jQuery("#tab-15 .form-box").append('<p id="temporary-message">Password updated successfully!</p>');
+            jQuery("#tab-15 .form-box").append('<p id="temporary-message" style="color: green; !important">Password updated successfully!</p>');
         } else {
             jQuery("#tab-15 .form-box").append('<p id="temporary-message" style="color: red; !important">' + response.data + '</p>');
         }
