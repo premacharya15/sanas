@@ -5871,7 +5871,7 @@ td.todo-status {
     justify-content: flex-end;
 }
 table.dataTable>thead>tr>th.actions{
-    text-align: right;
+    text-align: left;
     padding: 10px;
 }
 .todo-status .progress {
