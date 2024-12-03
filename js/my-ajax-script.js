@@ -1103,11 +1103,6 @@ jQuery(document).ready(function ($) {
         if (response.success) {
             // add temporary message
             jQuery("#tab-15 .form-box").append('<p id="temporary-message">Password updated successfully!</p>');
-            setTimeout(function() {
-                jQuery('#temporary-message').fadeOut(500, function() {
-                    jQuery(this).remove();
-                });
-            }, 3000);
         } else {
             jQuery("#tab-15 .form-box").append('<p id="temporary-message" style="color: red; !important">' + response.data + '</p>');
         }
