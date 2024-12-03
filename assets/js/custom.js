@@ -986,7 +986,6 @@ jQuery(document).ready(function ($) {
         jQuery('.login-in,.sanas-login-popup').on('click', function (e) {
             e.stopPropagation();
             var datahref = jQuery(this).attr('data-href');
-            console.log(datahref);
             jQuery('#datahref').val(datahref);
             jQuery('#datahref1').val(datahref);
 
