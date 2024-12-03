@@ -99,17 +99,19 @@ foreach ($get_guest_details as $guest) {
             break;
     }
 }
+
+if($guest_status=='Accepted')
+    {
+      $guest_accepted=$guest_accepted+1;
+      $guest_accepted_adult=$guest_accepted_adult+intval($guest_list->guest_adult);
+      $guest_accepted_kids=$guest_accepted_kids+intval($guest_list->guest_kids);           		
+    }
+
 if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_declined == 0){
   $guest_accepted = 7;
   $guest_maybe = 2;
   $guest_reply = 5;
   $guest_declined = 3;
-}
-
-// if $guest_accepted the count of adult and children
-if($guest_accepted){
-  $guest_accepted_adult = $guest_accepted;
-  $guest_accepted_kids = $guest_accepted;
 }
 
 echo 'Adult: ' . $guest_accepted_adult;
