@@ -988,8 +988,10 @@ jQuery(document).ready(function ($) {
             var datahref = jQuery(this).attr('data-href');
             console.log(datahref);
             jQuery('#datahref').each(function(){
+                setTimeout(function(){
                 jQuery(this).val(datahref);
                 console.log("datahref", datahref);
+                }, 500);
             });
 
             jQuery('body').addClass('search-active');
