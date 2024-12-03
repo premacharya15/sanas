@@ -249,13 +249,14 @@ var customControls = {
 };
 // Extend the IText prototype with custom controls
 fabric.IText.prototype.controls = Object.assign({}, fabric.IText.prototype.controls, customControls);
+fabric.Object.prototype.cornerColor = 'blue';
+fabric.Object.prototype.cornerStyle = 'circle';
 function changeLetterSpacing() {
     const activeObject = canvas.getActiveObject();
     if (activeObject && activeObject.type === 'i-text') {
         const letterSpacing = parseInt(document.getElementById('letterSpacing').value, 10);
         activeObject.set({ charSpacing: letterSpacing });
         canvas.renderAll();
-        // Update the displayed value next to the range input
         document.getElementById('letterSpacingValue').textContent = letterSpacing;
     }
 }
