@@ -391,7 +391,8 @@ section.wl-main-canvas .inner-container .inner-colum {
                                 <?php
                                 if(!empty($guestid))
                                 {
-                                ?>                                
+                                ?>              
+                                <!-- if($guest_status || $guest_adult || $guest_kids) -->
                                 <div class="row">
                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto text-center ">
                                         <button  id="invite-action-submit" data-eventid="<?php echo $event_id;?>" data-guestid="<?php echo $guestid;?>" type="button"

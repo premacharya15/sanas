@@ -247,6 +247,10 @@ $('button.usersignin').on('click', function (e) {
     }
 });
 jQuery(document).ready(function ($) {
+    $('#rsvp-page-redirect').click(function (e) {
+        var guestURL = $(this).attr('btn-url');
+        window.location.href = guestURL;
+    });
     $('#guest-page-redirect').click(function (e) {
         e.preventDefault();  
         var event_id = $(this).attr('event-id');
