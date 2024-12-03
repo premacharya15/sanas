@@ -72,7 +72,6 @@ $('button.usersignin').on('click', function (e) {
             },
             success: function (data) {
                 // show success popup
-                console.log('success popup message', data.register);
                 if (data.register) {
                     $('#signupresponseMessage').html(data.message).show();
                     $.ajax({
