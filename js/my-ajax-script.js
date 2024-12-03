@@ -1115,7 +1115,7 @@ jQuery(document).ready(function ($) {
             for (var i = 0; i < 30; i++) {
                 setTimeout(function() {
                     counter--;
-                    jQuery("#temporary-message").text(response.data + ' wait ' + counter + ' seconds');
+                    jQuery("#temporary-message").text(response.data + ' wait ' + counter + ' seconds for next try');
                 }, 1000 * i);
             }
             setTimeout(function() {
