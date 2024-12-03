@@ -41,7 +41,7 @@ sanas_render_modal_html_alert();
             <h4>Planning</h4>
             <ul class="footer-link">
               <!-- <li><a href="<?php //echo home_url(); ?>/my-contact"><i class="fa-solid fa-chevron-right"></i>Guest List</a></li> -->
-              <li><a href="#"><i class="fa-solid fa-chevron-right login-in sanas-login-popup"></i>Budgets</a></li>
+              <li><a href="#" class="login-in sanas-login-popup"><i class="fa-solid fa-chevron-right"></i>Budgets</a></li>
               <li><a href="<?php echo home_url(); ?>/vendors-list"><i class="fa-solid fa-chevron-right"></i>Vendor List</a></li>
               <li><a href="<?php echo home_url(); ?>/to-do-list"><i class="fa-solid fa-chevron-right"></i>To Do List</a></li>
               <li><a href="<?php echo home_url(); ?>/my-favorites"><i class="fa-solid fa-chevron-right"></i>Wishlist</a></li>
