@@ -290,7 +290,8 @@
                             ?>
                                 <div class="form-group-fluid" style="display:none;">
                                 <button class="btn btn-secondary btn-block" onclick="addText('event')">Add Text</button>
-                                </div>    
+                                </div>
+                                adsaf
                             <?php        
                                 }
 
@@ -319,8 +320,10 @@
                                 </div> -->
                                     <div class="form-group-fluid">
                                         <button class="btn btn-secondary btn-block" onclick="addText('event')">Add Text</button>
-                                    </div>
+                                    </div>123
                                 <?php	
+                                }else{
+                                    echo '123123';
                                 }
 
                             ?>
