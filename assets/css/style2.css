@@ -4116,13 +4116,17 @@ table.dataTable thead>tr>td.dt-ordering-desc span.dt-column-order {
     top: 6px;
 }
 
-#guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(1),
-#guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(7) {
+#guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(1) {
     max-width: 30px !important;
     width: 30px !important;
     padding: 20px 0 20px 10px !important;
 }
 
+#guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(7){
+    max-width: 50px !important;
+    width: 50px !important;
+    padding: 20px 0 20px 10px !important;
+}
 .video-box {
     border: 1px solid #ECECEC;
     margin-bottom: 30px;
