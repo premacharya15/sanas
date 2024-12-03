@@ -2,6 +2,7 @@ var canvas = new fabric.Canvas('canvas');
 fabric.Object.prototype.transparentCorners = false;
 fabric.Object.prototype.cornerColor = 'green';
 fabric.Object.prototype.cornerStyle = 'circle';
+fabric.Object.prototype.cornerSize = 20;
 // Load All Google Fonts
 async function loadGoogleFonts() {
     const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key

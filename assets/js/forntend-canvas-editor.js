@@ -2,6 +2,8 @@ var canvas = new fabric.Canvas('canvas');
 fabric.Object.prototype.transparentCorners = false;
 fabric.Object.prototype.cornerColor = 'green';
 fabric.Object.prototype.cornerStyle = 'circle';
+fabric.Object.prototype.cornerSize = 20;
+
 var customControls = {
     deleteControl: new fabric.Control({
         x: 0.5,
@@ -44,8 +46,7 @@ function handleSelection(event) {
             // cornerColor: '#511F1B', // Corner control color
             // cornerStrokeColor: '#511F1B', // Stroke color for corner controls
             // cornerBackgroundColor: '9CA89C',
-            stroke: 'lightgreen',
-            strokeWidth: 4,
+            borderSize: '10px',
         });
         //511F1B #9CA89C
         canvas.renderAll();
