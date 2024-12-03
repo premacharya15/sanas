@@ -257,7 +257,7 @@ if (class_exists('CSF')) {
                 'id' => 'sanas_signup_popup_subtitle',
                 'type' => 'text',
                 'title' => esc_html__('Popup Sub Title', 'sanas'),
-                'default' => esc_html__('Create an account now', 'sanas'),
+                'default' => esc_html__('Create an account', 'sanas'),
                 'dependency' => array('sanas_signup_popup_subtitle_enable', '==', true),
             ),
             array(
