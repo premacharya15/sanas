@@ -73,11 +73,8 @@ $('button.usersignin').on('click', function (e) {
             success: function (data) {
                 // show success popup
                 console.log('success popup message', data.message);
-                $('.form-boxed .sign-up').addClass('d-none');
-                $('.account-content-succes').removeClass('d-none');
-                $('#signupresponseMessage').html(data.message).show();
                 if (data.register) {
-                    // Trigger email sending after successful registration
+                    $('#signupresponseMessage').html(data.message).show();
                     $.ajax({
                         type: 'POST',
                         url: ajax_login_object.ajaxurl,
@@ -86,6 +83,8 @@ $('button.usersignin').on('click', function (e) {
                             'email': $('#signupEmail').val()
                         },
                     });
+                    $('.form-boxed .sign-up').addClass('d-none');
+                    $('.account-content-succes').removeClass('d-none');
                      // setTimeout(function() {
                 
                      if (datahref) {
