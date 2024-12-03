@@ -5622,14 +5622,15 @@ section.fillter-section {
 #guest-contact-list_wrapper table.dataTable thead>tr>th:nth-child(1)>span.dt-column-order,
 #guest-contact-list_wrapper table.dataTable thead>tr>th:nth-child(3)>span.dt-column-order,
 #guest-contact-list_wrapper table.dataTable thead>tr>th:nth-child(4)>span.dt-column-order,
-#guest-contact-list_wrapper table.dataTable thead>tr>th:nth-child(6)>span.dt-column-order,
-#guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(1)>span.dt-column-order,
+#guest-contact-list_wrapper table.dataTable thead>tr>th:nth-child(6)>span.dt-column-order {
+    display: none;
+}
+
+/* #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(1)>span.dt-column-order,
 #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(3)>span.dt-column-order,
 #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(4)>span.dt-column-order,
 #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(5)>span.dt-column-order,
-#guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(7)>span.dt-column-order {
-    display: none;
-}
+#guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(7)>span.dt-column-order */
 
 .select2-container--open {
     z-index: 11111111111;
