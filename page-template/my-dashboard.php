@@ -105,6 +105,15 @@ if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_decl
   $guest_reply = 5;
   $guest_declined = 3;
 }
+
+// if $guest_accepted the count of adult and children
+if($guest_accepted){
+  $guest_accepted_adult = $guest_accepted;
+  $guest_accepted_kids = $guest_accepted;
+}
+
+echo $guest_accepted_adult;
+echo $guest_accepted_kids;
 ?>
 
   <div class="wl-dashboard-wrapper dashboard">
