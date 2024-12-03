@@ -4,6 +4,7 @@ jQuery(document).ready(function ($) {
 $('button.usersignin').on('click', function (e) {
     e.preventDefault();
     var ajaxValue = $('#ajaxvalue').val();
+    var datahref = $('#datahref').val();
     if (ajaxValue == '0') {
         var currentPageURL = window.location.href;
         $.ajax({
@@ -30,7 +31,11 @@ $('button.usersignin').on('click', function (e) {
                     $('.form-boxed .login').addClass('d-none');
 
                        setTimeout(function() {
+                        if (datahref) {
+                            window.location.href = datahref;
+                        } else {
                             window.location.reload();
+                        }
                         }, 1000); 
                 } 
                 else {
