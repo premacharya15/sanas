@@ -228,6 +228,7 @@ $youtube = get_user_meta($user_id, 'youtube', true);
   </div>
 
 
-
+<?php render_confirm_modal_html_alert(); ?>
+<?php render_modal_html_alert(); ?>
 <?php
 get_footer('dashboard');
