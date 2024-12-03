@@ -4181,7 +4181,8 @@ table.dataTable thead>tr>td.dt-ordering-desc span.dt-column-order {
     padding: 20px !important;
 }
 
-.contact table.dataTable thead>tr:nth-child(2)>th:nth-child(6){
+.contact table.dataTable thead>tr:nth-child(2)>th:nth-child(6),
+.contact table.dataTable thead td:nth-child(6){
     max-width: 50px !important;
     width: 50px !important;
     padding: 20px !important;
