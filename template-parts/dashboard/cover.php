@@ -286,14 +286,13 @@
                             <?php 
                             }
                          }   
-                            else{
+                            // else{
                             ?>
-                                <div class="form-group-fluid" style="display:none;">
+                                <!-- <div class="form-group-fluid" style="display:none;">
                                 <button class="btn btn-secondary btn-block" onclick="addText('event')">Add Text</button>
-                                </div>
-                                adsaf
+                                </div> -->
                             <?php        
-                                }
+                                // }
 
 
 								  $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
@@ -311,8 +310,8 @@
 								        }
 								    }
 
-                                if($check_personalize=='yes')
-                                {
+                                // if($check_personalize=='yes')
+                                // {
                                 ?>
                                  <!-- <div class="form-group-fluid">
                                     <label>Upload Background Image</label>
@@ -320,11 +319,11 @@
                                 </div> -->
                                     <div class="form-group-fluid">
                                         <button class="btn btn-secondary btn-block" onclick="addText('event')">Add Text</button>
-                                    </div>123
+                                    </div>
                                 <?php	
-                                }else{
-                                    echo '123123';
-                                }
+                                // }else{
+                                //     echo '123123';
+                                // }
 
                             ?>
                                
