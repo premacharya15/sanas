@@ -321,6 +321,12 @@
                                         <button class="btn btn-secondary btn-block" onclick="addText('event')">Add Text</button>
                                     </div>
                                 <?php	
+                                }else{
+                                    ?>
+                                    <div class="form-group-fluid">
+                                        <button class="btn btn-secondary btn-block" onclick="addText('event')">Add Text</button>
+                                    </div>
+                                    <?php
                                 }
 
                             ?>
