@@ -989,7 +989,9 @@ jQuery(document).ready(function ($) {
             console.log(datahref);
             jQuery('#datahref').each(function(){
                 jQuery(this).val(datahref);
+                console.log(jQuery(this).val());
             });
+
             jQuery('body').addClass('search-active');
             jQuery('#ajaxvalue').val('0');
         });
