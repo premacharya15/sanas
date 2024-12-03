@@ -204,8 +204,9 @@ window.changeAlign = changeAlign;
 // Extend the IText prototype with custom controls
 fabric.IText.prototype.controls = Object.assign({}, fabric.IText.prototype.controls, customControls);
 fabric.Image.prototype.controls = Object.assign({}, fabric.Image.prototype.controls, customControls);
-fabric.Object.prototype.cornerColor = 'blue';
+fabric.Object.prototype.transparentCorners = false;
 fabric.Object.prototype.cornerStyle = 'circle';
+fabric.Object.prototype.cornerColor = 'blue';
 function changeLetterSpacing() {
     const activeObject = canvas.getActiveObject();
     if (activeObject && activeObject.type === 'i-text') {

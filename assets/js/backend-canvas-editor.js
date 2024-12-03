@@ -249,6 +249,7 @@ var customControls = {
 };
 // Extend the IText prototype with custom controls
 fabric.IText.prototype.controls = Object.assign({}, fabric.IText.prototype.controls, customControls);
+fabric.Object.prototype.transparentCorners = false;
 fabric.Object.prototype.cornerColor = 'blue';
 fabric.Object.prototype.cornerStyle = 'circle';
 function changeLetterSpacing() {
