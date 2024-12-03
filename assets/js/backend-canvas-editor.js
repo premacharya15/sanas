@@ -4,7 +4,7 @@ fabric.Object.prototype.cornerColor = 'white';
 fabric.Object.prototype.cornerStyle = 'circle';
 fabric.Object.prototype.cornerSize = 14;
 fabric.Object.prototype.borderScaleFactor = 3;
-fabric.Object.prototype.borderColor = 'red';
+fabric.Object.prototype.borderColor = 'purple';
 // Load All Google Fonts
 async function loadGoogleFonts() {
     const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key
