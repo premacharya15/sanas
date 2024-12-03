@@ -1111,7 +1111,7 @@ jQuery(document).ready(function ($) {
         } else {
             // add 30 to 1 seconds timer
             var counter = 30;
-            jQuery("#tab-15 .form-box").append('<p id="temporary-message">' + response.data + ' wait ' + counter + ' seconds for next try</p>');
+            jQuery("#tab-15 .form-box").append('<p id="temporary-message" style="color: red; !important">' + response.data + ' wait ' + counter + ' seconds for next try</p>');
             for (var i = 0; i < 30; i++) {
                 setTimeout(function() {
                     counter--;
