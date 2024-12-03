@@ -329,7 +329,7 @@ $get_guest_details = $wpdb->get_results(
                             <th><input type="checkbox" name="allCheck" id="all-select-chechbox"></th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>contact</th>
+                            <th>Phone</th>
                             <th class="contact">status</th>
                             <th>Guest</th>
                             <th class="actions">Actions</th>
