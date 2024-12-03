@@ -1112,8 +1112,8 @@ jQuery(document).ready(function ($) {
             for (var i = 30; i > 0; i--) {
                 setTimeout(function(counter) {
                     counter = i;
-                }, 1000);
-                jQuery("#tab-15 .form-box").append('<p id="temporary-message" style="color: red; !important">' + response.data + ' waiting for ' + i + ' seconds to try again</p>');
+                }, 1000 * i);
+                jQuery("#tab-15 .form-box").append('<p id="temporary-message" style="color: red; !important">' + response.data + ' waiting for ' + counter + ' seconds to try again</p>');
             }
             setTimeout(function() {
                 jQuery('#temporary-message').fadeOut(500, function() {
