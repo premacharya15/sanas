@@ -108,7 +108,10 @@ if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_decl
   $guest_reply = 5;
   $guest_declined = 3;
 }
-
+if($total_adults == 0 && $total_kids == 0){
+  $total_adults = 10;
+  $total_kids = 4;
+}
 ?>
 
   <div class="wl-dashboard-wrapper dashboard">
@@ -224,7 +227,7 @@ if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_decl
 </div> <canvas id="chart-line" width="299" height="340" class="chartjs-render-monitor" style="display: block; width: 299px; height: 340px;"></canvas>
             </div>
             <div class="guest-count-box mt-3 text-center">
-                <span>Accepted: <?php echo $guest_accepted; ?></span>
+                <!-- <span>Accepted: <?php //echo $guest_accepted; ?></span> -->
                 <span>Adults: <?php echo $total_adults; ?></span>
                 <span>Kids: <?php echo $total_kids; ?></span>
               </div>
