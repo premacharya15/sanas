@@ -281,10 +281,12 @@ section.wl-main-canvas .inner-container .inner-colum {
                                            if( !empty($program) && count($program)>0 ){ ?>
                                         <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto">
                                             <div class="wl-fuc-timing">
-                                                <h4 class=" mb-0">Itinerary</h4>
                                                 <table>
                                                     <?php 
                                                     if( !empty($program) && count($program)>0 ){
+                                                        ?>
+                                                        <h4 class=" mb-0">Itinerary</h4>
+                                                        <?php
                                                     foreach ($program as $event) :?>
                                                     <tr>
                                                         <td><?php echo esc_attr($event['program_name'])?></td>

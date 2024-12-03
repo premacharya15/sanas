@@ -290,12 +290,12 @@ function is_youtube_url($url) {
                                 <div class="row">
                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto">
                                         <div class="wl-fuc-timing">
-                                            <h4 class=" mb-0">Itinerary</h4>
                                             <?php 
                                             //if(!empty($itinerary)) { echo '<h4 class="mb-0" style="'.$itinerarycss.'">'.esc_html($itinerary).'</h4>'; }
                                             
                                             if( !empty($program) && count($program)>0 ){
                                             ?>
+                                            <h4 class=" mb-0">Itinerary</h4>
                                             <table>
                                                 <?php 
                                                 
