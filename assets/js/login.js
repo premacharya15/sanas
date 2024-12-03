@@ -95,7 +95,7 @@ $('button.usersignin').on('click', function (e) {
                 // }, 3000);
                     
                 } else {
-                    $('#signupresponseError').show();
+                    $('#signupresponseError').html(data.message).show();
                     // .delay(3000).fadeOut();
                 }
             },
