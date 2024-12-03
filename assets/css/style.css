@@ -4171,20 +4171,20 @@ table.dataTable thead>tr>td.dt-ordering-desc span.dt-column-order {
 #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(7){
     max-width: 50px !important;
     width: 50px !important;
-    padding: 20px 10px 20px 10px !important;
+    padding: 20px !important;
 }
 
 .contact table.dataTable thead>tr:nth-child(2)>th:nth-child(1),
 .contact table.dataTable td:nth-child(1){
     max-width: 30px !important;
     width: 30px !important;
-    padding: 20px 0 20px 10px !important;
+    padding: 20px !important;
 }
 
 .contact table.dataTable thead>tr:nth-child(2)>th:nth-child(6){
     max-width: 50px !important;
     width: 50px !important;
-    padding: 20px 10px 20px 10px !important;
+    padding: 20px !important;
 }
 
 .video-box {
