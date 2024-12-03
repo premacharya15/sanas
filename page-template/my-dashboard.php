@@ -109,12 +109,6 @@ if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_decl
   $guest_declined = 3;
 }
 
-// Echo counts of adults and kids for accepted guests
-if ($guest_accepted > 0) {
-    echo "<p>Accepted Guests: $guest_accepted</p>";
-    echo "<p>Total Adults: $total_adults</p>";
-    echo "<p>Total Kids: $total_kids</p>";
-}
 ?>
 
   <div class="wl-dashboard-wrapper dashboard">
@@ -229,7 +223,7 @@ if ($guest_accepted > 0) {
 </div>
 </div> <canvas id="chart-line" width="299" height="340" class="chartjs-render-monitor" style="display: block; width: 299px; height: 340px;"></canvas>
             </div>
-            <div class="guest-count">
+            <div class="guest-count-box mt-3 text-center">
                 <span>Accepted: <?php echo $guest_accepted; ?></span>
                 <span>Adults: <?php echo $total_adults; ?></span>
                 <span>Kids: <?php echo $total_kids; ?></span>
