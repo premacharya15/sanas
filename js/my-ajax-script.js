@@ -1109,22 +1109,7 @@ jQuery(document).ready(function ($) {
                 });
             }, 3000);
         } else {
-            jQuery('.change-password-btn').prop('disabled', true);
-            jQuery('.change-password-btn').addClass('delete-account-btn-color');
-
-            var counter = 30;
-            jQuery("#tab-15 .form-box").append('<p id="temporary-message" style="color: red; !important">' + response.data + ' wait ' + counter + ' seconds for next try</p>');
-            for (var i = 0; i < 30; i++) {
-                setTimeout(function() {
-                    counter--;
-                    jQuery("#temporary-message").text(response.data + ' wait ' + counter + ' seconds for next try');
-                }, 1000 * i);
-            }
-            setTimeout(function() {
-                jQuery('#temporary-message').fadeOut(500, function() {
-                    jQuery(this).remove();
-                });
-            }, 30000);
+            jQuery("#tab-15 .form-box").append('<p id="temporary-message" style="color: red; !important">' + response.data + '</p>');
         }
     });
 });
