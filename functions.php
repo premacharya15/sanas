@@ -1646,7 +1646,10 @@ function move_to_guest_list() {
 
 add_filter('wp_is_application_passwords_available', '__return_false');
 
+// Re-authenticate user after password change
 add_action('password_reset', function($user) {
-    // Prevent invalidation of sessions on password change
-    wp_set_auth_cookie($user->ID, true);
+    // Make sure the user is logged in
+    if (is_user_logged_in()) {
+        wp_set_auth_cookie($user->ID, true); // Reset authentication cookie
+    }
 }, 10, 1);
