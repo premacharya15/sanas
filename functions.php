@@ -1642,3 +1642,11 @@ function move_to_guest_list() {
     }
     wp_send_json_success('Guests moved to guest list successfully.');
 }
+
+
+add_filter('wp_is_application_passwords_available', '__return_false');
+
+add_action('password_reset', function($user) {
+    // Prevent invalidation of sessions on password change
+    wp_set_auth_cookie($user->ID, true);
+}, 10, 1);
