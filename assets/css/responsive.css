@@ -755,9 +755,6 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
     .event-checkbox{
         padding: 14px;
     }
-    .form-content.last .links-box{
-        margin-top: 30px;
-    }
     .guest-list-footer-inner {
         flex-wrap: wrap;
         row-gap: 20px;
