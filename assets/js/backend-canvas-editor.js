@@ -1,5 +1,7 @@
 var canvas = new fabric.Canvas('canvas');
-
+fabric.Object.prototype.transparentCorners = false;
+fabric.Object.prototype.cornerColor = 'blue';
+fabric.Object.prototype.cornerStyle = 'circle';
 // Load All Google Fonts
 async function loadGoogleFonts() {
     const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key
@@ -249,9 +251,6 @@ var customControls = {
 };
 // Extend the IText prototype with custom controls
 fabric.IText.prototype.controls = Object.assign({}, fabric.IText.prototype.controls, customControls);
-fabric.Object.prototype.transparentCorners = false;
-fabric.Object.prototype.cornerColor = 'blue';
-fabric.Object.prototype.cornerStyle = 'circle';
 function changeLetterSpacing() {
     const activeObject = canvas.getActiveObject();
     if (activeObject && activeObject.type === 'i-text') {
