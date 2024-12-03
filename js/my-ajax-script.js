@@ -1110,7 +1110,9 @@ jQuery(document).ready(function ($) {
             }, 3000);
         } else {
             for (var i = 30; i > 0; i--) {
-                jQuery("#tab-15 .form-box").append('<p id="temporary-message" style="color: red; !important">' + response.data + ' waiting for ' + i + ' seconds to try again</p>');
+                setTimeout(function(counter) {
+                    jQuery("#tab-15 .form-box").append('<p id="temporary-message" style="color: red;">' + response.data + ' waiting for ' + counter + ' seconds to try again</p>');
+                }, 1000 * (31 - counter), counter);
             }
             setTimeout(function() {
                 jQuery('#temporary-message').fadeOut(500, function() {
