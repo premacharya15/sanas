@@ -326,7 +326,7 @@ $get_guest_details = $wpdb->get_results(
                       <table class="vendor-list-table guestlist-table" id="guest-list-Table">
                         <thead>
                           <tr>
-                            <th><input type="checkbox" name="allCheck" id="all-select-chechbox"></th>
+                            <th><input type="checkbox" name="allCheck" id="all-select-chechbox guestlist-checkbox-all"></th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
