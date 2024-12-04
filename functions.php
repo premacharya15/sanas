@@ -1631,7 +1631,7 @@ function move_to_guest_list() {
                     'guest_email' => $guest['guest_email'],
                     'guest_phone_num' => $guest['guest_phone_num'],
                     'guest_group' => $guest['guest_group'],
-                    'guest_status' => 'Draft',
+                    'guest_status' => 'pending',
                     'guest_adult' => 0,
                     'guest_kids' => 0
                 ],
