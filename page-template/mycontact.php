@@ -150,6 +150,9 @@ $i = 0;
                                     </tbody>
                                 </table>
                                 <script>
+                                  var table_counter = <?php echo $table_counter; ?>;
+
+                                //datatable for guest contact list
                                 jQuery(document).ready(function() {
                                     jQuery('#guest-contact-list-<?php echo $table_counter; ?>').DataTable({
                                         searching: true,
