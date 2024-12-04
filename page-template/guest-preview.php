@@ -398,7 +398,7 @@ section.wl-main-canvas .inner-container .inner-colum {
                                 <div class="row">
                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto text-center ">
                                         <?php if ($guest_status != 'pending') { ?>
-                                            <button id="edit-response" data-eventid="<?php echo $event_id; ?>" data-guestid="<?php echo $guestid; ?>" type="button"
+                                            <button id="invite-action-submit data-eventid="<?php echo $event_id; ?>" data-guestid="<?php echo $guestid; ?>" type="button"
                                                 class="btn btn-secondary m-auto mt-3 ps-4 pe-4">Edit Response</button>
                                         <?php } else { ?>
                                             <button id="invite-action-submit" data-eventid="<?php echo $event_id; ?>" data-guestid="<?php echo $guestid; ?>" type="button"
