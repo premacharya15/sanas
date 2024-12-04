@@ -562,12 +562,14 @@ jQuery('#edit-guestinfo').on('click', function (e) {
 
 
 //select guest group / unselect guest group
-jQuery(document).ready(function($) {
-    $('#guestlist-checkbox-all').on('click', function() {
-        $('input[type="checkbox"].select-checkbox').prop('checked', true);
-    });
-    $('#guestlist-checkbox-all').on('click', function() {
-        $('input[type="checkbox"].guest-checkbox').prop('checked', false);
+document.querySelectorAll('.guestlist-table').forEach(function(table) {
+    const firstCheckbox = table.querySelector('thead tr th:first-child input[type="checkbox"]');
+
+    firstCheckbox.addEventListener('change', function() {
+        const checkboxes = table.querySelectorAll('tbody tr td:first-child input[type="checkbox"]');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = firstCheckbox.checked;
+        });
     });
 });
 
