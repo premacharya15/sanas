@@ -395,22 +395,20 @@ section.wl-main-canvas .inner-container .inner-colum {
                                 {
                                 ?>              
                                 <!-- if($guest_status || $guest_adult || $guest_kids) -->
-                                 <?php if($guest_status=='pending'){ ?>
                                 <div class="row">
                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto text-center ">
-                                        <button  id="invite-action-submit" data-eventid="<?php echo $event_id;?>" data-guestid="<?php echo $guestid;?>" type="button"
-                                            class="btn btn-secondary m-auto mt-3 ps-4 pe-4">Submit Response</button>
+                                        <?php if ($guest_status != 'pending') { ?>
+                                            <button id="edit-response" data-eventid="<?php echo $event_id; ?>" data-guestid="<?php echo $guestid; ?>" type="button"
+                                                class="btn btn-secondary m-auto mt-3 ps-4 pe-4">Edit Response</button>
+                                        <?php } else { ?>
+                                            <button id="invite-action-submit" data-eventid="<?php echo $event_id; ?>" data-guestid="<?php echo $guestid; ?>" type="button"
+                                                class="btn btn-secondary m-auto mt-3 ps-4 pe-4">Submit Response</button>
+                                        <?php } ?>
                                     </div>
                                 </div>
-                                <?php } ?>
-                                <div class="row">
-                                    <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto text-center ">
-                                        <button  id="invite-action-submit" data-eventid="<?php echo $event_id;?>" data-guestid="<?php echo $guestid;?>" type="button"
-                                            class="btn btn-secondary m-auto mt-3 ps-4 pe-4">Edit Response</button>
-                                    </div>
-                                </div>
+                                <?php }
 
-                                <?php if($guest_status!='pending' && !empty($guestid) && $guestid=='master'){ ?>
+                                if($guest_status!='pending' && !empty($guestid) && $guestid=='master'){ ?>
                                     <div class="alert mt-5 alert-success">You have already submited your response as below.</div>
                                 <div class="alert mt-5 alert-info">
                                 <?php 
