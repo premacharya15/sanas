@@ -226,10 +226,14 @@ if($total_adults == 0 && $total_kids == 0){
 </div>
 </div> <canvas id="chart-line" width="299" height="340" class="chartjs-render-monitor" style="display: block; width: 299px; height: 340px;"></canvas>
             </div>
-            <div class="guest-count-box mt-3 text-center">
+            <div class="guest-count-box mt-3 text-center flex">
+              <div class="guest-count-box-inner1">
                 <span>Accepted</span>
-                <span>Adults: <?php echo $total_adults; ?></span>
-                <span>Kids: <?php echo $total_kids; ?></span>
+                </div>
+                <div class="guest-count-box-inner2">
+                  <span>Adults: <?php echo $total_adults; ?></span>
+                  <span>Kids: <?php echo $total_kids; ?></span>
+                </div>
               </div>
           </div>
         </div>
