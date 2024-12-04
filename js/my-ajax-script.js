@@ -1412,9 +1412,14 @@ if (window.location.pathname === '/my-contact/') {
 
 
         //select all checkbox for particular event
-        jQuery(document).ready(function($) {
-            $('#all-select-checkbox-one').on('click', function() {
-                $('input[type="checkbox"].gl-checkbox').prop('checked', true);
+        document.querySelectorAll('.guest-contact-list-table').forEach(function(table) {
+            const firstCheckbox = table.querySelector('thead tr th:first-child input[type="checkbox"]');
+        
+            firstCheckbox.addEventListener('change', function() {
+                const checkboxes = table.querySelectorAll('tbody tr td:first-child input[type="checkbox"]');
+                checkboxes.forEach(function(checkbox) {
+                    checkbox.checked = firstCheckbox.checked;
+                });
             });
         });
 }
