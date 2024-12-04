@@ -314,7 +314,7 @@ jQuery(document).ready(function ($) {
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (guestContact === "" && guestEmail === "") {
-         $('.guestlist_details_message').html('<p>Please enter either the Phone Number or Email Address</p>');
+         $('.guestlist_details_message').html('<p>Please enter either Phone Number or Email Address</p>');
             return false; // Prevent form submission
         }
 
