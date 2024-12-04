@@ -344,18 +344,18 @@ jQuery(document).ready(function ($) {
             success: function (response) {
                 var messageBox = $('.guestlist_details_message');
                 if (response.success) {
-                    messageBox.html('<p style="color: green; text-align:center;">' + response.data.message + '</p>');
+                    messageBox.html('<p style="color: green;">' + response.data.message + '</p>');
 
                      setTimeout(function() {
                         window.location.reload();
                     }, 1000); 
 
                 } else {
-                    messageBox.html('<p style="color: red; text-align:center;">' + response.data.message + '</p>');
+                    messageBox.html('<p style="color: red;">' + response.data.message + '</p>');
                 }
             },
             error: function (xhr, status, error) {
-                $('.guestlist_details_message').html('<p style="color: red; text-align:center;">Please wait a moment and try again later.</p>');
+                $('.guestlist_details_message').html('<p style="color: red;">Please wait a moment and try again later.</p>');
             }
         });
     });
