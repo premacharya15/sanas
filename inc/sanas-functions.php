@@ -205,7 +205,7 @@ if (!function_exists('sanas_get_login_popup')) {
                     </button>
                   </div>
                   <div id="signupresponseError" class="error-message"></div>
-                  <div class="divaider">
+                  <div class="divaider mt-3">
                     <span>OR</span>
                   </div>
                  <?php wp_nonce_field('ajax-usersignup-nonce', 'usersignupsecurity');?>
