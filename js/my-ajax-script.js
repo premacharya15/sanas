@@ -1409,17 +1409,6 @@ if (window.location.pathname === '/my-contact/') {
                 });
             });
         });
-
-
-        //select all checkbox for particular event
-        jQuery(document).ready(function($) {
-            $('#guest-contact-list-'+table_counter+' #all-select-checkbox-').on('click', function() {
-                $('input[type="checkbox"].gl-checkbox').prop('checked', true);
-            });
-            //unselect all checkbox
-            $('#guest-contact-list-'+table_counter+' #all-select-checkbox-').on('click', function() {
-                $('input[type="checkbox"].gl-checkbox').prop('checked', false);
-            });
-        });
+        
 }
 
