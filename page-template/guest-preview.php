@@ -384,7 +384,7 @@ section.wl-main-canvas .inner-container .inner-colum {
                                         if(!empty($entry))
                                         {
                                         ?>
-                                        <button  type="button" class="btn btn-secondary btn-block" id="open-invite-action-submit">Submit</button>
+                                        <button  type="button" class="btn btn-secondary btn-block" id="open-invite-action-submit">Submit Response</button>
                                         <?php 
                                         }
                                         ?>
@@ -398,7 +398,7 @@ section.wl-main-canvas .inner-container .inner-colum {
                                 <div class="row">
                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto text-center ">
                                         <button  id="invite-action-submit" data-eventid="<?php echo $event_id;?>" data-guestid="<?php echo $guestid;?>" type="button"
-                                            class="btn btn-secondary m-auto mt-3 ps-4 pe-4">Edit Response</button>
+                                            class="btn btn-secondary m-auto mt-3 ps-4 pe-4">Submit Response</button>
                                     </div>
                                 </div>
                                 <?php }
