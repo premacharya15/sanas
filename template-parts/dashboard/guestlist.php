@@ -490,7 +490,7 @@ $card_image_url = $upload_dir['url'] . '/' . $file_name;
                   </div>
                   <div class="col-lg-6 col-sm-12">
                     <div class="form-group">
-                      <input type="number" name="guestcontact" id="guestcontact"  class="form-control" placeholder="Phone No*">
+                      <input type="number" name="guestcontact" id="guestcontact"  class="form-control" placeholder="Phone No">
                     </div>
                   </div>
                   <div class="col-lg-6 col-sm-12">
