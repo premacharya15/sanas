@@ -1416,6 +1416,10 @@ if (window.location.pathname === '/my-contact/') {
             $('#all-select-checkbox-one').on('click', function() {
                 $('input[type="checkbox"].gl-checkbox').prop('checked', true);
             });
+            //unselect all checkbox
+            $('#all-select-checkbox-one').on('click', function() {
+                $('input[type="checkbox"].gl-checkbox').prop('checked', false);
+            });
         });
 }
 
