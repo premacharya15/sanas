@@ -1416,9 +1416,6 @@ if (window.location.pathname === '/my-contact/') {
             $('#all-select-checkbox-one').on('click', function() {
                 $('input[type="checkbox"].gl-checkbox').prop('checked', true);
             });
-            if ($('#all-select-checkbox-one').is(':checked')) {
-                $('input[type="checkbox"].gl-checkbox').prop('checked', false);
-            }
         });
 }
 
