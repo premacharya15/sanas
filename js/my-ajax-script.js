@@ -1409,6 +1409,13 @@ if (window.location.pathname === '/my-contact/') {
                 });
             });
         });
-        
+
+
+        //select all checkbox for particular event
+        jQuery(document).ready(function($) {
+            $('#all-select-checkbox-one').on('click', function() {
+                $('input[type="checkbox"].gl-checkbox').prop('checked', true);
+            });
+        });
 }
 
