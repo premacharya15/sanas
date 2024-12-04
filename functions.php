@@ -1625,7 +1625,7 @@ function move_to_guest_list() {
             $wpdb->insert(
                 $guest_info_table,
                 [
-                    'guest_user_id' => $guest['guest_user_id'],
+                    'guest_user_id' => null,
                     'guest_event_id' => $event_id,
                     'guest_name' => $guest['guest_name'],
                     'guest_email' => $guest['guest_email'],
