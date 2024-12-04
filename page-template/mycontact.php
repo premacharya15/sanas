@@ -152,6 +152,12 @@ $i = 0;
                                 <script>
                                   var table_counter = <?php echo $table_counter; ?>;
 
+                                  //select all checkbox for particular event table
+                                  jQuery(document).ready(function($) {
+                                    $('#all-select-checkbox-'+table_counter).on('click', function() {
+                                        $('input[type="checkbox"].gl-checkbox').prop('checked', true);
+                                    });
+                                  });
                                 //datatable for guest contact list
                                 jQuery(document).ready(function() {
                                     jQuery('#guest-contact-list-<?php echo $table_counter; ?>').DataTable({
