@@ -60,6 +60,15 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
             </div>
         </div>
 <?php echo count($get_event); ?>
+<?php
+$i = 0;
+  foreach ($get_event as $event) : 
+    if ($event_date < $current_date) {
+      $i++;
+    }
+  endforeach;
+  echo $i;
+?>
         <?php if (!empty($get_event)) : ?>
             <?php 
             $table_counter = 1;
