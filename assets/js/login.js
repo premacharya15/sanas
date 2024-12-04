@@ -564,7 +564,7 @@ jQuery('#edit-guestinfo').on('click', function (e) {
 //select guest group
 jQuery(document).ready(function($) {
     $('#guestlist-checkbox-all').on('click', function() {
-        $('input[type="checkbox"].gl-checkbox').prop('checked', true);
+        $('input[type="checkbox"].guest-checkbox').prop('checked', true);
     });
 });
 
