@@ -941,6 +941,10 @@ jQuery(document).ready(function($) {
                     </div>
                 `);
                 $('#invationModal').modal('show');
+
+                $('.btn-close').on('click', function() {
+                    location.reload();
+                });
             },
             error: function(xhr, status, error) {
                 // Handle error response
