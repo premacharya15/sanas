@@ -1413,11 +1413,11 @@ if (window.location.pathname === '/my-contact/') {
 
         //select all checkbox for particular event
         jQuery(document).ready(function($) {
-            $('#all-select-checkbox-'+table_counter).on('click', function() {
+            $('#guest-contact-list-'+table_counter+' #all-select-checkbox-').on('click', function() {
                 $('input[type="checkbox"].gl-checkbox').prop('checked', true);
             });
             //unselect all checkbox
-            $('#all-select-checkbox-'+table_counter).on('click', function() {
+            $('#guest-contact-list-'+table_counter+' #all-select-checkbox-').on('click', function() {
                 $('input[type="checkbox"].gl-checkbox').prop('checked', false);
             });
         });
