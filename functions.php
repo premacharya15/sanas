@@ -1630,10 +1630,9 @@ function move_to_guest_list() {
                     'guest_name' => $guest['guest_name'],
                     'guest_email' => $guest['guest_email'],
                     'guest_phone_num' => $guest['guest_phone_num'],
-                    'guest_status' => 'Draft',
                 ],
-                ['%d', '%d', '%s', '%s', '%s', '%s']
-                );
+                ['%d', '%d', '%s', '%s', '%s']
+            );
             }
         }
     }
