@@ -230,7 +230,7 @@ if($total_adults == 0 && $total_kids == 0){
               <div class="guest-count-box-inner1">
                 <span>Accepted</span>
                 </div>
-                <div class="guest-count-box-inner2">
+                <div class="guest-count-box-inner2 mt-2">
                   <span>Adults: <?php echo $total_adults; ?></span>
                   <span>Kids: <?php echo $total_kids; ?></span>
                 </div>
