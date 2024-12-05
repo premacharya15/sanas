@@ -99,7 +99,7 @@ $i = 0;
                             $event_id
                         )
                     );
-                    echo $count(get_guest_details);
+                    echo count(get_guest_details);
             ?>
                 <div class="guests-list contact">
                     <div class="inner tabs-box guests-tabs">
