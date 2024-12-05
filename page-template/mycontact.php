@@ -68,7 +68,7 @@ $i = 0;
     $event_date = new DateTime($eventDate);
     $current_date->setTimezone(new DateTimeZone('UTC'));
     $event_date->setTimezone(new DateTimeZone('UTC'));
-    print_r($current_date);
+    echo $current_date;
     print_r($event_date);
     if($current_date > $event_date){
       echo "testsasdf";
