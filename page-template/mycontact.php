@@ -84,7 +84,7 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                 $eventtitle= esc_html(get_post_meta($event_rsvp_id, 'event_name', true));
                 $eventDate = esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
                 $event_date = new DateTime($eventDate);
-                echo $event_date;
+                echo $event_date->format('Y-m-d H:i:s'); 
                 // Compare event date with current date
                 if ($event_date < $current_date) {
                     // Fetch guest details for the event
