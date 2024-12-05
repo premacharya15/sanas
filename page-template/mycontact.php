@@ -68,6 +68,8 @@ $i = 0;
     $event_date = new DateTime($eventDate);
     $current_date->setTimezone(new DateTimeZone('UTC'));
     $event_date->setTimezone(new DateTimeZone('UTC'));
+    $current_date = new DateTime($current_date->format('Y-m-d H:i:s'));
+$event_date = new DateTime($event_date->format('Y-m-d H:i:s'));
     echo $current_date;
     print_r($event_date);
     if($current_date > $event_date){
