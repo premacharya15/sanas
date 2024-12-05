@@ -160,11 +160,11 @@ $i = 0;
                         </div>
                     </div>
                 </div>
+                teststsdaf
             <?php 
             $table_counter++;
                 }
             endforeach; ?>
-            teststsdaf
         <?php else : ?>
             <div class="no-events-message">
                 <p>No past events found.</p>
