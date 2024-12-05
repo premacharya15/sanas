@@ -788,7 +788,6 @@ if (empty($rsvpimage)) {
                     </div>
                     <?php } ?>
                             <div class="row">
-                            <div class="col-xxl-4 col-xl-5 col-lg-7 col-md-8 col-sm-12 m-auto">
                                 <div class="rsvp-event">
                             <div class="rsvp-from-group">
                                 <input type="text edit-text rsvp-msg event-title" id="eventtitle" class="edit-text rsvp-msg event-title" name="eventtitle" placeholder="Event Title*" style="<?php echo $event_title_css; ?>" value="<?php echo esc_html($eventtitle) ?>" required="">
@@ -802,11 +801,9 @@ if (empty($rsvpimage)) {
                                         <div class="map-location-rsvp" id="map"></div>
                                 </div>
                             </div>
-                            </div>
                             <div class="rsvp-from-group">
                                 <h3 class="mb-0 mt-4">Hosted By</h3>
-                            </div> 
-                            <div class="col-xxl-4 col-xl-5 col-lg-7 col-md-8 col-sm-12 m-auto">
+                            </div>  
                                 <div class="rsvp-event">
                                 <div class="rsvp-from-group">
                                     <input type="text" id="guestName" name="guestName" value="<?php echo esc_html($guestName) ?>" style="<?php echo $guest_name_css; ?>"  class="edit-text rsvp-msg host-name"  placeholder="Event Host Name*" required="">
@@ -881,7 +878,6 @@ if (empty($rsvpimage)) {
                                         placeholder="Special Instructions, Dress Code, etc..."><?php echo esc_html($guestMessage); ?></textarea>
                                     </div>
                                 </div>
-                            </div>
                                     <div class="rsvp-from-group">
                                         <h4 class=" mb-0 mt-2">Itinerary</h4>
                                     </div>
