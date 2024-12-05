@@ -62,11 +62,12 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
 <?php
 $i = 0;
   foreach ($get_event as $event) : 
+    var_dump($event);
     if ($event_date < $current_date) {
       $i++;
     }
   endforeach;
-  echo "test". $i . "tst";
+  echo $i . "tst";
 ?>
         <?php if (!empty($get_event)) : ?>
             <?php 
