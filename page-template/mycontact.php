@@ -61,8 +61,12 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
         </div>
 <?php
 $i = 0;
-
 ?>
+<?php if (!empty($get_event)) : ?>
+  <div class="no-events-message">
+      <p>No past events found.</p>
+  </div>
+<?php endif; ?>
         <?php if (!empty($get_event)) : ?>
             <?php 
             $table_counter = 1;
@@ -162,12 +166,6 @@ $i = 0;
                 </div>
             <?php 
             $table_counter++;
-                }else{
-                  ?>
-                  <div class="no-events-message">
-                      <p>No past events found.</p>
-                  </div>
-                  <?php
                 }
             endforeach; ?>
         <?php else : ?>
