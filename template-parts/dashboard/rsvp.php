@@ -788,6 +788,7 @@ if (empty($rsvpimage)) {
                     </div>
                     <?php } ?>
                             <div class="row">
+                                <div class="col-xxl-4 col-xl-5 col-lg-7 col-md-8 col-sm-12 m-auto"></div>
                             <div class="rsvp-from-group">
                                 <input type="text edit-text rsvp-msg event-title" id="eventtitle" class="edit-text rsvp-msg event-title" name="eventtitle" placeholder="Event Title*" style="<?php echo $event_title_css; ?>" value="<?php echo esc_html($eventtitle) ?>" required="">
                                 </div>
@@ -868,6 +869,7 @@ if (empty($rsvpimage)) {
                                         // Initialize Autocomplete after the API script is loaded
                                         window.addEventListener('load', initializeAutocomplete);
                                     </script>
+                                </div>
                                 <div class="rsvp-from-group">
                                     <textarea class="edit-text rsvp-msg host-message" style="<?php echo $guest_message_css; ?>" id="guestMessage" name="guestMessage"
                                         placeholder="Special Instructions, Dress Code, etc..."><?php echo esc_html($guestMessage); ?></textarea>
