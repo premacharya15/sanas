@@ -108,7 +108,7 @@ if(document.getElementById('drop-zone') !=null)
     function playYouTubeVideo() {
         var url = document.getElementById('youtube-url').value;
         var videoID = getYouTubeVideoID(url);
-
+        console.log("testvid");
         if (videoID) {
             var iframe = document.createElement('iframe');
             iframe.id = 'youtube-iframe';
@@ -143,7 +143,7 @@ if(document.getElementById('drop-zone') !=null)
     }
 if(document.getElementById('drop-zone') !=null)
 {
-   document.getElementById('generate-youtube-video').onclick = playYouTubeVideo;    
+   document.getElementById('generate-youtube-video').onclick = playYouTubeVideo;
 }
 
 if(document.getElementById('rsvpcanvasElement') !=null)
