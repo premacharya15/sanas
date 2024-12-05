@@ -66,7 +66,6 @@ $i = 0;
   <?php foreach ($get_event as $event) :
     $eventDate = esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
     $event_date = new DateTime($eventDate);
-    echo $current_date;
     echo $event_date->date;
     if($current_date > $event_date){
       echo "testsasdf";
