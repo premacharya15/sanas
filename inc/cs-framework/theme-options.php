@@ -841,6 +841,12 @@ if (class_exists('CSF')) {
                 'button_title' => esc_attr__('Upload Image', 'sanas'),
                 'dependency' => array('sanas_enable_rsvp_image', '==', true),
             ),
+            array(
+                'id' => 'sanas_map_api_key',
+                'type' => 'text',
+                'title' => esc_html__('Google Map Api Key For RSVP', 'sanas'),
+                'default' => esc_html__('Google Map Api Key For RSVP', 'sanas')
+            ),
         ),
     ));
   CSF::createSection($sanas_theme_options, array(
