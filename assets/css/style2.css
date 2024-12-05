@@ -6341,13 +6341,6 @@ p.text-success {
     display: none;
 }
 
-.delete-btn {
-    position: absolute;
-    top: -40px;
-    right: 0px;
-    width: 30px;
-    height: 30px;
-}
 .delete-btn>button.deleteRowBtn {
     height: 100%;
     width: 100%;
@@ -6508,12 +6501,6 @@ section.blog-section .blog-box{
     font-size: 40px;
     line-height: 50px;
     font-weight: 600;
-}
-.delete-btn>button.deleteRowBtn>i, .wl-fuc-timing .rsvp-event .deletebtn i {
-    color: var(--snas-bg-secondary-2) !important;
-    font-size: 40px !important;
-    font-weight: 400;
-    line-height: 30px !important;
 }
 .rsvp-event {
     color: #8b8888;

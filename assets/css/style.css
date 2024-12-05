@@ -6339,6 +6339,19 @@ button#add_new_group_button {
     line-height: 1.4;
     font-weight: 700;
 }
+.delete-btn {
+    position: absolute;
+    top: 7px;
+    right: -30px;
+    width: 20px;
+    height: 20px;
+}
+.delete-btn>button.deleteRowBtn>i, .wl-fuc-timing .rsvp-event .deletebtn i {
+    color: var(--snas-bg-secondary-2) !important;
+    font-size: 20px !important;
+    font-weight: 400;
+    line-height: 30px !important;
+}
 /* 23-9-24 */
 .Privacy-Policy, .Terms-Use {
     padding: 0 0 100px 0;
