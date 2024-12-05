@@ -100,7 +100,6 @@ $i = 0;
                         )
                     );
             ?>
-            teststsdaf1
                 <div class="guests-list contact">
                     <div class="inner tabs-box guests-tabs">
                         <div class="guests-box table-box tabs-content">
@@ -163,6 +162,12 @@ $i = 0;
                 </div>
             <?php 
             $table_counter++;
+                }else{
+                  ?>
+                  <div class="no-events-message">
+                      <p>No past events found.</p>
+                  </div>
+                  <?php
                 }
             endforeach; ?>
         <?php else : ?>
