@@ -134,7 +134,7 @@ if (!function_exists('sanas_get_login_popup')) {
               <ul class="social-box">
                   <!-- <li><a href="#" class="" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/google.svg" alt=""></a></li> -->
                   <li>
-                    <a href="https://thegenius.co/wpdemo3/wp-login.php?loginSocial=google" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
+                    <a href="/wp-login.php?loginSocial=google" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/img/google.svg" alt="" />
                     </a>
                   </li>
@@ -214,7 +214,7 @@ if (!function_exists('sanas_get_login_popup')) {
               <!-- Social Box -->
               <ul class="social-box">
                 <li>
-                    <a href="https://thegenius.co/wpdemo3/wp-login.php?loginSocial=google" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
+                    <a href="/wp-login.php?loginSocial=google" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/img/google.svg" alt="" />
                     </a>
                   </li>
