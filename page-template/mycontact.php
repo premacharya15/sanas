@@ -99,8 +99,8 @@ $i = 0;
                             $event_id
                         )
                     );
-                    teststsdaf1
             ?>
+            teststsdaf1
                 <div class="guests-list contact">
                     <div class="inner tabs-box guests-tabs">
                         <div class="guests-box table-box tabs-content">
