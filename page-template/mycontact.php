@@ -68,7 +68,7 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                 </div>
             </div>
         </div>
-
+        <?php echo $get_event; ?>
         <?php if (!empty($get_event)) : ?>
             <?php 
             $table_counter = 1;
