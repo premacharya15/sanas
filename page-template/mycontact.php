@@ -64,10 +64,10 @@ $i = 0;
 
 ?>
         <?php if (!empty($get_event)) : ?>
-          test
             <?php 
             $table_counter = 1;
             foreach ($get_event as $event) : 
+              echo "test2";
                 $event_id = $event->event_no;
                 $event_card_id = $event->event_card_id;
                 
