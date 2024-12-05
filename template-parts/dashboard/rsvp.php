@@ -811,7 +811,7 @@ if (empty($rsvpimage)) {
                                 <div class="rsvp-from-group">
                                     <input type="number" id="guestContact" style="<?php echo $guest_contact_css; ?>" value="<?php echo esc_html($guestContact); ?>" class="edit-text rsvp-msg host-contact-no" name="guestContact"  placeholder="Enter Host Contact No.*" required="">
                                 </div>
-                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2TZGxSFxPToAsFcoE7I1fdENSJuK_Eic&libraries=places" async defer></script>
+                                    <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo sanas_options('sanas_map_api_key'); ?>&libraries=places" async defer></script>
                                     <script>
                                         let map;
                                         let marker;
