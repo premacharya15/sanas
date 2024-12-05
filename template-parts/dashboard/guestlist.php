@@ -1,3 +1,9 @@
+<meta property="og:title" content="Tap to RSVP to <?php echo $event_name; ?>" />
+<meta property="og:description" content="You are invited for <?php echo $event_name; ?> party this <?php echo $event_date; ?>. Hope to see you there" />
+<meta property="og:image" content="<?php echo $event_front_card_preview; ?>" />
+<meta property="og:type" content="website" />
+
+
 <?php 
 global $current_user, $post, $wpdb;
 wp_get_current_user();
