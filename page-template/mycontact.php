@@ -24,8 +24,17 @@ $guest_group_info_table = $wpdb->prefix . "guest_list_group";
 
 $get_event = $wpdb->get_results(
     $wpdb->prepare(
-        "SELECT * FROM $sanas_card_event WHERE event_user = %d ORDER BY event_no DESC",
-        $userID
+      "SELECT e.*, p.post_title as event_name, p.post_date as event_date, 
+      u.display_name as host_name, p.guid as event_url, 
+      pm.meta_value as event_date_meta
+FROM {$wpdb->prefix}sanas_card_event e
+LEFT JOIN {$wpdb->posts} p ON e.event_rsvp_id = p.ID
+LEFT JOIN {$wpdb->users} u ON e.event_user = u.ID
+LEFT JOIN {$wpdb->prefix}postmeta pm ON pm.post_id = p.ID AND pm.meta_key = 'event_date'
+WHERE e.event_user = %d AND STR_TO_DATE(pm.meta_value, '%Y-%m-%d') < %s
+ORDER BY e.event_no DESC",
+$userID,
+current_time('mysql')
     )
 );
 
@@ -59,6 +68,7 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                 </div>
             </div>
         </div>
+
         <?php if (!empty($get_event)) : ?>
             <?php 
             $table_counter = 1;
@@ -84,8 +94,7 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                 $eventtitle= esc_html(get_post_meta($event_rsvp_id, 'event_name', true));
                 $eventDate = esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
                 $event_date = new DateTime($eventDate);
-                echo $event_date->format('Y-m-d H:i:s');
-                echo $current_date->format('Y-m-d H:i:s');
+                
                 // Compare event date with current date
                 if ($event_date < $current_date) {
                     // Fetch guest details for the event
@@ -159,8 +168,6 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                 </div>
             <?php 
             $table_counter++;
-                }else{
-                  echo "this event already pass";
                 }
             endforeach; ?>
         <?php else : ?>
