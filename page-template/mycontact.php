@@ -67,7 +67,7 @@ $i = 0;
     $eventDate = esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
     $event_date = new DateTime($eventDate);
     if($current_date > $event_date){
-      echo "testsasdf"
+      echo "testsasdf";
     }
    endforeach; ?>
   <div class="no-events-message">
