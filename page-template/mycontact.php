@@ -67,7 +67,7 @@ $i = 0;
       $i++;
     }
   endforeach;
-  echo $i;
+  echo $i . "tst";
 ?>
         <?php if (!empty($get_event)) : ?>
             <?php 
