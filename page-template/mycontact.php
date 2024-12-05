@@ -66,6 +66,8 @@ $i = 0;
   <?php foreach ($get_event as $event) :
     $eventDate = esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
     $event_date = new DateTime($eventDate);
+    $current_date->setTimezone(new DateTimeZone('UTC'));
+    $event_date->setTimezone(new DateTimeZone('UTC'));
     print_r($current_date);
     print_r($event_date);
     if($current_date > $event_date){
