@@ -65,13 +65,7 @@ $i = 0;
 <?php if (!empty($get_event)) : ?>
   <?php foreach ($get_event as $event) :
     $eventDate = esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
-    $event_date = new DateTime($eventDate);
-    $current_date->setTimezone(new DateTimeZone('UTC'));
-    $event_date->setTimezone(new DateTimeZone('UTC'));
-    $current_date = new DateTime($current_date->format('Y-m-d H:i:s'));
-$event_date = new DateTime($event_date->format('Y-m-d H:i:s'));
-    print_r($current_date);
-    print_r($event_date);
+    echo $eventDate;
     if($current_date > $event_date){
       echo "testsasdf";
     }
