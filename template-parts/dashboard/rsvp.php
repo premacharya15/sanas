@@ -801,9 +801,11 @@ if (empty($rsvpimage)) {
                                         <div class="map-location-rsvp" id="map"></div>
                                 </div>
                             </div>
+                            <div class="rsvp-from-group">
+                                <h4 class="mb-0 mt-2">Hosted By</h4>
+                            </div>  
                                 <div class="rsvp-event">
                                 <div class="rsvp-from-group">
-                                    <h4 class="mb-0">Hosted By</h4>
                                     <input type="text" id="guestName" name="guestName" value="<?php echo esc_html($guestName) ?>" style="<?php echo $guest_name_css; ?>"  class="edit-text rsvp-msg host-name"  placeholder="Event Host Name*" required="">
                                 </div>
                                 <div class="rsvp-from-group">
@@ -877,7 +879,7 @@ if (empty($rsvpimage)) {
                                     </div>
                                 </div>
                                     <div class="rsvp-from-group">
-                                        <h4 class=" mb-0">Itinerary</h4>
+                                        <h4 class=" mb-0 mt-2">Itinerary</h4>
                                     </div>
                                 </div>
                             <?php wp_nonce_field('ajax-sanas-rsvp-nonce', 'sanasrsvpsecurity');?>
