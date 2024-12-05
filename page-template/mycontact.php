@@ -61,7 +61,7 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
         </div>
 <?php
 $i = 0;
-echo $get_event;
+print_r($get_event);
 ?>
         <?php if (!empty($get_event)) : ?>
             <?php 
