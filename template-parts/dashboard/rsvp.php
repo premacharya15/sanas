@@ -795,18 +795,19 @@ if (empty($rsvpimage)) {
                                 <div class="rsvp-from-group">
                                     <input type="date" id="eventdate" class="edit-text rsvp-msg event-date" name="eventdate"  style="<?php echo $event_date_css; ?>" value="<?php echo esc_html($eventdate); ?>" required="">
                                 </div>
+                                <div class="rsvp-from-group mt-3 mb-2 map-container-rsvp">
+                                    <h4>Address</h4>
+                                        <input class="map-input-rsvp" id="search" type="text" placeholder="Search location">
+                                        <div class="map-location-rsvp" id="map"></div>
+                                </div>
                             </div>
+                                <div class="rsvp-event">
                                 <div class="rsvp-from-group">
                                     <h4 class="mb-0">Hosted By</h4>
                                     <input type="text" id="guestName" name="guestName" value="<?php echo esc_html($guestName) ?>" style="<?php echo $guest_name_css; ?>"  class="edit-text rsvp-msg host-name"  placeholder="Event Host Name*" required="">
                                 </div>
                                 <div class="rsvp-from-group">
                                     <input type="number" id="guestContact" style="<?php echo $guest_contact_css; ?>" value="<?php echo esc_html($guestContact); ?>" class="edit-text rsvp-msg host-contact-no" name="guestContact"  placeholder="Enter Host Contact No.*" required="">
-                                </div>
-                                <div class="rsvp-from-group mt-3 mb-2 map-container-rsvp">
-                                    <h4>Address</h4>
-                                        <input class="map-input-rsvp" id="search" type="text" placeholder="Search location">
-                                        <div class="map-location-rsvp" id="map"></div>
                                 </div>
                                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2TZGxSFxPToAsFcoE7I1fdENSJuK_Eic&libraries=places" async defer></script>
                                     <script>
@@ -874,6 +875,7 @@ if (empty($rsvpimage)) {
                                     <textarea class="edit-text rsvp-msg host-message" style="<?php echo $guest_message_css; ?>" id="guestMessage" name="guestMessage"
                                         placeholder="Special Instructions, Dress Code, etc..."><?php echo esc_html($guestMessage); ?></textarea>
                                     </div>
+                                </div>
                                     <div class="rsvp-from-group">
                                         <h4 class=" mb-0">Itinerary</h4>
                                     </div>
