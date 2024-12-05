@@ -844,8 +844,7 @@ if (class_exists('CSF')) {
             array(
                 'id' => 'sanas_map_api_key',
                 'type' => 'text',
-                'title' => esc_html__('Google Map Api Key For RSVP', 'sanas'),
-                'default' => esc_html__('Google Map Api Key For RSVP', 'sanas')
+                'title' => esc_html__('Google Map Api Key For RSVP', 'sanas')
             ),
         ),
     ));
