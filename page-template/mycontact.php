@@ -88,7 +88,7 @@ $i = 0;
                 $eventtitle= esc_html(get_post_meta($event_rsvp_id, 'event_name', true));
                 $eventDate = esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
                 $event_date = new DateTime($eventDate);
-
+                echo count(get_guest_details);
                 // Compare event date with current date
                 if ($event_date < $current_date) {
                     // Fetch guest details for the event
@@ -99,7 +99,6 @@ $i = 0;
                             $event_id
                         )
                     );
-                    echo count(get_guest_details);
             ?>
                 <div class="guests-list contact">
                     <div class="inner tabs-box guests-tabs">
