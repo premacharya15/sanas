@@ -159,6 +159,8 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                 </div>
             <?php 
             $table_counter++;
+                }else{
+                  echo "this event already pass";
                 }
             endforeach; ?>
         <?php else : ?>
