@@ -36,7 +36,7 @@ $get_guest_group = $wpdb->get_results(
     )
 );
 
-$current_date = new DateTime();
+$current_date = new DateTime('now');
 
 // Check if the user came from the guest list page
 $showMoveToGuestListButton = isset($_GET['from']) && $_GET['from'] === 'guestlist';
