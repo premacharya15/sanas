@@ -80,6 +80,7 @@ jQuery(document).ready(function($) {
             $('.video-inner-box').removeClass('hide-part');
             $('#drop-zone').removeClass('video-uploaded');
          $('.delete-btn').css('display', 'none');
+         document.getElementById('generate-youtube-video').onclick = playYouTubeVideo;
 
         });
         $('.iframe-btn .deleteRowBtn').off('click').on('click', function() {
