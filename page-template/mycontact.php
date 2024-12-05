@@ -67,7 +67,6 @@ $i = 0;
             <?php 
             $table_counter = 1;
             foreach ($get_event as $event) : 
-              echo "test2";
                 $event_id = $event->event_no;
                 $event_card_id = $event->event_card_id;
                 
@@ -165,6 +164,7 @@ $i = 0;
             $table_counter++;
                 }
             endforeach; ?>
+            teststsdaf
         <?php else : ?>
             <div class="no-events-message">
                 <p>No past events found.</p>
