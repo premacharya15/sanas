@@ -89,7 +89,6 @@ jQuery(document).ready(function($) {
             $('.video-inner-box').removeClass('hide-part');
             $('#drop-zone').removeClass('video-uploaded');
         });
-        document.getElementById('generate-youtube-video').onclick = playYouTubeVideo;
     }
 
 if(document.getElementById('drop-zone') !=null)
@@ -134,6 +133,7 @@ if(document.getElementById('drop-zone') !=null)
             deleteButton.setAttribute('fdprocessedid', '2e3wg'); // Add fdprocessedid attribute
             deleteButton.onclick = function() {
                 container.innerHTML = initialDropZoneContent; // Restore initial content
+                document.getElementById('generate-youtube-video').onclick = playYouTubeVideo;
             };
 
             deleteButtonContainer.appendChild(deleteButton);
@@ -144,7 +144,7 @@ if(document.getElementById('drop-zone') !=null)
     }
 if(document.getElementById('drop-zone') !=null)
 {
-   document.getElementById('generate-youtube-video').onclick = playYouTubeVideo;
+   document.getElementById('generate-youtube-video').onclick = playYouTubeVideo;    
 }
 
 if(document.getElementById('rsvpcanvasElement') !=null)

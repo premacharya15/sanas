@@ -709,12 +709,12 @@ if (empty($rsvpimage)) {
                                                 <a href="#" id="upload-link" class="icon">
                                                     <i class="icon-Upload-2"></i>
                                                 </a>
-                                                <span>
+                                                    <span>
                                                         <label for="video-upload" id="upload-link" class="icon">
                                                             <?php echo esc_html('Click to upload') ?>
                                                         </label>
                                                         <input type="file" id="video-upload" accept="video/*" style="display: none;">
-                                                 </span>
+                                                    </span>
                                                 <span class="note">Max. size 50MB</span>
                                             </div>
                                             <span>Or</span>
