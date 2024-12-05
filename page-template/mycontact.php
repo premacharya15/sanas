@@ -61,7 +61,7 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
         </div>
 <?php
 $i = 0;
-
+echo $get_event;
 ?>
         <?php if (!empty($get_event)) : ?>
             <?php 
@@ -99,7 +99,6 @@ $i = 0;
                             $event_id
                         )
                     );
-                    echo count($get_guest_details);
             ?>
                 <div class="guests-list contact">
                     <div class="inner tabs-box guests-tabs">
