@@ -963,6 +963,9 @@ jQuery(window).on('load', function() {
     }, 500); // Adjust this time based on your actual loading process
 });
 
+$(window).on('beforeunload', function() {
+    showPreloader();
+});
 // Function to show the preloader
 function showPreloader(mgm) {
     jQuery('#preloder-overlay').fadeIn(100);
