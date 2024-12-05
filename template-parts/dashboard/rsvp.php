@@ -802,7 +802,7 @@ if (empty($rsvpimage)) {
                                 </div>
                             </div>
                             <div class="rsvp-from-group">
-                                <h4 class="mb-0 mt-2">Hosted By</h4>
+                                <h3 class="mb-0 mt-4">Hosted By</h3>
                             </div>  
                                 <div class="rsvp-event">
                                 <div class="rsvp-from-group">
