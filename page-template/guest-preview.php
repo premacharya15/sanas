@@ -15,9 +15,9 @@
 get_header();
 
 ?>
-<meta property="og:title" content="Your Page Title Here" />
-<meta property="og:description" content="A brief description of your page here." />
-<meta property="og:image" content="https://example.com/path-to-your-image.jpg" />
+<meta property="og:title" content="Tap to RSVP to <?php echo $event_name; ?>" />
+<meta property="og:description" content="You are invited for <?php echo $event_name; ?> party this <?php echo $event_date; ?>. Hope to see you there" />
+<meta property="og:image" content="<?php echo $event_front_card_preview; ?>" />
 <meta property="og:type" content="website" />
 <?php
 // Example usage for decryption (assuming encrypted invite is passed via URL):
