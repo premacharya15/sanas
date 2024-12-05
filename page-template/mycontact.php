@@ -99,6 +99,7 @@ $i = 0;
                             $event_id
                         )
                     );
+                    teststsdaf1
             ?>
                 <div class="guests-list contact">
                     <div class="inner tabs-box guests-tabs">
@@ -160,7 +161,6 @@ $i = 0;
                         </div>
                     </div>
                 </div>
-                teststsdaf
             <?php 
             $table_counter++;
                 }
