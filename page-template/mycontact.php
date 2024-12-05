@@ -63,8 +63,6 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
 $i = 0;
   foreach ($get_event as $event) : 
     echo $event;
-    echo $event_date;
-    echo $current_date;
     if ($event_date < $current_date) {
       $i++;
     }
