@@ -788,13 +788,14 @@ if (empty($rsvpimage)) {
                     </div>
                     <?php } ?>
                             <div class="row">
-                                <div class="col-xxl-4 col-xl-5 col-lg-7 col-md-8 col-sm-12 m-auto"></div>
+                                <div class="rsvp-event">
                             <div class="rsvp-from-group">
                                 <input type="text edit-text rsvp-msg event-title" id="eventtitle" class="edit-text rsvp-msg event-title" name="eventtitle" placeholder="Event Title*" style="<?php echo $event_title_css; ?>" value="<?php echo esc_html($eventtitle) ?>" required="">
                                 </div>
                                 <div class="rsvp-from-group">
                                     <input type="date" id="eventdate" class="edit-text rsvp-msg event-date" name="eventdate"  style="<?php echo $event_date_css; ?>" value="<?php echo esc_html($eventdate); ?>" required="">
                                 </div>
+                            </div>
                                 <div class="rsvp-from-group">
                                     <h4 class="mb-0">Hosted By</h4>
                                     <input type="text" id="guestName" name="guestName" value="<?php echo esc_html($guestName) ?>" style="<?php echo $guest_name_css; ?>"  class="edit-text rsvp-msg host-name"  placeholder="Event Host Name*" required="">
@@ -869,7 +870,6 @@ if (empty($rsvpimage)) {
                                         // Initialize Autocomplete after the API script is loaded
                                         window.addEventListener('load', initializeAutocomplete);
                                     </script>
-                                </div>
                                 <div class="rsvp-from-group">
                                     <textarea class="edit-text rsvp-msg host-message" style="<?php echo $guest_message_css; ?>" id="guestMessage" name="guestMessage"
                                         placeholder="Special Instructions, Dress Code, etc..."><?php echo esc_html($guestMessage); ?></textarea>
