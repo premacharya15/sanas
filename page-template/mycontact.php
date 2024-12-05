@@ -65,9 +65,11 @@ $i = 0;
 <?php if (!empty($get_event)) : ?>
   <?php foreach ($get_event as $event) :
     $eventDate = esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
-    echo $eventDate;
+    print_r($eventDate);
     if($current_date > $event_date){
       echo "testsasdf";
+    }else{
+      echo "tesafs";
     }
    endforeach; ?>
   <div class="no-events-message">
