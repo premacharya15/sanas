@@ -63,6 +63,13 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
 $i = 0;
 ?>
 <?php if (!empty($get_event)) : ?>
+  <?php foreach ($get_event as $event) :
+    $eventDate = esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
+    $event_date = new DateTime($eventDate);
+    if($current_date > $event_date){
+      echo "testsasdf"
+    }
+   endforeach; ?>
   <div class="no-events-message">
       <p>No past events found.</p>
   </div>
