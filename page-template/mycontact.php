@@ -83,7 +83,8 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                      LEFT JOIN {$wpdb->posts} p ON e.event_rsvp_id = p.ID
                      LEFT JOIN {$wpdb->users} u ON e.event_user = u.ID
                      WHERE e.event_no = %d",
-                    $event_id
+                    $event_id,
+                    current_time('mysql')
                 ));
                 
                 $event_name = $event_data->event_name;
@@ -92,7 +93,11 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                 // Get the event date
                 $eventtitle= esc_html(get_post_meta($event_rsvp_id, 'event_name', true));
                 $eventDate = esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
+                $current_date = current_time('mysql');
+                
                 $event_date = new DateTime($eventDate);
+                echo 'eventdate' . $eventDate;
+                echo 'currentdate' . $current_date;
                 
                 // Compare event date with current date
                 if ($event_date < $current_date) {
