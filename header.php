@@ -17,12 +17,12 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php
-	$is_guest_preview = (basename($_SERVER['PHP_SELF']) === 'guest-preview.php') && isset($_GET['invite']);
-	?>
+$is_guest_preview = strpos($_SERVER['REQUEST_URI'], '/guest-preview') !== false && isset($_GET['invite']);
+?>
 
 	<?php if ($is_guest_preview):
 		$eventtitle = esc_html(get_post_meta($edit_id, 'event_name', true));
-		$current_url = "http" . (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? "s" : "") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		$current_url =$current_url = "http" . (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? "s" : "") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";		;
 	?>
 		
 	<!-- Open Graph Meta Tags -->
