@@ -905,7 +905,7 @@ if (empty($rsvpimage)) {
                                         if ($rsvpId==0) {
                                         ?>
                                           <tr>
-                                              <td class="edit-text" contenteditable="true" data-placeholder="Evening">Evening</td>
+                                              <td class="edit-text text-start" contenteditable="true" data-placeholder="Evening">Evening</td>
                                               <td class="edit-text text-start" contenteditable="true" data-placeholder="7:00 PM">7:00 PM</td>
                                               <td>
                                                 <button class="deleteRowBtn"><i class="fa-regular fa-trash-can"></i></button>
