@@ -790,14 +790,14 @@ if (empty($rsvpimage)) {
                             <div class="row col-xxl-9 col-xl-10 col-lg-10 col-md-12 m-auto">
                                 <div class="rsvp-event">
                             <div class="rsvp-from-group">
-                                <input type="text edit-text rsvp-msg event-title" id="eventtitle" class="edit-text rsvp-msg event-title" name="eventtitle" placeholder="Event Title*" style="<?php echo $event_title_css; ?>" value="<?php echo esc_html($eventtitle) ?>" required="">
+                                <input type="text" id="eventtitle" class="edit-text rsvp-msg event-title" name="eventtitle" placeholder="Enter Event Title*" style="<?php echo $event_title_css; ?>" value="<?php echo esc_html($eventtitle) ?>" required="">
                                 </div>
                                 <div class="rsvp-from-group">
                                     <input type="date" id="eventdate" class="edit-text rsvp-msg event-date" name="eventdate"  style="<?php echo $event_date_css; ?>" value="<?php echo esc_html($eventdate); ?>" required="">
                                 </div>
                                 <div class="rsvp-from-group m-0 map-container-rsvp">
                                     <!-- <h4>Address</h4> -->
-                                        <input class="map-input-rsvp m-0" id="search" type="text" placeholder="Search location">
+                                        <input class="map-input-rsvp m-0 edit-text rsvp-msg" id="search" type="text" placeholder="Enter location">
                                         <!-- <div class="map-location-rsvp" id="map"></div> -->
                                 </div>
                             </div>
