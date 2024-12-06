@@ -52,7 +52,7 @@ $event_rsvp_id=$get_event_date[0]->event_rsvp_id;
 		
 	<!-- Open Graph Meta Tags -->
 	<meta name="og:title" content="You are Invited! Click here to RSVP <?php echo htmlspecialchars($eventtitle); ?>" />
-    <meta name="og:description" content="<?php echo htmlspecialchars($guestName); ?> has invited you to <?php echo htmlspecialchars($eventtitle); ?> on <?php echo $get_event_date; ?> " />
+    <meta name="og:description" content="<?php echo htmlspecialchars($guestName); ?> has invited you to <?php echo htmlspecialchars($eventtitle); ?> on <?php echo $event_date; ?> " />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?php echo $current_url; ?>" />
     <meta property="og:image" content="https://sit132.sanasinvite.com/wp-content/uploads/2024/08/Sana__s_Hub.png.png" />
