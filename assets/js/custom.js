@@ -495,8 +495,8 @@
         // rsvp page add event and time
         jQuery('#add-event-btn').on('click', function () {
             var newRow = '<tr>' +
-                '<td class="edit-text text-start" contenteditable="true" data-placeholder="Evening">Event</td>' +
-                '<td class="edit-text text-start" contenteditable="true" data-placeholder="7 PM">Time</td>' +
+                '<td class="edit-text text-start" contenteditable="true" data-placeholder="Evening"></td>' +
+                '<td class="edit-text text-start" contenteditable="true" data-placeholder="7 PM"></td>' +
                 '<td><button class="deleteRowBtn"><i class="fa-regular fa-trash-can"></i></button></td>' +
                 '</tr>';
             jQuery('#program-time').append(newRow);
