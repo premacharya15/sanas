@@ -1983,7 +1983,7 @@ span.color-coustum-piker input[type="color"] {
 .selected-text {
     border: 1px dashed var(--snas-text-active) !important;
     display: inline-block;
-    padding: 5px;
+    padding: 0px;
 }
 
 .elements-iteam.active {
