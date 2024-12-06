@@ -5350,7 +5350,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
     font-size: 40px;
     font-weight: 700;
     line-height: 50.48px;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
     color: #7c7878;
     background-color: transparent;
     text-align: center;
