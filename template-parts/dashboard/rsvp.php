@@ -783,7 +783,7 @@ if (empty($rsvpimage)) {
                             </div>
                         </div>
                     <?php if ($imageEnable && !empty($rsvpImage)) {?>
-                    <div class="divider">
+                    <div class="divider" style="margin: 0;">
                         <img src="<?php echo esc_url($rsvpImage['url']) ?>" alt="rsvp-image">
                     </div>
                     <?php } ?>
