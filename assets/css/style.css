@@ -5473,6 +5473,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
     font-size: 40px;
     line-height: 50px;
     font-weight: 600;
+    width: 100% !important;
 }
  .event-date{
     font-size: 20px;
