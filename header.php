@@ -45,7 +45,7 @@ $event_rsvp_id=$get_event_date[0]->event_rsvp_id;
 	?>
 		
 	<!-- Open Graph Meta Tags -->
-	<meta name="og:title" content="You are invited to <?php echo htmlspecialchars($event_id); ?>" />
+	<meta name="og:title" content="You are invited to <?php echo htmlspecialchars($get_event_date); ?>" />
     <meta name="og:description" content="Tap to RSVP <?php echo $eventtitle; ?>" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?php echo $current_url; ?>" />
