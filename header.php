@@ -21,6 +21,21 @@ $is_guest_preview = strpos($_SERVER['REQUEST_URI'], '/guest-preview') !== false 
 ?>
 
 	<?php if ($is_guest_preview):
+
+if (isset($_GET['invite'])) {
+    $invite_from_url = $_GET['invite'];
+    $decrypted_data = sanas_decrypt_data($invite_from_url);
+    if ($decrypted_data) {
+        parse_str($decrypted_data, $params);
+        $card_id = isset($params['card_id']) ? $params['card_id'] : 'Not Found';
+        $event_id = isset($params['event_id']) ? $params['event_id'] : 'Not Found';
+        $entry = isset($params['entry']) ? $params['entry'] : 'Not Found';
+        $guestid='';
+    } else {
+        echo "Failed to decrypt the data or the data is not in the expected format.";
+    }
+}
+
 		$eventtitle = esc_html(get_post_meta($edit_id, 'event_name', true));
 		$current_url =$current_url = "http" . (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? "s" : "") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";		;
 	?>
