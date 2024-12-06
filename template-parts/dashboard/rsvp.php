@@ -795,9 +795,9 @@ if (empty($rsvpimage)) {
                                 <div class="rsvp-from-group">
                                     <input type="date" id="eventdate" class="edit-text rsvp-msg event-date" name="eventdate"  style="<?php echo $event_date_css; ?>" value="<?php echo esc_html($eventdate); ?>" required="">
                                 </div>
-                                <div class="rsvp-from-group mt-3 mb-2 map-container-rsvp">
+                                <div class="rsvp-from-group m-0 map-container-rsvp">
                                     <!-- <h4>Address</h4> -->
-                                        <input class="map-input-rsvp" id="search" type="text" placeholder="Search location">
+                                        <input class="map-input-rsv m-0" id="search" type="text" placeholder="Search location">
                                         <!-- <div class="map-location-rsvp" id="map"></div> -->
                                 </div>
                             </div>
