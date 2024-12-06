@@ -35,8 +35,12 @@ if (isset($_GET['invite'])) {
         echo "Failed to decrypt the data or the data is not in the expected format.";
     }
 }
-
-		$eventtitle = esc_html(get_post_meta($event_id, 'event_name', true));
+$get_event_date = $wpdb->get_results($wpdb->prepare(
+	"SELECT * FROM $sanas_card_event_table WHERE event_no = %d",
+	$event_id
+));
+$event_rsvp_id=$get_event_date[0]->event_rsvp_id;
+		$eventtitle = esc_html(get_post_meta($event_rsvp_id, 'event_name', true));
 		$current_url =$current_url = "http" . (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? "s" : "") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";		;
 	?>
 		
