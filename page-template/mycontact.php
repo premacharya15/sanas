@@ -84,6 +84,8 @@ $current_date = new DateTime('now'); // Initialize current date
                         $event_id
                     )
                 );
+                $edit_id = $event->event_rsvp_id; // Assuming this is how you get the edit ID
+                $eventtitle = esc_html(get_post_meta($edit_id, 'event_name', true)); // Get event title
             ?>
                 <div class="guests-list contact">
                     <div class="inner tabs-box guests-tabs">
@@ -93,7 +95,7 @@ $current_date = new DateTime('now'); // Initialize current date
                                     <thead>
                                         <tr>
                                             <th class="todo-subhead text-align-start hide-sorting-arrow" colspan="6">
-                                                <h4><?php echo esc_html(get_post_meta($event_card_id, 'event_name', true)); ?></h4>
+                                                <h4><?php echo $eventtitle; ?></h4> <!-- Use the event title here -->
                                             </th>
                                         </tr>
                                         <tr>
