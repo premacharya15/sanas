@@ -173,10 +173,6 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
             <div class="no-events-message">
                 <p>No past events found.</p>
             </div>
-            <?php echo 'currentdate' . $current_date;
-            echo 'eventdate' . $eventDate;
-            echo 'event_id' . $event_id;
-            ?>
         <?php endif; ?>
     </div>
 </div>
