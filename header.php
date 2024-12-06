@@ -42,10 +42,6 @@ $get_event_date = $wpdb->get_results($wpdb->prepare(
 ));
 $event_rsvp_id=$get_event_date[0]->event_rsvp_id;
 
-$get_event_date = $wpdb->get_results($wpdb->prepare(
-	"SELECT * FROM $sanas_card_event_table WHERE event_no = %d",
-	$event_id
-));
 $guestName = esc_html(get_post_meta($event_rsvp_id, 'guest_name', true));
 
 		$eventtitle = esc_html(get_post_meta($event_rsvp_id, 'event_name', true));
