@@ -175,7 +175,7 @@ if (!function_exists('sanas_get_login_popup')) {
               <div class="login-form">
                 <form method="post" id="usersignup">
                   <div class="form-group">
-                    <input type="text"  id="signupYourname" name="signupYourname" placeholder="Your Name" autocomplete="off">
+                    <input type="text"  id="signupYourname" name="signupYourname" placeholder="Your Name*" autocomplete="off" required>
                   </div>
                   <div class="form-group" style="display: none !important;">
                     <input type="text" id="signupUsername" name="signupUsername"  placeholder="Username*" disabled>
@@ -184,7 +184,7 @@ if (!function_exists('sanas_get_login_popup')) {
                     </script>
                   </div>
                   <div class="form-group">
-                      <input type="email" id="signupEmail"  name="signupEmail" placeholder="Email*" autocomplete="off">
+                      <input type="email" id="signupEmail"  name="signupEmail" placeholder="Email*" autocomplete="off" required>
                       <div id="signupEmailError" class="error-message">Enter Valid Email</div>   
                   </div>
                  <!-- <div class="form-group">
@@ -192,7 +192,7 @@ if (!function_exists('sanas_get_login_popup')) {
                       <div id="confirmsignupEmailError" class="error-message">Confirm Email Not Match</div>   
                   </div> -->
                   <div class="form-group">
-                    <input type="password"  class="password-input password-control" id="signupPassword" name="signupPassword" placeholder="Password" autocomplete="off">
+                    <input type="password"  class="password-input password-control" id="signupPassword" name="signupPassword" placeholder="Password*" autocomplete="off" required>
                     <div class="eye-icon">
                       <i class="fa-regular fa-eye-slash"></i>
                     </div>
