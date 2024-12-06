@@ -24,9 +24,9 @@ $guest_group_info_table = $wpdb->prefix . "guest_list_group";
 
 $get_event = $wpdb->get_results(
     $wpdb->prepare(
-      "SELECT e.*, p.post_title as event_name, p.post_date as event_date, 
-      u.display_name as host_name, p.guid as event_url, 
-      pm.meta_value as event_date_meta
+      "SELECT e.*, p.post_title AS event_name, p.post_date AS event_date, 
+      u.display_name AS host_name, p.guid AS event_url, 
+      pm.meta_value AS event_date_meta
 FROM {$wpdb->prefix}sanas_card_event e
 LEFT JOIN {$wpdb->posts} p ON e.event_rsvp_id = p.ID
 LEFT JOIN {$wpdb->users} u ON e.event_user = u.ID
@@ -45,7 +45,7 @@ $get_guest_group = $wpdb->get_results(
     )
 );
 
-$current_date = new DateTime('now');
+// $current_date = new DateTime('now');
 
 // Check if the user came from the guest list page
 $showMoveToGuestListButton = isset($_GET['from']) && $_GET['from'] === 'guestlist';
