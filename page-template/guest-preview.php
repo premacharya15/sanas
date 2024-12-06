@@ -15,10 +15,6 @@
 get_header();
 
 ?>
-<meta property="og:title" content="Your Page Title Here" />
-<meta property="og:description" content="A brief description of your page here." />
-<meta property="og:image" content="https://example.com/path-to-your-image.jpg" />
-<meta property="og:type" content="website" />
 <?php
 // Example usage for decryption (assuming encrypted invite is passed via URL):
 // URL: https://example.com/?invite=ENCRYPTED_BASE64_STRING
@@ -175,7 +171,9 @@ if ($existing_rsvp_query->have_posts()) {
 } 
 $guest_adult=0;
 $guest_kids=0;
-
+?>
+<title><?php echo $eventtitle; ?></title>
+<?php
     if(!empty($guestid))
     {
     $guest_details_query = $wpdb->prepare(
