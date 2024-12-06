@@ -177,7 +177,7 @@ if($total_adults == 0 && $total_kids == 0){
         <?php if ($get_event) {
           $event_card_id = $get_event[0]->event_card_id;
           $event_id = $get_event[0]->event_no;
-          $stepUrl = '/user-dashboard/?dashboard=cover&card_id=' . $event_card_id . '&event_id=' . $event_id;
+          $stepUrl = '/user-dashboard/?dashboard=preview&card_id=' . $event_card_id . '&event_id=' . $event_id;
           ?>
         <div class="attend-info col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
           <a href="<?php echo $stepUrl; ?>" class="full-div-link"></a>
@@ -186,7 +186,7 @@ if($total_adults == 0 && $total_kids == 0){
               <h4><a href="<?php echo $stepUrl; ?>" class="text-black">My Events</a></h4>
             </div>
             <div class="inner-box">
-              <a href="/user-dashboard/?dashboard=cover&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style="background-color:#dc587f;">
+              <a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style="background-color:#dc587f;">
                 <div class="flipper">
                   <div class="front">
                     <img src="<?php echo $event_front_card_preview; ?>" alt="template">
@@ -207,11 +207,11 @@ if($total_adults == 0 && $total_kids == 0){
           </div>
         </div>
         <div class="attend-info col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-          <a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="full-div-link"></a>
+          <a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="full-div-link"></a>
           <div class="inner">
             <div class="title-box">
               <div class="title graph">
-                <h4><a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="text-black">Guest List</a></h4>
+                <h4><a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="text-black">Guest List</a></h4>
               </div>
             </div>
             <div class="graph-box">
