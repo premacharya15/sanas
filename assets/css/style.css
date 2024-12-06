@@ -6643,7 +6643,7 @@ font-size: 18px;
 }
 
 .map-input-rsvp{
-    width: 100%;
+    width: 100% !important;
     padding: 10px;
     border: 1px solid #9A7A5F;
     border-radius: 8px;
