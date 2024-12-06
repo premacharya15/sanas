@@ -282,7 +282,7 @@ function is_youtube_url($url) {
                                         <?php 
                                             if(!empty($guestName)) { echo '<div class="host-name" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
                                             if(!empty($guestContact)) { echo '<div class="host-contact-no" style="'.$guest_contact_css.'">'.esc_html($guestContact).'</div>'; }
-                                            if(!empty($guestMessage)) { echo '<div class="host-message" style="'.$guest_message_css.'">'.esc_html($guestMessage).'</div>'; }
+                                            if(!empty($guestMessage)) { echo '<div class="host-message" style="'.$guest_message_css.'">'.$guestMessage.'</div>'; }
                                          
                                         ?>
                                     </div>
