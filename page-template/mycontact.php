@@ -22,7 +22,8 @@ $sanas_card_event = $wpdb->prefix . "sanas_card_event";
 $guest_details_info_table = $wpdb->prefix . "guest_details_info";
 $guest_group_info_table = $wpdb->prefix . "guest_list_group";
 
-// Fetch all events for the current user
+// Fetch all past events for the current user
+$current_date = current_time('mysql'); // Get current date in MySQL format
 $get_event = $wpdb->get_results(
     $wpdb->prepare(
         "SELECT e.*, p.post_title AS event_name, p.post_date AS event_date, 
@@ -32,9 +33,10 @@ $get_event = $wpdb->get_results(
         LEFT JOIN {$wpdb->posts} p ON e.event_rsvp_id = p.ID
         LEFT JOIN {$wpdb->users} u ON e.event_user = u.ID
         LEFT JOIN {$wpdb->prefix}postmeta pm ON pm.post_id = p.ID AND pm.meta_key = 'event_date'
-        WHERE e.event_user = %d
+        WHERE e.event_user = %d AND pm.meta_value < %s
         ORDER BY e.event_no DESC",
-        $userID
+        $userID,
+        $current_date
     )
 );
 
@@ -51,8 +53,6 @@ $showMoveToGuestListButton = isset($_GET['from']) && $_GET['from'] === 'guestlis
 // Get card id and event id
 $card_id = isset($_GET['card_id']) ? intval($_GET['card_id']) : 0;
 $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
-
-$current_date = new DateTime('now'); // Initialize current date
 
 ?>
 
