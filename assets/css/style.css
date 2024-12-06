@@ -5462,7 +5462,6 @@ span.note {
 input.rsvp-msg.host-name ,.event-title, .event-date {
     font-size: 35px;
     font-weight: 700;
-    line-height: 50.48px;
     margin: 0 0 20px 0;
     color: #7c7878;
     background-color: transparent;
@@ -5471,7 +5470,6 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
 }
 .event-title{
     font-size: 24px;
-    line-height: 50px;
     font-weight: 600;
     width: 100% !important;
 }
