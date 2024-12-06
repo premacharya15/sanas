@@ -4405,7 +4405,7 @@ table.dataTable thead>tr>td.dt-orderable-desc:hover {
 .rsvp-msg {
     width: auto !important;
     padding: 10px;
-    border: 1px solid #9A7A5F;
+    /* border: 1px solid #9A7A5F; */
     border-radius: 8px;
 }
 
@@ -6330,7 +6330,7 @@ button#add_new_group_button {
 p.edit-text.rsvp-msg {
     width: 100%;
     padding: 18px;
-    border: 1px solid #9A7A5F;
+    /* border: 1px solid #9A7A5F; */
     border-radius: 18px;
 }
 p.text-success {
