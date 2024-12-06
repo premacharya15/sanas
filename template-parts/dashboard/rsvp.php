@@ -798,7 +798,7 @@ if (empty($rsvpimage)) {
                                 <div class="rsvp-from-group mt-3 mb-2 map-container-rsvp">
                                     <h4>Address</h4>
                                         <input class="map-input-rsvp" id="search" type="text" placeholder="Search location">
-                                        <div class="map-location-rsvp" id="map"></div>
+                                        <!-- <div class="map-location-rsvp" id="map"></div> -->
                                 </div>
                             </div>
                             <div class="rsvp-from-group">
