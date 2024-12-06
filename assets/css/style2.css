@@ -5348,11 +5348,11 @@ span.note {
 
 input.rsvp-msg.host-name ,.event-title, .event-date {
     font-size: 24px;
-    /* font-weight: 700; */
     margin: 0 0 10px 0;
     color: #7c7878;
     background-color: transparent;
     text-align: center;
+    line-height: 24px;
 }
 .itinerary {
     font-size: 20px;
