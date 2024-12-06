@@ -694,7 +694,7 @@ if (empty($rsvpimage)) {
                     <form method="post" id="add-rsvp" enctype="multipart/form-data">
                     <div class="wl-card-detaile">
                         <div class="row">
-                            <div class="col-xxl-9 col-xl-10 col-lg-10 col-md-12 m-auto">
+                            <div class="col-xxl-9 col-xl-10 col-lg-10 col-md-12 m-auto relative">
                                 <?php if(empty($rsvpvideo)){ ?>
                                  <div class="video-box" id="drop-zone">
                                  <video id="uploaded-video" controls style="display:none;"></video> 
@@ -787,7 +787,7 @@ if (empty($rsvpimage)) {
                         <img src="<?php echo esc_url($rsvpImage['url']) ?>" alt="rsvp-image">
                     </div>
                     <?php } ?>
-                            <div class="row col-xxl-9 col-xl-10 col-lg-10 col-md-12 m-auto">
+                            <div class="row col-xxl-9 col-xl-10 col-lg-10 col-md-12 m-auto relative">
                                 <div class="rsvp-event">
                             <div class="rsvp-from-group">
                                 <input type="text" id="eventtitle" class="edit-text rsvp-msg event-title" name="eventtitle" placeholder="Enter Event Title*" style="<?php echo $event_title_css; ?>" value="<?php echo esc_html($eventtitle) ?>" required="">
