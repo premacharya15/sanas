@@ -172,9 +172,6 @@ if ($existing_rsvp_query->have_posts()) {
 $guest_adult=0;
 $guest_kids=0;
 ?>
-    <script type="text/javascript">
-        document.title = "You are Invited to <?php echo addslashes($eventtitle); ?>";
-    </script>
 <?php
     if(!empty($guestid))
     {
