@@ -47,7 +47,6 @@ $get_event_date = $wpdb->get_results($wpdb->prepare(
 	$event_id
 ));
 $guestName = esc_html(get_post_meta($event_rsvp_id, 'guest_name', true));
-echo $guestName;
 
 		$eventtitle = esc_html(get_post_meta($event_rsvp_id, 'event_name', true));
 		$current_url =$current_url = "http" . (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? "s" : "") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";		;
@@ -55,7 +54,7 @@ echo $guestName;
 		
 	<!-- Open Graph Meta Tags -->
 	<meta name="og:title" content="You are Invited! Click here to RSVP <?php echo htmlspecialchars($eventtitle); ?>" />
-    <meta name="og:description" content="Host name has invited you to <?php echo htmlspecialchars($eventtitle); ?> on <?php echo $get_event_date; ?> " />
+    <meta name="og:description" content="<?php echo htmlspecialchars($guestName); ?> has invited you to <?php echo htmlspecialchars($eventtitle); ?> on <?php echo $get_event_date; ?> " />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?php echo $current_url; ?>" />
     <meta property="og:image" content="https://sit132.sanasinvite.com/wp-content/uploads/2024/08/Sana__s_Hub.png.png" />
