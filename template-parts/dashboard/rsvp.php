@@ -875,7 +875,7 @@ if (empty($rsvpimage)) {
                                     </script>
                                 <div class="rsvp-from-group">
                                     <textarea class="edit-text rsvp-msg host-message" style="<?php echo $guest_message_css; ?>" id="guestMessage" name="guestMessage"
-                                        placeholder="Special Instructions, Dress Code, etc..."><?php echo $guestMessage; ?></textarea>
+                                        placeholder="Special Instructions, Dress Code, etc..."><pre><?php echo $guestMessage; ?></pre></textarea>
                                     </div>
                                 </div>
                                     <div class="rsvp-from-group">
