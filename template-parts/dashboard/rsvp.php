@@ -734,7 +734,7 @@ if (empty($rsvpimage)) {
                                                 preg_match('/\/([^\/]+)$/', $youtubevideo, $matches);
                                                 $youtube_id = $matches[1];
                                                 ?>
-                                                <div class="youtube-container">
+                                                <div class="youtube-container youtube-container">
                                                     <iframe id="youtube-iframe" width="1000" height="490" src="https://www.youtube.com/embed/<?php echo esc_attr($youtube_id); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                     <div class="delete-btn">
                                                         <button class="deleteRowBtn"><i class="fa-regular fa-trash-can"></i></button>
