@@ -5482,6 +5482,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
     border: none;
     font-size: 20px;
     text-align: center;
+    width: 100% !important;
 }
 .content.content-3 .wl-card-detaile textarea.host-message {
     text-align: center;
