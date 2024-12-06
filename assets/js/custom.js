@@ -963,7 +963,7 @@ jQuery(window).on('load', function() {
     }, 500); // Adjust this time based on your actual loading process
 });
 
-$(window).on('beforeunload', function() {
+jQuery(window).on('beforeunload', function() {
     showPreloader();
 });
 // Function to show the preloader
