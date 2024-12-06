@@ -5381,7 +5381,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
     background: transparent;
     border-radius: 18px;
     height: auto;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
 }
 
 .rsvp-msg.message {
