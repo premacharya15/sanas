@@ -20,10 +20,13 @@
 	$is_guest_preview = (basename($_SERVER['PHP_SELF']) === 'guest-preview.php') && isset($_GET['invite']);
 	?>
 
-	<?php if ($is_guest_preview): ?>
+	<?php if ($is_guest_preview):
+		$eventtitle = esc_html(get_post_meta($edit_id, 'event_name', true));
+	?>
+		
 	<!-- Open Graph Meta Tags -->
-	<meta name="og:title" content="<?php echo htmlspecialchars($eventtitle); ?>" />
-    <meta name="og:description" content="<?php echo htmlspecialchars($eventdescription); ?>" />
+	<meta name="og:title" content="You are invited to <?php echo htmlspecialchars($eventtitle); ?>" />
+    <meta name="og:description" content="Tap to RSVP " />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<?php echo $eventUrl; ?>" />
     <meta property="og:image" content="<?php echo $eventImage; ?>" />
