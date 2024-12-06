@@ -894,8 +894,8 @@ if (empty($rsvpimage)) {
                                             if( !empty($program) && count($program)>0 ){
                                             foreach ($program as $event) :?>
                                             <tr>
-                                              <td class="edit-text" contenteditable="true"><?php echo esc_attr($event['program_name'])?></td>
-                                              <td class="edit-text" contenteditable="true"><?php echo esc_attr($event['program_time'])?></td>
+                                              <td class="edit-text text-start" contenteditable="true"><?php echo esc_attr($event['program_name'])?></td>
+                                              <td class="edit-text text-start" contenteditable="true"><?php echo esc_attr($event['program_time'])?></td>
                                               <td>
                                                 <button class="deleteRowBtn"><i class="fa-regular fa-trash-can"></i></button>
                                              </td>

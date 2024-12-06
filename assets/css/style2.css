@@ -2305,14 +2305,6 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .wl-fuc-timing {
     display: flex;
 }
 
-.wl-fuc-timing table tbody tr td {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25.2px;
-    width: 100%;
-    text-align: center;
-}
-
 .wl-fuc-timing>table>tbody>tr {
     margin-bottom: 24px;
 }
