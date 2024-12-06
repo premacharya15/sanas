@@ -95,7 +95,7 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                 $event_date = new DateTime($eventDate);
                 
                 // Compare event date with current date
-                if ($event_date > $current_date) {
+                if ($event_date < $current_date) {
                     // Fetch guest details for the event
                     $get_guest_details = $wpdb->get_results(
                         $wpdb->prepare(
