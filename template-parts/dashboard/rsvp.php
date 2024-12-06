@@ -797,7 +797,7 @@ if (empty($rsvpimage)) {
                                 </div>
                                 <div class="rsvp-from-group m-0 map-container-rsvp">
                                     <!-- <h4>Address</h4> -->
-                                        <input class="map-input-rsvp m-0 edit-text rsvp-msg" id="search" type="text" placeholder="Enter location">
+                                        <input class="map-input-rsvp m-0 edit-text rsvp-msg" id="search" type="text" placeholder="Enter Event Address">
                                         <!-- <div class="map-location-rsvp" id="map"></div> -->
                                 </div>
                             </div>
@@ -809,7 +809,7 @@ if (empty($rsvpimage)) {
                                     <input type="text" id="guestName" name="guestName" value="<?php echo esc_html($guestName) ?>" style="<?php echo $guest_name_css; ?>"  class="edit-text rsvp-msg host-name"  placeholder="Event Host Name*" required="">
                                 </div>
                                 <div class="rsvp-from-group">
-                                    <input type="number" id="guestContact" style="<?php echo $guest_contact_css; ?>" value="<?php echo esc_html($guestContact); ?>" class="edit-text rsvp-msg host-contact-no" name="guestContact"  placeholder="Enter Host Contact No.*" required="">
+                                    <input type="number" id="guestContact" style="<?php echo $guest_contact_css; ?>" value="<?php echo esc_html($guestContact); ?>" class="edit-text rsvp-msg host-contact-no" name="guestContact"  placeholder="Enter Host Contact Information - Start with Area Code.*" required="">
                                 </div>
                                     <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo sanas_options('sanas_map_api_key'); ?>&libraries=places" async defer></script>
                                     <script>
