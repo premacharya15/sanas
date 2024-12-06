@@ -93,7 +93,7 @@ $current_date = new DateTime('now'); // Initialize current date
                                     <thead>
                                         <tr>
                                             <th class="todo-subhead text-align-start hide-sorting-arrow" colspan="6">
-                                                <h4><?php echo esc_html($event->event_name); ?></h4>
+                                                <h4><?php echo esc_html(get_post_meta($event_card_id, 'event_name', true)); ?></h4>
                                             </th>
                                         </tr>
                                         <tr>
