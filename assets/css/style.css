@@ -3815,7 +3815,7 @@ ul.dropdown-menu>li:last-child {
 #savedmodal .modal-footer {
     border: none;
     flex-wrap: nowrap;
-    padding: 24px;
+    padding: 0 24px 24px 24px;
 }
 
 #uploadModal .modal-footer>button:first-child {
