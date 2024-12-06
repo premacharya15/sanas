@@ -173,7 +173,7 @@ $guest_adult=0;
 $guest_kids=0;
 ?>
     <script type="text/javascript">
-        document.title = "<?php echo addslashes($eventtitle); ?>";
+        document.title = "You are Invited to <?php echo addslashes($eventtitle); ?>";
     </script>
 <?php
     if(!empty($guestid))
