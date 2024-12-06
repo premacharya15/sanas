@@ -5460,12 +5460,10 @@ span.note {
 }
 
 input.rsvp-msg.host-name ,.event-title, .event-date {
-    font-size: 35px;
-    /* font-weight: 700; */
+    font-size: 24px;
     margin: 0 0 10px 0;
     color: #7c7878;
     background-color: transparent;
-    /* font-family: var(--snas-main-font); */
     text-align: center;
 }
 .event-title{
