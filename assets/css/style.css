@@ -5504,6 +5504,12 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
     margin: 0;
     width: 100% !important;
 }
+.host-message pre{
+    padding: 0;
+    background: transparent;
+    font-family: 'Mulish';
+    font-size: 22px;
+}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
