@@ -35,6 +35,7 @@ if (isset($_GET['invite'])) {
         echo "Failed to decrypt the data or the data is not in the expected format.";
     }
 }
+$sanas_card_event_table = $wpdb->prefix . 'sanas_card_event';  
 $get_event_date = $wpdb->get_results($wpdb->prepare(
 	"SELECT * FROM $sanas_card_event_table WHERE event_no = %d",
 	$event_id
