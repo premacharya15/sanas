@@ -36,7 +36,7 @@ if (isset($_GET['invite'])) {
     }
 }
 
-		$eventtitle = esc_html(get_post_meta($edit_id, 'event_name', true));
+		$eventtitle = esc_html(get_post_meta($event_id, 'event_name', true));
 		$current_url =$current_url = "http" . (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? "s" : "") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";		;
 	?>
 		
