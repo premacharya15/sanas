@@ -5490,7 +5490,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
     background: transparent;
     border-radius: 18px;
     height: auto;
-    margin: 0 0 20px 0;
+    margin: 0 0 0 0;
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
