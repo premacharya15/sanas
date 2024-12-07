@@ -1665,6 +1665,12 @@ function send_contact_email() {
     $admin_subject = sanas_options('sanas_contact_us_admin_subject');
     $admin_body    = sanas_options('sanas_contact_us_admin_body');
 
+    $body = str_replace(
+        array('%%guestname', '%%guestemail', '%%guestmobilenumber', '%%guestsubject', '%%guestmessage'), 
+        array($name, $email, $phone, $subject, $message),
+        $admin_body
+    );
+
     $headers = array('Content-Type: text/plain; charset=UTF-8');
     $admin_mail_sent = wp_mail($admin_email, $admin_subject, $admin_body, $headers);
 
