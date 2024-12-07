@@ -798,7 +798,7 @@ if (empty($rsvpimage)) {
                                 <div class="rsvp-from-group m-0 map-container-rsvp">
                                     <!-- <h4>Address</h4> -->
                                         <input class="map-input-rsvp m-0 edit-text rsvp-msg" id="search" type="text" placeholder="Enter Venue Name">
-                                        <textarea class="m-0 edit-text rsvp-msg" id="search2" rows="2" cols="50" placeholder="Venue Address"></textarea>
+                                        <textarea class="m-0 edit-text rsvp-msg" id="search_address" rows="2" cols="50" placeholder="Venue Address"></textarea>
                                         <div class="map-location-rsvp" id="map" style="display: none;"></div>
                                 </div>
                             </div>
