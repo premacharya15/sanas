@@ -867,7 +867,7 @@ if (empty($rsvpimage)) {
                                                     console.log("Formatted Address:", place.formatted_address);
                                                     console.log("Coordinates:", { lat, lng });
                                                     input.value = `${place.name}`;
-                                                    input.value = `${place.formatted_address}`;
+                                                    input2.value = `${place.formatted_address}`;
 
                                                 } else {
                                                     console.log("No details available for the input: '" + place.name + "'");
