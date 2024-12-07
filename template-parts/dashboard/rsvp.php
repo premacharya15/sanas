@@ -616,6 +616,9 @@ if ($rsvpId!=0) {
     $guestName = esc_html(get_post_meta($edit_id, 'guest_name', true));
     $eventtitle = esc_html(get_post_meta($edit_id, 'event_name', true));
     $eventdate = esc_html(get_post_meta($edit_id, 'event_date', true));
+    $event_venue_name = esc_html(get_post_meta($edit_id, 'event_venue_name', true));
+    $event_venue_address = esc_html(get_post_meta($edit_id, 'event_venue_address', true));
+    $event_venue_address_link = esc_html(get_post_meta($edit_id, 'event_venue_address_link', true));
     $guestContact = esc_html(get_post_meta($edit_id, 'guest_contact', true));
     $guestMessage = esc_html(get_post_meta($edit_id, 'guest_message', true));
     $program = get_post_meta($edit_id, 'listing_itinerary_details', true);
@@ -642,6 +645,9 @@ else {
     $guestName = '';
     $eventtitle = '';
     $eventdate = '';
+    $event_venue_name = '';
+    $event_venue_address = '';
+    $event_venue_address_link = '';
     $guestContact = '';
     $guestMessage = "";
     $program = array();
@@ -797,8 +803,8 @@ if (empty($rsvpimage)) {
                                 </div>
                                 <div class="rsvp-from-group m-0 map-container-rsvp">
                                     <!-- <h4>Address</h4> -->
-                                        <input class="map-input-rsvp m-0 edit-text rsvp-msg" id="search" type="text" placeholder="Enter Venue Name">
-                                        <textarea class="map-input-rsvp m-0 edit-text rsvp-msg" id="search_address" rows="2" cols="50" placeholder="Venue Address"></textarea>
+                                        <input class="map-input-rsvp m-0 edit-text rsvp-msg" id="search" type="text" name="venue_name" placeholder="Enter Venue Name" value="<?php echo esc_html($venue_name); ?>">
+                                        <textarea class="map-input-rsvp m-0 edit-text rsvp-msg" id="search_address" rows="2" cols="50" name="venue_address" placeholder="Venue Address"><?php echo esc_html($venue_address); ?></textarea>
                                         <div class="map-location-rsvp" id="map" style="display: none;"></div>
                                 </div>
                             </div>
@@ -878,6 +884,7 @@ if (empty($rsvpimage)) {
                                         // Initialize Autocomplete after the API script is loaded
                                         window.addEventListener('load', initializeAutocomplete);
                                     </script>
+                                    <input type="hidden" id="event_venue_address_link" name="event_venue_address_link" value="<?php echo esc_html($event_venue_address_link); ?>">
                                 <div class="rsvp-from-group">
                                     <textarea class="edit-text rsvp-msg host-message" style="<?php echo $guest_message_css; ?>" id="guestMessage" name="guestMessage"
                                         placeholder="Special Instructions, Dress Code, etc..."><?php echo $guestMessage; ?></textarea>
