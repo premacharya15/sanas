@@ -245,6 +245,11 @@
             jQuery(this).addClass('selected-text');
         });
     }
+    const textarea = document.getElementById('search_address');
+    textarea.addEventListener('input', function () {
+        this.style.height = 'auto'; 
+        this.style.height = (this.scrollHeight) + 'px';
+    });
     if (jQuery('.select-wrapper').length) {
         // font-family
         function setDropdownToDefault() {
