@@ -1665,7 +1665,7 @@ function send_contact_email() {
     $admin_subject = sanas_options('sanas_contact_us_admin_subject');
     $admin_body    = sanas_options('sanas_contact_us_admin_body');
 
-    $body = str_replace(
+    $admin_body = str_replace(
         array('%%guestname', '%%guestemail', '%%guestmobilenumber', '%%guestsubject', '%%guestmessage'), 
         array($name, $email, $phone, $subject, $message),
         $admin_body
