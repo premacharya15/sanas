@@ -5337,6 +5337,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
     background-color: transparent;
     text-align: center;
     line-height: 24px;
+    font-weight: 400;
 }
 .itinerary {
     font-size: 20px;
