@@ -2441,10 +2441,11 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
 .content.content-3 .wl-card-detaile textarea {
     width: 100%;
     height: 80px;
-    padding: 18px;
+    padding: 0;
     border: 1px solid #9A7A5F;
     border-radius: 18px;
     text-align: center;
+    font-size: 14px;
 }
 
 .left-content-rsvp {
