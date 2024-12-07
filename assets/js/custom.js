@@ -245,16 +245,16 @@
             jQuery(this).addClass('selected-text');
         });
     }
-    // const search_address = document.getElementById('search_address');
-    // search_address.addEventListener('input', function () {
-    //     this.style.height = 'auto'; 
-    //     this.style.height = (this.scrollHeight) + 'px';
-    // });
-    // const guestMessage = document.getElementById('guestMessage');
-    // guestMessage.addEventListener('input', function () {
-    //     this.style.height = 'auto'; 
-    //     this.style.height = (this.scrollHeight) + 'px';
-    // });
+    const search_address = document.getElementById('search_address');
+    search_address.addEventListener('input', function () {
+        this.style.height = 'auto'; 
+        this.style.height = (this.scrollHeight) + 'px';
+    });
+    const guestMessage = document.getElementById('guestMessage');
+    guestMessage.addEventListener('input', function () {
+        this.style.height = 'auto'; 
+        this.style.height = (this.scrollHeight) + 'px';
+    });
     if (jQuery('.select-wrapper').length) {
         // font-family
         function setDropdownToDefault() {
