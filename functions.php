@@ -1649,3 +1649,30 @@ function move_to_guest_list() {
 //         wp_set_auth_cookie($user->ID, true); // Reset authentication cookie
 //     }
 // }, 10, 1);
+
+
+add_action('wp_ajax_submit_contact_form', 'send_contact_email');
+add_action('wp_ajax_nopriv_submit_contact_form', 'send_contact_email');
+
+function send_contact_email() {
+
+    $name = sanitize_text_field($_POST['username']);
+    $email = sanitize_email($_POST['email']);
+    $phone = sanitize_text_field($_POST['phone']);
+    $subject = sanitize_text_field($_POST['subject']);
+    $message = sanitize_textarea_field($_POST['message']);
+
+
+    $admin_email = 'premcredsoft@gmail.com';
+    $admin_subject = sanas_options('sanas_contact_us_admin_subject');
+    $admin_body = sanas_options('sanas_contact_us_admin_body');
+
+    $headers = array('Content-Type: text/plain; charset=UTF-8');
+    wp_mail($admin_email, $admin_subject, $admin_body, $headers);
+
+    $user_subject = sanas_options('sanas_contact_us_user_subject');
+    $user_body = sanas_options('sanas_contact_us_user_body');
+
+    // Send email to user
+    wp_mail($email, $user_subject, $user_body, $headers);
+}
