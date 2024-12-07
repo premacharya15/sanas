@@ -351,7 +351,7 @@ function is_youtube_url($url) {
                                 </div>
                                 <div class="row">
                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto nonclickeble">
-                                        <textarea name="Message" rows="5"
+                                        <textarea name="Message" id="guestMessage" rows="5"
                                             placeholder="Message to the host..."></textarea>
                                     </div>
                                 </div>
