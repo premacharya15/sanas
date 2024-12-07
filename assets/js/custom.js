@@ -245,16 +245,20 @@
             jQuery(this).addClass('selected-text');
         });
     }
-    // const search_address = document.getElementById('search_address');
-    // search_address.addEventListener('input', function () {
-    //     this.style.height = 'auto'; 
-    //     this.style.height = (this.scrollHeight) + 'px';
-    // });
-    // const guestMessage = document.getElementById('guestMessage');
-    // guestMessage.addEventListener('input', function () {
-    //     this.style.height = 'auto'; 
-    //     this.style.height = (this.scrollHeight) + 'px';
-    // });
+    const currentUrl = window.location.href;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('dashboard') === 'rsvp' && params.get('card_id') === '1297' && params.get('event_id') === '155') {
+        const search_address = document.getElementById('search_address');
+        search_address.addEventListener('input', function () {
+            this.style.height = 'auto'; 
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+        const guestMessage = document.getElementById('guestMessage');
+        guestMessage.addEventListener('input', function () {
+            this.style.height = 'auto'; 
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+    }
     if (jQuery('.select-wrapper').length) {
         // font-family
         function setDropdownToDefault() {
