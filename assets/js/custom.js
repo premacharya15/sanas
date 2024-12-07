@@ -245,8 +245,13 @@
             jQuery(this).addClass('selected-text');
         });
     }
-    const textarea = document.getElementById('search_address');
-    textarea.addEventListener('input', function () {
+    const search_address = document.getElementById('search_address');
+    search_address.addEventListener('input', function () {
+        this.style.height = 'auto'; 
+        this.style.height = (this.scrollHeight) + 'px';
+    });
+    const guestMessage = document.getElementById('guestMessage');
+    guestMessage.addEventListener('input', function () {
         this.style.height = 'auto'; 
         this.style.height = (this.scrollHeight) + 'px';
     });
