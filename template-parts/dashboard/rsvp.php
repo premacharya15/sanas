@@ -878,7 +878,7 @@ if (empty($rsvpimage)) {
                                         // Initialize Autocomplete after the API script is loaded
                                         window.addEventListener('load', initializeAutocomplete);
                                     </script>
-                                    <input type="hidden" id="event_venue_address_link" name="event_venue_address_link" value="<?php echo esc_html($event_venue_address_link); ?>">
+                                    <input type="hidden" id="event_venue_address_link" name="event_venue_address_link" value="">
                                 <div class="rsvp-from-group">
                                     <textarea class="edit-text rsvp-msg host-message" style="<?php echo $guest_message_css; ?>" id="guestMessage" name="guestMessage"
                                         placeholder="Special Instructions, Dress Code, etc..."><?php echo $guestMessage; ?></textarea>
