@@ -803,7 +803,7 @@ if (empty($rsvpimage)) {
                                 </div>
                             </div>
                             <div class="rsvp-from-group">
-                                <h3 class="mb-0 mt-3">Hosted By</h3>
+                                <h3 class="mb-0 mt-3" style="font-size:24px;">Hosted By</h3>
                             </div>  
                                 <div class="rsvp-event">
                                 <div class="rsvp-from-group">
@@ -884,7 +884,7 @@ if (empty($rsvpimage)) {
                                     </div>
                                 </div>
                                     <div class="rsvp-from-group">
-                                        <h4 class=" mb-0 mt-3">Itinerary</h4>
+                                        <h4 class=" mb-0 mt-3" style="font-size:24px;">Itinerary</h4>
                                     </div>
                                 </div>
                             <?php wp_nonce_field('ajax-sanas-rsvp-nonce', 'sanasrsvpsecurity');?>
