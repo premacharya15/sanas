@@ -743,6 +743,29 @@ if (class_exists('CSF')) {
                 'wpautop' => false,
                 'title' => 'update guest info/count - no',
             ),
+            array(
+                'id' => 'sanas_contact_us_admin_subject',
+                'type' => 'text',
+                'title' => 'Contact Us Email Subject - admin',
+            ),
+            array(
+                'id' => 'sanas_contact_us_admin_body',
+                'type' => 'wp_editor',
+                'wpautop' => false,
+                'title' => 'Contact Us Email Body - admin',
+            ),
+            array(
+                'id' => 'sanas_contact_us_user_subject',
+                'type' => 'text',
+                'title' => 'Contact Us Email Subject - user',
+            ),
+            array(
+                'id' => 'sanas_contact_us_user_body',
+                'type' => 'wp_editor',
+                'wpautop' => false,
+                'title' => 'Contact Us Email Body - user',
+            ),
+
     )));
 
     // Layout and Options Settings
