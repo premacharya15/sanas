@@ -797,8 +797,8 @@ if (empty($rsvpimage)) {
                                 </div>
                                 <div class="rsvp-from-group m-0 map-container-rsvp">
                                     <!-- <h4>Address</h4> -->
-                                    <textarea class="map-input-rsvp m-0 edit-text rsvp-msg" id="search" rows="4" cols="50" placeholder="Enter Event Address"></textarea>
-                                        <!-- <input class="map-input-rsvp m-0 edit-text rsvp-msg" id="search" type="text" placeholder="Enter Event Address"> -->
+                                        <input class="map-input-rsvp m-0 edit-text rsvp-msg" id="search" type="text" placeholder="Enter Venue Name">
+                                        <textarea class="m-0 edit-text rsvp-msg" rows="2" cols="50" placeholder="Venue Address"></textarea>
                                         <div class="map-location-rsvp" id="map" style="display: none;"></div>
                                 </div>
                             </div>
@@ -819,6 +819,7 @@ if (empty($rsvpimage)) {
 
                                         function initializeAutocomplete() {
                                             const input = document.getElementById("search");
+                                            const input2 = document.getElementById("search_address");
 
                                             // Initialize map centered at a default location
                                             map = new google.maps.Map(document.getElementById("map"), {
@@ -865,7 +866,8 @@ if (empty($rsvpimage)) {
                                                     console.log("Selected Location:", place.name);
                                                     console.log("Formatted Address:", place.formatted_address);
                                                     console.log("Coordinates:", { lat, lng });
-                                                    input.value = `${place.name}/n${place.formatted_address}`;
+                                                    input.value = `${place.name}`;
+                                                    input.value = `${place.formatted_address}`;
 
                                                 } else {
                                                     console.log("No details available for the input: '" + place.name + "'");
