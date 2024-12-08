@@ -5348,7 +5348,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
     text-align: center;
 }
 .event-title, .event-date{
-    font-size: 20px;
+    font-size: 14px;
     line-height: 25px;
     font-weight: 400;
 }
