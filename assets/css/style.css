@@ -5507,7 +5507,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
     margin: 0;
     width: 100% !important;
 }
-.host-message pre{
+.preview-host-message pre{
     padding: 0;
     background: transparent;
     font-family: 'Mulish';
