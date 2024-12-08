@@ -653,6 +653,9 @@ jQuery(document).ready(function ($) {
         var card_id = $(this).attr('card-id');
         var itineraryData = [];
         var registryData = [];
+        var event_venue_name = $('.event_venue_name').val();
+        var event_venue_address = $('.event_venue_address').val();
+        var event_venue_address_link = $('#event_venue_address_link').val();
 
         var eventtitlecss = $('#eventtitle').attr('style'); // Get the DOM element
         var guestNamecss = $('#guestName').attr('style'); // Get the DOM element
@@ -719,6 +722,9 @@ jQuery(document).ready(function ($) {
                 event_id: event_id,
                 itineraryData: JSON.stringify(itineraryData),
                 registryData: JSON.stringify(registryData),
+                event_venue_name: event_venue_name,
+                event_venue_address: event_venue_address,
+                event_venue_address_link: event_venue_address_link
             },
             success: function (response) {
                 var data = JSON.parse(response);
@@ -787,6 +793,9 @@ jQuery(document).ready(function ($) {
         var itineraryData = [];
         var registryData = [];
         var itinerary = $('#itinerary').val();
+        var event_venue_name = $('.event_venue_name').val();
+        var event_venue_address = $('.event_venue_address').val();
+        var event_venue_address_link = $('#event_venue_address_link').val();
         // Collect itinerary data
 
         var eventtitlecss = $('#eventtitle').attr('style'); // Get the DOM element
@@ -850,6 +859,9 @@ jQuery(document).ready(function ($) {
                 event_id: event_id,
                 itineraryData: JSON.stringify(itineraryData),
                 registryData: JSON.stringify(registryData),
+                event_venue_name: event_venue_name,
+                event_venue_address: event_venue_address,
+                event_venue_address_link: event_venue_address_link
             },
             success: function (response) {
                 var data = JSON.parse(response);
