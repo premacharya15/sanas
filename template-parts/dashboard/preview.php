@@ -272,9 +272,9 @@ function is_youtube_url($url) {
                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto">
                                         <span></span>
                                          <?php 
-                                        if(!empty($eventtitle)) { echo '<div class="mt-3 event-title" style="'.$event_title_css.'">'.esc_html($eventtitle).'</div>'; }
+                                        if(!empty($eventtitle)) { echo '<div class="mt-3" style="'.$event_title_css.'">'.esc_html($eventtitle).'</div>'; }
 
-                                            if(!empty($eventdate)) { echo '<div class="mt-2 event-date" style="'.$event_date_css.'">'.esc_html($eventdate).'</div>'; }
+                                            if(!empty($eventdate)) { echo '<div class="mt-2" style="'.$event_date_css.'">'.esc_html($eventdate).'</div>'; }
 
 
                                         ?>
