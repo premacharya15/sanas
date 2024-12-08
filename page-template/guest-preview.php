@@ -263,9 +263,9 @@ section.wl-main-canvas .inner-container .inner-colum {
                                 <div class="row">
                                     <div class="col-xxl-5 col-lg-7 col-md-7 col-sm-12 m-auto">
                                         <?php 
-                                        if(!empty($eventtitle)) { echo '<div class="mt-3 event-title" style="'.$event_title_css.'">'.esc_html($eventtitle).'</div>'; }
+                                        if(!empty($eventtitle)) { echo '<div class="mt-3" style="'.$event_title_css.'">'.esc_html($eventtitle).'</div>'; }
 
-                                            if(!empty($eventdate)) { echo '<div class="mt-2 event-date" style="'.$event_date_css.'">'.esc_html($eventdate).'</div>'; }
+                                            if(!empty($eventdate)) { echo '<div class="mt-2" style="'.$event_date_css.'">'.esc_html($eventdate).'</div>'; }
 
 
                                         ?>
