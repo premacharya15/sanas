@@ -5353,7 +5353,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
     font-weight: 400;
 }
 .host-contact-no {
-    padding: 10px;
+    padding: 14px;
     background: transparent;
     border: none;
     font-size: 20px;
