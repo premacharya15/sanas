@@ -263,17 +263,17 @@ section.wl-main-canvas .inner-container .inner-colum {
                                 <div class="row">
                                     <div class="col-xxl-5 col-lg-7 col-md-7 col-sm-12 m-auto">
                                         <?php 
-                                        if(!empty($eventtitle)) { echo '<div class="mt-3" style="'.$event_title_css.'">'.esc_html($eventtitle).'</div>'; }
+                                        if(!empty($eventtitle)) { echo '<div class="mt-3 preview-event-title" style="'.$event_title_css.'">'.esc_html($eventtitle).'</div>'; }
 
-                                            if(!empty($eventdate)) { echo '<div class="mt-2" style="'.$event_date_css.'">'.esc_html($eventdate).'</div>'; }
+                                            if(!empty($eventdate)) { echo '<div class="mt-2 preview-event-date" style="'.$event_date_css.'">'.esc_html($eventdate).'</div>'; }
 
 
                                         ?>
                                         <h4 class="mb-0">Hosted By</h4>
                                         <?php 
-                                            if(!empty($guestName)) { echo '<div class="host-name" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
-                                            if(!empty($guestContact)) { echo '<div class="host-contact-no" style="'.$guest_contact_css.'">'.esc_html($guestContact).'</div>'; }
-                                            if(!empty($guestMessage)) { echo '<div class="host-message" style="'.$guest_message_css.'"><pre>'.$guestMessage.'</pre></div>'; }
+                                            if(!empty($guestName)) { echo '<div class="preview-host-name" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
+                                            if(!empty($guestContact)) { echo '<div class="preview-host-contact-no" style="'.$guest_contact_css.'">'.esc_html($guestContact).'</div>'; }
+                                            if(!empty($guestMessage)) { echo '<div class="preview-host-message" style="'.$guest_message_css.'"><pre>'.$guestMessage.'</pre></div>'; }
                                          
                                         ?>
                                     </div>
