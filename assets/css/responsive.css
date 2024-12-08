@@ -1254,7 +1254,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         padding: 12px;
         margin-top: 15px !important;
     }
-    .event-title, .event-date {
+    .event-title {
         font-size: 16px;
         line-height: 20px;
     }
