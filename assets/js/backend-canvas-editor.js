@@ -17,16 +17,16 @@ async function loadGoogleFonts() {
         const data = await response.json();
         const fonts = data.items;
         const select = document.getElementById('fontFamily');
+        jQuery('.selectpicker').selectpicker({
+            liveSearch: true
+        });
         fonts.forEach(font => {
             const option = document.createElement('option');
             option.text = font.family;
             option.value = font.family.replace(/ /g, '+'); // Replace spaces with '+'
             select.appendChild(option);
+            jQuery('.selectpicker').selectpicker('refresh');
         });
-        jQuery('.selectpicker').selectpicker({
-            liveSearch: true
-        });
-        jQuery('.selectpicker').selectpicker('refresh');
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
     }
