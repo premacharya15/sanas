@@ -6736,6 +6736,7 @@ font-size: 18px;
 .program-time1 h4{
     font-size: 24px;
 }
-.dropdown.selectpicker{
+.dropdown.bootstrap-select{
+    width: 100% !important;
     max-width: 100% !important;
 }
