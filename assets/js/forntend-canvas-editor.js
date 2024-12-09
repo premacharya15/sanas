@@ -1,6 +1,6 @@
 var canvas = new fabric.Canvas('canvas');
 fabric.Object.prototype.transparentCorners = false;
-fabric.Object.prototype.cornerColor = '#744F30';
+fabric.Object.prototype.cornerColor = '#511F1B';
 fabric.Object.prototype.cornerStyle = 'circle';
 fabric.Object.prototype.cornerSize = 14;
 fabric.Object.prototype.borderScaleFactor = 3;
@@ -44,10 +44,6 @@ function handleSelection(event) {
     const activeObject = event.target;
     if (activeObject && (activeObject.type === 'text' || activeObject.type === 'i-text')) {
         activeObject.set({
-            // borderColor: '#511F1B', // Border color when selected
-            // cornerColor: '#511F1B', // Corner control color
-            // cornerStrokeColor: '#511F1B', // Stroke color for corner controls
-            // cornerBackgroundColor: '9CA89C',
             borderSize: '10px',
         });
         //511F1B #9CA89C
@@ -69,10 +65,10 @@ function addText(event) {
         fill: '#000000',
         textAlign: 'left',
         hoverCursor: 'pointer',
-            borderColor: '#511F1B', // Border color when selected
+            borderColor: 'yellow', // Border color when selected
             cornerColor: '#511F1B', // Corner control color
             cornerStrokeColor: '#511F1B', // Stroke color for corner controls
-            cornerBackgroundColor: '9CA89C',
+            cornerBackgroundColor: '#511F1B',
             borderSize: '6px',
     });
     // Add custom controls to the text object
