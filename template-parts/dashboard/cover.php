@@ -992,6 +992,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <a href="#" class="cooming-soon">MORE COMING SOON</a>
                                 </div>
                             </form>
                         </div>
