@@ -104,6 +104,7 @@ async function loadGoogleFonts() {
     
 }
 window.onload = function () {
+    $('.selectpicker').selectpicker('refresh');
     loadGoogleFonts();
     canvas.renderAll();
 };
