@@ -1149,6 +1149,7 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                             </div>
                         </div>
                         <?php */ ?>
+                        <a href="#" class="cooming-soon">MORE COMING SOON</a>
                     </div>
                 </div>
                 <?php } ?>
