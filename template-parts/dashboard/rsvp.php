@@ -905,7 +905,7 @@ if (empty($rsvpimage)) {
                                                 <?php 
                                             if( !empty($program) && count($program)>0 ){
                                             foreach ($program as $event) :?>
-                                            <tr>
+                                            <tr class="gap-4">
                                               <td class="edit-text text-start" contenteditable="true" data-placeholder="Evening"><?php echo esc_attr($event['program_name'])?></td>
                                               <td class="edit-text text-start" contenteditable="true" data-placeholder="7 PM"><?php echo esc_attr($event['program_time'])?></td>
                                               <td>
