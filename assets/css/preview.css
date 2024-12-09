@@ -108,7 +108,7 @@ section.wl-main-canvas .card-canvas img {
 @media only screen and (max-width:768px) {
     section.wl-main-canvas {
         margin: 0;
-        margin-top: 150px;
+        margin-top: 135px;
     }
 
     section.wl-main-canvas .content.content-3 {
