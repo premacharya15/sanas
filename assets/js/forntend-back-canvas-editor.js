@@ -67,15 +67,11 @@ async function loadGoogleFonts() {
         const data = await response.json();
         const fonts = data.items;
         const select = document.getElementById('fontFamily');
-        jQuery('.selectpicker').selectpicker({
-            liveSearch: true
-        });
         fonts.forEach(font => {
             const option = document.createElement('option');
             option.text = font.family;
             option.value = font.family.replace(/ /g, '+'); // Replace spaces with '+'
             select.appendChild(option);
-            jQuery('.selectpicker').selectpicker('refresh');
         });
         canvas.renderAll();
     } catch (error) {
