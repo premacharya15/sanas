@@ -1114,6 +1114,7 @@
                                 </div>
                             </div>
                             <?php */ ?>
+                            <a href="#" class="cooming-soon">MORE COMING SOON</a>
                         </div>
                     </div>
                     <?php } ?>
