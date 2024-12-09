@@ -1048,6 +1048,7 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                                             </div>
                                         </div>
                                 </div>
+                                <a href="#" class="cooming-soon">MORE COMING SOON</a>
                             </div>
                         </form>
                     </div>
@@ -1355,7 +1356,7 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                                 </div>
                             </div>
                         </div> -->
-                        <a href="#" class="cooming-soon">More Coming soon</a>
+                        <a href="#" class="cooming-soon">MORE COMING SOON</a>
                     </div>
                 </div>
                 <?php } ?>
