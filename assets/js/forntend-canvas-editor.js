@@ -1075,12 +1075,3 @@ jQuery(document).ready(function ($) {
 
 
 });
-
-jQuery(document).ready(function($) {
-    // Initialize bootstrap-select
-    $('#fontFamily').selectpicker();
-
-    // Other existing code...
-    loadGoogleFonts();
-    canvas.renderAll();
-});
