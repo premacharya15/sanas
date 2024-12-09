@@ -28,7 +28,9 @@ async function loadGoogleFonts() {
 }
 
 window.onload = function() {
+    jQuery('.selectpicker').selectpicker();
     loadGoogleFonts();
+    jQuery('.selectpicker').selectpicker('refresh');
 };
 
 function backchangeFont() {

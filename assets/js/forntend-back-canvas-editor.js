@@ -82,7 +82,9 @@ async function loadGoogleFonts() {
     jQuery('.selectpicker').selectpicker('refresh');
 }
 window.onload = function () {
+    jQuery('.selectpicker').selectpicker();
     loadGoogleFonts();
+    jQuery('.selectpicker').selectpicker('refresh');
     canvas.renderAll();
 };
 window.loadGoogleFonts = loadGoogleFonts;

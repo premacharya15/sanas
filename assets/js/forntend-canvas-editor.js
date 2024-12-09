@@ -95,16 +95,16 @@ async function loadGoogleFonts() {
             option.value = font.family.replace(/ /g, '+'); // Replace spaces with '+'
             select.appendChild(option);
         });
-        jQuery('.selectpicker').selectpicker();
-        // jQuery('.selectpicker').selectpicker('refresh');
         canvas.renderAll();
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
     }
-    jQuery('.selectpicker').selectpicker('refresh');
+    
 }
 window.onload = function () {
+    jQuery('.selectpicker').selectpicker();
     loadGoogleFonts();
+    jQuery('.selectpicker').selectpicker('refresh');
     canvas.renderAll();
 };
 window.loadGoogleFonts = loadGoogleFonts;
