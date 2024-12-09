@@ -96,6 +96,7 @@ async function loadGoogleFonts() {
             select.appendChild(option);
         });
         jQuery('.selectpicker').selectpicker();
+        jQuery('.selectpicker').selectpicker('refresh');
         canvas.renderAll();
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
