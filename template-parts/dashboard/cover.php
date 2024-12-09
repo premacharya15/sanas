@@ -353,7 +353,7 @@
                                     <div class="form-group">
                                         <div class="select-wrapper">
                                             <label for="font-family-select">Font</label>
-                                            <select class="select-inner" id="fontFamily" onchange="changeFont()">
+                                            <select class="select-inner" class="selectpicker" data-live-search="true" id="fontFamily" onchange="changeFont()">
                                             </select>
                                         </div>
                                     </div>
