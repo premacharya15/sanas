@@ -1237,7 +1237,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         padding-right: 0 !important;
     }
     input.rsvp-msg.host-name, .event-title, .event-date {
-        font-size: 16px;
+        font-size: 20px;
         margin: 0px;
     }
     .host-contact-no {
@@ -1747,7 +1747,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         padding: 10px;
     }
     input.rsvp-msg.host-name {
-        font-size: 16px;
+        font-size: 20px;
         line-height: 20px;
     }
  
