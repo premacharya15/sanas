@@ -67,14 +67,14 @@ async function loadGoogleFonts() {
         const data = await response.json();
         const fonts = data.items;
         const select = document.getElementById('fontFamily');
+        select.selectpicker();
         fonts.forEach(font => {
             const option = document.createElement('option');
             option.text = font.family;
             option.value = font.family.replace(/ /g, '+'); // Replace spaces with '+'
             select.appendChild(option);
         });
-        jQuery('.selectpicker').selectpicker();
-        // jQuery('.selectpicker').selectpicker('refresh');
+        select.selectpicker('refresh');
         canvas.renderAll();
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
@@ -82,9 +82,7 @@ async function loadGoogleFonts() {
     jQuery('.selectpicker').selectpicker('refresh');
 }
 window.onload = function () {
-    jQuery('.selectpicker').selectpicker();
     loadGoogleFonts();
-    jQuery('.selectpicker').selectpicker('refresh');
     canvas.renderAll();
 };
 window.loadGoogleFonts = loadGoogleFonts;

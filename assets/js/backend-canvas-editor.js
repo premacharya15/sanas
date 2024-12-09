@@ -23,7 +23,7 @@ async function loadGoogleFonts() {
             option.value = font.family.replace(/ /g, '+'); // Replace spaces with '+'
             select.appendChild(option);
         });
-        jQuery('.selectpicker').selectpicker();
+        select.selectpicker();
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
     }  
@@ -32,9 +32,7 @@ async function loadGoogleFonts() {
 
 // Call the function to load Google Fonts when the page loads
 window.onload = function() {
-    jQuery('.selectpicker').selectpicker();
     loadGoogleFonts();
-    jQuery('.selectpicker').selectpicker('refresh');
 };
 
 // Change the font of the active text object on the canvas
