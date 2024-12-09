@@ -102,6 +102,10 @@ async function loadGoogleFonts() {
     
 }
 window.onload = function () {
+    jQuery(document).ready(function($) {
+        // Initialize bootstrap-select
+        $('#fontFamily').selectpicker();
+    });
     loadGoogleFonts();
     canvas.renderAll();
 };
