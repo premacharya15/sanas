@@ -1,10 +1,10 @@
 var canvas = new fabric.Canvas('canvas');
 fabric.Object.prototype.transparentCorners = false;
-fabric.Object.prototype.cornerColor = 'white';
+fabric.Object.prototype.cornerColor = 'brown';
 fabric.Object.prototype.cornerStyle = 'circle';
 fabric.Object.prototype.cornerSize = 14;
 fabric.Object.prototype.borderScaleFactor = 3;
-fabric.Object.prototype.borderColor = 'purple';
+fabric.Object.prototype.borderColor = 'white';
 // Load All Google Fonts
 async function loadGoogleFonts() {
     const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key
