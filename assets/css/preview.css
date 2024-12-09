@@ -55,6 +55,10 @@ section.wl-main-canvas .card-canvas img {
     border-radius: 16px;
 }
 
+.textarea-preview {
+    height: 100px !important;
+}
+
 @media only screen and (max-width:1400px) {
     section.wl-main-canvas .inner-container .inner-colum {
         padding: 80px 50px 30px;
