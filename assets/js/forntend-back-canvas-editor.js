@@ -73,6 +73,7 @@ async function loadGoogleFonts() {
             option.value = font.family.replace(/ /g, '+'); // Replace spaces with '+'
             select.appendChild(option);
         });
+        jQuery('#mySelect').selectpicker('refresh');
         canvas.renderAll();
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
