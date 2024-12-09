@@ -6737,5 +6737,5 @@ font-size: 18px;
     font-size: 24px;
 }
 .dropdown.bootstrap-select{
-    max-width: 100%;;
+    max-width: 100% !important;
 }
