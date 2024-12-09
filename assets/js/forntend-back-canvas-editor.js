@@ -4,7 +4,7 @@ fabric.Object.prototype.cornerColor = '#744F30';
 fabric.Object.prototype.cornerStyle = 'circle';
 fabric.Object.prototype.cornerSize = 14;
 fabric.Object.prototype.borderScaleFactor = 3;
-fabric.Object.prototype.borderColor = 'white';
+fabric.Object.prototype.borderColor = 'yellow';
 var customControls = {
     deleteControl: new fabric.Control({
         x: 0.5,
