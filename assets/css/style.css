@@ -5472,7 +5472,7 @@ span.note {
 }
 
 input.rsvp-msg.host-name ,.event-title, .event-date {
-    font-size: 16px;
+    font-size: 20px;
     margin: 0;
     color: #7c7878;
     background-color: transparent;
