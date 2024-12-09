@@ -1723,13 +1723,3 @@ $isInitialLoad = empty($frontpagedata) ? 'true' : 'false';
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/js/bootstrap-select.min.js"></script>
-<script>
-   window.onload = function () {
-    jQuery(document).ready(function($) {
-        // Initialize bootstrap-select
-        $('#fontFamily').selectpicker();
-    });
-    loadGoogleFonts();
-    canvas.renderAll();
-};
-</script>
