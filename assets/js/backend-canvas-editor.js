@@ -1,6 +1,6 @@
 var canvas = new fabric.Canvas('canvas');
 fabric.Object.prototype.transparentCorners = false;
-fabric.Object.prototype.cornerColor = 'brown';
+fabric.Object.prototype.cornerColor = '#744F30';
 fabric.Object.prototype.cornerStyle = 'circle';
 fabric.Object.prototype.cornerSize = 14;
 fabric.Object.prototype.borderScaleFactor = 3;
