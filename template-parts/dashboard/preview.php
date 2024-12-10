@@ -321,9 +321,9 @@ function is_youtube_url($url) {
                                         <div class="mt-2 mb-2 edit-text rsvp-msg" id="search_address" rows="2" cols="50" placeholder="Venue Address">61020 Petriano, Province of Pesaro and Urbino, Italy</div>
                                         <h4 class="mb-2" style="font-size:20px;color: #5c310d;">Hosted By</h4>
                                         <?php 
-                                            if(!empty($guestName)) { echo '<div class="preview-host-name mb-2" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
-                                            if(!empty($guestContact)) { echo '<div class="preview-host-contact-no mb-2" style="'.$guest_contact_css.'">'.esc_html($guestContact).'</div>'; }
-                                            if(!empty($guestMessage)) { echo '<div class="preview-host-message mb-2" style="'.$guest_message_css.'"><pre>'.$guestMessage.'</pre></div>'; }
+                                            // if(!empty($guestName)) { echo '<div class="preview-host-name mb-2" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
+                                            // if(!empty($guestContact)) { echo '<div class="preview-host-contact-no mb-2" style="'.$guest_contact_css.'">'.esc_html($guestContact).'</div>'; }
+                                            // if(!empty($guestMessage)) { echo '<div class="preview-host-message mb-2" style="'.$guest_message_css.'"><pre>'.$guestMessage.'</pre></div>'; }
                                         ?>
                                     </div>
                                 </div>
