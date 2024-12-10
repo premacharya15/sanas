@@ -346,10 +346,15 @@
                                     <div class="form-group">
                                         <div class="select-wrapper">
                                             <label for="font-family-select">Font</label>
-                                            <select class="selectpicker" id="my-select" onchange="changeFont()">
+                                            <select class="selectpicker" data-live-search="true" id="fontFamily" onchange="changeFont()">
                                             </select>
 
                                             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+  <select id="my-select">
+    <option value="Option 1">Option 1</option>
+    <option value="Option 2">Option 2</option>
+    <option value="Option 3">Option 3</option>
+  </select>
 
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
   <script>
