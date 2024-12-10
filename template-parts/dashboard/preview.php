@@ -279,9 +279,9 @@ function is_youtube_url($url) {
 
                                             if(!empty($eventdate)) { echo '<div class="mt-2 mb-2 preview-event-date" style="'.$event_date_css.'">'.esc_html($eventdate).'</div>'; }
 
-                                            echo $event_venue_name;
                                         ?>
-                                        <textarea class="map-input-rsvp m-0 edit-text rsvp-msg" id="search_address" rows="2" cols="50" placeholder="Venue Address"><?php echo $event_venue_address; ?></textarea>
+                                        
+                                        <textarea class="map-input-rsvp m-0 edit-text rsvp-msg" id="search_address" rows="2" cols="50" placeholder="Venue Address">61020 Petriano, Province of Pesaro and Urbino, Italy</textarea>
                                         <h4 class="mb-2" style="font-size:20px;color: #5c310d;">Hosted By</h4>
                                         <?php 
                                             if(!empty($guestName)) { echo '<div class="preview-host-name mb-2" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
