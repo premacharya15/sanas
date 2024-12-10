@@ -5496,7 +5496,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
     padding: 14px;
     background: transparent;
     border: none;
-    font-size: 14px !important;
+    font-size: 16px !important;
     text-align: center;
     width: 100% !important;
 }
