@@ -4581,7 +4581,7 @@ table.dataTable thead>tr>td.dt-orderable-desc:hover {
 
 .wed-cat-info .title-box .title {
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     font-size: 18px;
     font-weight: 500;
     color: var(--snas-text-primary);
