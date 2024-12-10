@@ -6688,7 +6688,9 @@ font-size: 18px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
+table.preview-itn{
+    padding: 0;
+}
 /* .todo-list-table td:nth-last-child(2), .todo-list-table th:nth-last-child(2){
     text-align: right !important;
 } */

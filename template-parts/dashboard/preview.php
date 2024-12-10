@@ -355,7 +355,7 @@ function is_youtube_url($url) {
                                             if( !empty($program) && count($program)>0 ){
                                             ?>
                                             <h4 class="mb-1 mt-3" style="font-size: 24px;">Itinerary</h4>
-                                            <table>
+                                            <table class="preview-itn">
                                                 <?php 
                                                 
                                                 foreach ($program as $event) :?>
