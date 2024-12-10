@@ -365,10 +365,11 @@ function is_youtube_url($url) {
                                         window.addEventListener('load', initializeAutocomplete);
                                     </script>
                                     <input type="hidden" id="event_venue_address_link" name="event_venue_address_link" value="<?php echo esc_html($event_venue_address_link); ?>">
+                                    </div>
 
 
 
-
+                                
                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto">
                                         <span></span>
                                          <?php 
