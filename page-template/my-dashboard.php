@@ -253,7 +253,7 @@ if($total_adults == 0 && $total_kids == 0){
           <div class="inner budget-man-box budget-category-box-dashboard">
             <div class="title-box">
               <div class="title">
-                <h4 class="title-px-20"><a href="/budget/" class="text-black">Budget Calculator</a></h4>
+                <h4 class="title-px-20" style="margin: 0;"><a href="/budget/" class="text-black">Budget Calculator</a></h4>
               </div>
               <!-- <div class="options dashboard-view-all">
                 >View All</a>
