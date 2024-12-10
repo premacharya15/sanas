@@ -349,11 +349,6 @@
                                             <label for="font-family-select">Font</label>
                                             <select class="selectpicker" data-live-search="true" id="fontFamily" onchange="changeFont()">
                                             </select>
-                                            <select id="mySelect" style="width: 100%;">
-                                                    <option value="Option 1">Option 1</option>
-                                                    <option value="Option 2">Option 2</option>
-                                                    <option value="Option 3">Option 3</option>
-                                                </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
