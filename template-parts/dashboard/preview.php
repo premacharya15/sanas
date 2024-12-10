@@ -326,8 +326,8 @@ function is_youtube_url($url) {
 
 
                                 
-                                    <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto">
-                                        <span></span>
+                                    <!-- <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto"> -->
+                                        <!-- <span></span> -->
                                          <?php 
                                         // if(!empty($eventtitle)) { echo '<div class="mt-3 mb-2 preview-event-title" style="'.$event_title_css.'">'.esc_html($eventtitle).'</div>'; }
 
@@ -342,7 +342,7 @@ function is_youtube_url($url) {
                                             // if(!empty($guestContact)) { echo '<div class="preview-host-contact-no mb-2" style="'.$guest_contact_css.'">'.esc_html($guestContact).'</div>'; }
                                             // if(!empty($guestMessage)) { echo '<div class="preview-host-message mb-2" style="'.$guest_message_css.'"><pre>'.$guestMessage.'</pre></div>'; }
                                         ?>
-                                    </div>
+                                    <!-- </div> -->
                                 </div>
                                 <div class="row">
                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto">
