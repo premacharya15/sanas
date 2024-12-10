@@ -300,7 +300,11 @@ function is_youtube_url($url) {
                                     </div>
                                     <div class="rsvp-from-group">
                                         <div class="event-date" style="<?php echo $event_date_css; ?>">
-                                            <?php echo esc_html($eventdate); ?>
+                                            <?php
+                                            $timestamp = strtotime($eventdate);
+                                            $formattedDate = date("jS M Y", $timestamp);
+                                            ?>
+                                            <?php echo esc_html($formattedDate); ?>
                                         </div>
                                         <!-- <input type="date" id="eventdate" class="edit-text rsvp-msg event-date" name="eventdate"  style="<?php echo $event_date_css; ?>" value="" required=""> -->
                                     </div>
