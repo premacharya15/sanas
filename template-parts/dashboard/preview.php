@@ -302,7 +302,9 @@ function is_youtube_url($url) {
                             <div class="row col-xxl-8 col-xl-9 col-lg-9 col-md-12 m-auto mt-0 position-relative">
                                 <div class="rsvp-event" style="background: transparent !important;border:none !important; padding: 0px 20px;margin-top: 0 !important;">
                                     <div class="rsvp-from-group">
-                                        <input type="text" id="eventtitle" class="edit-text rsvp-msg event-title" name="eventtitle" placeholder="Enter Event Title*" style="<?php echo $event_title_css; ?>" value="<?php echo esc_html($eventtitle) ?>" required="">
+                                        <div id="eventtitle" class="edit-text rsvp-msg event-title" style="<?php echo $event_title_css; ?>">
+                                            <?php echo esc_html($eventtitle); ?>
+                                        </div>
                                     </div>
                                     <div class="rsvp-from-group">
                                         <div class="event-date" style="<?php echo $event_date_css; ?>">
@@ -316,8 +318,8 @@ function is_youtube_url($url) {
                                     </div>
                                     <div class="rsvp-from-group m-0 map-container-rsvp">
                                         <!-- <h4>Address</h4> -->
-                                            <input class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_name" id="search" type="text" name="venue_name" placeholder="Enter Venue Name" value="<?php echo esc_html($event_venue_name); ?>">
-                                            <textarea class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_address" id="search_address" rows="2" cols="50" name="venue_address" placeholder="Venue Address"><?php echo esc_html($event_venue_address); ?></textarea>
+                                            <div class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_name" id="search" type="text"><?php echo esc_html($event_venue_name); ?></div>
+                                            <div class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_address" id="search_address" rows="2" cols="50"><?php echo esc_html($event_venue_address); ?></div>
                                             <div class="map-location-rsvp" id="map" style="display: none;"></div>
                                     </div>
                                 </div>
