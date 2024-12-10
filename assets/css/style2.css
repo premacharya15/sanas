@@ -5334,7 +5334,7 @@ input.rsvp-msg.host-name ,.event-title{
     width: 100% !important;
     }
 input.rsvp-msg.host-name ,.event-title, .event-date {
-    font-size: 26px;
+    font-size: 28px;
     margin: 0 0 10px 0;
     color: #000;
     background-color: transparent;
