@@ -358,8 +358,12 @@
 
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
   <script>
+    // const selectElement = document.getElementById('my-select');
+    // const choices = new Choices(selectElement);
     const selectElement = document.getElementById('my-select');
-    const choices = new Choices(selectElement);
+    const choices = new Choices(selectElement, {
+      placeholder: 'Select an option'
+    });
   </script>
                                         </div>
                                     </div>
