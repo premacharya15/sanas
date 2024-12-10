@@ -283,7 +283,7 @@ function is_youtube_url($url) {
                                         <input type="text" id="guestName" name="guestName" value="<?php echo esc_html($guestName) ?>" style="<?php echo $guest_name_css; ?>"  class="edit-text rsvp-msg host-name"  placeholder="Event Host Name*" required="">
                                     </div>
                                     <div class="rsvp-from-group">
-                                        <input type="number" id="guestContact" style="<?php echo $guest_contact_css; ?>" value="<?php echo esc_html($guestContact); ?>" class="edit-text rsvp-msg host-contact-no" name="guestContact"  placeholder="Enter Host Contact Information - Start with Area Code.*" required="">
+                                        <input type="number" id="guestContact" style="<?php echo $guest_contact_css; ?>" value="<?php echo esc_html($guestContact); ?>" class="edit-text rsvp-msg host-contact-no mb-0" name="guestContact"  placeholder="Enter Host Contact Information - Start with Area Code.*" required="">
                                     </div>
                                         <input type="hidden" id="event_venue_address_link" name="event_venue_address_link" value="<?php echo esc_html($event_venue_address_link); ?>">
                                         <div class="rsvp-from-group">
