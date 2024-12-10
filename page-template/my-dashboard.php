@@ -214,7 +214,7 @@ if($total_adults == 0 && $total_kids == 0){
                 <h4><a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="text-black">Guest List</a></h4>
               </div>
             </div>
-            <div class="guest-count-box mt-3 text-center flex">
+            <div class="guest-count-box mt-1 text-center flex">
               <div class="guest-count-box-inner1">
                 <span>Accepted</span>
               </div>
