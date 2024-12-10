@@ -644,6 +644,8 @@ jQuery(document).ready(function ($) {
         var guestContact = $('#guestContact').val();
         var eventTitle = $('#eventtitle').val();
         var eventDate = $('#eventdate').val();
+        var venuename = $('.event_venue_name').val();
+        var venueaddress = $('.event_venue_address').val();
         var itinerary = $('#itinerary').val();
         var guestMessage = $('#guestMessage').val();
         var videoSrc = $('#uploaded-video').attr('src') || '';
@@ -678,6 +680,14 @@ jQuery(document).ready(function ($) {
         }
         else if (guestContact == '') {
             show_alert_message('RSVP', '<p style="color:red;">Please enter Host Contact.</p>');
+            return; // Stop further execution
+        }
+        else if (venuename == '') {
+            show_alert_message('RSVP', '<p style="color:red;">Please enter Venue Name.</p>');
+            return; // Stop further execution
+        }
+        else if (venueaddress == '') {
+            show_alert_message('RSVP', '<p style="color:red;">Please enter Venue Address.</p>');
             return; // Stop further execution
         }
         // Collect itinerary data
