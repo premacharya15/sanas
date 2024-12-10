@@ -42,8 +42,8 @@ jQuery(document).ready(function () {
  }
 
 
- jQuery('#mySelect').select2({
+ jQuery('#fontFamily').select2({
     placeholder: 'Search for an option'
 });
-jQuery('#mySelect').select2('triggerChange');
+jQuery('#fontFamily').select2('triggerChange');
  });
