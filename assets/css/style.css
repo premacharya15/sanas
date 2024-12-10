@@ -6422,10 +6422,8 @@ button#add_new_group_button {
     text-align: center;
     background-color: var(--snas-text-white);
 }
-.choices__input::placeholder {
-    content: none;
-    display: none;
-}
+.choices__list--dropdown .choices__item--selectable:after { display: none !important; }
+.choices__list--dropdown .choices__item--selectable { padding-right: 0 !important; }
 #add-group-popup .btn-light {
  font-weight: 700;
 }
