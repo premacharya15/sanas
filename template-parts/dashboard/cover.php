@@ -3,8 +3,7 @@
             display: block;
         }
     </style>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <div class="wl-left-slide-bar">
         <div class="d-flex inner-colum">
             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -82,6 +81,24 @@
                                                 <label for="font-family-select">Font</label>
                                                 <select class="selectpicker" id="fontFamily" onchange="changeFont()">
                                                 </select>
+                                                <select id="mySelect">
+    <option value="Option 1">Option 1</option>
+    <option value="Option 2">Option 2</option>
+    <option value="Option 3">Option 3</option>
+</select>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<script>
+    jQuery(document).ready(function($) {
+        $('#mySelect').select2({
+            placeholder: 'Search for an option',
+            minimumInputLength: 0
+        });
+    });
+</script>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -348,8 +365,6 @@
                                         <div class="select-wrapper">
                                             <label for="font-family-select">Font</label>
                                             <select class="selectpicker" data-live-search="true" id="fontFamily" onchange="changeFont()">
-                                            </select>
-                                            <select id="mySelect" style="width: 100%;">
                                             </select>
                                         </div>
                                     </div>
@@ -1723,5 +1738,3 @@ $isInitialLoad = empty($frontpagedata) ? 'true' : 'false';
 </script>
 <?php  
 }?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
