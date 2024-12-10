@@ -5512,6 +5512,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
 }
 .preview-host-message{
     word-wrap: break-word;
+    color: #000;
 }
 .preview-host-message pre{
     padding: 0;
@@ -6411,7 +6412,7 @@ button#add_new_group_button {
     padding: 6px 16px;
 }
 .rsvp-event {
-    color: #8b8888;
+    color: #000;
     padding: 20px;
     border: 1px solid #9A7A5F !important;
     border-radius: 12px;
