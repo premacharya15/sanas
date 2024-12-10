@@ -28,8 +28,8 @@ function sanas_css()
   wp_enqueue_style('theme-secondary-style', get_template_directory_uri() . '/assets/css/style2.css', array(), SANAS_VERSION);
   wp_enqueue_style('sanas-fonts', sanas_google_fonts_url(), array());
   // wp_enqueue_style('select2', get_template_directory_uri() . '/assets/css/select2.min.css', array(), SANAS_VERSION);
-  wp_enqueue_style('select2', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css', array(), null);
   wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', array(), '5.3.3');
+  wp_enqueue_style('select2', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css', array(), null);
   wp_enqueue_style('sanas-icon', get_template_directory_uri() . '/assets/icomoon/style.css', array(), SANAS_VERSION);
   wp_enqueue_style('sanas-font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/all.min.css', array(), SANAS_VERSION);
   wp_enqueue_style('slick', get_template_directory_uri() . '/assets/slick/slick.css', array(), SANAS_VERSION);
