@@ -314,7 +314,7 @@ function is_youtube_url($url) {
                                     <div class="rsvp-from-group m-0 map-container-rsvp">
                                         <!-- <h4>Address</h4> -->
                                             <input class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_name" id="search" type="text" name="venue_name" placeholder="Enter Venue Name" value="<?php echo esc_html($event_venue_name); ?>">
-                                            <textarea class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_address" id="search_address" rows="2" cols="50" name="venue_address" placeholder="Venue Address" value="<?php echo esc_html($event_venue_address); ?>"></textarea>
+                                            <textarea class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_address" id="search_address" rows="2" cols="50" name="venue_address" placeholder="Venue Address"><?php echo esc_html($event_venue_address); ?></textarea>
                                             <div class="map-location-rsvp" id="map" style="display: none;"></div>
                                     </div>
                                 </div>
