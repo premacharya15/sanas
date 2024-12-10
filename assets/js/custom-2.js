@@ -50,5 +50,9 @@ jQuery(document).ready(function () {
         placeholder: 'Search for an option',
         minimumInputLength: 0
     });
+    $('#mySelect').select2({
+        placeholder: 'Search for an option'
+    });
+
 // jQuery('#fontFamily').select2('triggerChange');
  });
