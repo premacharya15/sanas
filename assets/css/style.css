@@ -6679,7 +6679,9 @@ font-size: 18px;
     background-color: transparent;
     text-align: center;
 }
-
+.map-input-rsvp-black{
+    color:#000;
+}
 .map-location-rsvp{
     width: 100%;
     height: 400px;
