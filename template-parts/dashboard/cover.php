@@ -86,6 +86,14 @@
                                                     <option value="Option 2">Option 2</option>
                                                     <option value="Option 3">Option 3</option>
                                                 </select>
+                                                <script>
+        $(document).ready(function() {
+            // Initialize Select2
+            $('#mySelect').select2({
+                placeholder: 'Search for an option'
+            });
+        });
+                                                </script>
                                             </div>
                                         </div>
                                         <div class="form-group">
