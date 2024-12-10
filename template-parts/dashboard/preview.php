@@ -318,8 +318,8 @@ function is_youtube_url($url) {
                                     </div>
                                     <div class="rsvp-from-group m-0 map-container-rsvp">
                                         <!-- <h4>Address</h4> -->
-                                            <div class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_name" id="search" type="text"><?php echo esc_html($event_venue_name); ?></div>
-                                            <div class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_address" id="search_address" rows="2" cols="50"><?php echo esc_html($event_venue_address); ?></div>
+                                            <div class="map-input-rsvp map-input-rsvp-black m-0 edit-text rsvp-msg event_venue_name" id="search" type="text"><?php echo esc_html($event_venue_name); ?></div>
+                                            <div class="map-input-rsvp map-input-rsvp-black m-0 edit-text rsvp-msg event_venue_address" id="search_address" rows="2" cols="50"><?php echo esc_html($event_venue_address); ?></div>
                                             <div class="map-location-rsvp" id="map" style="display: none;"></div>
                                     </div>
                                 </div>
