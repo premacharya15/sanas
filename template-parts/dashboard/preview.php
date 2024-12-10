@@ -272,6 +272,103 @@ function is_youtube_url($url) {
                             <?php } ?>  
                             <div class="wl-inner-card-detaile wl-previewbox">
                                 <div class="row">
+
+                                <div class="row col-xxl-9 col-xl-10 col-lg-10 col-md-12 m-auto position-relative">
+                                <div class="rsvp-event">
+                            <div class="rsvp-from-group">
+                                <input type="text" id="eventtitle" class="edit-text rsvp-msg event-title" name="eventtitle" placeholder="Enter Event Title*" style="<?php echo $event_title_css; ?>" value="<?php echo esc_html($eventtitle) ?>" required="">
+                                </div>
+                                <div class="rsvp-from-group">
+                                    <input type="date" id="eventdate" class="edit-text rsvp-msg event-date" name="eventdate"  style="<?php echo $event_date_css; ?>" value="<?php echo esc_html($eventdate); ?>" required="">
+                                </div>
+                                <div class="rsvp-from-group m-0 map-container-rsvp">
+                                    <!-- <h4>Address</h4> -->
+                                        <input class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_name" id="search" type="text" name="venue_name" placeholder="Enter Venue Name" value="<?php echo esc_html($event_venue_name); ?>">
+                                        <textarea class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_address" id="search_address" rows="2" cols="50" name="venue_address" placeholder="Venue Address" value="<?php echo esc_html($event_venue_address); ?>"></textarea>
+                                        <div class="map-location-rsvp" id="map" style="display: none;"></div>
+                                </div>
+                            </div>
+                            <div class="rsvp-from-group">
+                                <h3 class="mb-0 mt-4" style="font-size:24px;">Hosted By</h3>
+                            </div>  
+                                <div class="rsvp-event">
+                                <div class="rsvp-from-group">
+                                    <input type="text" id="guestName" name="guestName" value="<?php echo esc_html($guestName) ?>" style="<?php echo $guest_name_css; ?>"  class="edit-text rsvp-msg host-name"  placeholder="Event Host Name*" required="">
+                                </div>
+                                <div class="rsvp-from-group">
+                                    <input type="number" id="guestContact" style="<?php echo $guest_contact_css; ?>" value="<?php echo esc_html($guestContact); ?>" class="edit-text rsvp-msg host-contact-no" name="guestContact"  placeholder="Enter Host Contact Information - Start with Area Code.*" required="">
+                                </div>
+                                    <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo sanas_options('sanas_map_api_key'); ?>&libraries=places" async defer></script>
+                                    <script>
+                                        let map;
+                                        let marker;
+
+                                        function initializeAutocomplete() {
+                                            const input = document.getElementById("search");
+                                            const input2 = document.getElementById("search_address");
+
+                                            // Initialize map centered at a default location
+                                            map = new google.maps.Map(document.getElementById("map"), {
+                                                center: { lat: 20.5937, lng: 78.9629 }, // Default: India
+                                                zoom: 5,
+                                            });
+
+                                            // Initialize marker, hidden by default
+                                            marker = new google.maps.Marker({
+                                                map: map,
+                                                visible: false,
+                                            });
+
+                                            // Ensure the Google Places API is loaded before initializing autocomplete
+                                            if (typeof google === "undefined" || !google.maps.places) {
+                                                console.error("Google Maps API failed to load.");
+                                                return;
+                                            }
+
+                                            // Create the autocomplete object
+                                            const autocomplete = new google.maps.places.Autocomplete(input);
+
+                                            // Add a listener for when a place is selected
+                                            autocomplete.addListener('place_changed', function () {
+                                                const place = autocomplete.getPlace();
+
+                                                if (place.geometry) {
+                                                    // Get coordinates
+                                                    const location = place.geometry.location;
+                                                    const lat = location.lat();
+                                                    const lng = location.lng();
+
+                                                    // Update map and marker
+                                                    map.setCenter(location);
+                                                    map.setZoom(15);
+                                                    marker.setPosition(location);
+                                                    marker.setVisible(true);
+                                                    
+                                                    // Generate Google Maps link with location name and address
+                                                    const googleMapLink = `https://www.google.com/maps?q=${encodeURIComponent(place.name)}%20${encodeURIComponent(place.formatted_address)}`;
+                                                    console.log("Google Maps Link:", googleMapLink);
+
+                                                    // Log details to the console
+                                                    console.log("Selected Location:", place.name);
+                                                    console.log("Formatted Address:", place.formatted_address);
+                                                    console.log("Coordinates:", { lat, lng });
+                                                    input.value = `${place.name}`;
+                                                    input2.value = `${place.formatted_address}`;
+
+                                                } else {
+                                                    console.log("No details available for the input: '" + place.name + "'");
+                                                }
+                                            });
+                                        }
+
+                                        // Initialize Autocomplete after the API script is loaded
+                                        window.addEventListener('load', initializeAutocomplete);
+                                    </script>
+                                    <input type="hidden" id="event_venue_address_link" name="event_venue_address_link" value="<?php echo esc_html($event_venue_address_link); ?>">
+
+
+
+
                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto">
                                         <span></span>
                                          <?php 
