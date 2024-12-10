@@ -272,17 +272,17 @@ function is_youtube_url($url) {
                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto">
                                         <span></span>
                                          <?php 
-                                        if(!empty($eventtitle)) { echo '<div class="mt-3 preview-event-title" style="'.$event_title_css.'">'.esc_html($eventtitle).'</div>'; }
+                                        if(!empty($eventtitle)) { echo '<div class="mt-3 mb-2 preview-event-title" style="'.$event_title_css.'">'.esc_html($eventtitle).'</div>'; }
 
-                                            if(!empty($eventdate)) { echo '<div class="mt-2 preview-event-date" style="'.$event_date_css.'">'.esc_html($eventdate).'</div>'; }
+                                            if(!empty($eventdate)) { echo '<div class="mt-2 mb-2 preview-event-date" style="'.$event_date_css.'">'.esc_html($eventdate).'</div>'; }
 
 
                                         ?>
                                         <h4 class="mb-0" style="font-size:24px;">Hosted By</h4>
                                         <?php 
-                                            if(!empty($guestName)) { echo '<div class="preview-host-name" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
-                                            if(!empty($guestContact)) { echo '<div class="preview-host-contact-no" style="'.$guest_contact_css.'">'.esc_html($guestContact).'</div>'; }
-                                            if(!empty($guestMessage)) { echo '<div class="preview-host-message" style="'.$guest_message_css.'"><pre>'.$guestMessage.'</pre></div>'; }
+                                            if(!empty($guestName)) { echo '<div class="preview-host-name mb-2" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
+                                            if(!empty($guestContact)) { echo '<div class="preview-host-contact-no mb-2" style="'.$guest_contact_css.'">'.esc_html($guestContact).'</div>'; }
+                                            if(!empty($guestMessage)) { echo '<div class="preview-host-message mb-2" style="'.$guest_message_css.'"><pre>'.$guestMessage.'</pre></div>'; }
                                          echo '<textarea class="map-input-rsvp m-0 edit-text rsvp-msg" id="search_address" rows="2" cols="50" placeholder="Venue Address"></textarea>';
                                         ?>
                                     </div>
