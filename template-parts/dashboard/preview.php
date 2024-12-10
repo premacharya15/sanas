@@ -274,20 +274,7 @@ function is_youtube_url($url) {
                                 <div class="row">
 
                                 <div class="row col-xxl-8 col-xl-9 col-lg-9 col-md-12 m-auto position-relative">
-                                <div class="rsvp-event">
-                            <div class="rsvp-from-group">
-                                <input type="text" id="eventtitle" class="edit-text rsvp-msg event-title" name="eventtitle" placeholder="Enter Event Title*" style="<?php echo $event_title_css; ?>" value="<?php echo esc_html($eventtitle) ?>" required="">
-                                </div>
-                                <div class="rsvp-from-group">
-                                    <input type="date" id="eventdate" class="edit-text rsvp-msg event-date" name="eventdate"  style="<?php echo $event_date_css; ?>" value="<?php echo esc_html($eventdate); ?>" required="">
-                                </div>
-                                <div class="rsvp-from-group m-0 map-container-rsvp">
-                                    <!-- <h4>Address</h4> -->
-                                        <input class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_name" id="search" type="text" name="venue_name" placeholder="Enter Venue Name" value="<?php echo esc_html($event_venue_name); ?>">
-                                        <textarea class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_address" id="search_address" rows="2" cols="50" name="venue_address" placeholder="Venue Address" value="<?php echo esc_html($event_venue_address); ?>"></textarea>
-                                        <div class="map-location-rsvp" id="map" style="display: none;"></div>
-                                </div>
-                            </div>
+                            
                             <div class="rsvp-from-group">
                                 <h3 class="mb-0 mt-4" style="font-size:24px;">Hosted By</h3>
                             </div>  
@@ -305,6 +292,21 @@ function is_youtube_url($url) {
                                     </div>
                                 </div>
                                     </div> 
+
+                                    <div class="rsvp-event">
+                            <div class="rsvp-from-group">
+                                <input type="text" id="eventtitle" class="edit-text rsvp-msg event-title" name="eventtitle" placeholder="Enter Event Title*" style="<?php echo $event_title_css; ?>" value="<?php echo esc_html($eventtitle) ?>" required="">
+                                </div>
+                                <div class="rsvp-from-group">
+                                    <input type="date" id="eventdate" class="edit-text rsvp-msg event-date" name="eventdate"  style="<?php echo $event_date_css; ?>" value="<?php echo esc_html($eventdate); ?>" required="">
+                                </div>
+                                <div class="rsvp-from-group m-0 map-container-rsvp">
+                                    <!-- <h4>Address</h4> -->
+                                        <input class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_name" id="search" type="text" name="venue_name" placeholder="Enter Venue Name" value="<?php echo esc_html($event_venue_name); ?>">
+                                        <textarea class="map-input-rsvp m-0 edit-text rsvp-msg event_venue_address" id="search_address" rows="2" cols="50" name="venue_address" placeholder="Venue Address" value="<?php echo esc_html($event_venue_address); ?>"></textarea>
+                                        <div class="map-location-rsvp" id="map" style="display: none;"></div>
+                                </div>
+                            </div>
 
 
 
