@@ -335,7 +335,7 @@ function is_youtube_url($url) {
                                             
                                             if( !empty($program) && count($program)>0 ){
                                             ?>
-                                            <h4 class=" mb-0">Itinerary</h4>
+                                            <h4 class=" mb-0 mt-4" style="font-size: 24px;">Itinerary</h4>
                                             <table>
                                                 <?php 
                                                 
