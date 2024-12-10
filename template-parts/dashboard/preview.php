@@ -288,7 +288,7 @@ function is_youtube_url($url) {
                                         </div>
                                     </div>
                                     <div class="rsvp-from-group">
-                                        <div id="guestContact" style="<?php echo $guest_contact_css; ?>" class="edit-text rsvp-msg host-contact-no mb-0">
+                                        <div id="guestContact" style="<?php echo $guest_contact_css; ?>" class="edit-text rsvp-msg preview-host-contact-no mb-0">
                                             <?php echo esc_html($guestContact); ?>
                                         </div>
                                     </div>
