@@ -278,7 +278,7 @@ function is_youtube_url($url) {
 
 
                                         ?>
-                                        <h4 class="mb-0">Hosted By</h4>
+                                        <h4 class="mb-0" style="font-size:24px;">Hosted By</h4>
                                         <?php 
                                             if(!empty($guestName)) { echo '<div class="preview-host-name" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
                                             if(!empty($guestContact)) { echo '<div class="preview-host-contact-no" style="'.$guest_contact_css.'">'.esc_html($guestContact).'</div>'; }
