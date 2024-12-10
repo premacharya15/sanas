@@ -139,6 +139,9 @@ if ($existing_rsvp_query->have_posts()) {
     $guestMessage = esc_html(get_post_meta($edit_id, 'guest_message', true));
     $program = get_post_meta($edit_id, 'listing_itinerary_details', true);
     $registry = get_post_meta($edit_id, 'registries', true);
+    $event_venue_name = esc_html(get_post_meta($edit_id, 'event_venue_name', true));
+    $event_venue_address = esc_html(get_post_meta($edit_id, 'event_venue_address', true));
+    $event_venue_address_link = esc_html(get_post_meta($edit_id, 'event_venue_address_link', true));
     $itinerary = get_post_meta($edit_id, 'itinerary', true);
 
     $guest_name_css = get_post_meta($edit_id, 'guest_name_css', true);
@@ -278,7 +281,7 @@ function is_youtube_url($url) {
 
 
                                         ?>
-                                        <textarea class="map-input-rsvp m-0 edit-text rsvp-msg" id="search_address" rows="2" cols="50" placeholder="Venue Address"></textarea>
+                                        <textarea class="map-input-rsvp m-0 edit-text rsvp-msg" id="search_address" rows="2" cols="50" placeholder="Venue Address"><?php echo $event_venue_address; ?></textarea>
                                         <h4 class="mb-2" style="font-size:20px;color: #5c310d;">Hosted By</h4>
                                         <?php 
                                             if(!empty($guestName)) { echo '<div class="preview-host-name mb-2" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
