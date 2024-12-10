@@ -40,4 +40,10 @@ jQuery(document).ready(function () {
      jQuery('.wl-left-slide-bar>.inner-colum>.nav-pills>.nav-link').removeClass('active next previous ');
      jQuery('.wl-left-slide-bar>.inner-colum>.tab-content>.tab-pane').removeClass('active show');
  }
+
+
+ $('#mySelect').select2({
+    placeholder: 'Search for an option'
+});
+$('#mySelect').select2('triggerChange');
  });
