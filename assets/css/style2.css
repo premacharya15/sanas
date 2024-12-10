@@ -4483,7 +4483,7 @@ table.dataTable thead>tr>td.dt-orderable-desc:hover {
     position: relative;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .wed-cat-info .title-box .title {
