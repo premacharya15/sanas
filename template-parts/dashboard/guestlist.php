@@ -662,7 +662,7 @@ $card_image_url = $upload_dir['url'] . '/' . $file_name;
               <span>or drag and drop</span>
             </div>
           </div>
-          <p>Use <a href="#">Sana's Invite Template</a> worksheet and enter your guest names, emails and phone number in the specified format
+          <p>Use <a href="/wp-content/themes/sanas/assets/sampledownload.csv">Sana's Invite Template</a> worksheet and enter your guest names, emails and phone number in the specified format
           </p>
           <p>Remember to save your spreadsheet as a .csv or .xls before uploading.</p>
         </div>
