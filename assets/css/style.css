@@ -6178,7 +6178,8 @@ td.todo-subhead h4 span {
     position: relative;
     overflow: hidden;
     text-align: center;
-    padding: 215px 0px 135px;
+    padding: 310px 0px 230px;
+    height: 600px;
     background-size: cover;
     background-image: url(../img/Wedding_Banner.jpg);
 }
