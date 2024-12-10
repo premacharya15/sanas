@@ -1033,7 +1033,8 @@ jQuery(document).ready(function($) {
                 //     },
                 // });
 
-                show_alert_message('Invitations', 'Thanks for provide your response!');
+                // show_alert_message('Invitations', 'Thanks for provide your response!');
+                show_alert_message('Invitations', 'Your Response has been sent to the host!');
 
                   // var url = window.location.href.split('&')[0];
                   setTimeout(function() {      window.location.reload(); }, 2000); 
