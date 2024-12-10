@@ -346,7 +346,7 @@
                                     <div class="form-group">
                                         <div class="select-wrapper">
                                             <label for="font-family-select">Font</label>
-                                            <select class="selectpicker" data-live-search="true" id="fontFamily" onchange="changeFont()">
+                                            <select id="fontFamily" onchange="changeFont()">
                                             </select>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
