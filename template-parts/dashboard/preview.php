@@ -294,7 +294,7 @@ function is_youtube_url($url) {
                                 </div> 
 
                             <div class="row col-xxl-8 col-xl-9 col-lg-9 col-md-12 m-auto mt-0 position-relative">
-                                <div class="rsvp-event" style="background: transparent !important;border:none !important; padding: 0px 20px;">
+                                <div class="rsvp-event" style="background: transparent !important;border:none !important; padding: 0px 20px;margin-top: 0 !important;">
                                     <div class="rsvp-from-group">
                                         <input type="text" id="eventtitle" class="edit-text rsvp-msg event-title" name="eventtitle" placeholder="Enter Event Title*" style="<?php echo $event_title_css; ?>" value="<?php echo esc_html($eventtitle) ?>" required="">
                                     </div>
