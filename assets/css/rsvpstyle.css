@@ -84,6 +84,7 @@ background-color: #744f30;
 }
 .wl-fuc-timing table tbody tr {
     margin-bottom: 24px;
+    gap: 15px;
 }
 .wl-fuc-timing table>tbody>tr:last-child {
     margin-bottom: 0px;
