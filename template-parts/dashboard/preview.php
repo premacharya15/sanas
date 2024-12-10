@@ -160,6 +160,9 @@ else {
     $guestName = '';
     $guestContact = '';
     $guestMessage = '';
+    $event_venue_name = '';
+    $event_venue_address = '';
+    $event_venue_address_link = '';
     $program = array();
     $registry = array();
     $itinerary='';
