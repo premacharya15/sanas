@@ -42,27 +42,4 @@ jQuery(document).ready(function () {
  }
 
 
-//  jQuery('#fontFamily').select2({
-//     placeholder: 'Search for an option'
-// });
-    // jQuery('#fontFamily').select2();
-    jQuery('#fontFamily').select2({
-        placeholder: 'Search for an option',
-        minimumInputLength: 0
-    });
-    jQuery('#mySelect').select2({
-        placeholder: 'Search for an option'
-    });
-    function addOption(text, value) {
-        const newOption = new Option(text, value, false, false);
-        jQuery('#mySelect').append(newOption);
-    }
-
-    // Add some initial options (replace these with your data)
-    addOption('Option 1', 'value1');
-    addOption('Option 2', 'value2');
-    addOption('Option 3', 'value3');
-
-
-// jQuery('#fontFamily').select2('triggerChange');
  });
