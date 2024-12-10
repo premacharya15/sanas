@@ -53,6 +53,16 @@ jQuery(document).ready(function () {
     $('#mySelect').select2({
         placeholder: 'Search for an option'
     });
+    function addOption(text, value) {
+        const newOption = new Option(text, value, false, false);
+        $('#mySelect').append(newOption);
+    }
+
+    // Add some initial options (replace these with your data)
+    addOption('Option 1', 'value1');
+    addOption('Option 2', 'value2');
+    addOption('Option 3', 'value3');
+
 
 // jQuery('#fontFamily').select2('triggerChange');
  });
