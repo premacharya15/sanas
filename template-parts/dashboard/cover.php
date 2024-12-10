@@ -348,24 +348,19 @@
                                             <label for="font-family-select">Font</label>
                                             <select class="selectpicker" data-live-search="true" id="fontFamily" onchange="changeFont()">
                                             </select>
-                                            <select id="mySelect">
+
+                                            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+  <select id="my-select">
     <option value="Option 1">Option 1</option>
     <option value="Option 2">Option 2</option>
     <option value="Option 3">Option 3</option>
-</select>
+  </select>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-<script>
-    jQuery(document).ready(function($) {
-        $('#mySelect').select2({
-            placeholder: 'Search for an option',
-            minimumInputLength: 0
-        });
-    });
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script>
+    const selectElement = document.getElementById('my-select');
+    const choices = new Choices(selectElement);
+  </script>
                                         </div>
                                     </div>
                                     <div class="form-group">
