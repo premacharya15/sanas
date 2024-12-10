@@ -96,7 +96,7 @@ async function loadGoogleFonts() {
             select.appendChild(option);
         });
         // Refresh the selectpicker to apply the changes
-        $('.selectpicker').selectpicker('refresh');
+        jQuery('.selectpicker').selectpicker('refresh');
         canvas.renderAll();
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
@@ -104,7 +104,7 @@ async function loadGoogleFonts() {
     
 }
 window.onload = function () {
-    $('.selectpicker').selectpicker('refresh');
+    jQuery('.selectpicker').selectpicker('refresh');
     loadGoogleFonts();
     canvas.renderAll();
 };
