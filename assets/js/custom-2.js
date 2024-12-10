@@ -45,6 +45,10 @@ jQuery(document).ready(function () {
 //  jQuery('#fontFamily').select2({
 //     placeholder: 'Search for an option'
 // });
-    jQuery('#fontFamily').select2();
+    // jQuery('#fontFamily').select2();
+    jQuery('#fontFamily').select2({
+        placeholder: 'Search for an option',
+        minimumInputLength: 0
+    });
 // jQuery('#fontFamily').select2('triggerChange');
  });
