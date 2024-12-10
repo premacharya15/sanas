@@ -868,6 +868,8 @@ if (empty($rsvpimage)) {
                                                     const googleMapLink = `https://www.google.com/maps?q=${encodeURIComponent(place.name)}%20${encodeURIComponent(place.formatted_address)}`;
                                                     console.log("Google Maps Link:", googleMapLink);
 
+                                                    const event_venue_address_link = googleMapLink;
+
                                                     // Log details to the console
                                                     console.log("Selected Location:", place.name);
                                                     console.log("Formatted Address:", place.formatted_address);
