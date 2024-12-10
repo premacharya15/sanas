@@ -81,7 +81,6 @@
                                                 <label for="font-family-select">Font</label>
                                                 <select class="selectpicker" data-live-search="true" id="fontFamily" onchange="changeFont()">
                                                 </select>
-                                                2
                                             </div>
                                         </div>
                                         <div class="form-group">
