@@ -182,7 +182,7 @@ if($total_adults == 0 && $total_kids == 0){
         <div class="attend-info col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
           <a href="<?php echo $stepUrl; ?>" class="full-div-link"></a>
           <div class="inner">
-            <div class="event-title-2 mb-5">
+            <div class="event-title-2 mb-4">
               <h4><a href="<?php echo $stepUrl; ?>" class="text-black">My Events</a></h4>
             </div>
             <div class="inner-box">
