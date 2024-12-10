@@ -279,9 +279,9 @@ function is_youtube_url($url) {
                                 <div class="row col-xxl-8 col-xl-9 col-lg-9 col-md-12 m-auto position-relative">
                             
                                 <div class="rsvp-from-group">
-                                    <h3 class="mb-0 mt-4" style="font-size:24px;">Hosted By</h3>
+                                    <h3 class="mb-0 mt-3" style="font-size:24px;">Hosted By</h3>
                                 </div>  
-                                <div class="rsvp-event" style="background: transparent !important;border:none !important; padding: 20px 20px 0px 20px;">
+                                <div class="rsvp-event" style="background: transparent !important;border:none !important; padding: 20px 20px 0px 20px;margin:0;">
                                     <div class="rsvp-from-group">
                                         <div id="guestName" name="guestName" style="<?php echo $guest_name_css; ?>" class="edit-text rsvp-msg host-name">
                                             <?php echo esc_html($guestName); ?>
