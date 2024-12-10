@@ -6367,6 +6367,9 @@ button#add_new_group_button {
     width: 20px;
     height: 20px;
 }
+.wl-previewbox .event-date{
+    font-size: 16px;
+}
 .delete-btn>button.deleteRowBtn>i, .wl-fuc-timing .rsvp-event .deletebtn i {
     color: var(--snas-bg-secondary-2) !important;
     font-size: 20px !important;
