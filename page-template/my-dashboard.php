@@ -214,6 +214,15 @@ if($total_adults == 0 && $total_kids == 0){
                 <h4><a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="text-black">Guest List</a></h4>
               </div>
             </div>
+            <div class="guest-count-box mt-3 text-center flex">
+              <div class="guest-count-box-inner1">
+                <span>Accepted</span>
+              </div>
+              <div class="guest-count-box-inner2 mt-2">
+                <span>Adults: <?php echo $total_adults; ?></span>
+                <span>Kids: <?php echo $total_kids; ?></span>
+              </div>
+            </div>
             <div class="graph-box">
               
               <!-- <div id="guest_attending"></div> -->
@@ -226,15 +235,6 @@ if($total_adults == 0 && $total_kids == 0){
 </div>
 </div> <canvas id="chart-line" width="299" height="340" class="chartjs-render-monitor" style="display: block; width: 299px; height: 340px;"></canvas>
             </div>
-            <div class="guest-count-box mt-3 text-center flex">
-              <div class="guest-count-box-inner1">
-                <span>Accepted</span>
-                </div>
-                <div class="guest-count-box-inner2 mt-2">
-                  <span>Adults: <?php echo $total_adults; ?></span>
-                  <span>Kids: <?php echo $total_kids; ?></span>
-                </div>
-              </div>
           </div>
         </div>
         <?php }else{?>
