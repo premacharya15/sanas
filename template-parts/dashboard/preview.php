@@ -378,7 +378,7 @@ function is_youtube_url($url) {
                                 <div class="row">
                                     <div class="col-xxl-5 col-xl-5 col-lg-6 col-md-10 col-sm-12 m-auto">
                                         <div class="wl-joining nonclickeble">
-                                            <h4 class="mb-0">Will you be joining us?</h4>
+                                            <h4 class="mb-2">Will you be joining us?</h4>
                                             <ul>
                                                 <li><a href="#">Yes</a></li>
                                                 <li><a href="#">No</a></li>
