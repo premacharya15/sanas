@@ -348,6 +348,8 @@
                                             <label for="font-family-select">Font</label>
                                             <select class="selectpicker" data-live-search="true" id="fontFamily" onchange="changeFont()">
                                             </select>
+                                            <select id="mySelect" style="width: 100%;">
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
