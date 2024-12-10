@@ -46,5 +46,5 @@ jQuery(document).ready(function () {
 //     placeholder: 'Search for an option'
 // });
     jQuery('#fontFamily').select2();
-jQuery('#fontFamily').select2('triggerChange');
+// jQuery('#fontFamily').select2('triggerChange');
  });
