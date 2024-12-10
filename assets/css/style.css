@@ -2446,7 +2446,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
     border: 1px solid #9A7A5F;
     border-radius: 18px;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .left-content-rsvp {
@@ -5502,7 +5502,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
 }
 .content.content-3 .wl-card-detaile textarea.host-message {
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 25px;
     background: transparent;
     border-radius: 18px;
