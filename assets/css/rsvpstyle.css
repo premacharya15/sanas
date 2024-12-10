@@ -88,6 +88,7 @@ background-color: #744f30;
 }
 .wl-fuc-timing table>tbody>tr:last-child {
     margin-bottom: 0px;
+    gap: 15px;
 }
 @media only screen and (max-width:1400px) {
     section.wl-main-canvas .content.content-3 .wl-card-detaile .wl-inner-card-detaile {
