@@ -303,6 +303,9 @@ function is_youtube_url($url) {
 
                             <div class="row col-xxl-8 col-xl-9 col-lg-9 col-md-12 m-auto mt-0 position-relative">
                                 <div class="rsvp-event" style="background: transparent !important;border:none !important; padding: 0px 20px;margin-top: 0 !important;">
+                                    <div class="divider">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/divider.png" alt="">
+                                    </div>
                                     <div class="rsvp-from-group">
                                         <div id="eventtitle" class="edit-text rsvp-msg event-title" style="<?php echo $event_title_css; ?>">
                                             <?php echo esc_html($eventtitle); ?>
@@ -371,10 +374,6 @@ function is_youtube_url($url) {
                                         </div>
                                     </div>
                                 </div>
-                                                            <div class="divider">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/divider.png" alt="">
-                            </div>
-
                                 <div class="row">
                                     <div class="col-xxl-5 col-xl-5 col-lg-6 col-md-10 col-sm-12 m-auto">
                                         <div class="wl-joining nonclickeble">
