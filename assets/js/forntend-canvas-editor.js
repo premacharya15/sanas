@@ -133,7 +133,23 @@ async function loadGoogleFonts() {
     }
   }
 window.onload = function () {
-    
+    const fontFamily = localStorage.getItem('fontFamily');
+    const fontSize = localStorage.getItem('fontSize');
+    const fontWeight = localStorage.getItem('fontWeight');
+
+    if (fontFamily) {
+        document.getElementById('fontFamily').value = fontFamily;
+        changeFont();
+    }
+    if (fontSize) {
+        document.getElementById('fontSize').value = fontSize;
+        changeFontSize();
+    }
+    if (fontWeight) {
+        document.getElementById('fontWeight').value = fontWeight;
+        changeFontWeight();
+    }
+
     loadGoogleFonts();
     canvas.renderAll();
 };
