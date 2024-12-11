@@ -5488,7 +5488,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
     width: 100% !important;
 }
  .event-date{
-    font-size: 14px;
+    font-size: 16px;
     line-height: 25px;
     font-weight: 400;
 }
@@ -6142,25 +6142,6 @@ td.todo-subhead h4 span {
     -moz-transition: all 300ms ease;
     transition: all 300ms ease;
 }
-
-.wl-contact-form-section .form-box .contact-form .form-group select {
-    position: relative;
-    display: block;
-    width: 100%;
-    line-height: 28px;
-    padding: 10px 25px;
-    color: #121f38;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    height: 50px;
-    font-size: 16px;
-    background: #ffffff;
-    -webkit-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    transition: all 300ms ease;
-}
-
 .wl-contact-form-section .form-box .contact-form .form-group textarea {
     position: relative;
     display: block;
