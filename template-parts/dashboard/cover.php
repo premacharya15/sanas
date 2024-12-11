@@ -1315,7 +1315,7 @@
                                         <?php echo '<img src=" ' . get_template_directory_uri() . '/assets/img/e-11.png" alt=""> ' ?>
                                     </div>
                                     <div class="elements-iteam">
-                                        <?php echo '<img src=" ' . get_template_directory_uri() . '/assets/img/e-12.png" alt=""> ' ?>
+                                       <?php echo '<img src=" ' . get_template_directory_uri() . '/assets/img/e-12.png" alt=""> ' ?>
                                     </div>
                                 </div>
                                 <div class="elements-inner">
@@ -1754,3 +1754,46 @@ $isInitialLoad = empty($frontpagedata) ? 'true' : 'false';
 </script>
 <?php  
 }?>
+
+<script>
+    jQuery('#save-front-canvas-data').click(function () {
+        canvas.renderAll();
+        var canvasData = canvas.toJSON();
+        var cardId = jQuery(this).attr('card-id');
+        var eventId = jQuery(this).attr('event-id');
+        var stepId = jQuery(this).attr('step-id');
+        var imageDataURL = canvas.toDataURL({
+            format: 'png',
+            quality: 1.0
+        });
+        var fontFamily = document.getElementById('fontFamily').value.replace(/\+/g, ' ');
+
+        jQuery.ajax({
+            url: ajax_login_object.ajaxurl,
+            type: 'POST',
+            data: {
+                action: 'sanas_save_canvas_data_callback',
+                security: jQuery('#sanasfrontpagesecurity').val(),
+                canvas_data: JSON.stringify(canvasData),
+                card_id: cardId,
+                step_id: stepId,
+                image_data: imageDataURL,
+                font_family: fontFamily, // Include font family in the data
+                event_id: eventId
+            },
+            success: function (response) {
+                if (response.success) {
+                    // Handle success
+                } else {
+                    alert(response.data.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                show_alert_message('Cover', 'Please wait a moment and try again later');
+            },
+            complete: function () {
+                hidePreloader();
+            }
+        });
+    });
+</script>
