@@ -133,6 +133,7 @@ async function loadGoogleFonts() {
     }
   }
 window.onload = function () {
+    
     loadGoogleFonts();
     canvas.renderAll();
 };
@@ -1106,4 +1107,14 @@ jQuery(document).ready(function ($) {
   }
 
 
+});
+
+document.getElementById('save-front-canvas-data').addEventListener('click', function() {
+    const fontFamily = document.getElementById('fontFamily').value;
+    const fontSize = document.getElementById('fontSize').value;
+    const fontWeight = document.getElementById('fontWeight').value;
+
+    localStorage.setItem('fontFamily', fontFamily);
+    localStorage.setItem('fontSize', fontSize);
+    localStorage.setItem('fontWeight', fontWeight);
 });
