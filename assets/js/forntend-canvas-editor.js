@@ -143,19 +143,17 @@ function changeFont() {
     if (activeObject && activeObject.type === 'i-text') {
         const fontFamily = document.getElementById('fontFamily').value.replace(/\+/g, ' ');
         console.log('selected Font Family', fontFamily);
-        // WebFont.load({
-        //     google: {
-        //         families: [fontFamily]
-        //     },
-        //     fontactive: function (familyName, fvd) {
-        //         if (familyName === fontFamily) {
-        //             activeObject.set({ fontFamily: familyName });
-        //             canvas.renderAll();
-        //         }
-        //     }
-        // });
-        activeObject.set({ fontFamily: fontFamily });
-        canvas.renderAll();
+        WebFont.load({
+            google: {
+                families: [fontFamily]
+            },
+            fontactive: function (familyName, fvd) {
+                if (familyName === fontFamily) {
+                    activeObject.set({ fontFamily: familyName });
+                    canvas.renderAll();
+                }
+            }
+        });
     }
 }
 window.changeFont = changeFont;
