@@ -154,8 +154,6 @@ function changeFont() {
             }
         });
     }
-    const canvasData = canvas.toJSON();
-    canvasData.fontFamily = fontFamily;
 }
 window.changeFont = changeFont;
 // Change font weight of selected text
