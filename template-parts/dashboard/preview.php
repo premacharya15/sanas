@@ -295,7 +295,8 @@ function is_youtube_url($url) {
                                         <!-- <input type="hidden" id="event_venue_address_link" name="event_venue_address_link" value="<?php echo esc_html($event_venue_address_link); ?>"> -->
                                         <?php  if(!empty($guestMessage)) { ?>
                                         <div class="rsvp-from-group">
-                                            <div class="edit-text rsvp-msg preview-host-message" style="<?php echo $guest_message_css; ?>" id="guestMessage" name="guestMessage"><?php echo nl2br(htmlspecialchars($guestMessage)); ?></div>
+                                            <div class="edit-text rsvp-msg preview-host-message" style="<?php echo $guest_message_css; ?>" id="guestMessage" name="guestMessage"><?php echo nl2br(htmlspecialchars(html_entity_decode($guestMessage))); ?>
+                                            </div>
                                         </div>
                                         <?php }?>
                                     </div>
