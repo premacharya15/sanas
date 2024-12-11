@@ -675,7 +675,6 @@ function loadCanvasFromJSON(json) {
                             if (familyName === obj.fontFamily) {
                                 obj.set({ fontFamily: familyName });
                                 canvas.renderAll();
-                                console.log('fontFamily', familyName);
                             }
                         }
                     });
