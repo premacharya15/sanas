@@ -150,6 +150,7 @@ function changeFont() {
                 if (familyName === fontFamily) {
                     activeObject.set({ fontFamily: familyName });
                     canvas.renderAll();
+                    saveFontFamily();
                 }
             }
         });
