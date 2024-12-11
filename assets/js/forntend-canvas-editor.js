@@ -458,7 +458,7 @@ function getImageData() {
 }
 // Serialize canvas data and save it to the backend
 function saveCanvasData() {
-    const canvasData = JSON.stringify(canvas.toJSON());
+    const canvasData = JSON.stringify(canvas.toJSON(['fontFamily']));
     console.log("Serialized Canvas Data:", canvasData);
     // Display the serialized data in an alert box
 }
