@@ -930,8 +930,7 @@ if (empty($rsvpimage)) {
                                     ?>
                                     </tbody>
                                     </table>                                    
-                                    <button id="add-event-btn" class="add-form-one"><i class="icon-plus"></i>Add
-                                    </button>
+                                    <button id="add-event-btn" class="add-form-one" type="button"><i class="icon-plus"></i>Add</button>
                                     </div>
                                 </div>
                             </div>
