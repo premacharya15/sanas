@@ -499,7 +499,7 @@ section.wedding-section .row {
 .lower-content {
     display: flex;
     justify-content: space-between;
-    padding: 15px 24px 0 24px;
+    padding: 10px 24px 10px 24px;
     margin: 0;
     align-items: center;
 }
