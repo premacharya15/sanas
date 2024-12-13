@@ -213,7 +213,7 @@ if ($colorbg) {
           <a href="<?php echo $stepUrl; ?>" class="full-div-link"></a>
           <div class="inner">
             <div class="event-title-2 mb-4">
-              <h4><a href="<?php echo $stepUrl; ?>" class="text-black">My Events</a></h4>
+              <h4><a href="<?php echo $stepUrl; ?>" class="text-black">My Events1</a></h4>
             </div>
             <div class="inner-box">
               <a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style=" background-color:<?php echo $colorbgvalue; ?>;">
