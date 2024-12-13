@@ -64,7 +64,7 @@ $totals = $wpdb->get_row(
       }
 
        if ($get_event) {
-        $event_id = $get_event[3]->event_no;
+        $event_id = $get_event[0]->event_no;
        }
 
 $guest_details_info_table = $wpdb->prefix . "guest_details_info";
