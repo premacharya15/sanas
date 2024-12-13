@@ -211,7 +211,15 @@ if ($colorbg) {
               <h4><a href="<?php echo $stepUrl; ?>" class="text-black">My Events</a></h4>
             </div>
             <div class="inner-box">
-              <a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style="background-color:<?php echo $colorbgvalue; ?>;">
+              <?php
+
+              if(!empty($eventDate) && !empty($eventtitle)){
+                $event_link = '/user-dashboard/?dashboard=rsvp&card_id=' . $get_event[0]->event_card_id . '&event_id=' . $get_event[0]->event_no;
+              }else{
+                $event_link = '/user-dashboard/?dashboard=preview&card_id=' . $get_event[0]->event_card_id . '&event_id=' . $get_event[0]->event_no;
+              }
+              ?>
+              <a href="<?php echo $event_link; ?>" class="flip-container" style="background-color:<?php echo $colorbgvalue; ?>;">
                 <div class="flipper">
                   <div class="front">
                     <img src="<?php echo $event_front_card_preview; ?>" alt="template">
