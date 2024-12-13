@@ -203,7 +203,7 @@ if ($colorbg) {
           $event_card_id = $get_event[0]->event_card_id;
           $event_id = $get_event[0]->event_no;
 
-          if(!empty($eventDate) && !empty($eventtitle)){
+          if(!empty($formattedDate) && !empty($eventtitle)){
             $stepUrl = '/user-dashboard/?dashboard=rsvp&card_id=' . $event_card_id . '&event_id=' . $event_id;
           }else{
             $stepUrl = '/user-dashboard/?dashboard=preview&card_id=' . $event_card_id . '&event_id=' . $event_id;
@@ -213,7 +213,7 @@ if ($colorbg) {
           <a href="<?php echo $stepUrl; ?>" class="full-div-link"></a>
           <div class="inner">
             <div class="event-title-2 mb-4">
-              <h4><a href="<?php echo $stepUrl; ?>" class="text-black">My Events1</a></h4>
+              <h4><a href="<?php echo $stepUrl; ?>" class="text-black">My Events</a></h4>
             </div>
             <div class="inner-box">
               <a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style=" background-color:<?php echo $colorbgvalue; ?>;">
