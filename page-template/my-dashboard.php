@@ -202,7 +202,12 @@ if ($colorbg) {
         <?php if ($get_event) {
           $event_card_id = $get_event[0]->event_card_id;
           $event_id = $get_event[0]->event_no;
-          $stepUrl = '/user-dashboard/?dashboard=preview&card_id=' . $event_card_id . '&event_id=' . $event_id;
+
+          if(!empty($eventDate) && !empty($eventtitle)){
+            $stepUrl = '/user-dashboard/?dashboard=rsvp&card_id=' . $event_card_id . '&event_id=' . $event_id;
+          }else{
+            $stepUrl = '/user-dashboard/?dashboard=preview&card_id=' . $event_card_id . '&event_id=' . $event_id;
+          }
           ?>
         <div class="attend-info col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
           <a href="<?php echo $stepUrl; ?>" class="full-div-link"></a>
