@@ -213,7 +213,7 @@ if ($colorbg) {
             <div class="inner-box">
               <?php
 
-              if(!empty($eventDate) && !empty($eventtitle)){
+              if(!empty($formattedDate) && !empty($eventtitle)){
                 $event_link = '/user-dashboard/?dashboard=rsvp&card_id=' . $get_event[0]->event_card_id . '&event_id=' . $get_event[0]->event_no;
               }else{
                 $event_link = '/user-dashboard/?dashboard=preview&card_id=' . $get_event[0]->event_card_id . '&event_id=' . $get_event[0]->event_no;
