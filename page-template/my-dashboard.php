@@ -216,7 +216,6 @@ if ($colorbg) {
               <h4><a href="<?php echo $stepUrl; ?>" class="text-black">My Events</a></h4>
             </div>
             <div class="inner-box">
-              <?php echo 'stepUrl: ' . $stepUrl; echo 'event date: ' . $formattedDate; echo 'event title: ' . $eventtitle; ?>
               <a href="<?php echo $stepUrl; ?>" class="flip-container" style=" background-color:<?php echo $colorbgvalue; ?>;">
                 <div class="flipper">
                   <div class="front">
