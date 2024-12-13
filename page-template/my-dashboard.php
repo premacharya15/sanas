@@ -203,7 +203,7 @@ if ($colorbg) {
           $event_card_id = $get_event[0]->event_card_id;
           $event_id = $get_event[0]->event_no;
 
-          if(!empty($formattedDate) && !empty($eventtitle)){
+          if(empty($formattedDate) || empty($eventtitle)){
             $stepUrl = '/user-dashboard/?dashboard=rsvp&card_id=' . $event_card_id . '&event_id=' . $event_id;
           }else{
             $stepUrl = '/user-dashboard/?dashboard=preview&card_id=' . $event_card_id . '&event_id=' . $event_id;
