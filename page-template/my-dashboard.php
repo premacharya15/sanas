@@ -185,8 +185,11 @@ if($total_adults == 0 && $total_kids == 0){
             <div class="event-title-2 mb-4">
               <h4><a href="<?php echo $stepUrl; ?>" class="text-black">My Events</a></h4>
             </div>
+            <?php 
+            $colorbgvalue = get_post_meta($event_id, 'event_front_bg_color', true);
+            ?>
             <div class="inner-box">
-              <a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style="background-color:#dc587f;">
+              <a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style="background-color:<?php echo $colorbgvalue; ?>;">
                 <div class="flipper">
                   <div class="front">
                     <img src="<?php echo $event_front_card_preview; ?>" alt="template">
