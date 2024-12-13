@@ -197,7 +197,7 @@ if($total_adults == 0 && $total_kids == 0){
                 $colorbgvalue=$colorbg;
               }
               else{
-                $colorbgvalue = '#dc587f';
+                // $colorbgvalue = '#dc587f';
               }
             ?>
             <div class="inner-box">
