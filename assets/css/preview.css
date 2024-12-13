@@ -86,7 +86,7 @@ section.wl-main-canvas .card-canvas img {
         top: 54px;
         bottom: auto;
         width: 100%;
-        z-index: 99999;
+        z-index: 8;
         background-color: #ffffff;
     }
 
