@@ -55,6 +55,7 @@ $totals = $wpdb->get_row(
           $event_rsvp_id = $get_event[0]->event_rsvp_id;
           $eventDate= esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
           $eventtitle= esc_html(get_post_meta($event_rsvp_id, 'event_name', true));
+          $event_front_bg_color = get_post_meta($event_rsvp_id, 'event_front_bg_color', true);
           $formattedDate = '';
           if(!empty($eventDate))
           {
@@ -185,23 +186,8 @@ if($total_adults == 0 && $total_kids == 0){
             <div class="event-title-2 mb-4">
               <h4><a href="<?php echo $stepUrl; ?>" class="text-black">My Events</a></h4>
             </div>
-            <?php 
-            $color_bg_link = $wpdb->prepare(
-              "SELECT event_front_bg_color FROM $sanas_card_event_table WHERE event_no = %d",
-               $event_id
-            );
-            $colorbg = $wpdb->get_var($color_bg_link);
-            $colorbgvalue='';
-            if($colorbg)
-              {
-                $colorbgvalue=$colorbg;
-              }
-              else{
-                // $colorbgvalue = '#dc587f';
-              }
-            ?>
             <div class="inner-box">
-              <a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style="background-color:<?php echo $colorbgvalue; ?>;">
+              <a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style="background-color:<?php echo $event_front_bg_color; ?>;">
                 <div class="flipper">
                   <div class="front">
                     <img src="<?php echo $event_front_card_preview; ?>" alt="template">
