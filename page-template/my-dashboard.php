@@ -186,10 +186,19 @@ if($total_adults == 0 && $total_kids == 0){
               <h4><a href="<?php echo $stepUrl; ?>" class="text-black">My Events</a></h4>
             </div>
             <?php 
-            $colorbgvalue = get_post_meta($event_id, 'event_front_bg_color', true);
-            if(empty($colorbgvalue)){
-              $colorbgvalue = '#dc587f';
-            }
+            $color_bg_link = $wpdb->prepare(
+              "SELECT event_front_bg_color FROM $sanas_card_event_table WHERE event_no = %d",
+               $event_id
+            );
+            $colorbg = $wpdb->get_var($color_bg_link);
+            $colorbgvalue='';
+            if($colorbg)
+              {
+                $colorbgvalue=$colorbg;
+              }
+              else{
+                $colorbgvalue = '#dc587f';
+              }
             ?>
             <div class="inner-box">
               <a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style="background-color:<?php echo $colorbgvalue; ?>;">
