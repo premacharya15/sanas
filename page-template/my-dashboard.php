@@ -113,7 +113,7 @@ if($total_adults == 0 && $total_kids == 0){
   $total_kids = 4;
 }
 
-// Assuming $event_id is already defined in your code
+
 $sanas_card_event_table = $wpdb->prefix . 'sanas_card_event';
 
 // Fetch RSVP background image
@@ -211,7 +211,7 @@ if ($colorbg) {
               <h4><a href="<?php echo $stepUrl; ?>" class="text-black">My Events</a></h4>
             </div>
             <div class="inner-box">
-              <a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style="background-image: url(<?php echo $rsvp_bg_img_url_value; ?>); background-color:<?php echo $colorbgvalue; ?>;">
+              <a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style="background-color:<?php echo $colorbgvalue; ?>;">
                 <div class="flipper">
                   <div class="front">
                     <img src="<?php echo $event_front_card_preview; ?>" alt="template">
