@@ -214,12 +214,12 @@ if ($colorbg) {
               <?php
 
               if(!empty($formattedDate) && !empty($eventtitle)){
-                $event_link = '/user-dashboard/?dashboard=rsvp&card_id=' . $get_event[0]->event_card_id . '&event_id=' . $get_event[0]->event_no;
+                $my_event_link = '/user-dashboard/?dashboard=rsvp&card_id=' . $get_event[0]->event_card_id . '&event_id=' . $get_event[0]->event_no;
               }else{
-                $event_link = '/user-dashboard/?dashboard=preview&card_id=' . $get_event[0]->event_card_id . '&event_id=' . $get_event[0]->event_no;
+                $my_event_link = '/user-dashboard/?dashboard=preview&card_id=' . $get_event[0]->event_card_id . '&event_id=' . $get_event[0]->event_no;
               }
               ?>
-              <a href="<?php echo $event_link; ?>" class="flip-container" style="background-color:<?php echo $colorbgvalue; ?>;">
+              <a href="<?php echo $my_event_link; ?>" class="flip-container" style="background-color:<?php echo $colorbgvalue; ?>;">
                 <div class="flipper">
                   <div class="front">
                     <img src="<?php echo $event_front_card_preview; ?>" alt="template">
