@@ -187,6 +187,9 @@ if($total_adults == 0 && $total_kids == 0){
             </div>
             <?php 
             $colorbgvalue = get_post_meta($event_id, 'event_front_bg_color', true);
+            if(empty($colorbgvalue)){
+              $colorbgvalue = '#dc587f';
+            }
             ?>
             <div class="inner-box">
               <a href="/user-dashboard/?dashboard=preview&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="flip-container" style="background-color:<?php echo $colorbgvalue; ?>;">
