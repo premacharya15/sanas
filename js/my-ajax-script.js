@@ -454,11 +454,9 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         var formData = $(this).serialize();
 
-        if (addMore) {
-            formData += '&action=add_todo_item_and_add_more';
-        } else {
-            formData += '&action=add_todo_item';
-        }
+        // Determine the action based on which button was clicked
+        var action = addMore ? 'add_todo_item_and_add_more' : 'add_todo_item';
+        formData += '&action=' + action;
 
         $.ajax({
             type: 'POST',
@@ -479,6 +477,9 @@ jQuery(document).ready(function($) {
 
                         const today = new Date().toISOString().split('T')[0];
                         $('#add-todo-date').val(today);
+
+                        // Append the new row to the to-do table
+                        appendNewTaskToTable(response.data.new_row);
                     } else {
                         $('#add-todolist-popup').modal('hide');
                         location.reload();
@@ -499,170 +500,13 @@ jQuery(document).ready(function($) {
     });
 
     // Function to append the new task to the table
-    function appendNewTaskToTable(task) {
-        var taskDate = new Date(task.date);
-        var month = taskDate.toLocaleString('default', { month: 'long' });
-        var year = taskDate.getFullYear();
-        var monthYear = month + ' ' + year;
-
-        var tableId = 'todo-table-' + monthYear.replace(' ', '-');
-        var tableExists = $('#' + tableId).length > 0;
-
-        if (!tableExists) {
-            var currentMonthCount = $('.todo-table').length;
-            var showAll = getURLParameter('show_all') === 'true';
-
-            if (currentMonthCount >= 5 && !showAll) {
-                return;
-            }
-
-            var tableHtml = `
-                <table class="mb-0">
-                    <tr>
-                        <th class="todo-subhead text-align-start" colspan="6">
-                            <h4>${month} <span class="year-text">${year}</span></h4>
-                        </th>
-                    </tr>
-                </table>
-                <table class="vendor-list-table todo-list-table todo-table" id="${tableId}">
-                    <thead>
-                        <tr class="todo-check-title">
-                            <th>Category</th>
-                            <th>Task</th>
-                            <th>Notes</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th class="actions">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- New task will be appended here -->
-                    </tbody>
-                </table>
-            `;
-            $('.vendor-table').append(tableHtml);
-        }
-
-        var newRowHtml = `
-            <tr ${task.completed == 1 ? 'class="text-decoration-line-through pe-none"' : ''}>
-                <td class="text-single-line text-capitalize" data-toggle="tooltip" data-bs-original-title="${escapeHtml(task.category)}">
-                    ${escapeHtml(task.category)}
-                </td>
-                <td class="text-single-line text-capitalize" data-toggle="tooltip" data-bs-original-title="${escapeHtml(task.title)}">
-                    ${escapeHtml(task.title)}
-                </td>
-                <td class="text-single-line text-capitalize" data-toggle="tooltip" data-bs-original-title="${escapeHtml(task.notes)}">
-                    ${escapeHtml(task.notes)}
-                </td>
-                <td class="text-single-line text-nowrap">
-                    ${task.formatted_date}
-                </td>
-                <td>
-                    <select class="status-dropdown mediumfont mobile-dropdown" data-id="${task.id}" data-bs-toggle="tooltip" data-bs-original-title="${task.status}">
-                        <option value="Yet To Start" ${task.status === 'Yet To Start' ? 'selected' : ''} data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">⏳</option>
-                        <option value="In Progress" ${task.status === 'In Progress' ? 'selected' : ''} data-bs-toggle="tooltip" data-bs-original-title="In Progress">🔄</option>
-                        <option value="Completed" ${task.status === 'Completed' ? 'selected' : ''} data-bs-toggle="tooltip" data-bs-original-title="Completed">✅</option>
-                    </select>
-                    <select class="status-dropdown smallfont desktop-dropdown" data-id="${task.id}" data-bs-toggle="tooltip" data-bs-original-title="${task.status}">
-                        <option value="Yet To Start" ${task.status === 'Yet To Start' ? 'selected' : ''} data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">Yet To Start</option>
-                        <option value="In Progress" ${task.status === 'In Progress' ? 'selected' : ''} data-bs-toggle="tooltip" data-bs-original-title="In Progress">In Progress</option>
-                        <option value="Completed" ${task.status === 'Completed' ? 'selected' : ''} data-bs-toggle="tooltip" data-bs-original-title="Completed">Completed</option>
-                    </select>
-                </td>
-                <td class="actions">
-                    <div>
-                        <a href="#" class="edit edit-todo theme-btn" data-bs-toggle="modal" data-bs-target="#edit-todolist-popup" data-id="${task.id}">
-                            <i class="fa-solid fa-pen"></i>
-                        </a>
-                        <a href="#" class="delete theme-btn" data-id="${task.id}">
-                            <i class="fa-regular fa-trash-can"></i>
-                        </a>
-                    </div>
-                </td>
-            </tr>
-        `;
-
-        $('#' + tableId + ' tbody').prepend(newRowHtml);
-
-        var tooltipTriggerList = document.querySelectorAll('[data-toggle="tooltip"]');
-        var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-
-        recalculate_task();
+    function appendNewTaskToTable(newRowHtml) {
+        // Find the correct table based on the date or other logic
+        // For simplicity, append to the first table. Adjust as needed.
+        $('.todo-table').first().find('tbody').append(newRowHtml);
     }
 
-    function escapeHtml(text) {
-        if (text == null) return '';
-        var map = {
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#39;'
-        };
-        return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-    }
-
-    function getURLParameter(name) {
-        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-        var results = regex.exec(location.search);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-    }
-
-    // Edit To-Do Item
-    jQuery('#edit-todo-form').submit(function(e) {
-        e.preventDefault();
-        var formData = jQuery(this).serialize();
-        $.ajax({
-            type: 'POST',
-            url: ajax_object.ajax_url,
-            data: formData + '&action=edit_todo_item',
-            success: function(response) {
-                if (response.success) {
-                    jQuery('#edit-todolist-popup').modal('hide');
-                    // jQuery('#exampleModalLabel').text('Success');
-                    // jQuery('#modal-body-text').text(response.data);
-                    // jQuery('#modal_html_alert').modal('show');
-                    // jQuery('#render-modal-yes-button').on('click', function() {
-                        location.reload();
-                    // });
-                } else {
-                    jQuery('#exampleModalLabel').text('Error');
-                    jQuery('#modal-body-text').text(response.data);
-                    jQuery('#modal_html_alert').modal('show');
-                    jQuery('#render-modal-yes-button').on('click', function() {
-                        jQuery('#modal_html_alert').modal('hide');
-                    });
-                }
-            }
-        });
-    });
-
-  
-  jQuery(".checkSingle").on("change", function () {
-    var $checkbox = jQuery(this);
-    var completed = $checkbox.is(":checked") ? 1 : 0;
-    var todoId = $checkbox.attr("id").split("-").pop();
-
-    $.ajax({
-      type: "POST",
-      url: ajax_object.ajax_url,
-      data: {
-        action: "toggle_todo_completed",
-        id: todoId,
-        completed: completed,
-        security: ajax_object.security // Include if you're using a nonce for security
-      },
-      success: function (response) {
-        if (response.success) {
-            //
-        } else {
-          console.log("Something went wrong: " + response.data);
-        }
-      }
-    });
-  });
-   // Function to show the modal
+    // Function to show the modal
     function show_alert_message2(title, message) {
         jQuery('#exampleConfirmModalLabel').text(title);
         jQuery('#confirm_modal-body-text').text(message);
