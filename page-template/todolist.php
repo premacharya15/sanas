@@ -214,6 +214,7 @@ $percent_count = ($completed_count > 0) ? ($completed_count * 100) / $total_coun
                 </div>
                 <div class="content-box">
                     <form id="add-todo-form" method="post" action="#">
+                        <?php wp_nonce_field('add_todo_item_nonce_action', 'add_todo_item_nonce'); ?>
                         <div class="form-content">
                             <div class="row">
                                 <div class="col-lg-6 col-sm-12">
@@ -242,8 +243,8 @@ $percent_count = ($completed_count > 0) ? ($completed_count * 100) / $total_coun
                                 </div>
                                 <div class="form-group col-lg-12 col-sm-12">
                                     <div class="links-box">
-                                        <button type="submit" class="dashbord-btn" id="save-todo">Save</button>
-                                        <button type="submit" class="dashbord-btn" id="add-more-todo">Save and Add More</button>
+                                        <button type="submit" class="dashbord-btn" id="save-todo" data-action="save">Save</button>
+                                        <button type="submit" class="dashbord-btn" id="add-more-todo" data-action="add_more">Save and Add More</button>
                                     </div>
                                 </div>
                             </div>
