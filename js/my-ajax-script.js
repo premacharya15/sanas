@@ -456,7 +456,7 @@ jQuery(document).ready(function($) {
 
         // Determine the action based on which button was clicked
         var action = addMore ? 'add_todo_item_and_add_more' : 'add_todo_item';
-        formData += '&action=' + action;
+        formData += '&action=' + ajax_object.action;
 
         $.ajax({
             type: 'POST',
@@ -555,12 +555,12 @@ jQuery(document).ready(function($) {
     // Function to attach event handlers to newly added rows
     function attachEventHandlersToNewRow() {
         // Edit button handler
-        $('.edit-todo').off('click').on('click', function() {
+        $(document).on('click', '.edit-todo', function() {
             var todoId = $(this).data('id');
             $.ajax({
                 type: 'POST',
                 url: ajax_object.ajax_url,
-                data: { id: todoId, action: 'get_todo_item' },
+                data: { id: todoId, action: 'get_todo_item', nonce: ajax_object.nonce },
                 success: function(response) {
                     if (response.success) {
                         $('#edit-todo-id').val(response.data.id);
@@ -575,7 +575,7 @@ jQuery(document).ready(function($) {
         });
 
         // Delete button handler
-        $('.delete').off('click').on('click', function(e) {
+        $(document).on('click', '.delete', function(e) {
             e.preventDefault();
             var todoId = $(this).data('id');
             show_alert_message2('Delete Task', 'Do you want to delete this task?');
@@ -589,7 +589,7 @@ jQuery(document).ready(function($) {
     // Attach event handlers to existing rows
     attachEventHandlersToNewRow();
 
-    
+
     // Function to show the modal
     function show_alert_message2(title, message) {
         jQuery('#exampleConfirmModalLabel').text(title);
@@ -639,19 +639,18 @@ jQuery(document).ready(function($) {
     });
     
 function countDropdowns() {
-var totalDropdowns = jQuery('.todo-list .status-dropdown').length;
-var completedDropdowns = jQuery('.todo-list .status-dropdown').filter(function() {
-  return jQuery(this).val() === 'Completed';
+var totalDropdowns = $('.todo-list .status-dropdown').length;
+var completedDropdowns = $('.todo-list .status-dropdown').filter(function() {
+  return $(this).val() === 'Completed';
 }).length;
 return { total: totalDropdowns, completed: completedDropdowns };
 }
 function recalculate_task(){
     var counts = countDropdowns();
-    var countmultiple = 100 / counts.total;
-    var percent = countmultiple * counts.completed;
-    jQuery('.tast-count-com').text(counts.completed);
-    jQuery('.tast-count-total').text(counts.total);
-    jQuery('#todo_progressbar').css('width', percent + '%');
+    var percent = counts.total > 0 ? (counts.completed * 100) / counts.total : 0;
+    $('.tast-count-com').text(counts.completed);
+    $('.tast-count-total').text(counts.total);
+    $('#todo_progressbar').css('width', percent + '%');
 }
     jQuery(".status-dropdown").on("change", function () {
         var status = jQuery(this).val();
