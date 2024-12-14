@@ -442,7 +442,6 @@ document.addEventListener('DOMContentLoaded', () => {
 jQuery(document).ready(function($) {
     let addMore = false;
 
-    // Track which button was clicked
     $('#save-todo').on('click', function() {
         addMore = false;
     });
@@ -451,12 +450,10 @@ jQuery(document).ready(function($) {
         addMore = true;
     });
 
-    // Handle form submission
     $('#add-todo-form').submit(function(e) {
         e.preventDefault();
         var formData = $(this).serialize();
 
-        // Determine the action based on which button was clicked
         var action = 'add_todo_item';
         $.ajax({
             type: 'POST',
@@ -465,26 +462,14 @@ jQuery(document).ready(function($) {
             success: function(response) {
                 if (response.success) {
                     if (addMore) {
-                        // Append temporary success message
                         $('#add-todo-form').append('<p id="temporary-message" style="color: green;">Task added successfully.</p>');
-                        
-                        // Optionally, remove the message after a few seconds
-                        setTimeout(function() {
-                            $('#temporary-message').fadeOut(500, function() {
-                                $(this).remove();
-                            });
-                        }, 3000);
-
-                        // Reset the form fields
                         $('#add-todo-form')[0].reset();
                     } else {
-                        // Hide the modal and reload the page
                         $('#add-todolist-popup').modal('hide');
                         recalculate_task();
                         location.reload();
                     }
                 } else {
-                    // Display error message in modal
                     $('#exampleModalLabel').text('Error');
                     $('#modal-body-text').text(response.data);
                     $('#modal_html_alert').modal('show');
