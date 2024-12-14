@@ -474,6 +474,7 @@ jQuery(document).ready(function($) {
     jQuery('#add-more-todo-form').submit(function(e) {
         e.preventDefault();
         jQuery('#add-todo-form')[0].reset();
+        jQuery('#add-todolist-popup').modal('show');
         var formData = jQuery(this).serialize();
         $.ajax({
             type: 'POST',
