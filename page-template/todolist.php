@@ -243,10 +243,8 @@ $percent_count = ($completed_count > 0) ? ($completed_count * 100) / $total_coun
                                 <div class="form-group col-lg-12 col-sm-12">
                                     <div class="links-box">
                                         <button type="submit" class="dashbord-btn">Save</button>
-                                    </div>
-                                    <div class="links-box">
                                         <button type="submit" class="dashbord-btn" id="add-more-todo">Save and Add More</button>
-                                    </div>z
+                                    </div>
                                 </div>
                             </div>
                         </div>
