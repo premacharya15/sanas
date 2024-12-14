@@ -473,8 +473,7 @@ jQuery(document).ready(function($) {
     // Add More To-Do Item Form Submit
     jQuery('#add-more-todo-form').submit(function(e) {
         e.preventDefault();
-        jQuery('#add-todo-form')[0].reset();
-        jQuery('#add-todolist-popup').modal('show');
+        
         var formData = jQuery(this).serialize();
         $.ajax({
             type: 'POST',
@@ -483,7 +482,7 @@ jQuery(document).ready(function($) {
             success: function(response) {
                 if (response.success) {
                     jQuery('#add-todolist-popup').modal('hide');
-                    location.reload();
+                    jQuery('#add-todo-form')[0].reset();
                 } else {
                     jQuery('#exampleModalLabel').text('Error');
                     jQuery('#modal-body-text').text(response.data);
