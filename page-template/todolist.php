@@ -87,7 +87,7 @@ $percent_count = ($completed_count > 0) ? ($completed_count * 100) / $total_coun
         <div class="tasks-col to-do-list-table d-table-block col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div class="inner-box3">
                 <div class="table-box upcoming-tasks">
-                    <div class="vendor-table table-responsive todo-table-list m-0">
+                    <div class="vendor-table table-responsive todo-table-list m-0" id="todo-table-body">
                         <?php
                         $vendor_items = get_vendor_list_items();
                         ?>
@@ -242,7 +242,7 @@ $percent_count = ($completed_count > 0) ? ($completed_count * 100) / $total_coun
                                 </div>
                                 <div class="form-group col-lg-12 col-sm-12">
                                     <div class="links-box">
-                                        <button type="submit" class="dashbord-btn">Save</button>
+                                        <button type="submit" class="dashbord-btn" id="save-todo">Save</button>
                                         <button type="submit" class="dashbord-btn" id="add-more-todo">Save and Add More</button>
                                     </div>
                                 </div>
