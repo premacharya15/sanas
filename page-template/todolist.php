@@ -214,7 +214,7 @@ $percent_count = ($completed_count > 0) ? ($completed_count * 100) / $total_coun
                 </div>
                 <div class="content-box">
                     <form id="add-todo-form" method="post" action="#">
-                        <?php wp_nonce_field('add_todo_item_nonce_action', 'add_todo_item_nonce'); ?>
+                        <?php wp_nonce_field('add_todo_item_nonce_action', 'nonce'); ?>
                         <div class="form-content">
                             <div class="row">
                                 <div class="col-lg-6 col-sm-12">
@@ -269,6 +269,7 @@ $percent_count = ($completed_count > 0) ? ($completed_count * 100) / $total_coun
                 </div>
                 <div class="content-box">
                     <form id="edit-todo-form" method="post" action="#">
+                        <?php wp_nonce_field('edit_todo_item_nonce_action', 'nonce'); ?>
                         <div class="form-content">
                             <div class="row">
                                 <div class="col-lg-6 col-sm-12">
