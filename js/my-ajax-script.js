@@ -481,7 +481,7 @@ jQuery(document).ready(function($) {
             data: formData + '&action=add_more_todo_item',
             success: function(response) {
                 if (response.success) {
-                    jQuery('#add-todolist-popup').modal('hide');
+                    jQuery('#add-todo-form').append('<p id="temporary-message">To-Do item added successfully.</p>');
                     jQuery('#add-todo-form')[0].reset();
                 } else {
                     jQuery('#exampleModalLabel').text('Error');
