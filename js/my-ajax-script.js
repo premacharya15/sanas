@@ -454,32 +454,33 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         var formData = $(this).serialize();
 
-        var action = 'add_todo_item';
+        if (addMore) {
+            formData += '&action=add_todo_item_and_add_more';
+        } else {
+            formData += '&action=add_todo_item';
+        }
+
         $.ajax({
             type: 'POST',
             url: ajax_object.ajax_url,
-            data: formData + '&action=add_todo_item',
+            data: formData,
             success: function(response) {
                 if (response.success) {
                     if (addMore) {
-                        // Show temporary success message
-                        if ($('#temporary-message').length === 0) {
-                            $('#add-todo-form').append('<p id="temporary-message" style="color: green;">Task added successfully.</p>');
-                        } else {
-                            $('#temporary-message').text('Task added successfully.').show();
-                        }
-
+                        $('#add-todo-form').append('<p id="temporary-message" style="color: green;">Task added successfully.</p>');
+                        
                         setTimeout(function() {
-                            $('#temporary-message').fadeOut(500);
+                            $('#temporary-message').fadeOut(500, function() {
+                                $(this).remove();
+                            });
                         }, 3000);
 
-                        // Append the new task to the table
-                        appendNewTaskToTable(response.data);
                         $('#add-todo-form')[0].reset();
 
+                        const today = new Date().toISOString().split('T')[0];
+                        $('#add-todo-date').val(today);
                     } else {
                         $('#add-todolist-popup').modal('hide');
-                        recalculate_task();
                         location.reload();
                     }
                 } else {
