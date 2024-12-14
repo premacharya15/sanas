@@ -471,10 +471,10 @@ jQuery(document).ready(function($) {
 
 
     // Add More To-Do Item Form Submit
-    jQuery('#add-more-todo').click(function(e) {
+    jQuery('#add-more-todo').on('click', function(e) {
         e.preventDefault();
         
-        var formData = jQuery(this).serialize();
+        var formData = jQuery('#add-todo-form').serialize();
         $.ajax({
             type: 'POST',
             url: ajax_object.ajax_url,
