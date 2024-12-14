@@ -462,8 +462,17 @@ jQuery(document).ready(function($) {
             success: function(response) {
                 if (response.success) {
                     if (addMore) {
-                        $('#add-todo-form').append('<p id="temporary-message" style="color: green;">Task added successfully.</p>');
+                        // Show temporary success message
+                        if ($('#temporary-message').length === 0) {
+                            $('#add-todo-form').append('<p id="temporary-message" style="color: green;">Task added successfully.</p>');
+                        } else {
+                            $('#temporary-message').text('Task added successfully.').show();
+                        }
+
+                        // Append the new task to the table
+                        appendNewTaskToTable(response.data);
                         $('#add-todo-form')[0].reset();
+
                     } else {
                         $('#add-todolist-popup').modal('hide');
                         recalculate_task();
@@ -483,6 +492,117 @@ jQuery(document).ready(function($) {
             }
         });
     });
+
+    // Function to append the new task to the table
+    function appendNewTaskToTable(task) {
+        var taskDate = new Date(task.date);
+        var month = taskDate.toLocaleString('default', { month: 'long' });
+        var year = taskDate.getFullYear();
+        var monthYear = month + ' ' + year;
+
+        var tableId = 'todo-table-' + monthYear.replace(' ', '-');
+        var tableExists = $('#' + tableId).length > 0;
+
+        if (!tableExists) {
+            var currentMonthCount = $('.todo-table').length;
+            var showAll = getURLParameter('show_all') === 'true';
+
+            if (currentMonthCount >= 5 && !showAll) {
+                return;
+            }
+
+            var tableHtml = `
+                <table class="mb-0">
+                    <tr>
+                        <th class="todo-subhead text-align-start" colspan="6">
+                            <h4>${month} <span class="year-text">${year}</span></h4>
+                        </th>
+                    </tr>
+                </table>
+                <table class="vendor-list-table todo-list-table todo-table" id="${tableId}">
+                    <thead>
+                        <tr class="todo-check-title">
+                            <th>Category</th>
+                            <th>Task</th>
+                            <th>Notes</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th class="actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- New task will be appended here -->
+                    </tbody>
+                </table>
+            `;
+            $('.vendor-table').append(tableHtml);
+        }
+
+        var newRowHtml = `
+            <tr ${task.completed == 1 ? 'class="text-decoration-line-through pe-none"' : ''}>
+                <td class="text-single-line text-capitalize" data-toggle="tooltip" data-bs-original-title="${escapeHtml(task.category)}">
+                    ${escapeHtml(task.category)}
+                </td>
+                <td class="text-single-line text-capitalize" data-toggle="tooltip" data-bs-original-title="${escapeHtml(task.title)}">
+                    ${escapeHtml(task.title)}
+                </td>
+                <td class="text-single-line text-capitalize" data-toggle="tooltip" data-bs-original-title="${escapeHtml(task.notes)}">
+                    ${escapeHtml(task.notes)}
+                </td>
+                <td class="text-single-line text-nowrap">
+                    ${task.formatted_date}
+                </td>
+                <td>
+                    <select class="status-dropdown mediumfont mobile-dropdown" data-id="${task.id}" data-bs-toggle="tooltip" data-bs-original-title="${task.status}">
+                        <option value="Yet To Start" ${task.status === 'Yet To Start' ? 'selected' : ''} data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">⏳</option>
+                        <option value="In Progress" ${task.status === 'In Progress' ? 'selected' : ''} data-bs-toggle="tooltip" data-bs-original-title="In Progress">🔄</option>
+                        <option value="Completed" ${task.status === 'Completed' ? 'selected' : ''} data-bs-toggle="tooltip" data-bs-original-title="Completed">✅</option>
+                    </select>
+                    <select class="status-dropdown smallfont desktop-dropdown" data-id="${task.id}" data-bs-toggle="tooltip" data-bs-original-title="${task.status}">
+                        <option value="Yet To Start" ${task.status === 'Yet To Start' ? 'selected' : ''} data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">Yet To Start</option>
+                        <option value="In Progress" ${task.status === 'In Progress' ? 'selected' : ''} data-bs-toggle="tooltip" data-bs-original-title="In Progress">In Progress</option>
+                        <option value="Completed" ${task.status === 'Completed' ? 'selected' : ''} data-bs-toggle="tooltip" data-bs-original-title="Completed">Completed</option>
+                    </select>
+                </td>
+                <td class="actions">
+                    <div>
+                        <a href="#" class="edit edit-todo theme-btn" data-bs-toggle="modal" data-bs-target="#edit-todolist-popup" data-id="${task.id}">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                        <a href="#" class="delete theme-btn" data-id="${task.id}">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        `;
+
+        $('#' + tableId + ' tbody').prepend(newRowHtml);
+
+        var tooltipTriggerList = document.querySelectorAll('[data-toggle="tooltip"]');
+        var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+        recalculate_task();
+    }
+
+    function escapeHtml(text) {
+        if (text == null) return '';
+        var map = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        };
+        return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    }
+
+    function getURLParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
 
     // Edit To-Do Item
     jQuery('#edit-todo-form').submit(function(e) {
