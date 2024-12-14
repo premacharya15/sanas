@@ -471,7 +471,7 @@ jQuery(document).ready(function($) {
 
 
     // Add More To-Do Item Form Submit
-    jQuery('#add-more-todo-form').submit(function(e) {
+    jQuery('#add-more-todo-form').click(function(e) {
         e.preventDefault();
         
         var formData = jQuery(this).serialize();
