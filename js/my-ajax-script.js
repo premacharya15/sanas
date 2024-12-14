@@ -499,6 +499,12 @@ jQuery(document).ready(function($) {
         });
     });
 
+    //click on close button
+    jQuery('#add-todolist-popup .close').on('click', function() {
+        jQuery('#add-todolist-popup').modal('hide');
+        location.reload();
+    });
+
     // Edit To-Do Item
     jQuery('#edit-todo-form').submit(function(e) {
         e.preventDefault();
