@@ -440,31 +440,61 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('add-todo-date').value = today.toISOString().split('T')[0];
   });
 jQuery(document).ready(function($) {
-    jQuery('#add-todo-form').submit(function(e) {
+    let addMore = false;
+
+    // Track which button was clicked
+    $('#save-todo').on('click', function() {
+        addMore = false;
+    });
+
+    $('#add-more-todo').on('click', function() {
+        addMore = true;
+    });
+
+    // Handle form submission
+    $('#add-todo-form').submit(function(e) {
         e.preventDefault();
-        var formData = jQuery(this).serialize();
+        var formData = $(this).serialize();
+
+        // Determine the action based on which button was clicked
+        var action = 'add_todo_item';
         $.ajax({
             type: 'POST',
             url: ajax_object.ajax_url,
             data: formData + '&action=add_todo_item',
             success: function(response) {
                 if (response.success) {
-                    jQuery('#add-todolist-popup').modal('hide');
-                    // jQuery('#exampleModalLabel').text('Success');
-                    // jQuery('#modal-body-text').text(response.data);
-                    // jQuery('#modal_html_alert').modal('show');
-                    recalculate_task();
-                    // jQuery('#render-modal-yes-button').on('click', function() {
+                    if (addMore) {
+                        // Append temporary success message
+                        $('#add-todo-form').append('<p id="temporary-message" style="color: green;">Task added successfully.</p>');
+                        
+                        // Optionally, remove the message after a few seconds
+                        setTimeout(function() {
+                            $('#temporary-message').fadeOut(500, function() {
+                                $(this).remove();
+                            });
+                        }, 3000);
+
+                        // Reset the form fields
+                        $('#add-todo-form')[0].reset();
+                    } else {
+                        // Hide the modal and reload the page
+                        $('#add-todolist-popup').modal('hide');
+                        recalculate_task();
                         location.reload();
-                    // });
+                    }
                 } else {
-                    jQuery('#exampleModalLabel').text('Error');
-                    jQuery('#modal-body-text').text(response.data);
-                    jQuery('#modal_html_alert').modal('show');
-                    jQuery('#render-modal-yes-button').on('click', function() {
-                        jQuery('#modal_html_alert').modal('hide');
+                    // Display error message in modal
+                    $('#exampleModalLabel').text('Error');
+                    $('#modal-body-text').text(response.data);
+                    $('#modal_html_alert').modal('show');
+                    $('#render-modal-yes-button').off('click').on('click', function() {
+                        $('#modal_html_alert').modal('hide');
                     });
                 }
+            },
+            error: function() {
+                console.log('Failed to process the request.');
             }
         });
     });
