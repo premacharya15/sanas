@@ -1729,14 +1729,33 @@ function add_todo_item_and_add_more() {
         ob_start();
         ?>
         <tr <?php echo ($todo_item['completed'] == 1) ? 'class="text-decoration-line-through pe-none"' : ''; ?>>
-            <td><?php echo esc_html($todo_item['category']); ?></td>
-            <td><?php echo esc_html($todo_item['title']); ?></td>
-            <td><?php echo esc_html($todo_item['notes']); ?></td>
-            <td><?php echo esc_html($todo_item['date']); ?></td>
-            <td><?php echo esc_html($todo_item['status']); ?></td>
+            <td class="text-single-line text-capitalize" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($todo_item['category']); ?>">
+                <?php echo esc_html($todo_item['category']); ?>
+            </td>
+            <td class="text-single-line text-capitalize" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($todo_item['title']); ?>">
+                <?php echo esc_html($todo_item['title']); ?>
+            </td>
+            <td class="text-single-line text-capitalize" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($todo_item['notes']); ?>">
+                <?php echo esc_html($todo_item['notes']); ?>
+            </td>
+            <td class="text-single-line text-nowrap">
+                <?php echo DateTime::createFromFormat('Y-m-d', $todo_item['date'])->format('jS M Y'); ?>
+            </td>
+            <td>
+                <select class="status-dropdown mediumfont mobile-dropdown" data-id="<?php echo $todo_item['id']; ?>">
+                    <option value="Yet To Start" <?php selected($todo_item['status'], 'Yet To Start'); ?>>⏳</option>
+                    <option value="In Progress" <?php selected($todo_item['status'], 'In Progress'); ?>>🔄</option>
+                    <option value="Completed" <?php selected($todo_item['status'], 'Completed'); ?>>✅</option>
+                </select>
+                <select class="status-dropdown smallfont desktop-dropdown" data-id="<?php echo $todo_item['id']; ?>">
+                    <option value="Yet To Start" <?php selected($todo_item['status'], 'Yet To Start'); ?>>Yet To Start</option>
+                    <option value="In Progress" <?php selected($todo_item['status'], 'In Progress'); ?>>In Progress</option>
+                    <option value="Completed" <?php selected($todo_item['status'], 'Completed'); ?>>Completed</option>
+                </select>
+            </td>
             <td class="actions">
                 <div>
-                    <a href="#" class="edit theme-btn" data-id="<?php echo esc_attr($todo_item['id']); ?>" data-bs-toggle="modal" data-bs-target="#edit-todolist-popup">
+                    <a href="#" class="edit edit-todo theme-btn" data-bs-toggle="modal" data-bs-target="#edit-todolist-popup" data-id="<?php echo esc_attr($todo_item['id']); ?>">
                         <i class="fa-solid fa-pen"></i>
                     </a>
                     <a href="#" class="delete theme-btn" data-id="<?php echo esc_attr($todo_item['id']); ?>">
@@ -1748,7 +1767,10 @@ function add_todo_item_and_add_more() {
         <?php
         $new_row_html = ob_get_clean();
 
-        wp_send_json_success(array('message' => 'Task added successfully.', 'new_row' => $new_row_html));
+        wp_send_json_success(array(
+            'message'   => 'Task added successfully.',
+            'new_row'   => $new_row_html,
+        ));
     } else {
         wp_send_json_error('Failed to add task.');
     }
