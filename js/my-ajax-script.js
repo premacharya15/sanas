@@ -465,6 +465,7 @@ jQuery(document).ready(function($) {
             success: function(response) {
                 if (response.success) {
                     if (addMore) {
+                        appendNewTaskToTable(response.data.new_row, response.data.month_year);
                         $('#add-todo-form').append('<p id="temporary-message" style="color: green;">Task added successfully.</p>');
                         
                         setTimeout(function() {
@@ -478,12 +479,11 @@ jQuery(document).ready(function($) {
                         const today = new Date().toISOString().split('T')[0];
                         $('#add-todo-date').val(today);
 
-                        // Append the new row to the to-do table
-                        appendNewTaskToTable(response.data.new_row);
-                    } else {
+                       } else {
                         $('#add-todolist-popup').modal('hide');
                         location.reload();
                     }
+                    recalculate_task();
                 } else {
                     $('#exampleModalLabel').text('Error');
                     $('#modal-body-text').text(response.data);
@@ -500,12 +500,96 @@ jQuery(document).ready(function($) {
     });
 
     // Function to append the new task to the table
-    function appendNewTaskToTable(newRowHtml) {
-        // Find the correct table based on the date or other logic
-        // For simplicity, append to the first table. Adjust as needed.
-        $('.todo-table').first().find('tbody').append(newRowHtml);
+    function appendNewTaskToTable(newRowHtml, monthYear) {
+        // Convert monthYear to the table's ID format
+        var tableId = 'todo-table-' + monthYear.replace(' ', '-');
+
+        // Check if the table for the specific month and year exists
+        if ($('#' + tableId).length) {
+            // Append to the existing table
+            $('#' + tableId + ' tbody').append(newRowHtml);
+        } else {
+            // If the table doesn't exist, create a new table section for the month and year
+            var newTableHtml = `
+                <table class="mb-0">
+                    <tr>
+                        <th class="todo-subhead text-align-start" colspan="6">
+                            <h4>${monthYear.split(' ')[0]} <span class="year-text">${monthYear.split(' ')[1]}</span></h4>
+                        </th>
+                    </tr>
+                </table>
+                <table class="vendor-list-table todo-list-table todo-table" id="${tableId}">
+                    <thead>
+                        <tr class="todo-check-title">
+                            <th>Category</th>
+                            <th>Task</th>
+                            <th>Notes</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th class="actions">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${newRowHtml}
+                    </tbody>
+                </table>
+            `;
+            $('#todo-table-body').append(newTableHtml);
+        }
+
+        // Initialize tooltips for the new elements
+        initializeTooltips();
+        
+        // Attach event handlers to the new delete and edit buttons
+        attachEventHandlersToNewRow();
     }
 
+    // Function to initialize Bootstrap tooltips
+    function initializeTooltips() {
+        var tooltipTriggerList = document.querySelectorAll('[data-toggle="tooltip"], [data-bs-toggle="tooltip"]');
+        var tooltipList = [].slice.call(tooltipTriggerList).map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    }
+
+    // Function to attach event handlers to newly added rows
+    function attachEventHandlersToNewRow() {
+        // Edit button handler
+        $('.edit-todo').off('click').on('click', function() {
+            var todoId = $(this).data('id');
+            $.ajax({
+                type: 'POST',
+                url: ajax_object.ajax_url,
+                data: { id: todoId, action: 'get_todo_item' },
+                success: function(response) {
+                    if (response.success) {
+                        $('#edit-todo-id').val(response.data.id);
+                        $('#edit-todo-title').val(response.data.title);
+                        $('#edit-todo-date').val(response.data.date);
+                        $('#edit-todo-category').val(response.data.category);
+                        $('#edit-todo-notes').val(response.data.notes);
+                        $('#edit-todolist-popup').modal('show');
+                    }
+                }
+            });
+        });
+
+        // Delete button handler
+        $('.delete').off('click').on('click', function(e) {
+            e.preventDefault();
+            var todoId = $(this).data('id');
+            show_alert_message2('Delete Task', 'Do you want to delete this task?');
+            currentTodoId = todoId;
+        });
+    }
+
+    // Initialize tooltips on page load
+    initializeTooltips();
+
+    // Attach event handlers to existing rows
+    attachEventHandlersToNewRow();
+
+    
     // Function to show the modal
     function show_alert_message2(title, message) {
         jQuery('#exampleConfirmModalLabel').text(title);
