@@ -469,32 +469,6 @@ jQuery(document).ready(function($) {
         });
     });
 
-
-    // Add More To-Do Item Form Submit
-    jQuery('#add-more-todo').on('click', function(e) {
-        e.preventDefault();
-        
-        var formData = jQuery('#add-todo-form').serialize();
-        $.ajax({
-            type: 'POST',
-            url: ajax_object.ajax_url,
-            data: formData + '&action=add_more_todo_item',
-            success: function(response) {
-                if (response.success) {
-                    jQuery('#add-todo-form').append('<p id="temporary-message">To-Do item added successfully.</p>');
-                    jQuery('#add-todo-form')[0].reset();
-                } else {
-                    jQuery('#exampleModalLabel').text('Error');
-                    jQuery('#modal-body-text').text(response.data);
-                    jQuery('#modal_html_alert').modal('show');
-                    jQuery('#render-modal-yes-button').on('click', function() {
-                        jQuery('#modal_html_alert').modal('hide');
-                    });
-                }
-            }
-        });
-    });
-
     // Edit To-Do Item
     jQuery('#edit-todo-form').submit(function(e) {
         e.preventDefault();
