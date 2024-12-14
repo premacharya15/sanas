@@ -469,6 +469,10 @@ jQuery(document).ready(function($) {
                             $('#temporary-message').text('Task added successfully.').show();
                         }
 
+                        setTimeout(function() {
+                            $('#temporary-message').fadeOut(500);
+                        }, 3000);
+
                         // Append the new task to the table
                         appendNewTaskToTable(response.data);
                         $('#add-todo-form')[0].reset();
