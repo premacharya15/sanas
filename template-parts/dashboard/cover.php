@@ -356,25 +356,14 @@
                                         style="cursor: not-allowed;" id="myTextarea" disabled></textarea>
                                 </div>
                                 <div class="form-group-outer">
-                                    <div class="form-group">
-                                        <div class="select-wrapper">
-                                            <label for="font-family-select">Font</label>
-                                            <select class="custom-select select-inner" id="fontFamily"
-                                                onchange="changeFont()">
-                                            </select>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-  <script>
-    // const selectElement = document.getElementById('my-select');
-    // const choices = new Choices(selectElement);
-    // const selectElement = document.getElementById('my-select');
-    // const choices = new Choices(selectElement, {
-    //   placeholder: 'Select an option'
-    // });
-  </script>
-                                        </div>
+                                <div class="form-group">
+                                    <div class="select-wrapper">
+                                        <label class="canavas-label" for="fontFamily">Font:</label>
+                                        <select class="custom-select select-inner" id="fontFamily"
+                                            onchange="changeFont()">
+                                        </select>
                                     </div>
+                                </div>
                                     <div class="form-group">
                                         <div class="select-wrapper">
                                             <label class="canavas-label" for="fontWeight">Weight:</label>
