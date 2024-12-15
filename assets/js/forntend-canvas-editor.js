@@ -107,6 +107,7 @@ async function loadGoogleFonts() {
     const apiKey = 'AIzaSyBkb0XQYNcyOA_E9xSGAAAebeo6oXCD1wY'; // Replace with your Google Fonts API key
     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
   
+    try {
       const response = await fetch(apiUrl);
       if (!response.ok) {
         throw new Error('Failed to fetch Google Fonts');
@@ -126,7 +127,10 @@ async function loadGoogleFonts() {
   
       // Set choices dynamically
       choices.setChoices(options);
-
+  
+    } catch (error) {
+      console.error('Error fetching Google Fonts:', error);
+    }
   }
 window.onload = function () {
     loadGoogleFonts();
