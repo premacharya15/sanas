@@ -95,14 +95,10 @@ async function loadGoogleFonts() {
             option.value = font.family.replace(/ /g, '+'); // Replace spaces with '+'
             select.appendChild(option);
         });
-        // jQuery('.selectpicker').select2('triggerChange');
-        canvas.renderAll();
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
     }
-    
 }
-
 // async function loadGoogleFonts() {
 //     const apiKey = 'AIzaSyBkb0XQYNcyOA_E9xSGAAAebeo6oXCD1wY'; // Replace with your Google Fonts API key
 //     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
