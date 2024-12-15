@@ -361,7 +361,8 @@
                                             <label for="font-family-select">Font</label>
                                             asdfsd
                                             <select class="custom-select select-inner" id="fontFamily"
-                                            onchange="changeFont()"></select>
+                                                onchange="changeFont()">
+                                            </select>
 
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"> -->
 
