@@ -80,10 +80,10 @@
                                             <div class="select-wrapper">
                                                 <label for="font-family-select">Font</label>
                                                 <!-- <select id="fontFamily" onchange="changeFont()"> -->
+                                                <!-- </select> -->
                                                 <select class="custom-select select-inner" id="fontFamily"
                                             onchange="changeFont()">
                                         </select>
-                                            </select>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
   <!-- <select id="my-select">
@@ -96,10 +96,10 @@
   <script>
     // const selectElement = document.getElementById('my-select');
     // const choices = new Choices(selectElement);
-    const selectElement = document.getElementById('my-select');
-    const choices = new Choices(selectElement, {
-      placeholder: 'Select an option'
-    });
+    // const selectElement = document.getElementById('my-select');
+    // const choices = new Choices(selectElement, {
+    //   placeholder: 'Select an option'
+    // });
   </script>
                                             </div>
                                         </div>
@@ -367,8 +367,7 @@
                                         <div class="select-wrapper">
                                             <label for="font-family-select">Font</label>
                                             <select class="custom-select select-inner" id="fontFamily"
-                                            onchange="changeFont()">
-                                        </select>
+                                            onchange="changeFont()"></select>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
   <!-- <select id="my-select">
@@ -381,10 +380,10 @@
   <script>
     // const selectElement = document.getElementById('my-select');
     // const choices = new Choices(selectElement);
-    const selectElement = document.getElementById('my-select');
-    const choices = new Choices(selectElement, {
-      placeholder: 'Select an option'
-    });
+    // const selectElement = document.getElementById('my-select');
+    // const choices = new Choices(selectElement, {
+    //   placeholder: 'Select an option'
+    // });
   </script>
                                         </div>
                                     </div>
