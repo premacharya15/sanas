@@ -79,7 +79,10 @@
                                         <div class="form-group">
                                             <div class="select-wrapper">
                                                 <label for="font-family-select">Font</label>
-                                                <select id="fontFamily" onchange="changeFont()">
+                                                <!-- <select id="fontFamily" onchange="changeFont()"> -->
+                                                <select class="custom-select select-inner" id="fontFamily"
+                                            onchange="changeFont()">
+                                        </select>
                                             </select>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
