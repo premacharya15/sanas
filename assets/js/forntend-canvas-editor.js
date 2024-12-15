@@ -79,7 +79,7 @@ function addText(event) {
     canvas.requestRenderAll();
 }
 // async function loadGoogleFonts() {
-//     const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key
+//     const apiKey = 'AIzaSyBkb0XQYNcyOA_E9xSGAAAebeo6oXCD1wY'; // Replace with your Google Fonts API key
 //     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
 //     try {
 //         const response = await fetch(apiUrl);
@@ -104,7 +104,7 @@ function addText(event) {
 // }
 
 async function loadGoogleFonts() {
-    const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key
+    const apiKey = 'AIzaSyBkb0XQYNcyOA_E9xSGAAAebeo6oXCD1wY'; // Replace with your Google Fonts API key
     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
   
     try {
