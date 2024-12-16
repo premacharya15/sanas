@@ -362,8 +362,7 @@
                                 <div class="form-group">
                                     <div class="select-wrapper">
                                         <label class="canavas-label" for="fontFamily">Font:</label>
-                                        <select class="custom-select select-inner" id="fontFamily"
-                                            onchange="changeFont()">
+                                        <select class="custom-select select-inner" id="fontFamily" onchange="changeFont()">
                                         </select>
                                     </div>
                                 </div>
