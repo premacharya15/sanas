@@ -358,12 +358,17 @@
                                 <div class="form-group">
                                     <div class="select-wrapper">
                                         <label class="canavas-label" for="fontFamily">Font:</label>
-                                        <select class="custom-select select-inner" id="fontFamily" onchange="changeFont()">
-                                        </select>
+                                        <select id="fontFamily" onchange="changeFont()"></select>
+                                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script>
+    const selectElement = document.getElementById('fontFamily');
+    const choices = new Choices(selectElement, {
+      placeholder: 'Select an option'
+    });
+  </script>
                                     </div>
                                 </div>
-                                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
-                                <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
                                     <div class="form-group">
                                         <div class="select-wrapper">
                                             <label class="canavas-label" for="fontWeight">Weight:</label>
