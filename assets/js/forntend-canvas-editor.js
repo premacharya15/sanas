@@ -127,7 +127,7 @@ async function loadGoogleFonts() {
     } catch (error) {
       console.error('Error fetching Google Fonts:', error);
     }
-   }
+  }
 window.onload = function () {
     loadGoogleFonts();
     canvas.renderAll();

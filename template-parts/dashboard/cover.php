@@ -79,20 +79,21 @@
                                         <div class="form-group">
                                             <div class="select-wrapper">
                                                 <label for="font-family-select">Font</label>
-                                                <select id="fontFamily" onchange="changeFont()"></select>
                                                 <!-- <select id="fontFamily" onchange="changeFont()"> -->
                                                 <!-- </select> -->
-                                                 
-                                                <!-- <select class="custom-select select-inner" id="fontFamily" onchange="changeFont()"></select> -->
+                                                 aasd
+                                                <select class="custom-select select-inner" id="fontFamily" onchange="changeFont()"></select>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-  <!-- <script>
-    const selectElement = document.getElementById('fontFamily');
-    const choices = new Choices(selectElement, {
-      placeholder: 'Select an option'
-    });
-  </script> -->
+  <script>
+    // const selectElement = document.getElementById('my-select');
+    // const choices = new Choices(selectElement);
+    // const selectElement = document.getElementById('my-select');
+    // const choices = new Choices(selectElement, {
+    //   placeholder: 'Select an option'
+    // });
+  </script>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -298,9 +299,9 @@
                                 <label>Upload Background Image</label>
                                 <input type="file" id="backgroundImageUpload" accept="image/*" onchange="uploadBackgroundImage()">
                             </div>
-                                <!-- <div class="form-group-fluid">
+                                <div class="form-group-fluid">
                                 <button class="btn btn-secondary btn-block add-text-button-event" onclick="addText('event')">Add Text</button>
-                                </div>     -->
+                                </div>    
                             <?php 
                             }
                          }   
@@ -355,20 +356,26 @@
                                         style="cursor: not-allowed;" id="myTextarea" disabled></textarea>
                                 </div>
                                 <div class="form-group-outer">
-                                <div class="form-group">
-                                    <div class="select-wrapper">
-                                        <label class="canavas-label" for="fontFamily">Font:</label>
-                                        <select id="fontFamily" onchange="changeFont()"></select>
-                                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+                                    <div class="form-group">
+                                        <div class="select-wrapper">
+                                            <label for="font-family-select">Font</label>
+                                            asdfsd
+                                            <select class="custom-select select-inner" id="fontFamily"
+                                                onchange="changeFont()">
+                                            </select>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-  <!-- <script>
-    const selectElement = document.getElementById('fontFamily');
-    const choices = new Choices(selectElement, {
-      placeholder: 'Select an option'
-    });
-  </script> -->
+  <script>
+    // const selectElement = document.getElementById('my-select');
+    // const choices = new Choices(selectElement);
+    // const selectElement = document.getElementById('my-select');
+    // const choices = new Choices(selectElement, {
+    //   placeholder: 'Select an option'
+    // });
+  </script>
+                                        </div>
                                     </div>
-                                </div>
                                     <div class="form-group">
                                         <div class="select-wrapper">
                                             <label class="canavas-label" for="fontWeight">Weight:</label>
