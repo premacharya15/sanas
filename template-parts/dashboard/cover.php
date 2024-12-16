@@ -357,8 +357,6 @@
                                         style="cursor: not-allowed;" id="myTextarea" disabled></textarea>
                                 </div>
                                 <div class="form-group-outer">
-                                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
-                                <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
                                 <div class="form-group">
                                     <div class="select-wrapper">
                                         <label class="canavas-label" for="fontFamily">Font:</label>
@@ -366,6 +364,8 @@
                                         </select>
                                     </div>
                                 </div>
+                                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+                                <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
                                     <div class="form-group">
                                         <div class="select-wrapper">
                                             <label class="canavas-label" for="fontWeight">Weight:</label>
