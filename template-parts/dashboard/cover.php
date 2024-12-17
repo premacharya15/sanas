@@ -359,8 +359,7 @@
                                     <div class="form-group">
                                         <div class="select-wrapper">
                                             <label for="font-family-select">Font</label>
-                                            asdfsd
-                                            <select class="custom-select select-inner" id="fontFamily"
+                                            <select id="fontFamily"
                                                 onchange="changeFont()">
                                             </select>
 
