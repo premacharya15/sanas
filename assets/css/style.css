@@ -6778,3 +6778,6 @@ table.preview-itn tbody tr td{
 .choices{
     margin: 0;
 }
+.choices__list--dropdown {
+    max-height: 200px;
+}
