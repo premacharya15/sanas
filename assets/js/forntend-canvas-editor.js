@@ -114,7 +114,8 @@ async function loadGoogleFonts() {
       const selectElement = document.getElementById('fontFamily');
       const choices = new Choices(selectElement, {
         shouldSort: false,
-        removeItemButton: true
+        removeItemButton: true,
+        position: 'bottom'
     });
       const options = fonts.map(font => ({
         value: font.family.replace(/ /g, '+'),
