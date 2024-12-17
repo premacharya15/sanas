@@ -289,9 +289,9 @@ $user_id = $current_user->ID;
                                 <label>Upload Background Image</label>
                                 <input type="file" id="backgroundImageUpload" accept="image/*" onchange="uploadBackgroundImage()">
                             </div>
-                                <div class="form-group-fluid">
+                                <!-- <div class="form-group-fluid">
                                 <button class="btn btn-secondary btn-block canavas-editor-btn">Add Text</button>
-                                </div>    
+                                </div>     -->
                             <?php 
                             }
                          }   
