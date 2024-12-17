@@ -6772,3 +6772,6 @@ table.preview-itn tbody tr td{
     width: 100% !important;
     max-width: 100% !important;
 }
+#fontFamily{
+    width: 100%;
+}
