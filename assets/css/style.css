@@ -6781,3 +6781,6 @@ table.preview-itn tbody tr td{
 .choices__list--dropdown {
     max-height: 200px;
 }
+.card-canvas .col-md-6:first-child .preview-img{
+    text-align: right;
+}
