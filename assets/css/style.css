@@ -6775,3 +6775,6 @@ table.preview-itn tbody tr td{
 #fontFamily{
     width: 100%;
 }
+.choices{
+    margin: 0;
+}
