@@ -79,8 +79,12 @@ $user_id = $current_user->ID;
                                     <div class="form-group">
                                         <div class="select-wrapper">
                                             <label for="font-family-select">Font</label>
-                                            <select class="custom-select select-inner" id="fontFamily"
-                                            onchange="changeFont()">
+                                            <select id="fontFamily"
+                                                onchange="changeFont()">
+                                            </select>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
                                         </select>
                                         </div>
                                     </div>
@@ -345,9 +349,12 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                                 <div class="form-group">
                                     <div class="select-wrapper">
                                         <label class="canavas-label" for="fontFamily">Font:</label>
-                                        <select class="custom-select select-inner" id="fontFamily"
-                                            onchange="changeFont()">
-                                        </select>
+                                        <select id="fontFamily"
+                                                onchange="changeFont()">
+                                            </select>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
                                     </div>
                                 </div>
                                 <div class="form-group">
