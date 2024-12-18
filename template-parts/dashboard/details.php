@@ -115,7 +115,7 @@ $user_id = $current_user->ID;
                                     <div class="form-group">
                                         <label>Style</label>
                                         <div class="text-style-btn-one">
-                                            <a href="#" class="active" onclick="changeTextStyle('italic')"
+                                            <a href="#" onclick="changeTextStyle('italic')"
                                                 data-title="italic">
                                                 <i class="icon-italic-font"></i>
                                             </a>
@@ -385,7 +385,7 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                                                 onclick="changeAlign('left')">
                                                 <i class="fa-solid fa-align-left"></i>
                                             </a>
-                                            <a href="#" id="text-align-center" class="active" data-title="center"
+                                            <a href="#" id="text-align-center" data-title="center"
                                                 onclick="changeAlign('center')">
                                                 <i class="fa-solid fa-align-center"></i>
                                             </a>
@@ -410,7 +410,7 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                                     <div class="select-wrapper">
                                         <label>Style</label>
                                         <div class="text-style-btn-one">
-                                            <a href="#" class="active" onclick="changeTextStyle('italic')"
+                                            <a href="#" onclick="changeTextStyle('italic')"
                                                 data-title="italic">
                                                 <i class="icon-italic-font"></i>
                                             </a>
