@@ -6776,7 +6776,7 @@ table.preview-itn tbody tr td{
     width: 100%;
 }
 .choices{
-    margin: 0;
+    margin: 0 !important;
 }
 .choices__list--dropdown {
     max-height: 200px;
