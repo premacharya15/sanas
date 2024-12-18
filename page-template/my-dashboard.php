@@ -454,7 +454,7 @@ if ($colorbg) {
               <div class="todo-search-add-link justify-content-end gap-4">
               <div class="add-link"><a href="#" class="dashbord-btn" data-bs-toggle="modal" data-bs-target="#add-todolist-popup"><i class="icon-plus"></i> Add Task</a>
               </div>
-              <div class=""><a href="/to-do-list/" class="text-black justify-center d-flex">view All</a></div>
+              <div class="d-flex"><a href="/to-do-list/" class="text-black p-2">view All</a></div>
             </div>
             </div>
             <div class="to-do-table-box table-box upcoming-tasks">
