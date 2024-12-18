@@ -108,6 +108,7 @@ function changeFont() {
             }
         });
     }
+    console.log('fontFamily - forntend.js', fontFamily);
 }
 window.changeFont = changeFont;
 // Change font weight of selected text
