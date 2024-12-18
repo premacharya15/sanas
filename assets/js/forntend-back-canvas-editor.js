@@ -131,6 +131,7 @@ function changeFont() {
             }
         });
     }
+    console.log('fontFamily - forntend-canvas-editor.js', fontFamily);
 }
 window.changeFont = changeFont;
 // Change font weight of selected text
