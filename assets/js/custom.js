@@ -1085,3 +1085,16 @@ if (jQuery('.search-popup, .form-content').length) {
     }
 
 });
+
+function changeAlign(align) {
+    // Get the currently selected text element
+    const selectedText = jQuery('.edit-text.selected-text');
+    
+    // Check if there is a selected text element
+    if (selectedText.length) {
+        // Apply the text alignment
+        selectedText.css('text-align', align);
+    } else {
+        console.log('No text element is selected.');
+    }
+}
