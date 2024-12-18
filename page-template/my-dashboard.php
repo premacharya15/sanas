@@ -451,10 +451,10 @@ if ($colorbg) {
               <div class="title-box">
                 <h5 class="pageheader-title mb-3"><a href="/to-do-list/" class="text-black">To Do List</a></h5>
               </div>
-              <div class="todo-search-add-link justify-content-end">
+              <div class="todo-search-add-link justify-content-end gap-4">
               <div class="add-link"><a href="#" class="dashbord-btn" data-bs-toggle="modal" data-bs-target="#add-todolist-popup"><i class="icon-plus"></i> Add Task</a>
               </div>
-              <div class="item-center"><a href="/to-do-list/" class="text-black">view All</a></div>
+              <div class="justify-center d-flex"><a href="/to-do-list/" class="text-black">view All</a></div>
             </div>
             </div>
             <div class="to-do-table-box table-box upcoming-tasks">
