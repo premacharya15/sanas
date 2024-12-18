@@ -139,7 +139,6 @@ function changeFont() {
     const activeObject = canvas.getActiveObject();
     if (activeObject && activeObject.type === 'i-text') {
         const fontFamily = document.getElementById('fontFamily').value.replace(/\+/g, ' ');
-        console.log('selected Font Family', fontFamily);
         WebFont.load({
             google: {
                 families: [fontFamily]
