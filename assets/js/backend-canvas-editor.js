@@ -83,6 +83,7 @@ function changeFont() {
             }
         });
     }
+    console.log('fontFamily - backend-canvas-editor.js', fontFamily);
 }
 
 // Change font weight of selected text
