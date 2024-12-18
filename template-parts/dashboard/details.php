@@ -1718,3 +1718,10 @@ echo "</script>";
 var phpbackCanvasData = <?php echo $data; ?>;
 var isInitialLoad = <?php echo $isInitialLoad; ?>;
 </script> -->
+
+<?php
+function enqueue_custom_scripts() {
+    wp_enqueue_script('frontend-js', get_template_directory_uri() . '/assets/js/frontend.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+?>
