@@ -125,6 +125,25 @@ $user_id = $current_user->ID;
                                                 </a>
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                        <label>Align</label>
+                                                        <div class="text-style-btn">
+                                                            <a href="#" id="text-align-left" data-title="left"
+                                                        onclick="changeAlign('left')">
+                                                        <i class="fa-solid fa-align-left"></i>
+                                                    </a>
+                                                    <a href="#" id="text-align-center" data-title="center"
+                                                        onclick="changeAlign('center')">
+                                                        <i class="fa-solid fa-align-center"></i>
+                                                    </a>
+                                                    <a href="#" id="text-align-right" data-title="right"
+                                                        onclick="changeAlign('right')">
+                                                        <i class="fa-solid fa-align-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -348,6 +367,25 @@ $user_id = $current_user->ID;
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                    <div class="select-wrapper">
+                                        <label>Align</label>
+                                        <div class="text-style-btn">
+                                            <a href="#" id="text-align-left" data-title="left"
+                                                onclick="changeAlign('left')">
+                                                <i class="fa-solid fa-align-left"></i>
+                                            </a>
+                                            <a href="#" id="text-align-center" data-title="center"
+                                                onclick="changeAlign('center')">
+                                                <i class="fa-solid fa-align-center"></i>
+                                            </a>
+                                            <a href="#" id="text-align-right" data-title="right"
+                                                onclick="changeAlign('right')">
+                                                <i class="fa-solid fa-align-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                                 </div>
                                 <div class="form-group-fluid">
                                     <label>Color</label>
