@@ -1712,7 +1712,6 @@ $isInitialLoad = empty($backpagedata) ? 'true' : 'false';
 echo "<script>";
 echo "var phpbackCanvasData = '".json_encode($data)."';";
 echo "var isInitialLoad = '".$isInitialLoad."';";
-echo "var selectedFontFamily = localStorage.getItem('selectedFontFamily');";
 echo "</script>";
 ?>
 <!-- <script type="text/javascript">
