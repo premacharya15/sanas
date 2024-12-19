@@ -65,7 +65,7 @@ function addText(event) {
     canvas.requestRenderAll();
 }
 async function loadGoogleFonts() {
-    const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key
+    const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE';
     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
     try {
         const response = await fetch(apiUrl);
@@ -75,12 +75,24 @@ async function loadGoogleFonts() {
         const data = await response.json();
         const fonts = data.items;
         const select = document.getElementById('fontFamily');
+        
+        // Clear existing options
+        select.innerHTML = '';
+        
         fonts.forEach(font => {
             const option = document.createElement('option');
             option.text = font.family;
-            option.value = font.family.replace(/ /g, '+'); // Replace spaces with '+'
+            option.value = font.family.replace(/ /g, '+');
             select.appendChild(option);
         });
+
+        // If there's an active object, set the font family dropdown to match
+        const activeObject = canvas.getActiveObject();
+        if (activeObject && activeObject.type === 'i-text') {
+            const currentFont = activeObject.get('fontFamily');
+            select.value = currentFont.replace(/ /g, '+');
+        }
+        
         canvas.renderAll();
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
@@ -1040,8 +1052,13 @@ jQuery(document).ready(function ($) {
         },
         success: (response) => {
             if (response.success && response.data.json_data) {
-                canvas.loadFromJSON(response.data.json_data, () => {
+                canvas.loadFromJSON(response.data.json_data, function() {
                     canvas.renderAll();
+                    // Update font family dropdown for the active object
+                    const activeObject = canvas.getActiveObject();
+                    if (activeObject) {
+                        updateFontFamilyDropdown(activeObject);
+                    }
                 });
             }
         }
@@ -1049,4 +1066,27 @@ jQuery(document).ready(function ($) {
   }
 
 
+});
+
+function updateFontFamilyDropdown(activeObject) {
+    if (activeObject && activeObject.type === 'i-text') {
+        const fontFamily = activeObject.get('fontFamily');
+        const select = document.getElementById('fontFamily');
+        if (select) {
+            select.value = fontFamily.replace(/ /g, '+');
+        }
+    }
+}
+
+// Modify the canvas loading code
+canvas.on('object:loaded', function(e) {
+    updateFontFamilyDropdown(e.target);
+});
+
+canvas.on('selection:created', function(e) {
+    updateFontFamilyDropdown(e.target);
+});
+
+canvas.on('selection:updated', function(e) {
+    updateFontFamilyDropdown(e.target);
 });
