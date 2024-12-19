@@ -74,14 +74,26 @@ async function loadGoogleFonts() {
         }
         const data = await response.json();
         const fonts = data.items;
-        const select = document.getElementById('fontFamily');
-        fonts.forEach(font => {
-            const option = document.createElement('option');
-            option.text = font.family;
-            option.value = font.family.replace(/ /g, '+'); // Replace spaces with '+'
-            select.appendChild(option);
-        });
-        canvas.renderAll();
+        const selectElement = document.getElementById('fontFamily');
+        
+        if (window.Choices && selectElement) {
+            const choices = new Choices(selectElement, {
+                shouldSort: false,
+                removeItemButton: true,
+                position: 'bottom'
+            });
+            const options = fonts.map(font => ({
+                value: font.family.replace(/ /g, '+'),
+                label: font.family
+            }));
+            choices.setChoices(options);
+            
+            // After loading fonts, update the dropdown for any active object
+            const activeObject = canvas.getActiveObject();
+            if (activeObject) {
+                updateFontFamilyDropdown(activeObject);
+            }
+        }
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
     }
@@ -1003,50 +1015,103 @@ jQuery(document).ready(function ($) {
 
 
 jQuery(document).ready(function ($) {
-    if (jQuery('#load_front_json').val()=='yes') {
+    if (jQuery('#load_front_json').val() == 'yes') {
+        var card_id = jQuery('#card_id').val();
 
-    var card_id = jQuery('#card_id').val(); 
+        jQuery.ajax({
+            url: ajax_login_object.ajaxurl,
+            method: 'POST',
+            data: {
+                action: 'sanas_load_fabric_js_data_front',
+                card_id: card_id
+            },
+            success: (response) => {
+                if (response.success && response.data.json_data) {
+                    canvas.loadFromJSON(response.data.json_data, () => {
+                        canvas.renderAll();
+                        // Update font family for all text objects
+                        canvas.getObjects().forEach(obj => {
+                            if (obj.type === 'i-text') {
+                                updateFontFamilyDropdown(obj);
+                            }
+                        });
+                        // Set active object if exists
+                        if (canvas.getActiveObject()) {
+                            updateFontFamilyDropdown(canvas.getActiveObject());
+                        }
+                    });
+                }
+            }
+        });
+    }
 
-    jQuery.ajax({
-        url: ajax_login_object.ajaxurl,
-        method: 'POST',
-        data: { 
-            action: 'sanas_load_fabric_js_data_front',
-            card_id: card_id
-        },
-        success: (response) => {
-            if (response.success && response.data.json_data) {
-                canvas.loadFromJSON(response.data.json_data, () => {
-                    canvas.renderAll();
-                });
+    if (jQuery('#user_load_front_json').val() == 'yes') {
+        var card_id = jQuery('#card_id').val();
+        var event_id = jQuery('#event_id').val();
+
+        jQuery.ajax({
+            url: ajax_login_object.ajaxurl,
+            method: 'POST',
+            data: {
+                action: 'sanas_load_fabric_js_data_front_user',
+                card_id: card_id,
+                event_id: event_id
+            },
+            success: (response) => {
+                if (response.success && response.data.json_data) {
+                    canvas.loadFromJSON(response.data.json_data, () => {
+                        canvas.renderAll();
+                        // Update font family for all text objects
+                        canvas.getObjects().forEach(obj => {
+                            if (obj.type === 'i-text') {
+                                updateFontFamilyDropdown(obj);
+                            }
+                        });
+                        // Set active object if exists
+                        if (canvas.getActiveObject()) {
+                            updateFontFamilyDropdown(canvas.getActiveObject());
+                        }
+                    });
+                }
+            }
+        });
+    }
+});
+
+function updateFontFamilyDropdown(activeObject) {
+    if (activeObject && activeObject.type === 'i-text') {
+        const fontFamily = activeObject.get('fontFamily');
+        const select = document.getElementById('fontFamily');
+        if (select) {
+            // For Choices.js dropdown
+            if (select.choices) {
+                select.choices.setChoiceByValue(fontFamily.replace(/ /g, '+'));
+            } else {
+                // For regular select dropdown
+                select.value = fontFamily.replace(/ /g, '+');
             }
         }
-    });
-  }
+    }
+}
 
+// Add these after canvas initialization
+canvas.on('selection:created', function(e) {
+    updateFontFamilyDropdown(e.target);
+});
 
-    if (jQuery('#user_load_front_json').val()=='yes') {
+canvas.on('selection:updated', function(e) {
+    updateFontFamilyDropdown(e.target);
+});
 
-    var card_id = jQuery('#card_id').val();
-    var event_id = jQuery('#event_id').val(); 
-
-    jQuery.ajax({
-        url: ajax_login_object.ajaxurl,
-        method: 'POST',
-        data: { 
-            action: 'sanas_load_fabric_js_data_front_user',
-            card_id: card_id,
-            event_id: event_id
-        },
-        success: (response) => {
-            if (response.success && response.data.json_data) {
-                canvas.loadFromJSON(response.data.json_data, () => {
-                    canvas.renderAll();
-                });
-            }
+// Modify the existing selection:cleared event
+canvas.on('selection:cleared', function() {
+    const select = document.getElementById('fontFamily');
+    if (select) {
+        if (select.choices) {
+            select.choices.setChoiceByValue('Arial');
+        } else {
+            select.value = 'Arial';
         }
-    });
-  }
-
-
+    }
+    // ... rest of your existing cleared event code
 });
