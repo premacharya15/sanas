@@ -520,8 +520,8 @@ jQuery(document).ready(function ($) {
                 if (obj.type === 'i-text' && obj.fontFamily) {
                     fonts.add(obj.fontFamily);
                 }
+                console.log(obj.fontFamily);
             });
-
             if (fonts.size > 0) {
                 // Load the fonts before rendering the canvas
                 loadFonts(Array.from(fonts), () => {
