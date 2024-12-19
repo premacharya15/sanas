@@ -96,6 +96,7 @@ async function loadGoogleFonts() {
             select.appendChild(option);
         });
         canvas.renderAll();
+        console.log("test");
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
     }
