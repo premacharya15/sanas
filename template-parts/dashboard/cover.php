@@ -1775,4 +1775,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (savedCanvasData) {
+        try {
+            const canvasData = JSON.parse(savedCanvasData);
+            if (canvasData.objects) {
+                const textObjects = canvasData.objects.filter(obj => obj.type === 'i-text');
+                if (textObjects.length > 0) {
+                    const lastTextObject = textObjects[textObjects.length - 1];
+                    if (lastTextObject.fontFamily) {
+                        setTimeout(() => {
+                            const fontFamily = lastTextObject.fontFamily.replace(/ /g, '+');
+                            if (window.fontFamilyChoices) {
+                                window.fontFamilyChoices.setChoiceByValue(fontFamily);
+                            }
+                        }, 500);
+                    }
+                }
+            }
+        } catch (e) {
+            console.error('Error parsing canvas data:', e);
+        }
+    }
+});
 </script>
