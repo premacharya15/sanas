@@ -152,7 +152,7 @@ $percent_count = ($completed_count > 0) ? ($completed_count * 100) / $total_coun
                                             <td class="text-single-line text-nowrap">
                                                 <?php echo DateTime::createFromFormat('Y-m-d', $item['date'])->format('jS M Y'); ?>
                                             </td>
-                                            <td>
+                                            <td data-bs-toggle="tooltip" data-bs-original-title="Status">
                                                 <select class="status-dropdown mediumfont mobile-dropdown" data-id="<?php echo $item['id']; ?>" data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">
                                                 <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?> data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">⏳</option>
                                         <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?> data-bs-toggle="tooltip" data-bs-original-title="In Progress">🔄</option>
