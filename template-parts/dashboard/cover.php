@@ -1691,6 +1691,7 @@ $data = !empty($frontpagedata) ? stripslashes(stripslashes(htmlspecialchars_deco
         echo "<script>";
         echo "document.addEventListener('DOMContentLoaded', function () {";
         echo "var canvasss = '".$data ."';";
+        echo "console.log(canvasss);";
         echo "});";
         echo "</script>";
     }
