@@ -1749,9 +1749,57 @@ echo "var isInitialLoad = '".$isInitialLoad."';";
 echo "</script>";
 ?>
 
-<!-- <script type="text/javascript">
-    var phpCanvasData = <?php echo $data; ?>;
-    var isInitialLoad = <?php echo $isInitialLoad; ?>;
-</script> -->
-<?php  
-}?>
+<?php
+$data = !empty($frontpagedata) ? stripslashes(stripslashes(htmlspecialchars_decode($frontpagedata))) : stripslashes(stripslashes(htmlspecialchars_decode($frontmetadata)));
+
+echo "<script>";
+echo "var savedCanvasData = " . json_encode($data) . ";";
+echo "var isInitialLoad = '" . ($frontpagedata ? 'false' : 'true') . "';";
+
+// Add this to preserve font selection state
+echo "document.addEventListener('DOMContentLoaded', function() {
+    if (savedCanvasData) {
+        try {
+            const canvasData = JSON.parse(savedCanvasData);
+            if (canvasData.objects) {
+                const textObjects = canvasData.objects.filter(obj => obj.type === 'i-text');
+                if (textObjects.length > 0) {
+                    const lastTextObject = textObjects[textObjects.length - 1];
+                    if (lastTextObject.fontFamily) {
+                        setTimeout(() => {
+                            const fontFamily = lastTextObject.fontFamily.replace(/ /g, '+');
+                            if (window.fontFamilyChoices) {
+                                window.fontFamilyChoices.setChoiceByValue(fontFamily);
+                            }
+                        }, 500);
+                    }
+                }
+            }
+        } catch (e) {
+            console.error('Error parsing canvas data:', e);
+        }
+    }
+});";
+echo "</script>";
+?>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Choices.js after fonts are loaded
+    window.initializeFontDropdown = function() {
+        const selectElement = document.getElementById('fontFamily');
+        if (selectElement && !selectElement.choices) {
+            const choices = new Choices(selectElement, {
+                shouldSort: false,
+                removeItemButton: true,
+                position: 'bottom',
+                searchEnabled: true,
+                searchPlaceholderValue: 'Search fonts...'
+            });
+            
+            // Store choices instance globally
+            window.fontFamilyChoices = choices;
+        }
+    };
+});
+</script>
