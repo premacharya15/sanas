@@ -527,10 +527,3 @@ jQuery(document).ready(function ($) {
 
   }
 });
-
-// Update the font family selection logic
-if (selectedFontFamily) {
-    // Apply the selected font family to the canvas
-    backcanvas.getActiveObject().set("fontFamily", selectedFontFamily);
-    backcanvas.renderAll();
-}
