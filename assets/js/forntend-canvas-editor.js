@@ -1,11 +1,4 @@
 var canvas = new fabric.Canvas('canvas');
-fabric.Object.prototype.transparentCorners = false;
-fabric.Object.prototype.cornerColor = '#511F1B';
-fabric.Object.prototype.cornerStyle = 'circle';
-fabric.Object.prototype.cornerSize = 14;
-fabric.Object.prototype.borderScaleFactor = 3;
-fabric.Object.prototype.borderColor = 'yellow';
-
 var customControls = {
     deleteControl: new fabric.Control({
         x: 0.5,
@@ -17,7 +10,7 @@ var customControls = {
         cornerSize: 24
     }),
     duplicateControl: new fabric.Control({
-        x: -0.5,
+        x: 0.5,
         y: 0.5,
         offsetY: 16,
         cursorStyle: 'pointer',
@@ -37,27 +30,22 @@ function renderIcon(ctx, left, top, styleOverride, fabricObject) {
     ctx.restore();
 }
 // Event listener to set border color when an object is selected
-canvas.on('selection:created', handleSelection);
-canvas.on('selection:updated', handleSelection);
-
-function handleSelection(event) {
+canvas.on('selection:created', function (event) {
     const activeObject = event.target;
     if (activeObject && (activeObject.type === 'text' || activeObject.type === 'i-text')) {
         activeObject.set({
-            borderSize: '10px',
+            borderColor: '#9CA89C', // Border color when selected
+            cornerColor: '#9CA89C', // Corner control color
+            cornerStrokeColor: '#9CA89C', // Stroke color for corner controls
         });
-        //511F1B #9CA89C
         canvas.renderAll();
-        // console.log('Selection applied to:', activeObject);
-    } else {
-        // console.log('No applicable object selected.');
     }
-}
+});
 // Load All Google Font
 // Function to add text to the canvas  
 function addText(event) {
     // Create a new text object
-    const text = new fabric.IText('Add text', {
+    const text = new fabric.IText('Edit me', {
         left: 50,
         top: 50,
         fontFamily: 'Arial',
@@ -65,11 +53,9 @@ function addText(event) {
         fill: '#000000',
         textAlign: 'left',
         hoverCursor: 'pointer',
-            borderColor: 'yellow', // Border color when selected
-            cornerColor: '#511F1B', // Corner control color
-            cornerStrokeColor: '#511F1B', // Stroke color for corner controls
-            cornerBackgroundColor: '#511F1B',
-            borderSize: '6px',
+                  borderColor: '#9CA89C', // Border color when selected
+            cornerColor: '#9CA89C', // Corner control color
+            cornerStrokeColor: '#9CA89C', // Stroke color for corner controls
     });
     // Add custom controls to the text object
     text.controls = Object.assign({}, text.controls, customControls);
@@ -79,7 +65,7 @@ function addText(event) {
     canvas.requestRenderAll();
 }
 async function loadGoogleFonts() {
-    const apiKey = 'AIzaSyBkb0XQYNcyOA_E9xSGAAAebeo6oXCD1wY'; // Replace with your Google Fonts API key
+    const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key
     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
     try {
         const response = await fetch(apiUrl);
@@ -96,41 +82,10 @@ async function loadGoogleFonts() {
             select.appendChild(option);
         });
         canvas.renderAll();
-        console.log("test");
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
     }
 }
-// async function loadGoogleFonts() {
-//     const apiKey = 'AIzaSyBkb0XQYNcyOA_E9xSGAAAebeo6oXCD1wY'; // Replace with your Google Fonts API key
-//     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
-  
-//     try {
-//       const response = await fetch(apiUrl);
-//       if (!response.ok) {
-//         throw new Error('Failed to fetch Google Fonts');
-//       }
-//       const data = await response.json();
-//       const fonts = data.items;
-  
-//       const selectElement = document.getElementById('fontFamily');
-//       const choices = new Choices(selectElement, {
-//         shouldSort: false,
-//         removeItemButton: true,
-//         position: 'bottom'
-//     });
-//       const options = fonts.map(font => ({
-//         value: font.family.replace(/ /g, '+'),
-//         label: font.family
-//       }));
-  
-//       // Set choices dynamically
-//       choices.setChoices(options);
-  
-//     } catch (error) {
-//       console.error('Error fetching Google Fonts:', error);
-//     }
-//   }
 window.onload = function () {
     loadGoogleFonts();
     canvas.renderAll();
@@ -153,7 +108,6 @@ function changeFont() {
             }
         });
     }
-    console.log('fontFamily - forntend-canvas-editor.js', fontFamily);
 }
 window.changeFont = changeFont;
 // Change font weight of selected text
@@ -174,7 +128,6 @@ function changeFontSize() {
         activeObject.set({ fontSize: parseInt(fontSize, 10) });
         canvas.renderAll();
     }
-    // document.getElementById('fontSize').focus();
 }
 window.changeFontSize = changeFontSize;
 // Change color of selected text
@@ -324,8 +277,6 @@ function handleObjectSelection() {
     if (activeObject && activeObject.type === 'i-text') {
         if (jQuery('#myTextarea').length) {
         document.getElementById('myTextarea').value = activeObject.text;
-        document.getElementById('myTextarea').removeAttribute("disabled");
-        document.getElementById('myTextarea').style.cursor = "";
         }
         if (jQuery('#fontSize').length) {
         document.getElementById('fontSize').value = activeObject.fontSize;
@@ -358,8 +309,6 @@ function handleObjectSelection() {
         }
     } else {
         document.getElementById('myTextarea').value = '';
-        document.getElementById('myTextarea').setAttribute("disabled", true);
-        document.getElementById('myTextarea').style.cursor = "not-allowed";
         document.getElementById('fontSize').value = '';
         document.getElementById('fontWeight').value = '';
         document.getElementById('fontFamily').value = '';
@@ -376,8 +325,6 @@ function handleObjectModified() {
     if (activeObject && activeObject.type === 'i-text') {
         if (jQuery('#myTextarea').length) {
         document.getElementById('myTextarea').value = activeObject.text;
-        document.getElementById('myTextarea').removeAttribute("disabled");
-        document.getElementById('myTextarea').style.cursor = "";
         }
         if (jQuery('#fontSize').length) {
         document.getElementById('fontSize').value = activeObject.fontSize;
@@ -417,8 +364,6 @@ canvas.on('selection:created', handleObjectSelection);
 canvas.on('selection:updated', handleObjectSelection);
 canvas.on('selection:cleared', function () {
     document.getElementById('myTextarea').value = '';
-    document.getElementById('myTextarea').setAttribute("disabled", true);
-    document.getElementById('myTextarea').style.cursor = "not-allowed";
     document.getElementById('fontSize').value = '';
     document.getElementById('fontWeight').value = '';
     document.getElementById('fontFamily').value = '';
@@ -491,13 +436,7 @@ window.addImageToCanvas = addImageToCanvas;
 window.loadCanvasFromJSON = loadCanvasFromJSON;
 
 jQuery(document).ready(function ($) {
-    // loadCanvasData();
-    const currentUrl = window.location.href;
-    const button = document.querySelector('.add-text-button-event');
-    if (currentUrl.includes("user-dashboard") && button) {
-        document.getElementById('myTextarea').setAttribute("disabled", true);
-        document.getElementById('myTextarea').style.cursor = "not-allowed";
-    }
+    //loadCanvasData();
 });
 
     function loadFonts(fonts, callback) {
@@ -522,8 +461,8 @@ jQuery(document).ready(function ($) {
                 if (obj.type === 'i-text' && obj.fontFamily) {
                     fonts.add(obj.fontFamily);
                 }
-                console.log(obj.fontFamily);
             });
+
             if (fonts.size > 0) {
                 // Load the fonts before rendering the canvas
                 loadFonts(Array.from(fonts), () => {
@@ -612,7 +551,7 @@ var customControls = {
         cornerSize: 24
     }),
     duplicateControl: new fabric.Control({
-        x: -0.5,
+        x: 0.5,
         y: 0.5,
         offsetY: 16,
         cursorStyle: 'pointer',
@@ -630,7 +569,7 @@ function deleteObject(eventData, transform) {
     // Check if there is only one object left on the canvas
     if (objects.length <= 1) {
         // If there's only one object, show an alert and do not delete
-        show_alert_message('Error', 'Cannot delete the last text box.');
+        alert('Cannot delete the last text box.');
         return;
     }
     canvas.remove(target);
@@ -704,7 +643,6 @@ jQuery(document).ready(function ($) {
 
 
     jQuery('#save-front-canvas-data-admin').click(function () {
-        // canvas.renderAll();
         var canvasData = canvas.toJSON();
         var cardId = jQuery(this).attr('card-id');
         var imageDataURL = canvas.toDataURL({
@@ -746,11 +684,14 @@ jQuery(document).ready(function ($) {
                 show_alert_message('Info', 'Please wait a moment and try again.');
             }
     });
+
+
     });
 
 
+
+
     jQuery('#save-front-canvas-data').click(function () {
-        // canvas.renderAll();
         var canvasData = canvas.toJSON();
         var cardId = jQuery(this).attr('card-id');
         var eventId = jQuery(this).attr('event-id'); // Ensure this attribute is correctly set
@@ -765,29 +706,34 @@ jQuery(document).ready(function ($) {
         var colorbg = canvasElement.css('background-color');
         var imageUrl = backgroundImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
 
-        var redirectToNext = true;
+        var redirectToNext = true; // Flag to determine if redirection should occur
 
-        // if (isInitialLoad === 'true') {
-        //     console.log("Test2");
-        //     if (JSON.stringify(canvas.toJSON()) === phpCanvasData) {
-        //         show_alert_message('Cover', 'Please modify the card.');
-        //         redirectToNext = false;
-        //     }
-        // }
-        // else {
-        //     try {
-        //         if (phpCanvasData && phpCanvasData !== "null") {
-        //             canvas.loadFromJSON(phpCanvasData, canvas.renderAll.bind(canvas));
-        //         } else {
-        //             console.error('No valid JSON data for canvas.');
-        //         }
-        //     } catch (error) {
-        //         console.error('Error loading canvas data:', error);
-        //     }
-        // }
+
+        if (isInitialLoad === 'true') {
+            if (JSON.stringify(canvas.toJSON()) === phpCanvasData) {
+                // Call the PHP function to generate the modal HTML                
+
+                // Call the JavaScript function to show the modal
+                show_alert_message('Cover', 'Please modify the card.');
+
+                redirectToNext = false; // Prevent redirection
+            }
+        }
+        else {
+            // Check if the PHP canvas data is valid JSON before loading it
+            try {
+                if (phpCanvasData && phpCanvasData !== "null") {
+                    canvas.loadFromJSON(phpCanvasData, canvas.renderAll.bind(canvas));
+                } else {
+                    console.error('No valid JSON data for canvas.');
+                }
+            } catch (error) {
+                console.error('Error loading canvas data:', error);
+            }
+        }
 
         if (redirectToNext) {
-            console.log("Test3");
+
             showPreloader("Saving Card");
             jQuery.ajax({
                 url: ajax_login_object.ajaxurl,
