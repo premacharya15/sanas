@@ -491,7 +491,7 @@ window.addImageToCanvas = addImageToCanvas;
 window.loadCanvasFromJSON = loadCanvasFromJSON;
 
 jQuery(document).ready(function ($) {
-    loadCanvasData();
+    // loadCanvasData();
     const currentUrl = window.location.href;
     const button = document.querySelector('.add-text-button-event');
     if (currentUrl.includes("user-dashboard") && button) {
