@@ -79,8 +79,9 @@ function addText(event) {
     canvas.requestRenderAll();
 }
 async function loadGoogleFonts() {
-    const apiKey = 'AIzaSyBkb0XQYNcyOA_E9xSGAAAebeo6oXCD1wY'; // Replace with your Google Fonts API key
+    const apiKey = 'AIzaSyBkb0XQYNcyOA_E9xSGAAAebeo6oXCD1wY';
     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
+  
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
@@ -88,51 +89,41 @@ async function loadGoogleFonts() {
         }
         const data = await response.json();
         const fonts = data.items;
-        const select = document.getElementById('fontFamily');
-        fonts.forEach(font => {
-            const option = document.createElement('option');
-            option.text = font.family;
-            option.value = font.family.replace(/ /g, '+'); // Replace spaces with '+'
-            select.appendChild(option);
+        
+        // Create array of font families
+        const fontFamilies = fonts.map(font => font.family);
+        
+        // Load all fonts first using WebFontLoader
+        await new Promise((resolve, reject) => {
+            WebFont.load({
+                google: {
+                    families: fontFamilies
+                },
+                active: resolve,
+                inactive: reject
+            });
         });
-        canvas.renderAll();
-        console.log("test");
+
+        // After fonts are loaded, populate the select element
+        const selectElement = document.getElementById('fontFamily');
+        const choices = new Choices(selectElement, {
+            shouldSort: false,
+            removeItemButton: true,
+            position: 'bottom'
+        });
+        
+        const options = fonts.map(font => ({
+            value: font.family.replace(/ /g, '+'),
+            label: font.family
+        }));
+        
+        choices.setChoices(options);
+        
     } catch (error) {
-        console.error('Error fetching Google Fonts:', error);
+        console.error('Error loading Google Fonts:', error);
     }
 }
-// async function loadGoogleFonts() {
-//     const apiKey = 'AIzaSyBkb0XQYNcyOA_E9xSGAAAebeo6oXCD1wY'; // Replace with your Google Fonts API key
-//     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
-  
-//     try {
-//       const response = await fetch(apiUrl);
-//       if (!response.ok) {
-//         throw new Error('Failed to fetch Google Fonts');
-//       }
-//       const data = await response.json();
-//       const fonts = data.items;
-  
-//       const selectElement = document.getElementById('fontFamily');
-//       const choices = new Choices(selectElement, {
-//         shouldSort: false,
-//         removeItemButton: true,
-//         position: 'bottom'
-//     });
-//       const options = fonts.map(font => ({
-//         value: font.family.replace(/ /g, '+'),
-//         label: font.family
-//       }));
-  
-//       // Set choices dynamically
-//       choices.setChoices(options);
-  
-//     } catch (error) {
-//       console.error('Error fetching Google Fonts:', error);
-//     }
-//   }
 window.onload = function () {
-    loadGoogleFonts();
     canvas.renderAll();
 };
 window.loadGoogleFonts = loadGoogleFonts;
@@ -1079,28 +1070,47 @@ jQuery(document).ready(function ($) {
   }
 
 
-    if (jQuery('#user_load_front_json').val()=='yes') {
+    if (jQuery('#user_load_front_json').val() == 'yes') {
+        var card_id = jQuery('#card_id').val();
+        var event_id = jQuery('#event_id').val();
 
-    var card_id = jQuery('#card_id').val();
-    var event_id = jQuery('#event_id').val(); 
+        // First load the fonts
+        loadGoogleFonts().then(() => {
+            // After fonts are loaded, load the canvas data
+            jQuery.ajax({
+                url: ajax_login_object.ajaxurl,
+                method: 'POST',
+                data: {
+                    action: 'sanas_load_fabric_js_data_front_user',
+                    card_id: card_id,
+                    event_id: event_id
+                },
+                success: (response) => {
+                    if (response.success && response.data.json_data) {
+                        canvas.loadFromJSON(response.data.json_data, () => {
+                            // After loading JSON, ensure all objects have their fonts loaded
+                            const objects = canvas.getObjects();
+                            const fontPromises = objects
+                                .filter(obj => obj.type === 'i-text')
+                                .map(obj => new Promise((resolve) => {
+                                    WebFont.load({
+                                        google: {
+                                            families: [obj.fontFamily]
+                                        },
+                                        active: resolve,
+                                        inactive: resolve
+                                    });
+                                }));
 
-    jQuery.ajax({
-        url: ajax_login_object.ajaxurl,
-        method: 'POST',
-        data: { 
-            action: 'sanas_load_fabric_js_data_front_user',
-            card_id: card_id,
-            event_id: event_id
-        },
-        success: (response) => {
-            if (response.success && response.data.json_data) {
-                canvas.loadFromJSON(response.data.json_data, () => {
-                    canvas.renderAll();
-                });
-            }
-        }
-    });
-  }
+                            Promise.all(fontPromises).then(() => {
+                                canvas.renderAll();
+                            });
+                        });
+                    }
+                }
+            });
+        });
+    }
 
 
 });
