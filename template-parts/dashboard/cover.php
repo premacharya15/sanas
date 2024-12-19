@@ -1738,9 +1738,20 @@ if ( is_user_logged_in() ) {
 // Add this to your PHP code where you set up $data
 $isInitialLoad = empty($frontpagedata) ? 'true' : 'false';
 ?>
-<script type="text/javascript">
+
+<?php
+// Add this to your PHP code where you set up $data
+$isInitialLoad = empty($frontpagedata) ? 'true' : 'false';
+
+echo "<script>";
+echo "var phpbackCanvasData = '".json_encode($data)."';";
+echo "var isInitialLoad = '".$isInitialLoad."';";
+echo "</script>";
+?>
+
+<!-- <script type="text/javascript">
     var phpCanvasData = <?php echo $data; ?>;
     var isInitialLoad = <?php echo $isInitialLoad; ?>;
-</script>
+</script> -->
 <?php  
 }?>
