@@ -1460,3 +1460,32 @@ if (window.location.pathname === '/my-contact/') {
         });
 }
 
+function initTooltips() {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl, {
+            trigger: 'hover'
+        });
+    });
+}
+
+// Call on document ready
+document.addEventListener('DOMContentLoaded', function() {
+    initTooltips();
+});
+
+// Call after any dynamic content updates
+jQuery(document).on('change', '.status-dropdown', function() {
+    // Destroy existing tooltips first
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach(function(tooltipTriggerEl) {
+        var tooltip = bootstrap.Tooltip.getInstance(tooltipTriggerEl);
+        if (tooltip) {
+            tooltip.dispose();
+        }
+    });
+    
+    // Reinitialize tooltips
+    initTooltips();
+});
+
