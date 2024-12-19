@@ -81,7 +81,6 @@
                                                 <label for="font-family-select">Font</label>
                                                 <!-- <select id="fontFamily" onchange="changeFont()"> -->
                                                 <!-- </select> -->
-                                                 aasd
                                                 <select class="custom-select select-inner" id="fontFamily" onchange="changeFont()"></select>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
@@ -359,9 +358,7 @@
                                     <div class="form-group">
                                         <div class="select-wrapper">
                                             <label for="font-family-select">Font</label>
-                                            <select id="fontFamily"
-                                                onchange="changeFont()">
-                                            </select>
+                                            <select class="custom-select select-inner" id="fontFamily" onchange="changeFont()"></select>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
   <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
