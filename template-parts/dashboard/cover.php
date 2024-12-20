@@ -1687,15 +1687,14 @@ $data = !empty($frontpagedata) ? stripslashes(stripslashes(htmlspecialchars_deco
 
     if (isset($_GET['card_id'])) {
         ?>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        var canvasss = '<?php echo $data;?>';
+        console.log(canvasss);
+        });
+        </script>
         <?php
-        echo "<script>";
-        echo "document.addEventListener('DOMContentLoaded', function () {";
-        echo "var canvasss = '".$data ."';";
-        echo "console.log(canvasss);";
-        echo "});";
-        echo "</script>";
     }
-
 $imageSrc = '';
 if (!empty($data)) {
     $jsonData = json_decode($data, true);

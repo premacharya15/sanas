@@ -89,6 +89,7 @@ async function loadGoogleFonts() {
         const data = await response.json();
         const fonts = data.items;
         const select = document.getElementById('fontFamily');
+        console.log(select);
         fonts.forEach(font => {
             const option = document.createElement('option');
             option.text = font.family;
@@ -96,7 +97,6 @@ async function loadGoogleFonts() {
             select.appendChild(option);
         });
         canvas.renderAll();
-        console.log("test");
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
     }
