@@ -139,8 +139,10 @@ window.loadGoogleFonts = loadGoogleFonts;
 // chnage font family
 function changeFont() {
     const activeObject = canvas.getActiveObject();
+    const fontFamilySelect = document.getElementById('fontFamily');
+    const fontFamily = fontFamilySelect.value.replace(/\+/g, ' '); // Get the selected font family
+
     if (activeObject && activeObject.type === 'i-text') {
-        const fontFamily = document.getElementById('fontFamily').value.replace(/\+/g, ' ');
         WebFont.load({
             google: {
                 families: [fontFamily]
@@ -152,6 +154,10 @@ function changeFont() {
                 }
             }
         });
+    } else {
+        // If no active object, set the font family for the canvas
+        canvas.set({ fontFamily: fontFamily });
+        canvas.renderAll();
     }
     console.log('fontFamily - forntend-canvas-editor.js', fontFamily);
 }
