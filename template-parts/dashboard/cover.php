@@ -82,8 +82,8 @@
                                                 <select id="fontFamily" onchange="changeFont()"></select>
                                                 <!-- <select class="custom-select select-inner" id="fontFamily" onchange="changeFont()"></select> -->
 
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
   <script>
     // const selectElement = document.getElementById('my-select');
     // const choices = new Choices(selectElement);
@@ -360,8 +360,8 @@
                                             <select id="fontFamily" onchange="changeFont()"></select>
                                             <!-- <select class="custom-select select-inner" id="fontFamily" onchange="changeFont()"></select> -->
 
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
   <script>
     // const selectElement = document.getElementById('my-select');
     // const choices = new Choices(selectElement);
@@ -1688,7 +1688,7 @@ $data = !empty($frontpagedata) ? stripslashes(stripslashes(htmlspecialchars_deco
     if (isset($_GET['card_id'])) {
         ?>
         <script>
-        var canvasss = '<?php echo json_encode($data);?>';
+        var canvasss = '<?php echo $data;?>';
         console.log(canvasss);
         </script>
         <?php
@@ -1702,9 +1702,9 @@ if (!empty($data)) {
 }
 ?>
 <script>
-    // document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
         var backgroundImageSrc = "<?php echo $imageSrc; ?>";
-    // });
+    });
 </script>
 <script>
     if(jQuery("#dynamic-image-container").length)
