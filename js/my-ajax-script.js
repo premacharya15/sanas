@@ -1460,3 +1460,30 @@ if (window.location.pathname === '/my-contact/') {
         });
 }
 
+
+function updateStatusTooltip(element, status) {
+    let tooltipText = '';
+    switch (status) {
+        case 'Yet To Start':
+            tooltipText = '⏳ Yet To Start';
+            break;
+        case 'In Progress':
+            tooltipText = '🔄 In Progress';
+            break;
+        case 'Completed':
+            tooltipText = '✅ Completed';
+            break;
+        default:
+            tooltipText = 'Unknown Status';
+    }
+    element.setAttribute('data-bs-original-title', tooltipText);
+    bootstrap.Tooltip.getInstance(element).setContent({ '.tooltip-inner': tooltipText });
+}
+
+jQuery(document).ready(function($) {
+    $('.status-dropdown').on('change', function() {
+        const status = $(this).val();
+        updateStatusTooltip(this, status);
+    });
+});
+
