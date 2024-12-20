@@ -1689,7 +1689,7 @@ $data = !empty($frontpagedata) ? stripslashes(stripslashes(htmlspecialchars_deco
         ?>
         <script>
         document.addEventListener('DOMContentLoaded', function () {
-        var canvasss = '<?php echo $data;?>';
+        var canvasss = "<?php echo $data;?>";
         console.log(canvasss);
         });
         </script>
@@ -1704,7 +1704,9 @@ if (!empty($data)) {
 }
 ?>
 <script>
-    var backgroundImageSrc = "<?php echo $imageSrc; ?>";
+    document.addEventListener('DOMContentLoaded', function () {
+        var backgroundImageSrc = "<?php echo $imageSrc; ?>";
+    });
 </script>
 <script>
     if(jQuery("#dynamic-image-container").length)
