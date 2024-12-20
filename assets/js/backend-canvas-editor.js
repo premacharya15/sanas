@@ -29,7 +29,7 @@ fabric.Object.prototype.borderColor = 'yellow';
 // }
 
 async function loadGoogleFonts() {
-    const apiKey = 'AIzaSyBkb0XQYNcyOA_E9xSGAAAebeo6oXCD1wY'; // Replace with your Google Fonts API key
+    const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key
     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
   
     try {
