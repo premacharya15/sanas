@@ -94,7 +94,6 @@ async function loadGoogleFonts() {
             option.text = font.family;
             option.value = font.family.replace(/ /g, '+'); // Replace spaces with '+'
             select.appendChild(option);
-            console.log('frontend-canvas-editor.js - font family 3:', font.family);
         });
         canvas.renderAll();
         console.log("test");
