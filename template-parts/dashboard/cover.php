@@ -1689,7 +1689,7 @@ $data = !empty($frontpagedata) ? stripslashes(stripslashes(htmlspecialchars_deco
         ?>
         <script>
         document.addEventListener('DOMContentLoaded', function () {
-        var canvasss = "<?php echo $data;?>";
+        var canvasss = '<?php echo $data;?>';
         console.log(canvasss);
         });
         </script>
