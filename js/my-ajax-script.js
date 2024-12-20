@@ -1477,7 +1477,11 @@ function updateStatusTooltip(element, status) {
             tooltipText = 'Unknown Status';
     }
     element.setAttribute('data-bs-original-title', tooltipText);
-    bootstrap.Tooltip.getInstance(element).setContent({ '.tooltip-inner': tooltipText });
+    let tooltipInstance = bootstrap.Tooltip.getInstance(element);
+    if (!tooltipInstance) {
+        tooltipInstance = new bootstrap.Tooltip(element);
+    }
+    tooltipInstance.setContent({ '.tooltip-inner': tooltipText });
 }
 
 jQuery(document).ready(function($) {
