@@ -1476,7 +1476,16 @@ function updateStatusTooltip(element, status) {
         default:
             tooltipText = 'Unknown Status';
     }
-    element.setAttribute('data-bs-original-title', tooltipText);
+    const parentDiv = element.closest('.status-dropdown-wrapper');
+    if (parentDiv) {
+        parentDiv.setAttribute('data-bs-original-title', tooltipText);
+        const tooltipInstance = bootstrap.Tooltip.getInstance(parentDiv);
+        if (tooltipInstance) {
+            tooltipInstance.setContent({ '.tooltip-inner': tooltipText });
+        } else {
+            new bootstrap.Tooltip(parentDiv);
+        }
+    }
 }
 
 jQuery(document).ready(function($) {
