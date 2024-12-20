@@ -135,6 +135,7 @@ async function loadGoogleFonts() {
 window.onload = function () {
     loadGoogleFonts();
     canvas.renderAll();
+    updateFontSelection();
 };
 window.loadGoogleFonts = loadGoogleFonts;
 // chnage font family
@@ -1075,6 +1076,7 @@ jQuery(document).ready(function ($) {
             if (response.success && response.data.json_data) {
                 canvas.loadFromJSON(response.data.json_data, () => {
                     canvas.renderAll();
+                    updateFontSelection();
                 });
             }
         }
@@ -1099,6 +1101,7 @@ jQuery(document).ready(function ($) {
             if (response.success && response.data.json_data) {
                 canvas.loadFromJSON(response.data.json_data, () => {
                     canvas.renderAll();
+                    updateFontSelection();
                 });
             }
         }
@@ -1107,3 +1110,14 @@ jQuery(document).ready(function ($) {
 
 
 });
+
+function updateFontSelection() {
+    const activeObject = canvas.getActiveObject();
+    if (activeObject && activeObject.type === 'i-text') {
+        const fontFamily = activeObject.fontFamily.replace(/ /g, '+');
+        const select = document.getElementById('fontFamily');
+        if (select) {
+            select.value = fontFamily;
+        }
+    }
+}

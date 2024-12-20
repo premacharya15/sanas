@@ -1005,28 +1005,32 @@ jQuery(document).ready(function ($) {
 
 
 jQuery(document).ready(function ($) {
-    if (jQuery('#load_front_json').val()=='yes') {
+    if (jQuery('#load_front_json').val() == 'yes') {
+        var card_id = jQuery('#card_id').val();
 
-    var card_id = jQuery('#card_id').val(); 
-
-    jQuery.ajax({
-        url: ajax_login_object.ajaxurl,
-        method: 'POST',
-        data: { 
-            action: 'sanas_load_fabric_js_data_front',
-            card_id: card_id
-        },
-        success: (response) => {
-            if (response.success && response.data.json_data) {
-                canvas.loadFromJSON(response.data.json_data, () => {
-                    canvas.renderAll();
-                });
+        jQuery.ajax({
+            url: ajax_login_object.ajaxurl,
+            method: 'POST',
+            data: {
+                action: 'sanas_load_fabric_js_data_front',
+                card_id: card_id
+            },
+            success: (response) => {
+                if (response.success && response.data.json_data) {
+                    canvas.loadFromJSON(response.data.json_data, () => {
+                        canvas.renderAll();
+                        updateFontSelection(); // Update font selection after loading
+                    });
+                }
             }
-        }
-    });
-  }
+        });
+    }
+});
 
 
+
+
+jQuery(document).ready(function ($) {
     if (jQuery('#user_load_front_json').val()=='yes') {
 
     var card_id = jQuery('#card_id').val();
