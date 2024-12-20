@@ -1702,9 +1702,9 @@ if (!empty($data)) {
 }
 ?>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    // document.addEventListener('DOMContentLoaded', function () {
         var backgroundImageSrc = "<?php echo $imageSrc; ?>";
-    });
+    // });
 </script>
 <script>
     if(jQuery("#dynamic-image-container").length)
