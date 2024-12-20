@@ -119,7 +119,7 @@ add_action('wp_enqueue_scripts', 'sanas_js');
 
 
 function sanas_ajax_load_enqueue_scripts() {
-    // wp_enqueue_script('jquery'); // Ensure jQuery is loaded
+    wp_enqueue_script('jquery'); // Ensure jQuery is loaded
     wp_enqueue_script('sanas-login', get_template_directory_uri() . '/assets/js/login.js', array('jquery'), SANAS_VERSION, true);
     wp_localize_script('sanas-login', 'ajax_login_object', array(
         'ajaxurl' => admin_url('admin-ajax.php')
