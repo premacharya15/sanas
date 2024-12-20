@@ -160,7 +160,7 @@ $percent_count = ($completed_count > 0) ? ($completed_count * 100) / $total_coun
                                         <option value="Completed" <?php echo selected($item['status'], 'Completed', false); ?>>✅</option>
                                                 </select>
                                             </div>
-                                            <div class="status-dropdown-wrapper" data-toggle="tooltip" data-bs-original-title="">
+                                            <div class="status-dropdown-wrapper" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($item['status']); ?>">
                                                 <select class="status-dropdown smallfont desktop-dropdown" data-id="<?php echo $item['id']; ?>">
                                                 <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?>>Yet To Start</option>
                                         <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?>>In Progress</option>
