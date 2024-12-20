@@ -1684,14 +1684,11 @@ if(wp_is_mobile())
 }?>
 <?php
 $data = !empty($frontpagedata) ? stripslashes(stripslashes(htmlspecialchars_decode($frontpagedata))) : stripslashes(stripslashes(htmlspecialchars_decode($frontmetadata)));
-echo $data;
     if (isset($_GET['card_id'])) {
         ?>
         <script>
-        document.addEventListener('DOMContentLoaded', function () {
         var canvasss = '<?php echo $data;?>';
         console.log(canvasss);
-        });
         </script>
         <?php
     }
