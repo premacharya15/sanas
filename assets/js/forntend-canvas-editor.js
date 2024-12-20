@@ -521,6 +521,7 @@ jQuery(document).ready(function ($) {
             data.objects.forEach(obj => {
                 if (obj.type === 'i-text' && obj.fontFamily) {
                     fonts.add(obj.fontFamily);
+                    console.log('frontend-canvas-editor.js - font family 1:', obj.fontFamily);
                 }
                 console.log(obj.fontFamily);
             });
@@ -551,6 +552,7 @@ jQuery(document).ready(function ($) {
                 data.objects.forEach(obj => {
                     if (obj.type === 'i-text' && obj.fontFamily) {
                         fonts.add(obj.fontFamily);
+                        console.log('frontend-canvas-editor.js - font family 2:', obj.fontFamily);
                     }
                 });
 
