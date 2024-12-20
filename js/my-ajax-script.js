@@ -1465,13 +1465,13 @@ function updateStatusTooltip(element, status) {
     let tooltipText = '';
     switch (status) {
         case 'Yet To Start':
-            tooltipText = '⏳ Yet To Start';
+            tooltipText = 'Yet To Start';
             break;
         case 'In Progress':
-            tooltipText = '🔄 In Progress';
+            tooltipText = 'In Progress';
             break;
         case 'Completed':
-            tooltipText = '✅ Completed';
+            tooltipText = 'Completed';
             break;
         default:
             tooltipText = 'Unknown Status';
