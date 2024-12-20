@@ -1755,11 +1755,3 @@ echo "</script>";
 </script> -->
 <?php  
 }?>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Set the font family to 'Black Han Sans' on page load
-        document.getElementById('fontFamily').value = 'Black+Han+Sans'; // Ensure the value matches the format used in the select
-        changeFont(); // Call the function to apply the font
-    });
-</script>
