@@ -97,6 +97,7 @@ async function loadGoogleFonts() {
         });
         canvas.renderAll();
         console.log("test");
+        console.log('frontend-canvas-editor.js - font family 3:', font.family);
     } catch (error) {
         console.error('Error fetching Google Fonts:', error);
     }
