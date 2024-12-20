@@ -1720,7 +1720,7 @@ if (!empty($data)) {
         });        
     }
 </script>
-<style>
+<!-- <style>
     #dynamic-image-container img{
     width: 50%;
     height: 100%;
@@ -1728,7 +1728,7 @@ if (!empty($data)) {
     margin: auto;
    border: 3px solid transparent;
     }
-</style>
+</style> -->
 <?php 
 if ( is_user_logged_in() ) {
 
