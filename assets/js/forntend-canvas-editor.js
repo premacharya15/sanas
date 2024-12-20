@@ -530,27 +530,47 @@ jQuery(document).ready(function ($) {
                 loadFonts(Array.from(fonts), () => {
                     canvas.loadFromJSON(canvasData, () => {
                         canvas.renderAll();
-                        logAllTextFontFamilies();
                     });
                 });
             } else {
                 // If no fonts to load, just render the canvas
                 canvas.loadFromJSON(canvasData, () => {
                     canvas.renderAll();
-                    logAllTextFontFamilies();
                 });
             }
         } catch (error) {
             console.error("Error parsing canvas data:", error.message);
-        } 
-    }
+            console.log("Attempting to fix the canvas data format...");
 
-    function logAllTextFontFamilies() {
-        canvas.getObjects().forEach(obj => {
-            if (obj.type === 'i-text' && obj.fontFamily) {
-                console.log('Loaded Font Family:', obj.fontFamily);
+            try {
+                // Try fixing common JSON issues and re-parsing
+                canvasData = fixCanvasData(canvasData);
+                let data = parseCanvasData(canvasData); // Re-parse after fix
+
+                // Proceed with the same font loading and canvas rendering logic
+                const fonts = new Set();
+                data.objects.forEach(obj => {
+                    if (obj.type === 'i-text' && obj.fontFamily) {
+                        fonts.add(obj.fontFamily);
+                        console.log('frontend-canvas-editor.js - font family 2:', obj.fontFamily);
+                    }
+                });
+
+                if (fonts.size > 0) {
+                    loadFonts(Array.from(fonts), () => {
+                        canvas.loadFromJSON(canvasData, () => {
+                            canvas.renderAll();
+                        });
+                    });
+                } else {
+                    canvas.loadFromJSON(canvasData, () => {
+                        canvas.renderAll();
+                    });
+                }
+            } catch (fixError) {
+                console.error("Failed to fix and parse canvas data:", fixError.message);
             }
-        });
+        }
     }
 
     function parseCanvasData(data) {
