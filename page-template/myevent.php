@@ -90,7 +90,7 @@ get_sidebar('dashboard');
         );
         $totalGuests = count($get_guest_details);
         // Construct the dashboard URL with the card ID
-        $stepURL = esc_url($currentURL . $perma . $dashQuery . $dashpage . '&card_id=' . $event_card_id . '&event_id=' . $id . '&event_status=' . $status_name);
+        $stepURL = esc_url($currentURL . $perma . $dashQuery . $dashpage . '&card_id=' . $event_card_id . '&event_id=' . $id);
 
         $eventDate= esc_html(get_post_meta($event_rsvp_id, 'event_date', true));
         $eventtitle= esc_html(get_post_meta($event_rsvp_id, 'event_name', true));
