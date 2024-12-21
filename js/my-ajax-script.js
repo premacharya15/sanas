@@ -1496,23 +1496,40 @@ jQuery(document).ready(function($) {
 });
 
 if (jQuery('.search-form').length) {
-    jQuery.ajax({
+    $.ajax({
         url: ajax_object.ajax_url, // Use the AJAX URL passed via wp_localize_script
         method: "POST",
         data: {
-            action: "get_sanas_card_category" // Action name defined in the AJAX handler
+            action: "get_sanas_card_category", // Action name defined in the PHP function
+            nonce: ajax_object.nonce // Nonce passed via wp_localize_script for security
         },
         success: function (response) {
             if (response.success) {
-                // Append the dropdown to your desired location
-                jQuery('.search-form').append(response.data);
-                console.log(response.data);
+                var categories = response.data; // Array of categories with name and URL
+                var dropdown = $('<select class="card-category-dropdown"></select>');
+
+                // Add an optional placeholder option
+                dropdown.append('<option value="">Select a Category</option>');
+
+                // Populate the dropdown with categories
+                categories.forEach(function (category) {
+                    var option = $('<option></option>')
+                        .attr('value', category.url) // Use URL as the value
+                        .text(category.name); // Use the category name as text
+                    dropdown.append(option);
+                });
+
+                // Append the dropdown to the desired location
+                $('.search-form').append(dropdown);
+            } else {
+                console.error("Error:", response.data);
             }
         },
         error: function (error) {
             console.error("Error fetching category dropdown:", error);
         }
     });
+
     var templateNames = [
         "Wedding",
         "Haldi",
