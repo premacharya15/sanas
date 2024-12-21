@@ -1530,7 +1530,6 @@ if (jQuery('.search-form').length) {
     (async function () {
         try {
             var templateNames = await fetchTemplateNames();
-            console.log("Template Names:", templateNames);
 
         var searchInput = document.getElementById('search');
         var suggestionList = document.getElementById('suggestionlist');
@@ -1543,7 +1542,7 @@ if (jQuery('.search-form').length) {
             var suggestions = [];
             console.log(templateNames);
             templateNames.forEach(function (template) {
-                if (template.toLowerCase().includes(inputText)) {
+                if (template.name.toLowerCase().includes(inputText)) {
                     suggestions.push(template);
                 }
             });
