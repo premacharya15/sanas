@@ -53,6 +53,7 @@ get_sidebar('dashboard');
                     $monthCounter++;
                 ?>
                 <?php endforeach; ?>
+                <p>Total tasks: <?php echo count($todo_items); ?></p>
                 <?php if (!$showAllTasks && count($groupedTasks) > 5): ?>
                 <div class="d-flex">
                     <a href="?view_all=true" class="text-black p-2">View All</a>
