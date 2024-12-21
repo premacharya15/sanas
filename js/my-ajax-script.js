@@ -1504,22 +1504,8 @@ if (jQuery('.search-form').length) {
         },
         success: function (response) {
             if (response.success) {
-                var categories = response.data; // Array of categories with name and URL
-                var dropdown = jQuery('<select class="card-category-dropdown"></select>');
-
-                // Add an optional placeholder option
-                dropdown.append('<option value="">Select a Category</option>');
-
-                // Populate the dropdown with categories
-                categories.forEach(function (category) {
-                    var option = jQuery('<option></option>')
-                        .attr('value', category.url) // Use URL as the value
-                        .text(category.name); // Use the category name as text
-                    dropdown.append(option);
-                });
-
-                // Append the dropdown to the desired location
-                jQuery('.search-form').append(dropdown);
+                var categories = response.data;
+                jQuery('.search-form').append(categories);
             } else {
                 console.error("Error:", response.data);
             }
