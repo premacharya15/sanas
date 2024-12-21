@@ -1530,7 +1530,7 @@ if (jQuery('.search-form').length) {
         searchInput.addEventListener('input', function () {
             var inputText = this.value.toLowerCase();
             var suggestions = [];
-                console.log(templateNames);
+            console.log(templateNames);
             templateNames.forEach(function (template) {
                 if (template.toLowerCase().includes(inputText)) {
                     suggestions.push(template);
