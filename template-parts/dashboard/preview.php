@@ -228,7 +228,7 @@ function is_youtube_url($url) {
                             <?php } ?> 
                             </div>
                         </div>
-                        <div class=" col-md-6 col-sm-12">
+                        <div class="col-md-6 col-sm-12">
                             <div class="preview-img">
                                  <?php if ($event_back_card_preview !== 'No preview available' && $event_back_card_preview !== 'Invalid card ID'){ ?>
                                 <img id="backimagePreview" width="525" height="765" alt="">
@@ -241,7 +241,6 @@ function is_youtube_url($url) {
                 </div>
                 <div class="content content-3">
                     <div class="row">
-
                         <div class="divider">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/divider.png" alt="">
                         </div>
@@ -276,7 +275,8 @@ function is_youtube_url($url) {
                             <div class="wl-inner-card-detaile wl-previewbox">
                                 <div class="row">
 
-                                <div class="row col-xxl-8 col-xl-8 col-lg-8 col-md-8 m-auto position-relative">
+                                <div class="row col-xxl-8 col-xl-9 col-lg-9 col-md-12 m-auto position-relative">
+                            
                                 <div class="rsvp-from-group">
                                     <h3 class="mb-0 mt-3" style="font-size:24px;">Hosted By</h3>
                                 </div>  
@@ -285,6 +285,7 @@ function is_youtube_url($url) {
                                         <div id="guestName" name="guestName" style="<?php echo $guest_name_css; ?>" class="edit-text rsvp-msg preview-host-name">
                                             <?php echo esc_html($guestName); ?>
                                         </div>
+                                    </div>
                                     <div class="rsvp-from-group">
                                         <div id="guestContact" style="<?php echo $guest_contact_css; ?>" class="edit-text rsvp-msg preview-host-contact-no mb-0">
                                             <?php echo esc_html($guestContact); ?>
