@@ -1496,6 +1496,7 @@ jQuery(document).ready(function($) {
 });
 
 if (jQuery('.search-form').length) {
+    var templateNames = [];
     jQuery.ajax({
         url: ajax_object.ajax_url, // Use the AJAX URL passed via wp_localize_script
         method: "POST",
@@ -1504,9 +1505,12 @@ if (jQuery('.search-form').length) {
         },
         success: function (response) {
             if (response.success) {
-                var categories = response.data;
-                jQuery('.search-form').append(categories);
-                console.log(categories);
+                templateNames = response.data.map(function (category) {
+                    return {
+                        name: category.name,
+                        url: category.url
+                    };
+                });
             } else {
                 console.error("Error:", response.data);
             }
@@ -1516,31 +1520,6 @@ if (jQuery('.search-form').length) {
         }
     });
 
-    var templateNames = [
-        "Wedding",
-        "Haldi",
-        "Mahandi",
-        "sangeet",
-        "Reception",
-        "Engagement",
-        "Half Saree",
-        "Dhoti",
-        "Pooja",
-        "Naming Ceremony",
-        "Graduation",
-        "Birthday",
-        "1st Brithday",
-        "16th Desi Brithday",
-        "Baby Shower",
-        "Diwali",
-        "Garba",
-        "Holi",
-        "Personalised cards",
-        "House Warming",
-        "Desi Vendors",
-        "Diamond Jewellery",
-        "Blog",
-    ];
     document.addEventListener("DOMContentLoaded", function () {
         var searchInput = document.getElementById('search');
         var suggestionList = document.getElementById('suggestionlist');
