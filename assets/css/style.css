@@ -2328,9 +2328,14 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .wl-fuc-timing {
     font-size: 16px;
     font-weight: 400;
     line-height: 25.2px;
-    width: calc(50% - 10px) !important;
     text-align: center;
     width: 40px ;
+}
+.wl-fuc-timing table tbody tr td:nth-child(1) {
+width: calc(75% - 10px) !important;
+}
+.wl-fuc-timing table tbody tr td:nth-child(2) {
+width: calc(25% - 10px) !important;
 }
 .wl-fuc-timing table tbody tr td:nth-child(3) {
     width: 20px !important;
