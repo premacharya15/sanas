@@ -1689,7 +1689,7 @@ $data = !empty($frontpagedata) ? stripslashes(stripslashes(htmlspecialchars_deco
         ?>
         <script>
         var canvasss = '<?php echo json_encode($data);?>';
-        canvasss = canvasss.replace(/\\n/g, '\n');
+        // canvasss = canvasss.replace(/\\n/g, '\n'); // Convert escaped `\n` back to actual newlines
         console.log(canvasss);
         </script>
         <?php
