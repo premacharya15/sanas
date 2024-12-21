@@ -30,9 +30,13 @@ get_sidebar('dashboard');
           <div class="todo-search-add-link justify-content-end">
             <div class="add-link"><a href="#" class="dashbord-btn" data-bs-toggle="modal" data-bs-target="#add-todolist-popup"><i class="icon-plus"></i> Add Task</a>
             </div>
-            <div class="d-flex">
-                <a href="?show_all=true" class="text-black p-2">View All</a>
-            </div>
+            <?php if (count(array_unique(array_map(function($item) {
+                return date('F Y', strtotime($item['date']));
+            }, $todo_items))) > 5): ?>
+                <div class="d-flex">
+                    <a href="?show_all=true" class="text-black p-2">View All</a>
+                </div>
+            <?php endif; ?>
           </div>
           <div class="title-box">
             <div class="todo-status">
