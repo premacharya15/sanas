@@ -1531,14 +1531,7 @@ if (jQuery('.search-form').length) {
         try {
             var templateNames = await fetchTemplateNames();
             console.log("Template Names:", templateNames);
-            // Use templateNames here
-        } catch (error) {
-            console.error("Error:", error);
-        }
-    })();
-    
 
-    document.addEventListener("DOMContentLoaded", function () {
         var searchInput = document.getElementById('search');
         var suggestionList = document.getElementById('suggestionlist');
         if (!searchInput || !suggestionList) {
@@ -1577,5 +1570,10 @@ if (jQuery('.search-form').length) {
                 suggestionList.style.display = 'none';
             }
         });
-    });
+
+    } catch (error) {
+        console.error("Error:", error);
+    }
+})();
+
 }
