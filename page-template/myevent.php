@@ -106,8 +106,8 @@ get_sidebar('dashboard');
         $status_class='darft';
         if(intval($event_step_id)>=4)
         {
-          $status_name='Draft';
-          $status_class='darft';
+          $status_name='Sent';
+          $status_class='sent ';
         }
 
         if (get_post_meta($event_card_id,'sanas_metabox',true)) {
@@ -144,6 +144,11 @@ get_sidebar('dashboard');
           $status_name = 'Sent';
           $status_class = 'sent';
       } else {
+          // Existing logic to determine status
+          if (intval($event_step_id) >= 4) {
+              $status_name = 'Sent';
+              $status_class = 'sent';
+          } else {
               $status_name = 'Draft';
               $status_class = 'draft';
           }
