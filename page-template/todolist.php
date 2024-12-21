@@ -46,7 +46,7 @@ get_sidebar('dashboard');
 
                 // Generate tables for each month
                 $monthCounter = 0;
-                $showAllTasks = isset($_GET['show_all']) && $_GET['show_all'] == 'true';
+                $showAllTasks = isset($_GET['view_all']) && $_GET['view_all'] == 'true';
 
                 foreach ($groupedTasks as $monthYear => $tasks): 
                     if ($monthCounter >= 5 && !$showAllTasks) break;
@@ -55,7 +55,7 @@ get_sidebar('dashboard');
                 <?php endforeach; ?>
                 <?php if (!$showAllTasks && count($groupedTasks) > 5): ?>
                 <div class="d-flex">
-                    <a href="?show_all=true" class="text-black p-2">View All</a>
+                    <a href="?view_all=true" class="text-black p-2">View All</a>
                 </div>
                 <?php endif; ?>
             <?php endif; ?>
