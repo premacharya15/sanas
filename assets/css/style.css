@@ -2346,7 +2346,7 @@ width: calc(25% - 10px) !important;
 
 .wl-fuc-timing table>tbody>tr:last-child {
     margin-bottom: 0px;
-    gap: 15px;
+    gap: 10px;
 }
 
 .wl-joining ul {
