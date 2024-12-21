@@ -1543,7 +1543,7 @@ if (jQuery('.search-form').length) {
             console.log(templateNames);
             templateNames.forEach(function (template) {
                 if (template.name.toLowerCase().includes(inputText)) {
-                    suggestions.push(template);
+                    suggestions.push(template.name);
                 }
             });
             showSuggestions(suggestions);
