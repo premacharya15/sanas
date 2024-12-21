@@ -661,18 +661,40 @@ endif; // ends check for weddlist_shape_comment()
 
 function sanas_card_category($class_name = ''){
 
-  $terms = get_terms( array(
-          'taxonomy'   => 'sanas-card-category',
-          'hide_empty' => false,  // Set to true if you want to hide terms without posts
-      ) );
-  
-  if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-      foreach ( $terms as $term ) {
-          echo esc_html( $term->name );
-      }
-  }
-  
-  }
+  if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'get_card_categories_nonce')) {
+    wp_send_json_error('Invalid nonce');
+    wp_die();
+}
+
+$terms = get_terms(
+    array(
+        'taxonomy'   => 'sanas-card-category', // Replace with your taxonomy name
+        'hide_empty' => false,
+        'meta_query' => array(
+            array(
+                'key'     => 'card_category_home',
+                'value'   => '1',
+                'compare' => '='
+            )
+        )
+    )
+);
+
+if (is_wp_error($terms)) {
+    wp_send_json_error('Error fetching terms');
+    wp_die();
+}
+
+$categories = array_map(function ($term) {
+    return array(
+        'name' => $term->name,
+        'url'  => get_term_link($term) // Get term URL
+    );
+}, $terms);
+
+wp_send_json_success($categories);
+wp_die();
+}
 
   
 function sanas_card_category_select($class_name = ''){
