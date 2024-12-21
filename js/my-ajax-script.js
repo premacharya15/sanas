@@ -1542,7 +1542,7 @@ if (jQuery('.search-form').length) {
             console.log(templateNames);
             templateNames.forEach(function (template) {
                 if (template.name.toLowerCase().includes(inputText)) {
-                    suggestions.push(template.name);
+                    suggestions.push(template);
                 }
             });
             showSuggestions(suggestions);
@@ -1552,7 +1552,8 @@ if (jQuery('.search-form').length) {
 
             suggestions.forEach(function (suggestion) {
                 var listItem = document.createElement('li');
-                listItem.textContent = suggestion;
+                listItem.textContent = suggestion.name;
+                listItem.dataset.url = suggestion.url;
                 suggestionList.appendChild(listItem);
             });
             suggestionList.style.display = suggestions.length > 0 ? 'block' : 'none';
