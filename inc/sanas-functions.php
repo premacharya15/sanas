@@ -663,14 +663,7 @@ function sanas_card_category(){
   $terms = get_terms(
       array(
           'taxonomy'   => 'sanas-card-category', // Replace with your taxonomy name
-          'hide_empty' => false,
-          'meta_query' => array(
-              array(
-                  'key'     => 'card_category_home',
-                  'value'   => '1',
-                  'compare' => '='
-              )
-          )
+          'hide_empty' => false
       )
   );
 
