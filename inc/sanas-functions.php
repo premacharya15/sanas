@@ -659,7 +659,22 @@ function weddlist_shape_comment( $comment, $args, $depth ) {
 }
 endif; // ends check for weddlist_shape_comment()
 
+function sanas_card_category($class_name = ''){
 
+  $terms = get_terms( array(
+          'taxonomy'   => 'sanas-card-category',
+          'hide_empty' => false,  // Set to true if you want to hide terms without posts
+      ) );
+  
+  if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+      foreach ( $terms as $term ) {
+          echo esc_html( $term->name );
+      }
+  }
+  
+  }
+
+  
 function sanas_card_category_select($class_name = ''){
 
 $terms = get_terms( array(

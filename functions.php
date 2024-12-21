@@ -1725,7 +1725,7 @@ add_action('wp_ajax_nopriv_get_sanas_card_category', 'get_sanas_card_category');
 
 function get_sanas_card_category() {
     ob_start();
-    sanas_card_category_select(); // Call your function to generate the dropdown
+    sanas_card_category(); // Call your function to generate the dropdown
     $output = ob_get_clean();
     wp_send_json_success($output); // Send the HTML as the response
 }
