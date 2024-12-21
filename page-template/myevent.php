@@ -104,11 +104,11 @@ get_sidebar('dashboard');
 
         $status_name='Draft';
         $status_class='darft';
-        if(intval($event_step_id)>=4)
-        {
-          $status_name='Sent';
-          $status_class='sent ';
-        }
+        // if(intval($event_step_id)>=4)
+        // {
+        //   $status_name='Sent';
+        //   $status_class='sent ';
+        // }
 
         if (get_post_meta($event_card_id,'sanas_metabox',true)) {
           $sanas_portfolio_meta = get_post_meta($event_card_id,'sanas_metabox',true);
@@ -146,8 +146,8 @@ get_sidebar('dashboard');
       } else {
           // Existing logic to determine status
           if (intval($event_step_id) >= 4) {
-              $status_name = 'Sent';
-              $status_class = 'sent';
+              $status_name = 'Draft';
+              $status_class = 'draft';
           } else {
               $status_name = 'Draft';
               $status_class = 'draft';
