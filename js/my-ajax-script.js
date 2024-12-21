@@ -1525,7 +1525,6 @@ function fetchTemplateNames() {
 
 if (jQuery('.search-form').length) {
 
-    
     // Usage example with async/await
     (async function () {
         try {
@@ -1561,6 +1560,7 @@ if (jQuery('.search-form').length) {
         document.addEventListener('click', function (e) {
             if (e.target && e.target.matches('#suggestionlist li')) {
                 searchInput.value = e.target.textContent;
+                jQuery('search-form').action="test";
                 suggestionList.style.display = 'none';
             }
         });
