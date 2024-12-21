@@ -215,7 +215,7 @@ function is_youtube_url($url) {
 </style>
     <section class="wl-main-canvas wl-main-preview">
         <div class="container-fluid">
-            <div class="inner-container"  id="previewcanvasElement">
+            <div class="inner-container exclude-media-lazy"  id="previewcanvasElement">
                 <div class="inner-colum" id="frontcanvasElement" style="background-color: <?php echo $colorbg;?>">
                     <div class="card-canvas row">
                         <div class=" col-md-6 col-sm-12">

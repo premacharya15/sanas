@@ -211,7 +211,7 @@ section.wl-main-canvas .inner-container .inner-colum {
                
      <section class="wl-main-canvas guest-preview">
         <div class="container-fluid">
-            <div class="inner-container"  id="previewcanvasElement">
+            <div class="inner-container exclude-media-lazy" id="previewcanvasElement">
                 <div class="inner-colum">
                     <div class="card-canvas row">
                         <div class=" col-md-6 col-sm-12">
