@@ -277,7 +277,6 @@ function is_youtube_url($url) {
                                 <div class="row">
 
                                 <div class="row col-xxl-12 col-xl-8 col-lg-8 col-md-8 m-auto position-relative">
-                            
                                 <div class="rsvp-from-group">
                                     <h3 class="mb-0 mt-3" style="font-size:24px;">Hosted By</h3>
                                 </div>  
