@@ -2341,7 +2341,7 @@ width: calc(25% - 10px) !important;
     width: 20px !important;
 }
 .wl-fuc-timing table tbody tr {
-    margin-bottom: 24px;
+    margin-bottom: 12px;
 }
 
 .wl-fuc-timing table>tbody>tr:last-child {
