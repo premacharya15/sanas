@@ -1500,7 +1500,7 @@ if (jQuery('.search-form').length) {
         url: ajax_object.ajax_url, // Use the AJAX URL passed via wp_localize_script
         method: "POST",
         data: {
-            action: "sanas_card_category" // Action name defined in the AJAX handler
+            action: "get_sanas_card_category" // Action name defined in the AJAX handler
         },
         success: function (response) {
             if (response.success) {
