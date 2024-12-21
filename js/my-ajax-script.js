@@ -1506,6 +1506,7 @@ if (jQuery('.search-form').length) {
             if (response.success) {
                 // Append the dropdown to your desired location
                 jQuery('.search-form').append(response.data);
+                console.log(response.data);
             }
         },
         error: function (error) {
