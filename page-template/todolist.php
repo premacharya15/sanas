@@ -30,7 +30,8 @@ get_sidebar('dashboard');
           <div class="todo-search-add-link justify-content-end">
             <div class="add-link"><a href="#" class="dashbord-btn" data-bs-toggle="modal" data-bs-target="#add-todolist-popup"><i class="icon-plus"></i> Add Task</a>
             </div>
-            <div class="add-link"><a href="#" class="dashbord-btn" data-bs-toggle="modal" data-bs-target="#add-todolist-popup"><i class="icon-plus"></i> Add Task</a>
+            <div class="todo-search-add-link justify-content-center">
+                <a href="?show_all=true" class="dashbord-btn">View All</a>
             </div>
           </div>
           <div class="title-box">
