@@ -1520,7 +1520,7 @@ if (jQuery('.search-form').length) {
                 });
 
                 // Append the dropdown to the desired location
-                $('.search-form').append(dropdown);
+                jQuery('.search-form').append(dropdown);
             } else {
                 console.error("Error:", response.data);
             }
