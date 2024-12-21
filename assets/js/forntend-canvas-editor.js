@@ -104,34 +104,58 @@ function addText(event) {
 async function loadGoogleFonts() {
     const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key
     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
-  
+
     try {
-      const response = await fetch(apiUrl);
-      if (!response.ok) {
-        throw new Error('Failed to fetch Google Fonts');
-      }
-      const data = await response.json();
-      const fonts = data.items;
-  
-      const selectElement = document.getElementById('fontFamily');
-      const choices = new Choices(selectElement, {
-        shouldSort: false,
-        removeItemButton: true,
-        position: 'bottom'
-    });
-      const options = fonts.map(font => ({
-        value: font.family.replace(/ /g, '+'),
-        label: font.family,
-        customProperties: { fontFamily: `'${font.family}', sans-serif` }
-      }));
-  
-      // Set choices dynamically
-      choices.setChoices(options);
-  
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Failed to fetch Google Fonts');
+        }
+
+        const data = await response.json();
+        const fonts = data.items;
+
+        const selectElement = document.getElementById('fontFamily');
+        const choices = new Choices(selectElement, {
+            shouldSort: false,
+            removeItemButton: true,
+            position: 'bottom',
+        });
+
+        // Map fonts to options
+        const options = fonts.map((font) => ({
+            value: font.family.replace(/ /g, '+'), // Prepare value for Google Fonts link
+            label: font.family,
+        }));
+
+        // Set choices dynamically
+        choices.setChoices(options);
+
+        // Load Google Fonts dynamically
+        const googleFontLink = document.createElement('link');
+        googleFontLink.rel = 'stylesheet';
+        googleFontLink.href = `https://fonts.googleapis.com/css2?family=${fonts.map((font) => font.family.replace(/ /g, '+')).join('&family=')}&display=swap`;
+        document.head.appendChild(googleFontLink);
+
+        // Apply fonts to dropdown items
+        const applyFonts = () => {
+            const dropdownItems = document.querySelectorAll('.choices__item--choice, .choices__item--selectable');
+
+            dropdownItems.forEach((item) => {
+                const value = item.getAttribute('data-value');
+                if (value) {
+                    const fontFamily = value.replace(/\+/g, ' '); // Get font family
+                    item.style.fontFamily = `'${fontFamily}', sans-serif`; // Apply font style
+                }
+            });
+        };
+
+        selectElement.addEventListener('showDropdown', applyFonts);
+        applyFonts(); // Apply fonts initially
     } catch (error) {
-      console.error('Error fetching Google Fonts:', error);
+        console.error('Error fetching Google Fonts:', error);
     }
-  }
+}
+
 window.onload = function () {
     loadGoogleFonts();
     canvas.renderAll();
@@ -511,7 +535,7 @@ jQuery(document).ready(function ($) {
     }
 
     function loadCanvasData() {
-        // Replace with your actual canvas data
+        // Replace 'canvasss' with your actual canvas data
         let canvasData = canvasss;
 
         try {
