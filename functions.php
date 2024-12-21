@@ -367,6 +367,15 @@ function add_todo_item() {
     );
 
     if ($wpdb->insert_id) {
+        // Delete the sample entry if it exists
+       $wpdb->delete(
+        $wpdb->prefix . 'todo_list',
+        array(
+            'user_id' => $current_user_id,
+            'title' => 'Sample Task',
+            'category' => 'General',
+        )
+    );
         wp_send_json_success('To-Do item added successfully.');
     } else {
         wp_send_json_error('Failed to add To-Do item.');
