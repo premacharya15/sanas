@@ -1688,7 +1688,7 @@ $data = !empty($frontpagedata) ? stripslashes(stripslashes(htmlspecialchars_deco
     if (isset($_GET['card_id'])) {
         ?>
         <script>
-        var canvasss = '<?php echo $data;?>';
+        var canvasss = `<?php echo $data;?>`;
         console.log(canvasss);
         </script>
         <?php
@@ -1702,9 +1702,9 @@ if (!empty($data)) {
 }
 ?>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    // document.addEventListener('DOMContentLoaded', function () {
         var backgroundImageSrc = "<?php echo $imageSrc; ?>";
-    });
+    // });
 </script>
 <script>
     if(jQuery("#dynamic-image-container").length)
