@@ -1086,7 +1086,7 @@ if (jQuery('.search-popup, .form-content').length) {
 
 });
 
-function changeAlign(align, event) {
+function changeAlignText(align, event) {
     event.preventDefault();
     const selectedText = jQuery('.edit-text.selected-text');
     if (selectedText.length) {
