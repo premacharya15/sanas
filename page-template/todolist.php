@@ -44,16 +44,18 @@ get_sidebar('dashboard');
                     $groupedTasks[$taskMonthYear][] = $task; // Add the task to the respective month
                 }
 
-                // Generate tables for each month
+                // Count the total number of grouped tasks
+                $totalGroupedTasks = count($groupedTasks);
                 $monthCounter = 0;
                 $showAllTasks = isset($_GET['view_all']) && $_GET['view_all'] == 'true';
 
+                // Generate tables for each month
                 foreach ($groupedTasks as $monthYear => $tasks): 
                     if ($monthCounter >= 5 && !$showAllTasks) break;
                     $monthCounter++;
                 ?>
                 <?php endforeach; ?>
-                <?php if (!$showAllTasks && count($groupedTasks) > 5): ?>
+                <?php if (!$showAllTasks && $totalGroupedTasks > 5): ?>
                 <div class="d-flex">
                     <a href="?view_all=true" class="text-black p-2">View All</a>
                 </div>
