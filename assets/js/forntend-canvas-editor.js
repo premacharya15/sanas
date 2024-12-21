@@ -121,8 +121,7 @@ async function loadGoogleFonts() {
     });
       const options = fonts.map(font => ({
         value: font.family.replace(/ /g, '+'),
-        label: font.family,
-        customProperties: { fontFamily: `'${font.family}', sans-serif` }
+        label: font.family
       }));
   
       // Set choices dynamically
