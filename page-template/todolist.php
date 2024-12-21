@@ -54,11 +54,18 @@ get_sidebar('dashboard');
                     if ($monthCounter >= 5 && !$showAllTasks) break;
                     $monthCounter++;
                 ?>
+                    <table>
+                        <tr>
+                            <th><?php echo $monthYear; ?></th>
+                        </tr>
+                        <!-- Add your task rows here -->
+                    </table>
                 <?php endforeach; ?>
+
                 <?php if (!$showAllTasks && $totalGroupedTasks > 5): ?>
-                <div class="d-flex">
-                    <a href="?view_all=true" class="text-black p-2">View All</a>
-                </div>
+                    <div class="d-flex">
+                        <a href="?view_all=true" class="text-black p-2">View All</a>
+                    </div>
                 <?php endif; ?>
             <?php endif; ?>
           </div>
