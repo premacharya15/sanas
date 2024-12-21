@@ -526,16 +526,20 @@ if ($colorbg) {
                                           <?php echo DateTime::createFromFormat('Y-m-d', $item['date'])->format('jS M Y'); ?>
                                       </td>
                                       <td>
+                                      <div class="status-dropdown-wrapper" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($item['status']); ?>">
                                       <select class="status-dropdown mediumfont mobile-dropdown" data-id="<?php echo $item['id']; ?>">
-                                        <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?> data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">⏳</option>
-                                        <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?> data-bs-toggle="tooltip" data-bs-original-title="In Progress">🔄</option>
-                                        <option value="Completed" <?php echo selected($item['status'], 'Completed', false); ?> data-bs-toggle="tooltip" data-bs-original-title="Completed">✅</option>
+                                        <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?>>⏳</option>
+                                        <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?>>🔄</option>
+                                        <option value="Completed" <?php echo selected($item['status'], 'Completed', false); ?>></option>
                                     </select>
+                                    </div>
+                                    <div class="status-dropdown-wrapper" data-toggle="tooltip" data-bs-original-title="<?php echo esc_html($item['status']); ?>">
                                     <select class="status-dropdown smallfont desktop-dropdown" data-id="<?php echo $item['id']; ?>">
-                                        <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?> data-bs-toggle="tooltip" data-bs-original-title="Yet To Start">Yet To Start</option>
-                                        <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?> data-bs-toggle="tooltip" data-bs-original-title="In Progress">In Progress</option>
-                                        <option value="Completed" <?php echo selected($item['status'], 'Completed', false); ?> data-bs-toggle="tooltip" data-bs-original-title="In Progress">Completed</option>
+                                        <option value="Yet To Start" <?php echo selected($item['status'], 'Yet To Start', false); ?>>Yet To Start</option>
+                                        <option value="In Progress" <?php echo selected($item['status'], 'In Progress', false); ?>>In Progress</option>
+                                        <option value="Completed" <?php echo selected($item['status'], 'Completed', false); ?>>Completed</option>
                                     </select>
+                                    </div>
                                       </td>
                                       <td class="actions">
                                         <div>
