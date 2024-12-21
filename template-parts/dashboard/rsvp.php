@@ -937,7 +937,7 @@ if (empty($rsvpimage)) {
                             <?php wp_nonce_field('ajax-sanas-rsvp-nonce', 'sanasrsvpsecurity');?>
                         </form>
                         <div class="row">
-                            <div class="col-xxl-4 col-xl-5 col-lg-7 col-md-8 col-sm-12 m-auto">
+                            <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-8 col-sm-12 m-auto">
                                 <div class="wl-fuc-timing form-field">
                                    <div class="rsvp-event">
                                      <table id="program-time">
