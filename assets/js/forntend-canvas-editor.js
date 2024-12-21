@@ -511,7 +511,7 @@ jQuery(document).ready(function ($) {
     }
 
     function loadCanvasData() {
-        // Replace 'canvasss' with your actual canvas data
+        // Replace with your actual canvas data
         let canvasData = canvasss;
 
         try {
