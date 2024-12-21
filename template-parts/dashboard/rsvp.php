@@ -815,7 +815,7 @@ if (empty($rsvpimage)) {
                                                                     <span class="note">Max. size 50MB</span>
                                                                 </div>
                                                                 <input type="text" id="youtube-url" placeholder="Enter YouTube URL" size="50">
-                                                                <button id="generate-youtube-video" class="btn btn-primary">Save</button>
+                                                                <button id="generate-youtube-video" class="btn btn-primary">Generate YouTube Video</button>
                                                                 <div id="drop-zone"></div>
                                                             </div>
                                                         </div>
