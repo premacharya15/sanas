@@ -1496,7 +1496,7 @@ jQuery(document).ready(function($) {
 });
 
 if (jQuery('.search-form').length) {
-    $.ajax({
+    jQuery.ajax({
         url: ajax_object.ajax_url, // Use the AJAX URL passed via wp_localize_script
         method: "POST",
         data: {
