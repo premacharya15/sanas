@@ -1495,3 +1495,86 @@ jQuery(document).ready(function($) {
     });
 });
 
+if (jQuery('.search-form').length) {
+    jQuery.ajax({
+        url: ajax_object.ajax_url, // Use the AJAX URL passed via wp_localize_script
+        method: "POST",
+        data: {
+            action: "get_sanas_card_category" // Action name defined in the AJAX handler
+        },
+        success: function (response) {
+            if (response.success) {
+                // Append the dropdown to your desired location
+                jQuery('.search-form').append(response.data);
+            }
+        },
+        error: function (error) {
+            console.error("Error fetching category dropdown:", error);
+        }
+    });
+    var templateNames = [
+        "Wedding",
+        "Haldi",
+        "Mahandi",
+        "sangeet",
+        "Reception",
+        "Engagement",
+        "Half Saree",
+        "Dhoti",
+        "Pooja",
+        "Naming Ceremony",
+        "Graduation",
+        "Birthday",
+        "1st Brithday",
+        "16th Desi Brithday",
+        "Baby Shower",
+        "Diwali",
+        "Garba",
+        "Holi",
+        "Personalised cards",
+        "House Warming",
+        "Desi Vendors",
+        "Diamond Jewellery",
+        "Blog",
+    ];
+    document.addEventListener("DOMContentLoaded", function () {
+        var searchInput = document.getElementById('search');
+        var suggestionList = document.getElementById('suggestionlist');
+        if (!searchInput || !suggestionList) {
+            console.error("Search input or suggestion list not found.");
+            return;
+        }
+        searchInput.addEventListener('input', function () {
+            var inputText = this.value.toLowerCase();
+            var suggestions = [];
+
+            templateNames.forEach(function (template) {
+                if (template.toLowerCase().includes(inputText)) {
+                    suggestions.push(template);
+                }
+            });
+            showSuggestions(suggestions);
+        });
+        function showSuggestions(suggestions) {
+            suggestionList.innerHTML = '';
+
+            suggestions.forEach(function (suggestion) {
+                var listItem = document.createElement('li');
+                listItem.textContent = suggestion;
+                suggestionList.appendChild(listItem);
+            });
+            suggestionList.style.display = suggestions.length > 0 ? 'block' : 'none';
+        }
+        document.addEventListener('click', function (e) {
+            if (e.target && e.target.matches('#suggestionlist li')) {
+                searchInput.value = e.target.textContent;
+                suggestionList.style.display = 'none';
+            }
+        });
+        document.addEventListener('click', function (e) {
+            if (!searchInput.contains(e.target)) {
+                suggestionList.style.display = 'none';
+            }
+        });
+    });
+}
