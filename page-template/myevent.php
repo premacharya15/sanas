@@ -103,11 +103,17 @@ get_sidebar('dashboard');
         }
 
         $status_name='Draft';
-        $status_class='darft';
-        if(intval($event_step_id)>=4)
-        {
-          $status_name='Sent';
-          $status_class='sent ';
+        $status_class='draft';
+        
+        $guest_status = $wpdb->get_var($wpdb->prepare(
+            "SELECT guest_status FROM $guest_details_info_table WHERE guest_user_id = %d AND guest_event_id = %d LIMIT 1",
+            $userID,
+            $id
+        ));
+
+        if ($guest_status === 'pending') {
+            $status_name = 'Sent';
+            $status_class = 'sent ';
         }
 
         if (get_post_meta($event_card_id,'sanas_metabox',true)) {
