@@ -1560,7 +1560,6 @@ if (jQuery('.search-form').length) {
         document.addEventListener('click', function (e) {
             if (e.target && e.target.matches('#suggestionlist li')) {
                 searchInput.value = e.target.textContent;
-                jQuery('search-form').action="test";
                 suggestionList.style.display = 'none';
             }
         });
@@ -1569,7 +1568,13 @@ if (jQuery('.search-form').length) {
                 suggestionList.style.display = 'none';
             }
         });
-
+        document.addEventListener('click', function (e) {
+            if (e.target && e.target.matches('#suggestionlist li')) {
+                searchInput.value = e.target.textContent;   // Set input field to selected suggestion
+                window.location.href = e.target.dataset.url; // Redirect to the category URL
+                suggestionList.style.display = 'none';      // Hide the suggestion list
+            }
+        });
     } catch (error) {
         console.error("Error:", error);
     }
