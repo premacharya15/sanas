@@ -1506,7 +1506,7 @@ if (jQuery('.search-form').length) {
         success: function (response) {
             if (response.success) {
                 var categories = response.data; // Array of categories with name and URL
-                var dropdown = $('<select class="card-category-dropdown"></select>');
+                var dropdown = jQuery('<select class="card-category-dropdown"></select>');
 
                 // Add an optional placeholder option
                 dropdown.append('<option value="">Select a Category</option>');
