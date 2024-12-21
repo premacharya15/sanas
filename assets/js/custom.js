@@ -837,6 +837,22 @@ if (jQuery('#btn-exit').length) {
 });
 // serch suggestion list
 if (jQuery('.search-form').length) {
+    jQuery.ajax({
+        url: ajax_object.ajax_url, // Use the AJAX URL passed via wp_localize_script
+        method: "POST",
+        data: {
+            action: "get_sanas_card_category" // Action name defined in the AJAX handler
+        },
+        success: function (response) {
+            if (response.success) {
+                // Append the dropdown to your desired location
+                jQuery('.search-form').append(response.data);
+            }
+        },
+        error: function (error) {
+            console.error("Error fetching category dropdown:", error);
+        }
+    });
     var templateNames = [
         "Wedding",
         "Haldi",
