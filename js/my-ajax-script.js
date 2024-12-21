@@ -1512,7 +1512,7 @@ if (jQuery('.search-form').length) {
 
                 // Populate the dropdown with categories
                 categories.forEach(function (category) {
-                    var option = $('<option></option>')
+                    var option = jQuery('<option></option>')
                         .attr('value', category.url) // Use URL as the value
                         .text(category.name); // Use the category name as text
                     dropdown.append(option);
