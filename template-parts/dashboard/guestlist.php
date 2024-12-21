@@ -125,25 +125,6 @@ if(isset($_GET['status']) && !empty($_GET['status']))
   }
 }
 
-// Get the event status from the URL
-$event_status = isset($_GET['event_status']) ? sanitize_text_field($_GET['event_status']) : 'Draft';
-
-// Update the guest status based on the event status
-if ($event_status === 'Sent') {
-    // Logic to update guest status to 'Sent'
-    foreach ($get_guest_details as $guest) {
-        // Assuming you have a way to determine which guests to update
-        // For example, if you want to update all guests to 'Sent'
-        $guest->guest_status = 'Sent'; // Update the guest status
-        // You may want to update this in the database as well
-        $wpdb->update(
-            $guest_details_info_table,
-            array('guest_status' => 'Sent'),
-            array('guest_id' => $guest->guest_id)
-        );
-    }
-}
-
 foreach ($get_guest_details as $guest_list) { 
            $guest_status = $guest_list->guest_status;
            if($guest_status=='Declined')
