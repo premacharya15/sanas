@@ -30,36 +30,9 @@ get_sidebar('dashboard');
           <div class="todo-search-add-link justify-content-end">
             <div class="add-link"><a href="#" class="dashbord-btn" data-bs-toggle="modal" data-bs-target="#add-todolist-popup"><i class="icon-plus"></i> Add Task</a>
             </div>
-            <?php if ($todo_items): ?>
-                <?php 
-                $grouped_items = [];
-
-                foreach ($todo_items as $item) {
-                    $item_month = date('F', strtotime($item['date']));
-                    $item_year = date('Y', strtotime($item['date']));
-                    $current_item_month_year = $item_month . ' ' . $item_year;
-
-                    // Group items by month and year
-                    if (!isset($grouped_items[$current_item_month_year])) {
-                        $grouped_items[$current_item_month_year] = []; // Create an array for each month
-                    }
-                    $grouped_items[$current_item_month_year][] = $item; // Add the item to the respective month
-                }
-
-                // Generate tables for each month
-                $month_count = count($grouped_items);
-
-                foreach ($grouped_items as $month_year => $items): 
-                ?>
-                    <!-- Table generation code would go here -->
-                <?php endforeach; ?>
-
-                <?php if ($month_count > 5 && !$show_all): ?>
-                    <div class="d-flex">
-                        <a href="?show_all=true" class="text-black p-2">View All</a>
-                    </div>
-                <?php endif; ?>
-            <?php endif; ?>
+            <div class="d-flex">
+                <a href="?show_all=true" class="text-black p-2">View All</a>
+            </div>
           </div>
           <div class="title-box">
             <div class="todo-status">
