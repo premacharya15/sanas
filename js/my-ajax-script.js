@@ -1495,30 +1495,48 @@ jQuery(document).ready(function($) {
     });
 });
 
-if (jQuery('.search-form').length) {
-    var templateNames = [];
-    jQuery.ajax({
-        url: ajax_object.ajax_url, // Use the AJAX URL passed via wp_localize_script
-        method: "POST",
-        data: {
-            action: "get_sanas_card_category"
-        },
-        success: function (response) {
-            if (response.success) {
-                templateNames = response.data.map(function (category) {
-                    return {
-                        name: category.name,
-                        url: category.url
-                    };
-                });
-            } else {
-                console.error("Error:", response.data);
+function fetchTemplateNames() {
+    return new Promise(function (resolve, reject) {
+        jQuery.ajax({
+            url: ajax_object.ajax_url,
+            method: "POST",
+            data: {
+                action: "get_sanas_card_category"
+            },
+            success: function (response) {
+                if (response.success) {
+                    var templateNames = response.data.map(function (category) {
+                        return {
+                            name: category.name,
+                            url: category.url
+                        };
+                    });
+                    resolve(templateNames);
+                } else {
+                    reject("Error: " + response.data);
+                }
+            },
+            error: function (error) {
+                reject(error);
             }
-        },
-        error: function (error) {
-            console.error("Error fetching category dropdown:", error);
-        }
+        });
     });
+}
+
+if (jQuery('.search-form').length) {
+
+    
+    // Usage example with async/await
+    (async function () {
+        try {
+            var templateNames = await fetchTemplateNames();
+            console.log("Template Names:", templateNames);
+            // Use templateNames here
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    })();
+    
 
     document.addEventListener("DOMContentLoaded", function () {
         var searchInput = document.getElementById('search');
