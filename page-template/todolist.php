@@ -30,10 +30,7 @@ get_sidebar('dashboard');
           <div class="todo-search-add-link justify-content-end">
             <div class="add-link"><a href="#" class="dashbord-btn" data-bs-toggle="modal" data-bs-target="#add-todolist-popup"><i class="icon-plus"></i> Add Task</a>
             </div>
-            <?php
-                $vendor_items = get_vendor_list_items();
-                ?>
-                <?php if ($todo_items): ?>
+            <?php if ($todo_items): ?>
                 <?php 
                 $grouped_items = [];
 
@@ -50,20 +47,21 @@ get_sidebar('dashboard');
                 }
 
                 // Generate tables for each month
-                $month_count = 0;
+                $month_count = count($grouped_items);
                 $show_all = isset($_GET['show_all']) && $_GET['show_all'] == 'true';
 
                 foreach ($grouped_items as $month_year => $items): 
-                    if ($month_count >= 5 && !$show_all) break;
-                    $month_count++;
+                    if ($month_count > 5 && !$show_all) break;
                 ?>
+                    <!-- Table generation code would go here -->
                 <?php endforeach; ?>
-                
-                <?php if (count($grouped_items) > 5): ?>
-                <div class="d-flex">
-                    <a href="?show_all=true" class="text-black p-2">View All</a>
-                </div>
+
+                <?php if ($month_count > 5 && !$show_all): ?>
+                    <div class="d-flex">
+                        <a href="?show_all=true" class="text-black p-2">View All</a>
+                    </div>
                 <?php endif; ?>
+            <?php endif; ?>
           </div>
           <div class="title-box">
             <div class="todo-status">
