@@ -660,12 +660,6 @@ function weddlist_shape_comment( $comment, $args, $depth ) {
 endif; // ends check for weddlist_shape_comment()
 
 function sanas_card_category(){
-
-  if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'get_card_categories_nonce')) {
-      wp_send_json_error('Invalid nonce');
-      wp_die();
-  }
-
   $terms = get_terms(
       array(
           'taxonomy'   => 'sanas-card-category', // Replace with your taxonomy name
