@@ -1689,6 +1689,7 @@ $data = !empty($frontpagedata) ? stripslashes(stripslashes(htmlspecialchars_deco
         ?>
         <script>
         var canvasss = '<?php echo json_encode($data);?>';
+        canvasss = canvasss.replace(/\\n/g, '\n');
         console.log(canvasss);
         </script>
         <?php
