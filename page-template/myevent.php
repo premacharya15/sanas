@@ -102,12 +102,19 @@ get_sidebar('dashboard');
           $formattedDate = $date->format('F jS, Y');          
         }
 
-        $status_name='Draft';
-        $status_class='darft';
-        if(intval($event_step_id)>=4)
-        {
-          $status_name='Sent';
-          $status_class='sent ';
+        $guest_statuses = []; // Array to hold guest statuses
+
+        foreach ($get_guest_details as $guest) {
+            $guest_statuses[] = $guest->guest_status; // Collect all guest statuses
+        }
+
+        // Check if any guest has the status 'Sent'
+        if (in_array('Sent', $guest_statuses)) {
+            $status_name = 'Sent';
+            $status_class = 'sent';
+        } else {
+            $status_name = 'Draft'; // Default status
+            $status_class = 'draft'; // Default class
         }
 
         if (get_post_meta($event_card_id,'sanas_metabox',true)) {
