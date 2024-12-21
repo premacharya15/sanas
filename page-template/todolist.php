@@ -49,37 +49,11 @@ get_sidebar('dashboard');
                 $showAllTasks = isset($_GET['view_all']) && $_GET['view_all'] == 'true';
 
                 foreach ($groupedTasks as $monthYear => $tasks): 
-                    // Remove the limit of 5 tasks to display all tasks
+                    if ($monthCounter >= 5 && !$showAllTasks) break;
                     $monthCounter++;
                 ?>
-                <table class="mb-0">
-                    <tr><th class="todo-subhead text-align-start" colspan="7">
-                        <h4><?php echo $monthYear; ?></h4>
-                    </th></tr>
-                    <tr>
-                        <th>Category</th>
-                        <th>Task</th>
-                        <th>Notes</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th class="actions">Actions</th>
-                    </tr>
-                    <?php foreach ($tasks as $task): ?>
-                    <tr>
-                        <td><?php echo esc_html($task['category']); ?></td>
-                        <td><?php echo esc_html($task['title']); ?></td>
-                        <td><?php echo esc_html($task['notes']); ?></td>
-                        <td><?php echo DateTime::createFromFormat('Y-m-d', $task['date'])->format('jS M Y'); ?></td>
-                        <td><?php echo esc_html($task['status']); ?></td>
-                        <td>
-                            <a href="#" class="edit edit-todo theme-btn" data-id="<?php echo $task['id']; ?>">Edit</a>
-                            <a href="#" class="delete theme-btn" data-id="<?php echo $task['id']; ?>">Delete</a>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                </table>
                 <?php endforeach; ?>
-                <?php if (count($groupedTasks) > 5 && !$showAllTasks): ?>
+                <?php if (!$showAllTasks && count($groupedTasks) > 5): ?>
                 <div class="d-flex">
                     <a href="?view_all=true" class="text-black p-2">View All</a>
                 </div>
