@@ -146,8 +146,8 @@ get_sidebar('dashboard');
       } else {
           // Existing logic to determine status
           if (intval($event_step_id) >= 4) {
-              $status_name = 'Draft';
-              $status_class = 'draft';
+              $status_name = 'Sent';
+              $status_class = 'sent';
           } else {
               $status_name = 'Draft';
               $status_class = 'draft';
