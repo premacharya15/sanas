@@ -106,8 +106,8 @@ get_sidebar('dashboard');
         $status_class='darft';
         if(intval($event_step_id)>=4)
         {
-          $status_name='Sent';
-          $status_class='sent ';
+          $status_name='Draft';
+          $status_class='darft';
         }
 
         if (get_post_meta($event_card_id,'sanas_metabox',true)) {
@@ -135,6 +135,18 @@ get_sidebar('dashboard');
               $sanas_portfolio_meta = array();
             }
 
+      }
+
+      // Check if invitations have been sent
+      $invitations_sent = check_invitations_sent($event_card_id);
+
+      if ($invitations_sent) {
+          $status_name = 'Sent';
+          $status_class = 'sent';
+      } else {
+              $status_name = 'Draft';
+              $status_class = 'draft';
+          }
       }
 ?>            
             <div class="col-xxl-4 col-xl-5 col-lg-9 col-md-6 col-sm-6 col-12">
@@ -194,3 +206,17 @@ get_sidebar('dashboard');
   </div>
 <?php
 get_footer('dashboard');
+
+// Function to check if invitations have been sent
+function check_invitations_sent($event_card_id) {
+    global $wpdb;
+    $sanas_card_event_table = $wpdb->prefix . 'sanas_card_event';
+    
+    // Query to check if invitations have been sent for the specific event
+    $result = $wpdb->get_var($wpdb->prepare(
+        "SELECT COUNT(*) FROM $sanas_card_event_table WHERE event_card_id = %d AND event_status = 'Sent'",
+        $event_card_id
+    ));
+
+    return $result > 0; // Return true if invitations have been sent
+}
