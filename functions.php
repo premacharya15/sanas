@@ -546,6 +546,17 @@ function add_vendor_item() {
     );
 
     if ($wpdb->insert_id) {
+        // Delete the sample entry if it exists
+        $wpdb->delete(
+            $wpdb->prefix . 'vendor_list',
+            array(
+                'user_id' => $current_user_id,
+                'category' => 'Catering',
+                'name' => 'Sample Vendor',
+                'email' => 'vendor@example.com',
+                'phone' => '123-456-7890'
+            )
+        );
         // Fetch the updated list of vendors sorted by created_at in descending order
         $vendor_items = get_vendor_list_items();
         usort($vendor_items, function($a, $b) {
