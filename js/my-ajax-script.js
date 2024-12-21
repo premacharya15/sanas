@@ -1506,6 +1506,7 @@ if (jQuery('.search-form').length) {
             if (response.success) {
                 var categories = response.data;
                 jQuery('.search-form').append(categories);
+                console.log(categories);
             } else {
                 console.error("Error:", response.data);
             }
