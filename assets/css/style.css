@@ -6493,6 +6493,7 @@ button#add_new_group_button {
     justify-content: space-between;
     flex-wrap: wrap;
     row-gap: 20px;
+    align-content: center;
 }
 #vendor-table_wrapper .table td:nth-child(1){
     width: 3%;
