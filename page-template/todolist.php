@@ -31,31 +31,28 @@ get_sidebar('dashboard');
             <div class="add-link"><a href="#" class="dashbord-btn" data-bs-toggle="modal" data-bs-target="#add-todolist-popup"><i class="icon-plus"></i> Add Task</a>
             </div>
             <?php 
-            $todo_items = get_todo_list_items(); // Fetch the to-do list items
-            if ($todo_items): 
-                $grouped_items = [];
+            $items = get_todo_list_items();
+            if ($items): 
+                $grouped = [];
 
-                foreach ($todo_items as $item) {
-                    $item_month = date('F', strtotime($item['date']));
-                    $item_year = date('Y', strtotime($item['date']));
-                    $current_item_month_year = $item_month . ' ' . $item_year;
+                foreach ($items as $task) {
+                    $month_year = date('F Y', strtotime($task['date']));
 
-                    // Group items by month and year
-                    if (!isset($grouped_items[$current_item_month_year])) {
-                        $grouped_items[$current_item_month_year] = []; // Create an array for each month
+                    if (!isset($grouped[$month_year])) {
+                        $grouped[$month_year] = [];
                     }
-                    $grouped_items[$current_item_month_year][] = $item; // Add the item to the respective month
+                    $grouped[$month_year][] = $task;
                 }
-                // Generate tables for each month
-                $month_count = 0;
+                
+                $count = 0;
                 $show_all = isset($_GET['show_all']) && $_GET['show_all'] == 'true';
 
-                foreach ($grouped_items as $month_year => $items): 
-                    if ($month_count >= 5 && !$show_all) break;
-                    $month_count++;
+                foreach ($grouped as $month_year => $tasks): 
+                    if ($count >= 5 && !$show_all) break;
+                    $count++;
                 ?>
                 <?php endforeach; ?>
-                <?php if (!$show_all && count($grouped_items) > 5): ?>
+                <?php if (!$show_all && count($grouped) > 5): ?>
             <div class="d-flex">
                 <a href="?show_all=true" class="text-black p-2">View All</a>
             </div>
