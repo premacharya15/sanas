@@ -145,13 +145,13 @@ get_sidebar('dashboard');
           $status_class = 'sent';
       } else {
           // Existing logic to determine status
-          if (intval($event_step_id) >= 4) {
-              $status_name = 'Sent';
-              $status_class = 'sent';
-          } else {
-              $status_name = 'Draft';
-              $status_class = 'draft';
-          }
+          // if (intval($event_step_id) >= 4) {
+          //     $status_name = 'Sent';
+          //     $status_class = 'sent';
+          // } else {
+          //     $status_name = 'Draft';
+          //     $status_class = 'draft';
+          // }
       }
 ?>            
             <div class="col-xxl-4 col-xl-5 col-lg-9 col-md-6 col-sm-6 col-12">
