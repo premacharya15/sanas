@@ -481,7 +481,7 @@ function sanas_render_modal_html_alert() {
 
 function sanas_preloading_overlay()
 {
-  echo '<div id="preloder-overlay"> 
+  echo '<div id="preloder-overlay" class="d-block"> 
   <div id="loading-overlay" class="loading-overlay">
     <div class="loading-box">
     <div class="position-relative">
