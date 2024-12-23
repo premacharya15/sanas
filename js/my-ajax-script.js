@@ -1572,7 +1572,8 @@ if (jQuery('.search-form').length) {
         document.addEventListener('click', function (e) {
             if (e.target && e.target.matches('#suggestionlist li')) {
                 searchInput.value = e.target.textContent;   // Set input field to selected suggestion
-                window.location.href = e.target.dataset.url; // Redirect to the category URL
+                jQuery('.search-form').attr('action', e.target.dataset.url);
+                // window.location.href = e.target.dataset.url; // Redirect to the category URL
                 suggestionList.style.display = 'none';      // Hide the suggestion list
             }
         });
