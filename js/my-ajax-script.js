@@ -1572,9 +1572,14 @@ if (jQuery('.search-form').length) {
         document.addEventListener('click', function (e) {
             if (e.target && e.target.matches('#suggestionlist li')) {
                 searchInput.value = e.target.textContent;   // Set input field to selected suggestion
-                jQuery('.search-form').attr('action', e.target.dataset.url);
+                jQuery('.search-form .search-btn').data('url', e.target.dataset.url);
                 // window.location.href = e.target.dataset.url; // Redirect to the category URL
                 suggestionList.style.display = 'none';      // Hide the suggestion list
+            }
+        });
+        document.addEventListener('click', function (e) {
+            if (e.target && e.target.matches('.search-form .search-btn')) {
+                window.location.href = this.attr('url');
             }
         });
     } catch (error) {
