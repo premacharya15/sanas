@@ -1578,12 +1578,12 @@ if (jQuery('.search-form').length) {
             }
         });
         document.addEventListener('click', function (e) {
-            if (e.target && e.target.matches('.search-form .search-btn')) {
+            if (e.target && e.target.closest('.search-btn')) {
                 console.log('test');
-                const button = e.target.closest('.search-btn'); // Get the clicked button
-                const url = button.getAttribute('url'); // Get the value of the 'url' attribute
+                const button = e.target.closest('.search-btn');
+                const url = button.getAttribute('url');
                 if (url) {
-                    window.location.href = url; // Redirect to the URL
+                    window.location.href = url;
                 } else {
                     console.error('URL attribute not found on the button');
                 }
