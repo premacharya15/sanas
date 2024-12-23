@@ -1581,7 +1581,7 @@ if (jQuery('.search-form').length) {
             if (e.target && e.target.closest('.search-btn')) {
                 console.log('test');
                 const button = e.target.closest('.search-btn');
-                const url = button.getAttribute('url');
+                const url = button.getAttribute('data-url');
                 if (url) {
                     window.location.href = url;
                 } else {
