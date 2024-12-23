@@ -1572,14 +1572,21 @@ if (jQuery('.search-form').length) {
         document.addEventListener('click', function (e) {
             if (e.target && e.target.matches('#suggestionlist li')) {
                 searchInput.value = e.target.textContent;   // Set input field to selected suggestion
-                jQuery('.search-form .search-btn').data('url', e.target.dataset.url);
+                jQuery('.search-form .search-btn').attr('data-url', e.target.dataset.url);
                 // window.location.href = e.target.dataset.url; // Redirect to the category URL
                 suggestionList.style.display = 'none';      // Hide the suggestion list
             }
         });
         document.addEventListener('click', function (e) {
             if (e.target && e.target.matches('.search-form .search-btn')) {
-                window.location.href = this.attr('url');
+                console.log('test');
+                const button = e.target.closest('.search-btn'); // Get the clicked button
+                const url = button.getAttribute('url'); // Get the value of the 'url' attribute
+                if (url) {
+                    window.location.href = url; // Redirect to the URL
+                } else {
+                    console.error('URL attribute not found on the button');
+                }
             }
         });
     } catch (error) {
