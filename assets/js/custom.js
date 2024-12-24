@@ -1040,6 +1040,6 @@ jQuery(document).ready(function ($) {
         $('#previewImage').attr('src', cardImage);
         $('#previewDetails').html('<h4>' + cardTitle + '</h4>');
 
-        $('#cardPreviewPopup').fadeIn();
+        $('#cardPreviewPopup').show();
     });
 });
