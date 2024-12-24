@@ -1029,17 +1029,15 @@ function changeAlignText(align, event) {
     }
 }
 
-// preview card
+// Event listener for card click
 jQuery(document).ready(function ($) {
     $('.card-box').on('click', function () {
         var cardId = $(this).data('card-id');
         var cardImage = $(this).find('.front img').attr('src');
         var cardTitle = $(this).find('.card-box-title h4').text();
-        console.log('preview-card', cardTitle);
-
         $('#previewImage').attr('src', cardImage);
         $('#previewDetails').html('<h4>' + cardTitle + '</h4>');
 
-        $('#cardPreviewPopup').show();
+        $('#cardPreviewPopup').modal('show');
     });
 });
