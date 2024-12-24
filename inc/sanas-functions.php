@@ -949,21 +949,19 @@ function sanas_card_category_wishlist($class_name = '') {
 
 function sanas_card_preview_popup() {
   ?>
-  <div class="modal fade card-preview-popup" id="cardPreviewPopup" tabindex="-1" role="dialog" aria-labelledby="cardPreviewLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-          <div class="modal-content">
-              <div class="modal-header">
-              <div id="previewDetails" style="margin-top: 15px;"></div>
+  <div class="card-preview-popup" id="cardPreviewPopup" tabindex="-1" role="dialog" aria-labelledby="cardPreviewLabel" aria-hidden="true">
+      <div class="" role="document">
+          <div class="">
+              <div id="previewDetails"></div>
+            <div class="">
+                  <button type="button" class="" id="coverPageBtn">Cover Page</button>
+                  <button type="button" class="" id="detailPageBtn">Detail page</button>
             </div>
-            <div class="" style="justify-content: center;">
-                  <button type="button" class="btn btn-secondary" id="coverPageBtn">Cover Page</button>
-                  <button type="button" class="btn btn-secondary" id="detailPageBtn">Detail page</button>
-            </div>
-              <div class="modal-body">
-                  <img id="previewImage" src="" alt="Card Preview" style="width: 100%; border-radius: 10px;">
+              <div class="">
+                  <img id="previewImage" src="" alt="Card Preview">
               </div>
-              <div class="card-edit-button">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Edit This Design</button>
+              <div class="">
+                  <button type="button" class="" data-dismiss="modal">Edit This Design</button>
               </div>
           </div>
       </div>
