@@ -962,9 +962,7 @@ function sanas_card_preview_popup() {
                     <img id="previewImage" src="" alt="Card Preview" style="width: 100%;">
                     
                 </div>
-                <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Edit This Design</button>
-                </div>
             </div>
         </div>
     </div>
