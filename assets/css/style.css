@@ -6797,7 +6797,7 @@ table.preview-itn tbody tr td{
 /* preview card */
 
 .card-preview-popup {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
