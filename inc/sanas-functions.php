@@ -949,7 +949,7 @@ function sanas_card_category_wishlist($class_name = '') {
 
 function sanas_card_preview_popup() {
   ?>
-  <div class="card-preview-popup" id="cardPreviewPopup" tabindex="-1" role="dialog" aria-labelledby="cardPreviewLabel" aria-hidden="true">
+  <div class="modal fade card-preview-popup" id="cardPreviewPopup" tabindex="-1" role="dialog" aria-labelledby="cardPreviewLabel" aria-hidden="true">
     <div class="card-preview-content">
       <div id="previewDetails"></div>
       <div class="button-container">
