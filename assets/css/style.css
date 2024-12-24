@@ -6796,12 +6796,42 @@ table.preview-itn tbody tr td{
 
 
 /* Card Preview Modal Styles */
+.card-preview-popup .preview-container {
+    perspective: 1000px;
+    width: 100%;
+    height: 400px;
+}
+
+.card-preview-popup .flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card-preview-popup .flipper.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-preview-popup .front,
+.card-preview-popup .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-preview-popup .back {
+    transform: rotateY(180deg);
+}
+
 .card-preview-popup .preview-image {
     text-align: center;
     padding: 20px;
     background: #f8f9fa;
     border-radius: 8px;
-    margin: 15px 0;
+    height: 100%;
 }
 
 .card-preview-popup .preview-image img {
@@ -6809,12 +6839,6 @@ table.preview-itn tbody tr td{
     height: auto;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     border-radius: 4px;
-}
-
-.card-preview-popup .modal-title {
-    font-size: 1.25rem;
-    color: #333;
-    margin: 0;
 }
 
 .card-preview-popup .preview-tabs {
@@ -6835,21 +6859,4 @@ table.preview-itn tbody tr td{
 .card-preview-popup .preview-tab.active {
     background: #ff6b6b;
     color: white;
-}
-
-.card-preview-popup .preview-actions {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.card-preview-popup .edit-design {
-    background: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 24px;
-    border-radius: 4px;
-}
-
-.card-preview-popup .edit-design:hover {
-    background: #218838;
 }
