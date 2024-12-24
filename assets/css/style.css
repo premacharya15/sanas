@@ -6864,3 +6864,13 @@ table.preview-itn tbody tr td{
     background: #ff6b6b;
     color: white;
 }
+
+.preview-content .front {
+    padding: 0 !important;
+    top: 0 !important;
+}
+
+.preview-content .back {
+    padding: 0 !important;
+    top: 0 !important;
+}
