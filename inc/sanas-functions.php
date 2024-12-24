@@ -949,16 +949,11 @@ function sanas_card_category_wishlist($class_name = '') {
 
 function sanas_card_preview_popup() {
   ?>
-  <div class="modal fade def-popup add-todolist-popup card-preview-popup" id="cardPreviewPopup" tabindex="-1" role="dialog" aria-labelledby="cardPreviewLabel">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="modal-header">
+  <div class="card-preview-popup" id="cardPreviewPopup" tabindex="-1" role="dialog" aria-labelledby="cardPreviewLabel">
             <div id="previewDetails"></div>
             <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
               <span class="cross"></span>
             </button>
-          </div>
           <div class="button-container">
             <button type="button" class="btn btn-cover" id="coverPageBtn">Cover Page</button>
             <button type="button" class="btn btn-detail" id="detailPageBtn">Detail Page</button>
@@ -970,9 +965,6 @@ function sanas_card_preview_popup() {
             <a href="#" class="btn btn-edit" data-dismiss="modal">Edit This Design</a>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
   <?php
 }
 add_action('wp_footer', 'sanas_card_preview_popup');
