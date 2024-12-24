@@ -998,14 +998,14 @@ function sanas_get_card_preview_popup() {
                                 id="cover-preview"
                                 role="tabpanel"
                                 aria-labelledby="cover-tab">
-                                  <!-- Front canvas will be loaded here -->
+                                  
                               </div>
                               <div 
                                 class="preview-tab-content" 
                                 id="detail-preview"
                                 role="tabpanel"
                                 aria-labelledby="detail-tab">
-                                  <!-- Back canvas will be loaded here -->
+                                  
                               </div>
                           </div>
                           <div class="preview-actions">
