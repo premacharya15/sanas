@@ -993,25 +993,25 @@ function sanas_get_card_preview_popup() {
                               </button>
                           </div>
                           <div class="preview-content">
-                              <div 
-                                class="preview-tab-content active" 
-                                id="cover-preview"
-                                role="tabpanel"
-                                aria-labelledby="cover-tab">
-                                  <div class="preview-image">
-                                      <!-- Front image will be loaded here dynamically -->
-                                  </div>
-                              </div>
-                              <div 
-                                class="preview-tab-content" 
-                                id="detail-preview"
-                                role="tabpanel"
-                                aria-labelledby="detail-tab">
-                                  <div class="preview-image">
-                                      <!-- Back image will be loaded here dynamically -->
-                                  </div>
-                              </div>
+                          <div 
+                          class="preview-tab-content active" 
+                          id="cover-preview"
+                          role="tabpanel"
+                          aria-labelledby="cover-tab">
+                          <div class="preview-image">
+                            <div class="placeholder">Select a card to preview</div>
                           </div>
+                        </div>
+                        <div 
+                        class="preview-tab-content" 
+                        id="detail-preview"
+                        role="tabpanel"
+                        aria-labelledby="detail-tab">
+                        <div class="preview-image">
+                          <div class="placeholder">Select a card to preview</div>
+                        </div>
+                      </div>
+                    </div>
                           <div class="preview-actions">
                               <button class="btn btn-secondary edit-design">
                                   Edit this design
