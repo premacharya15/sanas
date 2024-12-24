@@ -1029,7 +1029,7 @@ function changeAlignText(align, event) {
     }
 }
 
-// card preview
+// preview card
 jQuery(document).ready(function ($) {
     $('.card-box').on('click', function () {
         var cardId = $(this).data('card-id');
@@ -1039,6 +1039,6 @@ jQuery(document).ready(function ($) {
         $('#previewImage').attr('src', cardImage);
         $('#previewDetails').html('<h4>' + cardTitle + '</h4>');
 
-        $('#cardPreviewPopup').modal('show');
+        $('#cardPreviewPopup').fadeIn();
     });
 });
