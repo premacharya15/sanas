@@ -953,14 +953,13 @@ function sanas_card_preview_popup() {
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="cardPreviewLabel">Invitation Card Preview</h5>
+              <div id="previewDetails" style="margin-top: 15px;"></div>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
               <div class="modal-body">
                   <img id="previewImage" src="" alt="Card Preview" style="width: 100%; border-radius: 10px;">
-                  <div id="previewDetails" style="margin-top: 15px;"></div>
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-primary" data-dismiss="modal">Edit This Design</button>
