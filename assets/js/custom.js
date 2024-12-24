@@ -1078,7 +1078,7 @@ jQuery(document).ready(function($) {
     });
 
     $('.edit-design').click(function() {
-        var cardId = $('#card-preview-popup').data('card-id');
+        var cardId = $('#card-preview-popup').attr('data-card-id');
         console.log(cardId);
         // window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
     });
