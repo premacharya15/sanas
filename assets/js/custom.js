@@ -1040,6 +1040,9 @@ jQuery(document).ready(function($) {
         var cardTitle = $(this).find('.card-box-title h4').text();
         var bgcolor = $(this).find('.inner-box a').attr('data-bg-color');
         
+        // card id value add in data-card-id
+        $('#card-preview-popup').attr('data-card-id', cardId);
+        
         $('#card-preview-popup').modal('show');
         
         $('#card-preview-popup .modal-title').text(cardTitle || 'Card Preview');
@@ -1074,7 +1077,7 @@ jQuery(document).ready(function($) {
     });
 
     $('.edit-design').click(function() {
-        var cardId = $('.card-preview').data('card-id');
+        var cardId = $('#card-preview-popup').data('card-id');
         console.log(cardId);
         // window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
     });

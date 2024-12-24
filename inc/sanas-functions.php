@@ -956,7 +956,8 @@ function sanas_get_card_preview_popup() {
     tabindex="-1" 
     role="dialog"
     aria-labelledby="cardPreviewModalTitle"
-    aria-modal="true">
+    aria-modal="true"
+    data-card-id="">
       <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
               <div class="modal-body">
