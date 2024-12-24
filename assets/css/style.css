@@ -6873,3 +6873,7 @@ table.preview-itn tbody tr td{
     padding: 0 !important;
     top: 0 !important;
 }
+
+.preview-actions {
+    margin-top: 10px;
+}
