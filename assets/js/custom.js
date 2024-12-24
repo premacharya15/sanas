@@ -1038,28 +1038,47 @@ jQuery(document).ready(function($) {
         var frontImage = $(this).find('.flipper .front img').attr('src');
         var backImage = $(this).find('.flipper .back img').attr('src');
         var cardTitle = $(this).find('.card-box-title h4').text();
-
-        console.log("Card ID: " + cardId);
-        console.log("Front Image: " + frontImage);
-        console.log("Back Image: " + backImage);
-        console.log("Card Title: " + cardTitle);
         
+        // Show modal
         $('#card-preview-popup').modal('show');
         
         // Update modal title
-        $('#cardPreviewModalTitle').text(cardTitle || 'Card Preview');
+        $('#card-preview-popup .modal-title').text(cardTitle || 'Card Preview');
         
-        // Update preview images with proper error handling
+        // Load images
         if (frontImage) {
-            $('#cover-preview .preview-image').html(`
-                <img src="${frontImage}" alt="Front design" class="img-fluid">
+            $('#cover-preview').html(`
+                <div class="preview-image">
+                    <img src="${frontImage}" alt="Front design" class="img-fluid">
+                </div>
             `);
         }
         
         if (backImage) {
-            $('#detail-preview .preview-image').html(`
-                <img src="${backImage}" alt="Back design" class="img-fluid">
+            $('#detail-preview').html(`
+                <div class="preview-image">
+                    <img src="${backImage}" alt="Back design" class="img-fluid">
+                </div>
             `);
         }
+    });
+
+    // Handle tab switching and flipping
+    $('.preview-tab').click(function() {
+        $('.preview-tab').removeClass('active');
+        $(this).addClass('active');
+        
+        var tab = $(this).data('tab');
+        if (tab === 'detail') {
+            $('.card-preview-popup .flipper').addClass('flipped');
+        } else {
+            $('.card-preview-popup .flipper').removeClass('flipped');
+        }
+    });
+
+    // Handle edit button click
+    $('.edit-design').click(function() {
+        var cardId = $('.card-preview').data('card-id');
+        window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
     });
 });
