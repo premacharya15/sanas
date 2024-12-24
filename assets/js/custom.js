@@ -1038,31 +1038,28 @@ jQuery(document).ready(function($) {
         var frontImage = $(this).find('.flipper .front img').attr('src');
         var backImage = $(this).find('.flipper .back img').attr('src');
         var cardTitle = $(this).find('.card-box-title h4').text();
+
+        console.log("Card ID: " + cardId);
+        console.log("Front Image: " + frontImage);
+        console.log("Back Image: " + backImage);
+        console.log("Card Title: " + cardTitle);
         
         $('#card-preview-popup').modal('show');
-        l
-        $('#card-preview-popup .modal-title').text(cardTitle);
         
-        $('#cover-preview .preview-image').html(`
-            <img src="${frontImage}" alt="Front design" class="img-fluid">
-        `);
+        // Update modal title
+        $('#cardPreviewModalTitle').text(cardTitle || 'Card Preview');
         
-        $('#detail-preview .preview-image').html(`
-            <img src="${backImage}" alt="Back design" class="img-fluid">
-        `);
-    });
-
-    $('.preview-tab').click(function() {
-        $('.preview-tab').removeClass('active');
-        $(this).addClass('active');
+        // Update preview images with proper error handling
+        if (frontImage) {
+            $('#cover-preview .preview-image').html(`
+                <img src="${frontImage}" alt="Front design" class="img-fluid">
+            `);
+        }
         
-        var tab = $(this).data('tab');
-        $('.preview-tab-content').removeClass('active');
-        $('#' + tab + '-preview').addClass('active');
-    });
-
-    $('.edit-design').click(function() {
-        var cardId = $('.card-preview').data('card-id');
-        window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
+        if (backImage) {
+            $('#detail-preview .preview-image').html(`
+                <img src="${backImage}" alt="Back design" class="img-fluid">
+            `);
+        }
     });
 });
