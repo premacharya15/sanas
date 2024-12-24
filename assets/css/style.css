@@ -6794,3 +6794,60 @@ table.preview-itn tbody tr td{
 }
 
 
+/* preview card */
+
+.card-preview-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.card-preview-content {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.preview-details {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.preview-image-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-cover {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-detail {
+    background-color: #343a40;
+    color: white;
+}
