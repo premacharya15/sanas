@@ -1040,7 +1040,7 @@ jQuery(document).ready(function($) {
         var cardTitle = $(this).find('.card-box-title h4').text();
         var bgcolor = $(this).find('.inner-box a').attr('data-bg-color');
 
-        console.log(bgcolor);
+        console.log("bgcolor",bgcolor);
         
         $('#card-preview-popup').modal('show');
         
