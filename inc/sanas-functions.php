@@ -987,9 +987,9 @@ function sanas_get_card_preview_popup() {
                                       </div>
                                   </div>
                               </div>
-                          </div>
-                          <div class="preview-actions">
-                              <button class="btn btn-secondary edit-design">Edit this design</button>
+                              <div class="preview-actions">
+                                  <button class="btn btn-secondary edit-design">Edit this design</button>
+                              </div>
                           </div>
                       </div>
                   </div>
