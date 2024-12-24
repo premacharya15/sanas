@@ -6797,10 +6797,9 @@ table.preview-itn tbody tr td{
 
 /* card preview */
 
-/* .card-preview-popup .modal-dialog {
+.card-preview-popup .modal-dialog {
     max-width: 800px;
-    z-index: 1 !important;
-} */
+}
 
 .preview-tabs {
     display: flex;
