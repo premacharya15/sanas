@@ -954,15 +954,15 @@ function sanas_card_preview_popup() {
           <div class="modal-content">
               <div class="modal-header">
               <div id="previewDetails" style="margin-top: 15px;"></div>
-              <div class="modal-sub-header" style="justify-content: center;">
-                    <button type="button" class="btn btn-secondary" id="coverPageBtn">Cover Page</button>
-                    <button type="button" class="btn btn-secondary" id="detailPageBtn">Detail page</button>
-                </div>
-              </div>
+            </div>
+            <div class="" style="justify-content: center;">
+                  <button type="button" class="btn btn-secondary" id="coverPageBtn">Cover Page</button>
+                  <button type="button" class="btn btn-secondary" id="detailPageBtn">Detail page</button>
+            </div>
               <div class="modal-body">
                   <img id="previewImage" src="" alt="Card Preview" style="width: 100%; border-radius: 10px;">
               </div>
-              <div class="modal-footer">
+              <div class="card-edit-button">
                   <button type="button" class="btn btn-primary" data-dismiss="modal">Edit This Design</button>
               </div>
           </div>
