@@ -954,8 +954,7 @@ function sanas_card_preview_popup() {
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="cardPreviewLabel">Card Preview</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    <button type="button" class="close close-search style-two" data-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
                 <div class="modal-body">
