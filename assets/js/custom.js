@@ -1033,7 +1033,7 @@ function changeAlignText(align, event) {
 jQuery(document).ready(function ($) {
     $('.card-box').on('click', function () {
         var cardId = $(this).data('card-id'); // Get the card ID
-        var cardImage = $(this).find('img').attr('src'); // Get the card image
+        var cardImage = $(this).find('.front img').attr('src'); // Get the front card image
         var cardTitle = $(this).find('.card-box-title h4').text(); // Get the card title
 
         // Set the image and title in the modal
