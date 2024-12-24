@@ -6825,6 +6825,7 @@ table.preview-itn tbody tr td{
 }
 
 .preview-card-image {
+    display: flex;
     justify-content: center;
 }
 
