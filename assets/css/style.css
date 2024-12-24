@@ -6836,7 +6836,7 @@ table.preview-itn tbody tr td{
 
 .card-preview-popup .preview-image img {
     max-width: 100%;
-    height: auto;
+    height: 100%;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     border-radius: 4px;
 }
