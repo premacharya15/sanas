@@ -1043,16 +1043,12 @@ jQuery(document).ready(function($) {
         l
         $('#card-preview-popup .modal-title').text(cardTitle);
         
-        $('#cover-preview').html(`
-            <div class="preview-image">
-                <img src="${frontImage}" alt="Front design" class="img-fluid">
-            </div>
+        $('#cover-preview .preview-image').html(`
+            <img src="${frontImage}" alt="Front design" class="img-fluid">
         `);
         
-        $('#detail-preview').html(`
-            <div class="preview-image">
-                <img src="${backImage}" alt="Back design" class="img-fluid">
-            </div>
+        $('#detail-preview .preview-image').html(`
+            <img src="${backImage}" alt="Back design" class="img-fluid">
         `);
     });
 
