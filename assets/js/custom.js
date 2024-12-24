@@ -1039,14 +1039,13 @@ jQuery(document).ready(function($) {
         var backImage = $(this).find('.flipper .back img').attr('src');
         var cardTitle = $(this).find('.card-box-title h4').text();
         var bgcolor = $(this).attr('style');
+
+        console.log(bgcolor);
         
-        // Show modal
         $('#card-preview-popup').modal('show');
         
-        // Update modal title
         $('#card-preview-popup .modal-title').text(cardTitle || 'Card Preview');
         
-        // Load images
         if (frontImage) {
             $('#cover-preview').html(`
                 <div class="preview-image" style="background:${bgcolor}">
@@ -1064,7 +1063,6 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // Handle tab switching and flipping
     $('.preview-tab').click(function() {
         $('.preview-tab').removeClass('active');
         $(this).addClass('active');
@@ -1077,7 +1075,6 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // Handle edit button click
     $('.edit-design').click(function() {
         var cardId = $('.card-preview').data('card-id');
         window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
