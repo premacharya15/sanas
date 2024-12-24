@@ -1048,7 +1048,7 @@ jQuery(document).ready(function($) {
         
         if (frontImage) {
             $('#cover-preview').html(`
-                <div class="preview-image" ${bgcolor}>
+                <div class="preview-image" style="background:${bgcolor}">
                     <img src="${frontImage}" alt="Front design" class="img-fluid">
                 </div>
             `);
@@ -1056,7 +1056,7 @@ jQuery(document).ready(function($) {
         
         if (backImage) {
             $('#detail-preview').html(`
-                <div class="preview-image" ${bgcolor}>
+                <div class="preview-image" style="background:${bgcolor}">
                     <img src="${backImage}" alt="Back design" class="img-fluid">
                 </div>
             `);
