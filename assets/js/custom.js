@@ -1031,46 +1031,31 @@ function changeAlignText(align, event) {
 
 
 jQuery(document).ready(function($) {
-    // Open preview popup when clicking card preview
     $('.card-preview').click(function(e) {
         e.preventDefault();
+        
         var cardId = $(this).data('card-id');
+        var frontImage = $(this).find('.flipper .front img').attr('src');
+        var backImage = $(this).find('.flipper .back img').attr('src');
+        var cardTitle = $(this).find('.card-box-title h4').text();
         
-        // Show popup
         $('#card-preview-popup').modal('show');
+        l
+        $('#card-preview-popup .modal-title').text(cardTitle);
         
-        // Load front canvas data
-        $.ajax({
-            url: ajax_object.ajax_url,
-            type: 'POST',
-            data: {
-                action: 'sanas_load_fabric_js_data_front',
-                card_id: cardId
-            },
-            success: function(response) {
-                if(response.success) {
-                    $('#cover-preview').html(response.data.json_data);
-                }
-            }
-        });
+        $('#cover-preview').html(`
+            <div class="preview-image">
+                <img src="${frontImage}" alt="Front design" class="img-fluid">
+            </div>
+        `);
         
-        // Load back canvas data
-        $.ajax({
-            url: ajax_object.ajax_url,
-            type: 'POST',
-            data: {
-                action: 'sanas_load_fabric_js_data_back',
-                card_id: cardId
-            },
-            success: function(response) {
-                if(response.success) {
-                    $('#detail-preview').html(response.data.json_data);
-                }
-            }
-        });
+        $('#detail-preview').html(`
+            <div class="preview-image">
+                <img src="${backImage}" alt="Back design" class="img-fluid">
+            </div>
+        `);
     });
 
-    // Handle tab switching
     $('.preview-tab').click(function() {
         $('.preview-tab').removeClass('active');
         $(this).addClass('active');
@@ -1080,7 +1065,6 @@ jQuery(document).ready(function($) {
         $('#' + tab + '-preview').addClass('active');
     });
 
-    // Handle edit design button
     $('.edit-design').click(function() {
         var cardId = $('.card-preview').data('card-id');
         window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
