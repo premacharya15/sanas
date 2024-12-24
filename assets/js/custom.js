@@ -1038,6 +1038,7 @@ jQuery(document).ready(function($) {
         var frontImage = $(this).find('.flipper .front img').attr('src');
         var backImage = $(this).find('.flipper .back img').attr('src');
         var cardTitle = $(this).find('.card-box-title h4').text();
+        var bgcolor = $(this).attr('style');
         
         // Show modal
         $('#card-preview-popup').modal('show');
@@ -1048,7 +1049,7 @@ jQuery(document).ready(function($) {
         // Load images
         if (frontImage) {
             $('#cover-preview').html(`
-                <div class="preview-image">
+                <div class="preview-image" style="background:${bgcolor}">
                     <img src="${frontImage}" alt="Front design" class="img-fluid">
                 </div>
             `);
@@ -1056,7 +1057,7 @@ jQuery(document).ready(function($) {
         
         if (backImage) {
             $('#detail-preview').html(`
-                <div class="preview-image">
+                <div class="preview-image" style="background:${bgcolor}">
                     <img src="${backImage}" alt="Back design" class="img-fluid">
                 </div>
             `);
