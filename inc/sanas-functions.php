@@ -950,21 +950,19 @@ function sanas_card_category_wishlist($class_name = '') {
 function sanas_card_preview_popup() {
   ?>
   <div class="card-preview-popup" id="cardPreviewPopup" tabindex="-1" role="dialog" aria-labelledby="cardPreviewLabel" aria-hidden="true">
-      <div class="" role="document">
-          <div class="">
-              <div id="previewDetails"></div>
-            <div class="">
-                  <button type="button" class="" id="coverPageBtn">Cover Page</button>
-                  <button type="button" class="" id="detailPageBtn">Detail page</button>
-            </div>
-              <div class="">
-                  <img id="previewImage" src="" alt="Card Preview">
-              </div>
-              <div class="">
-                  <button type="button" class="" data-dismiss="modal">Edit This Design</button>
-              </div>
-          </div>
+    <div class="card-preview-content">
+      <div id="previewDetails"></div>
+      <div class="button-container">
+        <button type="button" class="btn btn-cover" id="coverPageBtn">Cover Page</button>
+        <button type="button" class="btn btn-detail" id="detailPageBtn">Detail Page</button>
       </div>
+      <div class="">
+        <img id="previewImage" src="" alt="Card Preview">
+      </div>
+      <div class="">
+        <button type="button" class="" data-dismiss="modal">Edit This Design</button>
+      </div>
+    </div>
   </div>
   <?php
 }
