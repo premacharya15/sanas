@@ -950,32 +950,68 @@ function sanas_card_category_wishlist($class_name = '') {
 
 function sanas_get_card_preview_popup() {
   ?>
-  <div class="modal fade def-popup card-preview-popup" id="card-preview-popup" tabindex="-1" role="dialog" aria-hidden="true">
+  <div 
+    class="modal fade def-popup card-preview-popup" 
+    id="card-preview-popup" 
+    tabindex="-1" 
+    role="dialog"
+    aria-labelledby="cardPreviewModalTitle"
+    aria-modal="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
+              <div class="modal-header">
+                  <h4 class="modal-title" id="cardPreviewModalTitle">Card Preview</h4>
+                  <button 
+                    type="button" 
+                    class="close" 
+                    data-bs-dismiss="modal" 
+                    aria-label="Close">
+                      <span class="cross" aria-hidden="true"></span>
+                  </button>
+              </div>
               <div class="modal-body">
-                  <div class="modal-header">
-                      <h4 class="modal-title">Card Preview</h4>
-                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                          <span class="cross"></span>
-                      </button>
-                  </div>
                   <div class="content-box">
                       <div class="card-preview-content">
-                          <div class="preview-tabs">
-                              <button class="preview-tab active" data-tab="cover">Cover page</button>
-                              <button class="preview-tab" data-tab="detail">Detail page</button>
+                          <div class="preview-tabs" role="tablist">
+                              <button 
+                                class="preview-tab active" 
+                                data-tab="cover"
+                                role="tab"
+                                aria-selected="true"
+                                aria-controls="cover-preview"
+                                id="cover-tab">
+                                  Cover page
+                              </button>
+                              <button 
+                                class="preview-tab" 
+                                data-tab="detail"
+                                role="tab"
+                                aria-selected="false"
+                                aria-controls="detail-preview"
+                                id="detail-tab">
+                                  Detail page
+                              </button>
                           </div>
                           <div class="preview-content">
-                              <div class="preview-tab-content active" id="cover-preview">
+                              <div 
+                                class="preview-tab-content active" 
+                                id="cover-preview"
+                                role="tabpanel"
+                                aria-labelledby="cover-tab">
                                   <!-- Front canvas will be loaded here -->
                               </div>
-                              <div class="preview-tab-content" id="detail-preview">
+                              <div 
+                                class="preview-tab-content" 
+                                id="detail-preview"
+                                role="tabpanel"
+                                aria-labelledby="detail-tab">
                                   <!-- Back canvas will be loaded here -->
                               </div>
                           </div>
                           <div class="preview-actions">
-                              <button class="btn btn-secondary edit-design">Edit this design</button>
+                              <button class="btn btn-secondary edit-design">
+                                  Edit this design
+                              </button>
                           </div>
                       </div>
                   </div>
