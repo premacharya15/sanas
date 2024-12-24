@@ -948,25 +948,27 @@ function sanas_card_category_wishlist($class_name = '') {
 }
 
 function sanas_card_preview_popup() {
-    ?>
-    <div class="modal fade" id="cardPreviewPopup" tabindex="-1" role="dialog" aria-labelledby="cardPreviewLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div id="previewDetails"></div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        X
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img id="previewImage" src="" alt="Card Preview" style="width: 100%;">
-                    
-                </div>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Edit This Design</button>
-            </div>
-        </div>
-    </div>
-    <?php
+  ?>
+  <div class="modal fade card-preview-popup" id="cardPreviewPopup" tabindex="-1" role="dialog" aria-labelledby="cardPreviewLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="cardPreviewLabel">Invitation Card Preview</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <img id="previewImage" src="" alt="Card Preview" style="width: 100%; border-radius: 10px;">
+                  <div id="previewDetails" style="margin-top: 15px;"></div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Edit This Design</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <?php
 }
 add_action('wp_footer', 'sanas_card_preview_popup');
 ?>
