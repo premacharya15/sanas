@@ -1075,6 +1075,7 @@ jQuery(document).ready(function($) {
 
     $('.edit-design').click(function() {
         var cardId = $('.card-preview').data('card-id');
-        window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
+        console.log(cardId);
+        // window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
     });
 });
