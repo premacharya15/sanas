@@ -960,7 +960,7 @@ function sanas_get_card_preview_popup() {
       <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <h4 class="modal-title" id="cardPreviewModalTitle">Card Preview</h4>
+                  <h4 class="modal-title" id="cardPreviewModalTitle">Invitation card Holi</h4>
                   <button 
                     type="button" 
                     class="close" 
@@ -998,14 +998,18 @@ function sanas_get_card_preview_popup() {
                                 id="cover-preview"
                                 role="tabpanel"
                                 aria-labelledby="cover-tab">
-                                  
+                                  <div class="preview-image">
+                                      <!-- Front image will be loaded here dynamically -->
+                                  </div>
                               </div>
                               <div 
                                 class="preview-tab-content" 
                                 id="detail-preview"
                                 role="tabpanel"
                                 aria-labelledby="detail-tab">
-                                  
+                                  <div class="preview-image">
+                                      <!-- Back image will be loaded here dynamically -->
+                                  </div>
                               </div>
                           </div>
                           <div class="preview-actions">
