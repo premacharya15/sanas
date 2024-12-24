@@ -949,18 +949,27 @@ function sanas_card_category_wishlist($class_name = '') {
 
 function sanas_card_preview_popup() {
   ?>
-  <div class="modal fade card-preview-popup" id="cardPreviewPopup" tabindex="-1" role="dialog" aria-labelledby="cardPreviewLabel" aria-hidden="true">
-    <div class="card-preview-content">
-      <div id="previewDetails"></div>
-      <div class="button-container">
-        <button type="button" class="btn btn-cover" id="coverPageBtn">Cover Page</button>
-        <button type="button" class="btn btn-detail" id="detailPageBtn">Detail Page</button>
-      </div>
-      <div class="">
-        <img id="previewImage" src="" alt="Card Preview">
-      </div>
-      <div class="">
-        <button type="button" class="" data-dismiss="modal">Edit This Design</button>
+  <div class="modal fade def-popup add-todolist-popup card-preview-popup" id="cardPreviewPopup" tabindex="-1" role="dialog" aria-labelledby="cardPreviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="modal-header">
+            <div id="previewDetails"></div>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span class="cross"></span>
+            </button>
+          </div>
+          <div class="button-container">
+            <button type="button" class="btn btn-cover" id="coverPageBtn">Cover Page</button>
+            <button type="button" class="btn btn-detail" id="detailPageBtn">Detail Page</button>
+          </div>
+          <div class="">
+            <img id="previewImage" src="" alt="Card Preview">
+          </div>
+          <div class="">
+            <button type="button" class="" data-dismiss="modal">Edit This Design</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
