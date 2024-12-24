@@ -1029,18 +1029,16 @@ function changeAlignText(align, event) {
     }
 }
 
-// Event listener for card click
+// card preview
 jQuery(document).ready(function ($) {
     $('.card-box').on('click', function () {
-        var cardId = $(this).data('card-id'); // Get the card ID
-        var cardImage = $(this).find('.front img').attr('src'); // Get the front card image
-        var cardTitle = $(this).find('.card-box-title h4').text(); // Get the card title
+        var cardId = $(this).data('card-id');
+        var cardImage = $(this).find('.front img').attr('src');
+        var cardTitle = $(this).find('.card-box-title h4').text();
 
-        // Set the image and title in the modal
         $('#previewImage').attr('src', cardImage);
         $('#previewDetails').html('<h4>' + cardTitle + '</h4>');
 
-        // Show the modal
         $('#cardPreviewPopup').modal('show');
     });
 });
