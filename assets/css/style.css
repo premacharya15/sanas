@@ -6824,6 +6824,10 @@ table.preview-itn tbody tr td{
     color: #333;
 }
 
+.preview-card-image {
+    justify-content: center;
+}
+
 .preview-image-container img {
     width: 100%;
     border-radius: 10px;

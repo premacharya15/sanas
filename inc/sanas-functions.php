@@ -963,7 +963,7 @@ function sanas_card_preview_popup() {
             <button type="button" class="btn btn-cover" id="coverPageBtn">Cover Page</button>
             <button type="button" class="btn btn-detail" id="detailPageBtn">Detail Page</button>
           </div>
-          <div class="">
+          <div class="preview-card-image">
             <img id="previewImage" src="" alt="Card Preview">
           </div>
           <div class="">
