@@ -1038,7 +1038,7 @@ jQuery(document).ready(function($) {
         var frontImage = $(this).find('.flipper .front img').attr('src');
         var backImage = $(this).find('.flipper .back img').attr('src');
         var cardTitle = $(this).find('.card-box-title h4').text();
-        var bgcolor = $(this).find('.flipper').data('bg-color');
+        var bgcolor = $(this).find('.flipper .front').data('bg-color');
 
         console.log(bgcolor);
         
