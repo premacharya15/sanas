@@ -1040,7 +1040,8 @@ jQuery(document).ready(function($) {
         var cardTitle = $(this).find('.card-box-title h4').text();
         var bgcolor = $(this).find('.inner-box a').attr('data-bg-color');
         
-        // card id value add in data-card-id
+        console.log(cardId);
+
         $('#card-preview-popup').attr('data-card-id', cardId);
         
         $('#card-preview-popup').modal('show');
