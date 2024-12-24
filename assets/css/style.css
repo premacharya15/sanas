@@ -6860,6 +6860,7 @@ table.preview-itn tbody tr td{
 
 .card-preview-popup .modal-dialog {
     max-width: 800px;
+    z-index: 1 !important;
 }
 
 .preview-tabs {
