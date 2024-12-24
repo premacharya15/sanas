@@ -6795,23 +6795,23 @@ table.preview-itn tbody tr td{
 
 
 /* popup card preview */
-.card-preview-popup .card-modal-content {
+.card-preview-popup .modal-content {
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.card-preview-popup .card-modal-header {
+.card-preview-popup .modal-header {
     background-color: #f8f9fa;
     border-bottom: none;
     justify-content: center; /* Center the header content */
 }
 
-.card-preview-popup .card-modal-title {
+.card-preview-popup .modal-title {
     font-size: 1.5rem;
     color: #333;
 }
 
-.card-preview-popup .card-modal-body {
+.card-preview-popup .modal-body {
     padding: 20px;
 }
 
@@ -6819,7 +6819,7 @@ table.preview-itn tbody tr td{
     border-radius: 10px;
 }
 
-.card-preview-popup .card-modal-footer {
+.card-preview-popup .modal-footer {
     justify-content: center; /* Center the footer buttons */
 }
 
