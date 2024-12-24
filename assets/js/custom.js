@@ -1029,3 +1029,60 @@ function changeAlignText(align, event) {
     }
 }
 
+
+jQuery(document).ready(function($) {
+    // Open preview popup when clicking card preview
+    $('.card-preview').click(function(e) {
+        e.preventDefault();
+        var cardId = $(this).data('card-id');
+        
+        // Show popup
+        $('#card-preview-popup').modal('show');
+        
+        // Load front canvas data
+        $.ajax({
+            url: ajax_object.ajax_url,
+            type: 'POST',
+            data: {
+                action: 'sanas_load_fabric_js_data_front',
+                card_id: cardId
+            },
+            success: function(response) {
+                if(response.success) {
+                    $('#cover-preview').html(response.data.json_data);
+                }
+            }
+        });
+        
+        // Load back canvas data
+        $.ajax({
+            url: ajax_object.ajax_url,
+            type: 'POST',
+            data: {
+                action: 'sanas_load_fabric_js_data_back',
+                card_id: cardId
+            },
+            success: function(response) {
+                if(response.success) {
+                    $('#detail-preview').html(response.data.json_data);
+                }
+            }
+        });
+    });
+
+    // Handle tab switching
+    $('.preview-tab').click(function() {
+        $('.preview-tab').removeClass('active');
+        $(this).addClass('active');
+        
+        var tab = $(this).data('tab');
+        $('.preview-tab-content').removeClass('active');
+        $('#' + tab + '-preview').addClass('active');
+    });
+
+    // Handle edit design button
+    $('.edit-design').click(function() {
+        var cardId = $('.card-preview').data('card-id');
+        window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
+    });
+});
