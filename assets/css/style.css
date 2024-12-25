@@ -6834,6 +6834,7 @@ table.preview-itn tbody tr td{
 }
 
 .card-preview-popup .preview-image img {
+    transform: rotateY(180deg);
     max-width: 100%;
     height: 100%;
     border-radius: 4px;
