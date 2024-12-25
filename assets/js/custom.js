@@ -1039,11 +1039,6 @@ jQuery(document).ready(function($) {
         var backImage = $(this).find('.flipper .back img').attr('src');
         var cardTitle = $(this).find('.card-box-title h4').text();
         var bgcolor = $(this).find('.inner-box a').attr('data-bg-color');
-        
-        console.log(cardId);
-
-        console.log(frontImage);
-        console.log(backImage);
 
         $('#card-preview-popup').attr('data-card-id', cardId);
         
@@ -1068,29 +1063,20 @@ jQuery(document).ready(function($) {
         }
     });
 
-    $('.card-preview-popup .preview-tab').click(function () {
-        // Remove active class from all tabs
-        $('.card-preview-popup .preview-tab').removeClass('active');
-        // Add active class to the clicked tab
+    $('.preview-tab').click(function() {
+        $('.preview-tab').removeClass('active');
         $(this).addClass('active');
-
-        // Determine which tab was clicked
-        const tab = $(this).data('tab');
-
-        // Get the flipper element
-        const flipper = $('.card-preview-popup .flipper');
-
-        // Flip the card based on the tab
-        if (tab === 'cover') {
-            flipper.removeClass('flipped');
-        } else if (tab === 'detail') {
-            flipper.addClass('flipped');
+        
+        var tab = $(this).data('tab');
+        if (tab === 'detail') {
+            $('.card-preview-popup .flipper').addClass('flipped');
+        } else {
+            $('.card-preview-popup .flipper').removeClass('flipped');
         }
     });
 
     $('.edit-design').click(function() {
         var cardId = $('#card-preview-popup').attr('data-card-id');
-        console.log(cardId);
         window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
     });
 });
