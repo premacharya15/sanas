@@ -1068,17 +1068,23 @@ jQuery(document).ready(function($) {
         }
     });
 
-    $('.preview-tab').click(function() {
-        $('.preview-tab').removeClass('active');
+    $('.card-preview-popup .preview-tab').click(function () {
+        // Remove active class from all tabs
+        $('.card-preview-popup .preview-tab').removeClass('active');
+        // Add active class to the clicked tab
         $(this).addClass('active');
-        
-        var tab = $(this).data('tab');
-        if (tab === 'detail') {
-            $('#cover-preview').removeClass('active');
-            $('#detail-preview').addClass('active');
-        } else {
-            $('#detail-preview').removeClass('active');
-            $('#cover-preview').addClass('active');
+
+        // Determine which tab was clicked
+        const tab = $(this).data('tab');
+
+        // Get the flipper element
+        const flipper = $('.card-preview-popup .flipper');
+
+        // Flip the card based on the tab
+        if (tab === 'cover') {
+            flipper.removeClass('flipped');
+        } else if (tab === 'detail') {
+            flipper.addClass('flipped');
         }
     });
 
