@@ -1042,6 +1042,7 @@ jQuery(document).ready(function($) {
 
         $('#card-preview-popup').attr('data-card-id', cardId);
 
+        $('.preview-tabs').attr('data-tab', 'detail').removeClass('active');
         $('.preview-tabs').attr('data-tab', 'cover').addClass('active');
         
         $('#card-preview-popup').modal('show');
