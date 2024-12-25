@@ -1075,6 +1075,18 @@ jQuery(document).ready(function($) {
         }
     });
 
+    $('.front').click(function() {
+        $('.card-preview-popup .flipper').removeClass('flipped');
+        $('#cover-page').removeClass('active');
+        $('#detail-page').addClass('active');
+    });
+
+    $('.back').click(function() {
+        $('.card-preview-popup .flipper').addClass('flipped');
+        $('#cover-page').addClass('active');
+        $('#detail-page').removeClass('active');
+    });
+
     $('.edit-design').click(function() {
         var cardId = $('#card-preview-popup').attr('data-card-id');
         window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
