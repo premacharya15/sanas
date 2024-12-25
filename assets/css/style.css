@@ -6893,3 +6893,7 @@ table.preview-itn tbody tr td{
 .preview-container .back {
     background-color: transparent !important;
 }
+
+.card-preview-popup .modal-dialog {
+    width: auto !important;
+}
