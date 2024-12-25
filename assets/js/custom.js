@@ -1069,9 +1069,11 @@ jQuery(document).ready(function($) {
         
         var tab = $(this).data('tab');
         if (tab === 'detail') {
+            $('.card-preview-popup .flipper').addClass('flipped');
             $('#cover-preview').removeClass('active');
             $('#detail-preview').addClass('active');
         } else {
+            $('.card-preview-popup .flipper').removeClass('flipped');
             $('#detail-preview').removeClass('active');
             $('#cover-preview').addClass('active');
         }
