@@ -1041,9 +1041,6 @@ jQuery(document).ready(function($) {
         var bgcolor = $(this).find('.inner-box a').attr('data-bg-color');
 
         $('#card-preview-popup').attr('data-card-id', cardId);
-
-        $('.preview-tabs').attr('data-tab', 'detail').removeClass('active');
-        $('.preview-tabs').attr('data-tab', 'cover').addClass('active');
         
         $('#card-preview-popup').modal('show');
         
