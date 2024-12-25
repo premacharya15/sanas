@@ -6841,7 +6841,6 @@ table.preview-itn tbody tr td{
 }
 
 .card-preview-popup .preview-tabs {
-    justify-content: center;
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
@@ -6876,8 +6875,6 @@ table.preview-itn tbody tr td{
 }
 
 .preview-actions {
-    justify-content: center;
-    display: flex;
     margin-top: 10px;
 }
 
