@@ -6889,3 +6889,7 @@ table.preview-itn tbody tr td{
 .preview-actions .edit-design:hover {
     background-color: #366d37;
 }
+
+.card-preview-popup .modal-dialog {
+    width: 0 !important;
+}
