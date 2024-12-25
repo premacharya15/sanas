@@ -1051,17 +1051,13 @@ jQuery(document).ready(function($) {
         
         if (frontImage) {
             $('#cover-preview').html(`
-                <div class="preview-image" aspect-ratio: 1;">
                     <img src="${frontImage}" alt="Front design" class="img-fluid flipper animated" style="width: auto;">
-                </div>
             `);
         }
         
         if (backImage) {
             $('#detail-preview').html(`
-                <div class="preview-image" aspect-ratio: 1;">
                     <img src="${backImage}" alt="Back design" class="img-fluid flipper animated" style="width: auto;">
-                </div>
             `);
         }
     });
