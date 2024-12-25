@@ -1081,6 +1081,12 @@ jQuery(document).ready(function($) {
             $('#detail-preview').removeClass('active'); 
             $('#cover-preview').addClass('active');
         }
+
+        if(tab === 'cover'){
+            $('.card-preview-popup .flipper').addClass('flipped');
+        }else{
+            $('.card-preview-popup .flipper').removeClass('flipped');
+        }
     });
 
     $('.edit-design').click(function() {
