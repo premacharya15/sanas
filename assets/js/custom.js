@@ -1049,32 +1049,36 @@ jQuery(document).ready(function($) {
         if (frontImage) {
             $('#cover-preview').html(`
                 <div class="preview-image" style="background:${bgcolor}; aspect-ratio: 1;">
-                    <img src="${frontImage}" alt="Front design" class="img-fluid flipper animated" style="width: auto;">
+                    <img src="${frontImage}" alt="Front design" class="img-fluid" style="width: auto;">
                 </div>
             `);
         }
-        
+          
         if (backImage) {
             $('#detail-preview').html(`
-                <div class="preview-image" style="background:${bgcolor} ; aspect-ratio: 1;">
-                    <img src="${backImage}" alt="Back design" class="img-fluid flipper animated" style="width: auto;">
+                <div class="preview-image" style="background:${bgcolor}; aspect-ratio: 1;">
+                    <img src="${backImage}" alt="Back design" class="img-fluid" style="width: auto;">
                 </div>
             `);
         }
+
+        $('#cover-preview').addClass('active');
+        $('#detail-preview').removeClass('active');
+        $('.preview-tab[data-tab="cover"]').addClass('active');
+        $('.preview-tab[data-tab="detail"]').removeClass('active');
     });
 
     $('.preview-tab').click(function() {
+        var tab = $(this).data('tab');
+        
         $('.preview-tab').removeClass('active');
         $(this).addClass('active');
-        
-        var tab = $(this).data('tab');
+
         if (tab === 'detail') {
-            $('.card-preview-popup .flipper').addClass('flipped');
             $('#cover-preview').removeClass('active');
             $('#detail-preview').addClass('active');
         } else {
-            $('.card-preview-popup .flipper').removeClass('flipped');
-            $('#detail-preview').removeClass('active');
+            $('#detail-preview').removeClass('active'); 
             $('#cover-preview').addClass('active');
         }
     });
