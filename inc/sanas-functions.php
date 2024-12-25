@@ -974,15 +974,15 @@ function sanas_get_card_preview_popup() {
                               <button class="preview-tab" data-tab="detail">Detail page</button>
                           </div>
                           <div class="preview-content">
-                              <div class="preview-container">
+                              <div class="preview-container" style= >
                                   <div class="flipper">
                                       <div class="front">
-                                          <div id="cover-preview" class="preview-tab-content active" data-bg-color="">
+                                          <div id="cover-preview" class="preview-tab-content active">
                                               <!-- Front image will be loaded here -->
                                           </div>
                                       </div>
                                       <div class="back">
-                                          <div id="detail-preview" class="preview-tab-content" data-bg-color="">
+                                          <div id="detail-preview" class="preview-tab-content">
                                               <!-- Back image will be loaded here -->
                                           </div>
                                       </div>
