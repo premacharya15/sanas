@@ -1069,7 +1069,7 @@ jQuery(document).ready(function($) {
         $('.preview-tab').removeClass('active');
         $(this).addClass('active');
         
-        var tab = $(this).data('tab');
+        var tab = $(this).attr('data-tab');
         if (tab === 'detail') {
             $('.preview-container .flipper').addClass('flipped');
         } else {
