@@ -6888,3 +6888,7 @@ table.preview-itn tbody tr td{
     padding: 10px 90px;
     font-weight: 500;
 }
+
+.preview-actions .edit-design:hover {
+    background-color: #366d37;
+}
