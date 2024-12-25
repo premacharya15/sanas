@@ -6880,3 +6880,7 @@ table.preview-itn tbody tr td{
     display: flex;
     margin-top: 10px;
 }
+
+.preview-actions .edit-design {
+    border-radius: 20px;
+}
