@@ -5519,6 +5519,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
 .preview-host-message{
     word-wrap: break-word;
     color: #000;
+    height: 100% !important;
 }
 .preview-host-message pre{
     padding: 0;
