@@ -6845,6 +6845,9 @@ table.preview-itn tbody tr td{
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    border: 1px solid #888;
+    padding: 4px;
+    border-radius: 25px;
 }
 
 .card-preview-popup .preview-tab {
@@ -6860,6 +6863,16 @@ table.preview-itn tbody tr td{
 .card-preview-popup .preview-tab.active {
     background: #ff6b6b;
     color: white;
+}
+
+.card-preview-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preview-content {
+    width: 100%;
 }
 
 .preview-content .front {
