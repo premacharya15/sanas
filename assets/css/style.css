@@ -6894,5 +6894,5 @@ table.preview-itn tbody tr td{
 }
 
 .card-preview-popup .modal-dialog {
-    width: auto !important;
+    width: 500px !important;
 }
