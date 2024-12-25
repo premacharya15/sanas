@@ -1045,10 +1045,13 @@ jQuery(document).ready(function($) {
         $('#card-preview-popup').modal('show');
         
         $('#card-preview-popup .modal-title').text(cardTitle || 'Card Preview');
+
+        $('#cover-preview').attr('data-bg-color', bgcolor);
+        $('#detail-preview').attr('data-bg-color', bgcolor);
         
         if (frontImage) {
             $('#cover-preview').html(`
-                <div class="preview-image" style="background:${bgcolor}; aspect-ratio: 1;">
+                <div class="preview-image" aspect-ratio: 1;">
                     <img src="${frontImage}" alt="Front design" class="img-fluid flipper animated" style="width: auto;">
                 </div>
             `);
@@ -1056,7 +1059,7 @@ jQuery(document).ready(function($) {
         
         if (backImage) {
             $('#detail-preview').html(`
-                <div class="preview-image" style="background:${bgcolor} ; aspect-ratio: 1;">
+                <div class="preview-image" aspect-ratio: 1;">
                     <img src="${backImage}" alt="Back design" class="img-fluid flipper animated" style="width: auto;">
                 </div>
             `);
