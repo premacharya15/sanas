@@ -1069,22 +1069,12 @@ jQuery(document).ready(function($) {
         
         var tab = $(this).data('tab');
         if (tab === 'detail') {
-            $('.card-preview-popup .flipper').addClass('flipped');
+            $('#cover-preview').removeClass('active');
+            $('#detail-preview').addClass('active');
         } else {
-            $('.card-preview-popup .flipper').removeClass('flipped');
+            $('#detail-preview').removeClass('active');
+            $('#cover-preview').addClass('active');
         }
-    });
-
-    $('.front').click(function() {
-        $('.card-preview-popup .flipper').removeClass('flipped');
-        $('#cover-page').removeClass('active');
-        $('#detail-page').addClass('active');
-    });
-
-    $('.back').click(function() {
-        $('.card-preview-popup .flipper').addClass('flipped');
-        $('#cover-page').addClass('active');
-        $('#detail-page').removeClass('active');
     });
 
     $('.edit-design').click(function() {
