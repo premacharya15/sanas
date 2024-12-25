@@ -1039,6 +1039,8 @@ jQuery(document).ready(function($) {
         var backImage = $(this).find('.flipper .back img').attr('src');
         var cardTitle = $(this).find('.card-box-title h4').text();
         var bgcolor = $(this).find('.inner-box a').attr('data-bg-color');
+        
+        console.log(cardId);
 
         console.log(frontImage);
         console.log(backImage);
@@ -1080,6 +1082,7 @@ jQuery(document).ready(function($) {
 
     $('.edit-design').click(function() {
         var cardId = $('#card-preview-popup').attr('data-card-id');
+        console.log(cardId);
         window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
     });
 });
