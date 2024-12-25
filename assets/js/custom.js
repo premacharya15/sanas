@@ -1046,8 +1046,7 @@ jQuery(document).ready(function($) {
         
         $('#card-preview-popup .modal-title').text(cardTitle || 'Card Preview');
 
-        $('#cover-preview').attr('data-bg-color', bgcolor);
-        $('#detail-preview').attr('data-bg-color', bgcolor);
+        $('.preview-container').attr('style', `background: ${bgcolor};`);
         
         if (frontImage) {
             $('#cover-preview').html(`
