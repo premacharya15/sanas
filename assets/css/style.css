@@ -6877,7 +6877,7 @@ table.preview-itn tbody tr td{
 }
 
 .card-preview-popup .def-popup .modal-header {
-    justify-content: center;
+    justify-content: center !important;
 }
 
 .card-preview-content {
