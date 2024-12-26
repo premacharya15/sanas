@@ -6891,12 +6891,12 @@ table.preview-itn tbody tr td{
 }
 
 .preview-actions {
-    justify-content: center;
-    display: flex;
     margin-top: 10px;
 }
 
 .preview-actions .edit-design {
+    justify-content: center;
+    width: 100%;
     border-radius: 20px;
     background-color: #2C5F2D;
     color: #fff;
