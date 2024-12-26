@@ -242,9 +242,14 @@ if ($colorbg) {
             <div class="title-guest">
               <div class="title-box">
                 <div class="title graph">
-                  <h4><a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="text-black">Guest List</a></h4>
+                  <?php if ($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_declined == 0): ?>
+                    <h4>Ad here</h4>
+                  <?php else: ?>
+                    <h4><a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="text-black">Guest List</a></h4>
+                  <?php endif; ?>
                 </div>
               </div>
+              <?php if ($guest_accepted != 0 || $guest_maybe != 0 || $guest_reply != 0 || $guest_declined != 0): ?>
               <div class="guest-count-box mt-1 text-center flex">
                 <div class="guest-count-box-inner1">
                   <span>Accepted</span>
@@ -254,6 +259,7 @@ if ($colorbg) {
                   <span>Kids: <?php echo $total_kids; ?></span>
                 </div>
               </div>
+              <?php endif; ?>
             </div>
             <div class="graph-box">
               <!-- <div id="guest_attending"></div> -->
