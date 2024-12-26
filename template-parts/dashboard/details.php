@@ -1683,10 +1683,10 @@ if(wp_is_mobile())
 $data = !empty($backpagedata) ? stripslashes(htmlspecialchars_decode($backpagedata)) : stripslashes(stripslashes(htmlspecialchars_decode($backmetadata)));
 
 ?>
-<script>
-var canvasss = '<?php echo $data;?>';
-// console.log(canvasss);
-</script>
+        <script>
+        var canvasss = '<?php echo $data;?>';
+        // console.log(canvasss);
+        </script>
 <?php
 
 $imageSrc = '';
