@@ -6847,22 +6847,21 @@ table.preview-itn tbody tr td{
 }
 
 .card-preview-popup .preview-tabs {
-    justify-content: center;
-    display: flex;
-    gap: 10px;
+    width: 100%;
     margin-bottom: 20px;
     border: 1px solid #888;
-    padding: 2px;
+    padding: 3px 2px 4px 4px;
     border-radius: 25px;
 }
 
 .card-preview-popup .preview-tab {
-    padding: 8px 20px;
+    padding: 4px;
     border: none;
     background: none;
     color: #6c757d;
     border-radius: 20px;
     cursor: pointer;
+    width: 49%;
 }
 
 
@@ -6892,17 +6891,17 @@ table.preview-itn tbody tr td{
 }
 
 .preview-actions {
-    justify-content: center;
-    display: flex;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .preview-actions .edit-design {
+    justify-content: center;
+    width: 100%;
     border-radius: 20px;
     background-color: #2C5F2D;
     color: #fff;
-    padding: 10px 90px;
-    font-weight: 500;
+    padding: 10px;
+    font-weight: 200 !important;
 }
 
 .preview-actions .edit-design:hover {
