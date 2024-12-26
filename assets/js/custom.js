@@ -69,10 +69,10 @@
     if (jQuery('.header-right-end').length) {
         console.log("header");
         // mobail nav
-        jQuery(".header-right-end").click(function () {
+        jQuery(".header-right-end").on("click", function () {
             jQuery(".mobile-nav-wrapper").toggleClass("expanded");
         });
-        jQuery(".mobile-nav-toggler").click(function () {
+        jQuery(".mobile-nav-toggler").on("click", function () {
             jQuery(".mobile-nav-wrapper").toggleClass("expanded");
         });
         // jQuery(".header-right-end").click(function () {
