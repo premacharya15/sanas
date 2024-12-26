@@ -82,7 +82,7 @@
         //     jQuery("body").removeClass("stop");
         // });
     }
-}
+});
     if (jQuery('.featured-section').length) {
         // featured-vendors slider
         jQuery('.featured-vendors').slick({
