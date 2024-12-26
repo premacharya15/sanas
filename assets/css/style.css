@@ -4962,7 +4962,8 @@ Category Wishlist
     overflow-x: hidden;
 }
 .dashboard-category-section{
-    max-height: 310px !important;
+    aspect-ratio: 1;
+    width: 100%;
 }
 /* width */
 .budget-man-box .cat-col ul::-webkit-scrollbar {
