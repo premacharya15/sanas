@@ -1683,7 +1683,7 @@ if(wp_is_mobile())
 <?php
 }?>
 <?php
-$data = !empty($frontpagedata) ? stripslashes(stripslashes(htmlspecialchars_decode($frontpagedata))) : stripslashes(stripslashes(htmlspecialchars_decode($frontmetadata)));
+$data = !empty($frontpagedata) ? stripslashes(htmlspecialchars_decode($frontpagedata)) : stripslashes(htmlspecialchars_decode($frontmetadata));
 
     if (isset($_GET['card_id'])) {
         ?>
