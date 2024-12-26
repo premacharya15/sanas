@@ -4957,7 +4957,7 @@ Category Wishlist
 }
 .budget-man-box .cat-col ul {
     position: relative;
-    max-height: 480px;
+    max-height: 450px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
