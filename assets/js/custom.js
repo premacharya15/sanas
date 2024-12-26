@@ -67,6 +67,7 @@
 
 
     if (jQuery('.header-right-end').length) {
+        console.log("header");
         // mobail nav
         jQuery(".header-right-end").click(function () {
             jQuery(".mobile-nav-wrapper").addClass("expanded");
