@@ -6880,6 +6880,12 @@ table.preview-itn tbody tr td{
     justify-content: center !important;
 }
 
+.card-preview-popup .card-preview-popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
 .card-preview-content {
     display: flex;
     flex-direction: column;
