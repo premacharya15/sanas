@@ -236,43 +236,42 @@ if ($colorbg) {
             </div>
           </div>
         </div>
+        <?php if ($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_declined == 0): ?>
+        <div class="attend-info col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+          <h4>Ad here</h4>
+        <?php else: ?>
         <div class="attend-info col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
           <a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="full-div-link"></a>
           <div class="inner">
             <div class="title-guest">
               <div class="title-box">
                 <div class="title graph">
-                  <?php if ($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_declined == 0): ?>
-                    <h4>Ad here</h4>
-                  <?php else: ?>
                     <h4><a href="/user-dashboard/?dashboard=guestlist&card_id=<?php echo $get_event[0]->event_card_id; ?>&event_id=<?php echo $get_event[0]->event_no; ?>" class="text-black">Guest List</a></h4>
-                  <?php endif; ?>
+                  </div>
+                </div>
+                <div class="guest-count-box mt-1 text-center flex">
+                  <div class="guest-count-box-inner1">
+                    <span>Accepted</span>
+                  </div>
+                  <div class="guest-count-box-inner2 mt-2">
+                    <span>Adults: <?php echo $total_adults; ?></span>
+                    <span>Kids: <?php echo $total_kids; ?></span>
+                  </div>
                 </div>
               </div>
-              <?php if ($guest_accepted != 0 || $guest_maybe != 0 || $guest_reply != 0 || $guest_declined != 0): ?>
-              <div class="guest-count-box mt-1 text-center flex">
-                <div class="guest-count-box-inner1">
-                  <span>Accepted</span>
-                </div>
-                <div class="guest-count-box-inner2 mt-2">
-                  <span>Adults: <?php echo $total_adults; ?></span>
-                  <span>Kids: <?php echo $total_kids; ?></span>
-                </div>
+              <div class="graph-box">
+                <!-- <div id="guest_attending"></div> -->
+                <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                  <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                    <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                  </div>
+                  <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                    <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                  </div>
+                </div> <canvas id="chart-line" width="299" height="340" class="chartjs-render-monitor" style="display: block; width: 299px; height: 340px;"></canvas>
               </div>
-              <?php endif; ?>
             </div>
-            <div class="graph-box">
-              <!-- <div id="guest_attending"></div> -->
-<div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
-<div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-<div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
-</div>
-<div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-<div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
-</div>
-</div> <canvas id="chart-line" width="299" height="340" class="chartjs-render-monitor" style="display: block; width: 299px; height: 340px;"></canvas>
-            </div>
-          </div>
+            <?php endif; ?>
         </div>
         <?php }else{?>
           <div class="attend-info col-xl-8 col-lg-6 col-md-6 col-sm-6 col-12">
