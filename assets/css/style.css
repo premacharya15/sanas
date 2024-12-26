@@ -6841,6 +6841,10 @@ table.preview-itn tbody tr td{
     border-radius: 4px;
 }
 
+.card-preview-popup .back .preview-image img {
+    transform: rotateY(0deg) !important;
+}
+
 .card-preview-popup .preview-tabs {
     justify-content: center;
     display: flex;
