@@ -67,7 +67,7 @@
 
 
     if (jQuery('.header-right-end').length) {
-        console.log("header");
+        console.log("header2");
         // mobail nav
         jQuery(".header-right-end").on("click", function () {
             jQuery(".mobile-nav-wrapper").toggleClass("expanded");
