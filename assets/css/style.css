@@ -6876,13 +6876,13 @@ table.preview-itn tbody tr td{
     line-height: 28px;
 }
 
-.card-preview-popup-model .def-popup .modal-header {
-    justify-content: center !important;
-}
-
 .card-preview-popup-model .def-popup .modal-title {
     width: 100%;
     text-align: center;
+}
+
+.card-preview-popup-header {
+    justify-content: center !important;
 }
 
 .card-preview-popup .card-preview-popup-close {

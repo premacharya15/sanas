@@ -966,7 +966,7 @@ function sanas_get_card_preview_popup() {
                     <span class="cross"></span>
                   </button>
                 </div>
-                  <div class="modal-header">
+                  <div class="modal-header card-preview-popup-header">
                       <h4 class="modal-title">Card Preview</h4>
                   </div>
                   <div class="content-box">
