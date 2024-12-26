@@ -102,16 +102,16 @@ foreach ($get_guest_details as $guest) {
             break;
     }
 }
-if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_declined == 0){
-  $guest_accepted = 7;
-  $guest_maybe = 2;
-  $guest_reply = 5;
-  $guest_declined = 3;
-}
-if($total_adults == 0 && $total_kids == 0){
-  $total_adults = 10;
-  $total_kids = 4;
-}
+// if($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_declined == 0){
+//   $guest_accepted = 7;
+//   $guest_maybe = 2;
+//   $guest_reply = 5;
+//   $guest_declined = 3;
+// }
+// if($total_adults == 0 && $total_kids == 0){
+//   $total_adults = 10;
+//   $total_kids = 4;
+// }
 
 
 $sanas_card_event_table = $wpdb->prefix . 'sanas_card_event';
