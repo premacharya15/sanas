@@ -1681,11 +1681,11 @@ if(wp_is_mobile())
 <?php
 }
 $data = !empty($backpagedata) ? stripslashes(htmlspecialchars_decode($backpagedata)) : stripslashes(stripslashes(htmlspecialchars_decode($backmetadata)));
-
+echo $data;
 ?>
         <script>
         var canvasss = '<?php echo $data;?>';
-        console.log(canvasss);
+        // console.log(canvasss);
         </script>
 <?php
 
