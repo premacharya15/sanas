@@ -353,7 +353,6 @@ window.changeLetterSpacing = changeLetterSpacing;
 jQuery(document).ready(function($) {
 
 function saveCanvasData() {
-    console.log("test1");
     const canvasData = JSON.stringify(canvas.toJSON());
     console.log("Serialized Canvas Data:", canvasData);
     $('#base64Output').val(canvasData);

@@ -1685,7 +1685,7 @@ $data = !empty($backpagedata) ? stripslashes(htmlspecialchars_decode($backpageda
 ?>
         <script>
         var canvasss = '<?php echo $data;?>';
-        // console.log(canvasss);
+        console.log(canvasss);
         </script>
 <?php
 
