@@ -515,8 +515,9 @@ jQuery(document).ready(function ($) {
     }
 
     function loadCanvasData() {
+        console.log(canvasss);
         // Replace 'canvasss' with your actual canvas data
-        let canvasData = canvasss;
+        let canvasData = JSON.parse(canvasss);
 
         try {
             let data = parseCanvasData(canvasData); // Try parsing the canvas data
