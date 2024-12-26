@@ -6878,6 +6878,7 @@ table.preview-itn tbody tr td{
 
 .card-preview-popup .def-popup .modal-header {
     justify-content: center !important;
+    padding: 0 !important;
 }
 
 .card-preview-popup .card-preview-popup-close {
