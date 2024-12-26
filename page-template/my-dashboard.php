@@ -238,6 +238,8 @@ if ($colorbg) {
         </div>
         <?php if ($guest_accepted == 0 && $guest_maybe == 0 && $guest_reply == 0 && $guest_declined == 0): ?>
         <div class="attend-info col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+        <a href="#" class="full-div-link"></a>
+        <div class="inner">
           <h4>Ad here</h4>
         <?php else: ?>
         <div class="attend-info col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -270,8 +272,8 @@ if ($colorbg) {
                   </div>
                 </div> <canvas id="chart-line" width="299" height="340" class="chartjs-render-monitor" style="display: block; width: 299px; height: 340px;"></canvas>
               </div>
+              <?php endif; ?>
             </div>
-            <?php endif; ?>
         </div>
         <?php }else{?>
           <div class="attend-info col-xl-8 col-lg-6 col-md-6 col-sm-6 col-12">
