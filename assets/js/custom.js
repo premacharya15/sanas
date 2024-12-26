@@ -70,17 +70,17 @@
         console.log("header");
         // mobail nav
         jQuery(".header-right-end").click(function () {
-            jQuery(".mobile-nav-wrapper").addClass("expanded");
+            jQuery(".mobile-nav-wrapper").toggleClass("expanded");
         });
         jQuery(".mobile-nav-toggler").click(function () {
-            jQuery(".mobile-nav-wrapper").removeClass("expanded");
+            jQuery(".mobile-nav-wrapper").toggleClass("expanded");
         });
-        jQuery(".header-right-end").click(function () {
-            jQuery("body").addClass("stop");
-        });
-        jQuery(".mobile-nav-toggler").click(function () {
-            jQuery("body").removeClass("stop");
-        });
+        // jQuery(".header-right-end").click(function () {
+        //     jQuery("body").addClass("stop");
+        // });
+        // jQuery(".mobile-nav-toggler").click(function () {
+        //     jQuery("body").removeClass("stop");
+        // });
     }
     if (jQuery('.featured-section').length) {
         // featured-vendors slider
