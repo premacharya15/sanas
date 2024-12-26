@@ -6883,8 +6883,8 @@ table.preview-itn tbody tr td{
 
 .card-preview-popup .card-preview-popup-close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 30px;
 }
 
 .card-preview-content {
