@@ -1680,8 +1680,8 @@ if(wp_is_mobile())
 <input type="hidden"  id="device_id" value="desk" />
 <?php
 }
-$data = !empty($backpagedata) ? stripslashes(htmlspecialchars_decode($backpagedata)) : stripslashes(stripslashes(htmlspecialchars_decode($backmetadata)));
-echo $data;
+$data = !empty($backpagedata) ? stripslashes(stripslashes(htmlspecialchars_decode($backpagedata))) : stripslashes(stripslashes(htmlspecialchars_decode($backmetadata)));
+
 ?>
         <script>
         var canvasss = '<?php echo $data;?>';
