@@ -6799,6 +6799,7 @@ table.preview-itn tbody tr td{
 
 /* Card Preview Modal Styles */
 .card-preview-popup .preview-container {
+    border-radius: 10px;
     perspective: 1000px;
     width: 100%;
     aspect-ratio: 1;
