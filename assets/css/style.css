@@ -6850,7 +6850,7 @@ table.preview-itn tbody tr td{
 .card-preview-popup .preview-tabs {
     width: 100%;
     margin-bottom: 20px;
-    border: 1px solid #888;
+    border: 1px solid #D0D5DD;
     padding: 3px 2px 4px 4px;
     border-radius: 25px;
 }
@@ -6867,8 +6867,17 @@ table.preview-itn tbody tr td{
 
 
 .card-preview-popup .preview-tab.active {
-    background: #ff6b6b;
+    background: #F88379;
     color: white;
+}
+
+.card-preview-popup .def-popup .modal-title {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.card-preview-popup .def-popup .modal-header {
+    justify-content: center;
 }
 
 .card-preview-content {
@@ -6902,7 +6911,7 @@ table.preview-itn tbody tr td{
     background-color: #2C5F2D;
     color: #fff;
     padding: 10px;
-    font-weight: 200 !important;
+    font-weight: 500;
 }
 
 .preview-actions .edit-design:hover {
