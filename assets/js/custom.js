@@ -65,7 +65,7 @@
     syncTextAndColor();
     // coustum seceltion option 
 
-
+    jQuery(document).ready(function () {
     if (jQuery('.header-right-end').length) {
         console.log("header2");
         // mobail nav
@@ -82,6 +82,7 @@
         //     jQuery("body").removeClass("stop");
         // });
     }
+}
     if (jQuery('.featured-section').length) {
         // featured-vendors slider
         jQuery('.featured-vendors').slick({
