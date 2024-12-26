@@ -514,60 +514,127 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    // function loadCanvasData() {
+    //     // Replace 'canvasss' with your actual canvas data
+    //     let canvasData = canvasss;
+
+    //     try {
+    //         let data = parseCanvasData(canvasData); // Try parsing the canvas data
+
+    //         // Extract the unique fonts from the canvas data
+    //         const fonts = new Set();
+    //         data.objects.forEach(obj => {
+    //             if (obj.type === 'i-text' && obj.fontFamily) {
+    //                 fonts.add(obj.fontFamily);
+    //             }
+    //         });
+
+    //         if (fonts.size > 0) {
+    //             // Load the fonts before rendering the canvas
+    //             loadFonts(Array.from(fonts), () => {
+    //                 canvas.loadFromJSON(canvasData, () => {
+    //                     canvas.renderAll();
+    //                 });
+    //             });
+    //         } else {
+    //             // If no fonts to load, just render the canvas
+    //             canvas.loadFromJSON(canvasData, () => {
+    //                 canvas.renderAll();
+    //             });
+    //         }
+    //     } catch (error) {
+    //         console.error("Error parsing canvas data:", error.message);
+    //         console.log("Attempting to fix the canvas data format...");
+
+    //         try {
+    //             // Try fixing common JSON issues and re-parsing
+    //             canvasData = fixCanvasData(canvasData);
+    //             let data = parseCanvasData(canvasData); // Re-parse after fix
+
+    //             // Proceed with the same font loading and canvas rendering logic
+    //             const fonts = new Set();
+    //             data.objects.forEach(obj => {
+    //                 if (obj.type === 'i-text' && obj.fontFamily) {
+    //                     fonts.add(obj.fontFamily);
+    //                 }
+    //             });
+
+    //             if (fonts.size > 0) {
+    //                 loadFonts(Array.from(fonts), () => {
+    //                     canvas.loadFromJSON(canvasData, () => {
+    //                         canvas.renderAll();
+    //                     });
+    //                 });
+    //             } else {
+    //                 canvas.loadFromJSON(canvasData, () => {
+    //                     canvas.renderAll();
+    //                 });
+    //             }
+    //         } catch (fixError) {
+    //             console.error("Failed to fix and parse canvas data:", fixError.message);
+    //         }
+    //     }
+    // }
+
     function loadCanvasData() {
         // Replace 'canvasss' with your actual canvas data
         let canvasData = canvasss;
-
+    
         try {
-            let data = parseCanvasData(canvasData); // Try parsing the canvas data
-
-            // Extract the unique fonts from the canvas data
-            const fonts = new Set();
-            data.objects.forEach(obj => {
-                if (obj.type === 'i-text' && obj.fontFamily) {
-                    fonts.add(obj.fontFamily);
-                }
-            });
-
-            if (fonts.size > 0) {
-                // Load the fonts before rendering the canvas
-                loadFonts(Array.from(fonts), () => {
+            // Parse the canvas data
+            const data = parseCanvasData(canvasData);
+    
+            // Extract unique fonts from the canvas objects
+            const fonts = Array.from(
+                new Set(data.objects
+                    .filter(obj => obj.type === 'i-text' && obj.fontFamily)
+                    .map(obj => obj.fontFamily)
+                )
+            );
+    
+            if (fonts.length > 0) {
+                // Load fonts before rendering the canvas
+                loadFonts(fonts, () => {
                     canvas.loadFromJSON(canvasData, () => {
                         canvas.renderAll();
+                        console.log("Canvas rendered with fonts loaded.");
                     });
                 });
             } else {
-                // If no fonts to load, just render the canvas
+                // Render the canvas if no fonts need to be loaded
                 canvas.loadFromJSON(canvasData, () => {
                     canvas.renderAll();
+                    console.log("Canvas rendered without font loading.");
                 });
             }
         } catch (error) {
             console.error("Error parsing canvas data:", error.message);
-            console.log("Attempting to fix the canvas data format...");
-
+    
+            // Attempt to fix and re-parse the canvas data
             try {
-                // Try fixing common JSON issues and re-parsing
+                console.log("Attempting to fix the canvas data format...");
                 canvasData = fixCanvasData(canvasData);
-                let data = parseCanvasData(canvasData); // Re-parse after fix
-
-                // Proceed with the same font loading and canvas rendering logic
-                const fonts = new Set();
-                data.objects.forEach(obj => {
-                    if (obj.type === 'i-text' && obj.fontFamily) {
-                        fonts.add(obj.fontFamily);
-                    }
-                });
-
-                if (fonts.size > 0) {
-                    loadFonts(Array.from(fonts), () => {
+                const fixedData = parseCanvasData(canvasData);
+    
+                // Reuse the same logic to load fonts and render the canvas
+                const fonts = Array.from(
+                    new Set(fixedData.objects
+                        .filter(obj => obj.type === 'i-text' && obj.fontFamily)
+                        .map(obj => obj.fontFamily)
+                    )
+                );
+    
+                if (fonts.length > 0) {
+                    loadFonts(fonts, () => {
                         canvas.loadFromJSON(canvasData, () => {
                             canvas.renderAll();
+                            console.log("Canvas rendered with fixed data and fonts loaded.");
                         });
                     });
                 } else {
                     canvas.loadFromJSON(canvasData, () => {
                         canvas.renderAll();
+                        console.log("Canvas rendered with fixed data, no fonts loaded.");
                     });
                 }
             } catch (fixError) {
