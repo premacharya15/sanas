@@ -961,11 +961,13 @@ function sanas_get_card_preview_popup() {
       <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
               <div class="modal-body">
+                <div class="card-preview-popup-close">
+                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span class="cross"></span>
+                  </button>
+                </div>
                   <div class="modal-header">
                       <h4 class="modal-title">Card Preview</h4>
-                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                          <span class="cross"></span>
-                      </button>
                   </div>
                   <div class="content-box">
                       <div class="card-preview-content">
