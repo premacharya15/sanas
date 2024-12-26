@@ -6881,6 +6881,11 @@ table.preview-itn tbody tr td{
     padding: 0 !important;
 }
 
+.card-preview-popup .def-popup .modal-title {
+    width: 100%;
+    text-align: center;
+}
+
 .card-preview-popup .card-preview-popup-close {
     position: absolute;
     top: 15px;
