@@ -27,6 +27,9 @@ $('button.usersignin').on('click', function (e) {
                         $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
                         // $('#signinresponseMessagepopup').fadeOut(); // Or use .hide() to just hide it without fading
                     }, 3000); // 5000 milliseconds = 5 seconds
+
+                $('#card-preview-popup').modal('show');
+                $('#card-preivew-popup').attr('data-card-id',cardId);
                 if (data.loggedin) {
                     // Remove the d-none class to show the success popup
                     $('.content-succes').removeClass('d-none');
@@ -34,8 +37,8 @@ $('button.usersignin').on('click', function (e) {
                     $('.search-popup').hide();
 
                     
-                    $('#card-preview-popup').modal('show');
-                    $('#card-preivew-popup').attr('data-card-id',cardId);
+                    // $('#card-preview-popup').modal('show');
+                    // $('#card-preivew-popup').attr('data-card-id',cardId);
 
             }else {
                     // Hide the success popup if login fails
@@ -52,7 +55,8 @@ $('button.usersignin').on('click', function (e) {
     $('form#usersignup').on('submit', function (e) {
         e.preventDefault();
         $('#signupresponseError').hide();
-        var datahref = $('#datahref1').val();
+        // var datahref = $('#datahref1').val();
+        var cardId =$('login-in').attr('data-card-id');
 
         if (!isValidForm()) {
             return false;
@@ -84,12 +88,15 @@ $('button.usersignin').on('click', function (e) {
                     $('.form-boxed .sign-up').addClass('d-none');
                     $('.account-content-succes').removeClass('d-none');
                      // setTimeout(function() {
+
+                    $('#card-preview-popup').modal('show');
+                    $('#card-preview-popup').attr('data-card-id',cardId);
                 
-                     if (datahref) {
-                        document.location.href = datahref;
-                    } else {
-                        document.location.href = data.redirect_url;
-                    }
+                    //  if (datahref) {
+                    //     document.location.href = datahref;
+                    // } else {
+                    //     document.location.href = data.redirect_url;
+                    // }
                 // }, 3000);
                     
                 } else {
