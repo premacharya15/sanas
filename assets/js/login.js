@@ -151,15 +151,15 @@ $('button.usersignin').on('click', function (e) {
             },
             success: function (data) {
                 // show success popup
-                if (data.register) {
-                    $.ajax({
-                        type: 'POST',
-                        url: ajax_login_object.ajaxurl,
-                        data: {
-                            'action': 'sanas_send_signup_email',
-                            'email': $('#signupEmail').val()
-                        },
-                    });
+                // if (data.register) {
+                //     $.ajax({
+                //         type: 'POST',
+                //         url: ajax_login_object.ajaxurl,
+                //         data: {
+                //             'action': 'sanas_send_signup_email',
+                //             'email': $('#signupEmail').val()
+                //         },
+                //     });
 
                     $('#signinresponseMessage').html(data.message).show();
                     $('#signinresponseMessagepopup').html(data.message).show();
@@ -228,10 +228,10 @@ $('button.usersignin').on('click', function (e) {
                         },3000);
                     }
                     
-                } else {
-                    $('#signupresponseError').html(data.message).show();
-                    // .delay(3000).fadeOut();
-                }
+                // } else {
+                //     $('#signupresponseError').html(data.message).show();
+                //     // .delay(3000).fadeOut();
+                // }
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log('AJAX Error: ' + textStatus, errorThrown);
