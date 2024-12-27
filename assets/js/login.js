@@ -44,6 +44,7 @@ $('button.usersignin').on('click', function (e) {
                         $('#card-preview-popup').modal('show');
                     },1700);
                 }else {
+                    console.log('direct login');
                     setTimeout(function() {
                         $('#signinresponseMessage').fadeOut();
                         $('#signinresponseMessagepopup').fadeOut();
