@@ -945,7 +945,7 @@ jQuery(document).ready(function ($) {
             var forntImg = jQuery(this).parents('.card-preview .front img').attr('src');
             var backImg = jQuery(this).parents('.card-preview .back img').attr('src');
             var cardTitle = jQuery(this).parents('.card-preview .card-box-title h4').text();
-            var bgcolor = jQuery(this).parents('.card-preview .inner-box a').attr('data-bg-color');
+            var bgcolor = jQuery(this).parents('.card-preview').attr('data-bg-color');
 
             jQuery('#popup-card-id').val(cardId);
             jQuery('#popup-front-img').val(forntImg);
