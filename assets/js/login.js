@@ -6,7 +6,12 @@ $('button.usersignin').on('click', function (e) {
     var ajaxValue = $('#ajaxvalue').val();
     // var datahref = $('#datahref').val();
     var cardId = $('#popup-card-id').val();
-    console.log('cardId', cardId);
+    var forntImg = $('#front-img').val();
+    var backImg = $('#back-img').val();
+    var cardTitle = $('#card-title').val();
+    var bgcolor = $('#bgcolor').val();
+
+    console.log('cardId', cardId, forntImg, backImg, cardTitle, bgcolor);
     if (ajaxValue == '0') {
         var currentPageURL = window.location.href;
         $.ajax({
@@ -30,7 +35,7 @@ $('button.usersignin').on('click', function (e) {
                 //     $('.search-popup').hide();
                 // },1000);
 
-                console.log('cardId success', cardId);
+                console.log('cardId success', cardId, forntImg, backImg, cardTitle, bgcolor);
                 if (cardId) {
                     setTimeout(function() {
                         $('#signinresponseMessage').fadeOut();
@@ -38,9 +43,25 @@ $('button.usersignin').on('click', function (e) {
                         $('.search-popup').hide();
                     },1500);
 
+                    $('#card-preview-popup').attr('data-card-id', cardId);
+                    if (frontImage) {
+                        $('#cover-preview').html(`
+                            <div class="preview-image" style="aspect-ratio: 1;">
+                                <img src="${frontImage}" alt="Front design" class="img-fluid flipper animated" style="width: auto;">
+                            </div>
+                        `);
+                    }
+                    
+                    if (backImage) {
+                        $('#detail-preview').html(`
+                            <div class="preview-image" style="aspect-ratio: 1;">
+                                <img src="${backImage}" alt="Back design" class="img-fluid flipper animated" style="width: auto;">
+                            </div>
+                        `);
+                    }
+                    
                     setTimeout(function(){
                         console.log('cardId data-card-id', cardId);
-                        $('#card-preview-popup').attr('data-card-id', cardId);
                         $('#card-preview-popup').modal('show');
                     },1700);
                 }else {
