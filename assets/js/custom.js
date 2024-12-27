@@ -1092,8 +1092,9 @@ jQuery(document).ready(function($) {
     });
 
     $('.card-preview-popup-close').click(function(){
-        showPreloader('Loading...');
-        location.reload();
+        if(cardId == '' || cardId == null){
+            location.reload();
+        }
     })
 
     $('.edit-design').click(function() {
