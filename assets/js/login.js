@@ -4,12 +4,7 @@ jQuery(document).ready(function ($) {
 $('button.usersignin').on('click', function (e) {
     e.preventDefault();
     var ajaxValue = $('#ajaxvalue').val();
-    // var datahref = $('#datahref').val();
-    var cardId = $('.card-preview').attr('data-card-id');
-
-
-    console.log('cardId 1', cardId);
-
+    var datahref = $('#datahref').val();
     if (ajaxValue == '0') {
         var currentPageURL = window.location.href;
         $.ajax({
@@ -30,37 +25,20 @@ $('button.usersignin').on('click', function (e) {
                         $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
                         $('#signinresponseMessagepopup').fadeOut(); // Or use .hide() to just hide it without fading
                     }, 3000); // 5000 milliseconds = 5 seconds
-                
-                    console.log('cardId 2', cardId);
-                    setTimeout(function() {
-                        $('.form-boxed .login').hide();
-                        $('#popup-card-id').val(cardId);
-                        $('#card-preivew-popup').attr('data-card-id',cardId);
-                        $('#card-preview-popup').modal('show');
-                    }, 3000);
-
                 if (data.loggedin) {
                     // Remove the d-none class to show the success popup
                     $('.content-succes').removeClass('d-none');
                     $('.form-boxed .login').addClass('d-none');
 
-                //     if (cardId){
-                //         console.log('cardId', cardId);
-                //         $('#card-preivew-popup').attr('data-card-id',cardId);
-                //         $('#card-preview-popup').modal('show');
-                //     }
-                //     else {
-
-                //        setTimeout(function() {
-                //         if (datahref) {
-                //             window.location.href = datahref;
-                //         } else {
-                //             window.location.reload();
-                //         }
-                //         }, 1000); 
-                // } 
-            }
-            else {
+                       setTimeout(function() {
+                        if (datahref) {
+                            window.location.href = datahref;
+                        } else {
+                            window.location.reload();
+                        }
+                        }, 1000); 
+                } 
+                else {
                     // Hide the success popup if login fails
                     $('.content-succes').addClass('d-none');
                 }
