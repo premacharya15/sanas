@@ -129,6 +129,11 @@ $('button.usersignin').on('click', function (e) {
         e.preventDefault();
         $('#signupresponseError').hide();
         var datahref = $('#datahref1').val();
+        var cardpopupId = $('#popup-card-id').val();
+        var forntImg = $('#popup-front-img').val();
+        var backImg = $('#popup-back-img').val();
+        var cardTitle = $('#popup-card-title').val();
+        var bgcolor = $('#popup-bgcolor-code').val();
 
         if (!isValidForm()) {
             return false;
@@ -157,16 +162,76 @@ $('button.usersignin').on('click', function (e) {
                             'email': $('#signupEmail').val()
                         },
                     });
-                    $('.form-boxed .sign-up').addClass('d-none');
-                    $('.account-content-succes').removeClass('d-none');
-                     // setTimeout(function() {
-                
-                     if (datahref) {
-                        document.location.href = datahref;
-                    } else {
-                        document.location.href = data.redirect_url;
+
+                    $('#signupresponseMessage').html(data.message).show();
+                    $('#signinresponseMessagepopup').html(data.message).show();
+                    // $('.form-boxed .sign-up').addClass('d-none');
+                    // $('.account-content-succes').removeClass('d-none');
+                    
+                    if (cardpopupId) {
+                        setTimeout(function() {
+                            $('#signupresponseMessage').fadeOut();
+                            $('#signinresponseMessagepopup').fadeOut();
+                            $('.search-popup').hide();
+                        },1500);
+    
+                        $('#card-preview-popup').attr('data-card-id', cardpopupId);
+    
+                        setTimeout(function(){
+                            $('#card-preview-popup').modal('show');
+                            $('#card-preview-popup .modal-title').text(cardTitle || 'Card Preview');
+    
+                            $('.preview-container').attr('style', `background: ${bgcolor};`);
+            
+                            if (forntImg) {
+                                $('#cover-preview').html(`
+                                    <div class="preview-image" style="aspect-ratio: 1;">
+                                        <img src="${forntImg}" alt="Front design" class="img-fluid flipper animated" style="width: auto;">
+                                    </div>
+                                `);
+                            }
+            
+                            if (backImg) {
+                                $('#detail-preview').html(`
+                                    <div class="preview-image" style="aspect-ratio: 1;">
+                                        <img src="${backImg}" alt="Back design" class="img-fluid flipper animated" style="width: auto;">
+                                    </div>
+                                `);
+                            }
+    
+                            $('.preview-tab').click(function() {
+                                $('.preview-tab').removeClass('active');
+                                $(this).addClass('active');
+                                
+                                var tab = $(this).attr('data-tab');
+                                if (tab === 'detail') {
+                                    $('.preview-container .flipper').addClass('flipped');
+                                } else {
+                                    $('.preview-container .flipper').removeClass('flipped');
+                                }
+                            });
+    
+                            $('.card-preview-popup-close').click(function(){
+                                showPreloader("Saving RSVP");
+                                setTimeout(function(){
+                                    location.reload();
+                                }, 1000);
+                            })
+    
+                            $('.edit-design').click(function() {
+                                var cardId = $('#card-preview-popup').attr('data-card-id');
+                                window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
+                            });
+                        }, 1700);
+                    }else {
+                        console.log('direct login');
+                        setTimeout(function() {
+                            $('#signinresponseMessage').fadeOut();
+                            $('#signinresponseMessagepopup').fadeOut();
+                            $('.search-popup').hide();
+                            window.location.reload();
+                        },3000);
                     }
-                // }, 3000);
                     
                 } else {
                     $('#signupresponseError').html(data.message).show();
