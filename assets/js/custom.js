@@ -1092,9 +1092,7 @@ jQuery(document).ready(function($) {
     });
 
     $('.card-preview-popup-close').click(function(){
-        if(cardId == '' || cardId == null){
         location.reload();
-        }
     })
 
     $('.edit-design').click(function() {
