@@ -5,7 +5,8 @@ $('button.usersignin').on('click', function (e) {
     e.preventDefault();
     var ajaxValue = $('#ajaxvalue').val();
     // var datahref = $('#datahref').val();
-    var cardId =$('login-in').attr('data-card-id');
+    var cardId = $('.card-preview').attr('data-card-id');
+
 
     console.log('cardId 1', cardId);
 
