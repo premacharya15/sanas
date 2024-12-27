@@ -27,7 +27,9 @@ $('button.usersignin').on('click', function (e) {
                         $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
                         $('#signinresponseMessagepopup').fadeOut(); // Or use .hide() to just hide it without fading
                     }, 3000); // 5000 milliseconds = 5 seconds
-                    $('.search-popup').hide();
+                    $('.search-popup').hide();  
+
+                    $('#card-preview-popup').modal('show');
 
                 if (data.loggedin) {
                     // Remove the d-none class to show the success popup
