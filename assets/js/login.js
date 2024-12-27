@@ -84,6 +84,13 @@ $('button.usersignin').on('click', function (e) {
                             }
                         });
 
+                        $('.card-preview-popup-close').click(function(){
+                            showPreloader("Saving RSVP");
+                            setTimeout(function(){
+                                location.reload();
+                            }, 1000);
+                        })
+
                         $('.edit-design').click(function() {
                             var cardId = $('#card-preview-popup').attr('data-card-id');
                             window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;

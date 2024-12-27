@@ -1091,12 +1091,6 @@ jQuery(document).ready(function($) {
         }
     });
 
-    $('.card-preview-popup-close').click(function(){
-        if(cardpopupId){
-            location.reload();
-        }
-    })
-
     $('.edit-design').click(function() {
         var cardId = $('#card-preview-popup').attr('data-card-id');
         window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
