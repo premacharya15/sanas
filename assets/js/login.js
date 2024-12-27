@@ -26,13 +26,14 @@ $('button.usersignin').on('click', function (e) {
                  setTimeout(function() {
                         $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
                         $('#signinresponseMessagepopup').fadeOut(); // Or use .hide() to just hide it without fading
-                        $('.search-popup').hide();
                     }, 3000); // 5000 milliseconds = 5 seconds
+                    $('.search-popup').hide();
 
                 if (data.loggedin) {
                     // Remove the d-none class to show the success popup
                     $('.content-succes').removeClass('d-none');
                     $('.form-boxed .login').addClass('d-none');
+                    
 
                     //    setTimeout(function() {
                     //     if (datahref) {
