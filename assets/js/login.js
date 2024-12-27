@@ -78,7 +78,7 @@ $('button.usersignin').on('click', function (e) {
                         });
 
                         $('.card-preview-popup-close').click(function(){
-                            showPreloader("Saving RSVP");
+                            showPreloader("loading...");
                             setTimeout(function(){
                                 location.reload();
                             }, 1000);
@@ -212,7 +212,7 @@ $('button.usersignin').on('click', function (e) {
                             });
     
                             $('.card-preview-popup-close').click(function(){
-                                showPreloader("Saving RSVP");
+                                showPreloader("loading...");
                                 setTimeout(function(){
                                     location.reload();
                                 }, 1000);
