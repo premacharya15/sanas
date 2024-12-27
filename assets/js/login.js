@@ -32,9 +32,11 @@ $('button.usersignin').on('click', function (e) {
 
                 console.log('cardId success', cardId);
                 if (cardId) {
-                    console.log('cardId data-card-id', cardId);
-                    $('#card-preview-popup').attr('data-card-id', cardId);
-                    $('#card-preview-popup').modal('show')
+                    setTimeout(function(){
+                        console.log('cardId data-card-id', cardId);
+                        $('#card-preview-popup').attr('data-card-id', cardId);
+                        $('#card-preview-popup').modal('show');
+                    },3100);
                 }else {
                     window.location.reload();
                 }
