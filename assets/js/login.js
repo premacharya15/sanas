@@ -28,7 +28,7 @@ $('button.usersignin').on('click', function (e) {
                     $('#signinresponseMessage').fadeOut();
                     $('#signinresponseMessagepopup').fadeOut();
                     $('.search-popup').hide();
-                },3000);
+                },2000);
 
                 console.log('cardId success', cardId);
                 if (cardId) {
@@ -36,7 +36,7 @@ $('button.usersignin').on('click', function (e) {
                         console.log('cardId data-card-id', cardId);
                         $('#card-preview-popup').attr('data-card-id', cardId);
                         $('#card-preview-popup').modal('show');
-                    },3100);
+                    },2100);
                 }else {
                     window.location.reload();
                 }
