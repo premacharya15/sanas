@@ -27,17 +27,26 @@ $('button.usersignin').on('click', function (e) {
                         $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
                         $('#signinresponseMessagepopup').fadeOut(); // Or use .hide() to just hide it without fading
                     }, 3000); // 5000 milliseconds = 5 seconds
-
+                if (data.loggedin) {
+                    // Remove the d-none class to show the success popup
                     $('.content-succes').removeClass('d-none');
                     $('.form-boxed .login').addClass('d-none');
 
-                    
-                    $('#card-preivew-popup').attr('data-card-id',cardId);
-                    $('#card-preview-popup').modal('show');
-                if (data.loggedin) {
-                    // Remove the d-none class to show the success popup
-                    
-                    
+                    if (cardId){
+                        console.log('cardId', cardId);
+                        $('#card-preivew-popup').attr('data-card-id',cardId);
+                        $('#card-preview-popup').modal('show');
+                    }
+                //     else {
+
+                //        setTimeout(function() {
+                //         if (datahref) {
+                //             window.location.href = datahref;
+                //         } else {
+                //             window.location.reload();
+                //         }
+                //         }, 1000); 
+                // } 
             }else {
                     // Hide the success popup if login fails
                     $('.content-succes').addClass('d-none');
