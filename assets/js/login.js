@@ -90,7 +90,6 @@ $('button.usersignin').on('click', function (e) {
                         });
                     }, 1700);
                 }else {
-                    console.log('direct login');
                     setTimeout(function() {
                         $('#signinresponseMessage').fadeOut();
                         $('#signinresponseMessagepopup').fadeOut();
@@ -154,6 +153,7 @@ $('button.usersignin').on('click', function (e) {
                 // show success popup
                 if (data.register) {
                     $('#signupresponseMessage').html(data.message).show();
+                    $('#signinresponseMessagepopup').html(data.message).show();
                     $.ajax({
                         type: 'POST',
                         url: ajax_login_object.ajaxurl,
@@ -162,18 +162,13 @@ $('button.usersignin').on('click', function (e) {
                             'email': $('#signupEmail').val()
                         },
                     });
-
-                    $('#signupresponseMessage').html(data.message).show();
-                    $('#signinresponseMessagepopup').html(data.message).show();
-                    // $('.form-boxed .sign-up').addClass('d-none');
-                    // $('.account-content-succes').removeClass('d-none');
                     
                     if (cardpopupId) {
                         setTimeout(function() {
                             $('#signupresponseMessage').fadeOut();
                             $('#signinresponseMessagepopup').fadeOut();
                             $('.search-popup').hide();
-                        },1500);
+                        },2000);
     
                         $('#card-preview-popup').attr('data-card-id', cardpopupId);
     
@@ -222,11 +217,10 @@ $('button.usersignin').on('click', function (e) {
                                 var cardId = $('#card-preview-popup').attr('data-card-id');
                                 window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
                             });
-                        }, 1700);
+                        }, 2100);
                     }else {
-                        console.log('direct login');
                         setTimeout(function() {
-                            $('#signinresponseMessage').fadeOut();
+                            $('#signupresponseMessage').fadeOut();
                             $('#signinresponseMessagepopup').fadeOut();
                             $('.search-popup').hide();
                             window.location.reload();
