@@ -204,11 +204,11 @@ if (!function_exists('sanas_get_login_popup')) {
                      <div id="signupPasswordError" class="error-message">Enter Password</div>   
                   </div>
                   <input type="hidden" id="datahref1">
-                  <input type="hidden" id="popup-card-id">
-                  <input type="hidden" id="popup-front-img">
-                  <input type="hidden" id="popup-back-img">
-                  <input type="hidden" id="popup-card-title">
-                  <input type="hidden" id="popup-bgcolor-code">
+                  <input type="hidden" id="popup-card-id1">
+                  <input type="hidden" id="popup-front-img1">
+                  <input type="hidden" id="popup-back-img1">
+                  <input type="hidden" id="popup-card-title1">
+                  <input type="hidden" id="popup-bgcolor-code1">
                   <div class="form-group">
                     <button class="btn btn-secondary btn-block usersignup" type="submit" name="submit-form">
                          <?php echo esc_html('Create an account'); ?>

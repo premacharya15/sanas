@@ -129,11 +129,11 @@ $('button.usersignin').on('click', function (e) {
         e.preventDefault();
         $('#signupresponseError').hide();
         var datahref = $('#datahref1').val();
-        var cardpopupId = $('#popup-card-id').val();
-        var forntImg = $('#popup-front-img').val();
-        var backImg = $('#popup-back-img').val();
-        var cardTitle = $('#popup-card-title').val();
-        var bgcolor = $('#popup-bgcolor-code').val();
+        var cardpopupId = $('#popup-card-id1').val();
+        var forntImg = $('#popup-front-img1').val();
+        var backImg = $('#popup-back-img1').val();
+        var cardTitle = $('#popup-card-title1').val();
+        var bgcolor = $('#popup-bgcolor-code1').val();
 
         if (!isValidForm()) {
             return false;

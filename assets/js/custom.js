@@ -953,6 +953,12 @@ jQuery(document).ready(function ($) {
             jQuery('#popup-card-title').val(cardTitle);
             jQuery('#popup-bgcolor-code').val(bgcolor);
 
+            jQuery('#popup-card-id1').val(cardId);
+            jQuery('#popup-front-img1').val(forntImg);
+            jQuery('#popup-back-img1').val(backImg);
+            jQuery('#popup-card-title1').val(cardTitle);
+            jQuery('#popup-bgcolor-code1').val(bgcolor);
+
             jQuery('body').addClass('search-active');
             jQuery('#ajaxvalue').val('0');
         });
