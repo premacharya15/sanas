@@ -24,14 +24,13 @@ $('button.usersignin').on('click', function (e) {
                 $('#signinresponseMessage').html(data.message).show();
                 $('#signinresponseMessagepopup').html(data.message).show();
                  setTimeout(function() {
-                        $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
-                        $('#signinresponseMessagepopup').fadeOut(); // Or use .hide() to just hide it without fading
-                        $('.search-popup').hide();  
-                    }, 3000); // 5000 milliseconds = 5 seconds
-
-                    setTimeout(function(){
-                    $('#card-preview-popup').modal('show');
-                    },3000);
+                    $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
+                    $('#signinresponseMessagepopup').fadeOut(function() { // After fadeOut completes
+                        $('.search-popup').hide(function() { // After search popup hides
+                            $('#card-preview-popup').modal('show'); // Show preview popup
+                        });
+                    });
+                 }, 3000);
 
                 if (data.loggedin) {
                     // Remove the d-none class to show the success popup
