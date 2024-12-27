@@ -33,6 +33,10 @@ $('button.usersignin').on('click', function (e) {
                      $('#card-preview-popup').modal('show');
                  },3100);
 
+                 if(!cardId){
+                    window.location.reload();
+                 }
+
                 if (data.loggedin) {
                     // Remove the d-none class to show the success popup
                     $('.content-succes').removeClass('d-none');
