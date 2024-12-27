@@ -11,11 +11,6 @@ $('button.usersignin').on('click', function (e) {
     var cardTitle = $('#popup-card-title').val();
     var bgcolor = $('#popup-bgcolor-code').val();
 
-    console.log('cardpopupId', cardpopupId);
-    console.log('forntImg', forntImg);
-    console.log('backImg', backImg);
-    console.log('cardTitle', cardTitle);
-    console.log('bgcolor', bgcolor);
     if (ajaxValue == '0') {
         var currentPageURL = window.location.href;
         $.ajax({
@@ -39,7 +34,6 @@ $('button.usersignin').on('click', function (e) {
                 //     $('.search-popup').hide();
                 // },1000);
 
-                console.log('cardpopupId success', cardpopupId, forntImg, backImg, cardTitle, bgcolor);
                 if (cardpopupId) {
                     setTimeout(function() {
                         $('#signinresponseMessage').fadeOut();
@@ -50,7 +44,6 @@ $('button.usersignin').on('click', function (e) {
                     $('#card-preview-popup').attr('data-card-id', cardpopupId);
 
                     setTimeout(function(){
-                        console.log('cardId data-card-id', cardpopupId);
                         $('#card-preview-popup').modal('show');
                         $('#card-preview-popup .modal-title').text(cardTitle || 'Card Preview');
 
