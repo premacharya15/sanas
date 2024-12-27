@@ -26,17 +26,24 @@ $('button.usersignin').on('click', function (e) {
                  setTimeout(function() {
                         $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
                         $('#signinresponseMessagepopup').fadeOut(); // Or use .hide() to just hide it without fading
+                        $('.content-succes').removeClass('d-none');
+                        $('.form-boxed .login').addClass('d-none');
                     }, 3000); // 5000 milliseconds = 5 seconds
-                if (data.loggedin) {
-                    // Remove the d-none class to show the success popup
-                    $('.content-succes').removeClass('d-none');
-                    $('.form-boxed .login').addClass('d-none');
+                
+                    console.log('cardId', cardId);
+                    $('#card-preivew-popup').attr('data-card-id',cardId);
+                    $('#card-preview-popup').modal('show');
 
-                    if (cardId){
-                        console.log('cardId', cardId);
-                        $('#card-preivew-popup').attr('data-card-id',cardId);
-                        $('#card-preview-popup').modal('show');
-                    }
+                // if (data.loggedin) {
+                //     // Remove the d-none class to show the success popup
+                //     $('.content-succes').removeClass('d-none');
+                //     $('.form-boxed .login').addClass('d-none');
+
+                //     if (cardId){
+                //         console.log('cardId', cardId);
+                //         $('#card-preivew-popup').attr('data-card-id',cardId);
+                //         $('#card-preview-popup').modal('show');
+                //     }
                 //     else {
 
                 //        setTimeout(function() {
@@ -47,10 +54,11 @@ $('button.usersignin').on('click', function (e) {
                 //         }
                 //         }, 1000); 
                 // } 
-            }else {
-                    // Hide the success popup if login fails
-                    $('.content-succes').addClass('d-none');
-                }
+            // }
+            // else {
+            //         // Hide the success popup if login fails
+            //         $('.content-succes').addClass('d-none');
+            //     }
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log('AJAX Error: ' + textStatus, errorThrown);
