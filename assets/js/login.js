@@ -6,6 +6,7 @@ $('button.usersignin').on('click', function (e) {
     var ajaxValue = $('#ajaxvalue').val();
     // var datahref = $('#datahref').val();
     var cardId = $('#popup-card-id').val();
+    console.log('cardId', cardId);
     if (ajaxValue == '0') {
         var currentPageURL = window.location.href;
         $.ajax({
@@ -29,8 +30,10 @@ $('button.usersignin').on('click', function (e) {
                     $('.search-popup').hide();
                 },3000);
 
+                console.log('cardId success', cardId);
                 if (cardId) {
                     setTimeout(function(){
+                        console.log('cardId data-card-id', cardId);
                         $('#card-preview-popup').attr('data-card-id', cardId);
                         $('#card-preview-popup').modal('show');
                     },3100);
