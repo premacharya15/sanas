@@ -1092,7 +1092,7 @@ jQuery(document).ready(function($) {
     });
 
     $('.card-preview-popup-close').click(function(){
-        if(cardId == '' || cardId == null){
+        if(cardpopupId){
             location.reload();
         }
     })
