@@ -35,7 +35,8 @@ $('button.usersignin').on('click', function (e) {
                     window.location.reload();
                 }else {
                     setTimeout(function(){
-                         $('#card-preview-popup').modal('show');
+                        $('.card-preview-popup').attr('data-card-id', cardId);
+                        $('#card-preview-popup').modal('show');
                      },3100);
                 }
                 
