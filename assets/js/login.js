@@ -151,8 +151,6 @@ $('button.usersignin').on('click', function (e) {
             },
             success: function (data) {
                 // show success popup
-                $('#signinresponseMessage').html(data.message).show();
-                $('#signinresponseMessagepopup').html(data.message).show();
                 if (data.register) {
                     $.ajax({
                         type: 'POST',
@@ -162,6 +160,9 @@ $('button.usersignin').on('click', function (e) {
                             'email': $('#signupEmail').val()
                         },
                     });
+
+                    $('#signinresponseMessage').html(data.message).show();
+                    $('#signinresponseMessagepopup').html(data.message).show();
                     
                     if (cardpopupId) {
                         setTimeout(function() {
