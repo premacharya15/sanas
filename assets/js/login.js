@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
 $('button.usersignin').on('click', function (e) {
     e.preventDefault();
     var ajaxValue = $('#ajaxvalue').val();
-    var datahref = $('#datahref').val();
+    // var datahref = $('#datahref').val();
     var cardId =$('login-in').attr('data-card-id');
 
     if (ajaxValue == '0') {
@@ -22,30 +22,21 @@ $('button.usersignin').on('click', function (e) {
             },
             success: function (data) {
                 $('#signinresponseMessage').html(data.message).show();
-                $('#signinresponseMessagepopup').html(data.message).show();
+                // $('#signinresponseMessagepopup').html(data.message).show();
                  setTimeout(function() {
                         $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
-                        $('#signinresponseMessagepopup').fadeOut(); // Or use .hide() to just hide it without fading
+                        // $('#signinresponseMessagepopup').fadeOut(); // Or use .hide() to just hide it without fading
                     }, 3000); // 5000 milliseconds = 5 seconds
                 if (data.loggedin) {
                     // Remove the d-none class to show the success popup
                     $('.content-succes').removeClass('d-none');
                     $('.form-boxed .login').addClass('d-none');
+                    $('.search-popup').hide();
 
-                    if (cardId){
-                        $('#card-preivew-popup').attr('data-card-id',cardId);
-                        $('#card-preview-popup').modal('show');
-                    }
-                //     else {
+                    
+                    $('#card-preview-popup').modal('show');
+                    $('#card-preivew-popup').attr('data-card-id',cardId);
 
-                //        setTimeout(function() {
-                //         if (datahref) {
-                //             window.location.href = datahref;
-                //         } else {
-                //             window.location.reload();
-                //         }
-                //         }, 1000); 
-                // } 
             }else {
                     // Hide the success popup if login fails
                     $('.content-succes').addClass('d-none');
