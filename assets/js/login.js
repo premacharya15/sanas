@@ -21,6 +21,12 @@ $('button.usersignin').on('click', function (e) {
                 'security': $('#usersigninsecurity').val()
             },
             success: function (data) {
+                
+                console.log('cardId success', cardId);
+                if (!cardId || cardId === '') {
+                    window.location.reload();
+                }
+
                 $('#signinresponseMessage').html(data.message).show();
                 $('#signinresponseMessagepopup').html(data.message).show();
                  setTimeout(function() {
@@ -33,9 +39,6 @@ $('button.usersignin').on('click', function (e) {
                      $('#card-preview-popup').modal('show');
                  },3100);
 
-                 if(!cardId){
-                    window.location.reload();
-                 }
 
                 if (data.loggedin) {
                     // Remove the d-none class to show the success popup
