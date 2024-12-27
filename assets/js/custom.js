@@ -942,10 +942,10 @@ jQuery(document).ready(function ($) {
             jQuery('#datahref1').val(datahref);
 
             var cardId =jQuery(this).parents('.card-preview').attr('data-card-id');
-            var forntImg = jQuery(this).parents('.card-preview .front img').attr('src');
-            var backImg = jQuery(this).parents('.card-preview .back img').attr('src');
-            var cardTitle = jQuery(this).parents('.card-preview .card-box-title h4').text();
-            var bgcolor = jQuery(this).parents('.card-preview .inner-box a').attr('data-bg-color');
+            var forntImg = jQuery(this).parents('.card-preview').attr('data-front-img');
+            var backImg = jQuery(this).parents('.card-preview').attr('date-back-img');
+            var cardTitle = jQuery(this).parents('.card-preview').attr('data-card-title');
+            var bgcolor = jQuery(this).parents('.card-preview').attr('data-bg-color');
 
             jQuery('#popup-card-id').val(cardId);
             jQuery('#popup-front-img').val(forntImg);
