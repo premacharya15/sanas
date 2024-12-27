@@ -33,6 +33,8 @@ $('button.usersignin').on('click', function (e) {
                 
                     console.log('cardId 2', cardId);
                     setTimeout(function() {
+                        $('.form-boxed .login').hide();
+                        $('#popup-card-id').val(cardId);
                         $('#card-preivew-popup').attr('data-card-id',cardId);
                         $('#card-preview-popup').modal('show');
                     }, 3000);
