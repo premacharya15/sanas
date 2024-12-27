@@ -24,14 +24,10 @@ $('button.usersignin').on('click', function (e) {
                 $('#signinresponseMessage').html(data.message).show();
                 $('#signinresponseMessagepopup').html(data.message).show();
                  setTimeout(function() {
-                    $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
-                    $('#signinresponseMessagepopup').fadeOut(function() { // After fadeOut completes
-                        $('.search-popup').hide(function() { // After search popup hides
-                            setTimeout(function(){
-                            $('#card-preview-popup').modal('show');
-                            },5000);
-                        });
-                    });
+                    $('#signinresponseMessage').fadeOut();
+                    $('#signinresponseMessagepopup').fadeOut();
+                    $('.search-popup').hide();
+                    $('#card-preview-popup').modal('show');
                  }, 3000);
 
                 if (data.loggedin) {
