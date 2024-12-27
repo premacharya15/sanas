@@ -56,18 +56,18 @@ $('button.usersignin').on('click', function (e) {
 
                         $('.preview-container').attr('style', `background: ${bgcolor};`);
         
-                        if (frontImage) {
+                        if (forntImg) {
                             $('#cover-preview').html(`
                                 <div class="preview-image" style="aspect-ratio: 1;">
-                                    <img src="${frontImage}" alt="Front design" class="img-fluid flipper animated" style="width: auto;">
+                                    <img src="${forntImg}" alt="Front design" class="img-fluid flipper animated" style="width: auto;">
                                 </div>
                             `);
                         }
         
-                        if (backImage) {
+                        if (backImg) {
                             $('#detail-preview').html(`
                                 <div class="preview-image" style="aspect-ratio: 1;">
-                                    <img src="${backImage}" alt="Back design" class="img-fluid flipper animated" style="width: auto;">
+                                    <img src="${backImg}" alt="Back design" class="img-fluid flipper animated" style="width: auto;">
                                 </div>
                             `);
                         }
