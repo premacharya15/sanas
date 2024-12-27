@@ -943,7 +943,7 @@ jQuery(document).ready(function ($) {
 
             var cardId =jQuery(this).parents('.card-preview').attr('data-card-id');
             var forntImg = jQuery(this).parents('.card-preview').attr('data-front-img');
-            var backImg = jQuery(this).parents('.card-preview').attr('date-back-img');
+            var backImg = jQuery(this).parents('.card-preview').attr('data-back-img');
             var cardTitle = jQuery(this).parents('.card-preview').attr('data-card-title');
             var bgcolor = jQuery(this).parents('.card-preview').attr('data-bg-color');
 
