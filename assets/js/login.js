@@ -32,11 +32,9 @@ $('button.usersignin').on('click', function (e) {
 
                 console.log('cardId success', cardId);
                 if (cardId) {
-                    setTimeout(function(){
-                        $('#card-preview-popup').attr('data-card-id', cardId);
-                        console.log('cardId data-card-id', cardId);
-                        $('#card-preview-popup').modal('show');
-                    },3100);
+                    console.log('cardId data-card-id', cardId);
+                    $('#card-preview-popup').attr('data-card-id', cardId);
+                    $('#card-preview-popup').modal('show')
                 }else {
                     window.location.reload();
                 }
