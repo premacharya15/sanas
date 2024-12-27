@@ -35,16 +35,17 @@ $('button.usersignin').on('click', function (e) {
                     if (cardId){
                         $('#card-preivew-popup').attr('data-card-id',cardId);
                         $('#card-preview-popup').modal('show');
-                    }else {
+                    }
+                //     else {
 
-                       setTimeout(function() {
-                        if (datahref) {
-                            window.location.href = datahref;
-                        } else {
-                            window.location.reload();
-                        }
-                        }, 1000); 
-                } 
+                //        setTimeout(function() {
+                //         if (datahref) {
+                //             window.location.href = datahref;
+                //         } else {
+                //             window.location.reload();
+                //         }
+                //         }, 1000); 
+                // } 
             }else {
                     // Hide the success popup if login fails
                     $('.content-succes').addClass('d-none');
