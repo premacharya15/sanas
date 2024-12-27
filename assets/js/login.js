@@ -9,7 +9,7 @@ $('button.usersignin').on('click', function (e) {
     var forntImg = $('#popup-front-img').val();
     var backImg = $('#popup-back-img').val();
     var cardTitle = $('#popup-card-title').val();
-    var bgcolor = $('#popup-bgcolor').val();
+    var bgcolor = $('#popup-bgcolor-code').val();
 
     console.log('cardId', cardId);
     console.log('forntImg', forntImg);

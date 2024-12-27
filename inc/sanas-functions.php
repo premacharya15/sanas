@@ -112,7 +112,7 @@ if (!function_exists('sanas_get_login_popup')) {
                 <input type="hidden" id="popup-front-img">
                 <input type="hidden" id="popup-back-img">
                 <input type="hidden" id="popup-card-title">
-                <input type="hidden" id="popup-bgcolor">
+                <input type="hidden" id="popup-bgcolor-code">
                 <div class="form-group remember">
                     <input type="checkbox" id="signInRememberMe">
                     <label for="signInRememberMe"><?php esc_html_e('Remember Me','sanas') ?></label>
