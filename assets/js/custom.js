@@ -1091,17 +1091,11 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // Function to show the preloader
-    function showPreloader(mgm) {
-    jQuery('#preloder-overlay').fadeIn(100);
-    jQuery('.loading-message').html(mgm)
-    jQuery('#preloder-overlay').addClass('d-block'); // Show with fade effect
-    jQuery('#preloder-overlay').removeClass('d-none'); // Show with fade effect
-    }
-
     $('.card-preview-popup-close').click(function(){
-        showPreloader("Loading...");
-        location.reload();
+        showPreloader('Loading...');
+        setTimeout(function(){
+            location.reload();
+        },1000);
     })
 
     $('.edit-design').click(function() {
