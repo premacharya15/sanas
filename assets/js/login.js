@@ -7,6 +7,8 @@ $('button.usersignin').on('click', function (e) {
     // var datahref = $('#datahref').val();
     var cardId =$('login-in').attr('data-card-id');
 
+    console.log('cardId 1', cardId);
+
     if (ajaxValue == '0') {
         var currentPageURL = window.location.href;
         $.ajax({
@@ -26,18 +28,18 @@ $('button.usersignin').on('click', function (e) {
                  setTimeout(function() {
                         $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
                         $('#signinresponseMessagepopup').fadeOut(); // Or use .hide() to just hide it without fading
-                        $('.content-succes').removeClass('d-none');
-                        $('.form-boxed .login').addClass('d-none');
                     }, 3000); // 5000 milliseconds = 5 seconds
                 
-                    console.log('cardId', cardId);
-                    $('#card-preivew-popup').attr('data-card-id',cardId);
-                    $('#card-preview-popup').modal('show');
+                    console.log('cardId 2', cardId);
+                    setTimeout(function() {
+                        $('#card-preivew-popup').attr('data-card-id',cardId);
+                        $('#card-preview-popup').modal('show');
+                    }, 3000);
 
-                // if (data.loggedin) {
-                //     // Remove the d-none class to show the success popup
-                //     $('.content-succes').removeClass('d-none');
-                //     $('.form-boxed .login').addClass('d-none');
+                if (data.loggedin) {
+                    // Remove the d-none class to show the success popup
+                    $('.content-succes').removeClass('d-none');
+                    $('.form-boxed .login').addClass('d-none');
 
                 //     if (cardId){
                 //         console.log('cardId', cardId);
@@ -54,11 +56,11 @@ $('button.usersignin').on('click', function (e) {
                 //         }
                 //         }, 1000); 
                 // } 
-            // }
-            // else {
-            //         // Hide the success popup if login fails
-            //         $('.content-succes').addClass('d-none');
-            //     }
+            }
+            else {
+                    // Hide the success popup if login fails
+                    $('.content-succes').addClass('d-none');
+                }
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log('AJAX Error: ' + textStatus, errorThrown);
