@@ -941,7 +941,7 @@ jQuery(document).ready(function ($) {
             jQuery('#datahref').val(datahref);
             jQuery('#datahref1').val(datahref);
 
-            var cardId =jQuery(this).attr('data-card-id');
+            var cardId =jQuery(this).parents('.card-preview').attr('data-card-id');
             jQuery('#popup-card-id').val(cardId);
 
             jQuery('body').addClass('search-active');
