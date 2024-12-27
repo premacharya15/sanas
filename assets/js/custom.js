@@ -946,12 +946,12 @@ jQuery(document).ready(function ($) {
             var backImg = jQuery(this).parents('.card-preview .back img').attr('src');
             var cardTitle = jQuery(this).parents('.card-preview .card-box-title h4').text();
             var bgcolor = jQuery(this).parents('.card-preview .inner-box a').attr('data-bg-color');
-            
+
             jQuery('#popup-card-id').val(cardId);
-            jQuery('#front-img').val(forntImg);
-            jQuery('#back-img').val(backImg);
-            jQuery('#card-title').val(cardTitle);
-            jQuery('#bgcolor').val(bgcolor);
+            jQuery('#popup-front-img').val(forntImg);
+            jQuery('#popup-back-img').val(backImg);
+            jQuery('#popup-card-title').val(cardTitle);
+            jQuery('#popup-bgcolor').val(bgcolor);
 
             jQuery('body').addClass('search-active');
             jQuery('#ajaxvalue').val('0');
