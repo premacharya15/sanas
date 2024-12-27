@@ -945,13 +945,13 @@ jQuery(document).ready(function ($) {
             var forntImg = jQuery(this).parents('.card-preview').attr('data-front-img');
             var backImg = jQuery(this).parents('.card-preview').attr('data-back-img');
             var cardTitle = jQuery(this).parents('.card-preview').attr('data-card-title');
-            var bgcolor = jQuery(this).attr('data-bgcolor-code');
+            var bgcolor = jQuery(this).parents('.card-preview').attr('data-bgcolor-code');
 
             jQuery('#popup-card-id').val(cardId);
             jQuery('#popup-front-img').val(forntImg);
             jQuery('#popup-back-img').val(backImg);
             jQuery('#popup-card-title').val(cardTitle);
-            jQuery('#popup-bgcolor').val(bgcolor);
+            jQuery('#popup-bgcolor-code').val(bgcolor);
 
             jQuery('body').addClass('search-active');
             jQuery('#ajaxvalue').val('0');
