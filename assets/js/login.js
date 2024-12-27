@@ -31,14 +31,15 @@ $('button.usersignin').on('click', function (e) {
                 },3000);
 
                 console.log('cardId success', cardId);
-                if (!cardId || cardId === '') {
-                    window.location.reload();
-                }
+                if (cardId) {
                     setTimeout(function(){
                         $('#card-preview-popup').attr('data-card-id', cardId);
                         console.log('cardId data-card-id', cardId);
                         $('#card-preview-popup').modal('show');
-                     },3100);
+                    },3100);
+                }else {
+                    window.location.reload();
+                }
             
                 if (data.loggedin) {
                     // Remove the d-none class to show the success popup
