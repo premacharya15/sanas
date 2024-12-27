@@ -27,7 +27,9 @@ $('button.usersignin').on('click', function (e) {
                     $('#signinresponseMessage').fadeOut(); // Or use .hide() to just hide it without fading
                     $('#signinresponseMessagepopup').fadeOut(function() { // After fadeOut completes
                         $('.search-popup').hide(function() { // After search popup hides
-                            $('#card-preview-popup').modal('show'); // Show preview popup
+                            setTimeout(function(){
+                            $('#card-preview-popup').modal('show');
+                            },5000);
                         });
                     });
                  }, 3000);
