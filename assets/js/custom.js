@@ -1093,9 +1093,7 @@ jQuery(document).ready(function($) {
 
     $('.card-preview-popup-close').click(function(){
         showPreloader('Loading...');
-        setTimeout(function(){
-            location.reload();
-        },1000);
+        location.reload();
     })
 
     $('.edit-design').click(function() {
