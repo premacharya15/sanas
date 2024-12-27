@@ -5,13 +5,13 @@ $('button.usersignin').on('click', function (e) {
     e.preventDefault();
     var ajaxValue = $('#ajaxvalue').val();
     // var datahref = $('#datahref').val();
-    var cardId = $('#popup-card-id').val();
+    var cardpopupId = $('#popup-card-id').val();
     var forntImg = $('#popup-front-img').val();
     var backImg = $('#popup-back-img').val();
     var cardTitle = $('#popup-card-title').val();
     var bgcolor = $('#popup-bgcolor-code').val();
 
-    console.log('cardId', cardId);
+    console.log('cardpopupId', cardpopupId);
     console.log('forntImg', forntImg);
     console.log('backImg', backImg);
     console.log('cardTitle', cardTitle);
@@ -39,18 +39,18 @@ $('button.usersignin').on('click', function (e) {
                 //     $('.search-popup').hide();
                 // },1000);
 
-                console.log('cardId success', cardId, forntImg, backImg, cardTitle, bgcolor);
-                if (cardId) {
+                console.log('cardpopupId success', cardpopupId, forntImg, backImg, cardTitle, bgcolor);
+                if (cardpopupId) {
                     setTimeout(function() {
                         $('#signinresponseMessage').fadeOut();
                         $('#signinresponseMessagepopup').fadeOut();
                         $('.search-popup').hide();
                     },1500);
 
-                    $('#card-preview-popup').attr('data-card-id', cardId);
+                    $('#card-preview-popup').attr('data-card-id', cardpopupId);
 
                     setTimeout(function(){
-                        console.log('cardId data-card-id', cardId);
+                        console.log('cardId data-card-id', cardpopupId);
                         $('#card-preview-popup').modal('show');
                         $('#card-preview-popup .modal-title').text(cardTitle || 'Card Preview');
 
