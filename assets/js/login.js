@@ -24,8 +24,8 @@ $('button.usersignin').on('click', function (e) {
                 $('#signinresponseMessage').html(data.message).show();
                 $('#signinresponseMessagepopup').html(data.message).show();
                  setTimeout(function() {
-                    $('#signinresponseMessage').fadeOut();
-                    $('#signinresponseMessagepopup').fadeOut();
+                    // $('#signinresponseMessage').fadeOut();
+                    // $('#signinresponseMessagepopup').fadeOut();
                     $('.search-popup').hide();
                     $('#card-preview-popup').modal('show');
                  }, 3000);
