@@ -151,9 +151,9 @@ $('button.usersignin').on('click', function (e) {
             },
             success: function (data) {
                 // show success popup
+                $('#signinresponseMessage').html(data.message).show();
+                $('#signinresponseMessagepopup').html(data.message).show();
                 if (data.register) {
-                    $('#signupresponseMessage').html(data.message).show();
-                    $('#signinresponseMessagepopup').html(data.message).show();
                     $.ajax({
                         type: 'POST',
                         url: ajax_login_object.ajaxurl,
@@ -165,7 +165,7 @@ $('button.usersignin').on('click', function (e) {
                     
                     if (cardpopupId) {
                         setTimeout(function() {
-                            $('#signupresponseMessage').fadeOut();
+                            $('#signinresponseMessage').fadeOut();
                             $('#signinresponseMessagepopup').fadeOut();
                             $('.search-popup').hide();
                         },2000);
@@ -220,7 +220,7 @@ $('button.usersignin').on('click', function (e) {
                         }, 2100);
                     }else {
                         setTimeout(function() {
-                            $('#signupresponseMessage').fadeOut();
+                            $('#signinresponseMessage').fadeOut();
                             $('#signinresponseMessagepopup').fadeOut();
                             $('.search-popup').hide();
                             window.location.reload();
