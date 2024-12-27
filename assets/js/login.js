@@ -24,21 +24,32 @@ $('button.usersignin').on('click', function (e) {
 
                 $('#signinresponseMessage').html(data.message).show();
                 $('#signinresponseMessagepopup').html(data.message).show();
-                 setTimeout(function() {
-                    $('#signinresponseMessage').fadeOut();
-                    $('#signinresponseMessagepopup').fadeOut();
-                    $('.search-popup').hide();
-                },2000);
+                //  setTimeout(function() {
+                //     $('#signinresponseMessage').fadeOut();
+                //     $('#signinresponseMessagepopup').fadeOut();
+                //     $('.search-popup').hide();
+                // },1000);
 
                 console.log('cardId success', cardId);
                 if (cardId) {
+                    setTimeout(function() {
+                        $('#signinresponseMessage').fadeOut();
+                        $('#signinresponseMessagepopup').fadeOut();
+                        $('.search-popup').hide();
+                    },1500);
+
                     setTimeout(function(){
                         console.log('cardId data-card-id', cardId);
                         $('#card-preview-popup').attr('data-card-id', cardId);
                         $('#card-preview-popup').modal('show');
-                    },2100);
+                    },1700);
                 }else {
-                    window.location.reload();
+                    setTimeout(function() {
+                        $('#signinresponseMessage').fadeOut();
+                        $('#signinresponseMessagepopup').fadeOut();
+                        $('.search-popup').hide();
+                        window.location.reload();
+                    },3000);
                 }
             
                 if (data.loggedin) {
