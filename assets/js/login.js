@@ -4,7 +4,9 @@ jQuery(document).ready(function ($) {
 $('button.usersignin').on('click', function (e) {
     e.preventDefault();
     var ajaxValue = $('#ajaxvalue').val();
-    var datahref = $('#datahref').val();
+    // var datahref = $('#datahref').val();
+    var cardId = $('#popup-card-id').val();
+    console.log('cardId', cardId);
     if (ajaxValue == '0') {
         var currentPageURL = window.location.href;
         $.ajax({
@@ -30,13 +32,13 @@ $('button.usersignin').on('click', function (e) {
                     $('.content-succes').removeClass('d-none');
                     $('.form-boxed .login').addClass('d-none');
 
-                       setTimeout(function() {
-                        if (datahref) {
-                            window.location.href = datahref;
-                        } else {
-                            window.location.reload();
-                        }
-                        }, 1000); 
+                    //    setTimeout(function() {
+                    //     if (datahref) {
+                    //         window.location.href = datahref;
+                    //     } else {
+                    //         window.location.reload();
+                    //     }
+                    //     }, 1000); 
                 } 
                 else {
                     // Hide the success popup if login fails
