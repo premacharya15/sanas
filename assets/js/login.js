@@ -6,12 +6,16 @@ $('button.usersignin').on('click', function (e) {
     var ajaxValue = $('#ajaxvalue').val();
     // var datahref = $('#datahref').val();
     var cardId = $('#popup-card-id').val();
-    var forntImg = $('#front-img').val();
-    var backImg = $('#back-img').val();
-    var cardTitle = $('#card-title').val();
-    var bgcolor = $('#bgcolor').val();
+    var forntImg = $('#popup-front-img').val();
+    var backImg = $('#popup-back-img').val();
+    var cardTitle = $('#popup-card-title').val();
+    var bgcolor = $('#popup-bgcolor').val();
 
-    console.log('cardId', cardId, forntImg, backImg, cardTitle, bgcolor);
+    console.log('cardId', cardId);
+    console.log('forntImg', forntImg);
+    console.log('backImg', backImg);
+    console.log('cardTitle', cardTitle);
+    console.log('bgcolor', bgcolor);
     if (ajaxValue == '0') {
         var currentPageURL = window.location.href;
         $.ajax({
@@ -44,26 +48,47 @@ $('button.usersignin').on('click', function (e) {
                     },1500);
 
                     $('#card-preview-popup').attr('data-card-id', cardId);
-                    if (frontImage) {
-                        $('#cover-preview').html(`
-                            <div class="preview-image" style="aspect-ratio: 1;">
-                                <img src="${frontImage}" alt="Front design" class="img-fluid flipper animated" style="width: auto;">
-                            </div>
-                        `);
-                    }
-                    
-                    if (backImage) {
-                        $('#detail-preview').html(`
-                            <div class="preview-image" style="aspect-ratio: 1;">
-                                <img src="${backImage}" alt="Back design" class="img-fluid flipper animated" style="width: auto;">
-                            </div>
-                        `);
-                    }
-                    
+
                     setTimeout(function(){
                         console.log('cardId data-card-id', cardId);
                         $('#card-preview-popup').modal('show');
-                    },1700);
+                        $('#card-preview-popup .modal-title').text(cardTitle || 'Card Preview');
+
+                        $('.preview-container').attr('style', `background: ${bgcolor};`);
+        
+                        if (frontImage) {
+                            $('#cover-preview').html(`
+                                <div class="preview-image" style="aspect-ratio: 1;">
+                                    <img src="${frontImage}" alt="Front design" class="img-fluid flipper animated" style="width: auto;">
+                                </div>
+                            `);
+                        }
+        
+                        if (backImage) {
+                            $('#detail-preview').html(`
+                                <div class="preview-image" style="aspect-ratio: 1;">
+                                    <img src="${backImage}" alt="Back design" class="img-fluid flipper animated" style="width: auto;">
+                                </div>
+                            `);
+                        }
+
+                        $('.preview-tab').click(function() {
+                            $('.preview-tab').removeClass('active');
+                            $(this).addClass('active');
+                            
+                            var tab = $(this).attr('data-tab');
+                            if (tab === 'detail') {
+                                $('.preview-container .flipper').addClass('flipped');
+                            } else {
+                                $('.preview-container .flipper').removeClass('flipped');
+                            }
+                        });
+
+                        $('.edit-design').click(function() {
+                            var cardId = $('#card-preview-popup').attr('data-card-id');
+                            window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
+                        });
+                    }, 1700);
                 }else {
                     console.log('direct login');
                     setTimeout(function() {
