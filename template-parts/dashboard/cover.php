@@ -145,8 +145,6 @@
                                                 </a>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group-outer">
                                         <div class="form-group">
                                             <div class="select-wrapper">
                                                 <label>Align</label>
@@ -163,7 +161,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
