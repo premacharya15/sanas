@@ -697,6 +697,10 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
     .budget-man-box .budget-col .info-box .info-top-box{
         flex-direction: column;
     }
+
+    .mobail-tab .wl-left-slide-bar .nav-link>i{
+        font-size: 14px;
+    }
    
     .specs-widget.couple-dashboard .card-block {
         width: 50%;
