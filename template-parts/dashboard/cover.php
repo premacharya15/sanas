@@ -66,9 +66,9 @@
                                     aria-controls="color-tab-pane" aria-selected="false">Color</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="add-new-text" data-bs-toggle="tab"
-                                    data-bs-target="#add-new-text-pane" type="button" role="tab"
-                                    aria-controls="add-new-text-pane" aria-selected="false"><i class="fa-solid fa-plus"></i>Add Text</button>
+                                <button class="nav-link" id="add-new-text" data-bs-target="#add-new-text-pane" 
+                                type="button" aria-controls="add-new-text-pane" aria-selected="false"
+                                    onclick="addText('event')"><i class="fa-solid fa-plus"></i>Add Text</button>
                             </li>
                             <li>
                                 <button class="cloes-btn">
