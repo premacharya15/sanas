@@ -1051,14 +1051,14 @@ function changeAlignText(align, event) {
 
 
 jQuery(document).ready(function($) {
-    $('.card-preview').click(function(e) {
+    $('.sanas-card-preview').click(function(e) {
         e.preventDefault();
         
         var cardId = $(this).data('card-id');
         var frontImage = $(this).find('.flipper .front img').attr('src');
         var backImage = $(this).find('.flipper .back img').attr('src');
         var cardTitle = $(this).find('.card-box-title h4').text();
-        var bgcolor = $(this).find('.inner-box a').attr('data-bg-color');
+        var bgcolor = $(this).find('.sanas-card-preview').attr('data-bg-color');
 
         $('#card-preview-popup').attr('data-card-id', cardId);
         
