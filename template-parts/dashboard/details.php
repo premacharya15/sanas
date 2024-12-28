@@ -65,6 +65,9 @@ $user_id = $current_user->ID;
                                 data-bs-target="#color-tab-pane" type="button" role="tab" aria-controls="color-tab-pane"
                                 aria-selected="false">Color</button>
                         </li>
+                        <li class="nav-item" role="presentation"> 
+                            <button class="btn btn-secondary btn-block" onclick="addText('event')"><i class="fa-solid fa-plus"></i>Add Text</button>
+                        </li>
                         <li>
                             <button class="cloes-btn">
                                 <i class="fa-solid fa-xmark"></i>
