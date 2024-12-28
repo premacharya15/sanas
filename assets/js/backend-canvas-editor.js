@@ -116,6 +116,38 @@ function changeColor() {
     }
 }
 
+// Event listener for the color picker input
+document.addEventListener('DOMContentLoaded', function () {
+    const colorPicker = document.getElementById('mobail-color-picker');
+    if (colorPicker) {
+        colorPicker.addEventListener('change', function () {
+            const color = this.value;
+            document.querySelector('.color-target-code').textContent = color;
+            changeColor(color);
+        });
+    } else {
+        console.error('Element with ID "mobail-color-picker" not found.');
+    }
+});
+// Event listeners for the color squares
+document.querySelectorAll('.color-squr span').forEach(span => {
+    span.addEventListener('click', function () {
+        const color = this.getAttribute('color-hex-value');
+        changeColor(color);
+        document.getElementById('mobail-color-picker').value = color;
+        document.querySelector('.color-target-code').textContent = color;
+    });
+});
+// Event listeners for the color squares
+document.querySelectorAll('.color-squr span').forEach(span => {
+    span.addEventListener('click', function () {
+        const color = this.getAttribute('color-hex-value');
+        changeColor(color);
+        document.getElementById('mobail-color-picker').value = color;
+        document.querySelector('.color-target-code').textContent = color;
+    });
+});
+window.changeColor = changeColor;
 
 // Change text alignment of selected text
 function changeAlign() {
