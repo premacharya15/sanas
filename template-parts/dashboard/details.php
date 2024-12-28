@@ -172,7 +172,7 @@ $user_id = $current_user->ID;
                                         <label>Color</label>
                                         <div class="color-target">
                                             <div class="inner-colum">
-                                                <input type="color" id="mobail-color-picker" class="color-target-inner"
+                                                <input type="color" id="colorPicker" class="color-target-inner"
                                                     value="#C95326">
                                                 <span class="color-target-code">#C95326</span>
                                             </div>

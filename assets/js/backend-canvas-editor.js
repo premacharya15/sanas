@@ -118,7 +118,7 @@ function changeColor() {
 
 // Event listener for the color picker input
 document.addEventListener('DOMContentLoaded', function () {
-    const colorPicker = document.getElementById('mobail-color-picker');
+    const colorPicker = document.getElementById('colorPicker');
     if (colorPicker) {
         colorPicker.addEventListener('change', function () {
             const color = this.value;
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
             changeColor(color);
         });
     } else {
-        console.error('Element with ID "mobail-color-picker" not found.');
+        console.error('Element with ID "colorPicker" not found.');
     }
 });
 // Event listeners for the color squares
@@ -134,7 +134,7 @@ document.querySelectorAll('.color-squr span').forEach(span => {
     span.addEventListener('click', function () {
         const color = this.getAttribute('color-hex-value');
         changeColor(color);
-        document.getElementById('mobail-color-picker').value = color;
+        document.getElementById('colorPicker').value = color;
         document.querySelector('.color-target-code').textContent = color;
     });
 });
@@ -143,7 +143,7 @@ document.querySelectorAll('.color-squr span').forEach(span => {
     span.addEventListener('click', function () {
         const color = this.getAttribute('color-hex-value');
         changeColor(color);
-        document.getElementById('mobail-color-picker').value = color;
+        document.getElementById('colorPicker').value = color;
         document.querySelector('.color-target-code').textContent = color;
     });
 });
