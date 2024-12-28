@@ -533,7 +533,7 @@ section.wedding-section .row {
     column-gap: 5px;
 }
 
-.pagination .screen-reader-text .nav-links {
+.pagination .nav-links {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
