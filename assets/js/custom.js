@@ -1051,7 +1051,7 @@ function changeAlignText(align, event) {
 
 
 jQuery(document).ready(function($) {
-    $('.sanas-card-preview').click(function(e) {
+    $('.card-preview').click(function(e) {
         e.preventDefault();
         
         var cardId = $(this).data('card-id');
