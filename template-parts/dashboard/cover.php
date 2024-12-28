@@ -109,6 +109,8 @@
                                          </span>
                                             </div>
                                         </div>
+                                        </div>
+                                        <div class="form-group-outer">
                                         <div class="form-group">
                                             <div class="select-wrapper">
                                                 <label class="canavas-label" for="fontWeight">Weight:</label>
