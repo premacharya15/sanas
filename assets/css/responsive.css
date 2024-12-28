@@ -373,7 +373,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         position: fixed;
         bottom: 0;
         max-height: 0;
-        top: auto;
+        /* top: auto; */
         z-index: 9999;
         border-radius: 16px 16px 0px 0px;
         background: #FFFFFF;
