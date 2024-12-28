@@ -122,10 +122,21 @@ $user_id = $current_user->ID;
                                 <div class="form-group-outer">
                                     <div class="form-group">
                                         <div class="select-wrapper">
-                                            <label for="letters-spacing">Spacing</label>
-                                            <input type="range" class="custom-range" id="letterSpacing" min="-150" max="150"
-                                            value="0" step="1" onchange="changeLetterSpacing()">
-                                        <span id="letterSpacingValue">0</span>
+                                            <label>Align</label>
+                                            <div class="text-style-btn">
+                                                <a href="#" id="text-align-left" data-title="left"
+                                                    onclick="changeAlign('left')">
+                                                    <i class="fa-solid fa-align-left"></i>
+                                                </a>
+                                                <a href="#" id="text-align-center" data-title="center"
+                                                    onclick="changeAlign('center')">
+                                                    <i class="fa-solid fa-align-center"></i>
+                                                </a>
+                                                <a href="#" id="text-align-right" data-title="right"
+                                                    onclick="changeAlign('right')">
+                                                    <i class="fa-solid fa-align-right"></i>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -142,25 +153,15 @@ $user_id = $current_user->ID;
                                     </div>
                                     </div>
                                     <div class="form-group-outer">
-                                    <div class="form-group">
-                                    <div class="select-wrapper">
-                                        <label>Align</label>
-                                        <div class="text-style-btn">
-                                            <a href="#" id="text-align-left" data-title="left"
-                                                onclick="changeAlign('left')">
-                                                <i class="fa-solid fa-align-left"></i>
-                                            </a>
-                                            <a href="#" id="text-align-center" data-title="center"
-                                                onclick="changeAlign('center')">
-                                                <i class="fa-solid fa-align-center"></i>
-                                            </a>
-                                            <a href="#" id="text-align-right" data-title="right"
-                                                onclick="changeAlign('right')">
-                                                <i class="fa-solid fa-align-right"></i>
-                                            </a>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <label for="letters-spacing">Spacing</label>
+                                                <input type="range" class="custom-range" id="letterSpacing" min="-150" max="150"
+                                                value="0" step="1" onchange="changeLetterSpacing()">
+                                                <span id="letterSpacingValue">0</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                         </div>
