@@ -467,7 +467,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     .mobaile-form-text-edit>.form-group-outer {
         display: flex;
         column-gap: 16px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
     
     .mobaile-form-text-edit>.form-group-outer>.form-group {
