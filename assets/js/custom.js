@@ -941,11 +941,11 @@ jQuery(document).ready(function ($) {
             jQuery('#datahref').val(datahref);
             jQuery('#datahref1').val(datahref);
 
-            var cardId =jQuery(this).parents('.card-preview').attr('data-card-id');
-            var forntImg = jQuery(this).parents('.card-preview').attr('data-front-img');
-            var backImg = jQuery(this).parents('.card-preview').attr('data-back-img');
-            var cardTitle = jQuery(this).parents('.card-preview').attr('data-card-title');
-            var bgcolor = jQuery(this).parents('.card-preview').attr('data-bgcolor-code');
+            var cardId =jQuery(this).parents('.card-preview-data').attr('data-card-id');
+            var forntImg = jQuery(this).parents('.card-preview-data').attr('data-front-img');
+            var backImg = jQuery(this).parents('.card-preview-data').attr('data-back-img');
+            var cardTitle = jQuery(this).parents('.card-preview-data').attr('data-card-title');
+            var bgcolor = jQuery(this).parents('.card-preview-data').attr('data-bgcolor-code');
 
             jQuery('#popup-card-id').val(cardId);
             jQuery('#popup-front-img').val(forntImg);
