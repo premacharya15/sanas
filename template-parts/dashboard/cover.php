@@ -109,6 +109,17 @@
                                          </span>
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <label class="canavas-label" for="fontWeight">Weight:</label>
+                                                <select class="custom-select select-inner" id="fontWeight" onchange="changeFontWeight()">
+                                                    <option value="normal">Regular</option>
+                                                    <option value="500">Medium</option>
+                                                    <option value="600">Semi-Bold</option>
+                                                    <option value="900">Bold</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +135,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                        <label>Style</label>
+                                            <label>Style</label>
                                             <div class="text-style-btn-one">
                                                 <a href="javascript:()"  onclick="changeTextStyle('italic');" data-title="italic">
                                                     <i class="icon-italic-font"></i>
@@ -132,6 +143,22 @@
                                                 <a href="javascript:()" onclick="changeTextStyle('underline');" data-title="underline">
                                                     <i class="icon-Underline"></i>
                                                 </a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="select-wrapper">
+                                                <label>Align</label>
+                                                <div class="text-style-btn">
+                                                    <a href="#" id="text-align-left"  data-title="left" onclick="changeAlign('left')">
+                                                        <i class="fa-solid fa-align-left"></i>
+                                                    </a>
+                                                    <a href="#" id="text-align-center" data-title="center" onclick="changeAlign('center')">
+                                                        <i class="fa-solid fa-align-center"></i>
+                                                    </a>
+                                                    <a href="#" id="text-align-right" data-title="right" onclick="changeAlign('right')">
+                                                        <i class="fa-solid fa-align-right"></i>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
