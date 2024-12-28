@@ -36,10 +36,10 @@
                           <?php 
                           if(isset($_GET['card_id']) && !empty($_GET['card_id']))
                           {
-                            echo '<h3>'.get_the_title($_GET['card_id']).'</h3>';
+                            echo '<h3 class="text-single-line w-75">'.get_the_title($_GET['card_id']).'</h3>';
                           }
                           else{
-                            echo '<h3>Wedding Invitations</h3>';    
+                            echo '<h3 class="text-single-line w-75">Wedding Invitations</h3>';    
                           }
                           ?>                                                      
                     </button>
