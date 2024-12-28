@@ -1354,6 +1354,9 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     .tab-content>.tab-pane>.mobail-tab .nav-link{
         font-size: 14px !important;
     }
+    .tab-content>.tab-pane>.mobail-tab .nav-link i{
+        font-size: 14px !important;
+    }
     .section-title h1 {
         font-size: 30px;
         line-height: 50px;
