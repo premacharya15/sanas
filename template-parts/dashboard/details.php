@@ -120,7 +120,7 @@ $user_id = $current_user->ID;
                             tabindex="0">
                             <div class="mobaile-form-text-edit">
                                 <div class="form-group-outer">
-                                    <div class="form-group">
+                                <div class="form-group">
                                         <div class="select-wrapper">
                                             <label>Align</label>
                                             <div class="text-style-btn">
@@ -158,8 +158,7 @@ $user_id = $current_user->ID;
                                                 <label for="letters-spacing">Spacing</label>
                                                 <input type="range" class="custom-range" id="letterSpacing" min="-150" max="150"
                                                 value="0" step="1" onchange="changeLetterSpacing()">
-                                                <span id="letterSpacingValue">0</span>
-                                            </div>
+                                            <span id="letterSpacingValue">0</span>
                                         </div>
                                     </div>
                                 </div>
