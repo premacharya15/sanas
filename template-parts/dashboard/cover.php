@@ -103,8 +103,8 @@
                                             <div class="select-wrapper">
                                             <label class="canavas-label" for="fontSize">Size:</label>
                                          <span class="customSelect-size">
-                                            <input type="text">
-                                            <input type="number">
+                                            <!-- <input type="text">
+                                            <input type="number"> -->
                                          <input class="custom-select" type="number" name="fontSize" id="fontSize" value="40" min="10" max="100" onchange="changeFontSize()" >
                                          </span>
                                             </div>
