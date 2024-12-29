@@ -370,7 +370,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
    
     .wl-left-slide-bar {
         width: 100%;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         max-height: 0;
         /* top: auto; */
