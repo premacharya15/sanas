@@ -69,17 +69,6 @@ section.wl-main-canvas .inner-container {
     section.wl-main-canvas {
         padding: 130px 0 80px 0;
 }
-/* .wl-left-slide-bar {
-    bottom: auto;
-} */
-
-/* .wl-left-slide-bar>.inner-colum>.nav-pills {
-    position: fixed;
-    top: 48px;
-    border-bottom: 1px solid #bbbcbf;
-    background-color: #ffffff;
-    height: 70px;
-} */
 .wl-left-slide-bar .nav-link{
     row-gap: 5px;
 }

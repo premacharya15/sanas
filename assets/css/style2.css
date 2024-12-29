@@ -1123,7 +1123,7 @@ ul.mobile-menu-list .dropdown ul li a {
 }
 
 .wl-left-slide-bar {
-    position: fixed;
+    position: absolute;
     width: 407px;
     height: 100%;
     /* top: 54px; */
