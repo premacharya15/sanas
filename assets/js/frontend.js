@@ -127,7 +127,14 @@ function changeFontSize() {
         const fontSize = document.getElementById('fontSize').value;
         activeObject.set({ fontSize: parseInt(fontSize, 10) });
         canvas.renderAll();
+        console.log('Font size updated 1:', activeObject.fontSize);
     }
+    setTimeout(() => {
+        console.log('Setting focus 1');
+        fontSizeInput.focus();
+        console.log('Focus set 1');
+        fontSizeInput.setSelectionRange(fontSizeInput.value.length, fontSizeInput.value.length);
+    }, 200);
 }
 window.changeFontSize = changeFontSize;
 // Change color of selected text
