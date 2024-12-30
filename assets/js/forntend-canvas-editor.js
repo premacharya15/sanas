@@ -169,36 +169,14 @@ window.changeFontWeight = changeFontWeight;
 // Change font size of selected text
 function changeFontSize() {
     const activeObject = canvas.getActiveObject();
-    const fontSizeInput = document.getElementById('fontSize');
-
     if (activeObject && activeObject.type === 'i-text') {
-        const fontSize = fontSizeInput.value;
+        const fontSize = document.getElementById('fontSize').value;
         activeObject.set({ fontSize: parseInt(fontSize, 10) });
         canvas.renderAll();
     }
-
-    // Ensure the keyboard stays open by delaying the focus and selection
-    setTimeout(() => {
-        fontSizeInput.focus();
-        fontSizeInput.setSelectionRange(fontSizeInput.value.length, fontSizeInput.value.length);
-    }, 200); // Delay to stabilize focus on Android
+    // document.getElementById('fontSize').focus();
 }
-
-// Bind `focus` explicitly on touchend for better Android support
-function handleTouchFocus(e) {
-    e.preventDefault(); // Prevent default touch behavior
-    const fontSizeInput = document.getElementById('fontSize');
-    setTimeout(() => {
-        fontSizeInput.focus();
-        fontSizeInput.setSelectionRange(fontSizeInput.value.length, fontSizeInput.value.length);
-    }, 200); // Adjust delay as needed
-}
-
-// Attach the touchend listener to the input
-document.getElementById('fontSize').addEventListener('touchend', handleTouchFocus);
-
 window.changeFontSize = changeFontSize;
-
 // Change color of selected text
 function changeColor(color) {
     const activeObject = canvas.getActiveObject();
