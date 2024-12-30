@@ -178,9 +178,7 @@ function changeFontSize() {
     // document.getElementById('fontSize').focus();
     setTimeout(() => {
         console.log('Setting focus 2');
-        fontSizeInput.focus();
-        console.log('Focus set 2');
-        fontSizeInput.setSelectionRange(fontSizeInput.value.length, fontSizeInput.value.length);
+        document.getElementById('fontSize').focus();
     }, 200);
 }
 window.changeFontSize = changeFontSize;

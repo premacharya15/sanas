@@ -155,9 +155,7 @@ function changeFontSize() {
     }
     setTimeout(() => {
         console.log('Setting focus 3');
-        fontSizeInput.focus();
-        console.log('Focus set 3');
-        fontSizeInput.setSelectionRange(fontSizeInput.value.length, fontSizeInput.value.length);
+        document.getElementById('fontSize').focus();
     }, 200);
     // document.getElementById('fontSize').focus();
 }
