@@ -175,9 +175,6 @@ function changeFontSize() {
         canvas.renderAll();
     }
     // document.getElementById('fontSize').focus();
-    setTimeout(() => {
-        document.getElementById('fontSize').focus();
-    }, 3000);
 }
 window.changeFontSize = changeFontSize;
 // Change color of selected text
