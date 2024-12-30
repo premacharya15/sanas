@@ -123,13 +123,30 @@ window.changeFontWeight = changeFontWeight;
 // Change font size of selected text
 function changeFontSize() {
     const activeObject = canvas.getActiveObject();
+    const fontSizeInput = document.getElementById('fontSize');
+
     if (activeObject && activeObject.type === 'i-text') {
-        const fontSize = document.getElementById('fontSize').value;
+        const fontSize = fontSizeInput.value;
         activeObject.set({ fontSize: parseInt(fontSize, 10) });
         canvas.renderAll();
     }
+
+    // Focus the input after a slight delay to ensure the keyboard remains open
+    setTimeout(() => {
+        fontSizeInput.focus();
+        // Add a dummy interaction to keep the keyboard open
+        fontSizeInput.setSelectionRange(fontSizeInput.value.length, fontSizeInput.value.length);
+    }, 100); // A small delay often helps on Android devices
 }
+
 window.changeFontSize = changeFontSize;
+
+// Optionally, add this to ensure focus on user interaction
+document.getElementById('fontSize').addEventListener('touchend', (e) => {
+    e.stopPropagation(); // Prevent other touch events from interfering
+    e.target.focus();
+});
+
 // Change color of selected text
 function changeColor(color) {
     const activeObject = canvas.getActiveObject();
