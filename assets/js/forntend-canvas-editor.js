@@ -169,14 +169,30 @@ window.changeFontWeight = changeFontWeight;
 // Change font size of selected text
 function changeFontSize() {
     const activeObject = canvas.getActiveObject();
+    const fontSizeInput = document.getElementById('fontSize');
+
     if (activeObject && activeObject.type === 'i-text') {
-        const fontSize = document.getElementById('fontSize').value;
+        const fontSize = fontSizeInput.value;
         activeObject.set({ fontSize: parseInt(fontSize, 10) });
         canvas.renderAll();
     }
-    // document.getElementById('fontSize').focus();
+
+    // Delay and trigger focus explicitly
+    setTimeout(() => {
+        fontSizeInput.blur(); // Ensure no lingering focus issue
+        fontSizeInput.focus();
+        fontSizeInput.setSelectionRange(fontSizeInput.value.length, fontSizeInput.value.length);
+    }, 200); // Delay can be adjusted
 }
+
+document.getElementById('fontSize').addEventListener('touchstart', (e) => {
+    e.stopPropagation();
+    e.preventDefault(); // Prevent default touch behavior
+    e.target.focus();
+});
+
 window.changeFontSize = changeFontSize;
+
 // Change color of selected text
 function changeColor(color) {
     const activeObject = canvas.getActiveObject();
