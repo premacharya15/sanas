@@ -129,10 +129,6 @@ function changeFontSize() {
         canvas.renderAll();
     }
 }
-document.getElementById('fontSize').addEventListener('touchstart', (e) => {
-    e.target.focus();
-});
-
 window.changeFontSize = changeFontSize;
 // Change color of selected text
 function changeColor(color) {
