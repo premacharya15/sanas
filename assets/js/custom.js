@@ -1054,7 +1054,7 @@ jQuery(document).ready(function($) {
     $('.sanas-card-preview').click(function(e) {
         e.preventDefault();
         
-        var cardId = $(this).data('card-id');
+        var cardId = $(this).attr('datacard-id');
         var frontImage = $(this).find('.flipper .front img').attr('src');
         var backImage = $(this).find('.flipper .back img').attr('src');
         var cardTitle = $(this).find('.card-box-title h4').text();
