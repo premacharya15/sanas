@@ -105,7 +105,7 @@
                                          <span class="customSelect-size">
                                             <!-- <input type="text">
                                             <input type="number"> -->
-                                         <input class="custom-select" type="text" inputmode="numeric" name="fontSize" id="fontSize" value="40" min="10" max="100" onchange="changeFontSize()" >
+                                         <input class="custom-select" type="number" name="fontSize" id="fontSize" value="40" min="10" max="100" onchange="changeFontSize()" >
                                          </span>
                                             </div>
                                         </div>
