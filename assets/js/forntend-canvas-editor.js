@@ -169,25 +169,13 @@ window.changeFontWeight = changeFontWeight;
 // Change font size of selected text
 function changeFontSize() {
     const activeObject = canvas.getActiveObject();
-    const fontSizeInput = document.getElementById('fontSize');
-
-    console.log('Active object:', activeObject);
-
     if (activeObject && activeObject.type === 'i-text') {
-        const fontSize = fontSizeInput.value;
+        const fontSize = document.getElementById('fontSize').value;
         activeObject.set({ fontSize: parseInt(fontSize, 10) });
         canvas.renderAll();
-        console.log('Font size updated:', fontSize);
     }
-
-    setTimeout(() => {
-        console.log('Setting focus');
-        fontSizeInput.focus();
-        console.log('Focus set');
-        fontSizeInput.setSelectionRange(fontSizeInput.value.length, fontSizeInput.value.length);
-    }, 200);
+    // document.getElementById('fontSize').focus();
 }
-
 window.changeFontSize = changeFontSize;
 // Change color of selected text
 function changeColor(color) {
