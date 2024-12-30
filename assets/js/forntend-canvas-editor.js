@@ -175,9 +175,11 @@ function changeFontSize() {
         canvas.renderAll();
     }
     // document.getElementById('fontSize').focus();
-    setTimeout(() => {
+    document.getElementById('fontSize').focus();
+    // Use requestAnimationFrame to ensure the focus is set correctly
+    requestAnimationFrame(() => {
         document.getElementById('fontSize').focus();
-    }, 1000);
+    });
 }
 window.changeFontSize = changeFontSize;
 // Change color of selected text
