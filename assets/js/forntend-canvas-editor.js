@@ -166,6 +166,18 @@ function changeFontWeight() {
     }
 }
 window.changeFontWeight = changeFontWeight;
+
+function persistentFocus(inputElement) {
+    let attempts = 0;
+    const interval = setInterval(() => {
+        if (document.activeElement !== inputElement && attempts < 10) {
+            inputElement.focus();
+            attempts++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 100);
+}
 // Change font size of selected text
 function changeFontSize() {
     const activeObject = canvas.getActiveObject();
@@ -175,6 +187,8 @@ function changeFontSize() {
         canvas.renderAll();
     }
     // document.getElementById('fontSize').focus();
+    const fontSizeInput = document.getElementById('fontSize');
+    persistentFocus(fontSizeInput);
 }
 window.changeFontSize = changeFontSize;
 // Change color of selected text
