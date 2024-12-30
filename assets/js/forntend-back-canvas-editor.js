@@ -151,8 +151,15 @@ function changeFontSize() {
         const fontSize = document.getElementById('fontSize').value;
         activeObject.set({ fontSize: parseInt(fontSize, 10) });
         canvas.renderAll();
+        console.log('Font size updated 3:', activeObject.fontSize);
     }
-    document.getElementById('fontSize').focus();
+    setTimeout(() => {
+        console.log('Setting focus 3');
+        fontSizeInput.focus();
+        console.log('Focus set 3');
+        fontSizeInput.setSelectionRange(fontSizeInput.value.length, fontSizeInput.value.length);
+    }, 200);
+    // document.getElementById('fontSize').focus();
 }
 window.changeFontSize = changeFontSize;
 // Change color of selected text
