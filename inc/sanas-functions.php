@@ -1038,7 +1038,7 @@ function sanas_get_all_categories_popup() {
                     <div class="category-item update-category-name" data-category-name="Best Loved">
                         <button class="nav-link" id="pills-bestloved-tab" data-bs-toggle="pill" data-bs-target="#pills-bestloved" type="button" role="tab" aria-controls="pills-bestloved" aria-selected="true">
                             <div class="list-group-item-image">
-                              <img src="<?php echo wp_get_attachment_url(get_term_meta($term->term_id, 'card_category_front_gallery', true)); ?>" alt="">
+                              <img src="/wp-content/uploads/2024/12/card_cover_image_1498.png" alt="">
                             </div>
                           <div class="list-group-item-name">Best Loved</div>
                         </button>
