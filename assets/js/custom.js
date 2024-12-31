@@ -1114,7 +1114,8 @@ jQuery(document).ready(function($) {
         var categoryName = $(this).find('.list-group-item-name').text();
         var targetTab = $(this).attr('data-category-name');
 
-        console.log(targetTab)
+        console.log(categoryName);
+        console.log(targetTab);
 
         $('#pills-tab .nav-link').each(function() {
             if ($(this).attr('data-category-name') === targetTab) {
