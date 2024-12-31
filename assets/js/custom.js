@@ -1145,6 +1145,7 @@ jQuery(document).ready(function($) {
 
     $('.category-grid .category-item').on('click', function() {
         var index = $(this).index('.category-item');
+        $('.category-grid .category-item').eq(index).trigger('click');
         $('#pills-tab .nav-item .nav-link').each(function(i) {
             if (i === index) {
                 $(this).addClass('active').removeClass('d-none');
