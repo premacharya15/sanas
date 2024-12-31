@@ -1018,13 +1018,13 @@ function sanas_get_all_categories_popup() {
     $terms = get_terms(array(
         'taxonomy' => 'sanas-card-category',
         'hide_empty' => false,
-        'meta_query' => array(
-            array(
-                'key' => 'card_category_home',
-                'value' => '1', 
-                'compare' => '='
-            )
-        )
+        // 'meta_query' => array(
+        //     array(
+        //         'key' => 'card_category_home',
+        //         'value' => '1', 
+        //         'compare' => '='
+        //     )
+        // )
     ));
     ?>
     <div class="all-categories-popup-modal modal fade" id="all-categories-popup" tabindex="-1" role="dialog" aria-labelledby="allCategoriesModalTitle" aria-hidden="true">
