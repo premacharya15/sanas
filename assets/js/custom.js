@@ -1111,8 +1111,10 @@ jQuery(document).ready(function($) {
     });
 
     $('.category-grid .category-item').on('click', function() {
-            var index = $(this).index('.category-item');  // Get the index of the clicked item
+            var index = $(this).index('.category-item');
             console.log('Clicked item index:', index);
+            $('#pills-tab .nav-item .nav-link').eq(index).removeClass('active');
+
         // var categoryName = $(this).find('.list-group-item-name').text();
         // var targetTab = $(this).attr('data-category-name');
 
