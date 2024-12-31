@@ -1143,16 +1143,32 @@ jQuery(document).ready(function($) {
         $('#all-categories-popup').modal('show');
     });
 
-    $('.category-grid .category-item').on('click', function() {
-        var index = $(this).index('.category-item');
-        $('#pills-tab .nav-item .nav-link').each(function(i) {
-            if (i === index) {
-                $(this).addClass('active').removeClass('d-none');
-                $(this).trigger('click');
-            } else {
-                $(this).addClass('d-none').removeClass('active');
+    // $('.category-grid .category-item').on('click', function() {
+    //     var index = $(this).index('.category-item');
+    //     $('#pills-tab .nav-item .nav-link').each(function(i) {
+    //         if (i === index) {
+    //             $(this).addClass('active').removeClass('d-none');
+    //             $(this).trigger('click');
+    //         } else {
+    //             $(this).addClass('d-none').removeClass('active');
+    //         }
+    //     });
+    // });
+
+    $('.category-item button').on('click', function() {
+        var categoryName = $(this).find('.list-group-item-name').text();
+        var targetTab = $(this).data('bs-target');
+
+        $('#pills-tab .nav-link').each(function() {
+            if ($(this).data('bs-target') === targetTab) {
+                $(this).text(categoryName);
             }
         });
+
+        $('.tab-pane').removeClass('show active');
+        $(targetTab).addClass('show active');
+
+        $('#all-categories-popup').modal('hide');
     });
     
             // jQuery('.category-grid .category-item').on('click', function() {
@@ -1181,6 +1197,6 @@ jQuery(document).ready(function($) {
         // $(targetTab).addClass('active');
         // $('.nav-link').removeClass('d-none');
 
-        $('#all-categories-popup').modal('hide');
+        // $('#all-categories-popup').modal('hide');
     // });
 });
