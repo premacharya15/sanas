@@ -1015,45 +1015,46 @@ function sanas_get_card_preview_popup() {
 add_action('wp_footer', 'sanas_get_card_preview_popup');
 
 function sanas_get_all_categories_popup() {
-    $terms = get_terms(array(
-        'taxonomy' => 'sanas-card-category',
-        'hide_empty' => false,
-        'meta_query' => array(
-            array(
-                'key' => 'card_category_home',
-                'value' => '1', 
-                'compare' => '='
-            )
-        )
-    ));
-    ?>
-    <div class="all-categories-popup-modal modal fade" id="all-categories-popup" tabindex="-1" role="dialog" aria-labelledby="allCategoriesModalTitle" aria-hidden="true">
-        <div class="modal-dialog-centered modal-dialog" role="document">
-            <div class="modal-content custom-modal-height">
-                <div class="modal-header">
-                    <div class="modal-title" id="allCategoriesModalTitle">All Categories</div>
-                </div>
-                <div class="modal-body">
-                    <div class="category-grid">
-                        <?php if (!empty($terms) && !is_wp_error($terms)): ?>
-                            <?php foreach ($terms as $term): ?>
-                                <div class="category-item">
-                                    <button class="nav-link" id="pills-<?php echo esc_attr($term->slug); ?>-tab" data-bs-toggle="pill" data-bs-target="#pills-<?php echo esc_attr($term->slug); ?>" type="button" role="tab" aria-controls="pills-<?php echo esc_attr($term->slug); ?>" aria-selected="true">
-                                        <div class="list-group-item-image">
-                                            <img src="<?php echo wp_get_attachment_url(get_term_meta($term->term_id, 'card_category_front_gallery', true)); ?>" alt="">
-                                        </div>
-                                        <div class="list-group-item-name"><?php echo esc_html($term->name); ?></div>
-                                    </button>
-                                </div>
-                            <?php endforeach; ?>
-                        <?php else: ?>
-                            <li class="nav-item">No categories found.</li>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php
+  $terms = get_terms(array(
+      'taxonomy' => 'sanas-card-category',
+      'hide_empty' => false,
+      'meta_query' => array(
+          array(
+              'key' => 'card_category_home',
+              'value' => '1', 
+              'compare' => '='
+          )
+      )
+  ));
+  ?>
+  <div class="all-categories-popup-modal modal fade" id="all-categories-popup" tabindex="-1" role="dialog" aria-labelledby="allCategoriesModalTitle" aria-hidden="true">
+      <div class="modal-dialog-centered modal-dialog" role="document">
+          <div class="modal-content custom-modal-height">
+              <div class="modal-header">
+                  <div class="modal-title" id="allCategoriesModalTitle">All Categories</div>
+              </div>
+              <div class="modal-body">
+                  <div class="category-grid">
+                      <div class="update-category-name">Selected Category: <span id="selected-category-name"></span></div>
+                      <?php if (!empty($terms) && !is_wp_error($terms)): ?>
+                          <?php foreach ($terms as $term): ?>
+                              <div class="category-item">
+                                  <button class="nav-link" id="pills-<?php echo esc_attr($term->slug); ?>-tab" data-bs-toggle="pill" data-bs-target="#pills-<?php echo esc_attr($term->slug); ?>" type="button" role="tab" aria-controls="pills-<?php echo esc_attr($term->slug); ?>" aria-selected="true">
+                                      <div class="list-group-item-image">
+                                          <img src="<?php echo wp_get_attachment_url(get_term_meta($term->term_id, 'card_category_front_gallery', true)); ?>" alt="">
+                                      </div>
+                                      <div class="list-group-item-name"><?php echo esc_html($term->name); ?></div>
+                                  </button>
+                              </div>
+                          <?php endforeach; ?>
+                      <?php else: ?>
+                          <li class="nav-item">No categories found.</li>
+                      <?php endif; ?>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <?php
 }
 add_action('wp_footer', 'sanas_get_all_categories_popup');
