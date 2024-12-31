@@ -7029,3 +7029,7 @@ table.preview-itn tbody tr td{
     font-size: 16px;
     color: var(--snas-text-primary);
 }
+
+.all-tamplate .all-tamplate-btn {
+    color: #000;
+}
