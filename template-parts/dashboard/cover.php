@@ -106,28 +106,28 @@
                                             <!-- <input type="text">
                                             <input type="number"> -->
                                             <select class="custom-select" id="fontSize" onchange="changeFontSize()">
-                                                <option value="2">2</option>
-                                                <option value="4">4</option>
-                                                <option value="6">6</option>
-                                                <option value="8">8</option>
-                                                <option value="10">10</option>
-                                                <option value="12">12</option>
-                                                <option value="14">14</option>
-                                                <option value="16">16</option>
-                                                <option value="18">18</option>
-                                                <option value="20">20</option>
-                                                <option value="24">24</option>
-                                                <option value="28">28</option>
-                                                <option value="32">32</option>
-                                                <option value="36">36</option>
-                                                <option value="42">42</option>
-                                                <option value="48">48</option>
-                                                <option value="56">56</option>
-                                                <option value="64">64</option>
-                                                <option value="72">72</option>
-                                                <option value="84">84</option>
-                                                <option value="92">92</option>
-                                                <option value="180">100</option>
+                                                <option value="2">2 px</option>
+                                                <option value="4">4 px</option>
+                                                <option value="6">6 px</option>
+                                                <option value="8">8 px</option>
+                                                <option value="10">10 px</option>
+                                                <option value="12">12 px</option>
+                                                <option value="14">14 px</option>
+                                                <option value="16">16 px</option>
+                                                <option value="18">18 px</option>
+                                                <option value="20">20 px</option>
+                                                <option value="24">24 px</option>
+                                                <option value="28">28 px</option>
+                                                <option value="32">32 px</option>
+                                                <option value="36">36 px</option>
+                                                <option value="42">42 px</option>
+                                                <option value="48">48 px</option>
+                                                <option value="56">56 px</option>
+                                                <option value="64">64 px</option>
+                                                <option value="72">72 px</option>
+                                                <option value="84">84 px</option>
+                                                <option value="92">92 px</option>
+                                                <option value="180">100 px</option>
                                             </select>
                                          </span>
                                             </div>
