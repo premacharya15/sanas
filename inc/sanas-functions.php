@@ -1024,7 +1024,7 @@ function sanas_get_all_categories_popup() {
         <div class="modal-dialog-centered modal-dialog" role="document">
             <div class="modal-content custom-modal-height">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="allCategoriesModalTitle">All Categories</h5>
+                    <div class="modal-title" id="allCategoriesModalTitle">All Categories</div>
                     <!-- <button type="button" class="all-categories-popup-close close" data-bs-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button> -->
