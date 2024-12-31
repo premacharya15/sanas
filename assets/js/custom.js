@@ -1156,6 +1156,17 @@ jQuery(document).ready(function($) {
     // });
 
     $('.category-item button').on('click', function() {
+
+        var index = $(this).parent().index('.category-item');
+        $('#pills-tab .nav-item .nav-link').each(function(i) {
+            if (i === index) {
+                $(this).addClass('active').removeClass('d-none');
+                $(this).trigger('click');
+            } else {
+                $(this).addClass('d-none').removeClass('active');
+            }
+        });
+
         var categoryName = $(this).find('.list-group-item-name').text();
         var targetTab = $(this).data('bs-target');
 
