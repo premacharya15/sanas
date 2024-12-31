@@ -7035,3 +7035,13 @@ table.preview-itn tbody tr td{
     font-weight: 500;
     font-size: 16px;
 }
+
+.all-tamplate .nav-item .nav-link.active{
+    border-bottom: none !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+}
+
+.all-tamplate .nav-pills {
+    margin-bottom: 0 !important;
+}
