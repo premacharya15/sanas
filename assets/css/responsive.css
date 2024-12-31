@@ -899,7 +899,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
     }
     
     section.tab-section ul#pills-tab {
-        display: none;
+        /* display: none; */
     }
     .video-inner-box {
         padding: 20px 15px;
