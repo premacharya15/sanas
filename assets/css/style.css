@@ -6959,6 +6959,10 @@ table.preview-itn tbody tr td{
     margin: 0 auto;
 }
 
+.all-categories-popup-modal .modal-header {
+    justify-items: center;
+}
+
 .all-categories-popup-modal .modal-content {
     border-radius: 25px;
 }
