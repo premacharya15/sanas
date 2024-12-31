@@ -901,6 +901,17 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
     section.tab-section ul#pills-tab {
         /* display: none; */
     }
+
+    .nav-pills li button.nav-link{
+        padding: 0 !important;
+        font-size: 16px !important;
+        line-height: 20px !important;
+    }
+
+    .nav-pills li button.nav-link.active {
+        border-bottom: none !important;
+    }
+
     section.tab-section ul#pills-tab .nav-link:not(.active){
         display: none;
     }
