@@ -6960,7 +6960,7 @@ table.preview-itn tbody tr td{
 }
 
 .all-categories-popup-modal .modal-content {
-    border-radius: 25px;
+    border-radius: 25px 25px 0px 0px;
 }
 
 .modal-dialog-centered{
