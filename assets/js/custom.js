@@ -1122,7 +1122,9 @@ jQuery(document).ready(function($) {
 
         // remove all tab-pane
         $('.tab-pane').removeClass('show active');
-        $(targetTab).addClass('show active d-none');
+        $(targetTab).addClass('show active');
+        $('.nav-link').addClass('d-none');
+        $(targetTab).addClass('d-none');
 
         $('#all-categories-popup').modal('hide');
     });
