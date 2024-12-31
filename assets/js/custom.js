@@ -1112,7 +1112,7 @@ jQuery(document).ready(function($) {
 
     $('.category-item button').on('click', function() {
         var categoryName = $(this).find('.list-group-item-name').text();
-        var targetTab = $(this).attr('data-category-name');
+        var targetTab = $(this).attr('data-bs-target');
 
         console.log(categoryName);
         console.log(targetTab);
@@ -1131,5 +1131,7 @@ jQuery(document).ready(function($) {
         $('#all-categories-popup').modal('hide');
     });
 });
+
+
 
 
