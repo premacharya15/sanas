@@ -1123,9 +1123,12 @@ jQuery(document).ready(function($) {
         });
 
         // remove all tab-pane
-        $('.tab-pane').removeClass('active');
-        $(targetTab).addClass('active');
-        $('.nav-link').removeClass('d-none');
+        $('.tab-pane').removeClass('show active');
+        $('#pills-tab .nav-link').removeClass('active');
+
+        // Activate the clicked tab
+        $(this).addClass('active');
+        $(`#pills-${targetTab}`).addClass('show active');
 
         $('#all-categories-popup').modal('hide');
     });
