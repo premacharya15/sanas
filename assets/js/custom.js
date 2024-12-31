@@ -1114,9 +1114,6 @@ jQuery(document).ready(function($) {
         var categoryName = $(this).find('.list-group-item-name').text();
         var targetTab = $(this).data('bs-target');
 
-        // Update the category name in the placeholder
-        $('#selected-category-name').text(categoryName);
-
         $('#pills-tab .nav-link').each(function() {
             if ($(this).data('bs-target') === targetTab) {
                 $(this).text(categoryName);
