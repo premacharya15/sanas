@@ -912,6 +912,10 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
         border-bottom: none !important;
     }
 
+    .tab-section .nav-pills {
+        float: left !important;
+    }
+
     section.tab-section ul#pills-tab .nav-link:not(.active){
         display: none;
     }
