@@ -1110,8 +1110,9 @@ jQuery(document).ready(function($) {
         $('#all-categories-popup').modal('show');
     });
 
-    $('.category-item button').on('click', function() {
-        
+    $('.category-grid .category-item').on('click', function() {
+            var index = $(this).index('.category-item');  // Get the index of the clicked item
+            console.log('Clicked item index:', index);
         // var categoryName = $(this).find('.list-group-item-name').text();
         // var targetTab = $(this).attr('data-category-name');
 
