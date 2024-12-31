@@ -6963,6 +6963,11 @@ table.preview-itn tbody tr td{
     border-radius: 25px;
 }
 
+.all-categories-popup-modal-dialog{
+    display: flex;
+    align-items: end;
+}
+
 .all-categories-popup-modal .modal-title {
     justify-content: center;
     font-size: 24px;
@@ -6982,7 +6987,7 @@ table.preview-itn tbody tr td{
 
 .all-categories-popup-modal .list-group-item {
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: center;
     padding: 10px;
     border: none;

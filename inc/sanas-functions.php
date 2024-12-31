@@ -1021,7 +1021,7 @@ function sanas_get_all_categories_popup() {
     ));
     ?>
     <div class="all-categories-popup-modal modal fade" id="all-categories-popup" tabindex="-1" role="dialog" aria-labelledby="allCategoriesModalTitle" aria-hidden="true">
-        <div class="modal-dialog-centered modal-dialog" role="document">
+        <div class="all-categories-popup-modal-dialog modal-dialog" role="document">
             <div class="modal-content custom-modal-height">
                 <div class="modal-header">
                     <h5 class="modal-title" id="allCategoriesModalTitle">All Categories</h5>
