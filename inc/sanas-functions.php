@@ -1020,19 +1020,19 @@ function sanas_get_all_categories_popup() {
         'hide_empty' => false,
     ));
     ?>
-    <div class="all-categories-modal fade" id="all-categories-popup" tabindex="-1" role="dialog" aria-labelledby="allCategoriesModalTitle" aria-hidden="true">
-        <div class="all-categories-modal-dialog" role="document">
-            <div class="all-categories-modal-content">
-                <div class="all-categories-modal-header">
-                    <h5 class="all-categories-modal-title" id="allCategoriesModalTitle">All Categories</h5>
+    <div class="modal fade" id="all-categories-popup" tabindex="-1" role="dialog" aria-labelledby="allCategoriesModalTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="allCategoriesModalTitle">All Categories</h5>
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button>
                 </div>
-                <div class="all-categories-modal-body">
-                    <ul class="all-categories-list-group">
+                <div class="modal-body">
+                    <ul class="list-group">
                         <?php foreach ($terms as $term): ?>
-                            <li class="all-categories-list-group-item"><?php echo esc_html($term->name); ?></li>
+                            <li class="list-group-item"><?php echo esc_html($term->name); ?></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
