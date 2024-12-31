@@ -174,15 +174,6 @@ function changeFontSize() {
         activeObject.set({ fontSize: parseInt(fontSize, 10) });
         canvas.renderAll();
         console.log('Font size updated 2:', activeObject.fontSize);
-
-        // Update the select option to reflect the current font size
-        const fontSizeSelect = document.getElementById('fontSize');
-        for (let i = 0; i < fontSizeSelect.options.length; i++) {
-            if (fontSizeSelect.options[i].value == fontSize) {
-                fontSizeSelect.selectedIndex = i;
-                break;
-            }
-        }
     }
     // document.getElementById('fontSize').focus();
     setTimeout(() => {
