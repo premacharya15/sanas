@@ -6966,6 +6966,7 @@ table.preview-itn tbody tr td{
 .modal-dialog-centered{
     display: flex;
     align-items: end !important;
+    height: 100% !important;
 }
 
 .all-categories-popup-modal .modal-header {
@@ -6999,5 +7000,5 @@ table.preview-itn tbody tr td{
 
 .all-categories-popup-modal .list-group-item .list-group-item-image {
     max-width: 50px;
-    margin-right: 10px;
+    margin: auto;
 }
