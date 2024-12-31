@@ -1109,4 +1109,20 @@ jQuery(document).ready(function($) {
     $('#view-all-categories').on('click', function() {
         $('#all-categories-popup').modal('show');
     });
+
+    $('.category-item button').on('click', function() {
+        var categoryName = $(this).find('.list-group-item-name').text();
+        var targetTab = $(this).data('bs-target');
+
+        $('#pills-tab .nav-link').each(function() {
+            if ($(this).data('bs-target') === targetTab) {
+                $(this).text(categoryName);
+            }
+        });
+
+        $('.tab-pane').removeClass('show active');
+        $(targetTab).addClass('show active');
+
+        $('#all-categories-popup').modal('hide');
+    });
 });
