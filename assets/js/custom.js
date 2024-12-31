@@ -1114,21 +1114,16 @@ jQuery(document).ready(function($) {
         var categoryName = $(this).find('.list-group-item-name').text();
         var targetTab = $(this).attr('data-category-name');
 
-        $('.all-tamplate .update-category-name .nav-item .nav-link').each(function(){
-            if ($(this).attr('data-category-name') == targetTab) {
-                $(this).removeClass('d-none');
-                $(this).addClass('active');
+        $('#pills-tab .nav-link').each(function() {
+            if ($(this).attr('data-category-name') === targetTab) {
+                $(this).text(categoryName);
             }
-            else{
-                $(this).addClass('d-none');
-            }
-        })
+        });
 
         // remove all tab-pane
         $('.tab-pane').removeClass('show active');
-        $(targetTab).addClass('show active');
-        $('.nav-link').addClass('d-none');
-        $(targetTab).addClass('d-none');
+        $(targetTab).addClass('show active d-none');
+        $('.nav-link').removeClass('d-none');
 
         $('#all-categories-popup').modal('hide');
     });
