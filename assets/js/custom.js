@@ -1113,8 +1113,13 @@ jQuery(document).ready(function($) {
     $('.category-grid .category-item').on('click', function() {
             var index = $(this).index('.category-item');
             console.log('Clicked item index:', index);
-            $('#pills-tab .nav-item .nav-link').eq(index).addClass('active');
-
+            $('#pills-tab .nav-item .nav-link').each(function(i) {
+                if (i === index) {
+                  $(this).addClass('active').removeClass('d-none');
+                } else {
+                  $(this).addClass('d-none').removeClass('active');
+                }
+              });
             // jQuery('.category-grid .category-item').on('click', function() {
             //     var index = jQuery(this).index('.category-item');
             //     jQuery('#pills-tab .nav-item').each(function() {
