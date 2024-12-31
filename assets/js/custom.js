@@ -1114,11 +1114,15 @@ jQuery(document).ready(function($) {
         var categoryName = $(this).find('.list-group-item-name').text();
         var targetTab = $(this).attr('data-category-name');
 
-        $('#pills-tab .nav-link').each(function() {
-            if ($(this).attr('data-category-name') === targetTab) {
-                $(this).text(categoryName);
+        $('.all-tamplate .update-category-name .nav-item .nav-link').each(function(){
+            if ($(this).attr('data-category-name') == targetTab) {
+                $(this).removeClass('d-none');
+                $(this).addClass('active');
             }
-        });
+            else{
+                $(this).addClass('d-none');
+            }
+        })
 
         // remove all tab-pane
         $('.tab-pane').removeClass('show active');
