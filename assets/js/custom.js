@@ -1121,8 +1121,8 @@ jQuery(document).ready(function($) {
         });
 
         // remove all tab-pane
-        $('.tab-pane').removeClass('show active');
-        $(targetTab).addClass('show active d-none');
+        $('.tab-pane').removeClass('active');
+        $(targetTab).addClass('active');
         $('.nav-link').removeClass('d-none');
 
         $('#all-categories-popup').modal('hide');
