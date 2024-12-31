@@ -1013,3 +1013,32 @@ function sanas_get_card_preview_popup() {
   <?php
 }
 add_action('wp_footer', 'sanas_get_card_preview_popup');
+
+function sanas_get_all_categories_popup() {
+    $terms = get_terms(array(
+        'taxonomy' => 'sanas-card-category',
+        'hide_empty' => false,
+    ));
+    ?>
+    <div class="modal fade" id="all-categories-popup" tabindex="-1" role="dialog" aria-labelledby="allCategoriesModalTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="allCategoriesModalTitle">All Categories</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <?php foreach ($terms as $term): ?>
+                            <li class="list-group-item"><?php echo esc_html($term->name); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+}
+add_action('wp_footer', 'sanas_get_all_categories_popup');

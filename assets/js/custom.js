@@ -1102,3 +1102,11 @@ jQuery(document).ready(function($) {
         window.location.href = '/user-dashboard/?dashboard=cover&card_id=' + cardId;
     });
 });
+
+
+// all categories popup
+jQuery(document).ready(function($) {
+    $('#view-all-categories').on('click', function() {
+        $('#all-categories-popup').modal('show');
+    });
+});
