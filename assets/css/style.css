@@ -6964,7 +6964,7 @@ table.preview-itn tbody tr td{
 }
 
 .all-categories-popup-modal .custom-modal-height {
-    max-height: 30vh !important;
+    max-height: 50vh;
     overflow-y: auto;
 }
 
