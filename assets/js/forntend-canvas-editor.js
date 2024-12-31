@@ -184,6 +184,8 @@ function changeFontSize() {
     //update selected text size in select option
     const selectedOption = document.getElementById('fontSize').value;
     document.getElementById('fontSize').value = selectedOption;
+
+    console.log("selectedOption - forntend-canvas-editor.js", selectedOption);
 }
 window.changeFontSize = changeFontSize;
 // Change color of selected text
