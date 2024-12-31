@@ -1114,7 +1114,7 @@ jQuery(document).ready(function($) {
         var categoryName = $(this).find('.list-group-item-name').text();
         var targetTab = $(this).attr('data-category-name');
 
-        console.log("targetTab" + targetTab);
+        console.log(targetTab)
 
         $('#pills-tab .nav-link').each(function() {
             if ($(this).attr('data-category-name') === targetTab) {
@@ -1123,12 +1123,9 @@ jQuery(document).ready(function($) {
         });
 
         // remove all tab-pane
-        $('.tab-pane').removeClass('show active');
-        $('#pills-tab .nav-link').removeClass('active');
-
-        // Activate the clicked tab
-        $(this).addClass('active');
-        $(`#pills-${targetTab}`).addClass('show active');
+        $('.tab-pane').removeClass('active');
+        $(targetTab).addClass('active');
+        $('.nav-link').removeClass('d-none');
 
         $('#all-categories-popup').modal('hide');
     });
