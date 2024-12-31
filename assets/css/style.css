@@ -6960,5 +6960,34 @@ table.preview-itn tbody tr td{
 }
 
 .all-categories-popup-modal .modal-content {
-    border-radius: 10px;
+    border-radius: 25px;
+}
+
+.all-categories-popup-modal .custom-modal-height {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.all-categories-popup-modal .list-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.all-categories-popup-modal .list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+    width: calc(50% - 10px);
+    font-size: 14px;
+}
+
+.all-categories-popup-modal .list-group-item .list-group-item-image {
+    max-width: 50px;
+    margin-right: 10px;
 }

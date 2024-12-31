@@ -1022,7 +1022,7 @@ function sanas_get_all_categories_popup() {
     ?>
     <div class="all-categories-popup-modal modal fade" id="all-categories-popup" tabindex="-1" role="dialog" aria-labelledby="allCategoriesModalTitle" aria-hidden="true">
         <div class="modal-dialog-centered modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content custom-modal-height" style="max-height: 70vh;">
                 <div class="modal-header">
                     <h5 class="modal-title" id="allCategoriesModalTitle">All Categories</h5>
                     <button type="button" class="all-categories-popup-close close" data-bs-dismiss="modal" aria-label="Close">
@@ -1032,7 +1032,10 @@ function sanas_get_all_categories_popup() {
                 <div class="modal-body">
                     <ul class="list-group">
                         <?php foreach ($terms as $term): ?>
-                            <li class="list-group-item"><?php echo esc_html($term->name); ?></li>
+                          <li class="list-group-item">
+                            <div class="list-group-item-image"><img src="<?php echo wp_get_attachment_url(get_term_meta($term->term_id, 'card_category_front_gallery', true)); ?>" alt=""></div>
+                            <div class="list-group-item-name"><?php echo esc_html($term->name); ?></div>
+                          </li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
