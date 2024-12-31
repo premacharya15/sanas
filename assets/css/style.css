@@ -7007,3 +7007,25 @@ table.preview-itn tbody tr td{
     max-width: 50px;
     margin: auto;
 }
+
+.all-categories-popup-modal .category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.all-categories-popup-modal .category-item {
+    text-align: center;
+}
+
+.all-categories-popup-modal .list-group-item-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.all-categories-popup-modal .list-group-item-name {
+    margin-top: 10px;
+    font-size: 16px;
+    color: var(--snas-text-primary);
+}

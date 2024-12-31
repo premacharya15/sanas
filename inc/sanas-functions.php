@@ -1025,19 +1025,18 @@ function sanas_get_all_categories_popup() {
             <div class="modal-content custom-modal-height">
                 <div class="modal-header">
                     <div class="modal-title" id="allCategoriesModalTitle">All Categories</div>
-                    <!-- <button type="button" class="all-categories-popup-close close" data-bs-dismiss="modal" aria-label="Close">
-                        <span>&times;</span>
-                    </button> -->
                 </div>
                 <div class="modal-body">
-                    <ul class="list-group">
+                    <div class="category-grid">
                         <?php foreach ($terms as $term): ?>
-                          <li class="list-group-item">
-                            <div class="list-group-item-image"><img src="<?php echo wp_get_attachment_url(get_term_meta($term->term_id, 'card_category_front_gallery', true)); ?>" alt=""></div>
-                            <div class="list-group-item-name"><?php echo esc_html($term->name); ?></div>
-                          </li>
+                            <div class="category-item">
+                                <div class="list-group-item-image">
+                                    <img src="<?php echo wp_get_attachment_url(get_term_meta($term->term_id, 'card_category_front_gallery', true)); ?>" alt="">
+                                </div>
+                                <div class="list-group-item-name"><?php echo esc_html($term->name); ?></div>
+                            </div>
                         <?php endforeach; ?>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
