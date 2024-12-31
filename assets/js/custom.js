@@ -1111,23 +1111,24 @@ jQuery(document).ready(function($) {
     });
 
     $('.category-item button').on('click', function() {
-        var categoryName = $(this).find('.list-group-item-name').text();
-        var targetTab = $(this).attr('data-category-name');
+        
+        // var categoryName = $(this).find('.list-group-item-name').text();
+        // var targetTab = $(this).attr('data-category-name');
 
-        console.log(categoryName);
-        console.log(targetTab);
+        // console.log(categoryName);
+        // console.log(targetTab);
 
-        $('#pills-tab .nav-link').each(function() {
-            if ($(this).attr('data-category-name') === targetTab) {
-                $(this).text(categoryName);
-            }
-        });
+        // $('#pills-tab .nav-link').each(function() {
+        //     if ($(this).attr('data-category-name') === targetTab) {
+        //         $(this).text(categoryName);
+        //     }
+        // });
 
-        // remove all tab-pane
-        $('.tab-pane').removeClass('active');
-        $(targetTab).addClass('active');
-        $('.nav-link').removeClass('d-none');
+        // // remove all tab-pane
+        // $('.tab-pane').removeClass('active');
+        // $(targetTab).addClass('active');
+        // $('.nav-link').removeClass('d-none');
 
-        $('#all-categories-popup').modal('hide');
+        // $('#all-categories-popup').modal('hide');
     });
 });
