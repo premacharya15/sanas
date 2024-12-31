@@ -6943,3 +6943,22 @@ table.preview-itn tbody tr td{
 .card-preview-popup .modal-dialog {
     width: 500px !important;
 }
+
+
+/* all categories popup */
+.all-categories-popup-modal {
+    transition: transform 0.5s ease-in-out;
+    transform: translateY(100%);
+}
+
+.all-categories-popup-modal.show {
+    transform: translateY(0);
+}
+
+.all-categories-popup-modal .modal-dialog {
+    margin: 0 auto;
+}
+
+.all-categories-popup-modal .modal-content {
+    border-radius: 10px;
+}

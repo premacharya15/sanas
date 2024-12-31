@@ -1020,12 +1020,12 @@ function sanas_get_all_categories_popup() {
         'hide_empty' => false,
     ));
     ?>
-    <div class="modal fade" id="all-categories-popup" tabindex="-1" role="dialog" aria-labelledby="allCategoriesModalTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div class="all-categories-popup-modal modal fade" id="all-categories-popup" tabindex="-1" role="dialog" aria-labelledby="allCategoriesModalTitle" aria-hidden="true">
+        <div class="modal-dialog-centered modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="allCategoriesModalTitle">All Categories</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <button type="button" class="all-categories-popup-close close" data-bs-dismiss="modal" aria-label="Close">
                         <span>&times;</span>
                     </button>
                 </div>
