@@ -1164,8 +1164,8 @@ jQuery(document).ready(function($) {
                 
             // });
 
-        var categoryName = $(this).find('.list-group-item-name').text();
-        var targetTab = $(this).attr('data-category-name');
+        // var categoryName = $(this).find('.list-group-item-name').text();
+        // var targetTab = $(this).attr('data-category-name');
 
         // console.log(categoryName);
         // console.log(targetTab);
