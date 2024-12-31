@@ -180,6 +180,10 @@ function changeFontSize() {
         console.log('Setting focus 2');
         document.getElementById('fontSize').focus();
     }, 200);
+
+    //update selected text size in select option
+    const selectedOption = document.getElementById('fontSize').value;
+    document.getElementById('fontSize').value = selectedOption;
 }
 window.changeFontSize = changeFontSize;
 // Change color of selected text
