@@ -1120,6 +1120,8 @@ jQuery(document).ready(function($) {
             }
         });
 
+        $('.update-category-name').text(categoryName);
+
         $('.tab-pane').removeClass('show active');
         $(targetTab).addClass('show active');
 
