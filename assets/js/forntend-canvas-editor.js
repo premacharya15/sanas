@@ -303,14 +303,6 @@ jQuery(document).ready(function ($) {
         setBackgroundImage(imgSrc);
     });
 });
-
-//function to update the selected text size in select option tag
-function updateSelectedTextSize() {
-    const selectedOption = document.getElementById('fontSize').value;
-    document.getElementById('fontSize').value = selectedOption;
-}
-window.updateSelectedTextSize = updateSelectedTextSize;
-
 // Function to update the active alignment button
 function updateAlignmentButtons(alignment) {
     // Remove 'active' class from all alignment buttons
