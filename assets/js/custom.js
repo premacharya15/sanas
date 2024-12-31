@@ -1115,10 +1115,14 @@ jQuery(document).ready(function($) {
             console.log('Clicked item index:', index);
             $('#pills-tab .nav-item .nav-link').eq(index).addClass('active');
 
-            jQuery('.category-grid .category-item').on('click', function() {
-                var index = jQuery(this).index('.category-item');
-                jQuery('#pills-tab .nav-item .nav-link').addClass('active');
-            });
+            // jQuery('.category-grid .category-item').on('click', function() {
+            //     var index = jQuery(this).index('.category-item');
+            //     jQuery('#pills-tab .nav-item').each(function() {
+            //         jQuery(this).find('.nav-link').removeClass('active');
+            //         jQuery(this).find('.nav-link').removeClass('d-none');
+            //     });
+                
+            // });
 
         // var categoryName = $(this).find('.list-group-item-name').text();
         // var targetTab = $(this).attr('data-category-name');
