@@ -1037,26 +1037,9 @@ function sanas_get_all_categories_popup() {
                     <div class="category-grid">
                         <?php if (!empty($terms) && !is_wp_error($terms)): ?>
                             <?php foreach ($terms as $term): ?>
-                                <?php 
-                                $args = array(
-                                    'post_type' => 'sanas_card',
-                                    'posts_per_page' => 1,
-                                    'tax_query' => array(
-                                        array(
-                                            'taxonomy' => 'sanas-card-category',
-                                            'field' => 'term_id',
-                                            'terms' => $term->term_id
-                                        )
-                                    ),
-                                    'orderby' => 'ID',
-                                    'order' => 'DESC'
-                                );
-                                $last_post = get_posts($args);
-                                $last_id = !empty($last_post) ? $last_post[0]->ID : '';
-                                ?>
                                 <div class="category-item">
                                     <div class="list-group-item-image">
-                                        <img src="<?php echo wp_get_attachment_url(get_term_meta($term->term_id, 'card_category_front_gallery', true)); ?>" alt="" data-last-card="<?php echo $last_id; ?>">
+                                        <img src="<?php echo wp_get_attachment_url(get_term_meta($term->term_id, 'card_category_front_gallery', true)); ?>" alt="">
                                     </div>
                                     <div class="list-group-item-name"><?php echo esc_html($term->name); ?></div>
                                 </div>
