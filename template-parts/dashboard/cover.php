@@ -102,11 +102,34 @@
                                         <div class="form-group">
                                             <div class="select-wrapper">
                                             <label class="canavas-label" for="fontSize">Size:</label>
-                                         <!-- <span class="customSelect-size"> -->
+                                         <span class="customSelect-size">
                                             <!-- <input type="text">
                                             <input type="number"> -->
-                                         <input class="custom-select" type="number" name="fontSize" id="fontSize" value="40" min="10" max="100" onchange="changeFontSize()" >
-                                         <!-- </span> -->
+                                            <select class="custom-select" id="fontSize" onchange="changeFontSize()">
+                                                <option value="2">2</option>
+                                                <option value="4">4</option>
+                                                <option value="6">6</option>
+                                                <option value="8">8</option>
+                                                <option value="10">10</option>
+                                                <option value="12">12</option>
+                                                <option value="14">14</option>
+                                                <option value="16">16</option>
+                                                <option value="18">18</option>
+                                                <option value="20">20</option>
+                                                <option value="24">24</option>
+                                                <option value="28">28</option>
+                                                <option value="32">32</option>
+                                                <option value="36">36</option>
+                                                <option value="42">42</option>
+                                                <option value="48">48</option>
+                                                <option value="56">56</option>
+                                                <option value="64">64</option>
+                                                <option value="72">72</option>
+                                                <option value="84">84</option>
+                                                <option value="92">92</option>
+                                                <option value="180">100</option>
+                                            </select>
+                                         </span>
                                             </div>
                                         </div>
                                         </div>
