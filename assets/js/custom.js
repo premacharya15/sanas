@@ -1110,43 +1110,26 @@ jQuery(document).ready(function($) {
         $('#all-categories-popup').modal('show');
     });
 
-    $('.category-grid .category-item').on('click', function() {
-        var index = $(this).index('.category-item');
-        $('#pills-tab .nav-item .nav-link').each(function(i) {
-            if (i === index) {
-                $(this).addClass('active').removeClass('d-none');
-            } else {
-                $(this).addClass('d-none').removeClass('active');
-            }
-        });
-    });
-    
-            // jQuery('.category-grid .category-item').on('click', function() {
-            //     var index = jQuery(this).index('.category-item');
-            //     jQuery('#pills-tab .nav-item').each(function() {
-            //         jQuery(this).find('.nav-link').removeClass('active');
-            //         jQuery(this).find('.nav-link').removeClass('d-none');
-            //     });
-                
-            // });
-
+    $('.category-item button').on('click', function() {
         var categoryName = $(this).find('.list-group-item-name').text();
         var targetTab = $(this).attr('data-category-name');
 
-        // console.log(categoryName);
-        // console.log(targetTab);
+        console.log(categoryName);
+        console.log(targetTab);
 
-        // $('#pills-tab .nav-link').each(function() {
-        //     if ($(this).attr('data-category-name') === targetTab) {
-        //         $(this).text(categoryName);
-        //     }
-        // });
+        $('#pills-tab .nav-link').each(function() {
+            if ($(this).attr('data-bs-target') === targetTab) {
+                $(this).text(categoryName);
+            }
+        });
 
-        // // remove all tab-pane
+        // remove all tab-pane
         $('.tab-pane').removeClass('active');
         $(targetTab).addClass('active');
-        // $('.nav-link').removeClass('d-none');
+        $('.nav-link').removeClass('d-none');
 
         $('#all-categories-popup').modal('hide');
-    // });
+    });
 });
+
+
