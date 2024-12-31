@@ -446,9 +446,30 @@
                                 <div class="form-group-outer">
                                         <div class="form-group">
                                          <label class="canavas-label" for="fontSize">Size:</label>
-                                         <span class="customSelect-size">
-                                         <input class="custom-select" type="number" name="fontSize" id="fontSize" value="40" min="10" max="100" onchange="changeFontSize()" >
-                                         </span>
+                                         <select class="custom-select select-inner" id="fontSize" onchange="changeFontSize()">
+                                                <option value="2">2 px</option>
+                                                <option value="4">4 px</option>
+                                                <option value="6">6 px</option>
+                                                <option value="8">8 px</option>
+                                                <option value="10">10 px</option>
+                                                <option value="12">12 px</option>
+                                                <option value="14">14 px</option>
+                                                <option value="16">16 px</option>
+                                                <option value="18">18 px</option>
+                                                <option value="20">20 px</option>
+                                                <option value="24">24 px</option>
+                                                <option value="28">28 px</option>
+                                                <option value="32">32 px</option>
+                                                <option value="36">36 px</option>
+                                                <option value="42">42 px</option>
+                                                <option value="48">48 px</option>
+                                                <option value="56">56 px</option>
+                                                <option value="64">64 px</option>
+                                                <option value="72">72 px</option>
+                                                <option value="84">84 px</option>
+                                                <option value="92">92 px</option>
+                                                <option value="180">100 px</option>
+                                            </select>
                                      </div>
                                     <div class="form-group">
                                         <div class="select-wrapper">
