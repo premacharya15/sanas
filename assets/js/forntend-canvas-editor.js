@@ -182,6 +182,15 @@ function changeFontSize() {
     }, 200);
 }
 window.changeFontSize = changeFontSize;
+
+//get the selected text size in select option tag
+function getSelectedTextSize() {
+    const selectedOption = document.getElementById('fontSize').value;
+    return selectedOption;
+    console.log("selectedOption - forntend-canvas-editor.js", selectedOption);
+}
+window.getSelectedTextSize = getSelectedTextSize;
+
 // Change color of selected text
 function changeColor(color) {
     const activeObject = canvas.getActiveObject();
