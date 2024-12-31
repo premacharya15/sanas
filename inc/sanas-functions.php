@@ -1037,7 +1037,7 @@ function sanas_get_all_categories_popup() {
                     <div class="category-grid">
                         <?php if (!empty($terms) && !is_wp_error($terms)): ?>
                             <?php foreach ($terms as $term): ?>
-                                <div class="category-item">
+                                <div class="category-item update-category-name" data-category-name="<?php echo esc_attr($term->name); ?>">
                                     <button class="nav-link" id="pills-<?php echo esc_attr($term->slug); ?>-tab" data-bs-toggle="pill" data-bs-target="#pills-<?php echo esc_attr($term->slug); ?>" type="button" role="tab" aria-controls="pills-<?php echo esc_attr($term->slug); ?>" aria-selected="true">
                                         <div class="list-group-item-image">
                                             <img src="<?php echo wp_get_attachment_url(get_term_meta($term->term_id, 'card_category_front_gallery', true)); ?>" alt="">
