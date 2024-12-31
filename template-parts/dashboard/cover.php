@@ -102,10 +102,10 @@
                                         <div class="form-group">
                                             <div class="select-wrapper">
                                             <label class="canavas-label" for="fontSize">Size:</label>
-                                         <span class="customSelect-size">
+                                         <!-- <span class="customSelect-size"> -->
                                             <!-- <input type="text">
                                             <input type="number"> -->
-                                            <select class="custom-select" id="fontSize" onchange="changeFontSize()">
+                                            <select class="custom-select select-inner" id="fontSize" onchange="changeFontSize()">
                                                 <option value="2">2 px</option>
                                                 <option value="4">4 px</option>
                                                 <option value="6">6 px</option>
@@ -129,7 +129,7 @@
                                                 <option value="92">92 px</option>
                                                 <option value="180">100 px</option>
                                             </select>
-                                         </span>
+                                         <!-- </span> -->
                                             </div>
                                         </div>
                                         </div>
