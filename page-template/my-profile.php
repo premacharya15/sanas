@@ -203,7 +203,7 @@ $youtube = get_user_meta($user_id, 'youtube', true);
                         </div>
                       </div>
                     </form>
-                    <p id="temporary-message" style="color: red !important;"></p>
+                    <div class="temporary-message"></div>
                   </div>
                 </div>
               </div>
