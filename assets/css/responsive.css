@@ -1190,7 +1190,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         margin: 0 0 0 10px;
     }
 
-    .guest-contact-list-table table.dataTable thead>tr:nth-child(2)>th:nth-child(2) .dt-column-title {
+    .guest-contact-list-table table.dataTable thead>tr:last-child>th:nth-child(2) .dt-column-title {
         margin: 0 0 0 10px;
     }
 
