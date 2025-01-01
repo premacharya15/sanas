@@ -1189,6 +1189,11 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     .todo-table-list table.dataTable thead>tr>th:nth-child(2) .dt-column-title {
         margin: 0 0 0 10px;
     }
+
+    .guest-contact-list-table table.dataTable thead>tr:nth-child(2)>th:nth-child(2) .dt-column-title {
+        margin: 0 0 0 10px;
+    }
+
     .todo-table-list table.dataTable tbody>tr>td:nth-child(2) {
         padding-left: 20px;
     }
