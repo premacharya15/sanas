@@ -1035,6 +1035,14 @@ function sanas_get_all_categories_popup() {
                 </div>
                 <div class="modal-body">
                     <div class="category-grid">
+                    <div class="category-item update-category-name" data-category-name="Best Loved">
+                        <button class="nav-link" id="pills-bestloved-tab" data-bs-toggle="pill" data-bs-target="#pills-bestloved" type="button" role="tab" aria-controls="pills-bestloved" aria-selected="true">
+                            <div class="list-group-item-image">
+                              <img src="/wp-content/uploads/2024/12/card_cover_image_1498.png" alt="">
+                            </div>
+                          <div class="list-group-item-name">Best Loved</div>
+                        </button>
+                      </div>
                         <?php if (!empty($terms) && !is_wp_error($terms)): ?>
                             <?php foreach ($terms as $term): ?>
                                 <div class="category-item update-category-name" data-category-name="<?php echo esc_attr($term->name); ?>">
