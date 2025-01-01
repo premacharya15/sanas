@@ -285,20 +285,6 @@ section.wl-main-canvas .inner-container .inner-colum {
                                             <?php }?>
                                         </div>
                                     </div>
-                                        <?php 
-                                        if(!empty($eventtitle)) { echo '<div class="mt-3 preview-event-title" style="'.$event_title_css.'">'.esc_html($eventtitle).'</div>'; }
-
-                                            if(!empty($eventdate)) { echo '<div class="mt-2 preview-event-date" style="'.$event_date_css.'">'.esc_html($eventdate).'</div>'; }
-
-
-                                        ?>
-                                        <h4 class="mb-0">Hosted By</h4>
-                                        <?php 
-                                            if(!empty($guestName)) { echo '<div class="preview-host-name" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
-                                            if(!empty($guestContact)) { echo '<div class="preview-host-contact-no" style="'.$guest_contact_css.'">'.esc_html($guestContact).'</div>'; }
-                                            if(!empty($guestMessage)) { echo '<div class="preview-host-message" style="'.$guest_message_css.'"><pre>'.$guestMessage.'</pre></div>'; }
-                                         
-                                        ?>
                                     </div>
                                 </div>
                                 <div class="row">
