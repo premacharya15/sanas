@@ -66,7 +66,7 @@ $user_id = $current_user->ID;
                                 aria-selected="false">Color</button>
                         </li>
                         <li class="nav-item" role="presentation"> 
-                            <button class="nav-link" onclick="addText('event')"><i class="fa-solid fa-plus"></i>Add Text</button>
+                            <button class="nav-link add-new-text-mobail" onclick="addText('event')">Add Text</button>
                         </li>
                         <li>
                             <button class="cloes-btn">
