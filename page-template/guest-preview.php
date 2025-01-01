@@ -304,17 +304,17 @@ section.wl-main-canvas .inner-container .inner-colum {
                                                         <td><?php echo esc_attr($event['program_name'])?></td>
                                                         <td><?php echo esc_attr($event['program_time'])?></td>
                                                     </tr>
-                                                    <?php endforeach; }?>
+                                                    <?php endforeach; ?>
                                                 </table>
-                                                <?php } ?>
+                                            <?php } ?>
                                             </div>
                                         </div>
                                 </div>
                                 <?php   
-                                // if($guest_status!='pending' && !empty($guestid)){ ?>
-                                    <!-- <div class="alert-box mt-5" >You have already submited your response as below.</div> -->
+                                if($guest_status!='pending' && !empty($guestid)){ ?>
+                                    <div class="alert-box mt-5" >You have already submited your response as below.</div>
                                 <?php
-                                // } 
+                                } 
 
                                 ?>  
                                 <div class="row">
