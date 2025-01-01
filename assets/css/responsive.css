@@ -729,7 +729,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
     .hero-detaile{
         height: 430px;
     }
-    /* .contact table.dataTable>tbody>tr>td:first-child {
+    .contact table.dataTable>tbody>tr>td:first-child {
         min-width: 20px;
         width: 10%;
     }
@@ -745,7 +745,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
     }
     .contact table.dataTable>tbody>tr>td:nth-child(5) {
         min-width: 110px;
-    } */
+    }
    
     .guest-stats .card-block {
         width: 50%;
@@ -1675,7 +1675,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         font-size: 16px;
         padding: 5px 10px;
     }
-    /* .contact table.dataTable>thead>tr>th:nth-child(5), .contact table.dataTable>tbody>tr>td:nth-child(5){
+    .contact table.dataTable>thead>tr>th:nth-child(5), .contact table.dataTable>tbody>tr>td:nth-child(5){
         display: none;
     }
     .contact table.dataTable>thead>tr>th:nth-child(2), .contact table.dataTable>tbody>tr>td:nth-child(2){
@@ -1683,7 +1683,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         font-size: 16px;
     }
     .contact table.dataTable>thead>tr>th:nth-child(1), .contact table.dataTable>tbody>tr>td:nth-child(1){
-        width: 15%; */
+        width: 15%;
     }
     #vendor-table_wrapper .table td, #vendor-table_wrapper .table th, .contact table.dataTable>thead>tr>th:nth-child(6){
         font-size: 16px;
