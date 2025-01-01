@@ -44,9 +44,10 @@ canvas.on('selection:created', function (event) {
 // Load All Google Font
 // Function to add text to the canvas  
 function addText(event) {
+    const centerX = canvas.width / 3;
     // Create a new text object
     const text = new fabric.IText('Edit me', {
-        left: 50,
+        left: centerX,
         top: 50,
         fontFamily: 'Arial',
         fontSize: 40,  // Default font size
