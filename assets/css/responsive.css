@@ -1166,10 +1166,6 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         display: none !important;
     }
 
-    .guest-contact-list-table thead>tr:nth-child(2)>th:last-child, .guest-contact-list-table thead>tr:nth-child(2)>td:last-child {
-        max-width: 50px !important;
-        width: 50px !important;
-    }
 
     .todo-list-table td:last-child, .todo-list-table th:last-child {
         max-width: 35px !important;
