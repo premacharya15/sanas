@@ -158,12 +158,17 @@ if ($existing_rsvp_query->have_posts()) {
     $guestMessage = esc_html(get_post_meta($edit_id, 'guest_message', true));
     $program      = get_post_meta($edit_id, 'listing_itinerary_details', true);
     $registry     = get_post_meta($edit_id, 'registries', true);
+    $event_venue_name = esc_html(get_post_meta($edit_id, 'event_venue_name', true));
+    $event_venue_address = esc_html(get_post_meta($edit_id, 'event_venue_address', true));
+    $event_venue_address_link = esc_html(get_post_meta($edit_id, 'event_venue_address_link', true));
+    $itinerary = get_post_meta($edit_id, 'itinerary', true);
 
     $guest_name_css = get_post_meta($edit_id, 'guest_name_css', true);
     $guest_contact_css = get_post_meta($edit_id, 'guest_contact_css', true);
     $guest_message_css = get_post_meta($edit_id, 'guest_message_css', true);
     $event_title_css = get_post_meta($edit_id, 'event_title_css', true);
     $event_date_css = get_post_meta($edit_id, 'event_date_css', true);
+    $itinerarycss = get_post_meta($edit_id, 'itinerarycss', true);
 
 
     // Restore original post data
