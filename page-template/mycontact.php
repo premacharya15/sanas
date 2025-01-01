@@ -87,10 +87,12 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                 $edit_id = $event->event_rsvp_id; // Assuming this is how you get the edit ID
                 $eventtitle = esc_html(get_post_meta($edit_id, 'event_name', true)); // Get event title
             ?>
-                <div class="guests-list contact">
-                    <div class="inner tabs-box guests-tabs">
-                        <div class="guests-box table-box tabs-content">
-                            <div class="vendor-table table-responsive">
+                <div class="todo-box">
+                    <div class="row">
+                        <div class="to-do-list-table d-table-block col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                          <div class="inner-box3">
+                            <div class="table-box upcoming-tasks">
+                               <div class="vendor-table table-responsive">
                                 <table class="vendor-list-table guest-contact-list-table" id="guest-contact-list-<?php echo $table_counter; ?>">
                                     <thead>
                                         <tr>
@@ -144,6 +146,8 @@ $event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : 0;
                                 });
                                 </script>
                             </div>
+                            </div>
+                          </div>
                         </div>
                     </div>
                 </div>
