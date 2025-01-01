@@ -161,7 +161,7 @@ get_sidebar('dashboard');
                   </div>
                   <div class="form-group col-lg-12 col-sm-12">
                     <div class="links-box">
-                      <button type="submit" class="dashbord-btn">Save</button>
+                      <button type="submit" class="dashbord-btn mb-2">Save</button>
                       <button type="submit" id="add-new-vendor" class="dashbord-btn">Save and Add Another Vendor</button>                    
                     </div>
                   </div>
