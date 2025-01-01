@@ -1216,7 +1216,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         padding: 20px 10px;
     }
     .card-preview-popup .modal-dialog{
-        width: 100% !important;
+        max-width: 100% !important;
     } 
 }
 @media only screen and (max-width:500px){
