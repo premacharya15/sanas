@@ -287,34 +287,35 @@ section.wl-main-canvas .inner-container .inner-colum {
                                     </div>
 
                                     <div class="row col-xxl-8 col-xl-9 col-lg-9 col-md-12 m-auto mt-0 position-relative">
-                                        <div class="rsvp-event" style="background: transparent !important;border:none !important; padding: 0px 20px;margin-top: 0 !important;">
-                                        <div class="divider">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/divider.png" alt="">
+                                <div class="rsvp-event" style="background: transparent !important;border:none !important; padding: 0px 20px;margin-top: 0 !important;">
+                                    <div class="divider">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/divider.png" alt="">
+                                    </div>
+                                    <div class="rsvp-from-group">
+                                        <div id="eventtitle" class="edit-text rsvp-msg event-title" style="<?php echo $event_title_css; ?>">
+                                            <?php echo esc_html($eventtitle); ?>
                                         </div>
-                                        <div class="rsvp-from-group">
-                                            <div id="eventtitle" class="edit-text rsvp-msg event-title" style="<?php echo $event_title_css; ?>">
-                                                <?php echo esc_html($eventtitle); ?>
-                                            </div>
-                                            </div>
+                                    </div>
+                                    <div class="rsvp-from-group">
+                                        <div class="event-date py-1" style="<?php echo $event_date_css; ?>">
+                                            <?php
+                                            $timestamp = strtotime($eventdate);
+                                            $formattedDate = date("jS M Y", $timestamp);
+                                            ?>
+                                            <?php echo esc_html($formattedDate); ?>
                                         </div>
-                                        <div class="rsvp-from-group">
-                                            <div class="event-date py-1" style="<?php echo $event_date_css; ?>">
-                                                <?php
-                                                $timestamp = strtotime($eventdate);
-                                                $formattedDate = date("jS M Y", $timestamp);
-                                                ?>
-                                                <?php echo esc_html($formattedDate); ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="rsvp-from-group m-0 p-0 map-container-rsvp">
+                                        <!-- <input type="date" id="eventdate" class="edit-text rsvp-msg event-date" name="eventdate"  style="<?php echo $event_date_css; ?>" value="" required=""> -->
+                                    </div>
+                                    <div class="rsvp-from-group m-0 p-0 map-container-rsvp">
                                         <!-- <h4>Address</h4> -->
                                             <div class="map-input-rsvp map-input-rsvp-black m-0 py-1 edit-text rsvp-msg event_venue_name" id="search" type="text"><?php echo esc_html($event_venue_name); ?></div>
                                             <div class="map-input-rsvp map-input-rsvp-black m-0 py-1 edit-text rsvp-msg event_venue_address" id="search_address" rows="2" cols="50"><?php echo esc_html($event_venue_address); ?></div>
                                             <div class="map-location-rsvp" id="map" style="display: none;"></div>
-                                        </div>
                                     </div>
                                 </div>
+                            </div>
+
+                                    </div>
                                 </div>
                                 <div class="row">
                                         <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 m-auto" style="padding: 0 50px;">
