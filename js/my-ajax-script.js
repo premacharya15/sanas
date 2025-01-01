@@ -1155,7 +1155,7 @@ jQuery(document).ready(function ($) {
             $.post(ajax_object.ajax_url, { action: 'delete_account' }, function (response) {
                 if (response.success) {
                     // add temporary message
-                    jQuery("#tab-16 .form-box").html('<p id="temporary-message">Account deleted successfully!</p>');
+                    jQuery("#tab-16 .form-box").append('<p id="temporary-message">Account deleted successfully!</p>');
                     setTimeout(function() {
                         jQuery('#temporary-message').fadeOut(500, function() {
                             jQuery(this).remove();
@@ -1164,7 +1164,7 @@ jQuery(document).ready(function ($) {
                     location.reload();
                 } else {
                     // add temporary message
-                    jQuery("#tab-16 .form-box").html('<p id="temporary-message">Error deleting account</p>');
+                    jQuery("#tab-16 .form-box").append('<p id="temporary-message">Error deleting account</p>');
                     setTimeout(function() {
                         jQuery('#temporary-message').fadeOut(500, function() {
                             jQuery(this).remove();
