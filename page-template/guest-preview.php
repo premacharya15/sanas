@@ -288,32 +288,33 @@ section.wl-main-canvas .inner-container .inner-colum {
                                     </div>
                                 </div>
                                 <div class="row">
-                                        <?php 
-                                           if( !empty($program) && count($program)>0 ){ ?>
-                                        <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto">
+                                        <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 m-auto" style="padding: 0 50px;">
                                             <div class="wl-fuc-timing">
-                                                <table>
-                                                    <?php 
-                                                    if( !empty($program) && count($program)>0 ){
-                                                        ?>
-                                                        <h4 class=" mb-0">Itinerary</h4>
-                                                        <?php
-                                                    foreach ($program as $event) :?>
-                                                    <tr>
+                                            <?php 
+                                            //if(!empty($itinerary)) { echo '<h4 class="mb-0" style="'.$itinerarycss.'">'.esc_html($itinerary).'</h4>'; }
+                                            
+                                            if( !empty($program) && count($program)>0 ){
+                                            ?>
+                                            <h4 class="mb-1 mt-3" style="font-size: 24px;">Itinerary</h4>
+                                            <table class="preview-itn">
+                                                <?php 
+                                                
+                                                foreach ($program as $event) :?>
+                                                <tr>
                                                         <td><?php echo esc_attr($event['program_name'])?></td>
                                                         <td><?php echo esc_attr($event['program_time'])?></td>
                                                     </tr>
                                                     <?php endforeach; }?>
                                                 </table>
+                                                <?php } ?>
                                             </div>
                                         </div>
-                                       <?php } ?>
                                 </div>
                                 <?php   
-                                if($guest_status!='pending' && !empty($guestid)){ ?>
-                                    <div class="alert-box mt-5" >You have already submited your response as below.</div>
+                                // if($guest_status!='pending' && !empty($guestid)){ ?>
+                                    <!-- <div class="alert-box mt-5" >You have already submited your response as below.</div> -->
                                 <?php
-                                } 
+                                // } 
 
                                 ?>  
                                 <div class="row">
