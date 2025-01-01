@@ -261,33 +261,57 @@ section.wl-main-canvas .inner-container .inner-colum {
                              <?php } ?>
                             <div class="wl-inner-card-detaile wl-previewbox">
                                 <div class="row">
-                                    <div class="col-xxl-5 col-lg-7 col-md-7 col-sm-12 m-auto">
+                                    <div class="row col-xxl-8 col-xl-9 col-lg-9 col-md-12 m-auto position-relative">
+                                        <div class="rsvp-from-group">
+                                            <h3 class="mb-0 mt-3" style="font-size:24px;">Hosted By</h3>
+                                        </div> 
+                                        <div class="rsvp-event" style="background: transparent !important;border:none !important; padding: 20px 20px 0px 20px;margin:0;">
+                                            <div class="rsvp-from-group">
+                                                <div id="guestName" name="guestName" style="<?php echo $guest_name_css; ?>" class="edit-text rsvp-msg preview-host-name">
+                                                    <?php echo esc_html($guestName); ?>
+                                                </div>
+                                            </div>
+                                            <div class="rsvp-from-group">
+                                                <div id="guestContact" style="<?php echo $guest_contact_css; ?>" class="edit-text rsvp-msg preview-host-contact-no mb-0">
+                                                <?php echo esc_html($guestContact); ?>
+                                            </div>
+                                            </div>
+                                            <!-- <input type="hidden" id="event_venue_address_link" name="event_venue_address_link" value="<?php echo esc_html($event_venue_address_link); ?>"> -->
+                                            <?php  if(!empty($guestMessage)) { ?>
+                                            <div class="rsvp-from-group">
+                                                <div class="edit-text rsvp-msg preview-host-message" style="<?php echo $guest_message_css; ?>" id="guestMessage" name="guestMessage"><?php echo nl2br(htmlspecialchars(html_entity_decode($guestMessage))); ?>
+                                                </div>
+                                            </div>
+                                            <?php }?>
+                                        </div>
+                                    </div>
                                         <?php 
-                                        if(!empty($eventtitle)) { echo '<div class="mt-3 preview-event-title" style="'.$event_title_css.'">'.esc_html($eventtitle).'</div>'; }
+                                        // if(!empty($eventtitle)) { echo '<div class="mt-3 preview-event-title" style="'.$event_title_css.'">'.esc_html($eventtitle).'</div>'; }
 
-                                            if(!empty($eventdate)) { echo '<div class="mt-2 preview-event-date" style="'.$event_date_css.'">'.esc_html($eventdate).'</div>'; }
+                                            // if(!empty($eventdate)) { echo '<div class="mt-2 preview-event-date" style="'.$event_date_css.'">'.esc_html($eventdate).'</div>'; }
 
 
                                         ?>
-                                        <h4 class="mb-0">Hosted By</h4>
+                                        <!-- <h4 class="mb-0">Hosted By</h4> -->
                                         <?php 
-                                            if(!empty($guestName)) { echo '<div class="preview-host-name" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
-                                            if(!empty($guestContact)) { echo '<div class="preview-host-contact-no" style="'.$guest_contact_css.'">'.esc_html($guestContact).'</div>'; }
-                                            if(!empty($guestMessage)) { echo '<div class="preview-host-message" style="'.$guest_message_css.'"><pre>'.$guestMessage.'</pre></div>'; }
+                                            // if(!empty($guestName)) { echo '<div class="preview-host-name" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
+                                            // if(!empty($guestContact)) { echo '<div class="preview-host-contact-no" style="'.$guest_contact_css.'">'.esc_html($guestContact).'</div>'; }
+                                            // if(!empty($guestMessage)) { echo '<div class="preview-host-message" style="'.$guest_message_css.'"><pre>'.$guestMessage.'</pre></div>'; }
                                          
                                         ?>
-                                    </div>
+                                    <!-- </div> -->
                                 </div>
                                 <div class="row">
                                         <?php 
-                                           if( !empty($program) && count($program)>0 ){ ?>
-                                        <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto">
+                                        //    if( !empty($program) && count($program)>0 ){ ?>
+                                        <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 m-auto" style="padding: 0 50px;">
                                             <div class="wl-fuc-timing">
-                                                <table>
+                                                <!-- <table> -->
                                                     <?php 
                                                     if( !empty($program) && count($program)>0 ){
                                                         ?>
-                                                        <h4 class=" mb-0">Itinerary</h4>
+                                                        <h4 class="mb-1 mt-3" style="font-size: 24px;">Itinerary</h4>
+                                                        <table class="preview-itn">
                                                         <?php
                                                     foreach ($program as $event) :?>
                                                     <tr>
@@ -296,9 +320,9 @@ section.wl-main-canvas .inner-container .inner-colum {
                                                     </tr>
                                                     <?php endforeach; }?>
                                                 </table>
+                                                <?php } ?>
                                             </div>
                                         </div>
-                                       <?php } ?>
                                 </div>
                                 <?php   
                                 if($guest_status!='pending' && !empty($guestid)){ ?>
