@@ -1160,9 +1160,6 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
     .guest-contact-list-table thead>tr:nth-child(2)>th:nth-child(3), .guest-contact-list-table tbody>tr:nth-child(2)>td:nth-child(3),
     .guest-contact-list-table thead>tr:nth-child(2)>th:nth-child(4), .guest-contact-list-table tbody>tr:nth-child(2)>td:nth-child(4),
     .guest-contact-list-table thead>tr:nth-child(2)>th:nth-child(5), .guest-contact-list-table tbody>tr:nth-child(2)>td:nth-child(5),
-    .guest-contact-list-table thead>tr>th:nth-child(3), .guest-contact-list-table thead>tr>td:nth-child(3),
-    .guest-contact-list-table thead>tr>th:nth-child(5), .guest-contact-list-table thead>tr>td:nth-child(5),
-    .guest-contact-list-table thead>tr>th:nth-child(4), .guest-contact-list-table thead>tr>td:nth-child(4),
     .guest-contact-list-table colgroup>col:nth-child(3), .guest-contact-list-table colgroup>.col:nth-child(3),
     .guest-contact-list-table colgroup>col:nth-child(4), .guest-contact-list-table colgroup>.col:nth-child(4),
     .guest-contact-list-table colgroup>col:nth-child(5), .guest-contact-list-table colgroup>.col:nth-child(5) {
