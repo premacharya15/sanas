@@ -1172,7 +1172,16 @@ div.dt-container div.dt-layout-row:first-child {
         display: none !important;
     }
 
+    .guest-contact-list-table thead>tr:last-child>th:nth-child(1), .guest-contact-list-table tbody>tr:last-child>td:nth-child(1){
+        max-width: 30px !important;
+        width: 30px !important;
+    }
 
+    .guest-contact-list-table thead>tr:last-child>th:last-child, .guest-contact-list-table tbody>tr:last-child>td:last-child{
+        max-width: 30px !important;
+        width: 30px !important;
+        text-align: left !important;
+    }
     .todo-list-table td:last-child, .todo-list-table th:last-child {
         max-width: 35px !important;
         width: 35px !important;
