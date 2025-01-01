@@ -56,14 +56,16 @@ function handleSelection(event) {
 // Load All Google Font
 // Function to add text to the canvas  
 function addText(event) {
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
     // Create a new text object
     const text = new fabric.IText('Add text', {
-        left: 50,
-        top: 50,
+        left: centerX,
+        top: centerY,
         fontFamily: 'Arial',
         fontSize: 40,  // Default font size
         fill: '#000000',
-        textAlign: 'center',
+        textAlign: 'left',
         hoverCursor: 'pointer',
             borderColor: 'yellow', // Border color when selected
             cornerColor: '#511F1B', // Corner control color
