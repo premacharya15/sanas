@@ -1097,6 +1097,9 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         margin-bottom: 14px;
         font-size: 14px;
     }
+    div.dt-container div.dt-layout-row:first-child {
+        display:flex;
+    }
     
 }
 
