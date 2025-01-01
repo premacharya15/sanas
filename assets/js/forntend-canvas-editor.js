@@ -63,7 +63,7 @@ function addText(event) {
         fontFamily: 'Arial',
         fontSize: 40,  // Default font size
         fill: '#000000',
-        textAlign: 'left',
+        textAlign: 'center',
         hoverCursor: 'pointer',
             borderColor: 'yellow', // Border color when selected
             cornerColor: '#511F1B', // Corner control color

@@ -46,7 +46,7 @@ function addText(event) {
         fontFamily: 'Arial',
         fontSize: 40,  // Default font size
         fill: '#000000',
-        textAlign: 'left',
+        textAlign: 'center',
         hoverCursor: 'pointer'
     });
     // Add custom controls to the text object
