@@ -56,7 +56,7 @@ function handleSelection(event) {
 // Load All Google Font
 // Function to add text to the canvas  
 function addText(event) {
-    const centerX = canvas.width / 1.5;
+    const centerX = canvas.width / 3;
     // Create a new text object
     const text = new fabric.IText('Add text', {
         left: centerX,
