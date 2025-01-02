@@ -18,7 +18,7 @@ get_sidebar('dashboard');
 
 <div class="wl-dashboard-wrapper dashboard">
     <div class="container-fluid wl-dashboard-content">
-      <div class="row">
+      <div class="row gap-3">
         <div class="link text-right">
           <a href="#" class="add-link-btn move-vendor-btn" data-id="<?php echo esc_attr($vendor['id']); ?>"><strong>Move to My Vendors</strong></a>
         </div>
