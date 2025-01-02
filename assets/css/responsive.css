@@ -1314,7 +1314,7 @@ div.dt-container div.dt-layout-row:first-child {
         padding: 10px;
     }
     .rsvp-msg {
-        padding: 12px;
+        padding: 10px;
     }
     .event-title {
         font-size: 16px;
@@ -1809,7 +1809,7 @@ div.dt-container div.dt-layout-row:first-child {
         max-width: 90px;
     }
     .rsvp-msg {
-        padding: 10px;
+        padding: 6px;
     }
     input.rsvp-msg.host-name {
         font-size: 20px;
