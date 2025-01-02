@@ -1522,76 +1522,81 @@ function fetchTemplateNames() {
         });
     });
 }
-
 if (jQuery('.search-form').length) {
-
     // Usage example with async/await
     (async function () {
         try {
             var templateNames = await fetchTemplateNames();
 
-        var searchInput = document.getElementById('search');
-        var suggestionList = document.getElementById('suggestionlist');
-        if (!searchInput || !suggestionList) {
-            console.error("Search input or suggestion list not found.");
-            return;
-        }
-        searchInput.addEventListener('input', function () {
-            var inputText = this.value.toLowerCase();
-            var suggestions = [];
-            console.log(templateNames);
-            templateNames.forEach(function (template) {
-                if (template.name.toLowerCase().includes(inputText)) {
-                    suggestions.push(template);
+            var searchInput = document.getElementById('search');
+            var suggestionList = document.getElementById('suggestionlist');
+            
+            if (!searchInput || !suggestionList) {
+                console.error("Search input or suggestion list not found.");
+                return;
+            }
+
+            // Event listener for input field
+            searchInput.addEventListener('input', function () {
+                var inputText = this.value.toLowerCase();
+                var suggestions = [];
+                
+                // Iterate over the templates and filter based on input
+                templateNames.forEach(function (template) {
+                    // Check if the template name starts with the input text (case insensitive)
+                    if (template.name.toLowerCase().startsWith(inputText)) {
+                        suggestions.push(template);
+                    }
+                });
+                showSuggestions(suggestions);
+            });
+
+            // Function to display suggestions
+            function showSuggestions(suggestions) {
+                suggestionList.innerHTML = ''; // Clear existing suggestions
+
+                // Add the filtered suggestions to the list
+                suggestions.forEach(function (suggestion) {
+                    var listItem = document.createElement('li');
+                    listItem.textContent = suggestion.name;
+                    listItem.dataset.url = suggestion.url;
+                    suggestionList.appendChild(listItem);
+                });
+
+                // Show or hide the suggestion list based on results
+                suggestionList.style.display = suggestions.length > 0 ? 'block' : 'none';
+            }
+
+            // Hide suggestion list when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!searchInput.contains(e.target) && !suggestionList.contains(e.target)) {
+                    suggestionList.style.display = 'none';
                 }
             });
-            showSuggestions(suggestions);
-        });
-        function showSuggestions(suggestions) {
-            suggestionList.innerHTML = '';
 
-            suggestions.forEach(function (suggestion) {
-                var listItem = document.createElement('li');
-                listItem.textContent = suggestion.name;
-                listItem.dataset.url = suggestion.url;
-                suggestionList.appendChild(listItem);
-            });
-            suggestionList.style.display = suggestions.length > 0 ? 'block' : 'none';
-        }
-        document.addEventListener('click', function (e) {
-            if (e.target && e.target.matches('#suggestionlist li')) {
-                searchInput.value = e.target.textContent;
-                suggestionList.style.display = 'none';
-            }
-        });
-        document.addEventListener('click', function (e) {
-            if (!searchInput.contains(e.target)) {
-                suggestionList.style.display = 'none';
-            }
-        });
-        document.addEventListener('click', function (e) {
-            if (e.target && e.target.matches('#suggestionlist li')) {
-                searchInput.value = e.target.textContent;   // Set input field to selected suggestion
-                jQuery('.search-form .search-btn').attr('data-url', e.target.dataset.url);
-                // window.location.href = e.target.dataset.url; // Redirect to the category URL
-                suggestionList.style.display = 'none';      // Hide the suggestion list
-            }
-        });
-        document.addEventListener('click', function (e) {
-            if (e.target && e.target.closest('.search-btn')) {
-                console.log('test');
-                const button = e.target.closest('.search-btn');
-                const url = button.getAttribute('data-url');
-                if (url) {
-                    window.location.href = url;
-                } else {
-                    console.error('URL attribute not found on the button');
+            // Handle suggestion selection
+            suggestionList.addEventListener('click', function (e) {
+                if (e.target && e.target.matches('li')) {
+                    searchInput.value = e.target.textContent; // Set input field to selected suggestion
+                    jQuery('.search-form .search-btn').attr('data-url', e.target.dataset.url); // Set URL in the button
+                    suggestionList.style.display = 'none'; // Hide the suggestion list
                 }
-            }
-        });
-    } catch (error) {
-        console.error("Error:", error);
-    }
-})();
+            });
 
+            // Handle search button click (navigate to URL)
+            document.addEventListener('click', function (e) {
+                if (e.target && e.target.closest('.search-btn')) {
+                    const button = e.target.closest('.search-btn');
+                    const url = button.getAttribute('data-url');
+                    if (url) {
+                        window.location.href = url;
+                    } else {
+                        console.error('URL attribute not found on the button');
+                    }
+                }
+            });
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    })();
 }
