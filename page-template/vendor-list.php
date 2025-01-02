@@ -20,7 +20,7 @@ get_sidebar('dashboard');
     <div class="container-fluid wl-dashboard-content">
       <div class="row">
         <div class="link text-right">
-          <a href="#" class="add-link-btn move-vendor-btn" data-id="<?php echo esc_attr($vendor['id']); ?>">Move to My Vendors</a>
+          <a href="#" class="add-link-btn move-vendor-btn" data-id="<?php echo esc_attr($vendor['id']); ?>"><strong>Move to My Vendors</strong></a>
         </div>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex justify-content-between">
           <div class="page-header d-flex flex-column align-items-baseline gap-2 title">
