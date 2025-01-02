@@ -5,6 +5,40 @@ fabric.Object.prototype.cornerStyle = 'circle';
 fabric.Object.prototype.cornerSize = 14;
 fabric.Object.prototype.borderScaleFactor = 3;
 fabric.Object.prototype.borderColor = 'yellow';
+
+function updateControlSizes() {
+    var isMobile = window.innerWidth <= 768;
+    var controlSize = isMobile ? 40 : 24;
+    customControls.deleteControl.cornerSize = controlSize;
+    customControls.duplicateControl.cornerSize = controlSize;
+    canvas.renderAll();
+}
+var customControls = {
+    deleteControl: new fabric.Control({
+        x: 0.5,
+        y: -0.5,
+        offsetY: -16,
+        cursorStyle: 'pointer',
+        mouseUpHandler: deleteObject,
+        render: renderIcon,
+        cornerSize: 24
+    }),
+    duplicateControl: new fabric.Control({
+        x: 0.5,
+        y: 0.5,
+        offsetY: 16,
+        cursorStyle: 'pointer',
+        mouseUpHandler: duplicateObject,
+        render: renderIcon,
+        cornerSize: 24
+    })
+};
+customControls.deleteControl.icon = 'deleteIcon';
+customControls.duplicateControl.icon = 'duplicateIcon';
+
+updateControlSizes();
+window.addEventListener('resize', updateControlSizes);
+
 // Load All Google Fonts
 // async function loadGoogleFonts() {
 //     const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key

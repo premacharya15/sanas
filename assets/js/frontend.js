@@ -1,4 +1,18 @@
 var canvas = new fabric.Canvas('canvas');
+fabric.Object.prototype.transparentCorners = false;
+fabric.Object.prototype.cornerColor = '#511F1B';
+fabric.Object.prototype.cornerStyle = 'circle';
+fabric.Object.prototype.cornerSize = 14;
+fabric.Object.prototype.borderScaleFactor = 3;
+fabric.Object.prototype.borderColor = 'yellow';
+
+function updateControlSizes() {
+    var isMobile = window.innerWidth <= 768;
+    var controlSize = isMobile ? 40 : 24;
+    customControls.deleteControl.cornerSize = controlSize;
+    customControls.duplicateControl.cornerSize = controlSize;
+    canvas.renderAll();
+}
 var customControls = {
     deleteControl: new fabric.Control({
         x: 0.5,
@@ -21,6 +35,10 @@ var customControls = {
 };
 customControls.deleteControl.icon = 'deleteIcon';
 customControls.duplicateControl.icon = 'duplicateIcon';
+
+updateControlSizes();
+window.addEventListener('resize', updateControlSizes);
+
 function renderIcon(ctx, left, top, styleOverride, fabricObject) {
     var size = this.cornerSize;
     ctx.save();
