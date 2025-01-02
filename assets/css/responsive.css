@@ -280,6 +280,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
 }
 .guest-stats .card .count {
     font-size: 36px;
+    line-height: 40px;
 }
 .guest-stats .card-body {
     padding: 30px 10px 30px 15px;
