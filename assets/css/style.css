@@ -4544,7 +4544,7 @@ table.dataTable thead>tr>td.dt-orderable-desc:hover {
 .card-block .card .count {
     position: relative;
     display: block;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 700;
     margin: 20px 0 0;
 }
