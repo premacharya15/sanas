@@ -2,13 +2,13 @@ var canvas = new fabric.Canvas('canvas');
 fabric.Object.prototype.transparentCorners = false;
 fabric.Object.prototype.cornerColor = '#511F1B';
 fabric.Object.prototype.cornerStyle = 'circle';
-fabric.Object.prototype.cornerSize = 14;
+fabric.Object.prototype.cornerSize = 24;
 fabric.Object.prototype.borderScaleFactor = 3;
 fabric.Object.prototype.borderColor = 'yellow';
 
 function updateControlSizes() {
     var isMobile = window.innerWidth <= 768;
-    var controlSize = isMobile ? 40 : 24;
+    var controlSize = isMobile ? 36 : 24;
     customControls.deleteControl.cornerSize = controlSize;
     customControls.duplicateControl.cornerSize = controlSize;
     canvas.renderAll();
