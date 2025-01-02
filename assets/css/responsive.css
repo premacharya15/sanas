@@ -1444,7 +1444,7 @@ div.dt-container div.dt-layout-row:first-child {
     }
     section.wl-main-canvas .card-canvas {
         width: 240px;
-        /* height: 370px; */
+        height: 370px;
     }
     .canvas-content .card-hedding {
         margin-bottom: 5px;
