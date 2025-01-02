@@ -39,11 +39,11 @@ function renderIcon(ctx, left, top, styleOverride, fabricObject) {
 // Function to add text to the canvas
 function addText(event) {
     const centerX = canvas.width / 3;
-
+    const centerY = canvas.height / 2;
     // Create a new text object
     const text = new fabric.IText('Add text', {
         left: centerX,
-        top: 50,
+        top: centerY,
         fontFamily: 'Arial',
         fontSize: 40,  // Default font size
         fill: '#000000',
