@@ -1251,6 +1251,15 @@ div.dt-container div.dt-layout-row:first-child {
     div.dt-container div.dt-layout-row:first-child {
         display:flex;
     }
+    .wl-fuc-timing table tbody tr td:nth-child(1) {
+    width: calc(65% - 10px) !important;
+    }
+    .wl-fuc-timing table tbody tr td:nth-child(2) {
+    width: calc(35% - 10px) !important;
+    }
+    .wl-fuc-timing table tbody tr td:nth-child(3) {
+        width: 20px !important;
+    }
 }
 @media only screen and (max-width:500px){
   
