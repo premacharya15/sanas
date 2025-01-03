@@ -22,7 +22,7 @@ get_header();
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $args = array(
         'post_type' => 'sanas_card',
-        'posts_per_page' => 12, // Customize this for the number of posts per page
+        'posts_per_page' => 9, // Customize this for the number of posts per page
         'paged' => $paged,
     );
 
