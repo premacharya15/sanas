@@ -354,7 +354,7 @@ section.wl-main-canvas .inner-container .inner-colum {
                                 ?>  
                                 <div class="row">
                                     <div class="col-xxl-5 col-xl-5 col-lg-6 col-md-10 col-sm-12 m-auto">
-                                        <div class="wl-joining nonclickeble">
+                                        <div class="wl-joining">
                                             <h4 class="mb-3">Will you be joining us?</h4>
                                             <form action="#">
                                                 <div class="check-box-from">
