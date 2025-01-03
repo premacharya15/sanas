@@ -1182,7 +1182,7 @@ jQuery(document).ready(function($) {
                 show_alert_message('Invitations', 'Your Response has been sent to the host!');
 
                   // var url = window.location.href.split('&')[0];
-                  setTimeout(function() {      window.location.reload(); }, 2000); 
+                //   setTimeout(function() {      window.location.reload(); }, 2000); 
             },
             error: function (xhr, status, error) {
                 console.error('AJAX Error:', status, error);
