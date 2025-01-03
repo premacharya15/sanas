@@ -6294,6 +6294,11 @@ td.todo-subhead h4 span {
 button#add_new_group_button {
     height: 100%;
 }
+#uploaded-video, #youtube-iframe {
+    width: 100%;
+    aspect-ratio: 4/3;
+    height: auto;
+}
 .blog-search .btn-go {
     height: 45px;
     padding: 0 18px;
