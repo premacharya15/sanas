@@ -73,7 +73,7 @@ get_header();
                     $bg_color='style="background:'.$sanas_portfolio_meta['sanas_bg_color'].'"';
                 }
                 ?>
-                  <div class="card-box col-lg-3 col-md-4 col-sm-6">
+                  <div class="card-box col-lg-4 col-md-4 col-sm-6">
                     <div class="inner-box" >
                       <a href="<?php echo $dashboardURL;?>" class="flip-container" <?php echo $bg_color;?>>
                         <div class="flipper">
