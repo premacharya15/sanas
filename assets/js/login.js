@@ -1112,7 +1112,7 @@ jQuery(document).ready(function($) {
         });
     });
 
-    $('#invite-action-submit').on('click', function(e) {
+    jQuery('#invite-action-submit').on('click', function(e) {
         e.preventDefault();  // Prevent default form submission
 
          var checkedValues = [];
@@ -1120,7 +1120,7 @@ jQuery(document).ready(function($) {
          var status = '';
          var prestatus = '';
         // Loop through each checkbox and check if it is checked
-        $('.check-box-from input[type="checkbox"]').each(function() {
+        jQuery('.check-box-from input[type="checkbox"]').each(function() {
             if ($(this).is(':checked')) {
                 checkedValues.push($(this).attr('data-value'));
                 status = $(this).attr('data-value');
