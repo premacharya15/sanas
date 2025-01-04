@@ -112,15 +112,12 @@ get_sidebar('dashboard');
         ));
 
         foreach ($guest_statuses as $status) {
-            echo "Checking status: " . $status;
             if ($status === 'pending' || $status === 'Accepted' || $status === 'Declined' || $status === 'May Be') {
                 $status_name = 'Sent';
                 $status_class = 'sent ';
                 break;
             }
         }
-        echo "Final status_name: " . $status_name;
-        echo "Final status_class: " . $status_class;
 
         if (get_post_meta($event_card_id,'sanas_metabox',true)) {
           $sanas_portfolio_meta = get_post_meta($event_card_id,'sanas_metabox',true);
