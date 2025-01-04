@@ -111,13 +111,19 @@ get_sidebar('dashboard');
             $id
         ));
 
+        echo "Guest statuses: " . $guest_statuses;
+
         foreach ($guest_statuses as $status) {
+            echo "Checking status: " . $status;
             if ($status === 'pending' || $status === 'accepted' || $status === 'declined' || $status === 'maybe') {
                 $status_name = 'Sent';
                 $status_class = 'sent ';
+                echo "Status changed to Sent";
                 break;
             }
         }
+        echo "Final status_name: " . $status_name;
+        echo "Final status_class: " . $status_class;
 
         if (get_post_meta($event_card_id,'sanas_metabox',true)) {
           $sanas_portfolio_meta = get_post_meta($event_card_id,'sanas_metabox',true);
