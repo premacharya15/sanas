@@ -194,6 +194,7 @@ $guest_kids=0;
     $guest_adult=$guest_details['guest_adult']; 
     $guest_kids=$guest_details['guest_kids'];
     $guest_status=$guest_details['guest_status']; 
+    $guest_msg=$guest_details['guest_msg'];
 
     }
 ?>
@@ -425,7 +426,7 @@ section.wl-main-canvas .inner-container .inner-colum {
                                         <?php 
                                         }
                                         ?>                                        
-                                        <textarea name="Message" id="mesg" style="margin-bottom: 20px;" rows="5" placeholder="Message to the host..."></textarea>
+                                        <textarea name="Message" id="mesg" style="margin-bottom: 20px;" rows="5" placeholder="Message to the host..."><?php echo $guest_msg; ?></textarea>
                                         <div id="guestlist_details_message"  class="guestlist_details_message"></div>
                                         <?php
                                         if(!empty($entry))
