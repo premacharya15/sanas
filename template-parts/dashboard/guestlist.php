@@ -377,7 +377,7 @@ $get_guest_details = $wpdb->get_results(
                             </td>
                              <td>Adults: <?php echo $guest->guest_adult; ?>, Kids: <?php echo $guest->guest_kids; ?>
                              <?php if (!empty($guest->guest_msg)) : ?>
-                                <i class="fa-solid fa-message" style="margin-left:10px;font-size:16px;" 
+                                <i class="fa-solid fa-message" style="font-size: 26px;color: green;vertical-align: sub;" 
                                   data-toggle="tooltip" 
                                   data-bs-original-title="<?php echo $guest->guest_msg; ?>">
                                 </i>
