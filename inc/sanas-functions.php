@@ -510,7 +510,7 @@ function sanas_get_user_attachments($user_id) {
     $args = array(
         'post_type'      => 'attachment',
         'post_status'    => 'inherit',
-        'posts_per_page' => 6, // Retrieve all attachments
+        'posts_per_page' => 14, // Retrieve all attachments
         'post_mime_type' => 'image', // Filter by image MIME type        
         'author'         => $user_id, // Filter by user ID
     );
