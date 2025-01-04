@@ -6926,7 +6926,19 @@ table.preview-itn tbody tr td{
 .preview-actions {
     margin-top: 20px;
 }
-
+.nav-links a.page-numbers {
+    display: flex;
+    /* width: 50px; */
+    height: 50px;
+    background-color: #F4F5F9;
+    align-items: center;
+    justify-content: center;
+    color: #744F30;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 500ms ease;
+    margin: 0;
+}
 .preview-actions .edit-design {
     justify-content: center;
     width: 100%;
