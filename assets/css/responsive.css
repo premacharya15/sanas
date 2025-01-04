@@ -1692,7 +1692,7 @@ div.dt-container div.dt-layout-row:first-child {
     }
     section.wl-main-canvas .card-canvas {
         width: 300px !important;
-        /* height: 440px !important; */
+        height: 440px !important;
     }
     section.wl-main-canvas.wl-main-preview .card-canvas {
         width: 100% !important;
