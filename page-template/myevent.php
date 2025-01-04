@@ -112,7 +112,7 @@ get_sidebar('dashboard');
         ));
 
         foreach ($guest_statuses as $status) {
-            if ($status === 'pending' || $status === 'accepted' || $status === 'declined' || $status === 'maybe') {
+            if ($status === 'pending' || $status === 'Accepted' || $status === 'Declined' || $status === 'May Be') {
                 $status_name = 'Sent';
                 $status_class = 'sent ';
                 break;
