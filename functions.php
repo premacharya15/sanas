@@ -1729,3 +1729,10 @@ function get_sanas_card_category() {
     $output = ob_get_clean();
     wp_send_json_success($output); // Send the HTML as the response
 }
+
+function sanas_set_posts_per_page($query) {
+    if (!is_admin() && $query->is_main_query() && is_archive()) {
+        $query->set('posts_per_page', 10); // Set the number of posts per page for archive pages
+    }
+}
+add_action('pre_get_posts', 'sanas_set_posts_per_page');
