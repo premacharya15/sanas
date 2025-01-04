@@ -111,8 +111,6 @@ get_sidebar('dashboard');
             $id
         ));
 
-        echo "Guest statuses: " . $guest_statuses;
-
         foreach ($guest_statuses as $status) {
             echo "Checking status: " . $status;
             if ($status === 'pending' || $status === 'accepted' || $status === 'declined' || $status === 'maybe') {
