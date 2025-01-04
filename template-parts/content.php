@@ -30,7 +30,7 @@
 	</header><!-- .entry-header -->
 
 	<?php sanas_post_thumbnail(); ?>
-df
+
 	<div class="entry-content">
 		<?php
 		the_content(
