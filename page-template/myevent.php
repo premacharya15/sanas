@@ -102,8 +102,8 @@ get_sidebar('dashboard');
           $formattedDate = $date->format('F jS, Y');          
         }
 
-        $status_name='Sent';
-        $status_class='sent';
+        $status_name='Draft';
+        $status_class='draft';
         
         $guest_statuses = $wpdb->get_col($wpdb->prepare(
             "SELECT guest_status FROM $guest_details_info_table WHERE guest_user_id = %d AND guest_event_id = %d",
@@ -112,9 +112,9 @@ get_sidebar('dashboard');
         ));
 
         foreach ($guest_statuses as $status) {
-            if ($status !== 'pending' || $status !== 'accepted' || $status !== 'declined' || $status !== 'maybe') {
-                $status_name = 'Draft';
-                $status_class = 'draft';
+            if ($status === 'pending' || $status === 'accepted' || $status === 'declined' || $status === 'maybe') {
+                $status_name = 'Sent';
+                $status_class = 'sent ';
                 break;
             }
         }
