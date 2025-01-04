@@ -378,6 +378,7 @@ $get_guest_details = $wpdb->get_results(
                              <td>Adults: <?php echo $guest->guest_adult; ?>, Kids: <?php echo $guest->guest_kids; ?></td>
 
                             <td class="actions">
+                            <?php echo $guest->guest_msg;?>
                               <a href="javascript:void(0)" data-bs-toggle="modal" onclick="edit_guestlist_details(<?php echo esc_attr($id);?>)" data-bs-target="#edit-popup" class="edit theme-btn">
                                 <i class="fa-solid fa-pen"></i>
                               </a>
