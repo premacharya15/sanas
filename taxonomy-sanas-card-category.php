@@ -85,7 +85,6 @@ $cover_card_image_url = wp_get_attachment_url($cover_card_image_id);
                     $bg_color='style="background:'.$sanas_portfolio_meta['sanas_bg_color'].'"';
                 }
                 ?>
-                card-box col-lg-4 col-md-4 col-sm-6
                   <div class="card-box col-lg-4 col-md-4 col-sm-6">
                     <div class="inner-box" >
                       <a href="<?php echo $dashboardURL;?>" class="flip-container" <?php echo $bg_color;?>>
