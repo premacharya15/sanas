@@ -22,7 +22,7 @@ get_header();
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $args = array(
         'post_type' => 'sanas_card',
-        'posts_per_page' => 9, // Customize this for the number of posts per page
+        'posts_per_page' => 12, // Customize this for the number of posts per page
         'paged' => $paged,
     );
 
@@ -73,6 +73,7 @@ get_header();
                     $bg_color='style="background:'.$sanas_portfolio_meta['sanas_bg_color'].'"';
                 }
                 ?>
+                asdf
                   <div class="card-box col-lg-4 col-md-4 col-sm-6">
                     <div class="inner-box" >
                       <a href="<?php echo $dashboardURL;?>" class="flip-container" <?php echo $bg_color;?>>
