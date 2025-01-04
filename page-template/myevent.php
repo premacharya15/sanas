@@ -111,7 +111,7 @@ get_sidebar('dashboard');
             $id
         ));
 
-        if ($guest_status === 'pending') {
+        if ($guest_status === 'pending' || $guest_status === 'accepted' || $guest_status === 'declined' || $guest_status === 'maybe') {
             $status_name = 'Sent';
             $status_class = 'sent ';
         }
