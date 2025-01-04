@@ -116,7 +116,6 @@ get_sidebar('dashboard');
             if ($status === 'pending' || $status === 'accepted' || $status === 'declined' || $status === 'maybe') {
                 $status_name = 'Sent';
                 $status_class = 'sent ';
-                echo "Status changed to Sent";
                 break;
             }
         }
