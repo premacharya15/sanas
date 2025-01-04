@@ -105,15 +105,18 @@ get_sidebar('dashboard');
         $status_name='Draft';
         $status_class='draft';
         
-        $guest_status = $wpdb->get_var($wpdb->prepare(
-            "SELECT guest_status FROM $guest_details_info_table WHERE guest_user_id = %d AND guest_event_id = %d LIMIT 1",
+        $guest_statuses = $wpdb->get_col($wpdb->prepare(
+            "SELECT guest_status FROM $guest_details_info_table WHERE guest_user_id = %d AND guest_event_id = %d",
             $userID,
             $id
         ));
 
-        if ($guest_status === 'pending') {
-            $status_name = 'Sent';
-            $status_class = 'sent ';
+        foreach ($guest_statuses as $status) {
+            if ($status === 'pending' || $status === 'accepted' || $status === 'declined' || $status === 'maybe') {
+                $status_name = 'Sent';
+                $status_class = 'sent ';
+                break;
+            }
         }
 
         if (get_post_meta($event_card_id,'sanas_metabox',true)) {
