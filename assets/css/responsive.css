@@ -1340,6 +1340,9 @@ div.dt-container div.dt-layout-row:first-child {
     .contact table.dataTable>tbody>tr>td:nth-child(3), .contact table.dataTable>thead>tr>th:nth-child(3){
         display: none;
     }
+    .def-popup .modal-header h2.modal-title{
+        font-size: 20px;
+    }
     /* .form-content.last .links-box button{
         width: auto;
     } */
