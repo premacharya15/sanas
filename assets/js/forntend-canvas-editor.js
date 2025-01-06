@@ -70,7 +70,8 @@ function addText(event) {
     const centerX = canvas.width / 3;
     const centerY = canvas.height / 2;
     // Create a new text object
-    const text = new fabric.IText('Add text', {
+    const placeholderText = 'Add text';
+    const text = new fabric.IText(placeholderText, {
         left: centerX,
         top: centerY,
         fontFamily: 'Arial',
@@ -83,6 +84,22 @@ function addText(event) {
             cornerStrokeColor: '#511F1B', // Stroke color for corner controls
             cornerBackgroundColor: '#511F1B',
             borderSize: '6px',
+    });
+    text.on('editing:entered', function () {
+        if (text.text === placeholderText) {
+            text.text = ''; // Clear placeholder text
+            text.set('fill', textColor); // Change to normal text color
+            text.canvas.renderAll(); // Re-render canvas
+        }
+    });
+    
+    // Event: When editing ends
+    text.on('editing:exited', function () {
+        if (text.text.trim() === '') {
+            text.text = placeholderText; // Restore placeholder text
+            text.set('fill', placeholderColor); // Set placeholder color
+            text.canvas.renderAll(); // Re-render canvas
+        }
     });
     // Add custom controls to the text object
     text.controls = Object.assign({}, text.controls, customControls);
