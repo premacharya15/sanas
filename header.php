@@ -13,7 +13,8 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content, maximum-scale=1.0, user-scalable=no">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php
