@@ -10,6 +10,7 @@
  */
 wp_footer(); 
 sanas_render_modal_html_alert();
+sanas_preloading_overlay();
 ?>
 </body>
 </html> 
