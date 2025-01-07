@@ -24,7 +24,7 @@ $('button.usersignin').on('click', function (e) {
                 'security': $('#usersigninsecurity').val()
             },
             success: function (data) {
-                console.log(data.message);
+                console.log("test"+data.message);
                 $('#signinresponseMessage').html(data.message).show();
                 $('#signinresponseMessagepopup').html(data.message).show();
                 //  setTimeout(function() {
