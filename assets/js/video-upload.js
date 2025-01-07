@@ -112,7 +112,6 @@ if(document.getElementById('drop-zone') !=null)
     function playYouTubeVideo() {
         var url = document.getElementById('youtube-url').value;
         var videoID = getYouTubeVideoID(url);
-        console.log("testvid");
         if (videoID) {
             var iframe = document.createElement('iframe');
             iframe.id = 'youtube-iframe';
@@ -122,7 +121,7 @@ if(document.getElementById('drop-zone') !=null)
             iframe.frameBorder = '0';
             iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
             iframe.allowFullscreen = true;
-
+            console.log(iframe);
             var container = document.getElementById('drop-zone');
             container.innerHTML = ''; // Clear any previous iframe
             container.appendChild(iframe);
