@@ -24,8 +24,10 @@ $('button.usersignin').on('click', function (e) {
                 'security': $('#usersigninsecurity').val()
             },
             success: function (data) {
-                alert("test"+data.message);
-                $('#signinresponseMessage').html(data.message).show();
+                if(data.message == "Incorrect password." || data.message == "Invalid card-id. Data not inserted." || data.message == "Email address not found."){
+                    $('#signinresponseMessage').html(data.message).show(); 
+                }
+                else{
                 $('#signinresponseMessagepopup').html(data.message).show();
                 //  setTimeout(function() {
                 //     $('#signinresponseMessage').fadeOut();
@@ -118,6 +120,7 @@ $('button.usersignin').on('click', function (e) {
                     console.log("fail 2");
                     location.reload();
                 }
+            }
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log('AJAX Error: ' + textStatus, errorThrown);
