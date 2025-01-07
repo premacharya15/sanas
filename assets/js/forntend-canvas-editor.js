@@ -8,6 +8,16 @@ fabric.Object.prototype.borderColor = 'yellow';
 fabric.Object.prototype.objectCaching = false; // Disable caching for touch responsiveness
 fabric.Canvas.prototype.enableRetinaScaling = true;
 
+fabric.util.addListener(window, 'touchstart', function () {
+    canvas.__onMouseDown.apply(canvas, arguments);
+});
+fabric.util.addListener(window, 'touchmove', function () {
+    canvas.__onMouseMove.apply(canvas, arguments);
+});
+fabric.util.addListener(window, 'touchend', function () {
+    canvas.__onMouseUp.apply(canvas, arguments);
+});
+
 function updateControlSizes() {
     var isMobile = window.innerWidth <= 768;
     var controlSize = isMobile ? 56 : 24;
