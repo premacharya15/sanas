@@ -75,22 +75,19 @@ jQuery(document).ready(function($) {
 
     function setupDeleteButton() {
         $('.deleteRowBtn').off('click').on('click', function() {
-            $('#uploaded-video').attr('src', ''); // Clear the video source
+            $('#uploaded-video').attr('src', '');
             $('#uploaded-video').hide();
             $('.video-inner-box').removeClass('hide-part');
             $('#drop-zone').removeClass('video-uploaded');
             $('.delete-btn').css('display', 'none');
-            var existingIframe = document.getElementById('youtube-iframe');
-            if (existingIframe) {
-                existingIframe.src = "";
-            }
+            console.log("test");
         });
         $('.iframe-btn .deleteRowBtn').off('click').on('click', function() {
-            // Your delete logic here
-            $('#uploaded-video').attr('src', ''); // Clear the video source
+            $('#uploaded-video').attr('src', '');
             $('#uploaded-video').hide();
             $('.video-inner-box').removeClass('hide-part');
             $('#drop-zone').removeClass('video-uploaded');
+            console.log("tests3");
         });
     }
 
