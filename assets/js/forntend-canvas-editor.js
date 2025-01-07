@@ -505,11 +505,11 @@ function saveCanvasData() {
 // Function to add a new text object
 // Add event listener for button click
 // Function to delete the object
-function deleteObject(eventData, transform) {
-    var target = transform.target;
-    canvas.remove(target);
-    canvas.requestRenderAll();
-}
+// function deleteObject(eventData, transform) {
+//     var target = transform.target;
+//     canvas.remove(target);
+//     canvas.requestRenderAll();
+// }
 // Function to duplicate the object
 function duplicateObject(eventData, transform) {
     var target = transform.target;
