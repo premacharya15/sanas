@@ -79,8 +79,11 @@ jQuery(document).ready(function($) {
             $('#uploaded-video').hide();
             $('.video-inner-box').removeClass('hide-part');
             $('#drop-zone').removeClass('video-uploaded');
-         $('.delete-btn').css('display', 'none');
-
+            $('.delete-btn').css('display', 'none');
+            var existingIframe = document.getElementById('youtube-iframe');
+            if (existingIframe) {
+                existingIframe.src = "";
+            }
         });
         $('.iframe-btn .deleteRowBtn').off('click').on('click', function() {
             // Your delete logic here
