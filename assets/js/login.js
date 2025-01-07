@@ -169,7 +169,7 @@ $('button.usersignin').on('click', function (e) {
 
                     $('#signinresponseMessage').html(data.message).show();
                     $('#signinresponseMessagepopup').html(data.message).show();
-                    
+                    console.log(cardpopupId);
                     if (cardpopupId) {
                         setTimeout(function() {
                             $('#signinresponseMessage').fadeOut();
