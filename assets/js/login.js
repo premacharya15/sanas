@@ -10,6 +10,9 @@ $('button.usersignin').on('click', function (e) {
     var cardTitle = $('#popup-card-title').val();
     var bgcolor = $('#popup-bgcolor-code').val();
 
+    if (!isValidForm()) {
+        return false;
+    }
     if (ajaxValue == '0') {
         var currentPageURL = window.location.href;
         $.ajax({
