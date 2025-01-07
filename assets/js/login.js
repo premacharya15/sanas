@@ -10,9 +10,6 @@ $('button.usersignin').on('click', function (e) {
     var cardTitle = $('#popup-card-title').val();
     var bgcolor = $('#popup-bgcolor-code').val();
 
-    // if (!isValidForm()) {
-    //     return false;
-    // }
     if (ajaxValue == '0') {
         var currentPageURL = window.location.href;
         $.ajax({
@@ -46,7 +43,7 @@ $('button.usersignin').on('click', function (e) {
                     $('#card-preview-popup').attr('data-card-id', cardpopupId);
 
                     setTimeout(function(){
-                        // $('#card-preview-popup').modal('show');
+                        $('#card-preview-popup').modal('show');
                         $('#card-preview-popup .modal-title').text(cardTitle || 'Card Preview');
 
                         $('.preview-container').attr('style', `background: ${bgcolor};`);
@@ -169,7 +166,7 @@ $('button.usersignin').on('click', function (e) {
 
                     $('#signinresponseMessage').html(data.message).show();
                     $('#signinresponseMessagepopup').html(data.message).show();
-                    console.log(cardpopupId);
+                    
                     if (cardpopupId) {
                         setTimeout(function() {
                             $('#signinresponseMessage').fadeOut();
@@ -180,7 +177,7 @@ $('button.usersignin').on('click', function (e) {
                         $('#card-preview-popup').attr('data-card-id', cardpopupId);
     
                         setTimeout(function(){
-                            // $('#card-preview-popup').modal('show');
+                            $('#card-preview-popup').modal('show');
                             $('#card-preview-popup .modal-title').text(cardTitle || 'Card Preview');
     
                             $('.preview-container').attr('style', `background: ${bgcolor};`);
