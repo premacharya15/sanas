@@ -13,10 +13,14 @@ function updateControlSizes() {
     customControls.duplicateControl.cornerSize = controlSize;
     canvas.renderAll();
 }
+var deletex = window.innerWidth <= 768 ? 1 : 0.5;
+var deletey = window.innerWidth <= 768 ? -1 : -0.5;
+var duplicatex = window.innerWidth <= 768 ? 1 : 0.5;
+var duplicatey = window.innerWidth <= 768 ? 1 : 0.5;
 var customControls = {
     deleteControl: new fabric.Control({
-        x: 0.5,
-        y: -0.5,
+        x: deletex,
+        y: deletey,
         offsetY: -16,
         cursorStyle: 'pointer',
         mouseUpHandler: deleteObject,
@@ -24,8 +28,8 @@ var customControls = {
         cornerSize: 24
     }),
     duplicateControl: new fabric.Control({
-        x: 0.5,
-        y: 0.5,
+        x: duplicatex,
+        y: duplicatey,
         offsetY: 16,
         cursorStyle: 'pointer',
         mouseUpHandler: duplicateObject,
@@ -642,8 +646,8 @@ function addImageToCanvas(imgSrc) {
 }
 var customControls = {
     deleteControl: new fabric.Control({
-        x: 0.5,
-        y: -0.5,
+        x: deletex,
+        y: deletey,
         offsetY: -16,
         cursorStyle: 'pointer',
         mouseUpHandler: deleteObject,
@@ -651,8 +655,8 @@ var customControls = {
         cornerSize: 24
     }),
     duplicateControl: new fabric.Control({
-        x: -0.5,
-        y: 0.5,
+        x: duplicatex,
+        y: duplicatey,
         offsetY: 16,
         cursorStyle: 'pointer',
         mouseUpHandler: duplicateObject,
