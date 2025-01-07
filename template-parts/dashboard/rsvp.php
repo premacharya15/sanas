@@ -770,7 +770,7 @@ if (empty($rsvpimage)) {
                                   </div>   
                                 </div>
                                 <?php }else{ ?>
-
+                                    <div class="video-box" id="drop-zone" style="display:none">
                                             <?php if (sanas_is_youtube_url($rsvpvideo)) : ?>
                                                 <?php
                                                 $youtubevideo = $rsvpvideo;
@@ -797,7 +797,6 @@ if (empty($rsvpimage)) {
                                                     </div>
                                                 <?php } ?>
                                             <?php endif; ?>
-                                                <div class="video-box" id="drop-zone" style="display:none">
                                                     <video id="uploaded-video" controls style="display:none;"></video>
                                                     <div class="delete-btn" style="display:none;">
                                                         <button class="deleteRowBtn"><i class="fa-regular fa-trash-can"></i></button>
