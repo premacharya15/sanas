@@ -8,7 +8,7 @@ fabric.Object.prototype.borderColor = 'yellow';
 
 function updateControlSizes() {
     var isMobile = window.innerWidth <= 768;
-    var controlSize = isMobile ? 36 : 24;
+    var controlSize = isMobile ? 56 : 24;
     customControls.deleteControl.cornerSize = controlSize;
     customControls.duplicateControl.cornerSize = controlSize;
     canvas.renderAll();
