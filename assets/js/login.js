@@ -1,6 +1,5 @@
 jQuery(document).ready(function ($) {
 // Sanas Signin Login Popup js
-    // Sanas Signin Login Popup js
 $('button.usersignin').on('click', function (e) {
     e.preventDefault();
     var ajaxValue = $('#ajaxvalue').val();
@@ -117,7 +116,7 @@ $('button.usersignin').on('click', function (e) {
                     // Hide the success popup if login fails
                     $('.content-succes').addClass('d-none');
                     console.log("fail 2");
-                    location.reload();
+                    // location.reload();
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
