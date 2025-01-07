@@ -96,13 +96,14 @@ $('button.usersignin').on('click', function (e) {
                         $('.search-popup').hide();
                         window.location.reload();
                     },3000);
+                    console.log("fail 4");
                 }
             
                 if (data.loggedin) {
                     // Remove the d-none class to show the success popup
                     $('.content-succes').removeClass('d-none');
                     $('.form-boxed .login').addClass('d-none');
-                    
+                    console.log("fail 1");
 
                     //    setTimeout(function() {
                     //     if (datahref) {
@@ -115,11 +116,13 @@ $('button.usersignin').on('click', function (e) {
                 else {
                     // Hide the success popup if login fails
                     $('.content-succes').addClass('d-none');
+                    console.log("fail 2");
+                    $('#card-preview-popup').addClass('d-none');
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log('AJAX Error: ' + textStatus, errorThrown);
-                $('#card-preview-popup').modal('hide');
+                console.log("fail 3");
             }
         });
     }
