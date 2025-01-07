@@ -60,7 +60,7 @@ function handleSelection(event) {
     const activeObject = event.target;
     if (activeObject && (activeObject.type === 'text' || activeObject.type === 'i-text')) {
         activeObject.set({
-            borderSize: '10px',
+            borderSize: '20px',
         });
         //511F1B #9CA89C
         canvas.renderAll();
