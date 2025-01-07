@@ -24,7 +24,7 @@ $('button.usersignin').on('click', function (e) {
                 'security': $('#usersigninsecurity').val()
             },
             success: function (data) {
-
+                console.log(data.message);
                 $('#signinresponseMessage').html(data.message).show();
                 $('#signinresponseMessagepopup').html(data.message).show();
                 //  setTimeout(function() {
@@ -116,7 +116,7 @@ $('button.usersignin').on('click', function (e) {
                     // Hide the success popup if login fails
                     $('.content-succes').addClass('d-none');
                     console.log("fail 2");
-                    // location.reload();
+                    location.reload();
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
