@@ -491,7 +491,8 @@ var customControls = {
 // Function to add image to canvas with custom controls
 function addImageToCanvas(imgSrc) {
     fabric.Image.fromURL(imgSrc, function(img) {
-        const scale = 0.2; // Adjust this value to scale the image to your desired size
+        const viewportWidth = window.innerWidth;
+        const scale = viewportWidth < 768 ? 0.4 : 0.2;
 
         img.set({
             left: 100, 
