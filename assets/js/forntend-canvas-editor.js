@@ -5,7 +5,8 @@ fabric.Object.prototype.cornerStyle = 'circle';
 fabric.Object.prototype.cornerSize = 14;
 fabric.Object.prototype.borderScaleFactor = 3;
 fabric.Object.prototype.borderColor = 'yellow';
-fabric.config.configureTouchInteraction = true;
+fabric.Object.prototype.objectCaching = false; // Disable caching for touch responsiveness
+fabric.Canvas.prototype.enableRetinaScaling = true;
 
 function updateControlSizes() {
     var isMobile = window.innerWidth <= 768;
