@@ -43,7 +43,7 @@ $('button.usersignin').on('click', function (e) {
                     $('#card-preview-popup').attr('data-card-id', cardpopupId);
 
                     setTimeout(function(){
-                        $('#card-preview-popup').modal('show');
+                        // $('#card-preview-popup').modal('show');
                         $('#card-preview-popup .modal-title').text(cardTitle || 'Card Preview');
 
                         $('.preview-container').attr('style', `background: ${bgcolor};`);
@@ -177,7 +177,7 @@ $('button.usersignin').on('click', function (e) {
                         $('#card-preview-popup').attr('data-card-id', cardpopupId);
     
                         setTimeout(function(){
-                            $('#card-preview-popup').modal('show');
+                            // $('#card-preview-popup').modal('show');
                             $('#card-preview-popup .modal-title').text(cardTitle || 'Card Preview');
     
                             $('.preview-container').attr('style', `background: ${bgcolor};`);
