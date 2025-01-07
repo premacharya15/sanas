@@ -13,10 +13,10 @@ function updateControlSizes() {
     customControls.duplicateControl.cornerSize = controlSize;
     canvas.renderAll();
 }
-var deletex = window.innerWidth <= 768 ? 5 : 0.5;
-var deletey = window.innerWidth <= 768 ? -5 : -0.5;
-var duplicatex = window.innerWidth <= 768 ? 5 : 0.5;
-var duplicatey = window.innerWidth <= 768 ? 5 : 0.5;
+var deletex = window.innerWidth <= 768 ? 1 : 0.5;
+var deletey = window.innerWidth <= 768 ? -1 : -0.5;
+var duplicatex = window.innerWidth <= 768 ? 1 : 0.5;
+var duplicatey = window.innerWidth <= 768 ? 1 : 0.5;
 var customControls = {
     deleteControl: new fabric.Control({
         x: deletex,
