@@ -5,6 +5,7 @@ fabric.Object.prototype.cornerStyle = 'circle';
 fabric.Object.prototype.cornerSize = 14;
 fabric.Object.prototype.borderScaleFactor = 3;
 fabric.Object.prototype.borderColor = 'yellow';
+fabric.config.configureTouchInteraction = true;
 
 function updateControlSizes() {
     var isMobile = window.innerWidth <= 768;
@@ -24,7 +25,9 @@ var customControls = {
         y: deletey,
         offsetY: -16,
         cursorStyle: 'pointer',
-        mouseUpHandler: deleteObject,
+        mouseUpHandler: function (eventData, transform) {
+            deleteObject(eventData, transform);
+        },
         render: renderIcon,
         cornerSize: controlSize
     }),
@@ -33,11 +36,14 @@ var customControls = {
         y: duplicatey,
         offsetY: 16,
         cursorStyle: 'pointer',
-        mouseUpHandler: duplicateObject,
+        mouseUpHandler: function (eventData, transform) {
+            duplicateObject(eventData, transform);
+        },
         render: renderIcon,
         cornerSize: controlSize
     })
 };
+
 customControls.deleteControl.icon = 'deleteIcon';
 customControls.duplicateControl.icon = 'duplicateIcon';
 
@@ -651,7 +657,9 @@ var customControls = {
         y: deletey,
         offsetY: -16,
         cursorStyle: 'pointer',
-        mouseUpHandler: deleteObject,
+        mouseUpHandler: function (eventData, transform) {
+            deleteObject(eventData, transform);
+        },
         render: renderIcon,
         cornerSize: controlSize
     }),
@@ -660,41 +668,41 @@ var customControls = {
         y: duplicatey,
         offsetY: 16,
         cursorStyle: 'pointer',
-        mouseUpHandler: duplicateObject,
+        mouseUpHandler: function (eventData, transform) {
+            duplicateObject(eventData, transform);
+        },
         render: renderIcon,
         cornerSize: controlSize
     })
 };
+
 // Function to delete the object
 function deleteObject(eventData, transform) {
-    var target = transform.target;
+    const target = transform.target;
+    const objects = canvas.getObjects();
 
-    var objects = canvas.getObjects();
-
-    // Check if there is only one object left on the canvas
     if (objects.length <= 1) {
-        // If there's only one object, show an alert and do not delete
         show_alert_message('Error', 'Cannot delete the last text box.');
         return;
     }
+
     canvas.remove(target);
     canvas.requestRenderAll();
 }
-// Function to duplicate the object
+
 function duplicateObject(eventData, transform) {
-    var target = transform.target;
-    var clone;
+    const target = transform.target;
     target.clone(function (cloned) {
-        clone = cloned.set({
+        cloned.set({
             left: target.left + 10,
             top: target.top + 10,
             angle: target.angle
         });
-        // clone.controls = Object.assign({}, customControls);
-        canvas.add(clone);
+        canvas.add(cloned);
         canvas.requestRenderAll();
     });
 }
+
 customControls.deleteControl.icon = 'deleteIcon'; // Set the ID of the delete icon image
 customControls.duplicateControl.icon = 'duplicateIcon'; // Set the ID of the duplicate icon image
 // Function to render the control icons
