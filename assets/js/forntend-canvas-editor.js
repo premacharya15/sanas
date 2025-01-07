@@ -17,7 +17,7 @@ var deletex = window.innerWidth <= 768 ? 0.75 : 0.5;
 var deletey = window.innerWidth <= 768 ? -0.75 : -0.5;
 var duplicatex = window.innerWidth <= 768 ? 0.75 : 0.5;
 var duplicatey = window.innerWidth <= 768 ? 0.75 : 0.5;
-var controlSize = window.innerWidth <= 768 ? 36 : 24;
+var controlSize = window.innerWidth <= 768 ? 56 : 24;
 var customControls = {
     deleteControl: new fabric.Control({
         x: deletex,
