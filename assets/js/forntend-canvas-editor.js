@@ -17,6 +17,7 @@ var deletex = window.innerWidth <= 768 ? 0.75 : 0.5;
 var deletey = window.innerWidth <= 768 ? -0.75 : -0.5;
 var duplicatex = window.innerWidth <= 768 ? 0.75 : 0.5;
 var duplicatey = window.innerWidth <= 768 ? 0.75 : 0.5;
+var controlSize = window.innerWidth <= 768 ? 36 : 24;
 var customControls = {
     deleteControl: new fabric.Control({
         x: deletex,
@@ -25,7 +26,7 @@ var customControls = {
         cursorStyle: 'pointer',
         mouseUpHandler: deleteObject,
         render: renderIcon,
-        cornerSize: 24
+        cornerSize: controlSize
     }),
     duplicateControl: new fabric.Control({
         x: duplicatex,
@@ -34,7 +35,7 @@ var customControls = {
         cursorStyle: 'pointer',
         mouseUpHandler: duplicateObject,
         render: renderIcon,
-        cornerSize: 24
+        cornerSize: controlSize
     })
 };
 customControls.deleteControl.icon = 'deleteIcon';
@@ -652,7 +653,7 @@ var customControls = {
         cursorStyle: 'pointer',
         mouseUpHandler: deleteObject,
         render: renderIcon,
-        cornerSize: 24
+        cornerSize: controlSize
     }),
     duplicateControl: new fabric.Control({
         x: duplicatex,
@@ -661,7 +662,7 @@ var customControls = {
         cursorStyle: 'pointer',
         mouseUpHandler: duplicateObject,
         render: renderIcon,
-        cornerSize: 24
+        cornerSize: controlSize
     })
 };
 // Function to delete the object
