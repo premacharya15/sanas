@@ -332,6 +332,7 @@ function handleObjectSelection() {
         if (jQuery('#myTextarea').length) {
             document.getElementById('myTextarea').value = activeObject.text;
             document.getElementById('myTextarea').removeAttribute("disabled");
+            document.getElementById('myTextarea').style.cursor = "";
         }
         if (jQuery('#fontSize').length) {
             document.getElementById('fontSize').value = activeObject.fontSize;
@@ -365,6 +366,7 @@ function handleObjectSelection() {
     } else {
         document.getElementById('myTextarea').value = '';
         document.getElementById('myTextarea').setAttribute("disabled", true);
+        document.getElementById('myTextarea').style.cursor = "not-allowed";
         document.getElementById('fontSize').value = '';
         document.getElementById('fontWeight').value = '';
         document.getElementById('fontFamily').value = '';
