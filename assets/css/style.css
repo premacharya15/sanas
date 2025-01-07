@@ -6250,6 +6250,18 @@ td.todo-subhead h4 span {
 .social-btns .btn i {
     color: #FFF;
 }
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex; /* Use Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 999999; /* Ensure it appears above other content */
+}
 .social-btns .btn.twitter {
     background-color: #3CF;
 }
