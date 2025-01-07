@@ -99,12 +99,16 @@ if(document.getElementById('drop-zone') !=null)
 
 
 
+    // function getYouTubeVideoID(url) {
+    //     var regex = /[?&]v=([^&#]*)/;
+    //     var match = url.match(regex);
+    //     return (match && match[1]) ? match[1] : null;
+    // }
     function getYouTubeVideoID(url) {
-        var regex = /[?&]v=([^&#]*)/;
+        var regex = /(?:youtube\.com.*[?&]v=|youtu\.be\/|youtube\.com\/embed\/)([^&#?]+)/;
         var match = url.match(regex);
         return (match && match[1]) ? match[1] : null;
     }
-
     function playYouTubeVideo() {
         var url = document.getElementById('youtube-url').value;
         var videoID = getYouTubeVideoID(url);
