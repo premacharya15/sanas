@@ -99,10 +99,10 @@ if (!function_exists('sanas_get_login_popup')) {
               <div class="login-form">
               <form method="post" id="usersignin">
                 <div class="form-group">
-                    <input type="email" id="signinEmail" name="signinEmail" placeholder="Email" autocomplete="off">
+                    <input type="email" id="signinEmail" name="signinEmail" placeholder="Email" autocomplete="off" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="password-input password-control" id="signinPassword" name="signinPassword" placeholder="Password" autocomplete="off">
+                    <input type="password" class="password-input password-control" id="signinPassword" name="signinPassword" placeholder="Password" autocomplete="off" required>
                     <div class="eye-icon">
                        <i class="fa-regular fa-eye-slash"></i>
                     </div>
