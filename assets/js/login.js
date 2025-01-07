@@ -117,6 +117,7 @@ $('button.usersignin').on('click', function (e) {
                     // Hide the success popup if login fails
                     $('.content-succes').addClass('d-none');
                     console.log("fail 2");
+                    $('#card-preview-popup').modal('hide');
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
