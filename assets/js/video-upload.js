@@ -113,18 +113,27 @@ if(document.getElementById('drop-zone') !=null)
         var url = document.getElementById('youtube-url').value;
         var videoID = getYouTubeVideoID(url);
         if (videoID) {
-            var iframe = document.createElement('iframe');
-            iframe.id = 'youtube-iframe';
-            iframe.width = '800';
-            iframe.height = '490';
-            iframe.src = 'https://www.youtube.com/embed/' + videoID;
-            iframe.frameBorder = '0';
-            iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
-            iframe.allowFullscreen = true;
-            console.log(iframe);
             var container = document.getElementById('drop-zone');
-            container.innerHTML = ''; // Clear any previous iframe
-            container.appendChild(iframe);
+            var existingIframe = document.getElementById('youtube-iframe'); // Check if iframe already exists
+            
+            if (existingIframe) {
+                // If iframe exists, update the src
+                existingIframe.src = 'https://www.youtube.com/embed/' + videoID;
+            } else {
+                // If iframe doesn't exist, create a new one
+                var iframe = document.createElement('iframe');
+                iframe.id = 'youtube-iframe';
+                iframe.width = '800';
+                iframe.height = '490';
+                iframe.src = 'https://www.youtube.com/embed/' + videoID;
+                iframe.frameBorder = '0';
+                iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen = true;
+            
+                container.innerHTML = ''; // Clear any previous content
+                container.appendChild(iframe); // Add the new iframe
+            }
+            
 
             // Create and append the delete button
             var deleteButtonContainer = document.createElement('div');
