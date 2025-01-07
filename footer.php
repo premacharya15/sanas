@@ -96,5 +96,8 @@ sanas_render_modal_html_alert();
         </div>
       </div>
     </footer>
+    <?php
+    sanas_preloading_overlay();
+    ?>
 </body>
 </html>
