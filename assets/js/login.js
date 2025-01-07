@@ -119,6 +119,7 @@ $('button.usersignin').on('click', function (e) {
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log('AJAX Error: ' + textStatus, errorThrown);
+                $('#card-preview-popup').modal('hide');
             }
         });
     }
