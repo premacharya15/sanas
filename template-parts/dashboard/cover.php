@@ -83,6 +83,7 @@
                                     <div class="form-group-outer">
                                         <div class="form-group">
                                             <div class="select-wrapper">
+                                                <textarea id="myTextarea"></textarea>
                                                 <label for="font-family-select">Font</label>
                                                 <select id="fontFamily" onchange="changeFont()"></select>
                                                 <!-- <select class="custom-select select-inner" id="fontFamily" onchange="changeFont()"></select> -->
