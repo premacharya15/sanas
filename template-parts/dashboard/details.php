@@ -81,7 +81,7 @@ $user_id = $current_user->ID;
                                 <div class="form-group-outer">
                                     <div class="form-group">
                                         <div class="select-wrapper">
-                                        <textarea id="myTextarea"></textarea>
+                                        <textarea id="myTextarea" style="display:none;"></textarea>
                                             <label for="font-family-select">Font</label>
                                             <select id="fontFamily"
                                                 onchange="changeFont()">
