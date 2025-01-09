@@ -1762,8 +1762,7 @@ $data = !empty($backpagedata) ? stripslashes(htmlspecialchars_decode($backpageda
 ?>
         <script>
         // var canvasss = '<?php //echo json_encode($data);?>';
-        var canvasss = <?php echo json_encode($data, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP); ?>;
-        console.log(canvasss);
+        var canvasss = <?php echo json_encode($data); ?>;
         </script>
 <?php
 
