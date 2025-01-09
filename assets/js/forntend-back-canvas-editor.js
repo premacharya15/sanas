@@ -606,18 +606,10 @@ jQuery(document).ready(function ($) {
     }
 
     function fixCanvasData(data) {
-                // Handle escaped quotes or improperly escaped data
-                data = data.replace(/\\\"/g, '"'); // Fix escaped quotes
-                data = data.replace(/\\\\/g, '\\'); // Fix double backslashes
-        
                 // Example regex fixes:
                 data = data.replace(/,\s*}/g, '}'); // Remove trailing commas before closing curly braces
                 data = data.replace(/,\s*]/g, ']'); // Remove trailing commas before closing square brackets
-                // Add quotes around unquoted property names (basic regex for fixing this issue)
-                data = data.replace(/([{,]\s*)([a-zA-Z0-9_]+)\s*:/g, '$1"$2":');
-        
-                // Optionally, trim whitespace and remove invalid characters
-                data = data.trim();
+
                 return data;
     }
 });
