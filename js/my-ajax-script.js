@@ -1553,9 +1553,7 @@ if (jQuery('.search-form').length) {
 
             // Function to display suggestions
             function showSuggestions(suggestions) {
-                suggestionList.innerHTML = ''; // Clear existing suggestions
-                console.log(suggestionList);
-                console.log(suggestions.length);
+                suggestionList.innerHTML = '';
                 if (!suggestions || suggestions.length === 0) {
                     var noResultsItem = document.createElement('li');
                     noResultsItem.textContent = 'No results found';
