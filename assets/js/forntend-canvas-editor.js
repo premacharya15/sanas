@@ -635,7 +635,10 @@ jQuery(document).ready(function ($) {
     }
 
     function fixCanvasData(data) {
-        // Fix common JSON issues such as trailing commas, missing quotes, etc.
+                // Handle escaped quotes or improperly escaped data
+        data = data.replace(/\\\"/g, '"'); // Fix escaped quotes
+        data = data.replace(/\\\\/g, '\\'); // Fix double backslashes
+
         // Example regex fixes:
         data = data.replace(/,\s*}/g, '}'); // Remove trailing commas before closing curly braces
         data = data.replace(/,\s*]/g, ']'); // Remove trailing commas before closing square brackets
