@@ -1591,7 +1591,7 @@ if (jQuery('.search-form').length) {
             function showSuggestions(suggestions) {
                 suggestionList.innerHTML = '';
                 if (!suggestions || suggestions.length === 0) {
-                    var noResultsItem = document.createElement('li');
+                    var noResultsItem = document.createElement('div');
                     noResultsItem.textContent = 'No results found';
                     noResultsItem.style.color = 'gray';
                     suggestionList.appendChild(noResultsItem);
