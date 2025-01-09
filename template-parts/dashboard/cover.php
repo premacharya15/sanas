@@ -1769,8 +1769,9 @@ $data = !empty($frontpagedata) ? stripslashes(htmlspecialchars_decode($frontpage
     if (isset($_GET['card_id'])) {
         ?>
         <script>
-            var canvasss = <?php echo json_encode($data, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP); ?>;
-        // var canvasss = '<?php //echo $data;?>';
+            // var canvasss = <?php //echo json_encode($data, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP); ?>;
+        var canvasss = <?php echo $data;?>;
+        console.log(canvasss);
         </script>
         <?php
     }
@@ -1816,7 +1817,7 @@ if ( is_user_logged_in() ) {
 $isInitialLoad = empty($frontpagedata) ? 'true' : 'false';
 echo "<script>";
 echo "var isInitialLoad = ".$isInitialLoad.";";
-echo "var phpbackCanvasData = ".json_encode($data, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP).";";
+echo "var phpbackCanvasData = ".json_encode($data).";";
 echo "</script>";
 ?>
 <!-- <script type="text/javascript">
