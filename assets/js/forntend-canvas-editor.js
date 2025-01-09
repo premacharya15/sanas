@@ -639,7 +639,11 @@ jQuery(document).ready(function ($) {
         // Example regex fixes:
         data = data.replace(/,\s*}/g, '}'); // Remove trailing commas before closing curly braces
         data = data.replace(/,\s*]/g, ']'); // Remove trailing commas before closing square brackets
+        // Add quotes around unquoted property names (basic regex for fixing this issue)
+        data = data.replace(/([{,]\s*)([a-zA-Z0-9_]+)\s*:/g, '$1"$2":');
 
+        // Optionally, trim whitespace and remove invalid characters
+        data = data.trim();
         return data;
     }
 
