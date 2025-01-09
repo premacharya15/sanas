@@ -1536,6 +1536,10 @@ if (jQuery('.search-form').length) {
                 return;
             }
 
+            // Set fixed height and scrolling for suggestion list
+            // suggestionList.style.maxHeight = '200px';
+            // suggestionList.style.overflowY = 'auto';
+
             let selectedIndex = -1;
 
             // Event listener for input field
@@ -1565,12 +1569,14 @@ if (jQuery('.search-form').length) {
                     e.preventDefault();
                     selectedIndex = (selectedIndex + 1) % items.length;
                     highlightItem(items);
+                    scrollToSelected(items[selectedIndex]);
                 }
                 // Up arrow 
                 else if (e.key === 'ArrowUp') {
                     e.preventDefault();
                     selectedIndex = selectedIndex <= 0 ? items.length - 1 : selectedIndex - 1;
                     highlightItem(items);
+                    scrollToSelected(items[selectedIndex]);
                 }
                 // Enter
                 else if (e.key === 'Enter' && selectedIndex > -1) {
@@ -1582,6 +1588,20 @@ if (jQuery('.search-form').length) {
                     selectedIndex = -1;
                 }
             });
+
+            function scrollToSelected(selectedElement) {
+                if (!selectedElement) return;
+                
+                const container = suggestionList;
+                const containerRect = container.getBoundingClientRect();
+                const elementRect = selectedElement.getBoundingClientRect();
+
+                if (elementRect.bottom > containerRect.bottom) {
+                    container.scrollTop += elementRect.bottom - containerRect.bottom;
+                } else if (elementRect.top < containerRect.top) {
+                    container.scrollTop -= containerRect.top - elementRect.top;
+                }
+            }
 
             function highlightItem(items) {
                 Array.from(items).forEach((item, index) => {
