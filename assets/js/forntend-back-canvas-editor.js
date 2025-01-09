@@ -538,10 +538,10 @@ jQuery(document).ready(function ($) {
         });
     }
 
+
     function loadCanvasData() {
-        console.log(canvasss);
         // Replace 'canvasss' with your actual canvas data
-        let canvasData = JSON.parse(canvasss);
+        let canvasData = canvasss;
 
         try {
             let data = parseCanvasData(canvasData); // Try parsing the canvas data
@@ -551,9 +551,10 @@ jQuery(document).ready(function ($) {
             data.objects.forEach(obj => {
                 if (obj.type === 'i-text' && obj.fontFamily) {
                     fonts.add(obj.fontFamily);
+                    console.log('frontend-canvas-editor.js - font family 1:', obj.fontFamily);
                 }
+                console.log(obj.fontFamily);
             });
-
             if (fonts.size > 0) {
                 // Load the fonts before rendering the canvas
                 loadFonts(Array.from(fonts), () => {
@@ -581,6 +582,7 @@ jQuery(document).ready(function ($) {
                 data.objects.forEach(obj => {
                     if (obj.type === 'i-text' && obj.fontFamily) {
                         fonts.add(obj.fontFamily);
+                        console.log('frontend-canvas-editor.js - font family 2:', obj.fontFamily);
                     }
                 });
 
@@ -606,11 +608,11 @@ jQuery(document).ready(function ($) {
     }
 
     function fixCanvasData(data) {
-                // Example regex fixes:
-                data = data.replace(/,\s*}/g, '}'); // Remove trailing commas before closing curly braces
-                data = data.replace(/,\s*]/g, ']'); // Remove trailing commas before closing square brackets
+        // Example regex fixes:
+        data = data.replace(/,\s*}/g, '}'); // Remove trailing commas before closing curly braces
+        data = data.replace(/,\s*]/g, ']'); // Remove trailing commas before closing square brackets
 
-                return data;
+        return data;
     }
 });
 
