@@ -1537,12 +1537,19 @@ if (jQuery('.search-form').length) {
             }
 
             let selectedIndex = -1;
+            let selectedSuggestion = null;
 
             // Event listener for input field
             searchInput.addEventListener('input', function () {
                 var inputText = this.value.toLowerCase();
                 var suggestions = [];
                 selectedIndex = -1;
+                
+                // Check if input matches selected suggestion
+                if (selectedSuggestion && inputText !== selectedSuggestion.name.toLowerCase()) {
+                    selectedSuggestion = null;
+                    jQuery('.search-form .search-btn').attr('data-url', '');
+                }
                 
                 // Iterate over the templates and filter based on input
                 templateNames.forEach(function (template) {
@@ -1557,7 +1564,9 @@ if (jQuery('.search-form').length) {
             // Handle search button click (navigate to URL)
             jQuery('.search-form .search-btn').on('click', function () {
                 const url = jQuery(this).attr('data-url');
-                if (url) {
+                // Only redirect if input exactly matches selected suggestion
+                if (url && selectedSuggestion && 
+                    searchInput.value.toLowerCase() === selectedSuggestion.name.toLowerCase()) {
                     window.location.href = url;
                 } else {
                     console.error('URL attribute not found on the button');
@@ -1569,14 +1578,12 @@ if (jQuery('.search-form').length) {
                 if (e.key === 'Enter') {
                     e.preventDefault();
                     suggestionList.style.display = 'none';
-                    // searchInput.value = '';
                     selectedIndex = -1;
                 }
             });
 
             // Clear input on focus
             searchInput.addEventListener('focus', function() {
-                // this.value = '';
                 suggestionList.style.display = 'none';
                 selectedIndex = -1;
             });
@@ -1613,6 +1620,10 @@ if (jQuery('.search-form').length) {
             suggestionList.addEventListener('click', function (e) {
                 if (e.target && e.target.matches('li')) {
                     searchInput.value = e.target.textContent;
+                    selectedSuggestion = {
+                        name: e.target.textContent,
+                        url: e.target.dataset.url
+                    };
                     jQuery('.search-form .search-btn').attr('data-url', e.target.dataset.url);
                     suggestionList.style.display = 'none';
                     selectedIndex = -1;
