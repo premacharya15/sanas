@@ -1787,7 +1787,7 @@ if (!empty($data)) {
 <?php
 $isInitialLoad = empty($frontpagedata) ? 'true' : 'false';
 echo "<script>";
-echo "var isInitialLoad = '".$isInitialLoad."';";
+echo "var isInitialLoad = ".$isInitialLoad.";";
 echo "var phpbackCanvasData = ".json_encode($data).";";
 echo "</script>";
 ?>

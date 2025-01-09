@@ -1816,11 +1816,10 @@ if (!empty($data)) {
 if ( is_user_logged_in() ) {
 $isInitialLoad = empty($frontpagedata) ? 'true' : 'false';
 echo "<script>";
+echo "var isInitialLoad = ".$isInitialLoad.";";
 echo "var phpbackCanvasData = ".json_encode($data).";";
-echo "var isInitialLoad = '".$isInitialLoad."';";
 echo "</script>";
 ?>
-
 <!-- <script type="text/javascript">
     var phpCanvasData = <?php //echo $data; ?>;
     var isInitialLoad = <?php //echo $isInitialLoad; ?>;

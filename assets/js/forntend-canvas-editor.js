@@ -572,7 +572,7 @@ jQuery(document).ready(function ($) {
 
         try {
             let data = parseCanvasData(canvasData); // Try parsing the canvas data
-
+            console.log(data);
             // Extract the unique fonts from the canvas data
             const fonts = new Set();
             data.objects.forEach(obj => {
