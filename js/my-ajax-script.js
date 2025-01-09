@@ -1594,6 +1594,7 @@ if (jQuery('.search-form').length) {
                     var noResultsItem = document.createElement('div');
                     noResultsItem.textContent = 'No results found';
                     noResultsItem.style.color = 'gray';
+                    noResultsItem.style.padding= '8px';
                     suggestionList.appendChild(noResultsItem);
                     suggestionList.style.display = 'block';
                 } else {
