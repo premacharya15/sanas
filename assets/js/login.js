@@ -509,26 +509,30 @@ jQuery(document).ready(function ($) {
         var guestGroup = $('.select-group').val(); 
         var event_id = $('#add_guest_details').attr('event-id');
 
-      // Regular expression for validating phone number (10 digits)
+        if (guestName === "") {
+            $('.guestlist_details_message').html('<p style="color: red;">Please enter guest name</p>');
+            return false;
+        }
+
+        if (guestEmail === "") {
+            $('.guestlist_details_message').html('<p style="color: red;">Please enter email address</p>');
+            return false;
+        }
+
+        // Regular expression for validating phone number (11 digits)
         var phoneRegex = /^\d{11}$/;
 
         // Regular expression for validating email
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if (guestContact === "" && guestEmail === "") {
-         $('.guestlist_details_message').html('<p style="color: red;">Please fill in either the phone number or email</p>');
-            return false; // Prevent form submission
-        }
-
         if (guestContact !== "" && !phoneRegex.test(guestContact)) {
-         $('.guestlist_details_message').html('<p style="color: red;">Please enter a valid 11-digit phone number.</p>');
-
-            return false; // Prevent form submission
+            $('.guestlist_details_message').html('<p style="color: red;">Please enter a valid 11-digit phone number.</p>');
+            return false;
         }
 
-        if (guestEmail !== "" && !emailRegex.test(guestEmail)) {
-         $('.guestlist_details_message').html('<p style="color: red;">Please enter a valid email.</p>');
-            return false; // Prevent form submission
+        if (!emailRegex.test(guestEmail)) {
+            $('.guestlist_details_message').html('<p style="color: red;">Please enter a valid email.</p>');
+            return false;
         }
 
         $.ajax({
