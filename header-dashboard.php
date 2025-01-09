@@ -26,7 +26,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php if ( is_page_template( 'page-template/myevent.php' ) ) { body_class('inner-page');}else{body_class();} ?>>>
-    <?php sanas_preloading_overlay();?>
+    <?php sanas_preloading_overlay(); ?>
 <div class="wl-invitation-header user">
     <div class="container-fluid">
         <div class="inner-container">

@@ -64,9 +64,7 @@ $event_rsvp_id=$get_event_date[0]->event_rsvp_id;
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class('inner-page'); ?>>
-<?php
-sanas_preloading_overlay();
-?>
+<?php sanas_preloading_overlay(); ?>
 <?php wp_body_open(); 
     do_action('sanas_header');
 ?>
