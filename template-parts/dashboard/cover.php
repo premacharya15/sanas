@@ -1769,9 +1769,8 @@ $data = !empty($frontpagedata) ? stripslashes(htmlspecialchars_decode($frontpage
     if (isset($_GET['card_id'])) {
         ?>
         <script>
-            // var canvasss = <?php //echo json_encode($data, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP); ?>;
         var canvasss = <?php echo json_encode($data);?>;
-        console.log(canvasss);
+        // console.log(canvasss);
         </script>
         <?php
     }

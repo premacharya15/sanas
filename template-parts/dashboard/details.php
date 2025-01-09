@@ -1761,8 +1761,8 @@ if(wp_is_mobile())
 $data = !empty($backpagedata) ? stripslashes(htmlspecialchars_decode($backpagedata)) : stripslashes(htmlspecialchars_decode($backmetadata));
 ?>
         <script>
-        // var canvasss = '<?php //echo json_encode($data);?>';
-        var canvasss = <?php echo json_encode($data); ?>;
+            var canvasss = <?php echo json_encode($data);?>;
+            console.log(canvasss);
         </script>
 <?php
 
