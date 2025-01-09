@@ -1816,7 +1816,7 @@ if (!empty($data)) {
 if ( is_user_logged_in() ) {
 $isInitialLoad = empty($frontpagedata) ? 'true' : 'false';
 echo "<script>";
-echo "var phpbackCanvasData = '".json_encode($data)."';";
+echo "var phpbackCanvasData = ".json_encode($data).";";
 echo "var isInitialLoad = '".$isInitialLoad."';";
 echo "</script>";
 ?>
