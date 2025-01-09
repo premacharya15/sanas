@@ -1536,10 +1536,13 @@ if (jQuery('.search-form').length) {
                 return;
             }
 
+            let selectedIndex = -1;
+
             // Event listener for input field
             searchInput.addEventListener('input', function () {
                 var inputText = this.value.toLowerCase();
                 var suggestions = [];
+                selectedIndex = -1;
                 
                 // Iterate over the templates and filter based on input
                 templateNames.forEach(function (template) {
@@ -1551,13 +1554,52 @@ if (jQuery('.search-form').length) {
                 showSuggestions(suggestions);
             });
 
+            // Handle keyboard navigation
+            searchInput.addEventListener('keydown', function(e) {
+                const items = suggestionList.getElementsByTagName('li');
+                
+                if (items.length === 0) return;
+
+                // Down arrow
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    selectedIndex = (selectedIndex + 1) % items.length;
+                    highlightItem(items);
+                }
+                // Up arrow 
+                else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    selectedIndex = selectedIndex <= 0 ? items.length - 1 : selectedIndex - 1;
+                    highlightItem(items);
+                }
+                // Enter
+                else if (e.key === 'Enter' && selectedIndex > -1) {
+                    e.preventDefault();
+                    const selectedItem = items[selectedIndex];
+                    searchInput.value = selectedItem.textContent;
+                    jQuery('.search-form .search-btn').attr('data-url', selectedItem.dataset.url);
+                    suggestionList.style.display = 'none';
+                    selectedIndex = -1;
+                }
+            });
+
+            function highlightItem(items) {
+                Array.from(items).forEach((item, index) => {
+                    if (index === selectedIndex) {
+                        item.style.backgroundColor = '#e9ecef';
+                    } else {
+                        item.style.backgroundColor = '';
+                    }
+                });
+            }
+
             // Function to display suggestions
             function showSuggestions(suggestions) {
                 suggestionList.innerHTML = '';
                 if (!suggestions || suggestions.length === 0) {
                     var noResultsItem = document.createElement('li');
                     noResultsItem.textContent = 'No results found';
-                    noResultsItem.style.color = 'gray'; // Optional: style the message
+                    noResultsItem.style.color = 'gray';
                     suggestionList.appendChild(noResultsItem);
                     suggestionList.style.display = 'block';
                 } else {
@@ -1569,7 +1611,6 @@ if (jQuery('.search-form').length) {
                     });
                 }
 
-                // Show or hide the suggestion list based on results
                 suggestionList.style.display = 'block';
             }
 
@@ -1577,15 +1618,17 @@ if (jQuery('.search-form').length) {
             document.addEventListener('click', function (e) {
                 if (!searchInput.contains(e.target) && !suggestionList.contains(e.target)) {
                     suggestionList.style.display = 'none';
+                    selectedIndex = -1;
                 }
             });
 
             // Handle suggestion selection
             suggestionList.addEventListener('click', function (e) {
                 if (e.target && e.target.matches('li')) {
-                    searchInput.value = e.target.textContent; // Set input field to selected suggestion
-                    jQuery('.search-form .search-btn').attr('data-url', e.target.dataset.url); // Set URL in the button
-                    suggestionList.style.display = 'none'; // Hide the suggestion list
+                    searchInput.value = e.target.textContent;
+                    jQuery('.search-form .search-btn').attr('data-url', e.target.dataset.url);
+                    suggestionList.style.display = 'none';
+                    selectedIndex = -1;
                 }
             });
 
