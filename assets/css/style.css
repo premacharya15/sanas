@@ -6309,7 +6309,7 @@ button#add_new_group_button {
     height: 100%;
 }
 #uploaded-video, #youtube-iframe {
-    width: auto;
+    width: 100%;
     height: auto;
     max-height: 80vh;
     min-height: 380px;
