@@ -1536,10 +1536,6 @@ if (jQuery('.search-form').length) {
                 return;
             }
 
-            // Set fixed height and scrolling for suggestion list
-            // suggestionList.style.maxHeight = '200px';
-            // suggestionList.style.overflowY = 'auto';
-
             let selectedIndex = -1;
 
             // Event listener for input field
@@ -1558,62 +1554,16 @@ if (jQuery('.search-form').length) {
                 showSuggestions(suggestions);
             });
 
-            // Handle keyboard navigation
-            searchInput.addEventListener('keydown', function(e) {
-                const items = suggestionList.getElementsByTagName('li');
-                
-                if (items.length === 0) return;
-
-                // Down arrow
-                if (e.key === 'ArrowDown') {
-                    e.preventDefault();
-                    selectedIndex = (selectedIndex + 1) % items.length;
-                    highlightItem(items);
-                    scrollToSelected(items[selectedIndex]);
-                }
-                // Up arrow 
-                else if (e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    selectedIndex = selectedIndex <= 0 ? items.length - 1 : selectedIndex - 1;
-                    highlightItem(items);
-                    scrollToSelected(items[selectedIndex]);
-                }
-                // Enter
-                else if (e.key === 'Enter' && selectedIndex > -1) {
-                    e.preventDefault();
-                    const selectedItem = items[selectedIndex];
-                    searchInput.value = selectedItem.textContent;
-                    jQuery('.search-form .search-btn').attr('data-url', selectedItem.dataset.url);
-                    suggestionList.style.display = 'none';
-                    selectedIndex = -1;
+            // Handle search button click (navigate to URL)
+            jQuery('.search-form .search-btn').on('click', function () {
+                const url = jQuery(this).attr('data-url');
+                if (url) {
+                    window.location.href = url;
+                } else {
+                    console.error('URL attribute not found on the button');
                 }
             });
 
-            function scrollToSelected(selectedElement) {
-                if (!selectedElement) return;
-                
-                const container = suggestionList;
-                const containerRect = container.getBoundingClientRect();
-                const elementRect = selectedElement.getBoundingClientRect();
-
-                if (elementRect.bottom > containerRect.bottom) {
-                    container.scrollTop += elementRect.bottom - containerRect.bottom;
-                } else if (elementRect.top < containerRect.top) {
-                    container.scrollTop -= containerRect.top - elementRect.top;
-                }
-            }
-
-            function highlightItem(items) {
-                Array.from(items).forEach((item, index) => {
-                    if (index === selectedIndex) {
-                        item.style.backgroundColor = '#e9ecef';
-                    } else {
-                        item.style.backgroundColor = '';
-                    }
-                });
-            }
-
-            // Function to display suggestions
             function showSuggestions(suggestions) {
                 suggestionList.innerHTML = '';
                 if (!suggestions || suggestions.length === 0) {
@@ -1649,19 +1599,6 @@ if (jQuery('.search-form').length) {
                     jQuery('.search-form .search-btn').attr('data-url', e.target.dataset.url);
                     suggestionList.style.display = 'none';
                     selectedIndex = -1;
-                }
-            });
-
-            // Handle search button click (navigate to URL)
-            document.addEventListener('click', function (e) {
-                if (e.target && e.target.closest('.search-btn')) {
-                    const button = e.target.closest('.search-btn');
-                    const url = button.getAttribute('data-url');
-                    if (url) {
-                        window.location.href = url;
-                    } else {
-                        console.error('URL attribute not found on the button');
-                    }
                 }
             });
         } catch (error) {
