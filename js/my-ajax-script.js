@@ -1556,11 +1556,12 @@ if (jQuery('.search-form').length) {
                 suggestionList.innerHTML = ''; // Clear existing suggestions
                 console.log(suggestionList);
                 console.log(suggestions.length);
-                if (suggestions.length === 0) {
+                if (!suggestions || suggestions.length === 0) {
                     var noResultsItem = document.createElement('li');
                     noResultsItem.textContent = 'No results found';
                     noResultsItem.style.color = 'gray'; // Optional: style the message
                     suggestionList.appendChild(noResultsItem);
+                    suggestionList.style.display = 'block';
                 } else {
                     suggestions.forEach(function (suggestion) {
                         var listItem = document.createElement('li');
@@ -1571,7 +1572,7 @@ if (jQuery('.search-form').length) {
                 }
 
                 // Show or hide the suggestion list based on results
-                suggestionList.style.display = suggestions.length > 0 ? 'block' : 'none';
+                suggestionList.style.display = 'block';
             }
 
             // Hide suggestion list when clicking outside
