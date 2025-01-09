@@ -6309,9 +6309,10 @@ button#add_new_group_button {
     height: 100%;
 }
 #uploaded-video, #youtube-iframe {
-    width: 100%;
-    aspect-ratio: 4/3;
+    width: auto;
     height: auto;
+    max-height: 80vh;
+    min-height: 380px;
 }
 .blog-search .btn-go {
     height: 45px;
