@@ -1569,7 +1569,7 @@ if (jQuery('.search-form').length) {
                 if (e.key === 'Enter') {
                     e.preventDefault();
                     suggestionList.style.display = 'none';
-                    searchInput.value = '';
+                    // searchInput.value = '';
                     selectedIndex = -1;
                 }
             });
