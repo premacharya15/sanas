@@ -1554,14 +1554,21 @@ if (jQuery('.search-form').length) {
             // Function to display suggestions
             function showSuggestions(suggestions) {
                 suggestionList.innerHTML = ''; // Clear existing suggestions
-
-                // Add the filtered suggestions to the list
-                suggestions.forEach(function (suggestion) {
-                    var listItem = document.createElement('li');
-                    listItem.textContent = suggestion.name;
-                    listItem.dataset.url = suggestion.url;
-                    suggestionList.appendChild(listItem);
-                });
+                if (suggestions.length === 0) {
+                    // If no suggestions, show "No results found"
+                    var noResultsItem = document.createElement('li');
+                    noResultsItem.textContent = 'No results found';
+                    noResultsItem.style.color = 'gray'; // Optional: style the message
+                    suggestionList.appendChild(noResultsItem);
+                } else {
+                    // Add the filtered suggestions to the list
+                    suggestions.forEach(function (suggestion) {
+                        var listItem = document.createElement('li');
+                        listItem.textContent = suggestion.name;
+                        listItem.dataset.url = suggestion.url;
+                        suggestionList.appendChild(listItem);
+                    });
+                }
 
                 // Show or hide the suggestion list based on results
                 suggestionList.style.display = suggestions.length > 0 ? 'block' : 'none';
