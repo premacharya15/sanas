@@ -1546,8 +1546,8 @@ if (jQuery('.search-form').length) {
                 
                 // Iterate over the templates and filter based on input
                 templateNames.forEach(function (template) {
-                    // Check if the template name starts with the input text (case insensitive)
-                    if (template.name.toLowerCase().startsWith(inputText)) {
+                    // Check if template name includes the input text (case insensitive)
+                    if (template.name.toLowerCase().includes(inputText)) {
                         suggestions.push(template);
                     }
                 });
@@ -1562,6 +1562,23 @@ if (jQuery('.search-form').length) {
                 } else {
                     console.error('URL attribute not found on the button');
                 }
+            });
+
+            // Handle enter key press
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    suggestionList.style.display = 'none';
+                    searchInput.value = '';
+                    selectedIndex = -1;
+                }
+            });
+
+            // Clear input on focus
+            searchInput.addEventListener('focus', function() {
+                this.value = '';
+                suggestionList.style.display = 'none';
+                selectedIndex = -1;
             });
 
             function showSuggestions(suggestions) {
