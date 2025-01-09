@@ -1576,7 +1576,7 @@ if (jQuery('.search-form').length) {
 
             // Clear input on focus
             searchInput.addEventListener('focus', function() {
-                this.value = '';
+                // this.value = '';
                 suggestionList.style.display = 'none';
                 selectedIndex = -1;
             });
