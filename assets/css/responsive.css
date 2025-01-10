@@ -958,14 +958,14 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
         padding: 20px 5px !important;
         text-align: left;
     }
-    .guestlist-table thead th:nth-child(3),
+    /* .guestlist-table thead th:nth-child(3),
     .guestlist-table thead th:nth-child(4),
     .guestlist-table thead th:nth-child(5),
     .guestlist-table tbody td:nth-child(3),
     .guestlist-table tbody td:nth-child(4),
     .guestlist-table tbody td:nth-child(5){
         display: none;
-    }
+    } */
     /* .guestlist-table th:nth-child(3),
     .guestlist-table th:nth-child(4),
     .guestlist-table th:nth-child(5),
