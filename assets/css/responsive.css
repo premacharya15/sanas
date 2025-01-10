@@ -959,13 +959,21 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
         text-align: left;
     }
 
-    #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(3),  #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(4), #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(5),  #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(3), #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(4), #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(5)  {
+    /* #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(3),
+    #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(4),
+    #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(5),
+    #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(3),
+    #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(4),
+    #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(5)  {
         display: none;
     }
   
-    #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(1), #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(2), #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(6), #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(7){
+    #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(1),
+    #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(2),
+    #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(6),
+    #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(7){
         width: 25%;
-    }
+    } */
     .wl-dashboard-content .top-tabs ul li {
         width: 100%;
         border-bottom: 1px solid #dddddd;
