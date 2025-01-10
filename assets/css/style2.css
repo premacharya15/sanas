@@ -6514,7 +6514,7 @@ span.select2-search.select2-search--dropdown {
 }
 
 .next.page-numbers , .prev.page-numbers {
-    border:1px solid  #D0D5DD;
+    /* border:1px solid  #D0D5DD; */
     border-radius: 8px;
     color: var(--snas-text-primary);
     display: flex;
@@ -6526,6 +6526,7 @@ span.select2-search.select2-search--dropdown {
     width: auto;
     margin-left: 60px;
     transition: all 0.5s;
+    aspect-ratio: 1;
 }
 /* .prev.page-numbers{
     margin-left: 00px;
