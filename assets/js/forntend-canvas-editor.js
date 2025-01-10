@@ -1082,6 +1082,7 @@ if (jQuery('#imageUpload').length) {
                         success: function (response) {
                             if (response.success) {
                                 var html_inner = '<div class="canvas-upload-image"><img src="' + response.data.image_url + '" alt="Uploaded Image"></div>';
+                                hidePreloader();
                                 jQuery('#imagePreviewContainernew').prepend(html_inner);
                             } else {
                                 //alert('Error: ' + response.data.message);
@@ -1091,10 +1092,11 @@ if (jQuery('#imageUpload').length) {
                         error: function () {
                             hidePreloader();
                             show_alert_message('Upload', 'Upload an image issue to save in server data.');
-                        },
-                        complete: function () {
-                            hidePreloader(); // Hide loading indicator after the call completes
                         }
+                        // ,
+                        // complete: function () {
+                        //     hidePreloader(); // Hide loading indicator after the call completes
+                        // }
                     });
 
                     imgElement.onload = function () {
