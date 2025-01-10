@@ -37,14 +37,21 @@ get_sidebar('dashboard');
         $sanas_card_event = $wpdb->prefix . "sanas_card_event";
         $guest_details_info_table = $wpdb->prefix . "guest_details_info";
 
-        // Optimized query: Retrieve only relevant columns and ensure distinct events
+        // Set pagination variables
+        $posts_per_page = 6; // Number of events to show per page
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+        // Modify query for pagination
         $get_event = $wpdb->get_results(
             $wpdb->prepare(
                 "SELECT DISTINCT event_no, event_card_id, event_rsvp_id, event_front_card_preview, event_back_card_preview 
                  FROM $sanas_card_event 
                  WHERE event_user = %d 
-                 ORDER BY event_no DESC",
-                $userID
+                 ORDER BY event_no DESC 
+                 LIMIT %d OFFSET %d",
+                $userID,
+                $posts_per_page,
+                ($paged - 1) * $posts_per_page
             )
         );
 
@@ -164,6 +171,29 @@ get_sidebar('dashboard');
                 </div>
             </div>
         </div>
+
+        <!-- Pagination -->
+        <div class="pagination-wrapper">
+            <?php
+            $total_events = $wpdb->get_var(
+                $wpdb->prepare(
+                    "SELECT COUNT(DISTINCT event_no) FROM $sanas_card_event WHERE event_user = %d",
+                    $userID
+                )
+            );
+
+            $total_pages = ceil($total_events / $posts_per_page);
+
+            echo paginate_links( array(
+                'total' => $total_pages,
+                'current' => $paged,
+                'format' => '?paged=%#%',
+                'prev_text' => '&laquo;',
+                'next_text' => '&raquo;',
+            ) );
+            ?>
+        </div>
+
         <?php
     }
     if(is_array($get_event) && empty($get_event)){
