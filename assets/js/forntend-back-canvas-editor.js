@@ -994,6 +994,9 @@ if (jQuery('#imageUpload').length) {
                     formData.append('user_id', userId);
                     formData.append('action', 'sanas_backend_upload_image');
                     showPreloader("Uploading Image");
+                    setTimeout(function(){
+                        hidePreloader();
+                    }, 500);
                     jQuery.ajax({
                         url: ajax_login_object.ajaxurl, // WordPress AJAX URL
                         type: 'POST',
@@ -1004,7 +1007,6 @@ if (jQuery('#imageUpload').length) {
                             if (response.success) {
                                 var html_inner = '<div class="canvas-upload-image"><img src="' + response.data.image_url + '" alt="Uploaded Image"></div>';
                                 jQuery('#imagePreviewContainernew').prepend(html_inner);
-                                hidePreloader();
                             } else {
                                 //alert('Error: ' + response.data.message);
                             }
@@ -1012,11 +1014,10 @@ if (jQuery('#imageUpload').length) {
                         },
                         error: function () {
                             show_alert_message('Upload', 'Upload an image issue to save in server data.');
+                        },
+                        complete: function () {
+                            hidePreloader(); // Hide loading indicator after the call completes
                         }
-                        // ,
-                        // complete: function () {
-                        //     hidePreloader(); // Hide loading indicator after the call completes
-                        // }
                     });
 
 
