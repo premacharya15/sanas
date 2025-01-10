@@ -961,9 +961,9 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
     .guestlist-table tr > th:nth-child(3),
     .guestlist-table tr > th:nth-child(4),
     .guestlist-table tr > th:nth-child(5),
-    .guestlist-table tr > tr:nth-child(3),
-    .guestlist-table tr > tr:nth-child(4),
-    .guestlist-table tr > tr:nth-child(5){
+    .guestlist-table tr > td:nth-child(3),
+    .guestlist-table tr > td:nth-child(4),
+    .guestlist-table tr > td:nth-child(5){
         display: none;
     }
     /* .guestlist-table th:nth-child(3),
