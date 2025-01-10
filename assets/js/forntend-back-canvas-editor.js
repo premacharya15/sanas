@@ -537,15 +537,19 @@ jQuery(document).ready(function ($) {
             active: callback
         });
     }
-
-
     function loadCanvasData() {
         // Replace 'canvasss' with your actual canvas data
         let canvasData = canvasss;
-
+    
         try {
+            // Check if canvasData is already an object
+            if (typeof canvasData === 'string') {
+                canvasData = fixCanvasData(canvasData); // Fix common JSON issues
+            }
+    
             let data = parseCanvasData(canvasData); // Try parsing the canvas data
-
+    
+            console.log(data);
             // Extract the unique fonts from the canvas data
             const fonts = new Set();
             data.objects.forEach(obj => {
@@ -555,6 +559,7 @@ jQuery(document).ready(function ($) {
                 }
                 console.log(obj.fontFamily);
             });
+    
             if (fonts.size > 0) {
                 // Load the fonts before rendering the canvas
                 loadFonts(Array.from(fonts), () => {
@@ -571,12 +576,12 @@ jQuery(document).ready(function ($) {
         } catch (error) {
             console.error("Error parsing canvas data:", error.message);
             console.log("Attempting to fix the canvas data format...");
-
+    
             try {
-                // Try fixing common JSON issues and re-parsing
+                // Attempt to fix and re-parse the canvas data
                 canvasData = fixCanvasData(canvasData);
                 let data = parseCanvasData(canvasData); // Re-parse after fix
-
+    
                 // Proceed with the same font loading and canvas rendering logic
                 const fonts = new Set();
                 data.objects.forEach(obj => {
@@ -585,7 +590,7 @@ jQuery(document).ready(function ($) {
                         console.log('frontend-canvas-editor.js - font family 2:', obj.fontFamily);
                     }
                 });
-
+    
                 if (fonts.size > 0) {
                     loadFonts(Array.from(fonts), () => {
                         canvas.loadFromJSON(canvasData, () => {
@@ -602,18 +607,102 @@ jQuery(document).ready(function ($) {
             }
         }
     }
-
+    
     function parseCanvasData(data) {
-        return JSON.parse(data); // Simple JSON parsing
+        // Ensure that the data is in JSON format and can be parsed
+        if (typeof data === 'string') {
+            return JSON.parse(data); // Simple JSON parsing
+        } else {
+            return data; // Return as is if already an object
+        }
     }
-
+    
     function fixCanvasData(data) {
-        // Example regex fixes:
+        // Example regex fixes to address common issues in JSON:
         data = data.replace(/,\s*}/g, '}'); // Remove trailing commas before closing curly braces
         data = data.replace(/,\s*]/g, ']'); // Remove trailing commas before closing square brackets
-
+        data = data.replace(/\\'/g, "'"); // Fix escaped single quotes if needed
+        data = data.replace(/\\"/g, '"'); // Fix escaped double quotes if needed
+        data = data.replace(/\r?\n|\r/g, ""); // Remove newlines that may cause issues
+    
         return data;
     }
+
+    // function loadCanvasData() {
+    //     // Replace 'canvasss' with your actual canvas data
+    //     let canvasData = canvasss;
+
+    //     try {
+    //         let data = parseCanvasData(canvasData); // Try parsing the canvas data
+
+    //         // Extract the unique fonts from the canvas data
+    //         const fonts = new Set();
+    //         data.objects.forEach(obj => {
+    //             if (obj.type === 'i-text' && obj.fontFamily) {
+    //                 fonts.add(obj.fontFamily);
+    //                 console.log('frontend-canvas-editor.js - font family 1:', obj.fontFamily);
+    //             }
+    //             console.log(obj.fontFamily);
+    //         });
+    //         if (fonts.size > 0) {
+    //             // Load the fonts before rendering the canvas
+    //             loadFonts(Array.from(fonts), () => {
+    //                 canvas.loadFromJSON(canvasData, () => {
+    //                     canvas.renderAll();
+    //                 });
+    //             });
+    //         } else {
+    //             // If no fonts to load, just render the canvas
+    //             canvas.loadFromJSON(canvasData, () => {
+    //                 canvas.renderAll();
+    //             });
+    //         }
+    //     } catch (error) {
+    //         console.error("Error parsing canvas data:", error.message);
+    //         console.log("Attempting to fix the canvas data format...");
+
+    //         try {
+    //             // Try fixing common JSON issues and re-parsing
+    //             canvasData = fixCanvasData(canvasData);
+    //             let data = parseCanvasData(canvasData); // Re-parse after fix
+
+    //             // Proceed with the same font loading and canvas rendering logic
+    //             const fonts = new Set();
+    //             data.objects.forEach(obj => {
+    //                 if (obj.type === 'i-text' && obj.fontFamily) {
+    //                     fonts.add(obj.fontFamily);
+    //                     console.log('frontend-canvas-editor.js - font family 2:', obj.fontFamily);
+    //                 }
+    //             });
+
+    //             if (fonts.size > 0) {
+    //                 loadFonts(Array.from(fonts), () => {
+    //                     canvas.loadFromJSON(canvasData, () => {
+    //                         canvas.renderAll();
+    //                     });
+    //                 });
+    //             } else {
+    //                 canvas.loadFromJSON(canvasData, () => {
+    //                     canvas.renderAll();
+    //                 });
+    //             }
+    //         } catch (fixError) {
+    //             console.error("Failed to fix and parse canvas data:", fixError.message);
+    //         }
+    //     }
+    // }
+
+    // function parseCanvasData(data) {
+    //     return JSON.parse(data); // Simple JSON parsing
+    // }
+
+    // function fixCanvasData(data) {
+    //     // Example regex fixes:
+    //     data = data.replace(/,\s*}/g, '}'); // Remove trailing commas before closing curly braces
+    //     data = data.replace(/,\s*]/g, ']'); // Remove trailing commas before closing square brackets
+
+    //     return data;
+    // }
 });
 
 
