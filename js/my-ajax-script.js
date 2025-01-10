@@ -1594,6 +1594,7 @@ if (jQuery('.search-form').length) {
                     var noResultsItem = document.createElement('div');
                     noResultsItem.textContent = 'No results match your search criteria';
                     noResultsItem.style.color = 'black';
+                    noResultsItem.style.lineHeight = '26px';
                     noResultsItem.style.padding= '10px';
                     suggestionList.appendChild(noResultsItem);
                     suggestionList.style.display = 'block';
