@@ -36,17 +36,20 @@ get_sidebar('dashboard');
 
             // Fetch all events and guest details in one query
             $get_event = $wpdb->get_results(
-                $wpdb->prepare(
-                    "SELECT e.*, g.guest_status, COUNT(g.guest_id) as guest_count 
-                     FROM {$sanas_card_event} AS e
-                     LEFT JOIN {$guest_details_info_table} AS g 
-                     ON e.event_no = g.guest_event_id 
-                     WHERE e.event_user = %d 
-                     GROUP BY e.event_no 
-                     ORDER BY e.event_no DESC",
-                    $userID
-                )
-            );
+              $wpdb->prepare(
+                  "SELECT e.event_no, e.event_card_id, e.event_rsvp_id, 
+                          e.event_front_card_preview, e.event_back_card_preview, 
+                          g.guest_status, COUNT(g.guest_id) as guest_count
+                   FROM {$sanas_card_event} AS e
+                   LEFT JOIN {$guest_details_info_table} AS g 
+                   ON e.event_no = g.guest_event_id 
+                   WHERE e.event_user = %d 
+                   GROUP BY e.event_no 
+                   ORDER BY e.event_no DESC",
+                  $userID
+              )
+          );
+          
 
             if (!empty($get_event)) {
                 ?>
