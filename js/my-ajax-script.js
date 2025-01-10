@@ -1593,8 +1593,8 @@ if (jQuery('.search-form').length) {
                 if (!suggestions || suggestions.length === 0) {
                     var noResultsItem = document.createElement('div');
                     noResultsItem.textContent = 'No results found';
-                    noResultsItem.style.color = 'gray';
-                    noResultsItem.style.padding= '8px';
+                    noResultsItem.style.color = 'black';
+                    noResultsItem.style.padding= '10px';
                     suggestionList.appendChild(noResultsItem);
                     suggestionList.style.display = 'block';
                 } else {
