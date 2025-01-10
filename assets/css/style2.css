@@ -6515,7 +6515,7 @@ span.select2-search.select2-search--dropdown {
 
 .next.page-numbers , .prev.page-numbers {
     /* border:1px solid  #D0D5DD; */
-    border-radius: 8px;
+    border-radius: 100%;
     color: var(--snas-text-primary);
     display: flex;
     align-items: center;
