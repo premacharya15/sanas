@@ -1785,12 +1785,12 @@ if (!empty($data)) {
 </style>
 <?php
 $isInitialLoad = empty($frontpagedata) ? 'true' : 'false';
-echo "<script>";
-echo "var isInitialLoad = ".$isInitialLoad.";";
-echo "var phpbackCanvasData = ".json_encode($data).";";
-echo "</script>";
+// echo "<script>";
+// echo "var isInitialLoad = ".$isInitialLoad.";";
+// echo "var phpbackCanvasData = ".json_encode($data).";";
+// echo "</script>";
 ?>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 var phpbackCanvasData = <?php //echo $data; ?>;
 var isInitialLoad = <?php //echo $isInitialLoad; ?>;
-</script> -->
+</script>
