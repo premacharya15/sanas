@@ -962,9 +962,9 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
     #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(3),
     #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(4),
     #guest-list-Table_wrapper table.dataTable thead>tr>th:nth-child(5),
-    #guest-list-Table_wrapper table.dataTable tbody>tr>td:nth-child(3),
-    #guest-list-Table_wrapper table.dataTable tbody>tr>td:nth-child(4),
-    #guest-list-Table_wrapper table.dataTable tbody>tr>td:nth-child(5)  {
+    #guest-list-Table_wrapper table.dataTable td:nth-child(3),
+    #guest-list-Table_wrapper table.dataTable td:nth-child(4),
+    #guest-list-Table_wrapper table.dataTable td:nth-child(5)  {
         display: none;
     }
 /*   
