@@ -6527,10 +6527,10 @@ span.select2-search.select2-search--dropdown {
     margin-left: 60px;
     transition: all 0.5s;
 }
-.prev.page-numbers{
+/* .prev.page-numbers{
     margin-left: 00px;
     margin-right: 60px;
-}
+} */
 .page-numbers:hover {
     background-color: var(--snas-bg-primary);
     color: #ffffff;
