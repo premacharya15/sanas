@@ -1770,7 +1770,7 @@ $data = !empty($frontpagedata) ? stripslashes(htmlspecialchars_decode($frontpage
         ?>
         <script>
         var canvasss = <?php echo json_encode($data);?>;
-        // console.log(canvasss);
+        console.log(canvasss);
         </script>
         <?php
     }
