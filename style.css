@@ -985,3 +985,7 @@ a.full-div-link {
 	font-size: 18px;
 }
 
+.pagination-wrapper{
+	display: flex;
+	justify-content: center;
+}
