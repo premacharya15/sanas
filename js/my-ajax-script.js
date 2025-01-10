@@ -1592,7 +1592,7 @@ if (jQuery('.search-form').length) {
                 suggestionList.innerHTML = '';
                 if (!suggestions || suggestions.length === 0) {
                     var noResultsItem = document.createElement('div');
-                    noResultsItem.textContent = 'No results found';
+                    noResultsItem.textContent = 'No results match your search criteria';
                     noResultsItem.style.color = 'black';
                     noResultsItem.style.padding= '10px';
                     suggestionList.appendChild(noResultsItem);
