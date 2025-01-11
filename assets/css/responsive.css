@@ -958,6 +958,13 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile .guest-count {
         padding: 20px 5px !important;
         text-align: left;
     }
+    .form-block.del-account, p.profile-info-text {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .profile-action h4{
+        font-size: 20px;
+    }
     /* .guestlist-table thead th:nth-child(3),
     .guestlist-table thead th:nth-child(4),
     .guestlist-table thead th:nth-child(5),
