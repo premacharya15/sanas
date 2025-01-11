@@ -1681,9 +1681,6 @@ div.dt-container div.dt-layout-row:first-child {
     button.btn.btn-secondary.gt-delete-btn {
         display: block;
     }
-     #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(7)  a.delete.theme-btn {
-        display: none;
-    }
     #guest-list-Table_wrapper table.dataTable>tbody>tr>td:nth-child(1) {
         max-width: 30px;
     }
