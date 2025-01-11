@@ -321,8 +321,12 @@ $get_guest_details = $wpdb->get_results(
 }
 ?>
 
-
-                    <div class="vendor-table table-responsive">
+          <div class="todo-box">
+            <div class="row">
+              <div class="to-do-list-table d-table-block col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="inner-box3">
+                  <div class="table-box upcoming-tasks">
+                    <div class="vendor-table table-responsive m-0">
                       <table class="vendor-list-table guestlist-table" id="guest-list-Table">
                         <thead>
                           <tr>
@@ -397,6 +401,11 @@ $get_guest_details = $wpdb->get_results(
                         </tbody>
                       </table>
                     </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
                   </div>
                 </div>
               </div>
