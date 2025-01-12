@@ -964,7 +964,7 @@ if (empty($rsvpimage)) {
                                              </td>
                                              </tr>
                                    <?php }
-                                    else{
+                                    }else{
                                         ?>
                                             <tr>
                                               <td class="edit-text text-start" contenteditable="true" data-placeholder="Evening"></td>
