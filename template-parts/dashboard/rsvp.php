@@ -952,8 +952,8 @@ if (empty($rsvpimage)) {
                                                 <button class="deleteRowBtn"><i class="fa-regular fa-trash-can"></i></button>
                                              </td>
                                              </tr>
-                                    <?php endforeach; }
-                                    else{ 
+                                    <?php endforeach;
+                                    }else{ 
                                         if ($rsvpId==0) {
                                         ?>
                                           <tr>
@@ -964,16 +964,17 @@ if (empty($rsvpimage)) {
                                              </td>
                                              </tr>
                                    <?php }
-                                    }else{
-                                        ?>
-                                            <tr>
-                                              <td class="edit-text text-start" contenteditable="true" data-placeholder="Evening"></td>
-                                              <td class="edit-text text-start" contenteditable="true" data-placeholder="7 PM"></td>
-                                              <td>
-                                                <button class="deleteRowBtn"><i class="fa-regular fa-trash-can"></i></button>
-                                             </td>
-                                             </tr>
-                                        <?php
+                                   else{
+                                    ?>
+                                        <tr>
+                                          <td class="edit-text text-start" contenteditable="true" data-placeholder="Evening"></td>
+                                          <td class="edit-text text-start" contenteditable="true" data-placeholder="7 PM"></td>
+                                          <td>
+                                            <button class="deleteRowBtn"><i class="fa-regular fa-trash-can"></i></button>
+                                         </td>
+                                         </tr>
+                                    <?php
+                                }
                                     }
                                     ?>
                                     </tbody>
