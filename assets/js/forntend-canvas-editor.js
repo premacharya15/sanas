@@ -237,7 +237,7 @@ window.changeFontSize = changeFontSize;
 // Change color of selected text
 function changeColor(color) {
     const activeObject = canvas.getActiveObject();
-    console.log(activeObject);
+    console.log(activeObject + " Color" + color);
     if (activeObject && activeObject.type === 'i-text') {
         activeObject.set('fill', color);
         console.log(activeObject);
