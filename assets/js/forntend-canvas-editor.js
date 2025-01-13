@@ -407,7 +407,8 @@ function handleObjectSelection() {
         document.getElementById('letterSpacingValue').textContent = activeObject.charSpacing;
         }
         const formattedFontFamily = activeObject.fontFamily.replace(/ /g, '+');
-        document.getElementById('fontFamily').value = formattedFontFamily;
+        // document.getElementById('fontFamily').value = formattedFontFamily;
+        jQuery('#fontFamily').val(formattedFontFamily).trigger('change');
         // Update alignment buttons
         updateAlignmentButtons(activeObject.textAlign);
         const isBold = activeObject.fontWeight === 'bold';
@@ -450,7 +451,8 @@ function handleObjectModified() {
         document.getElementById('fontWeight').value = activeObject.fontWeight;
         }
         if (jQuery('#fontFamily').length) {
-        document.getElementById('fontFamily').value = activeObject.fontFamily;
+            jQuery('#fontFamily').val(activeObject.fontFamily).trigger('change');
+        // document.getElementById('fontFamily').value = activeObject.fontFamily;
         }
         if (jQuery('#colorPicker').length) {
         document.getElementById('colorPicker').value = activeObject.fill;
