@@ -392,7 +392,7 @@ function handleObjectSelection() {
         document.getElementById('myTextarea').style.cursor = "";
         }
         if (jQuery('#fontSize').length) {
-        document.getElementById('fontSize').value = activeObject.fontSize;
+            jQuery('#fontSize').val(activeObject.fontSize).trigger('change');
         }
         if (jQuery('#fontWeight').length) {
         document.getElementById('fontWeight').value = activeObject.fontWeight;
@@ -444,7 +444,7 @@ function handleObjectModified() {
         document.getElementById('myTextarea').style.cursor = "";
         }
         if (jQuery('#fontSize').length) {
-        document.getElementById('fontSize').value = activeObject.fontSize;
+            jQuery('#fontSize').val(activeObject.fontSize).trigger('change');
         }
         if (jQuery('#fontWeight').length) {
         document.getElementById('fontWeight').value = activeObject.fontWeight;
