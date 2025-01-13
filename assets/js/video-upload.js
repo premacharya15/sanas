@@ -80,14 +80,12 @@ jQuery(document).ready(function($) {
             $('.video-inner-box').removeClass('hide-part');
             $('#drop-zone').removeClass('video-uploaded');
             $('.delete-btn').css('display', 'none');
-            console.log("test");
         });
         $('.iframe-btn .deleteRowBtn').off('click').on('click', function() {
             $('#uploaded-video').attr('src', '');
             $('#uploaded-video').hide();
             $('.video-inner-box').removeClass('hide-part');
             $('#drop-zone').removeClass('video-uploaded');
-            console.log("tests3");
         });
     }
 

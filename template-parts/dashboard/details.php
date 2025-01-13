@@ -145,15 +145,15 @@ $user_id = $current_user->ID;
                                         <div class="select-wrapper">
                                             <label>Align</label>
                                             <div class="text-style-btn">
-                                                <a href="#" id="text-align-left" data-title="left"
+                                                <a href="javascript:void(0);" id="text-align-left" data-title="left"
                                                     onclick="changeAlign('left')">
                                                     <i class="fa-solid fa-align-left"></i>
                                                 </a>
-                                                <a href="#" id="text-align-center" data-title="center"
+                                                <a href="javascript:void(0);" id="text-align-center" data-title="center"
                                                     onclick="changeAlign('center')">
                                                     <i class="fa-solid fa-align-center"></i>
                                                 </a>
-                                                <a href="#" id="text-align-right" data-title="right"
+                                                <a href="javascript:void(0);" id="text-align-right" data-title="right"
                                                     onclick="changeAlign('right')">
                                                     <i class="fa-solid fa-align-right"></i>
                                                 </a>
@@ -163,11 +163,11 @@ $user_id = $current_user->ID;
                                     <div class="form-group">
                                         <label>Style</label>
                                         <div class="text-style-btn-one">
-                                            <a href="#" onclick="changeTextStyle('italic')"
+                                            <a href="javascript:void(0);" onclick="changeTextStyle('italic')"
                                                 data-title="italic">
                                                 <i class="icon-italic-font"></i>
                                             </a>
-                                            <a href="#" data-title="underline" onclick="changeTextStyle('underline')">
+                                            <a href="javascript:void(0);" data-title="underline" onclick="changeTextStyle('underline')">
                                                 <i class="icon-Underline"></i>
                                             </a>
                                         </div>
@@ -459,15 +459,15 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                                     <div class="select-wrapper">
                                         <label>Align</label>
                                         <div class="text-style-btn">
-                                            <a href="#" id="text-align-left" data-title="left"
+                                            <a href="javascript:void(0);" id="text-align-left" data-title="left"
                                                 onclick="changeAlign('left')">
                                                 <i class="fa-solid fa-align-left"></i>
                                             </a>
-                                            <a href="#" id="text-align-center" data-title="center"
+                                            <a href="javascript:void(0);" id="text-align-center" data-title="center"
                                                 onclick="changeAlign('center')">
                                                 <i class="fa-solid fa-align-center"></i>
                                             </a>
-                                            <a href="#" id="text-align-right" data-title="right"
+                                            <a href="javascript:void(0);" id="text-align-right" data-title="right"
                                                 onclick="changeAlign('right')">
                                                 <i class="fa-solid fa-align-right"></i>
                                             </a>
@@ -488,11 +488,11 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                                     <div class="select-wrapper">
                                         <label>Style</label>
                                         <div class="text-style-btn-one">
-                                            <a href="#" onclick="changeTextStyle('italic')"
+                                            <a href="javascript:void(0);" onclick="changeTextStyle('italic')"
                                                 data-title="italic">
                                                 <i class="icon-italic-font"></i>
                                             </a>
-                                            <a href="#" data-title="underline" onclick="changeTextStyle('underline')">
+                                            <a href="javascript:void(0);" data-title="underline" onclick="changeTextStyle('underline')">
                                                 <i class="icon-Underline"></i>
                                             </a>
                                         </div>

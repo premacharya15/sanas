@@ -157,13 +157,13 @@
                                             <div class="select-wrapper">
                                                 <label>Align</label>
                                                 <div class="text-style-btn">
-                                                    <a href="#" id="text-align-left"  data-title="left" onclick="changeAlign('left')">
+                                                    <a href="javascript:void(0);" id="text-align-left"  data-title="left" onclick="changeAlign('left')">
                                                         <i class="fa-solid fa-align-left"></i>
                                                     </a>
-                                                    <a href="#" id="text-align-center" data-title="center" onclick="changeAlign('center')">
+                                                    <a href="javascript:void(0);" id="text-align-center" data-title="center" onclick="changeAlign('center')">
                                                         <i class="fa-solid fa-align-center"></i>
                                                     </a>
-                                                    <a href="#" id="text-align-right" data-title="right" onclick="changeAlign('right')">
+                                                    <a href="javascript:void(0);" id="text-align-right" data-title="right" onclick="changeAlign('right')">
                                                         <i class="fa-solid fa-align-right"></i>
                                                     </a>
                                                 </div>
@@ -172,10 +172,10 @@
                                         <div class="form-group">
                                             <label>Style</label>
                                             <div class="text-style-btn-one">
-                                                <a href="javascript:()"  onclick="changeTextStyle('italic');" data-title="italic">
+                                                <a href="javascript:void(0);"  onclick="changeTextStyle('italic');" data-title="italic">
                                                     <i class="icon-italic-font"></i>
                                                 </a>
-                                                <a href="javascript:()" onclick="changeTextStyle('underline');" data-title="underline">
+                                                <a href="javascript:void(0);" onclick="changeTextStyle('underline');" data-title="underline">
                                                     <i class="icon-Underline"></i>
                                                 </a>
                                             </div>
@@ -476,13 +476,13 @@
                                         <div class="select-wrapper">
                                             <label>Align</label>
                                             <div class="text-style-btn">
-                                                <a href="#" id="text-align-left"  data-title="left" onclick="changeAlign('left')">
+                                                <a href="javascript:void(0);" id="text-align-left"  data-title="left" onclick="changeAlign('left')">
                                                     <i class="fa-solid fa-align-left"></i>
                                                 </a>
-                                                <a href="#" id="text-align-center" data-title="center" onclick="changeAlign('center')">
+                                                <a href="javascript:void(0);" id="text-align-center" data-title="center" onclick="changeAlign('center')">
                                                     <i class="fa-solid fa-align-center"></i>
                                                 </a>
-                                                <a href="#" id="text-align-right" data-title="right" onclick="changeAlign('right')">
+                                                <a href="javascript:void(0);" id="text-align-right" data-title="right" onclick="changeAlign('right')">
                                                     <i class="fa-solid fa-align-right"></i>
                                                 </a>
                                             </div>
@@ -501,10 +501,10 @@
                                         <div class="select-wrapper">
                                             <label>Style</label>
                                             <div class="text-style-btn-one">
-                                                <a href="#"  onclick="changeTextStyle('italic');" data-title="italic">
+                                                <a href="javascript:void(0);"  onclick="changeTextStyle('italic');" data-title="italic">
                                                     <i class="icon-italic-font"></i>
                                                 </a>
-                                                <a href="#" onclick="changeTextStyle('underline');" data-title="underline">
+                                                <a href="javascript:void(0);" onclick="changeTextStyle('underline');" data-title="underline">
                                                     <i class="icon-Underline"></i>
                                                 </a>
                                             </div>

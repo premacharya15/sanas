@@ -129,15 +129,15 @@ $user_id = $current_user->ID;
                                             <div class="select-wrapper">
                                                         <label>Align</label>
                                                         <div class="text-style-btn">
-                                                            <a href="#" id="text-align-left" data-title="left"
+                                                    <a href="javascript:void(0);" id="text-align-left" data-title="left"
                                                         onclick="changeAlignText('left', event)">
                                                         <i class="fa-solid fa-align-left"></i>
                                                     </a>
-                                                    <a href="#" id="text-align-center" data-title="center"
+                                                    <a href="javascript:void(0);" id="text-align-center" data-title="center"
                                                         onclick="changeAlignText('center', event)">
                                                         <i class="fa-solid fa-align-center"></i>
                                                     </a>
-                                                    <a href="#" id="text-align-right" data-title="right"
+                                                    <a href="javascript:void(0);" id="text-align-right" data-title="right"
                                                         onclick="changeAlignText('right', event)">
                                                         <i class="fa-solid fa-align-right"></i>
                                                     </a>
@@ -371,15 +371,15 @@ $user_id = $current_user->ID;
                                     <div class="select-wrapper">
                                         <label>Align</label>
                                         <div class="text-style-btn">
-                                            <a href="#" id="text-align-left" data-title="left"
+                                            <a href="javascript:void(0);" id="text-align-left" data-title="left"
                                                 onclick="changeAlignText('left', event)">
                                                 <i class="fa-solid fa-align-left"></i>
                                             </a>
-                                            <a href="#" id="text-align-center" data-title="center"
+                                            <a href="javascript:void(0);" id="text-align-center" data-title="center"
                                                 onclick="changeAlignText('center', event)">
                                                 <i class="fa-solid fa-align-center"></i>
                                             </a>
-                                            <a href="#" id="text-align-right" data-title="right"
+                                            <a href="javascript:void(0);" id="text-align-right" data-title="right"
                                                 onclick="changeAlignText('right', event)">
                                                 <i class="fa-solid fa-align-right"></i>
                                             </a>
