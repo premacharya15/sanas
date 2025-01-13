@@ -118,7 +118,7 @@ if(document.getElementById('drop-zone') !=null)
                 // If iframe exists, update the src
                 existingIframe.src = 'https://www.youtube.com/embed/' + videoID;
                 document.querySelector('.youtube-container').style.display = "block";
-                document.querySelector('.youtube-container').src="";
+                document.querySelector('.youtube-container .youtube-iframe').src="";
                 document.querySelector('.youtube-container .delete-btn').style.display = "block";
                 
             } else {
