@@ -6406,6 +6406,12 @@ button#add_new_group_button {
     font-size: 16px;
     font-weight: 700;
 }
+.delete-btn>button.deleteRowBtn {
+    height: 100%;
+    width: 100%;
+    background: none !important;
+    position: relative;
+}
 .delete-btn>button.deleteRowBtn>i, .wl-fuc-timing .rsvp-event .deletebtn i {
     color: var(--snas-bg-secondary-2) !important;
     font-size: 20px !important;
