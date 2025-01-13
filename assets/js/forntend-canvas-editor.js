@@ -272,14 +272,14 @@ document.querySelectorAll('.color-squr span').forEach(span => {
     });
 });
 // Event listeners for the color squares
-document.querySelectorAll('.color-squr span').forEach(span => {
-    span.addEventListener('click', function () {
-        const color = this.getAttribute('color-hex-value');
-        changeColor(color);
-        document.getElementById('colorPicker').value = color;
-        document.querySelector('.color-target-code').textContent = color;
-    });
-});
+// document.querySelectorAll('.color-squr span').forEach(span => {
+//     span.addEventListener('click', function () {
+//         const color = this.getAttribute('color-hex-value');
+//         changeColor(color);
+//         document.getElementById('colorPicker').value = color;
+//         document.querySelector('.color-target-code').textContent = color;
+//     });
+// });
 window.changeColor = changeColor;
 // Change text alignment of selected text
 function changeAlign(align) {
