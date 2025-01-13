@@ -153,6 +153,12 @@ function addText(event) {
 //         console.error('Error fetching Google Fonts:', error);
 //     }
 // }
+const selectElement = document.getElementById('fontFamily');
+const choices = new Choices(selectElement, {
+  shouldSort: false,
+  removeItemButton: true,
+  position: 'bottom'
+});
 async function loadGoogleFonts() {
     const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key
     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
@@ -165,12 +171,6 @@ async function loadGoogleFonts() {
       const data = await response.json();
       const fonts = data.items;
   
-      const selectElement = document.getElementById('fontFamily');
-      const choices = new Choices(selectElement, {
-        shouldSort: false,
-        removeItemButton: true,
-        position: 'bottom'
-    });
       const options = fonts.map(font => ({
         value: font.family.replace(/ /g, '+'),
         label: font.family,
