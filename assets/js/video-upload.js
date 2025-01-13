@@ -76,6 +76,7 @@ jQuery(document).ready(function($) {
     function setupDeleteButton() {
         $('.deleteRowBtn').off('click').on('click', function() {
             $('#uploaded-video').attr('src', '');
+            console.log("test31");
             $('#uploaded-video').hide();
             $('.video-inner-box').removeClass('hide-part');
             $('#drop-zone').removeClass('video-uploaded');
@@ -83,6 +84,7 @@ jQuery(document).ready(function($) {
         });
         $('.iframe-btn .deleteRowBtn').off('click').on('click', function() {
             $('#uploaded-video').attr('src', '');
+            console.log("test33");
             $('#uploaded-video').hide();
             $('.video-inner-box').removeClass('hide-part');
             $('#drop-zone').removeClass('video-uploaded');
@@ -112,13 +114,12 @@ if(document.getElementById('drop-zone') !=null)
         var videoID = getYouTubeVideoID(url);
         if (videoID) {
             var container = document.getElementById('drop-zone');
-            var existingIframe = document.getElementById('youtube-iframe'); // Check if iframe already exists
+            var existingIframe = document.getElementById('youtube-iframe');
             
             if (existingIframe) {
                 // If iframe exists, update the src
                 existingIframe.src = 'https://www.youtube.com/embed/' + videoID;
                 document.querySelector('.youtube-container').style.display = "block";
-                document.querySelector('.youtube-container .youtube-iframe').src="";
                 document.querySelector('.youtube-container .delete-btn').style.display = "block";
                 
             } else {
