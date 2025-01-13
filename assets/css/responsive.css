@@ -422,7 +422,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
         border: none;
     }
     .wl-left-slide-bar>.inner-colum>.tab-content>.tab-pane>.inner-container {
-        display: none;
+        /* display: none; */
     }
     .tab-content>.tab-pane>.mobail-tab {
         height: 100%;
