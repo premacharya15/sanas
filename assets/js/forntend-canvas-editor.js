@@ -153,12 +153,6 @@ function addText(event) {
 //         console.error('Error fetching Google Fonts:', error);
 //     }
 // }
-const selectElement = document.getElementById('fontFamily');
-const choices = new Choices(selectElement, {
-  shouldSort: false,
-  removeItemButton: true,
-  position: 'bottom'
-});
 async function loadGoogleFonts() {
     const apiKey = 'AIzaSyB0FLGd0rxWqu7vC0nRvxjehyNge4SSFbE'; // Replace with your Google Fonts API key
     const apiUrl = `https://www.googleapis.com/webfonts/v1/webfonts?key=${apiKey}`;
@@ -171,13 +165,19 @@ async function loadGoogleFonts() {
       const data = await response.json();
       const fonts = data.items;
   
+      const selectElement = document.getElementById('fontFamily');
+      const choices = new Choices(selectElement, {
+        shouldSort: false,
+        removeItemButton: true,
+        position: 'bottom'
+    });
       const options = fonts.map(font => ({
         value: font.family.replace(/ /g, '+'),
         label: font.family,
       }));
   
       // Set choices dynamically
-      choices.setValue(options);
+      choices.setChoices(options);
   
     } catch (error) {
       console.error('Error fetching Google Fonts:', error);
@@ -408,8 +408,6 @@ function handleObjectSelection() {
         }
         const formattedFontFamily = activeObject.fontFamily.replace(/ /g, '+');
         document.getElementById('fontFamily').value = formattedFontFamily;
-        choices.setValue(formattedFontFamily);
-        jQuery('#fontFamily').val(formattedFontFamily).trigger('change');
         // Update alignment buttons
         updateAlignmentButtons(activeObject.textAlign);
         const isBold = activeObject.fontWeight === 'bold';
@@ -452,8 +450,8 @@ function handleObjectModified() {
         document.getElementById('fontWeight').value = activeObject.fontWeight;
         }
         if (jQuery('#fontFamily').length) {
+            jQuery('#fontFamily').val(activeObject.fontFamily).trigger('change');
         // document.getElementById('fontFamily').value = activeObject.fontFamily;
-        choices.setValue(activeObject.fontFamily);
         }
         if (jQuery('#colorPicker').length) {
         document.getElementById('colorPicker').value = activeObject.fill;
@@ -465,8 +463,7 @@ function handleObjectModified() {
         document.getElementById('letterSpacingValue').textContent = activeObject.charSpacing;
         }
         const formattedFontFamily = activeObject.fontFamily.replace(/ /g, '+');
-        // document.getElementById('fontFamily').value = formattedFontFamily;
-        choices.setValue(formattedFontFamily);
+        document.getElementById('fontFamily').value = formattedFontFamily;
         // Update alignment buttons
         updateAlignmentButtons(activeObject.textAlign);
         const isBold = activeObject.fontWeight === 'bold';
