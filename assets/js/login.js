@@ -432,6 +432,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.video-box').style.display = 'block';
             document.querySelectorAll('.video-container').forEach(container => container.style.display = 'none');
             document.querySelectorAll('.youtube-container').forEach(container => container.style.display = 'none');
+            document.querySelectorAll('.youtube-container #youtube-iframe').forEach(iframe => iframe.src = '');
             console.log("delete test");
         });
     });
