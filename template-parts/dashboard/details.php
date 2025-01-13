@@ -96,9 +96,6 @@ $user_id = $current_user->ID;
                                         <div class="select-wrapper">
                                             <label>Size</label>
                                             <select class="custom-select select-inner" id="fontSize" onchange="changeFontSize()">
-                                                <option value="2">2 px</option>
-                                                <option value="4">4 px</option>
-                                                <option value="6">6 px</option>
                                                 <option value="8">8 px</option>
                                                 <option value="10">10 px</option>
                                                 <option value="12">12 px</option>
@@ -436,9 +433,6 @@ $terms = get_the_terms($_GET['card_id'], 'sanas-card-category');
                                     <div class="select-wrapper">
                                         <label class="canavas-label" for="fontSize">Size:</label>
                                         <select class="custom-select select-inner" id="fontSize" onchange="changeFontSize()">
-                                                <option value="2">2 px</option>
-                                                <option value="4">4 px</option>
-                                                <option value="6">6 px</option>
                                                 <option value="8">8 px</option>
                                                 <option value="10">10 px</option>
                                                 <option value="12">12 px</option>
