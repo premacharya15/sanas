@@ -242,6 +242,8 @@ function changeColor(color) {
         activeObject.set('fill', color);
         console.log(activeObject);
         canvas.renderAll();
+    }else{
+        console.log("changeColor error");
     }
 }
 // Event listener for the color picker input
