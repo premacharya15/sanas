@@ -407,7 +407,8 @@ function handleObjectSelection() {
         document.getElementById('letterSpacingValue').textContent = activeObject.charSpacing;
         }
         const formattedFontFamily = activeObject.fontFamily.replace(/ /g, '+');
-        // document.getElementById('fontFamily').value = formattedFontFamily;
+        document.getElementById('fontFamily').value = formattedFontFamily;
+        choices.setValueByChoice(formattedFontFamily);
         jQuery('#fontFamily').val(formattedFontFamily).trigger('change');
         // Update alignment buttons
         updateAlignmentButtons(activeObject.textAlign);
@@ -451,8 +452,8 @@ function handleObjectModified() {
         document.getElementById('fontWeight').value = activeObject.fontWeight;
         }
         if (jQuery('#fontFamily').length) {
-            jQuery('#fontFamily').val(activeObject.fontFamily).trigger('change');
         // document.getElementById('fontFamily').value = activeObject.fontFamily;
+        choices.setValueByChoice(activeObject.fontFamily);
         }
         if (jQuery('#colorPicker').length) {
         document.getElementById('colorPicker').value = activeObject.fill;
@@ -464,7 +465,8 @@ function handleObjectModified() {
         document.getElementById('letterSpacingValue').textContent = activeObject.charSpacing;
         }
         const formattedFontFamily = activeObject.fontFamily.replace(/ /g, '+');
-        document.getElementById('fontFamily').value = formattedFontFamily;
+        // document.getElementById('fontFamily').value = formattedFontFamily;
+        choices.setValueByChoice(formattedFontFamily);
         // Update alignment buttons
         updateAlignmentButtons(activeObject.textAlign);
         const isBold = activeObject.fontWeight === 'bold';
