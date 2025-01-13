@@ -262,6 +262,9 @@ document.querySelectorAll('.color-squr span').forEach(span => {
         changeColor(color);
         document.getElementById('colorPicker').value = color;
         document.querySelector('.color-target-code').textContent = color;
+        console.log("Color" + color);
+        console.log("colorPicker" + document.getElementById('colorPicker').value);
+        console.log("color-target-code" + document.getElementById('colorPicker').value);
     });
 });
 // Event listeners for the color squares
