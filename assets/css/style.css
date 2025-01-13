@@ -2274,7 +2274,7 @@ section.wl-main-canvas .content.content-3 .wl-card-detaile {
 }
 
 section.wl-main-canvas .content.content-3 .wl-card-detaile video {
-    width: auto;
+    width: 100%;
     height: auto;
     max-height: 80vh;
     min-height: 380px;
