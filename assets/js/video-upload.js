@@ -1,4 +1,10 @@
+function upload_link_func(){
+    jQuery('#video-upload').click();
+}
 jQuery(document).ready(function($) {
+    $('#upload-link').on('click', function(e) {
+        upload_link_func();
+    });
     $('#add-rsvp').on('submit', function(e) {
         e.preventDefault();
 
@@ -20,13 +26,6 @@ jQuery(document).ready(function($) {
             }
         });
     });
-
-    $('#upload-link').on('click', function(e) {
-        upload_link_func();
-    });
-    function upload_link_func(){
-        $('#video-upload').click();
-    }
     $('#video-upload').on('change', function(e) {
        const file = event.target.files[0];
         if (file) {
