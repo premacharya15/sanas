@@ -750,7 +750,7 @@ if (empty($rsvpimage)) {
                                         <div class="form-field video-upload">
                                             <label>Video link</label>
                                             <div class="video-file-upload">
-                                                <a href="javascript:void(0);" id="upload-link" class="icon">
+                                                <a href="javascript:void(0);" id="upload-link" onclick="upload_link_func();" class="icon">
                                                     <i class="icon-Upload-2"></i>
                                                 </a>
                                                     <span>
@@ -805,7 +805,7 @@ if (empty($rsvpimage)) {
                                                         <div class="col-xxl-4 col-xl-5 col-lg-7 col-md-8 col-sm-12 m-auto video-inner-box">
                                                             <div class="form-field">
                                                                 <div class="video-file-upload">
-                                                                    <a href="javascript:void(0);" id="upload-link" class="icon">
+                                                                    <a href="javascript:void(0);" id="upload-link" onclick="upload_link_func();" class="icon">
                                                                           <i class="icon-Upload-2"></i>
                                                                     </a>
                                                                     <label for="video-upload" id="upload-link" class="icon">
