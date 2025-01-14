@@ -701,6 +701,7 @@ else {
     $guest_message_css = '';
     $event_title_css = '';
     $event_date_css = '';
+    $event_time_css = '';
     $itinerary_css = '';
 
 }                  

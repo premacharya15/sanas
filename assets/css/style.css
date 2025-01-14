@@ -5501,7 +5501,7 @@ input.rsvp-msg.host-name ,.event-title, .event-date {
     font-weight: 600;
     width: 100% !important;
 }
- .event-date{
+ .event-date, .event-time{
     font-size: 16px;
     line-height: 25px;
     font-weight: 400;
