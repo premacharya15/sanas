@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap");
+body{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Plus Jakarta Sans";
+font-size: 14px;
+font-weight: 400;
+line-height: 18px;
+color: #000000;
+}
+h1,h2,h3,h4,h5,h6{
+font-weight: 700;
+line-height: 22px;
+letter-spacing: 0.02em;
+}
+h4{
+font-size: 16px;
+}
+.container{
+width: 100%;
+max-width: 628px;
+margin: 0 auto;
+padding: 0 15px;
+}
+.row{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+row-gap: 24px;
+}
+.col-7{
+width: 59%;
+}
+.col-5{
+width: 39%;
+}
+.col-12{
+width: 100%;
+}
+.text-end{
+text-align: end;
+}
+.text-center{
+text-align: center;
+}
+.m-0{
+margin: 0;
+}
+.p-0{
+padding: 0;
+}
+li{
+list-style-type: none;
+}
+.col-6{
+width: 48%;
+}
+a{
+text-decoration: none;
+font-weight: 700;
+}
+h1{
+font-size: 32px;
+font-weight: 600;
+line-height: 40.32px;
+margin-bottom: 8px;
+margin-top: 0;
+}
+ul&gt;li::before {
+content: "";
+position: relative;
+left: -10px;
+height: 6px;
+top: -2px;
+width: 6px;
+display: inline-block;
+background-color: #ffffff;
+border-radius: 100%;
+}
+.explor&gt;li::before{
+background-color: #000000;
+}
+.explor{
+padding-left: 20px;
+}
+.btn-secondary {
+padding: 10px 14px;
+background-color: #744F30;
+color: #ffffff;
+display: flex;
+align-items: center;
+column-gap: 8px;
+justify-content: end;
+width: fit-content;
+border: 1px solid #744F30;
+transition: all 0.5s;
+font-size: 16px;
+line-height: 20px;
+font-weight: 600;
+border-radius: 8px;
+}
+.btn-secondary:hover {
+border: 1px solid #744F30;
+color: #744F30;
+background-color: #ffffff;
+}
+
+@media only screen and (max-width:768px) {
+.container{
+max-width: 360px;
+text-align: center;
+}
+h1{
+font-size: 24px;
+line-height: 30px;
+}
+.col-7{
+width: 100%;
+}
+.col-5{
+width: 100%;
+}
+.container&gt;div{
+padding: 24px !important;
+}
+.col-6{
+width: 100%;
+}
+}
+<div class="container">
+<div style="padding: 32px;">
+<div class="row" style="align-items: flex-start; padding-bottom: 48px;">
+<div class="col-7">
+<h1>Welcome to %%invite_title</h1>
+<h4 class="m-0" style="margin-top: 32px;">Dear %%guest_name,</h4>
+<p style="margin: 10px 0 20px;">Welcome to SanasHub RSVP!
+We are thrilled to invite you to join our vibrant community.</p>
+<p class="m-0">By accepting this invitation, you will gain access to the full range of features and benefits that SanasHub RSVP offers. We look forward to having you on board and making your experience as seamless and enjoyable as possible.</p>
+
+</div>
+<div class="col-5">
+<div class="text-end"><img src="%%preview_card_url" /></div>
+</div>
+</div>
+<div class="row">
+<div class="col-12" style="text-align: -webkit-center;"><a class="btn btn-secondary" href="%%guest_url">%%invite_link_title</a></div>
+</div>
+<div class="row" style="padding-top: 48px;">
+<div class="col-12 text-center" style="margin-bottom: 32px;">
+<h4 class="m-0">Explore</h4>
+</div>
+<div class="col-6" style="background-color: #eff8ff; border-radius: 16px;">
+<div style="padding: 24px;">
+<h4 class="m-0" style="margin-bottom: 16px;">Explore Features:</h4>
+Log in to your account to explore the features and services we offer. Whether you are planning an
+event or managing guest lists, SanasHub RSVP is here to make your experience seamless. Discover
+our:
+<ul class="explor">
+ 	<li>Digital Invitations for Each Sub-Event: Customize and send beautiful digital invitations for
+all your event\'s sub-events.</li>
+ 	<li>RSVP Management: Keep track of your guest list with ease.</li>
+ 	<li>Event Analytics: Get insights into your event\'s performance.</li>
+</ul>
+</div>
+</div>
+<div class="col-6" style="background-color: #e6f4d7; border-radius: 16px;">
+<div style="padding: 24px;">
+<h4 class="m-0" style="margin-bottom: 16px;">Personalize Your Profile:</h4>
+Complete your profile with additional details to make the most out of our services. Utilize our:
+<ul class="explor">
+ 	<li>Budget Calculators: Manage your event budget effectively.</li>
+ 	<li>To-Do List: Organize your tasks and ensure nothing is missed.</li>
+ 	<li>Profile Customization: Tailor your profile to reflect your personal or organizational style.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row text-center" style="padding: 48px 0;">
+<div class="col-12">
+<h4 class="m-0" style="margin-bottom: 24px;">Need Assistance?</h4>
+</div>
+<div class="col-12 text-center">
+<p class="m-0" style="margin-bottom: 16px;">If you have any questions or need assistance, our support team is here to help. You can reach us
+at [Support Email] or visit our Help Center [Link to Help Center].
+We are thrilled to have you on board and look forward to supporting you in your event planning
+journey.</p>
+<p class="m-0">Best regards,</p>
+<p class="m-0">The SanasHub RSVP Team</p>
+
+</div>
+</div>
+<div class="row">
+<div class="col-12 text-center"><a class="logo" href="#"><img src="https://sit132.sanasinvite.com/wp-content/themes/sanas/assets/img/Sana__s_Hub.png.svg" alt="logo" width="126" height="58" /></a></div>
+</div>
+<div class="row text-center">
+<div class="col-12">
+<p style="margin-bottom: 16px;">You\'re receiving this email because you are a subscriber of Sana.com</p>
+If you feel you received it by mistake or wish to unsubscribe, <a style="color: #000000;" href="#">click here</a>
+
+</div>
+</div>
+</div>
+</div>
