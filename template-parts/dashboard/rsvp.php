@@ -749,12 +749,12 @@ if (empty($rsvpimage)) {
                                     <div class="col-xxl-4 col-xl-5 col-lg-7 col-md-8 col-sm-12 m-auto">
                                         <div class="form-field video-upload">
                                             <label>Video link</label>
-                                            <div class="video-file-upload" id="upload-link">
-                                                <a href="javascript:void(0);" class="icon">
+                                            <div class="video-file-upload">
+                                                <a href="javascript:void(0);" onclick="upload_link_func();" class="icon">
                                                     <i class="icon-Upload-2"></i>
                                                 </a>
                                                     <span>
-                                                        <label for="video-upload" class="icon">
+                                                        <label for="video-upload" id="upload-link" class="icon">
                                                             <?php echo esc_html('Click to upload') ?>
                                                         </label>
                                                         <input type="file" id="video-upload" accept="video/*" style="display: none;">
@@ -804,11 +804,11 @@ if (empty($rsvpimage)) {
                                                     <div class="video-inner-box">
                                                         <div class="col-xxl-4 col-xl-5 col-lg-7 col-md-8 col-sm-12 m-auto video-inner-box">
                                                             <div class="form-field">
-                                                                <div class="video-file-upload" id="upload-link">
-                                                                    <a href="javascript:void(0);" class="icon">
+                                                                <div class="video-file-upload">
+                                                                    <a href="javascript:void(0);" onclick="upload_link_func();" class="icon">
                                                                           <i class="icon-Upload-2"></i>
                                                                     </a>
-                                                                    <label for="video-upload" class="icon">
+                                                                    <label for="video-upload" id="upload-link" class="icon">
                                                                         <?php echo esc_html('Click to upload') ?>
                                                                     </label>
                                                                     <input type="file" id="video-upload" accept="video/*" style="display: none;">
