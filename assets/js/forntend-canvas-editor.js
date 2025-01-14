@@ -450,8 +450,7 @@ function handleObjectModified() {
         document.getElementById('fontWeight').value = activeObject.fontWeight;
         }
         if (jQuery('#fontFamily').length) {
-            jQuery('#fontFamily').val(activeObject.fontFamily).trigger('change');
-        // document.getElementById('fontFamily').value = activeObject.fontFamily;
+        document.getElementById('fontFamily').value = activeObject.fontFamily;
         }
         if (jQuery('#colorPicker').length) {
         document.getElementById('colorPicker').value = activeObject.fill;
