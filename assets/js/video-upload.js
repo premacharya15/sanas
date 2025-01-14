@@ -25,7 +25,6 @@ jQuery(document).ready(function($) {
         upload_link_func();
     });
     function upload_link_func(){
-        e.preventDefault();
         $('#video-upload').click();
     }
     $('#video-upload').on('change', function(e) {
