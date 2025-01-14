@@ -133,8 +133,6 @@ if(document.getElementById('drop-zone') !=null)
                 iframe.frameBorder = '0';
                 iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
                 iframe.allowFullscreen = true;
-                document.querySelector('.video-box').style.display = 'none';
-                document.querySelector('.video-box .iframe-btn.delete-btn').style.display = 'none';
                 container.innerHTML = ''; // Clear any previous content
                 container.appendChild(iframe); // Add the new iframe
             }
