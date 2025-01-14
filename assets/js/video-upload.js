@@ -21,10 +21,10 @@ jQuery(document).ready(function($) {
         });
     });
 
-    $('#upload-link').on('click', function(e) {
+    function upload_link_func{
         e.preventDefault();
         $('#video-upload').click();
-    });
+    }
 
     $('#video-upload').on('change', function(e) {
        const file = event.target.files[0];
