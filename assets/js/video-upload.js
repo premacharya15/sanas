@@ -2,7 +2,8 @@ function upload_link_func(){
     jQuery('#video-upload').click();
 }
 jQuery(document).ready(function($) {
-    $('#upload-link').on('click', function(e) {
+    jQuery('#upload-link').on('click', function(e) {
+        e.preventDefault();
         upload_link_func();
     });
     $('#add-rsvp').on('submit', function(e) {
