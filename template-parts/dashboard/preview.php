@@ -135,6 +135,7 @@ if ($existing_rsvp_query->have_posts()) {
     $guestName = esc_html(get_post_meta($edit_id, 'guest_name', true));
     $eventtitle = esc_html(get_post_meta($edit_id, 'event_name', true));
     $eventdate = esc_html(get_post_meta($edit_id, 'event_date', true));
+    $eventtime = esc_html(get_post_meta($edit_id, 'event_time', true));
     $guestContact = esc_html(get_post_meta($edit_id, 'guest_contact', true));
     $guestMessage = esc_html(get_post_meta($edit_id, 'guest_message', true));
     $program = get_post_meta($edit_id, 'listing_itinerary_details', true);
@@ -149,6 +150,7 @@ if ($existing_rsvp_query->have_posts()) {
     $guest_message_css = get_post_meta($edit_id, 'guest_message_css', true);
     $event_title_css = get_post_meta($edit_id, 'event_title_css', true);
     $event_date_css = get_post_meta($edit_id, 'event_date_css', true);
+    $event_time_css = get_post_meta($edit_id, 'event_time_css', true);
     $itinerarycss = get_post_meta($edit_id, 'itinerarycss', true);
     // Restore original post data
     wp_reset_postdata();
@@ -170,7 +172,8 @@ else {
     $guest_contact_css = '';
     $guest_message_css = '';
     $event_title_css = '';
-    $event_date_css = '';    
+    $event_date_css = '';
+    $event_time_css = '';    
 
     $itinerarycss='';
 }
@@ -319,7 +322,15 @@ function is_youtube_url($url) {
                                             ?>
                                             <?php echo esc_html($formattedDate); ?>
                                         </div>
-                                        <!-- <input type="date" id="eventdate" class="edit-text rsvp-msg event-date" name="eventdate"  style="<?php echo $event_date_css; ?>" value="" required=""> -->
+                                    </div>
+                                    <div class="rsvp-from-group">
+                                        <div class="event-date py-1" style="<?php echo $event_time_css; ?>">
+                                            <?php
+                                            $timestamp = strtotime($eventtime);
+                                            $formattedTime = date("g:i A", $timestamp);
+                                            ?>
+                                            <?php echo esc_html($formattedTime); ?>
+                                        </div>
                                     </div>
                                     <div class="rsvp-from-group m-0 p-0 map-container-rsvp">
                                         <!-- <h4>Address</h4> -->
@@ -329,27 +340,6 @@ function is_youtube_url($url) {
                                     </div>
                                 </div>
                             </div>
-
-
-
-                                
-                                    <!-- <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-8 col-sm-12 m-auto"> -->
-                                        <!-- <span></span> -->
-                                         <?php 
-                                        // if(!empty($eventtitle)) { echo '<div class="mt-3 mb-2 preview-event-title" style="'.$event_title_css.'">'.esc_html($eventtitle).'</div>'; }
-
-                                        //     if(!empty($eventdate)) { echo '<div class="mt-2 mb-2 preview-event-date" style="'.$event_date_css.'">'.esc_html($eventdate).'</div>'; }
-
-                                        ?>
-                                        
-                                        <!-- <div class="mt-2 mb-2 edit-text rsvp-msg" id="search_address" rows="2" cols="50" placeholder="Venue Address">61020 Petriano, Province of Pesaro and Urbino, Italy</div> -->
-                                        <!-- <h4 class="mb-2" style="font-size:20px;color: #5c310d;">Hosted By</h4> -->
-                                        <?php 
-                                            // if(!empty($guestName)) { echo '<div class="preview-host-name mb-2" style="'.$guest_name_css.'">'.esc_html($guestName).'</div>'; }
-                                            // if(!empty($guestContact)) { echo '<div class="preview-host-contact-no mb-2" style="'.$guest_contact_css.'">'.esc_html($guestContact).'</div>'; }
-                                            // if(!empty($guestMessage)) { echo '<div class="preview-host-message mb-2" style="'.$guest_message_css.'"><pre>'.$guestMessage.'</pre></div>'; }
-                                        ?>
-                                    <!-- </div> -->
                                 </div>
                                 <div class="row">
                                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12 m-auto" style="padding: 0 50px;">
