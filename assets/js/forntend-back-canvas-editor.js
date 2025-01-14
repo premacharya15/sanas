@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (jQuery('#colorPicker').length) {
         const colorPicker = document.getElementById('colorPicker');
         if (colorPicker) {
-            colorPicker.addEventListener('change', function () {
+            colorPicker.addEventListener('input', function () {
                 const color = this.value;
                 document.querySelector('.color-target-code').textContent = color;
                 changeColor(color);
