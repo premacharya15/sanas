@@ -121,7 +121,8 @@ if(document.getElementById('drop-zone') !=null)
                 existingIframe.src = 'https://www.youtube.com/embed/' + videoID;
                 document.querySelector('.youtube-container').style.display = "block";
                 document.querySelector('.youtube-container .delete-btn').style.display = "block";
-                
+                document.querySelector('.video-box').style.display = 'none';
+                document.querySelector('.video-box .iframe-btn.delete-btn').style.display = 'none';
             } else {
                 // If iframe doesn't exist, create a new one
                 var iframe = document.createElement('iframe');
