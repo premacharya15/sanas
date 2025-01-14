@@ -314,7 +314,7 @@ function is_youtube_url($url) {
                                             <?php echo esc_html($eventtitle); ?>
                                         </div>
                                     </div>
-                                    <div class="rsvp-from-group flex gap-2">
+                                    <div class="rsvp-from-group d-flex gap-2">
                                         <div class="event-date py-1" style="<?php echo $event_date_css; ?>">
                                             <?php
                                             $timestamp = strtotime($eventdate);
