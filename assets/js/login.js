@@ -861,6 +861,7 @@ jQuery(document).ready(function ($) {
                 guestName: guestName,
                 eventTitle: eventTitle,
                 itinerary: itinerary,
+                eventDate: eventDate,
                 eventTime: eventTime,
                 guestContact: guestContact,
                 guestMessage: guestMessage,
