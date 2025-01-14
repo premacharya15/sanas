@@ -654,6 +654,7 @@ if ($rsvpId!=0) {
     $guestName = esc_html(get_post_meta($edit_id, 'guest_name', true));
     $eventtitle = esc_html(get_post_meta($edit_id, 'event_name', true));
     $eventdate = esc_html(get_post_meta($edit_id, 'event_date', true));
+    $eventtime = esc_html(get_post_meta($edit_id, 'event_time', true));
     $guestContact = esc_html(get_post_meta($edit_id, 'guest_contact', true));
     $guestMessage = esc_html(get_post_meta($edit_id, 'guest_message', true));
     $program = get_post_meta($edit_id, 'listing_itinerary_details', true);
@@ -670,6 +671,7 @@ if ($rsvpId!=0) {
     $guest_message_css = get_post_meta($edit_id, 'guest_message_css', true);
     $event_title_css = get_post_meta($edit_id, 'event_title_css', true);
     $event_date_css = get_post_meta($edit_id, 'event_date_css', true);
+    $event_time_css = get_post_meta($edit_id, 'event_time_css', true);
 
     $itinerary_css = get_post_meta($edit_id, 'itinerarycss', true);
 
@@ -838,6 +840,9 @@ if (empty($rsvpimage)) {
                                 </div>
                                 <div class="rsvp-from-group">
                                     <input type="date" id="eventdate" class="edit-text rsvp-msg event-date" name="eventdate"  style="<?php echo $event_date_css; ?>" value="<?php echo esc_html($eventdate); ?>" required="">
+                                </div>
+                                <div class="rsvp-from-group">
+                                    <input type="time" id="eventtime" class="edit-text rsvp-msg event-time" name="eventtime"  style="<?php echo $event_time_css; ?>" value="<?php echo esc_html($eventtime); ?>" required="">
                                 </div>
                                 <div class="rsvp-from-group m-0 map-container-rsvp">
                                     <!-- <h4>Address</h4> -->
