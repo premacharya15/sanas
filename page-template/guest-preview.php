@@ -153,7 +153,7 @@ if ($existing_rsvp_query->have_posts()) {
     $rsvpvideo = esc_html(get_post_meta($edit_id, 'opt_upload_video', true));
     $guestName = esc_html(get_post_meta($edit_id, 'guest_name', true));
     $eventtitle = esc_html(get_post_meta($edit_id, 'event_name', true));
-    $eventdate = esc_html(get_post_meta($edit_id, 'event_date', true));    
+    $eventdate = esc_html(get_post_meta($edit_id, 'event_date', true));
     $guestContact = esc_html(get_post_meta($edit_id, 'guest_contact', true));
     $guestMessage = esc_html(get_post_meta($edit_id, 'guest_message', true));
     $program      = get_post_meta($edit_id, 'listing_itinerary_details', true);

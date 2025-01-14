@@ -685,6 +685,7 @@ else {
     $guestName = '';
     $eventtitle = '';
     $eventdate = '';
+    $eventtime = '';
     $guestContact = '';
     $guestMessage = "";
     $program = array();
@@ -824,9 +825,7 @@ if (empty($rsvpimage)) {
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                                    <?php } ?>
-
+                                    <?php } ?>
                             </div>
                         </div>
                     <?php if ($imageEnable && !empty($rsvpImage)) {?>

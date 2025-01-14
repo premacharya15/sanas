@@ -787,6 +787,7 @@ jQuery(document).ready(function ($) {
         var guestContact = $('#guestContact').val();
         var eventTitle = $('#eventtitle').val();
         var eventDate = $('#eventdate').val();
+        var eventTime = $('#eventtime').val();
         var venuename = $('.event_venue_name').val();
         var venueaddress = $('.event_venue_address').val();
         var itinerary = $('#itinerary').val();
@@ -807,6 +808,7 @@ jQuery(document).ready(function ($) {
         var guestContactcss = $('#guestContact').attr('style'); // Get the DOM element
         var guestMessagecss = $('#guestMessage').attr('style'); // Get the DOM element
         var eventdatecss = $('#eventdate').attr('style'); // Get the DOM element
+        var eventtimecss = $('#eventtime').attr('style'); // Get the DOM element
         var itinerarycss = $('#itinerary').attr('style'); // Get the DOM element
 
         var canvasElement = $('#canvasElement');
@@ -859,7 +861,7 @@ jQuery(document).ready(function ($) {
                 guestName: guestName,
                 eventTitle: eventTitle,
                 itinerary: itinerary,
-                eventDate: eventDate,
+                eventTime: eventTime,
                 guestContact: guestContact,
                 guestMessage: guestMessage,
                 eventtitlecss: eventtitlecss,
@@ -867,6 +869,7 @@ jQuery(document).ready(function ($) {
                 guestContactcss: guestContactcss,
                 guestMessagecss: guestMessagecss,
                 eventdatecss: eventdatecss,
+                eventtimecss: eventtimecss,
                 itinerarycss: itinerarycss,
                 videoSrc: videoSrc,
                 youtubeSrc: youtubeSrc,
@@ -937,6 +940,7 @@ jQuery(document).ready(function ($) {
         var guestContact = $('#guestContact').val();
         var eventTitle = $('#eventtitle').val();
         var eventDate = $('#eventdate').val();
+        var eventTime = $('#eventtime').val();
         var guestMessage = $('#guestMessage').val().trim();
         var videoSrc = $('#uploaded-video').attr('src') || '';
         var youtubeSrc = $('#youtube-iframe').attr('src') || '';
@@ -956,6 +960,7 @@ jQuery(document).ready(function ($) {
         var guestContactcss = $('#guestContact').attr('style'); // Get the DOM element
         var guestMessagecss = $('#guestMessage').attr('style'); // Get the DOM element
         var eventdatecss = $('#eventdate').attr('style'); // Get the DOM element
+        var eventtimecss = $('#eventtime').attr('style');
         var itinerarycss = $('#itinerary').attr('style'); // Get the DOM element
 
 
@@ -998,6 +1003,7 @@ jQuery(document).ready(function ($) {
                 itinerary: itinerary,
                 eventTitle: eventTitle,
                 eventDate: eventDate,
+                eventTime: eventTime,
                 guestContact: guestContact,
                 guestMessage: guestMessage,
                 eventtitlecss: eventtitlecss,
@@ -1005,6 +1011,7 @@ jQuery(document).ready(function ($) {
                 guestContactcss: guestContactcss,
                 guestMessagecss: guestMessagecss,
                 eventdatecss: eventdatecss,
+                eventtimecss: eventtimecss,
                 itinerarycss: itinerarycss,                
                 videoSrc: videoSrc,
                 youtubeSrc: youtubeSrc,
