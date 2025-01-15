@@ -1709,10 +1709,10 @@ div.dt-container div.dt-layout-row:first-child {
         margin-top: 67px !important;
         margin-bottom: 20px !important;
     }
-    canvas#canvas {
+    /* canvas#canvas {
         width: 300px !important;
         height: 440px !important;
-    }
+    } */
     canvas.upper-canvas {
         width: 240px !important;
         height: 370px !important;
