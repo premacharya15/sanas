@@ -1713,10 +1713,11 @@ div.dt-container div.dt-layout-row:first-child {
         width: 300px !important;
         height: 440px !important;
     }
-    /* canvas.upper-canvas {
-        width: 300px !important;
-        height: 440px !important;
-    } */
+    canvas.upper-canvas {
+        width: 240px !important;
+        height: 370px !important;
+    }
+    
     /* section.wl-main-canvas .card-canvas {
         width: 300px !important;
         height: 440px !important;
