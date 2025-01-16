@@ -392,7 +392,7 @@ section.wl-main-canvas .inner-container .inner-colum {
                                 <div class="row">
                                     <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-10 m-auto">
                                         <div class="guest-count">
-                                            <h4 class="mb-0">No. of Guests</h4>
+                                            <h4 class="mb-3">No. of Guests</h4>
                                             <div class="guest-counter">
                                                 <h4>Adults</h4>
                                                 <div class="count">
